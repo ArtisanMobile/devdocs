@@ -1,0 +1,14 @@
+$proxima-nova: "proxima-nova", "Helvetica Neue", "Segoe UI", "Trebuchet MS", arial, sans-serif;
+$kulturista: "kulturista-web", rockwell, georgia, "times new roman", serif;
+
+$base-font-size: 22px;
+
+@import 'bourbon/bourbon';
+@import 'palette';
+
+body {
+  background-color: #fff;
+  color: #555;
+  font-family: $ratio;
+  font-size: $base-font-size;
+}

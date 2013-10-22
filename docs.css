@@ -1,0 +1,53 @@
+body {
+  background-color: #fff;
+  color: #555;
+  font-family: "ratio-1", "ratio-2", "helvetica neue", arial, sans-serif;
+  font-size: 22px; }
+
+p {
+  font-weight: 300;
+  line-height: 1.5em; }
+
+a {
+  color: #ec008b;
+  text-decoration: none; }
+  a:hover {
+    color: #b71178; }
+
+header #logo {
+  background-image: url("images/faf_phl_logo.svg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 170px 72px;
+  height: 72px;
+  margin: 40px 40px 0 40px;
+  text-indent: -30000px;
+  width: 170px; }
+
+section {
+  padding: 20px 40px 40px; }
+
+#how-does-it-work section {
+  padding: 0; }
+#how-does-it-work h2 {
+  background-color: #ec008b;
+  color: #fff;
+  font-family: "museo-slab-1", "museo-slab-2", georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 20px 40px;
+  margin: 0; }
+#how-does-it-work .content-wrapper {
+  padding: 20px 40px; }
+#how-does-it-work h3 {
+  font-weight: 400; }
+
+@media screen and (min-width: 800px) {
+  #page-wrapper {
+    position: relative; }
+    #page-wrapper #intro {
+      float: left;
+      width: 40%; }
+    #page-wrapper #how-does-it-work {
+      margin-left: 40%;
+      width: 60%; } }
