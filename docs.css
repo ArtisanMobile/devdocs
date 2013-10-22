@@ -259,18 +259,28 @@
 
 body {
   background-color: #fff;
-  color: #555;
+  color: #383838;
   font-family: "proxima-nova", "Helvetica Neue", "Segoe UI", "Trebuchet MS", arial, sans-serif;
-  font-size: 18px; }
+  font-size: 14px; }
+
+h1 {
+  color: #f04123;
+  font-size: 1.5rem;
+  font-weight: 300; }
+
+h2 {
+  font-size: 1.25rem; }
+
+h3 {
+  font-size: 1rem; }
 
 #content-wrapper {
   margin: 40px; }
 
 .note {
   background-color: #f6f6f6;
-  border: solid 2px #dadada;
-  border-left-width: 4px;
-  border-radius: 5px;
+  border-bottom: solid 1px #dadada;
+  border-top: solid 1px #dadada;
   margin-bottom: 1em;
   padding: 20px;
   position: relative; }
@@ -287,6 +297,18 @@ body {
   .note p:last-of-type {
     margin-bottom: 0; }
   .note.note-important {
+    background-color: #ffeae6;
     border-color: #f3674f; }
   .note.note-hint {
+    background-color: #fff5d6;
     border-color: #fbcc43; }
+
+pre {
+  background-color: #f6f6f6;
+  border: solid 1px #dadada;
+  overflow: auto;
+  padding: 15px;
+  white-space: nowrap;
+  word-wrap: normal; }
+  pre code {
+    white-space: pre; }

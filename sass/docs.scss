@@ -1,7 +1,7 @@
 $proxima-nova: "proxima-nova", "Helvetica Neue", "Segoe UI", "Trebuchet MS", arial, sans-serif;
 $kulturista: "kulturista-web", rockwell, georgia, "times new roman", serif;
 
-$base-font-size: 18px;
+$base-font-size: 14px;
 
 @import 'bourbon/bourbon';
 @import 'palette';
@@ -11,10 +11,20 @@ $base-font-size: 18px;
 
 body {
   background-color: #fff;
-  color: #555;
+  color: $dark-gray;
   font-family: $proxima-nova;
   font-size: $base-font-size;
 }
+
+h1 {
+  color: $red;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+h2 { font-size: 1.25rem; }
+
+h3 { font-size: 1rem; }
 
 #content-wrapper {
   margin: 40px;
@@ -22,9 +32,8 @@ body {
 
 .note {
   background-color: $super-light-gray;
-  border: solid 2px #dadada;
-  border-left-width: 4px;
-  border-radius: 5px;
+  border-bottom: solid 1px #dadada;
+  border-top: solid 1px #dadada;
   margin-bottom: 1em;
   padding: 20px;
   position: relative;
@@ -50,10 +59,25 @@ body {
   }
   
   &.note-important {
+    background-color: #ffeae6;
     border-color: $light-red;
   }
   
   &.note-hint {
+    background-color: #fff5d6;
     border-color: $yellow;
+  }
+}
+
+pre {
+  background-color: $super-light-gray;
+  border: solid 1px #dadada;
+  overflow: auto;
+  padding: 15px;
+  white-space: nowrap;
+  word-wrap: normal;
+
+  code {
+    white-space: pre;
   }
 }
