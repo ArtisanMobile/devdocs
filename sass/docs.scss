@@ -1,14 +1,59 @@
 $proxima-nova: "proxima-nova", "Helvetica Neue", "Segoe UI", "Trebuchet MS", arial, sans-serif;
 $kulturista: "kulturista-web", rockwell, georgia, "times new roman", serif;
 
-$base-font-size: 22px;
+$base-font-size: 18px;
 
 @import 'bourbon/bourbon';
 @import 'palette';
+@import 'syntax';
+
+* { @include box-sizing(border-box); }
 
 body {
   background-color: #fff;
   color: #555;
-  font-family: $ratio;
+  font-family: $proxima-nova;
   font-size: $base-font-size;
+}
+
+#content-wrapper {
+  margin: 40px;
+}
+
+.note {
+  background-color: $super-light-gray;
+  border: solid 2px #dadada;
+  border-left-width: 4px;
+  border-radius: 5px;
+  margin-bottom: 1em;
+  padding: 20px;
+  position: relative;
+  
+  .note-type {
+    display: block;
+    font-size: .80rem;
+    padding: 0 40px 10px 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-transform: uppercase;
+  }
+  
+  p {
+    &:first-of-type {
+      margin-top: 0;
+    }
+    
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  
+  &.note-important {
+    border-color: $light-red;
+  }
+  
+  &.note-hint {
+    border-color: $yellow;
+  }
 }
