@@ -60,7 +60,7 @@ For any that aren't included, select the '+' icon in the lower-left corner of th
 9\. Add the following line to the bottom of the didFinishLaunchingWithOptions: method of the AppDelegate.
 
 {% highlight objective-c %}
-[ARManager startWithAppId:@""];
+[ARManager startWithAppId:@"YOURAPPID"];
 {% endhighlight %}
 
 <div class="note note-important">

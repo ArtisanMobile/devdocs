@@ -1,0 +1,36 @@
+---
+layout: docs
+title: "Goals"
+author: "Artisan"
+category: user-guide
+description: "Getting started with the Artisan MEM platform for developers."
+---
+#Analyze Goals
+
+A Goal is a benchmark of the desired steps through the app you want your user to take. Analyze shows you the proportion of users successfully making it through each step.  
+
+A goal is a measure of your organization's key performance indicator such as funnel completion, session length, etc. Currently supported in Artisan is ... (funnel description).
+
+## Creating a Goal
+
+Click on Goals icon in the left hand sidebar.
+
+Click New Goal (green box) to create a new user funnel.
+
+Enter the name your goal, navigate to the start of your goal wihtin your app, and press Start Recording to begin defining your funnel.
+
+To build your funnel, navigate through the desired screens you would like your user to traverse in an ideal scenario e.g. select product, add to cart and check out screens.  Each action you trigger should automatically appear on your screen as you execute it in your app.  This sequence of events will serve as the funnel that Artisan will use and report upon.
+
+Confirm the selected events are the events you want included in the funnel and delete any you do not want by pressing the red X alongside that event.  The ordering of the funnel is significant, so ensure that the events are in the correct order (with the first event in the funnel at the top of the screen and the final conversion event of the funnel at the bottom).
+
+Click Stop Recording and you be automatically be redirected to the Goal Summary page.  The newly created goal will be in the list of goals at the bottom of the page.  The performance of the goal over the life of your app (as of when Artisan was installed and deployed to the app store) is automatically being calculated.
+
+Click on the name of the goal in the list of goals.  This is the Goal Report for that specfic goal.  Over the next 24 hours, this report wil automatically be populated with all of the historical data for this specific goal, and will be kept up-to-date in real time from this point onwards.  This historical report is filterable by date range, and shows the following four pieces of information about your goal:
+
+Overall peformance across each of the funnel goal steps across the date range.
+
+Table defining the number of sessions that have reached each step of the goal across the entire date range.
+
+Historical trends of the goal conversion rate.
+
+Historical overview of how many sessions have reached each step for each day since the beginning of the date range.

@@ -1,3 +1,4 @@
 exclude:    ['sass']
 permalink:  /:categories/:title/index.html
-pygments:   true
+
+pygments: true
