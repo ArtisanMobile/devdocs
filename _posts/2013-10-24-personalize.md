@@ -1,36 +1,72 @@
 ---
 layout: docs
-title: "Goals"
+title: "Personalize"
 author: "Artisan"
 category: user-guide
 description: "Getting started with the Artisan MEM platform for developers."
 ---
-#Analyze Goals
 
-A Goal is a benchmark of the desired steps through the app you want your user to take. Analyze shows you the proportion of users successfully making it through each step.  
+#Personalize
 
-A goal is a measure of your organization's key performance indicator such as funnel completion, session length, etc. Currently supported in Artisan is ... (funnel description).
+Artisan Personalize allows businesses to define segments of users and then create and deliver highly personalized experiences to those users. You can define segments across multiple dimensions including demographics, device type, user behaviors, and attributes that are specific to your business. Customize all elements of your app including design, business logic, and core functionality. Then deliver multiple versions of your app simultaneously to drive app engagement and brand loyalty.
 
-## Creating a Goal
+Features of Artisan Personalize include:
 
-Click on Goals icon in the left hand sidebar.
+**Advanced Segmentation:**  Create specific audience segments based on age, gender, and location (or other app-specific data), as well as more advanced segments based on behavioral patterns and trends.  You can, for instance, decide to offer a certain discount to women between the ages of 20 and 30 who live in Detroit and tend to buy shoes under $50.
 
-Click New Goal (green box) to create a new user funnel.
+**Targeted Content:** Design and publish content specific to different audience segments.
 
-Enter the name your goal, navigate to the start of your goal wihtin your app, and press Start Recording to begin defining your funnel.
+**Power Hooks:**  Creates configurable variables in your app that you can see and manipulate in the Artisan design canvas.  Developers write code for the hook only one time.  From that point on, business users can easily make modifications without the need to re-write code.  For example, a power hook might be established to offer discounts.  Based on analytics, the business user decides to push different discounts to different audience segments, which he or she can easily do without bothering developers whenever a change is made.
 
-To build your funnel, navigate through the desired screens you would like your user to traverse in an ideal scenario e.g. select product, add to cart and check out screens.  Each action you trigger should automatically appear on your screen as you execute it in your app.  This sequence of events will serve as the funnel that Artisan will use and report upon.
+##What is Personlization?
+Personalization is a process that combines segmentation and publishing. Segmentation is defining a group of users that share a specific characteristic or behavior pattern that matters to you. Every app will have at least one feature that is key or unique to the app, that differentiates the app, that the app aims to satisfy or serve. All apps will be have this to Personalize on. 
 
-Confirm the selected events are the events you want included in the funnel and delete any you do not want by pressing the red X alongside that event.  The ordering of the funnel is significant, so ensure that the events are in the correct order (with the first event in the funnel at the top of the screen and the final conversion event of the funnel at the bottom).
+Once you've identified segments, publishing gives you the ability to distribute customized screen designs to segments. Personalize enables you to target specific groups of users so you can increase engagement, conversions, positive user experience. Devices are very personal, and users have meaningful relationships with their device and apps. The more a user relates to the app the more a user will engage the app Personalize lets you target that, create custom content for your users.
 
-Click Stop Recording and you be automatically be redirected to the Goal Summary page.  The newly created goal will be in the list of goals at the bottom of the page.  The performance of the goal over the life of your app (as of when Artisan was installed and deployed to the app store) is automatically being calculated.
+Every app will have user profile variables that are distinct and relevant to your customer base - we give you the ability to segment on that and leverage things like a/b testing. You can narrow down what works for specific groups of users, and positively impact KPIs. Not just about generic numbers like time in app, the key is putting user content that is meaningful to your app. 
 
-Click on the name of the goal in the list of goals.  This is the Goal Report for that specfic goal.  Over the next 24 hours, this report wil automatically be populated with all of the historical data for this specific goal, and will be kept up-to-date in real time from this point onwards.  This historical report is filterable by date range, and shows the following four pieces of information about your goal:
+Example User Profile Variables:
 
-Overall peformance across each of the funnel goal steps across the date range.
+* Male vs female design
+* Location segments down to weather or time of day!
+* Send a different design when its raining or sunny, night or day
+* Younger people are more likely to use social networking to share with their friends
+* Target Twitter and Facebook users  
+* Look into calendar and find what meetings you have, pull out phone numbers 
+* Find out who is using app in car, and have different user interface if you're in a car
 
-Table defining the number of sessions that have reached each step of the goal across the entire date range.
+##Segmenting Users
 
-Historical trends of the goal conversion rate.
+A Segment is a group of users that share a specific characteristic or behavior pattern that matters to you.
 
-Historical overview of how many sessions have reached each step for each day since the beginning of the date range.
+You define a segment, and then create a design that is targeted towards that segment and publish a custom design to that group of users. All with the purpose of delivering personalized experiences
+
+Segments that are available right away for use include:
+
+* Device type
+* OS version
+* App version
+* Language
+* Location
+
+##Personalizing Your App
+
+Connect App to Artisan
+
+Navigate to the screen that you want to Personalize
+
+To define a segment, click on Modifications and Personalizations on the right hand side
+
+Click + to define a new segment
+
+You have the option to select an existing segment, or define a new one
+
+Under "Build a new Segment", in the drop down menu, select the distinguishing user dimension
+
+If you've defined User profile variables, they will be included here along with the built in dimensions 
+
+You are now ready to create a design to publish to the appropriate segment
+
+Create Target Design via Canvas for segment defined above 
+
+To find information on how to create a target design and use canvas, click here

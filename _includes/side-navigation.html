@@ -1,0 +1,22 @@
+<dl id="doc-navigation">
+  <dt><a href="/user-guide">Getting Started Guide</a></dt>
+  {% for post in site.categories.user-guide reversed %}
+    <dd>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </dd>
+  {% endfor %}
+
+  <dt>Developers</dt>
+  {% for post in site.categories.dev %}
+    <dd>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </dd>
+  {% endfor %}
+  
+  <dt>Best Practices</dt>
+  {% for post in site.categories.best-practices reversed %}
+    <dd>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </dd>
+  {% endfor %}
+</dl>

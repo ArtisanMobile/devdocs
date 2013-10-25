@@ -1,8 +1,8 @@
 ---
-layout: doc-post
-title: "Artisan Quickstart"
+layout: docs
+title: "Quickstart for Developers"
 author: "Artisan"
-category: docs
+category: dev
 description: "Getting started with the Artisan MEM platform for developers."
 ---
 #Artisan Quickstart Guide

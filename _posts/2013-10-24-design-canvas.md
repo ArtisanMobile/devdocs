@@ -7,9 +7,9 @@ description: "Getting started with the Artisan MEM platform for developers."
 ---
 #Canvas
 
-Aptly named, Canvas is the drawing board of Artisan. From the App Map, you can select a specific screen to work on; perhaps you would like to add an experiment on that screen. This will open up the Canvas, where you can make changes to the screen you chose. Once on Canvas, you can make any UI and design changes to the screen; it’s here that you will be creating the variations that you push out in your A/B tests, or the specific designs you will be sending out to the segments you have created. 
+Aptly named, Canvas is the drawing board of Artisan. From the App Map, you can select a specific screen to work on; perhaps you would like to add an experiment on that screen. This will open up the Canvas, where you can make changes to the screen you chose. Once on Canvas, you can make any UI and design changes to the screen; it's here that you will be creating the variations that you push out in your A/B tests, or the specific designs you will be sending out to the segments you have created. 
 
-With Canvas, you have an interface to make changes and add to your app (images, text, buttons) after you have submitted to the app store. Canvas also allows you to preview these changes before they go to any devices. This means you can make real time improvements to your app, all without code. Simply drag and drop the elements that you’d like to send out to your users (or more specifically, your segments) and publish; your users will receive the designs right away. 
+With Canvas, you have an interface to make changes and add to your app (images, text, buttons) after you have submitted to the app store. Canvas also allows you to preview these changes before they go to any devices. This means you can make real time improvements to your app, all without code. Simply drag and drop the elements that you'd like to send out to your users (or more specifically, your segments) and publish; your users will receive the designs right away. 
 
 ##Getting Started with the Canvas
 

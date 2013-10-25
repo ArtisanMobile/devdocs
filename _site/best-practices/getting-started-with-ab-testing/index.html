@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A/B Testing</title>
+	
+	<meta http-equiv="imagetoolbar" content="false">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta name="author" content="Artisan Mobile" />
+  <meta name="description" content="Getting started with the Artisan MEM platform for developers." />
+	<meta name="keywords" content="" />
+
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:url" content="http://dev.useartisan.com" />
+	<meta name="twitter:title" content="A/B Testing" />
+	<meta name="twitter:description" content="Getting started with the Artisan MEM platform for developers." />
+	<meta name="twitter:site" content="@artisanmobile" />
+	<meta name="twitter:image" content="http://dev.useartisan.com/images/twitter-card-image.png" />
+
+	<meta property="og:site_name" content="Artisan Developers" />
+	<meta property="og:title" content="A/B Testing" />
+	<meta property="og:type" content="article" />
+	<meta property="og:article:author" content="Kevin M. Jackson" />
+	<meta property="og:url" content="http://dev.useartisan.com" />
+	
+  <script type="text/javascript" src="//use.typekit.net/zqm4dpz.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/base-min.css">
+  <link rel="stylesheet" href="/docs.css" type="text/css" media="screen" charset="utf-8">
+</head>
+<body>
+<div class="page-content-container">
+  <nav>
+    <dl id="doc-navigation">
+  <dt><a href="/user-guide">Getting Started Guide</a></dt>
+  
+    <dd>
+      <a href="/user-guide/analyze/index.html">Analyze</a>
+    </dd>
+  
+    <dd>
+      <a href="/user-guide/app-map/index.html">App Map</a>
+    </dd>
+  
+    <dd>
+      <a href="/user-guide/design-canvas/index.html">Design Canvas</a>
+    </dd>
+  
+    <dd>
+      <a href="/user-guide/goals/index.html">Goals</a>
+    </dd>
+  
+    <dd>
+      <a href="/user-guide/notifications/index.html">Notifications</a>
+    </dd>
+  
+    <dd>
+      <a href="/user-guide/optimize/index.html">Optimize</a>
+    </dd>
+  
+    <dd>
+      <a href="/user-guide/personalize/index.html">Personalize</a>
+    </dd>
+  
+    <dd>
+      <a href="/user-guide/tagging/index.html">Tagging</a>
+    </dd>
+  
+
+  <dt>Developers</dt>
+  
+    <dd>
+      <a href="/dev/getting-started/index.html">Quickstart for Developers</a>
+    </dd>
+  
+    <dd>
+      <a href="/dev/developing-with-artisan/index.html">Developing with Artisan</a>
+    </dd>
+  
+  
+  <dt>Best Practices</dt>
+  
+    <dd>
+      <a href="/best-practices/getting-started-with-ab-testing/index.html">A/B Testing</a>
+    </dd>
+  
+</dl>
+  </nav>
+  <div id="content-wrapper">
+    <article>
+      <h1 id='what_is_ab_testing'>What is A/B Testing?</h1>
+
+<p>Let&#8217;s take a look at an example. Shoeco.com would like to increase registrations within their retail mobile app. They created an A/B/C experiment with the goal of increasing the percentage of people who click the &#8220;register&#8221; button on their product page. The control (A) and the two variations (B and C) are shown. The target selected as the goal is the &#8220;register&#8221; button.</p>
+
+<p>Shoeco.com ran this experiment with 30,000 users over 30 days of time. Artisan tracked the conversion rates on the graph below.</p>
+
+<p>At the onset of the experiment, the data was highly volatile (days 1-5). At this point of the experiment, the confidence level would be very low due to the small number of data points included in the calculation. As time progressed and more data points were included in the statistical calculations, the confidence level grew higher and the volatility decreased. At the end of the 30-day experiment, Artisan presented Shoeco.com with the following results.</p>
+
+<p>Variation B had the highest conversion rate at 3.55%, which was a 7.45% increase over the control (variation A). When released to the full user base, we can be 95% statistically confident that the conversion rate will be within the range of 3.45% and 3.65% (this is the &#8220;confidence interval&#8221;). The control is converting at 3.30% with a confidence interval of 3.20% to 3.39%, which means that we are over 95% statistically confident that variation B will outperform the control. In addition, variation B outperformed variation C and we are also statistically confident that variation B is better than variation C. Thus, variation B is the winning variation.</p>
+
+<h2 id='how_can_artisan_optimize_help'>How can Artisan Optimize help?</h2>
+
+<p>As more consumers use their mobile devices to shop, to communicate, to research, and to be entertained, publishers and marketers face a new frontier filled with tremendous opportunities to engage and profit from mobile customers. The fragmented application management ecosystem has made it a challenge for marketers to know when or why an app is due for an update, cumbersome and time consuming to execute that update, left to the consumer&#8217;s discretion to download the update, and difficult to understand the impact of the update when it&#8217;s all said and done. In this scenario, acquiring timely insight into the consumer&#8217;s application experience and user behavior has been a lost cause.</p>
+
+<p>In practice, the Artisan MEM platform offers marketers a software development environment that enables drag-and-drop native mobile application creation, testing, analysis, modification and delivery. Marketers can engage the platform to access their apps and navigate them screen-by-screen, where text and font, color, and image updates can be made instantly - with no change to the underlying code—in a content management experience that mirrors that of modern CEM and WMO tools.</p>
+
+<h2 id='measuring_optimization_success'>Measuring Optimization Success</h2>
+
+<p>A/B testing helps you improve the business performance of your app, listed below are metrics by vertical market commonly used to measure the app&#8217;s success.</p>
+
+<h3 id='mobile_commerce_revenue'>Mobile Commerce Revenue</h3>
+
+<ul>
+<li>Add to cart conversion rate</li>
+
+<li>Checkout conversion rate</li>
+
+<li>Average Order Size</li>
+
+<li>Revenue per session</li>
+
+<li>Cart abandonment rate</li>
+
+<li>New buyers on mobile (first app purchase)</li>
+
+<li>Sign-in and sign-up conversions</li>
+
+<li>Guaranteed for Holiday</li>
+
+<li>Checkout conversion rate</li>
+
+<li>Referrals per User</li>
+
+<li>Cart abandonment rate</li>
+
+<li>Media Revenue</li>
+
+<li>Ad impressions</li>
+
+<li>Time in app</li>
+
+<li>Percent recurring</li>
+
+<li>Revenue per session</li>
+</ul>
+
+<h3 id='utility_appsearch__review'>Utility App/Search &amp; Review</h3>
+
+<ul>
+<li>Task completion/navigation</li>
+
+<li>Time in App</li>
+
+<li>Percent recurring users</li>
+</ul>
+
+<h3 id='customer_retention'>Customer Retention</h3>
+
+<ul>
+<li>CSAT/Survey</li>
+
+<li>Percent recurring</li>
+
+<li>MAU</li>
+</ul>
+
+<h2 id='what_should_i_test'>What should I test?</h2>
+
+<p>If you are new to A/B testing, Artisan provides helpful hints below for launching your Artisan A/B testing plan.</p>
+
+<ul>
+<li>MCommerce</li>
+
+<li>&#8220;Top of Funnel&#8221;</li>
+
+<li>Homescreen CTA (text vs. Buttons)</li>
+
+<li>Images (people vs. objects)</li>
+
+<li>Registration Button/CTA</li>
+
+<li>Navigation Scroll Vertically vs. Carousel ie left to right</li>
+
+<li>&#8220;Mid-Funnel&#8221;</li>
+
+<li>Moving promos earlier into the funnel/show Dollars vs. % saved</li>
+
+<li>Navigation - Filter options</li>
+
+<li>Navigation - Display products in a table format or a list</li>
+
+<li>Images - Larger fewer images per screen, smaller more images per screen</li>
+
+<li>Bottom of Funnel</li>
+
+<li>Location of checkout button</li>
+
+<li>Size of checkout button</li>
+
+<li>Strength of checkout wording</li>
+
+<li>Media</li>
+
+<li>&#8220;Top of Funnel&#8221;</li>
+
+<li>Menu - Text, ordering of options</li>
+
+<li>Search Box - Size, location and text</li>
+
+<li>Navigation - Default to screen vs. different customizations &#8220;Create a Station&#8221; or &#8220;My Stations&#8221;</li>
+
+<li>&#8220;Mid-Funnel&#8221;</li>
+
+<li>Thumbnails - Navigation - Table view vs. list view</li>
+
+<li>Thumbnails - Navigation - Size and location of Thumbnail</li>
+
+<li>Text - Length of the description, does more text remove the need to watch the video or read the article?</li>
+
+<li>&#8220;Bottom of Funnel&#8221;</li>
+
+<li>More text less less handlines</li>
+
+<li>Ratings</li>
+
+<li>Share/invite</li>
+
+<li>Search and Review / Utility Apps</li>
+
+<li>&#8220;Top of Funnel&#8221;</li>
+
+<li>Search Bar - size, text, location</li>
+
+<li>Settings - Color button, CTA, size of button, location of button</li>
+
+<li>Home screen - Lists, map or images (size, quality, quantity)</li>
+
+<li>&#8220;Mid-Funnel&#8221;</li>
+
+<li>Menu - Options - number of things you can do, ordering, text</li>
+
+<li>Search results list view vs. on map vs. trying another search</li>
+
+<li>Favorites or Most Popular - Button sizes, text, color and location</li>
+
+<li>Different Filters - Brand, proximity, price</li>
+
+<li>&#8220;Bottom of Funnel&#8221;</li>
+
+<li>CTA - Text vs. Button &#8220;Call Now&#8221;</li>
+
+<li>Navigation - Task completion (rate) vs. backing out</li>
+
+<li>Different Payment Option - ordering, count, size, text</li>
+</ul>
+    </article>
+  </div>
+</div>
+</body>
+</html>

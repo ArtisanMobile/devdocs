@@ -4,6 +4,7 @@ $kulturista: "kulturista-web", rockwell, georgia, "times new roman", serif;
 $base-font-size: 14px;
 
 @import 'bourbon/bourbon';
+@import 'neat/neat';
 @import 'palette';
 @import 'syntax';
 
@@ -16,68 +17,122 @@ body {
   font-size: $base-font-size;
 }
 
-h1 {
-  color: $red;
-  font-size: 1.5rem;
-  font-weight: 300;
-}
-
-h2 { font-size: 1.25rem; }
-
-h3 { font-size: 1rem; }
-
-#content-wrapper {
-  margin: 40px;
-}
-
-.note {
-  background-color: $super-light-gray;
-  border-bottom: solid 1px #dadada;
-  border-top: solid 1px #dadada;
-  margin-bottom: 1em;
-  padding: 20px;
-  position: relative;
+.page-content-container {
+  @include outer-container;
   
-  .note-type {
-    display: block;
-    font-size: .80rem;
-    padding: 0 40px 10px 30px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    text-transform: uppercase;
-  }
+  min-width: 952px;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
   
-  p {
-    &:first-of-type {
-      margin-top: 0;
-    }
+  nav {
+    @include span-columns(4);
     
-    &:last-of-type {
-      margin-bottom: 0;
+    dl {
+      line-height: 1.5em;
+      margin: 0;
+      
+      dt, dd { margin: 0; }
+      
+      dt {
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin-bottom: .5em;
+        margin-top: 1em;
+        
+        &:first-child { margin-top: 0; }
+        
+        a {
+          color: $dark-gray;
+          text-decoration: none;
+        }
+      }
+      
+      dd {
+
+      }
+      
+      a {
+        color: $blue;
+        text-decoration: none;
+      }
     }
   }
   
-  &.note-important {
-    background-color: #ffeae6;
-    border-color: $light-red;
-  }
+  #content-wrapper {
+    @include span-columns(8);
+    
+    article {
+      h1 {
+        color: $red;
+        font-size: 1.75rem;
+        font-weight: 300;
+        
+        &:first-child { margin-top: 0; }
+      }
+
+      h2 { font-size: 1.25rem; }
+
+      h3 {
+        color: $light-red;
+        font-size: 1rem;
+        font-weight: 300;
+      }
+      
+      p, ul {
+        line-height: 1.5em;
+      }
+      
+      .note {
+        background-color: $super-light-gray;
+        border-bottom: solid 1px #dadada;
+        border-top: solid 1px #dadada;
+        margin-bottom: 1em;
+        padding: 20px;
+        position: relative;
   
-  &.note-hint {
-    background-color: #fff5d6;
-    border-color: $yellow;
-  }
-}
+        .note-type {
+          display: block;
+          font-size: .80rem;
+          padding: 0 40px 10px 30px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          text-transform: uppercase;
+        }
+  
+        p {
+          &:first-of-type {
+            margin-top: 0;
+          }
+    
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+  
+        &.note-important {
+          background-color: #ffeae6;
+          border-color: $light-red;
+        }
+  
+        &.note-hint {
+          background-color: #fff5d6;
+          border-color: $yellow;
+        }
+      }
 
-pre {
-  background-color: $super-light-gray;
-  border: solid 1px #dadada;
-  overflow: auto;
-  padding: 15px;
-  white-space: nowrap;
-  word-wrap: normal;
+      pre {
+        background-color: $super-light-gray;
+        border: solid 1px #dadada;
+        overflow: auto;
+        padding: 15px;
+        white-space: nowrap;
+        word-wrap: normal;
 
-  code {
-    white-space: pre;
+        code {
+          white-space: pre;
+        }
+      }
+    }
   }
 }

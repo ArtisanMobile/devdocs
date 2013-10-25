@@ -1,8 +1,9 @@
 ---
-layout: docs
+layout: docs-landing
 title: "Artisan User Guide"
 author: "Artisan"
 description: "Getting started with the Artisan MEM platform for developers."
+nav: "user-guide"
 ---
 #Artisan Quickstart Guide
 
