@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: "Quickstart for Developers"
+title: "Quickstart for iOS"
 author: "Artisan"
 category: dev
 description: "Getting started with the Artisan MEM platform for developers."
 ---
-#Artisan Quickstart Guide
+#Artisan Quickstart Guide for iOS
 
 ##Install SDK
 
