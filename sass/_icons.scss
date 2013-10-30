@@ -1,0 +1,126 @@
+@font-face {
+	font-family: 'artisan-ui';
+	src:url('/fonts/artisan-ui.eot?smg5h8');
+	src:url('/fonts/artisan-ui.eot?#iefixsmg5h8') format('embedded-opentype'),
+		url('/fonts/artisan-ui.ttf?smg5h8') format('truetype'),
+		url('/fonts/artisan-ui.woff?smg5h8') format('woff'),
+		url('/fonts/artisan-ui.svg?smg5h8#artisan-ui') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class*="icon-"]:before {
+	font-family: 'artisan-ui';
+  display: inline-block;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	//line-height: 1;
+  //vertical-align: middle;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bubble:before {
+	content: "\e600";
+}
+.icon-power-cord:before {
+	content: "\e601";
+}
+.icon-support:before {
+	content: "\e602";
+}
+.icon-user:before {
+	content: "\e603";
+}
+.icon-switch:before {
+	content: "\e605";
+}
+.icon-play:before {
+	content: "\e606";
+}
+.icon-stop-alt:before {
+	content: "\e607";
+}
+.icon-info:before {
+	content: "\e604";
+}
+.icon-arrow-down:before {
+	content: "\e61d";
+}
+.icon-cog:before {
+	content: "\e608";
+}
+.icon-drawer-empty:before {
+	content: "\e61f";
+}
+.icon-drawer:before {
+	content: "\e620";
+}
+.icon-sitemap:before {
+	content: "\e609";
+}
+.icon-circle-blank:before {
+	content: "\e60a";
+}
+.icon-circle:before {
+	content: "\e60b";
+}
+.icon-stop:before {
+	content: "\e60c";
+}
+.icon-published-alt:before {
+	content: "\e60d";
+}
+.icon-platform:before {
+	content: "\e60e";
+}
+.icon-personalize:before {
+	content: "\e60f";
+}
+.icon-optimize:before {
+	content: "\e610";
+}
+.icon-goals:before {
+	content: "\e611";
+}
+.icon-experiment-in-progress:before {
+	content: "\e612";
+}
+.icon-edit:before {
+	content: "\e613";
+}
+.icon-draft-alt:before {
+	content: "\e614";
+}
+.icon-dashboard:before {
+	content: "\e615";
+}
+.icon-check-alt:before {
+	content: "\e616";
+}
+.icon-check-mark:before {
+	content: "\e617";
+}
+.icon-analyze:before {
+	content: "\e618";
+}
+.icon-add:before {
+	content: "\e619";
+}
+.icon-code:before {
+	content: "\e61a";
+}
+.icon-arrow-left:before {
+	content: "\e61b";
+}
+.icon-arrow-right:before {
+	content: "\e61c";
+}
+.icon-cross:before {
+	content: "\e61e";
+}
