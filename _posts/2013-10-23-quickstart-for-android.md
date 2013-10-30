@@ -7,8 +7,6 @@ description: "Getting started with the Artisan MEM platform for developers."
 ---
 #Artisan Quickstart Guide for Android
 
-Thanks for signing up and welcome to Artisan! Before you can start analyzing, personalizing, optimizing, and modifying your app you'll need to install the Artisan SDK. Installing the SDK requires technical knowledge of your app, so if you aren't familiar with the inner workings of your app you can forward this information to your development team.
-
 ##Prerequisites
 1\. Eclipse with Android SDK (At a minimum ensure you have support for Android 2.3.3 and build against the latest Android SDK)
 
