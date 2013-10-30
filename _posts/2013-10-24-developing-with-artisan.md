@@ -1,104 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Developing with Artisan</title>
-	
-	<meta http-equiv="imagetoolbar" content="false">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<meta name="author" content="Artisan Mobile" />
-  <meta name="description" content="Getting started with the Artisan MEM platform for developers." />
-	<meta name="keywords" content="" />
-
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:url" content="http://dev.useartisan.com" />
-	<meta name="twitter:title" content="Developing with Artisan" />
-	<meta name="twitter:description" content="Getting started with the Artisan MEM platform for developers." />
-	<meta name="twitter:site" content="@artisanmobile" />
-	<meta name="twitter:image" content="http://dev.useartisan.com/images/twitter-card-image.png" />
-
-	<meta property="og:site_name" content="Artisan Developers" />
-	<meta property="og:title" content="Developing with Artisan" />
-	<meta property="og:type" content="article" />
-	<meta property="og:article:author" content="Kevin M. Jackson" />
-	<meta property="og:url" content="http://dev.useartisan.com" />
-	
-  <script type="text/javascript" src="//use.typekit.net/zqm4dpz.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-  
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/base-min.css">
-  <link rel="stylesheet" href="/docs.css" type="text/css" media="screen" charset="utf-8">
-</head>
-<body>
-<div class="page-content-container">
-  <nav>
-    <dl id="doc-navigation">
-  <dt><a href="/user-guide">Getting Started Guide</a></dt>
-  
-    <dd>
-      <a href="/user-guide/analyze/index.html">Analyze</a>
-    </dd>
-  
-    <dd>
-      <a href="/user-guide/app-map/index.html">App Map</a>
-    </dd>
-  
-    <dd>
-      <a href="/user-guide/design-canvas/index.html">Design Canvas</a>
-    </dd>
-  
-    <dd>
-      <a href="/user-guide/goals/index.html">Goals</a>
-    </dd>
-  
-    <dd>
-      <a href="/user-guide/instant-publishing/index.html">Instant Publishing</a>
-    </dd>
-  
-    <dd>
-      <a href="/user-guide/notifications/index.html">Notifications</a>
-    </dd>
-  
-    <dd>
-      <a href="/user-guide/optimize/index.html">Optimize</a>
-    </dd>
-  
-    <dd>
-      <a href="/user-guide/personalize/index.html">Personalize</a>
-    </dd>
-  
-    <dd>
-      <a href="/user-guide/tagging/index.html">Tagging</a>
-    </dd>
-  
-
-  <dt>Developers</dt>
-  
-    <dd>
-      <a href="/dev/getting-started/index.html">Quickstart for iOS</a>
-    </dd>
-  
-    <dd>
-      <a href="/dev/developing-with-artisan/index.html">Developing with Artisan</a>
-    </dd>
-  
-  
-  <dt>Best Practices</dt>
-  
-    <dd>
-      <a href="/best-practices/getting-started-with-ab-testing/index.html">A/B Testing</a>
-    </dd>
-  
-</dl>
-  </nav>
-  <div id="content-wrapper">
-    <article>
-      <h1 id='developing_with_artisan'>Developing with Artisan</h1>
+---
+layout: docs
+title: "Developing with Artisan"
+author: "Artisan"
+category: dev
+description: "Getting started with the Artisan MEM platform for developers."
+---
+#Developing with Artisan
 <table>
   <colgroup>
-    <col width='20%' />
-    <col width='40%' />
-    <col width='40%' />
+    <col width="20%" />
+    <col width="40%" />
+    <col width="40%" />
   </colgroup>
   <thead>
     <tr>
@@ -175,19 +87,11 @@
     </tr>
   </tbody>
 </table>
-<h2 id='known_sdk_compatibility_issues'>Known SDK Compatibility Issues</h2>
+##Known SDK Compatibility Issues
+###iOS
+No known issues.
 
-<h3 id='ios'>iOS</h3>
 
-<p>No known issues.</p>
+###Android
 
-<h3 id='android'>Android</h3>
-
-<ul>
-<li>IIViewDeck SDK</li>
-</ul>
-    </article>
-  </div>
-</div>
-</body>
-</html>
+* IIViewDeck SDK
