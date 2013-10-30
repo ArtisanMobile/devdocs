@@ -67,7 +67,11 @@ Manual installation of the Artisan Android SDK includes three steps:
 
 8\. Make your Activity lifecycle methods public. In order to instrument your application Artisan needs any onCreate, onResume, onPause and onDestroy methods that you have implemented in your app as well as any methods in your activities that are callbacks for clicks or other events (generally, any method that takes a View as a parameter) to be public. The default for the lifecycle methods is protected, which we are not able to instrument. If you skip this step Artisan will not work properly and you may experience errors and unpredictable behavior.
 
+<<<<<<< Updated upstream:_drafts/2013-10-23-quickstart-for-android.md
 ###Setting up the Artisan service
+=======
+####Setting up the Artisan service
+>>>>>>> Stashed changes:_posts/2013-10-23-quickstart-for-android.md
 In order for Artisan to run within your app, the Artisan service has to be started. To do this, we will create a subclass of 'ArtisanService' and add a declaration in the manifest which points to this service.
 
 1\. Create a class called 'CustomArtisanService' inside one of your source packages. This class needs to extend com.artisan.services.ArtisanService. If you would like to call it something else, you must edit the value of the 'artisan_service_name' string resource in 'res/values/artisan_ids.xml' to match the your custom class name.
@@ -103,7 +107,11 @@ You will also need to add the following permissions to your AndroidManifest.xml 
 {% endhighlight %}
 
 
+<<<<<<< Updated upstream:_drafts/2013-10-23-quickstart-for-android.md
 ###Configuring the Artisan build script
+=======
+####Configuring the Artisan build script
+>>>>>>> Stashed changes:_posts/2013-10-23-quickstart-for-android.md
 
 Artisan generates AspectJ files alongside your code. These files live inside the 'gen/' folder, next to your other generated code, such as R.java. It is very important that these files get generated or Aritsan will not run in your application.
 
