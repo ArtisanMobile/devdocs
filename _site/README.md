@@ -1,4 +1,0 @@
-devdocs
-=======
-
-Artisan Developers Site
