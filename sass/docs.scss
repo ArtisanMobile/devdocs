@@ -6,6 +6,7 @@ $base-font-size: 14px;
 @import 'bourbon/bourbon';
 @import 'neat/neat';
 @import 'palette';
+@import 'icons';
 @import 'syntax';
 
 * { @include box-sizing(border-box); }
@@ -17,6 +18,22 @@ body {
   font-size: $base-font-size;
 }
 
+#apps-list {
+  [class*="icon-"] {
+    display: inline-block;
+    font-size: 1.10rem;
+    line-height: 1.5em;
+    vertical-align: middle;
+    
+    &:before {
+      display: inline-block;
+      line-height: 1.5em;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+  }
+}
+
 .page-content-container {
   @include outer-container;
   
@@ -25,7 +42,7 @@ body {
   padding-top: 2rem;
   
   nav {
-    @include span-columns(4);
+    @include span-columns(3);
     
     dl {
       line-height: 1.5em;
@@ -59,7 +76,7 @@ body {
   }
   
   #content-wrapper {
-    @include span-columns(8);
+    @include span-columns(9);
     
     article {
       h1 {
@@ -118,6 +135,34 @@ body {
         &.note-hint {
           background-color: #fff5d6;
           border-color: $yellow;
+        }
+      }
+
+      table {
+        width: 100%;
+        
+        thead {
+          th {
+            background-color: $light-gray;
+            color: $dark-gray;
+            font-size: 1.10rem;
+            font-weight: 300;
+            padding: 10px;
+            text-align: left;
+          }
+        }
+        
+        tbody {    
+          td, th {
+            border-bottom: solid 1px #dadada;
+            padding: 10px;
+            vertical-align: top;
+          }
+          
+          th {
+            text-align: left;
+            
+          }
         }
       }
 
