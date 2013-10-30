@@ -21,57 +21,75 @@ description: "Getting started with the Artisan MEM platform for developers."
 * Accept the licenses and click "Finish"
 * You may be prompted to restart Eclipse after this installation is complete.
 
-3\. Download the Artisan Android SDK
-
 <div class="note note-important">
-  <p>Important: the Artisan Android SDK is not compatible with ProGuard. Unexpected behaviour may occur if you install Artisan into an app built with ProGuard.</p>
+  <p>Important: the Artisan Android SDK is not compatible with ProGuard. Unexpected behavior may occur if you install Artisan into an app built with ProGuard.</p>
 </div>
 
-##Adding the Artisan SDK
-Manual installation of the Artisan Android SDK includes three steps:
+##Adding Artisan to Your App
 
-1\. Updating your Eclipse project
+###Option 1: Automatically Instrumenting your App with Artisan
 
-2\. Setting up the Artisan Service
+Artisan comes bundled with an installer that will configure Eclipse and add the necessary files to your source root. It will also edit your AndroidManifest.xml to point to the CustomArtisanService that is needed to instrument your Artisan application. For most cases, we recommend using the installer, but if you prefer to configure the project yourself, please skip forward to the next section.
 
-3\. Configuring the Artisan Builder to generate the Artisan AspectJ files
+1\. Download the Install Wizard - You can download the Install Wizard by clicking on your App's Settings icon and click the Download SDK link
 
-###Eclipse Project configuration
+2\. Extract the contents of YOUR_APP_NAME-ArtisanInstaller.zip into your project's root directory.
 
-1\. Unzip the contents of 'artisan-x.x.x.zip' into a folder in the root of your project directory.
+3\. In a terminal, go to the artisan directory inside your project's root directory and run:
 
-2\. Copy the files from the 'artisan/Support' folder into your project's libs directory. You might need to create this folder in the project's root directory if it does not already exist.
+* install.bat (on Windows)
+* sh install.sh (on Mac/OSX or linux)
 
-3\. Copy all Android resources from 'artisan/androidResources/res' to your project's 'res' directory. Be sure to keep the subfolder structure intact.
+This will update your manifest file, add the required libraries and create the CustomArtisanService class, if one doesn't exist already. It will also configure an Eclipse 'Builder' that will regenerate necessary AspectJ declarations for your Activities after every build. See "Configuring the Artisan build script" below for more information.
 
-4\. Copy all Android resources from 'artisan/androidResources/assets' to your project's 'assets' directory.
+If there are any settings in your application's manifest that are not compatible with Artisan you will be notified and the installer will not complete. For example, you must specify a minimum Android SDK of 2.3.3 or higher. Change the specified settings and run the Artisan installer again.
 
-5\. Add the AspectJ nature to the Eclipse project:
+4\. Installation is now complete. You'll need to refresh the project in Eclipse so that the newly added files are pulled into the project. Right click on your project and choose "Refresh".
+
+Congratulations! You are now ready to start using Artisan!
+
+Now that the SDK is installed in your app we need to connect it to Artisan. Connecting your app verifies that the SDK has been installed correctly and that #{@app.name} can communicate with the Artisan platform.
+
+###Option 2: Manually Adding the Artisan SDK to #{@app.name}
+
+If you prefer to manually install Artisan, follow the steps outlined in the rest of this document, including: updating your Eclipse project, setting up the Artisan Service, and configuring the Artisan Builder to generate the Artisan AspectJ files.
+
+####Eclipse Project configuration
+
+1\. Download the Artisan Android SDK - You can download the SDK by clicking on your App's Settings icon and click the Download SDK link
+
+2\. Extract the contents of the SDK .zip file into your project's root directory.
+
+3\. Copy the files from the 'artisan/Support' folder into your project's libs directory. You might need to create this folder in the project's root directory if it does not already exist.
+
+4\. Copy all Android resources from 'artisan/androidResources/res' to your project's 'res' directory. Be sure to keep the subfolder structure intact.
+
+5\. Copy all Android resources from 'artisan/androidResources/assets' to your project's 'assets' directory.
+
+6\. Add the AspectJ nature to the Eclipse project:
 
 * Open Eclipse. Right-click on your project in the Project Explorer and choose "Configure -> Convert to AspectJ Project".
 * If Eclipse prompts you whether to include AspectJ files on the build path, select "yes".
 
-6\. Add the artisan library to the build path:
+7\. Add the artisan library to the build path:
+
 
 * Right click on your project in the Project Explorer and choose "Properties".
 * In the list on the left, click on "AspectJ build".
 * Make sure that the "Inpath" tab is selected.
 * If the artisan_library_4.jar is not already on the inpath, click "Add jars" and locate the artisan/artisan_library/artisan_library_4.jar in your project folder and add it to your inpath.
 
-7\. Export the AspectJ Runtime Library
-
+8\. Export the AspectJ Runtime Library
+  
 * Right click on your project in the Project Explorer and choose "Properties".
 * In the list on the left, click on "Java Build Path".
 * Make sure that the "Order and Export" tab is selected.
 * If the "AspectJ Runtime Library" is not already selected, check it and press OK.
 
-8\. Make your Activity lifecycle methods public. In order to instrument your application Artisan needs any onCreate, onResume, onPause and onDestroy methods that you have implemented in your app as well as any methods in your activities that are callbacks for clicks or other events (generally, any method that takes a View as a parameter) to be public. The default for the lifecycle methods is protected, which we are not able to instrument. If you skip this step Artisan will not work properly and you may experience errors and unpredictable behavior.
+9\. Make your Activity lifecycle methods public. In order to instrument your application Artisan needs any onCreate, onResume, onPause and onDestroy methods that you have implemented in your app to be public. The default for the lifecycle methods is protected, which we are not able to instrument. If you skip this step Artisan will not work properly and you may experience errors and unpredictable behavior.
 
-<<<<<<< Updated upstream:_drafts/2013-10-23-quickstart-for-android.md
-###Setting up the Artisan service
-=======
 ####Setting up the Artisan service
->>>>>>> Stashed changes:_posts/2013-10-23-quickstart-for-android.md
+
 In order for Artisan to run within your app, the Artisan service has to be started. To do this, we will create a subclass of 'ArtisanService' and add a declaration in the manifest which points to this service.
 
 1\. Create a class called 'CustomArtisanService' inside one of your source packages. This class needs to extend com.artisan.services.ArtisanService. If you would like to call it something else, you must edit the value of the 'artisan_service_name' string resource in 'res/values/artisan_ids.xml' to match the your custom class name.
@@ -106,14 +124,9 @@ You will also need to add the following permissions to your AndroidManifest.xml 
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 {% endhighlight %}
 
-
-<<<<<<< Updated upstream:_drafts/2013-10-23-quickstart-for-android.md
-###Configuring the Artisan build script
-=======
 ####Configuring the Artisan build script
->>>>>>> Stashed changes:_posts/2013-10-23-quickstart-for-android.md
 
-Artisan generates AspectJ files alongside your code. These files live inside the 'gen/' folder, next to your other generated code, such as R.java. It is very important that these files get generated or Aritsan will not run in your application.
+Artisan generates AspectJ files alongside your code. These files live inside the 'gen/' folder, next to your other generated code, such as R.java. It is very important that these files get generated or Artisan will not run in your application.
 
 You can regenerate these files at any time by running the installer script with the '--aspectonly' flag.
 
