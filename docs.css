@@ -397,111 +397,114 @@ body {
     margin-right: 10px;
     vertical-align: middle; }
 
-.page-content-container {
-  *zoom: 1;
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto;
-  min-width: 952px;
-  padding-bottom: 2rem;
-  padding-top: 2rem; }
-  .page-content-container:before, .page-content-container:after {
-    content: " ";
-    display: table; }
-  .page-content-container:after {
-    clear: both; }
-  .page-content-container nav {
-    display: block;
-    float: left;
-    margin-right: 2.35765%;
-    width: 23.23176%; }
-    .page-content-container nav:last-child {
-      margin-right: 0; }
-    .page-content-container nav dl {
-      line-height: 1.5em;
+.page-content-container nav {
+  background-color: #f6f6f6;
+  position: relative;
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out; }
+  .page-content-container nav.navtab-open {
+    padding: 1.5rem 0;
+    -webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out; }
+  .page-content-container nav dl {
+    display: none;
+    line-height: 1.5em;
+    max-height: 350px;
+    margin: 0;
+    overflow-y: auto;
+    padding: 0 1.5rem; }
+    .page-content-container nav dl dt, .page-content-container nav dl dd {
       margin: 0; }
-      .page-content-container nav dl dt, .page-content-container nav dl dd {
-        margin: 0; }
-      .page-content-container nav dl dt {
-        font-size: 1.15rem;
-        font-weight: 600;
-        margin-bottom: .5em;
-        margin-top: 1em; }
-        .page-content-container nav dl dt:first-child {
-          margin-top: 0; }
-        .page-content-container nav dl dt a {
-          color: #383838;
-          text-decoration: none; }
-      .page-content-container nav dl a {
-        color: #557ebf;
-        text-decoration: none; }
-  .page-content-container #content-wrapper {
-    display: block;
-    float: left;
-    margin-right: 2.35765%;
-    width: 74.41059%; }
-    .page-content-container #content-wrapper:last-child {
-      margin-right: 0; }
-    .page-content-container #content-wrapper article h1 {
-      color: #f04123;
-      font-size: 1.75rem;
-      font-weight: 300; }
-      .page-content-container #content-wrapper article h1:first-child {
+    .page-content-container nav dl dt {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: .5em;
+      margin-top: 1em; }
+      .page-content-container nav dl dt:first-child {
         margin-top: 0; }
-    .page-content-container #content-wrapper article h2 {
-      font-size: 1.25rem; }
-    .page-content-container #content-wrapper article h3 {
-      color: #f3674f;
-      font-size: 1rem;
-      font-weight: 300; }
-    .page-content-container #content-wrapper article p, .page-content-container #content-wrapper article ul {
-      line-height: 1.5em; }
-    .page-content-container #content-wrapper article .note {
-      background-color: #f6f6f6;
-      border-bottom: solid 1px #dadada;
-      border-top: solid 1px #dadada;
-      margin-bottom: 1em;
-      padding: 20px;
-      position: relative; }
-      .page-content-container #content-wrapper article .note .note-type {
-        display: block;
-        font-size: .80rem;
-        padding: 0 40px 10px 30px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        text-transform: uppercase; }
-      .page-content-container #content-wrapper article .note p:first-of-type {
-        margin-top: 0; }
-      .page-content-container #content-wrapper article .note p:last-of-type {
-        margin-bottom: 0; }
-      .page-content-container #content-wrapper article .note.note-important {
-        background-color: #ffeae6;
-        border-color: #f3674f; }
-      .page-content-container #content-wrapper article .note.note-hint {
-        background-color: #fff5d6;
-        border-color: #fbcc43; }
-    .page-content-container #content-wrapper article table {
-      width: 100%; }
-      .page-content-container #content-wrapper article table thead th {
-        background-color: #e0e0e0;
+      .page-content-container nav dl dt a {
         color: #383838;
-        font-size: 1.10rem;
-        font-weight: 300;
-        padding: 10px;
-        text-align: left; }
-      .page-content-container #content-wrapper article table tbody td, .page-content-container #content-wrapper article table tbody th {
-        border-bottom: solid 1px #dadada;
-        padding: 10px;
-        vertical-align: top; }
-      .page-content-container #content-wrapper article table tbody th {
-        text-align: left; }
-    .page-content-container #content-wrapper article pre {
-      background-color: #f6f6f6;
-      border: solid 1px #dadada;
-      overflow: auto;
-      padding: 15px;
-      white-space: nowrap;
-      word-wrap: normal; }
-      .page-content-container #content-wrapper article pre code {
-        white-space: pre; }
+        text-decoration: none; }
+    .page-content-container nav dl a {
+      color: #557ebf;
+      text-decoration: none; }
+  .page-content-container nav #navtab {
+    background-color: #f6f6f6;
+    border-bottom-left-radius: 3px;
+    bottom: -2.5rem;
+    color: #555;
+    display: block;
+    font-size: .90em;
+    line-height: 1.5rem;
+    padding: .5rem 2em;
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    text-transform: uppercase; }
+.page-content-container #content-wrapper {
+  padding: 3.5rem 2rem 2rem; }
+  .page-content-container #content-wrapper article h1 {
+    color: #f04123;
+    font-size: 1.75rem;
+    font-weight: 300; }
+    .page-content-container #content-wrapper article h1:first-child {
+      margin-top: 0; }
+  .page-content-container #content-wrapper article h2 {
+    font-size: 1.25rem; }
+  .page-content-container #content-wrapper article h3 {
+    color: #f3674f;
+    font-size: 1rem;
+    font-weight: 300; }
+  .page-content-container #content-wrapper article p, .page-content-container #content-wrapper article ul {
+    line-height: 1.5em; }
+  .page-content-container #content-wrapper article .note {
+    background-color: #f6f6f6;
+    border-bottom: solid 1px #dadada;
+    border-top: solid 1px #dadada;
+    margin-bottom: 1em;
+    padding: 20px;
+    position: relative; }
+    .page-content-container #content-wrapper article .note .note-type {
+      display: block;
+      font-size: .80rem;
+      padding: 0 40px 10px 30px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-transform: uppercase; }
+    .page-content-container #content-wrapper article .note p:first-of-type {
+      margin-top: 0; }
+    .page-content-container #content-wrapper article .note p:last-of-type {
+      margin-bottom: 0; }
+    .page-content-container #content-wrapper article .note.note-important {
+      background-color: #ffeae6;
+      border-color: #f3674f; }
+    .page-content-container #content-wrapper article .note.note-hint {
+      background-color: #fff5d6;
+      border-color: #fbcc43; }
+  .page-content-container #content-wrapper article table {
+    width: 100%; }
+    .page-content-container #content-wrapper article table thead th {
+      background-color: #e0e0e0;
+      color: #383838;
+      font-size: 1.10rem;
+      font-weight: 300;
+      padding: 10px;
+      text-align: left; }
+    .page-content-container #content-wrapper article table tbody td, .page-content-container #content-wrapper article table tbody th {
+      border-bottom: solid 1px #dadada;
+      padding: 10px;
+      vertical-align: top; }
+    .page-content-container #content-wrapper article table tbody th {
+      text-align: left; }
+  .page-content-container #content-wrapper article pre {
+    background-color: #f6f6f6;
+    border: solid 1px #dadada;
+    overflow: auto;
+    padding: 15px;
+    white-space: nowrap;
+    word-wrap: normal; }
+    .page-content-container #content-wrapper article pre code {
+      white-space: pre; }
