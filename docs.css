@@ -397,6 +397,29 @@ body {
     margin-right: 10px;
     vertical-align: middle; }
 
+header {
+  display: none; }
+  @media screen and (min-width: 769px) {
+    header {
+      background-color: #212121;
+      color: #fff;
+      display: block;
+      line-height: 25px;
+      padding: .75rem 1.5rem; }
+      header h1 {
+        display: inline-block;
+        margin: 0; }
+        header h1 a {
+          background-image: url("/images/artisan-logo-278x50-white.png");
+          background-position: 0 0;
+          background-repeat: no-repeat;
+          background-size: 139px 25px;
+          display: inline-block;
+          height: 25px;
+          overflow: hidden;
+          text-indent: -30000px;
+          width: 139px; } }
+
 .page-content-container nav {
   background-color: #f6f6f6;
   position: relative;
@@ -410,7 +433,7 @@ body {
     transition: all 0.15s ease-in-out; }
   .page-content-container nav dl {
     display: none;
-    line-height: 1.5em;
+    line-height: 2em;
     max-height: 350px;
     margin: 0;
     overflow-y: auto;
@@ -443,8 +466,39 @@ body {
     right: 0;
     text-decoration: none;
     text-transform: uppercase; }
+  @media screen and (min-width: 769px) {
+    .page-content-container nav {
+      display: block;
+      float: left;
+      margin-right: 2.35765%;
+      width: 23.23176%;
+      background-color: #fff;
+      padding: 2rem 0; }
+      .page-content-container nav:last-child {
+        margin-right: 0; }
+      .page-content-container nav dl {
+        display: block;
+        line-height: 1.5em;
+        overflow: visible; }
+      .page-content-container nav #navtab {
+        display: none; } }
 .page-content-container #content-wrapper {
   padding: 3.5rem 2rem 2rem; }
+  .page-content-container #content-wrapper header h1 {
+    margin: 0 0 2rem; }
+    .page-content-container #content-wrapper header h1 a {
+      background-image: url("/images/artisan-logo-278x50.png");
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: 139px 25px;
+      display: inline-block;
+      height: 25px;
+      overflow: hidden;
+      text-indent: -30000px;
+      width: 139px; }
+  @media screen and (min-width: 769px) {
+    .page-content-container #content-wrapper header {
+      display: none; } }
   .page-content-container #content-wrapper article h1 {
     color: #f04123;
     font-size: 1.75rem;
@@ -508,3 +562,12 @@ body {
     word-wrap: normal; }
     .page-content-container #content-wrapper article pre code {
       white-space: pre; }
+  @media screen and (min-width: 769px) {
+    .page-content-container #content-wrapper {
+      display: block;
+      float: left;
+      margin-right: 2.35765%;
+      width: 74.41059%;
+      padding: 2rem; }
+      .page-content-container #content-wrapper:last-child {
+        margin-right: 0; } }
