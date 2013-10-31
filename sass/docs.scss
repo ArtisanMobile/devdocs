@@ -34,8 +34,37 @@ body {
   }
 }
 
-.page-content-container {
 
+header {
+  display: none;
+
+  @include media(min-width 769px, 12) {
+    background-color: $black;
+    color: #fff;
+    display: block;
+    line-height: 25px;
+    padding: .75rem 1.5rem;
+  
+    h1 {
+      display: inline-block;
+      margin: 0;
+    
+      a {
+        background-image: url('/images/artisan-logo-278x50-white.png');
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: 139px 25px;
+        display: inline-block;
+        height: 25px;
+        overflow: hidden;
+        text-indent: -30000px;
+        width: 139px;
+      }
+    }
+  }
+}
+
+.page-content-container {
   nav {
     background-color: $super-light-gray;
     position: relative;
@@ -48,7 +77,7 @@ body {
     
     dl {
       display: none;
-      line-height: 1.5em;
+      line-height: 2em;
       max-height: 350px;
       margin: 0;
       overflow-y: auto;
@@ -94,11 +123,47 @@ body {
       text-decoration: none;
       text-transform: uppercase;
     }
+    
+    @include media(min-width 769px, 12) {
+      @include span-columns(3);
+      
+      background-color: #fff;
+      padding: 2rem 0;
+      
+      dl {
+        display: block;
+        line-height: 1.5em;
+        overflow: visible;
+      }
+      
+      #navtab { display: none; }
+    }
   }
   
   #content-wrapper {
-    //@include span-columns(9);
     padding: 3.5rem 2rem 2rem;
+    
+    header {
+      h1 {
+        margin: 0 0 2rem;
+        
+        a {
+          background-image: url('/images/artisan-logo-278x50.png');
+          background-position: 0 0;
+          background-repeat: no-repeat;
+          background-size: 139px 25px;
+          display: inline-block;
+          height: 25px;
+          overflow: hidden;
+          text-indent: -30000px;
+          width: 139px;
+        }
+      }
+      
+      @include media(min-width 769px, 12) {
+        display: none;
+      }
+    }
     
     article {
       h1 {
@@ -201,5 +266,14 @@ body {
         }
       }
     }
+    
+    @include media(min-width 769px, 12) {
+      @include span-columns(9);
+      
+      padding: 2rem;
+    }
+  }
+  
+  @include media(min-width 769px, 12) {
   }
 }
