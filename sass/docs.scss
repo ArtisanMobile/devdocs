@@ -35,18 +35,24 @@ body {
 }
 
 .page-content-container {
-  @include outer-container;
-  
-  min-width: 952px;
-  padding-bottom: 2rem;
-  padding-top: 2rem;
-  
+
   nav {
-    @include span-columns(3);
+    background-color: $super-light-gray;
+    position: relative;
+    @include transition (all .15s ease-in-out);
+    
+    &.navtab-open {
+      padding: 1.5rem 0;
+      @include transition (all .15s ease-in-out);
+    }
     
     dl {
+      display: none;
       line-height: 1.5em;
+      max-height: 350px;
       margin: 0;
+      overflow-y: auto;
+      padding: 0 1.5rem;
       
       dt, dd { margin: 0; }
       
@@ -73,10 +79,26 @@ body {
         text-decoration: none;
       }
     }
+    
+    #navtab {
+      background-color: $super-light-gray;
+      border-bottom-left-radius: 3px;
+      bottom: -2.5rem;
+      color: #555;
+      display: block;
+      font-size: .90em;
+      line-height: 1.5rem;
+      padding: .5rem 2em;
+      position: absolute;
+      right: 0;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
   }
   
   #content-wrapper {
-    @include span-columns(9);
+    //@include span-columns(9);
+    padding: 3.5rem 2rem 2rem;
     
     article {
       h1 {
