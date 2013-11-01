@@ -89,9 +89,9 @@ description: "Getting started with the Artisan MEM platform for developers."
 </table>
 ##Known SDK Compatibility Issues
 ###iOS
-No known issues.
+
+* IIViewDeck SDK
 
 
 ###Android
-
-* IIViewDeck SDK
+No known issues.

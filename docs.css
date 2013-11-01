@@ -511,6 +511,8 @@ header {
     color: #f3674f;
     font-size: 1rem;
     font-weight: 300; }
+  .page-content-container #content-wrapper article a {
+    color: #557ebf; }
   .page-content-container #content-wrapper article p, .page-content-container #content-wrapper article ul {
     line-height: 1.5em; }
   .page-content-container #content-wrapper article .note {

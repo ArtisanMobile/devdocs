@@ -61,14 +61,14 @@ For any that aren\'t included, select the \'+\' icon in the lower-left corner of
   <p>Important: The ArtisanSDK import line should be included in your App .pch file or at the top of each class where you reference the Artisan SDK.</p>
 </div>
 
-9\. Add the following line to the bottom of the didFinishLaunchingWithOptions: method of the AppDelegate.
+9\. Add the following line to the bottom of the **didFinishLaunchingWithOptions:** method of the AppDelegate.
 
 {% highlight objective-c %}
 [ARManager startWithAppId:@"YOURAPPID"];
 {% endhighlight %}
 
 <div class="note note-important">
-  <p>Important: Make sure to fill in the parameter startWithAppId with your AppID, provided by us. You can find your AppID either in the url of your application page, or in the settings sections of your application.</p>
+  <p>Important: Make sure to fill in the parameter **startWithAppId** with your AppID, provided by us. You can find your AppID either in the url of your application page, or in the settings sections of your application.</p>
 </div>
 
 10\. Build your app as normal.
@@ -79,7 +79,7 @@ You should now be able to build your app and successfully connect it to artisant
 ##Analytics
 ARTrackingManager manages all in-code analytics tracking designed for use with Artisan, to allow you to track both views and events.
 
-The registerUserProfileVariablesCode: and registerUserProfileVariablesCode:parameters methods allow you to track an event by name.
+The **registerUserProfileVariablesCode:** and **registerUserProfileVariablesCode:parameters** methods allow you to track an event by name.
 
 {% highlight objective-c %}
 [ARTrackingManager trackEvent:@"itemsInCartAreNowOutofStock"];
@@ -93,15 +93,15 @@ with an optional dictionary of name/value pairs.
 
 ##User Profile
 
-ARProfileManager is a singleton that is automatically initialized when your app starts.  Use ARProfileManager to manage the personalization profile for the current user from app inception to completion.
+ARProfileManager is a singleton that is automatically initialized when your app starts. Use ARProfileManager to manage the personalization profile for the current user from app inception to completion.
 
 <div class="note note-hint">
-  <p>Hint: Valid characters for this name include [0-9], [a-z], [A-Z], -, and _.  Any other characters will automatically be stripped out.</p>
+  <p>Hint: Valid characters for this name include [0-9], [a-z], [A-Z], -, and _. Any other characters will automatically be stripped out.</p>
 </div>
 
 ###Register User Profile Variables
 
-Convenience methods existing for registering numbers, strings, dates, and locations.  The value can optionally be set during the registration of the User Profile Variable.
+Convenience methods existing for registering numbers, strings, dates, and locations. The value can optionally be set during the registration of the User Profile Variable.
 
 {% highlight objective-c %}
 [ARProfileManager registerNumber:@"currentCartTotal" withValue:[NSNumber numberWithDouble:0]];
@@ -123,14 +123,14 @@ The updating of the User Profile Variable can be accomplished by calling the mat
 {% endhighlight %}
 
 ###Clear User Profile Variables
-The clearProfile: method will clear out the values associated with the registered User Profile Variables.
+The **clearProfile:** method will clear out the values associated with the registered User Profile Variables.
 
 {% highlight objective-c %}
 [ARProfileManager clearProfile];
 {% endhighlight %}
 
 ###Setting the shared user Id
-The sharedUserId User Profile Variable is used to uniquely indentify an app user.
+The **sharedUserId** User Profile Variable is used to uniquely indentify an app user.
 
 <div class="note note-important">
   <p>Important: The sharedUserId should NOT be any of the following: email address, phone number, or social security number.  The sharedUserId should uniquely identify the user in your system.</p>
@@ -141,28 +141,28 @@ The sharedUserId User Profile Variable is used to uniquely indentify an app user
 {% endhighlight %}
 
 ###User Profile Variables for Advanced Targeting
-The methods setGender:, setUserAge:, and setUserAddress: can all be used for Advanced Targeting in Optimize.  These deminions can also be used for creating segments and reporting.
+The methods **setGender:**, **setUserAge:**, and **setUserAddress:** can all be used for Advanced Targeting in Optimize.  These deminions can also be used for creating segments and reporting.
 
-The setGender: method expects one of the following values: ARGenderFemale, ARGenderMale, ARGenderNA or nil;
+The **setGender:** method expects one of the following values: ARGenderFemale, ARGenderMale, ARGenderNA or nil;
 
 {% highlight objective-c %}
 [ARProfileManager setGender:ARGenderFemale];
 {% endhighlight %}
 
-The setUserAge: method expects a NSNumber object with an integer value or nil.
+The **setUserAge:** method expects a NSNumber object with an integer value or nil.
 
 {% highlight objective-c %}
 [ARProfileManager setUserAge:[NSNumber numberWithInteger:22]];
 {% endhighlight %}
 
-The setUserAddress: method expects a String containg an address that can be geo-located.
+The **setUserAddress:** method expects a String containg an address that can be geo-located.
 
 {% highlight objective-c %}
 [ARProfileManager setUserAddress:@"1 Lincoln Financial Field Way, Philadelphia, PA 19147"];
 {% endhighlight %}
 
 <div class="note note-hint">
-  <p>Hint: The address needs to be in CLGeocoder format.  Unrecognized or unparseable address strings will automatically be converted to 0&deg;N / 0&deg;E.</p>
+  <p>Hint: The address needs to be in CLGeocoder format. Unrecognized or unparseable address strings will automatically be converted to 0&deg;N / 0&deg;E.</p>
 </div>
 
 
@@ -170,13 +170,13 @@ The setUserAddress: method expects a String containg an address that can be geo-
 
 Power Hooks are key-value pairs or code blocks with key-value arguments that are passed into your application code by Artisan when your app starts, allowing for settings, text, and logic to be modified on the fly for all user devices without revisioning or updating your application.
 
-All hooks are created using ARPowerHookManager are registered with ArtisanTools.com automatically when you connect your device to Artisan for the first time.  The registration process will detect all registered hook keys, and will display all of the hook variables and code blocks for this app in ArtisanTools.com where they can be edited.  Values set on hooks on the web will automatically be downloaded by all devices upon app startup, allowing for their usage throughout your system code.
+All hooks are created using ARPowerHookManager are automatically registered with the Artisan platform when you connect your device to for the first time. The registration process will detect all registered hook keys, and will display all of the hook variables and code blocks for this app in Artisan where they can be edited.  Values set on hooks on the web will automatically be downloaded by all devices upon app startup, allowing for their usage throughout your system code.
 
 ###Power Hook Variables
 
 Register a single-value Power Hook for use with Artisan.
 
-Use the method registerHookWithId:friendlyName:defaultValue: to declare the existence of a Power Hook you would like to pass in from Artisan.
+Use the method **registerHookWithId:friendlyName:defaultValue:** to declare the existence of a Power Hook you would like to pass in from Artisan.
 
 {% highlight objective-c %}
 [ARPowerHookManager registerHookWithId:@"slogan" friendlyName:@"Slogan" defaultValue:@"It's So Good!"];
@@ -184,24 +184,24 @@ Use the method registerHookWithId:friendlyName:defaultValue: to declare the exis
 {% endhighlight %}
 
 <div class="note note-important">
-  <p>Important: This declaration should occur in the didFinishLaunchingWithOptions: method of your main app delegate, *before* you start Artisan using the \[ARManager startWithAppId:] method.</p>
+  <p>Important: This declaration should occur in the **didFinishLaunchingWithOptions:** method of your main app delegate, **before** you start Artisan using the \[ARManager startWithAppId:] method.</p>
 </div>
 
-The method getValueForHookById: retrieves the value of a Power Hook from Artisan.  This will return the value specified in ArtisanTools.com, or the default value if none has been specified.
+The method **getValueForHookById:** retrieves the value of a Power Hook from Artisan.  This will return the value specified in the Artisan platform, or the default value if none has been specified.
 
 {% highlight objective-c %}
 NSString *configValue = [ARPowerHookManager getValueForHookById:@"slogan"];
 {% endhighlight %}
 
 <div class="note note-hint">
-  <p>HINT: Each time your code passes over a getValueForHookById: method call the most recently downloaded value to the user's device will be referenced.  If you do not want the value to change during the life-cycle of the object you can assign the value to a property or member variable in the object's constructor.</p>
+  <p>HINT: Each time your code passes over a **getValueForHookById:** method call the most recently downloaded value to the user's device will be referenced.  If you do not want the value to change during the life-cycle of the object you can assign the value to a property or member variable in the object's constructor.</p>
 </div>
 
 ###Power Hook Code Blocks
 
 Use this method to declare the existence of a code block you would like to use in your app with data that is configurable from Artisan.
 
-This declaration should occur in the didFinishLaunchingWithOptions: method of your main app delegate, *before* you start Artisan using the \[ARManager startWithAppId:] method.
+This declaration should occur in the **didFinishLaunchingWithOptions:** method of your main app delegate, *before* you start Artisan using the \[ARManager startWithAppId:] method.
 
 * **id** - The name of the code to register. Name must be unique for this app.
 * **friendlyName** - The name for this code block that will be displayed in Artisan Tools.
@@ -237,9 +237,9 @@ This declaration should occur in the didFinishLaunchingWithOptions: method of yo
 }];
 {% endhighlight %}
 
-Use the method executeBlockWithId:data:context to execute a Power Hook code block from Artisan.  The code block will use the values specified in the data parameter registered in ArtisanTools.com to execute the block. You can override the default data using ArtisanTools.com.
+Use the method **executeBlockWithId:data:context** to execute a Power Hook code block from Artisan. The code block will use the values specified in the data parameter registered in ArtisanTools.com to execute the block. You can override the default data using ArtisanTools.com.
 
-Power Hook code blocks can be used for referencing code that can be executed conditionally.  Examples are displaying a modal popup to remind the user to perform certain actions in the app, managing the logic for applying a discount code, or displaying a survey to a segment of users.
+Power Hook code blocks can be used for referencing code that can be executed conditionally. Examples are displaying a modal popup to remind the user to perform certain actions in the app, managing the logic for applying a discount code, or displaying a survey to a segment of users.
 
 * **id** - The name of the code to register. Name must be unique for this app.
 * **data** - The default data for this code block. This should be string keys and values. This data will be used if no data is passed in from ArtisanTools.com for this code block for this app.
@@ -278,9 +278,9 @@ Next, register each variant by name with the experiment.
   <p>Important: If the experiment is not running the default variant will be selected.</p>
 </div>
 
-Call the method setExperimentViewedForExperiment: to mark the experiment has been viewed for the current user session.  This call should be made at the location within the code where you want to mark the experiment as viewed.
+Call the method **setExperimentViewedForExperiment:** to mark the experiment has been viewed for the current user session.  This call should be made at the location within the code where you want to mark the experiment as viewed.
 
-Use the method isCurrentVariant:forExperiment: to determine which experiment variation is active.
+Use the method **isCurrentVariant:forExperiment:** to determine which experiment variation is active.
 
 {% highlight objective-c %}
 [ARExperimentManager setExperimentViewedForExperiment:@"Cart Process"];
@@ -302,7 +302,7 @@ else{
   <p>Hint: The logic for choosing the variant should generally be in the viewWillAppear: method of your UIViewController class or in a location where the code will be exercised each time the screen is displayed.  This is necessary so the test can be turned on and off without requiring the rebuilding of the screen.</p>
 </div>
 
-To set the goal of an in-code experiment you call the setTargetReachedForExperiment:description: method.  This call should be made at the location within the code where you want to mark the goal as achieved. 
+To set the goal of an in-code experiment you call the **setTargetReachedForExperiment:description:** method.  This call should be made at the location within the code where you want to mark the goal as achieved. 
 
 {% highlight objective-c %}
 [ARExperimentManager setTargetReachedForExperiment:@"Cart Process" description:@"Reached the Checkout Screen."];
