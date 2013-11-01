@@ -21,13 +21,13 @@ description: "Getting started with the Artisan MEM platform for developers."
 
 4\. Confirm that the Artisan files have been imported properly by executing the following :
   
-* Navigate to your project build settings by selecting your project's Project File in the Project Navigator
+* Navigate to your project build settings by selecting your project\'s Project File in the Project Navigator
 * Select the main build target for your app
-* Select the 'Build Phases' task
-* Confirm that 'ArtisanSDK.framework' is in the 'Link Binary With Libraries' Section
-* Confirm that 'ArtisanSDK.bundle' are in the 'Copy Bundle Resources' section
+* Select the \'Build Phases\' task
+* Confirm that \'ArtisanSDK.framework\' is in the \'Link Binary With Libraries\' Section
+* Confirm that \'ArtisanSDK.bundle\' are in the \'Copy Bundle Resources\' section
 
-5\. Ensure these system frameworks are included in the 'Link Binary With Libraries' section of your app:
+5\. Ensure these system frameworks are included in the \'Link Binary With Libraries\' section of your app:
   
 * CoreLocation.framework
 * SystemConfiguration.framework
@@ -37,16 +37,16 @@ description: "Getting started with the Artisan MEM platform for developers."
 * CoreData.framework
 * libz.dylib
   
-For any that aren't included, select the '+' icon in the lower-left corner of that section and select it from the popup window.
+For any that aren\'t included, select the \'+\' icon in the lower-left corner of that section and select it from the popup window.
 
 6\. Ensure your project has the correct build settings by executing the following:
   
-* Navigate to the 'Build Settings' tab of your project build settings.
-* Navigate to 'Other Linker Flags'
-* Ensure that '-ObjC' is included as an entry in 'Other Linker Flags' for all environments
+* Navigate to the \'Build Settings\' tab of your project build settings.
+* Navigate to \'Other Linker Flags\'
+* Ensure that \'-ObjC\' is included as an entry in \'Other Linker Flags\' for all environments
 
 <div class="note note-hint">
-  <p>Hint: Read more about the -ObjC linker flag in Apple's Technical Article Building Objective-C static libraries with categories.</p>
+  <p>Hint: Read more about the -ObjC linker flag in Apple's <a href="https://developer.apple.com/library/mac/qa/qa1490/_index.html" target="_blank">Technical Article Building Objective-C static libraries with categories</a>.</p>
 </div>
 
 7\. Navigate to the main App Delegate class for your project.
@@ -56,6 +56,10 @@ For any that aren't included, select the '+' icon in the lower-left corner of th
 {% highlight objective-c %}
 #import <ArtisanSDK/ArtisanSDK.h>
 {% endhighlight %}
+
+<div class="note note-important">
+  <p>Important: The ArtisanSDK import line should be included in your App .pch file or at the top of each class where you reference the Artisan SDK.</p>
+</div>
 
 9\. Add the following line to the bottom of the didFinishLaunchingWithOptions: method of the AppDelegate.
 
@@ -71,58 +75,96 @@ For any that aren't included, select the '+' icon in the lower-left corner of th
 
 You should now be able to build your app and successfully connect it to artisantools.com to begin building your first experiment.
 
-##In-code Experiments SDK
 
-**Description of in-code experiemnts goes here.**
+##Analytics
+ARTrackingManager manages all in-code analytics tracking designed for use with Artisan, to allow you to track both views and events.
 
-An in-code experiments must be defined in the appDelegate before the startWithAppId:version:options: line.
-
-The method registerExperiment: takes a string argument.
+The registerUserProfileVariablesCode: and registerUserProfileVariablesCode:parameters methods allow you to track an event by name.
 
 {% highlight objective-c %}
-[ARExperimentManager registerExperiment:@"Cart Process"];
+[ARTrackingManager trackEvent:@"itemsInCartAreNowOutofStock"];
 {% endhighlight %}
 
-Next, register each variant by name with the experiemnt.
+with an optional dictionary of name/value pairs.
 
 {% highlight objective-c %}
-[ARExperimentManager addVariant:@"Skip Product Screen" forExperiment:@"Cart Process"];
-[ARExperimentManager addVariant:@"Don't Skip Product Screen" forExperiment:@"Cart Process" isDefault:YES];
+[ARTrackingManager trackEvent:@"itemsInCartAreNowOutofStock" parameters:@{@"numberOfItems":@"2"}];
 {% endhighlight %}
 
-Call the method setExperimentViewedForExperiment: to mark the experiment has been viewed.
+##User Profile
 
-Use the method isCurrentVariant:forExperiment: to determine which experiment variation is active.
+ARProfileManager is a singleton that is automatically initialized when your app starts.  Use ARProfileManager to manage the personalization profile for the current user from app inception to completion.
+
+<div class="note note-hint">
+  <p>Hint: Valid characters for this name include [0-9], [a-z], [A-Z], -, and _.  Any other characters will automatically be stripped out.</p>
+</div>
+
+###Register User Profile Variables
+
+Convenience methods existing for registering numbers, strings, dates, and locations.  The value can optionally be set during the registration of the User Profile Variable.
 
 {% highlight objective-c %}
-[ARExperimentManager setExperimentViewedForExperiment:@"Cart Process"];
+[ARProfileManager registerNumber:@"currentCartTotal" withValue:[NSNumber numberWithDouble:0]];
+[ARProfileManager registerString:@"memberType" withValue:@"unknown"];
 
-if ([ARExperimentManager isCurrentVariant:@"Skip Product Screen" forExperiment:@"Cart Process"]) {
-  ARPCartModel *cart = [ARPCartModel instance];
-  [cart addProduct:productClicked];
-  [self performSegueWithIdentifier:@"navigateToCart" sender:self];
-} 
-else{
-  // Don't Skip Product Screen
+[ARProfileManager registerDateTime:@"lastPurchase"];
+[ARProfileManager registerLocation:@"lastKnownLocation"];
+{% endhighlight %}
 
-  ARPProductDetailViewController *detailViewContoller = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDetail"];
-  [self.navigationController pushViewController:detailViewContoller animated:YES];
-}
+###Update User Profile Variables
+The updating of the User Profile Variable can be accomplished by calling the matching setter for the User Variable Variable data type.
+
+{% highlight objective-c %}
+[ARProfileManager setNumberValue:[NSNumber numberWithDouble:150.00] forVariable:@"currentCartTotal"];
+[ARProfileManager setStringValue:@"platinum" forVariable:@"memberType"];
+
+[ARProfileManager setDateTimeValue:[NSDate new] forVariable:@"lastPurchase"];
+[ARProfileManager setLocationValue:CLLocationCoordinate2DMake(39.949934, -75.145012) forVariable:@"lastKnownLocation"];
+{% endhighlight %}
+
+###Clear User Profile Variables
+The clearProfile: method will clear out the values associated with the registered User Profile Variables.
+
+{% highlight objective-c %}
+[ARProfileManager clearProfile];
+{% endhighlight %}
+
+###Setting the shared user Id
+The sharedUserId User Profile Variable is used to uniquely indentify an app user.
+
+<div class="note note-important">
+  <p>Important: The sharedUserId should NOT be any of the following: email address, phone number, or social security number.  The sharedUserId should uniquely identify the user in your system.</p>
+</div>
+
+{% highlight objective-c %}
+[ARProfileManager setSharedUserId:@"624597b0e106e732a3204001"];
+{% endhighlight %}
+
+###User Profile Variables for Advanced Targeting
+The methods setGender:, setUserAge:, and setUserAddress: can all be used for Advanced Targeting in Optimize.  These deminions can also be used for creating segments and reporting.
+
+The setGender: method expects one of the following values: ARGenderFemale, ARGenderMale, ARGenderNA or nil;
+
+{% highlight objective-c %}
+[ARProfileManager setGender:ARGenderFemale];
+{% endhighlight %}
+
+The setUserAge: method expects a NSNumber object with an integer value or nil.
+
+{% highlight objective-c %}
+[ARProfileManager setUserAge:[NSNumber numberWithInteger:22]];
+{% endhighlight %}
+
+The setUserAddress: method expects a String containg an address that can be geo-located.
+
+{% highlight objective-c %}
+[ARProfileManager setUserAddress:@"1 Lincoln Financial Field Way, Philadelphia, PA 19147"];
 {% endhighlight %}
 
 <div class="note note-hint">
-  <p>Hint: The logic for choosing the variant should generally be in the viewWillAppear: method of your UIViewController class or in a location where the code will be exercised each time the screen is displayed.  This is necessary so the test can be turned on and off without requiring the rebuilding of the screen.</p>
+  <p>Hint: The address needs to be in CLGeocoder format.  Unrecognized or unparseable address strings will automatically be converted to 0&deg;N / 0&deg;E.</p>
 </div>
 
-<div class="note note-important">
-  <p>Important: If the experiment is not running the default behaviour will be selected.</p>
-</div>
-
-To set the goal of an in-code experiment you call the setTargetReachedForExperiment:description: method.
-
-{% highlight objective-c %}
-[ARExperimentManager setTargetReachedForExperiment:@"Cart Process" description:@"Reached the Checkout Screen."];
-{% endhighlight %}
 
 ##Power Hooks
 
@@ -197,116 +239,97 @@ This declaration should occur in the didFinishLaunchingWithOptions: method of yo
 
 Use the method executeBlockWithId:data:context to execute a Power Hook code block from Artisan.  The code block will use the values specified in the data parameter registered in ArtisanTools.com to execute the block. You can override the default data using ArtisanTools.com.
 
+Power Hook code blocks can be used for referencing code that can be executed conditionally.  Examples are displaying a modal popup to remind the user to perform certain actions in the app, managing the logic for applying a discount code, or displaying a survey to a segment of users.
+
 * **id** - The name of the code to register. Name must be unique for this app.
 * **data** - The default data for this code block. This should be string keys and values. This data will be used if no data is passed in from ArtisanTools.com for this code block for this app.
 * **context** - A reference to an object passed into the block.
+
+{% highlight objective-c %}
+[ARPowerHookManager executeBlockWithId:@"discountPopup" 
+                                  data:nil 
+                               context:self];
+{% endhighlight %}                              
 
 <div class="note note-hint">
   <p>Hint: Passing a reference to a UIViewController for the context parameter enables a registered block to transition to a new screen.  This enables the injection of a new screen into an existing workflow.</p>
 </div>
 
-##User Profile
+##In-code Experiments
 
-ARProfileManager is a singleton that is automatically initialized when your app starts.  Use ARProfileManager to manage the personalization profile for the current user from app inception to completion.
+In-code Experiments allow you to build tests around business logic inside your app.  For example, you can create a test for showing or not showing a particular screen.  Another example is testing multiple workflows.
 
-<div class="note note-hint">
-  <p>Hint: Valid characters for this name include [0-9], [a-z], [A-Z], -, and _.  Any other characters will automatically be stripped out.</p>
-</div>
+An in-code experiments must be defined in the appDelegate before the startWithAppId:version:options: line.
 
-###Register User Profile Variables
-
-Convience methods existing for registering numbers, strings, dates, and locations.  The value can optionally be set during the registration of the User Profile Variable.
+The method registerExperiment: takes a string representing the name of your experiment.
 
 {% highlight objective-c %}
-[ARProfileManager registerNumber:@"currentCartTotal" withValue:[NSNumber numberWithDouble:0]];
-[ARProfileManager registerString:@"memberType" withValue:@"unknown"];
-
-[ARProfileManager registerDateTime:@"lastPurchase"];
-[ARProfileManager registerLocation:@"lastKnownLocation"];
+[ARExperimentManager registerExperiment:@"Cart Process"];
 {% endhighlight %}
 
-###Update User Profile Variables
-The updating of the User Profile Variable can be accomplished by calling the matching setter for the User Variable Variable data type.
+Next, register each variant by name with the experiment.
 
 {% highlight objective-c %}
-[ARProfileManager setNumberValue:[NSNumber numberWithDouble:150.00] forVariable:@"currentCartTotal"];
-[ARProfileManager setStringValue:@"platinum" forVariable:@"memberType"];
-
-[ARProfileManager setDateTimeValue:[NSDate new] forVariable:@"lastPurchase"];
-[ARProfileManager setLocationValue:CLLocationCoordinate2DMake(39.949934, -75.145012) forVariable:@"lastKnownLocation"];
+[ARExperimentManager addVariant:@"Skip Product Screen" forExperiment:@"Cart Process"];
+[ARExperimentManager addVariant:@"Don't Skip Product Screen" forExperiment:@"Cart Process" isDefault:YES];
 {% endhighlight %}
-
-###Clear User Profile Variables
-The clearProfile: method will clear out the values associated with the registered User Profile Variables.
-
-{% highlight objective-c %}
-[ARProfileManager clearProfile];
-{% endhighlight %}
-
-###Setting the shared user Id
-The sharedUserId User Profile Variable is used to uniquely indentify an app user.
 
 <div class="note note-important">
-  <p>Important: The sharedUserId should be an id from your system that can not be used to identify the user outside of your systems.  For example, do not use email address, phone number, or social security number.</p>
+  <p>Important: If the experiment is not running the default variant will be selected.</p>
 </div>
 
-{% highlight objective-c %}
-[ARProfileManager setSharedUserId:@"624597b0e106e732a3204001"];
-{% endhighlight %}
+Call the method setExperimentViewedForExperiment: to mark the experiment has been viewed for the current user session.  This call should be made at the location within the code where you want to mark the experiment as viewed.
 
-###User Profile Variables for Advanced Targeting
-The methods setGender:, setUserAge:, and setUserAddress: can all be used for Advanced Targeting in Optimimze.  These deminions can also be used for creating segments and reporting.
-
-The setGender: method expects one of the following values: ARGenderFemale, ARGenderMale, ARGenderNA or nil;
+Use the method isCurrentVariant:forExperiment: to determine which experiment variation is active.
 
 {% highlight objective-c %}
-[ARProfileManager setGender:ARGenderFemale];
-{% endhighlight %}
+[ARExperimentManager setExperimentViewedForExperiment:@"Cart Process"];
 
-The setUserAge: method expects a NSNumber object with an integer value or nil.
+if ([ARExperimentManager isCurrentVariant:@"Skip Product Screen" forExperiment:@"Cart Process"]) {
+  ARPCartModel *cart = [ARPCartModel instance];
+  [cart addProduct:productClicked];
+  [self performSegueWithIdentifier:@"navigateToCart" sender:self];
+} 
+else{
+  // Don't Skip Product Screen
 
-{% highlight objective-c %}
-[ARProfileManager setUserAge:[NSNumber numberWithInteger:22]];
-{% endhighlight %}
-
-The setUserAddress: method expects a String containg an address that can be geo-located.
-
-{% highlight objective-c %}
-[ARProfileManager setUserAddress:@"1 Lincoln Financial Field Way, Philadelphia, PA 19147"];
+  ARPProductDetailViewController *detailViewContoller = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDetail"];
+  [self.navigationController pushViewController:detailViewContoller animated:YES];
+}
 {% endhighlight %}
 
 <div class="note note-hint">
-  <p>Hint: The address needs to be in CLGeocoder format.  Unrecognized or unparseable address strings will automatically be converted to 0&deg;N / 0&deg;E.</p>
+  <p>Hint: The logic for choosing the variant should generally be in the viewWillAppear: method of your UIViewController class or in a location where the code will be exercised each time the screen is displayed.  This is necessary so the test can be turned on and off without requiring the rebuilding of the screen.</p>
 </div>
 
-##Analytics
-ARTrackingManager manages all in-code analytics tracking designed for use with Artisan, to allow you to track both views and events.
-
-The registerUserProfileVariablesCode: and registerUserProfileVariablesCode:parameters methods allow you to track an event by name.
+To set the goal of an in-code experiment you call the setTargetReachedForExperiment:description: method.  This call should be made at the location within the code where you want to mark the goal as achieved. 
 
 {% highlight objective-c %}
-[ARTrackingManager trackEvent:@"itemsInCartAreNowOutofStock"];
+[ARExperimentManager setTargetReachedForExperiment:@"Cart Process" description:@"Reached the Checkout Screen."];
 {% endhighlight %}
 
-with an optional dictionary of name/value pairs.
-
-{% highlight objective-c %}
-[ARTrackingManager trackEvent:@"itemsInCartAreNowOutofStock" parameters:@{@"numberOfItems":@"2"}];
-{% endhighlight %}
 
 ##Name your views
-Each UIView class contains the Apple property tag allowing you to uniquely identify a view with an NSInteger value.  The Artisan SDK adds the property nameTag to all UIView classes through the use if an Objective-C category.
+Each UIView class contains the Apple property \'tag\' allowing you to uniquely identify a view with an NSInteger value.  The Artisan SDK adds the property artisanNameTag to all UIView classes through the use if an Objective-C category.
 
-If the nameTag property is assigned the Artisan platform will use the nameTag instead of the generated name for the view enabling name of the view to appear in the Canvas and in analytic reports.
+If the artisanNameTag property is assigned the Artisan platform will use the artisanNameTag instead of the generated name for the view as it appears in the Artisan Canvas and in analytic reports.
 
 {% highlight objective-c %}
 button = [UIButton buttonWithType:UIButtonTypeCustom];  
-button.nameTag = @"Add Button";
+button.artisanNameTag = @"Add Button";
+
 [self.view addSubview:button];
 {% endhighlight %}
 
-The helper method viewWithNameTag: can be used to retrieve a view by its nameTag.
+<div class="note note-hint">
+  <p>Hint: Using a unique artisanNameTag for UIViews enables the targeting of specific UI changes made with the Artisan Canvas.  This works well for dynamic views that may or may not appear every time a particular screen is displayed.</p>
+</div>
+
+##Name your view controllers
+The Artisan SDK adds the property artisanNameTag to all UIViewController classes through the use if an Objective-C category.
+
+If the artisanNameTag property is assigned the Artisan platform will use the artisanNameTag instead of the generated name when displaying the view controller while building an experiment and in analytic reports.
 
 {% highlight objective-c %}
-UIButton *button = (UIButton *)[self.view viewWithNameTag:@"Add Button"];
+self.artisanNameTag = @"Login Screen";  
 {% endhighlight %}
