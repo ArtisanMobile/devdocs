@@ -89,9 +89,11 @@ description: "Getting started with the Artisan MEM platform for developers."
 </table>
 ##Known SDK Compatibility Issues
 ###iOS
-
-* IIViewDeck SDK
-
+<ul>
+<li>IIViewDeck SDK</li>
+<li>Parse (Resolved)</li>
+</ul>
+Check out <a href=https://getsatisfaction.com/artisan/topics/third_party_conflicts>this article</a> for more information on how to resolve the third party SDK conflicts.
 
 ###Android
 No known issues.
