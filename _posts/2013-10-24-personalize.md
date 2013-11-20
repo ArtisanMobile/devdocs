@@ -8,6 +8,11 @@ description: "Getting started with the Artisan MEM platform for developers."
 
 #Personalize
 
+##Getting Started
+To start off with Personalize, you'll need to group your users by some common characteristic that is meaningful to you business and app. Common segments are gender, location, loyalty level or past purchasing behavior. Once you have identified the appropriate user groups or segments you then use Personalize to create custom user experiences (screen designs) that best serve that segment. Don't forget to check out the analytics data associated with your particular segment once you've published your custom designs; see how your strongest segments perform and what drives their engagement.
+
+##Overview
+
 Artisan Personalize allows businesses to define segments of users and then create and deliver highly personalized experiences to those users. You can define segments across multiple dimensions including demographics, device type, user behaviors, and attributes that are specific to your business. Customize all elements of your app including design, business logic, and core functionality. Then deliver multiple versions of your app simultaneously to drive app engagement and brand loyalty.
 
 Features of Artisan Personalize include:
