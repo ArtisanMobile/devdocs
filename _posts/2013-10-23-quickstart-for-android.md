@@ -35,6 +35,7 @@ description: "Getting started with the Artisan MEM platform for developers."
       <li>jackson-core-asl-1.9.7.jar</li>
       <li>jackson-databind-2.2.3.jar</li>
       <li>jackson-mapper-asl-1.9.7.jar</li>
+      <li>otto-1.3.4.jar</li>
       <li>volley.jar (built from source)</li>
   </ul>
   <p>If you are using library projects that have the same dependencies you will need to manually ensure that the dependencies do not conflict. We can only guarantee that Artisan works with these versions.</p>
@@ -57,7 +58,7 @@ Artisan comes bundled with an installer that will configure Eclipse and add the 
 
 This will update your manifest file, add the required libraries and create the CustomArtisanService class, if one doesn't exist already. It will also configure an Eclipse 'Builder' that will regenerate necessary AspectJ declarations for your Activities after every build. See "Configuring the Artisan build script" below for more information.
 
-Note: This process will automatically update the visibility of the onResume, onPause and onDestroy of your activities so that they can be instrumented by Artisan.
+Note: This process will automatically update the visibility of the onStart, onStop and onDestroy of your activities so that they can be instrumented by Artisan.
 
 If there are any settings in your application's manifest that are not compatible with Artisan you will be notified and the installer will not complete. For example, you must specify a minimum Android SDK of 2.3.3 or higher. Change the specified settings and run the Artisan installer again.
 
@@ -103,7 +104,7 @@ If you prefer to manually install Artisan, follow the steps outlined in the rest
 * Make sure that the "Order and Export" tab is selected.
 * If the "AspectJ Runtime Library" is not already selected, check it and press OK.
 
-9\. Make your Activity lifecycle methods public. In order to instrument your application Artisan needs any onCreate, onResume, onPause and onDestroy methods that you have implemented in your app to be public. The default for the lifecycle methods is protected, which we are not able to instrument. If you skip this step Artisan will not work properly and you may experience errors and unpredictable behavior.
+9\. Make your Activity lifecycle methods public. In order to instrument your application Artisan needs any onCreate, onStart, onStop and onDestroy methods that you have implemented in your app to be public. The default for the lifecycle methods is protected, which we are not able to instrument. If you skip this step Artisan will not work properly and you may experience errors and unpredictable behavior.
 
 ####Setting up the Artisan service
 
@@ -143,7 +144,7 @@ You will also need to add the following permissions to your AndroidManifest.xml 
 
 ####Configuring the Artisan build script
 
-Artisan generates AspectJ files alongside your code. These files live inside the 'gen/' folder, next to your other generated code, such as R.java. It is very important that these files get generated or Artisan will not run in your application. In addition, this script will update the visibility of any new onResume, onPause and onDestroy methods on your activities so that we can instrument them automatically.
+Artisan generates AspectJ files alongside your code. These files live inside the 'gen/' folder, next to your other generated code, such as R.java. It is very important that these files get generated or Artisan will not run in your application. In addition, this script will update the visibility of any new onStart, onStop and onDestroy methods on your activities so that we can instrument them automatically.
 
 You can regenerate these files at any time by running the installer script with the '--aspectonly' flag.
 
