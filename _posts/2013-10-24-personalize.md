@@ -23,7 +23,7 @@ Features of Artisan Personalize include:
 
 **Power Hooks:**  Create configurable variables in your app that exposed to business users and can be customized and personalized.  Developers write code for the hook only one time.  From that point on, business users can easily make modifications without the need to re-write code.  For example, a power hook might be established to offer discounts.  Based on analytics, the business user decides to push different discounts to different audience segments, which he or she can easily do without bothering developers whenever a change is made.
 
-##What is Personlization?
+##What is Personalization?
 Personalization is a process that combines segmentation and publishing. Segmentation is defining a group of users that share a specific characteristic or behavior pattern that matters to you. Every app will have at least one feature that is key or unique to the app, that differentiates the app, that the app aims to satisfy or serve.
 
 Once you've identified segments, publishing gives you the ability to distribute customized screen designs to segments. Personalize enables you to target specific groups of users so you can increase engagement, conversions, and create positive user experiences. Devices are very personal, and users have meaningful relationships with their device and apps. The more a user relates to the app the more a user will engage with the app. Personalize lets you create custom content for your users.
