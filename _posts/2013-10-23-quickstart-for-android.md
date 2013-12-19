@@ -282,10 +282,10 @@ Power Hook code blocks can be used for referencing code that can be executed con
 Sample usage of a Power Hook Block (from the onClick handler for an add to cart button):
 
 {% highlight java %}
-  Map<String, Object> extraData = new HashMap<String, Object>();
-  extraData.put("productName", "Artisan Andy Plush Toy");
-  extraData.put("context", this);
-  PowerHookManager.executeBlock("showAlert", extraData);
+Map<String, Object> extraData = new HashMap<String, Object>();
+extraData.put("productName", "Artisan Andy Plush Toy");
+extraData.put("context", this);
+PowerHookManager.executeBlock("showAlert", extraData);
 {% endhighlight %}
 
 <div class="note note-important">
