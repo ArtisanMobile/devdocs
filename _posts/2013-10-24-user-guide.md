@@ -9,7 +9,7 @@ nav: "user-guide"
 
 ##About the Artisan MEM Platform
 
-Artisan is the industry's first mobile experience management (MEM) platform that allows businesses to analyze, manage and enhance their existing mobile applications in real-time without writing code or resubmitting to app stores. Customers can analyze user behavior and activity, test the effectiveness of different app designs, create personalized user experiences, and instantly publish changes directly to their users.  The result is a powerful platform that transforms static mobile apps into highly effective marketing channels that drive real business results.
+Artisan is the industry\'s first mobile experience management (MEM) platform that allows businesses to analyze, manage and enhance their existing mobile applications in real-time without writing code or resubmitting to app stores. Customers can analyze user behavior and activity, test the effectiveness of different app designs, create personalized user experiences, and instantly publish changes directly to their users.  The result is a powerful platform that transforms static mobile apps into highly effective marketing channels that drive real business results.
 
 ## Getting Around the Artisan Platform
 

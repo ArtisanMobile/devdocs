@@ -13,7 +13,7 @@ With Canvas, you are able to make changes to the design of your application and 
 ##Making Changes to Your App
 * Connect to Artisan
 * Once connected, go to the app map
-* At the app map, you will have the option on the right "Modify and Personalize"
+* At the app map, you will have the option on the right \"Modify and Personalize\"
 * On Canvas, design the changes that you would like to push out to your users
 * Select the segment you would like to publish to (Note: If you do not pick a segment, the changes will be pushed to all users)
 * Once you have finished making your designs, hit Publish on the top right corner
