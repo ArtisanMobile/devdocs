@@ -20,7 +20,7 @@ description: "Getting started with the Artisan MEM platform for developers."
 3\. Import these two files into your XCode project by dragging them into the Project Navigator on the left-hand side.
 
 4\. Confirm that the Artisan files have been imported properly by executing the following :
-  
+
 * Navigate to your project build settings by selecting your project\'s Project File in the Project Navigator
 * Select the main build target for your app
 * Select the \'Build Phases\' task
@@ -28,7 +28,7 @@ description: "Getting started with the Artisan MEM platform for developers."
 * Confirm that \'ArtisanSDK.bundle\' are in the \'Copy Bundle Resources\' section
 
 5\. Ensure these system frameworks are included in the \'Link Binary With Libraries\' section of your app:
-  
+
 * CoreLocation.framework
 * SystemConfiguration.framework
 * QuartzCore.framework
@@ -36,11 +36,11 @@ description: "Getting started with the Artisan MEM platform for developers."
 * CFNetwork.framework
 * CoreData.framework
 * libz.dylib
-  
+
 For any that aren\'t included, select the \'+\' icon in the lower-left corner of that section and select it from the popup window.
 
 6\. Ensure your project has the correct build settings by executing the following:
-  
+
 * Navigate to the \'Build Settings\' tab of your project build settings.
 * Navigate to \'Other Linker Flags\'
 * Ensure that \'-ObjC\' is included as an entry in \'Other Linker Flags\' for all environments
@@ -220,18 +220,18 @@ This declaration should occur in the **didFinishLaunchingWithOptions:** method o
                                            @"discountAmount" : @"value2"
                                          }
                                andBlock:^(NSDictionary *data, id context) {
-                                   
+
    if ([data[@"shouldDisplayAlert"] isEqualToString:@"YES"]) {
       NSString *message = [NSString stringWithFormat:@"Hello there, %@! We'd like to give you a discount of %@ on %@",
                            data[@"name"],
                            data[@"discountAmount"],
                            data[@"product"]];
-       
+
       UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Here's a Coupon!"
                                                           message:message
                                                         delegate:context
                                                 cancelButtonTitle:@"Cancel"
-                                                otherButtonTitles:@"Ok", nil];       
+                                                otherButtonTitles:@"Ok", nil];
       [alertView show];
   }
 }];
@@ -246,10 +246,10 @@ Power Hook code blocks can be used for referencing code that can be executed con
 * **context** - A reference to an object passed into the block.
 
 {% highlight objective-c %}
-[ARPowerHookManager executeBlockWithId:@"discountPopup" 
-                                  data:nil 
+[ARPowerHookManager executeBlockWithId:@"discountPopup"
+                                  data:nil
                                context:self];
-{% endhighlight %}                              
+{% endhighlight %}
 
 <div class="note note-hint">
   <p>Hint: Passing a reference to a UIViewController for the context parameter enables a registered block to transition to a new screen.  This enables the injection of a new screen into an existing workflow.</p>
@@ -289,7 +289,7 @@ if ([ARExperimentManager isCurrentVariant:@"Skip Product Screen" forExperiment:@
   ARPCartModel *cart = [ARPCartModel instance];
   [cart addProduct:productClicked];
   [self performSegueWithIdentifier:@"navigateToCart" sender:self];
-} 
+}
 else{
   // Don't Skip Product Screen
 
@@ -302,7 +302,7 @@ else{
   <p>Hint: The logic for choosing the variant should generally be in the viewWillAppear: method of your UIViewController class or in a location where the code will be exercised each time the screen is displayed.  This is necessary so the test can be turned on and off without requiring the rebuilding of the screen.</p>
 </div>
 
-To set the goal of an in-code experiment you call the **setTargetReachedForExperiment:description:** method.  This call should be made at the location within the code where you want to mark the goal as achieved. 
+To set the goal of an in-code experiment you call the **setTargetReachedForExperiment:description:** method.  This call should be made at the location within the code where you want to mark the goal as achieved.
 
 {% highlight objective-c %}
 [ARExperimentManager setTargetReachedForExperiment:@"Cart Process" description:@"Reached the Checkout Screen."];
@@ -315,7 +315,7 @@ Each UIView class contains the Apple property \'tag\' allowing you to uniquely i
 If the artisanNameTag property is assigned the Artisan platform will use the artisanNameTag instead of the generated name for the view as it appears in the Artisan Canvas and in analytic reports.
 
 {% highlight objective-c %}
-button = [UIButton buttonWithType:UIButtonTypeCustom];  
+button = [UIButton buttonWithType:UIButtonTypeCustom];
 button.artisanNameTag = @"Add Button";
 
 [self.view addSubview:button];
@@ -331,5 +331,5 @@ The Artisan SDK adds the property artisanNameTag to all UIViewController classes
 If the artisanNameTag property is assigned the Artisan platform will use the artisanNameTag instead of the generated name when displaying the view controller while building an experiment and in analytic reports.
 
 {% highlight objective-c %}
-self.artisanNameTag = @"Login Screen";  
+self.artisanNameTag = @"Login Screen";
 {% endhighlight %}
