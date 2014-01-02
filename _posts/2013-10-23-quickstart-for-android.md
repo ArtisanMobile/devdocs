@@ -13,7 +13,7 @@ description: "Getting started with the Artisan MEM platform for developers."
 2\. Add the AspectJ eclipse plugin:
 
 * In Eclipse click Help -> Install New Software
-* Click \"Add\" on the right to add a new repository.
+* Click "Add\" on the right to add a new repository.
   * For the name, you can name this AspectJ.
   * For the location, you need the correct AJDT Update Site URL for your version of Eclipse:
       * Eclipse 3.8 and 4.2 Update Site URL:  http://download.eclipse.org/tools/ajdt/42/update
@@ -57,9 +57,11 @@ Artisan comes bundled with an installer that will configure Eclipse and add the 
 * install.bat (on Windows)
 * sh install.sh (on Mac/OSX or linux)
 
-This will update your manifest file, add the required libraries and create the CustomArtisanService class, if one doesn't exist already. It will also configure an Eclipse \'Builder\' that will regenerate necessary AspectJ declarations for your Activities after every build. See \"Configuring the Artisan build script\" below for more information.
+This will update your manifest file, add the required libraries and create the CustomArtisanService class, if one doesn\'t exist already. It will also configure an Eclipse \'Builder\' that will regenerate necessary AspectJ declarations for your Activities after every build. See \"Configuring the Artisan build script\" below for more information.
 
-Note: This process will automatically update the visibility of the onStart, onStop and onDestroy of your activities so that they can be instrumented by Artisan.
+<div class="note note-important">
+  <p>Note: This process will automatically update the visibility of the onStart, onStop and onDestroy of your activities so that they can be instrumented by Artisan.</p>
+</div>
 
 If there are any settings in your application\'s manifest that are not compatible with Artisan you will be notified and the installer will not complete. For example, you must specify a minimum Android SDK of 2.3.3 or higher. Change the specified settings and run the Artisan installer again.
 
@@ -81,7 +83,7 @@ If you prefer to manually install Artisan, follow the steps outlined in the rest
 
 3\. Copy the files from the \'artisan/Support\' folder into your project\'s libs directory. You might need to create this folder in the project\'s root directory if it does not already exist. If you are using library projects that have the same dependencies as Artisan you will need to manually ensure that the dependencies do not conflict. We can only guarantee that Artisan works with these versions.
 
-4\. Copy all Android resources from \'artisan/androidResources/res\' to your project\'s \'res' directory. Be sure to keep the subfolder structure intact.
+4\. Copy all Android resources from \'artisan/androidResources/res\' to your project\'s \'res\' directory. Be sure to keep the subfolder structure intact.
 
 5\. Copy all Android resources from \'artisan/androidResources/assets\' to your project\'s \'assets\' directory.
 
@@ -133,7 +135,7 @@ public class CustomArtisanService extends ArtisanService {
 <service android:name=".path.to.my.CustomArtisanService"/>
 {% endhighlight %}
 
-You will also need to add the following permissions to your AndroidManifest.xml if they aren't already set:
+You will also need to add the following permissions to your AndroidManifest.xml if they aren\'t already set:
 
 {% highlight java %}
 <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
@@ -147,7 +149,7 @@ You will also need to add the following permissions to your AndroidManifest.xml 
 
 Artisan generates AspectJ files alongside your code. These files live inside the \'gen/\' folder, next to your other generated code, such as R.java. It is very important that these files get generated or Artisan will not run in your application. In addition, this script will update the visibility of any new onStart, onStop and onDestroy methods on your activities so that we can instrument them automatically.
 
-You can regenerate these files at any time by running the installer script with the \'--aspectonly\' flag.
+You can regenerate these files at any time by running the installer script with the \'&dash;&dash;aspectonly\' flag.
 
 In order to regenerate these files *automatically* after every build, Eclipse needs to be configured with a \'Builder\' that will run the Artisan build script. Follow the instructions below to set up the Eclipse builder:
 
