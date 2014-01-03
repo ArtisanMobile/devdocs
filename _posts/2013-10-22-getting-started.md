@@ -141,7 +141,7 @@ The **sharedUserId** User Profile Variable is used to uniquely indentify an app 
 {% endhighlight %}
 
 ###User Profile Variables for Advanced Targeting
-The methods **setGender:**, **setUserAge:**, and **setUserAddress:** can all be used for Advanced Targeting in Optimize.  These deminions can also be used for creating segments and reporting.
+The methods **setGender:**, **setUserAge:**, and **setUserAddress:** can all be used for Advanced Targeting in Optimize.  These dimensions can also be used for creating segments and reporting.
 
 The **setGender:** method expects one of the following values: ARGenderFemale, ARGenderMale, ARGenderNA or nil;
 
