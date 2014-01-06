@@ -184,7 +184,7 @@ Use the method **registerHookWithId:friendlyName:defaultValue:** to declare the 
 {% endhighlight %}
 
 <div class="note note-important">
-  <p>Important: This declaration should occur in the **didFinishLaunchingWithOptions:** method of your main app delegate, **before** you start Artisan using the \[ARManager startWithAppId:] method.</p>
+  <p>Important: This declaration should occur in the **didFinishLaunchingWithOptions:** method of your main app delegate, **before** you start Artisan using the [ARManager startWithAppId:] method.</p>
 </div>
 
 The method **getValueForHookById:** retrieves the value of a Power Hook from Artisan.  This will return the value specified in the Artisan platform, or the default value if none has been specified.
