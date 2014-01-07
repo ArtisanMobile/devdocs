@@ -16,9 +16,10 @@ description: "Getting started with the Artisan MEM platform for developers."
 * Click "Add\" on the right to add a new repository.
   * For the name, you can name this AspectJ.
   * For the location, you need the correct AJDT Update Site URL for your version of Eclipse:
-      * Eclipse 3.8 and 4.2 Update Site URL:  http://download.eclipse.org/tools/ajdt/42/update
-      * Eclipse 3.7 Update Site URL:  http://download.eclipse.org/tools/ajdt/37/update
-      * For other versions of Eclipse find the correct Update Site URL on this page <a href="http://eclipse.org/ajdt/downloads/">http://eclipse.org/ajdt/downloads/</a>
+    * Eclipse 4.3 (Kepler) Update Site URL:  `http://download.eclipse.org/tools/ajdt/43/update`
+    * Eclipse 3.8 and 4.2 (Juno) Update Site URL:  `http://download.eclipse.org/tools/ajdt/42/update`
+    * Eclipse 3.7 (Indigo) Update Site URL:  `http://download.eclipse.org/tools/ajdt/37/update`
+    * For other versions of Eclipse find the correct Update Site URL on this page <a href="http://eclipse.org/ajdt/downloads/">http://eclipse.org/ajdt/downloads/</a>
   * Click \"OK\"
 * Select \"AspectJ Developer Tools (Required)\" and click \"Next\" and then \"Next\" again
 * Accept the licenses and click \"Finish\"
