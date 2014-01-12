@@ -326,7 +326,7 @@ button.artisanNameTag = @"Add Button";
 </div>
 
 ##Name your view controllers
-The Artisan SDK adds the property artisanNameTag to all UIViewController classes through the use if an Objective-C category.
+The Artisan SDK adds the property artisanNameTag to all UIViewController classes through the use of an Objective-C category.
 
 If the artisanNameTag property is assigned the Artisan platform will use the artisanNameTag instead of the generated name when displaying the view controller while building an experiment and in analytic reports.
 
