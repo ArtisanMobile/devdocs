@@ -5,34 +5,63 @@ author: "Artisan"
 category: user-guide
 description: "Getting started with the Artisan MEM platform for developers."
 ---
-#Canvas
+# Canvas
+The Canvas is used to make changes to your app in Artisan such as modifying screens, building an A/B test, creating a personalization, or adding a tag.
 
-##Getting Started
-With Canvas, you can make realtime changes to the screen design (user interface) of your application on the fly. Perhaps there\'s a typo that needs to be fixed. Maybe there\'s a color you don\'t like. Instantly publish those changes without having to resubmit to the app store. Not sure which screen design will perform better? You can always A/B test the change you just made in Canvas with Optimize.
+## Getting to Know the Canvas
+After you select a screen to work on from the App Map you will be placed in the Canvas.
 
-##Overview
+The screen you selected from your app is displayed in the center of the canvas. You can directly interact with the screen shown in the Canvas to resize and move things on the screen such as buttons and images.
 
-Aptly named, Canvas is the drawing board of Artisan. From the App Map, you can select a specific screen to work on; perhaps you would like to add an experiment on that screen. This will open up the Canvas, where you can make changes to the screen you chose. Once on Canvas, you can make any UI and design changes to the screen; it\'s here that you will be creating the variations that you push out in your A/B tests, or the specific designs you will be sending out to the segments you have created.
+Selecting an item on the screen also displays all of the properties available for you to change for that item. The properties are displayed on the right hand side of the page. Different items on the screen have different properties available for you to change, so depending on the item you selected you will be able to update text, change images, modify the font size of a paragraph, and much more.
 
-With Canvas, you have an interface to make changes and add to your app (images, text, buttons) after you have submitted to the app store. Canvas also allows you to preview these changes before they go to any devices. This means you can make real time improvements to your app, all without code. Simply drag and drop the elements that you\'d like to send out to your users (or more specifically, your segments) and publish; your users will receive the designs right away.
+On the left of the Canvas you will see the Screen Browser. The Screen Browser is a tree listing of each of the UI items that are available on your screen. Sometimes multiple items may be stacked on top of each other making it difficult to select the item that you want to make changes to. The Screen Browser makes this easy by allowing you to simply click on the name of the element you would like to change. Clicking an item in the list selects the item on the screen and displays the available properties.
 
-###What is the Canvas?
+Depending on what you are working on, the Canvas may display additional information. For instance, if you are working on an Experiment a list of variations is displayed. If you are personalizing a screen a list of segments will appear. You can learn more about using these tools in:
 
-We make changes to a screen for A/B testing, personalizing and adding tags through the Artisan Canvas, it is our interface.
+* Personalize
+* Optimize
+* Tagging
+ 
+## Instant Publishing
+With Canvas, you are able to make changes to the design of your application and publish those changes immediately to your customers.
 
-When you select Modify and Personalize, Create an Experiment or Add a Tag you are brought to Canvas and will be on the current screen you had selected when in App Map.
+### Making Changes to Your App
+Artisan makes it easy to make changes to your app, like fixing a typo or updating an image.
 
-Canvas allows you to select specific elements in your app and make them available for point and click changes.
+* Open the App Map by clicking on the App Map icon on the navigation menu on the left of your screen
+* Using your device (or simulator) select the screen that you would like to modify and click the "Modify and Personalize" link located in the Action Sheet on the right
+* Once in the Artisan Canvas you can start making changes to your screen. For example you can update the text of a button, change background colors, and move items around on the screen.
+* Once you have finished making your changes, hit **Publish** on the top right corner. This will immediately publish your changes to all of your users and will be available the next time your users open their app.
 
-###Getting to know Canvas
+You can also make changes and publish those changes to specific segments of users with Artisan Personalize. To learn more about personalizing your user experience read about **Artisan Personalize**.
 
-In the upper left hand corner you name either your segments for Personalization or variations for A/B testing in Optimize.
+## Event Tagging
+Tagging allows you to associate any piece of information displayed on the screen with an action that a user performs. For example, if your app allowed users to make purchases you could associate the total cart value with each time a user taps the "Purchase" button. This additional information allows you to create more targeted segments of users and gain deeper insights into how your users are interacting with your app.
 
-In the lower left hand corner, you will see the UI elements from within your app - you can click on the name of the element to select it in the list or you can click/press on the element within the screen depicted.
+### Tagging Events
+* Click 'Create New Tag' on the right hand side of the screen
+* Click Start Tagging
+* Click on the object on the screen (button, switch, etc…) that triggers the event you wish to tag and click "Next"
+* Now you can select the pieces of information you would like to associate with the action you selected in the previous step. This could be a piece of text, or it could be multiple pieces of information — multiple text fields, input field values, etc...
+* Type the name for your tag in the text field. This name will identify the tag when you use it to filter the given event in the Event Report.
+* Then click Finish.
 
-The center of the screen is a snapshot of your app that you can directly interact with to select, move or change the size of an element.
+### Deleting a Tag
+* Navigate to the screen the tag is on through App Map.
+* Click "Modify and Personalize", and click the Tag tab on the right hand side. (or alternatively, Add a tag).
+* This will open up your list of tags for the current screen.
+* Click the X icon next to the tag you would like to remove.
 
-The right hand side of the screen provides you the controls to add text, images, paragraphs or buttons as well as the ability to make changes and optimizations to existing elements.
+### Viewing Tag Reports
+To see reports on the relationship between the target behavior and the label or text field, go to the Events Report within Artisan Analyze.
+
+* Click the "Analyze" icon on the navigation menu on the left of the screen
+* Select the "Events" tab
+* Select the event that you would like to view from the list of events
+
+In the drop down above the Event Report, the tag that was just identified should be available. This tag will allow you to filter the Event Report to show only events that happened while this tag was present on the screen (i.e. show only when this event happened with '$24' shown as the Product Price).
+You can then enter the data (e.g. Product Price of $24) to see the trend line associated with that product.
 
 
 
