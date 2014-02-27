@@ -6,6 +6,8 @@ category: dev
 description: "Getting started with the Artisan MEM platform for developers."
 ---
 #Developing with Artisan
+
+##iOS Topics
 <table>
   <colgroup>
     <col width="20%" />
@@ -14,7 +16,7 @@ description: "Getting started with the Artisan MEM platform for developers."
   </colgroup>
   <thead>
     <tr>
-      <th>Topic</th>
+      <th>iOS Topic</th>
       <th>Supported</th>
       <th>Not Supported</th>
     </tr>
@@ -22,7 +24,7 @@ description: "Getting started with the Artisan MEM platform for developers."
   <tbody>
     <tr>
       <th>Development Environment</th>
-      <td>Native iOS code XCode, NIBs and Story Boards</td>
+      <td>Native iOS code XCode, NIBs and Story Boards for iOS</td>
       <td>Unity, Appcelerator, Phone Gap and Mono Touch</td>
     </tr>
     <tr>
@@ -87,13 +89,82 @@ description: "Getting started with the Artisan MEM platform for developers."
     </tr>
   </tbody>
 </table>
-##Known SDK Compatibility Issues
-###iOS
+
+###Known SDK Compatibility Issues for iOS
 
 * IIViewDeck SDK
 * Parse (Resolved)
 
 Check out [this article](https://getsatisfaction.com/artisan/topics/third_party_conflicts) for more information on how to resolve the third party SDK conflicts.
 
-###Android
-No known issues.
+##Android Topics
+<table>
+  <colgroup>
+    <col width="20%" />
+    <col width="40%" />
+    <col width="40%" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Android Topic</th>
+      <th>Supported</th>
+      <th>Not Supported</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+  <th>Development Environment</th>
+  <td>Native Android code built via Eclipse, Ant or IntelliJ*<br>*(we unofficially support IntelliJ IDEA Ultimate Edition)</td>
+  <td>Gradle, Maven, Android Studio and IntelliJ Community Edition (the AspectJ plugin is not supported by community editions of IntelliJ)</td>
+</tr>
+<tr>
+  <th>Artisan &amp; onStart</th>
+  <td>Artisan makes dynamic changes at the onStart stage of the activity lifecycle</td>
+  <td>Any changes the app makes after onStart may have an adverse impact on the desired Artisan change</td>
+</tr>
+<tr>
+  <th>Conditional content changes that occur after onStart</th>
+  <td>Artisan recommends to not make conditional content changes after onStart</td>
+  <td>Any changes the app makes after onStart may have an adverse impact on the desired Artisan change</td>
+</tr>
+<tr>
+  <th>Layouts</th>
+  <td>Artisan supports scaling and translating views via the Artisan Canvas on Android for devices running API 12 and above.</td>
+  <td>Artisan does not support resizing or moving views with Canvas on Gingerbread devices at this time.</td>
+</tr>
+<tr>
+  <th>Multiple or layered Views, Activities and Fragments</th>
+  <td>Artisan Canvas for Android does not yet support Fragments and layered views.</td>
+  <td>NA</td>
+</tr>
+<tr>
+  <th>Apps with Only One Activity</th>
+  <td>Artisan supports apps with only one Activity. Special care must be taken with the In-Code API to account for the Artisan Service starting up.</td>
+  <td>NA</td>
+</tr>
+<tr>
+  <th>Multiple experiments per Activity</th>
+  <td>Artisan supports running one experiment per Activity at a time for Canvas experiments</td>
+  <td>You cannot run multiple experiments for an Activity at the same time</td>
+</tr>
+<tr>
+  <th>Identifying Activities and Elements</th>
+  <td>Developers name Activities that can be easily understood by non-technical users</td>
+  <td>Artisan does not support renaming Activities or Fragments via the Canvas</td>
+</tr>
+<tr>
+  <th>Multiple Conversion Goals in Same Experiment</th>
+  <td>Artisan supports multiple conversion goals via our In-Code capability. See <a href="/dev/quickstart-for-android/#api">Android In-Code</a> for more information.</td>
+  <td>Artisan does not support multiple conversion goals via Canvas</td>
+</tr>
+<tr>
+  <th>Experimenting with Action Bar</th>
+  <td>Artisan supports experimenting with elements in the action bar via our In-Code capability. See <a href="/dev/quickstart-for-android/#api">Android In-Code</a> for more information.</td>
+  <td>Artisan does not support experimenting with elements in the action bar via Canvas.</td>
+</tr>
+</tbody>
+</table>
+
+###Known SDK Compatibility Issues for Android
+
+* Some library projects use different versions of the android support v4 jar that we add to your libs directory. You can resolve this conflict by copying the same version of the android support v4 jar to your libs directory and all library projects you are using that depend on it.
