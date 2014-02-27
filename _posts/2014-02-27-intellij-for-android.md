@@ -45,10 +45,9 @@ description: "Installing Artisan for Android in IntelliJ"
 
 7\. Download the installer from Artisan Tools. You should have a file like: YourProjectName-ArtisanInstaller.zip
 
-<div class="note note-important">
+<!--<div class="note note-important">
 If you are using ProGuard please see the <a href="/dev/proguard-for-android/">Artisan ProGuard configuration instructions</a>.
-</div>
-
+</div>-->
 
 <div class="note note-hint">
   <p>Also note, the Artisan SDK uses the following jars, which will be copied in to your project:</p>
@@ -69,6 +68,7 @@ If you are using ProGuard please see the <a href="/dev/proguard-for-android/">Ar
 Artisan comes bundled with an installer that will configure your project and add the necessary files to your source root.It will also edit your AndroidManifest.xml to point to the CustomArtisanService that is needed to instrument your Artisan application.
 
 1\. Extract the contents of YourProjectName-ArtisanInstaller.zip into your project's root directory.
+
 2\. In a terminal, go to the artisan directory inside your project's root directory and run:
 {% highlight bash %}
     install.bat (on Windows)
@@ -80,16 +80,21 @@ This will update your manifest file, add the required libraries, generate Artisa
 If there are any settings in your application's manifest that are not compatible with Artisan you will be notified and the installer will not complete. For example, you must specify a minimum Android SDK of 2.3.3 or higher. Change the specified settings and run the Artisan installer again.
 
 3\. In IntelliJ add the **artisan_library/artisan_library_4.jar** as a Library to your module.
+
 4\. Add all of the jars in your libs folder as Libraries for your app module
+
 5\. Make your Activity lifecycle methods public. In order to instrument your application Artisan needs any onStart, onStop and onDestroy methods that you have implemented in your app to be public. The default for the lifecycle methods is protected, which we are not able to instrument. If you skip this step Artisan will not work properly and you may experience errors and you may have unexpected behavior.
+
 6\. Installation is now complete.
 
 **Congratulations! You are now ready to start using Artisan!** Now you can <a href="/dev/quickstart-for-android/#api">get started with the Artisan Android API</a>.
 
-<div class="note important">
-<p>CRITICAL NOTE FOR INTELLIJ IDEA USERS: It is critical that at least before your final release build the artisan install script is run again with the --aspectonly flag, like this:</p>
+<div class="note note-important">
+<p>CRITICAL NOTE: It is imperative that at least before your final release build the artisan install script is run again with the --aspectonly flag, like this:</p>
 {% highlight bash %}
   install.sh --aspectonly
 {% endhighlight %}
-<p>This will regenerate the Artisan instrumentation, the gen/../Artisaninstrumentation.aj file(s), so that all of your activities are fully instrumented so that analytics can be gathered and changes applied. You can also run this script at any time without doing any harm. In fact, for Eclipse we have added a builder that takes care of re-running this script after each build, but since IntelliJ is only unofficially supported at this time the script will need to be manually run.</p>
+<p>This will regenerate the Artisan instrumentation, the gen/../Artisaninstrumentation.aj file(s), so that all of your activities are fully instrumented so that analytics can be gathered and changes applied.</p>
+
+<p>You can also run this script at any time without doing any harm. In fact, for Eclipse we have added a builder that takes care of re-running this script after each build, but since IntelliJ is only unofficially supported at this time the script will need to be manually run.</p>
 </div>
