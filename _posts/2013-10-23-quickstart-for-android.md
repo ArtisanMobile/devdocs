@@ -5,7 +5,7 @@ author: "Artisan"
 category: dev
 description: "Getting started with the Artisan MEM platform for developers."
 ---
-#Artisan Quickstart Guide for Android
+#Artisan Quickstart Guide for Android in Eclipse
 
 ##Prerequisites
 1\. Eclipse with Android SDK (At a minimum ensure you have support for Android 2.3.3 and build against the latest Android SDK)
@@ -25,9 +25,9 @@ description: "Getting started with the Artisan MEM platform for developers."
 * Accept the licenses and click \"Finish\"
 * You may be prompted to restart Eclipse after this installation is complete.
 
-<div class="note note-important">
-  <p>Important: the Artisan Android SDK is not compatible with ProGuard. Unexpected behavior may occur if you install Artisan into an app built with ProGuard.</p>
-</div>
+<!--<div class="note note-important">
+If you are using ProGuard please see the <a href="/dev/proguard-for-android/">Artisan ProGuard configuration instructions</a>.
+</div>-->
 
 <div class="note note-hint">
   <p>Also note, the Artisan SDK uses the following jars, which will be copied in to your project:</p>
@@ -175,6 +175,7 @@ In order to regenerate these files *automatically* after every build, Eclipse ne
 
 Congratulations! You are now ready to start using Artisan!
 
+<div id="api"></div>
 ##Analytics
 ArtisanTrackingManager manages all in-code analytics tracking designed for use with Artisan, to allow you to track custom views and events.
 
