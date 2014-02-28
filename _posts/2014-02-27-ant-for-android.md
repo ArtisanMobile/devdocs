@@ -8,7 +8,7 @@ description: "Setting up Artisan with your Android Ant Builds"
 # Artisan SDK Installation for ANT
 
 <div class="note note-important">
-<p>Ant is unoficially supported by Artisan at this time.</p>
+<p>Ant support for Artisan is in BETA.</p>
 </div>
 
 Ant is an important tool for continuous integration so we want to make sure that you can build and verify your app with Artisan in it if you are using ant.

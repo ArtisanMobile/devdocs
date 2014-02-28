@@ -8,7 +8,7 @@ description: "Installing Artisan for Android in IntelliJ"
 #Artisan Quickstart Guide for Android in IntelliJ Ultimate Edition
 
 <div class="note note-important">
-<p>IntelliJ Ultimate Edition is unoficially supported by Artisan at this time. The AspectJ plugin is not supported in Community Editions of IntelliJ including Android Studio, so they cannot be used with Artisan.</p>
+<p>IntelliJ Ultimate Edition support is in BETA. The AspectJ plugin is not supported in Community Editions of IntelliJ including Android Studio, so they cannot be used with Artisan.</p>
 </div>
 
 ## Prerequisites
