@@ -25,9 +25,9 @@ description: "Getting started with the Artisan MEM platform for developers."
 * Accept the licenses and click \"Finish\"
 * You may be prompted to restart Eclipse after this installation is complete.
 
-<!--<div class="note note-important">
+<div class="note note-important">
 If you are using ProGuard please see the <a href="/dev/proguard-for-android/">Artisan ProGuard configuration instructions</a>.
-</div>-->
+</div>
 
 <div class="note note-hint">
   <p>Also note, the Artisan SDK uses the following jars, which will be copied in to your project:</p>
