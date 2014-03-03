@@ -24,21 +24,6 @@ In your ```proguard-project.txt``` file you will need to add the following excep
 {% highlight bash %}
 # You probably already have these exceptions in place
 -keep public class * extends android.app.Activity
--keep public class * extends android.app.Application
--keep public class * extends android.app.Service
--keep public class * extends android.content.BroadcastReceiver
--keep public class * extends android.content.ContentProvider
--keep public class * extends android.view.View {
-    public <init>(android.content.Context);
-    public <init>(android.content.Context, android.util.AttributeSet);
-    public <init>(android.content.Context, android.util.AttributeSet, int);
-}
--keepclasseswithmembers class * {
-    public <init>(android.content.Context, android.util.AttributeSet);
-}
--keepclasseswithmembers class * {
-    public <init>(android.content.Context, android.util.AttributeSet, int);
-}
 
 # Keep method signatures for methods that are used for Artisan analytics events
 -keepclassmembers class * extends android.content.Context {
@@ -46,35 +31,21 @@ In your ```proguard-project.txt``` file you will need to add the following excep
     public void *(android.view.MenuItem);
 }
 
-# Keep the generated aspectj files intact
-# TODO you will have one of these in your gen folder for each package in your app that has activities or fragments in it. They all need to be listed here
--keep class todo.your.app.package.here.ArtisanInstrumentation
-
-# Keep the public methods in your CustomArtisanService class
+# Artisan and Artisan Dependencies
+-keep class com.artisan.** { *; }
+-keep interface com.artisan.** { *; }
 -keepclasseswithmembers public class * extends com.artisan.service.ArtisanService {
     public *;
 }
-
-# Artisan and Artisan Dependencies
 -libraryjars artisan_library/artisan_library_4.jar
--keep class com.artisan.** { *; }
--keep interface com.artisan.** { *; }
 -libraryjars artisan/aspectj-1.7.2/aspectjrt.jar
--libraryjars libs/httpclientandroidlib-1.1.2.jar:libs/jackson-core-2.2.3.jar:libs/otto-1.3.4.jar:libs/android-support-v4.jar:libs/jackson-annotations-2.2.3.jar:libs/jackson-databind-2.2.3.jar:libs/volley.jar
+-libraryjars libs/jackson-core-2.2.3.jar:libs/jackson-annotations-2.2.3.jar:libs/jackson-databind-2.2.3.jar
 -keep class com.fasterxml.jackson.** { *; }
 -keep interface com.fasterxml.jackson.** { *; }
--keep class android.support.v4.** { *; }
--keep interface android.support.v4.** { *; }
--keep class ch.boye.httpclientandroidlib.** { *; }
--keep interface ch.boye.httpclientandroidlib.** { *; }
--keep class com.android.volley.** { *; }
--keep interface com.android.volley.** { *; }
 -keep class org.codehaus.jackson.** { *; }
 -keep interface org.codehaus.jackson.** { *; }
--keep class com.squareup.otto.** { *; }
--keep interface com.squareup.otto.** { *; }
 
-# Artisan requires these attributes to remain in place to support AspectJ instrumentation
+#Artisan requires these attributes to remain in place to support AspectJ instrumentation
 -keepattributes *Annotation*,Signature,Exceptions,InnerClasses,EnclosingMethod
 
 # You can safely ignore warnings about these Artisan dependencies
