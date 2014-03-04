@@ -22,10 +22,10 @@ Primarily these exceptions are for Artisan's classes and dependencies, although 
 In your ```proguard-project.txt``` file you will need to add the following exceptions.
 
 {% highlight bash %}
-# You probably already have these exceptions in place
+# You probably already have this exception in place, no need to duplicate it if you do
 -keep public class * extends android.app.Activity
 
-# Keep method signatures for methods that are used for Artisan analytics events
+# Keep method signatures for methods that are matched via AspectJ for Artisan analytics events
 -keepclassmembers class * extends android.content.Context {
     public void *(android.view.View);
     public void *(android.view.MenuItem);
@@ -45,8 +45,8 @@ In your ```proguard-project.txt``` file you will need to add the following excep
 -keep class org.codehaus.jackson.** { *; }
 -keep interface org.codehaus.jackson.** { *; }
 
-#Artisan requires these attributes to remain in place to support AspectJ instrumentation
--keepattributes *Annotation*,Signature,Exceptions,InnerClasses,EnclosingMethod
+# Artisan requires these attributes to remain in place to support AspectJ instrumentation
+-keepattributes *Annotation*,Signature
 
 # You can safely ignore warnings about these Artisan dependencies
 -dontwarn org.joda.time.**
