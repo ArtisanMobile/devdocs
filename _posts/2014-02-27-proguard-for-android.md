@@ -9,7 +9,7 @@ description: "Configuring ProGuard for Artisan"
 
 The Artisan Android SDK is compatible with ProGuard.
 
-You will need to add some exceptions to your ProGuard configuration file in order for Artisan to work out in production.
+You will need to add some exceptions to your ProGuard configuration file in order for Artisan to work in an obfuscated release build.
 
 Primarily these exceptions are for Artisan's classes and dependencies, although we also will need exceptions for the method signatures of methods in your activities that take a View as an argument. This is so that we can provide our automatic instrumentation of your app via AspectJ for collecting analytics events.
 
