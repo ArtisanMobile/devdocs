@@ -25,9 +25,9 @@ description: "Getting started with the Artisan MEM platform for developers."
 * Accept the licenses and click \"Finish\"
 * You may be prompted to restart Eclipse after this installation is complete.
 
-<!--<div class="note note-important">
+<div class="note note-important">
 If you are using ProGuard please see the <a href="/dev/proguard-for-android/">Artisan ProGuard configuration instructions</a>.
-</div>-->
+</div>
 
 <div class="note note-hint">
   <p>Also note, the Artisan SDK uses the following jars, which will be copied in to your project:</p>
@@ -177,6 +177,9 @@ Congratulations! You are now ready to start using Artisan!
 
 <div id="api"></div>
 ##Analytics
+
+Artisan automatically collects analytics events for every user, session, page view, tap and other user interactions. There's nothing you need to add to your app to capture those events. But, there are times when you want to capture an event that doesn't correspond directly to a tap or navigation, or maybe you want to capture more information with a particular tap or event. To capture these custom analytics events we have the ArtisanTrackingManager class in our API.
+
 ArtisanTrackingManager manages all in-code analytics tracking designed for use with Artisan, to allow you to track custom views and events.
 
 {% highlight java %}

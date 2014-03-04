@@ -45,9 +45,9 @@ description: "Installing Artisan for Android in IntelliJ"
 
 7\. Download the installer from Artisan Tools. You should have a file like: YourProjectName-ArtisanInstaller.zip
 
-<!--<div class="note note-important">
+<div class="note note-important">
 If you are using ProGuard please see the <a href="/dev/proguard-for-android/">Artisan ProGuard configuration instructions</a>.
-</div>-->
+</div>
 
 <div class="note note-hint">
   <p>Also note, the Artisan SDK uses the following jars, which will be copied in to your project:</p>

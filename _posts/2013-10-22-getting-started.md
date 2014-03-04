@@ -77,9 +77,12 @@ You should now be able to build your app and successfully connect it to artisant
 
 <div id="api"></div>
 ##Analytics
-ARTrackingManager manages all in-code analytics tracking designed for use with Artisan, to allow you to track both views and events.
 
-The **registerUserProfileVariablesCode:** and **registerUserProfileVariablesCode:parameters** methods allow you to track an event by name.
+Artisan automatically collects analytics events for every user, session, page view, tap and other user interactions. There's nothing you need to add to your app to capture those events. But, there are times when you want to capture an event that doesn't correspond directly to a tap or navigation, or maybe you want to capture more information with a particular tap or event. To capture these custom analytics events we have the ARTrackingManager class in our API.
+
+ARTrackingManager manages all in-code custom analytics tracking designed for use with Artisan.
+
+The **trackEvent:** and **trackEvent:parameters** methods allow you to track an event by name.
 
 {% highlight objective-c %}
 [ARTrackingManager trackEvent:@"itemsInCartAreNowOutofStock"];
