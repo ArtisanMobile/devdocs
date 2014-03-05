@@ -53,10 +53,6 @@ In your ```proguard-project.txt``` file you will need to add the following excep
 -dontwarn org.w3c.dom.bootstrap.**
 {% endhighlight %}
 
-<div class="note note-important">
-  <p>There is one line in the above file marked with TODO. You need to add the fully qualified package for the ArtisanInstrumentation file(s) in your gen folder. There will be one for each package in your app with activities in it.</p>
-</div>
-
 ##Recommended Reading
 
 If you are interested in reading more about ProGuard and ProGuard configuration for Android, we recommend <a href="http://omgitsmgp.com/2013/09/09/a-conservative-guide-to-proguard-for-android/">this unofficial guide</a> and this <a href="http://proguard.sourceforge.net/manual/examples.html#androidapplication">official example</a>.
