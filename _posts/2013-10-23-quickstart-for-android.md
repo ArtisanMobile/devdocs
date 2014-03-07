@@ -72,6 +72,7 @@ Congratulations! You are now ready to start using Artisan!
 
 Now that the SDK is installed in your app we need to connect it to Artisan. Connecting your app verifies that the SDK has been installed correctly and that your app can communicate with the Artisan platform.
 
+<div id="manual"></div>
 ###Option 2: Manually Adding the Artisan SDK to your App
 
 If you prefer to manually install Artisan, follow the steps outlined in the rest of this document, including: updating your Eclipse project, setting up the Artisan Service, and configuring the Artisan Builder to generate the Artisan AspectJ files.
