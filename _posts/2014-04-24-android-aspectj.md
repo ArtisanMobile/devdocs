@@ -7,7 +7,7 @@ description: "Getting started with the Artisan Auto-Instrumentation with AspectJ
 ---
 
 <div id="aspectj"></div>
-#Artisan Quickstart Guide for Android Auto-Instrumentation with AspectJ
+#Artisan Auto-Instrumentation with AspectJ
 
 <div class="note note-hint">
   <p>The default instructions for installing Artisan Auto-Instrumentation with AspectJ are for <strong>Eclipse development environments</strong>.</p>
