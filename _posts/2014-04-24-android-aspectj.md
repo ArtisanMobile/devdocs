@@ -18,7 +18,12 @@ description: "Getting started with the Artisan Auto-Instrumentation with AspectJ
   </ul>
 </div>
 
-## Eclipse Installation (Default)
+<div class="note note-important">
+  <p>If you don't wish to use AspectJ please see the default <a href="/dev/quickstart-for-android/">Artisan Android Installation</a> instructions.</p>
+  <p>The capabilities of both versions are the same except that the AspectJ version automatically instruments your activities and collects all user interactions as analytics events.</p>
+</div>
+
+## Artisan AspectJ Eclipse Installation
 
 ###Prerequisites
 
@@ -72,6 +77,10 @@ If there are any settings in your application\'s manifest that are not compatibl
 **Congratulations! You are now ready to start using Artisan!**
 
 Now that the SDK is installed in your app we need to connect it to Artisan. Connecting your app verifies that the SDK has been installed correctly and that your app can communicate with the Artisan platform.
+
+<div class="note note-important">
+  <p>You should not extend ArtisanActivity or manually implement the ArtisanBoundActivity interface if you are using Artisan AspectJ. This Activity instrumentation is done automatically via AspectJ</p>
+</div>
 
 <div id="eclipse-manual"></div>
 ###Option 2: Manually Adding the Artisan SDK to your App
