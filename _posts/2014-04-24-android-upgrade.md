@@ -18,19 +18,28 @@ rm -rf artisan
 ## Upgrading from Artisan 2.0.17 and below (Version installed before April 24, 2014)
 
 <div class="note note-important">
-  <p>Artisan Android 2.0.17 and below all used AspectJ. <strong>As of Artisan 2.0.18 the new default for Artisan Android does not use AspectJ</strong>, although that is still an option for auto-instrumentation. If you wish to continue using <a href="/dev/android-aspectj/">Artisan Auto-Instrumentation with AspectJ</a> you can skip these instructions and continue with your upgrade (don't forget to run the instaler with the --aspectj flag).</p>
+  <p>Artisan Android 2.0.17 and below all used AspectJ. <strong>As of Artisan 2.0.18 the new default for Artisan Android does not use AspectJ</strong>, although that is still an option for auto-instrumentation. If you wish to continue using <a href="/dev/android-aspectj/">Artisan Auto-Instrumentation with AspectJ</a> you may, but you should still complete the steps below.</p>
 </div>
 
-If you are upgrading from Artisan 2.0.17 and below and you are not using the Artisan AspectJ version going forward, then there are a few steps you will need to take to transition:
+If you are upgrading from Artisan 2.0.17 and below, then there are a few steps you will need to take to transition:
 
 ### 1\. Remove AspectJ Nature
+
 In Eclipse, remove the AspectJ project nature by right clicking on your project and choosing AspectJ Tools -> Remove AspectJ Nature
+
+<div class="note note-hint">
+  <p>You may skip this step if you would like to opt to continue using <a href="/dev/android-aspectj/">Artisan Auto-Instrumentation with AspectJ</a>.</p>
+</div>
 
 ### 2\. Remove old Artisan jar from Build Path
 
 Also in Eclipse remove the **artisan_library_4.jar** from your Java Build Path. To do this right click on your project in the Project Explorer again and choose \"Properties\". Then in the list on the left, click on \"Java Build Path\" and select the **artisan_library_4.jar** if it is there and click the \"Remove\" button.
 
 * You may see compile errors in Eclipse when you do this. They will be resolved when you complete the installation of the new version of Artisan.
+
+<div class="note note-hint">
+  <p>If you are going to continue using <a href="/dev/android-aspectj/">Artisan Auto-Instrumentation with AspectJ</a> you also should remove the old jar from your AspectJ inpath as well.</p>
+</div>
 
 ### 3\. Clean out old Artisan artifacts
 
@@ -56,8 +65,14 @@ You can safely remove any dependencies from your libs folder that were added whe
 
 ### 5\. Clean up IntelliJ and Ant config (if applicable)
 
-If you had set up your IntelliJ or Ant project for Artisan AspectJ you can remove that special configuration.
+If you had set up your IntelliJ or Ant project for Artisan AspectJ you can remove that special configuration unless you are opting to continue using <a href="/dev/android-aspectj/">Artisan Auto-Instrumentation with AspectJ</a>.
+
+Details about what that configuration was can be found on <a href="/dev/android-aspectj/">the Artisan AspectJ page</a>.
 
 ### 6\. Proceed with Installation
 
 Enjoy a leaner and simpler Artisan SDK! Please follow <a href="/dev/quickstart-for-android/">new Android installation instructions</a> to complete the installation of the Artisan SDK.
+
+<div class="note note-hint">
+  <p>If you are opting to continue using Artisan Auto-Instrumentation with AspectJ please use <a href="/dev/android-aspectj/">these instructions</a> instead.</p>
+</div>
