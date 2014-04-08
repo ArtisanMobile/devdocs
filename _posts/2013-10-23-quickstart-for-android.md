@@ -37,6 +37,7 @@ If there are any settings in your application\'s manifest that are not compatibl
 
 * If you are using Eclipse, you\'ll need to refresh the project in Eclipse so that the newly added files are pulled into the project. Right click on your project and choose \"Refresh\".
 
+<div id="artisan-activity"></div>
 5\. Update all of your activities to extend the ArtisanActivity or implement our interface ArtisanBoundActivity
 
 In order for your app to be properly instrumented all of your activities need to either extend ArtisanActivity or implement the ArtisanBoundActivity interface.
