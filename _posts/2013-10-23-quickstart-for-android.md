@@ -53,7 +53,7 @@ public class BaseActivity extends ArtisanActivity {
 }
 {% endhighlight %}
 
-If you are already exending a third party Activity or don't wish to extend the ArtisanActivity you have the alternative of implementing our interface instead.
+If you are already extending a third party Activity or don't wish to extend the ArtisanActivity you have the alternative of implementing our interface instead.
 
 If you do, you must also make sure to add implementations for each of these methods and call the respective ArtisanActivity static method:
 * implement **protected void onCreate(Bundle savedInstanceState)** and call **ArtisanActivity.artisanOnCreate(this)**
@@ -205,7 +205,7 @@ public class BaseActivity extends ArtisanActivity {
 }
 {% endhighlight %}
 
-If you are already exending a third party Activity or don't wish to extend the ArtisanActivity you have the alternative of implementing our interface instead.
+If you are already extending a third party Activity or don't wish to extend the ArtisanActivity you have the alternative of implementing our interface instead.
 
 If you do, you must also make sure to add implementations for each of these methods and call the respective ArtisanActivity static method:
 * implement **protected void onCreate(Bundle savedInstanceState)** and call **ArtisanActivity.artisanOnCreate(this)**
