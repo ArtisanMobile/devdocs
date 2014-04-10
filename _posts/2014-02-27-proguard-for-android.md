@@ -18,11 +18,14 @@ The Artisan Android SDK is compatible with ProGuard.
 In your ```proguard-project.txt``` file you will need to add the following exceptions.
 
 {% highlight bash %}
-# You probably already have these
--keep public class * extends android.app.Activity
--keep public class * extends android.app.Service
-# Artisan
--libraryjars libs/artisan_library.jar
+# For Artisan
+-libraryjars libs # if you are already including everything in libs as library jars you can omit this line or you can specify libs/artisan_library.jar
+-keep class com.artisan.** { *; }
+-keep interface com.artisan.** { *; }
+-keep class * extends com.artisan.service.ArtisanService {
+    public *;
+}
+-dontwarn com.fasterxml.jackson.**
 {% endhighlight %}
 
 ##If you are using Android AspectJ
@@ -32,10 +35,7 @@ If you are using Artisan Android AspectJ the ProGuard configuration required is 
 The primary difference is that we need exceptions for the method signatures of methods in your activities that take a View as an argument. This is so that we can provide our automatic instrumentation of your app via AspectJ for collecting analytics events.
 
 {% highlight bash %}
-# You might already have these
--keep public class * extends android.app.Activity
--keep public class * extends android.app.Service
-
+# You might already have this
 # Keep method signatures for methods that are matched via AspectJ for Artisan analytics events
 -keepclassmembers class * extends android.content.Context {
     public void *(android.view.View);
@@ -46,6 +46,12 @@ The primary difference is that we need exceptions for the method signatures of m
 -libraryjars artisan_library/artisan_library.jar
 # Artisan AspectJ Dependency
 -libraryjars artisan/aspectj-1.7.2/aspectjrt.jar
+-keep class com.artisan.** { *; }
+-keep interface com.artisan.** { *; }
+-keep class * extends com.artisan.service.ArtisanService {
+    public *;
+}
+-dontwarn com.fasterxml.jackson.**
 {% endhighlight %}
 
 ##Recommended Reading
