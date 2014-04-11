@@ -19,6 +19,7 @@ In your ```proguard-project.txt``` file you will need to add the following excep
 
 {% highlight bash %}
 # For Artisan
+-keepattributes Signature,*Annotation*
 -libraryjars libs # if you are already including everything in libs as library jars you can omit this line or you can specify libs/artisan_library.jar
 -keep class com.artisan.** { *; }
 -keep interface com.artisan.** { *; }
@@ -42,9 +43,9 @@ The primary difference is that we need exceptions for the method signatures of m
     public void *(android.view.MenuItem);
 }
 
-# Artisan
+# For Artisan
+-keepattributes Signature,*Annotation*
 -libraryjars artisan_library/artisan_library.jar
-# Artisan AspectJ Dependency
 -libraryjars artisan/aspectj-1.7.2/aspectjrt.jar
 -keep class com.artisan.** { *; }
 -keep interface com.artisan.** { *; }
