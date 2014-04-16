@@ -33,12 +33,12 @@ This will update your manifest file, add the **artisan_library.jar** to your lib
 
 If there are any settings in your application\'s manifest that are not compatible with Artisan you will be notified and the installer will not complete. For example, you must specify a minimum Android SDK of 2.3.3 or higher. Change the specified settings and run the Artisan installer again.
 
-4\. Installation is now complete!
-
-* If you are using Eclipse, you\'ll need to refresh the project in Eclipse so that the newly added files are pulled into the project. Right click on your project and choose \"Refresh\".
+<div class="note note-hint">
+<p>If you are using Eclipse, you'll need to refresh the project in Eclipse so that the newly added files are pulled into the project. Right click on your project and choose "Refresh".</p>
+</div>
 
 <div id="artisan-activity"></div>
-5\. Update all of your activities to extend the ArtisanActivity or implement our interface ArtisanBoundActivity
+4\. Update all of your activities to extend the ArtisanActivity or implement our interface ArtisanBoundActivity
 
 In order for your app to be properly instrumented all of your activities need to either extend ArtisanActivity or implement the ArtisanBoundActivity interface.
 

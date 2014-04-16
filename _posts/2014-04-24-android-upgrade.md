@@ -51,7 +51,7 @@ rm -rf artisan artisan_library
 
 ### 4\. Remove old Artisan Dependencies
 
-You can safely remove any dependencies from your libs folder that were added when you first installed Artisan, assuming that your app doesn't also depend on them. Artisan's old dependencies were:
+You can safely remove any dependencies from your libs folder that were added when you first installed Artisan, <strong>assuming that your app doesn't also depend on them</strong>. Artisan's old dependencies were:
 
 <ul>
     <li>android-support-v4.jar</li>
