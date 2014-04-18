@@ -139,6 +139,8 @@ Now that the SDK is installed in your app we need to connect it to Artisan. Conn
 
 You can also get started using the <a href="#api">Artisan API</a>.
 
+Want to know more about what the Android SDK can do? See <a href="/dev/developing-with-artisan/#android">Developing with Artisan</a>.
+
 <div id="manual"></div>
 ###Option 2: Manually Adding the Artisan SDK to your App
 
@@ -284,6 +286,8 @@ public class SampleArtisanCustomerActivity extends Activity implements ArtisanBo
 **Congratulations! You are now ready to start using Artisan!**
 
 Now that the SDK is installed in your app we need to connect it to Artisan. Connecting your app verifies that the SDK has been installed correctly and that your app can communicate with the Artisan platform. See the getting started notification in Artisan Tools to connect your device.
+
+Want to know more about what the Android SDK can do? See <a href="/dev/developing-with-artisan/#android">Developing with Artisan</a>.
 
 <div id="api"></div>
 ##Getting Started with the Artisan API
