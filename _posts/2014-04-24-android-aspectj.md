@@ -9,18 +9,16 @@ description: "Getting started with the Artisan Auto-Instrumentation with AspectJ
 <div id="aspectj"></div>
 #Artisan Auto-Instrumentation with AspectJ
 
-<div class="note note-hint">
-  <p>The default instructions for installing Artisan Auto-Instrumentation with AspectJ are for <strong>Eclipse development environments</strong>.</p>
-  <p>See additional steps below for</p>
-  <ul>
-    <li><a href="#intellij">IntelliJ Ultimate Edition Installation</a></li>
-    <li><a href="#ant">Ant Installation</a></li>
-  </ul>
-</div>
-
 <div class="note note-important">
   <p>If you don't wish to use AspectJ please see the default <a href="/dev/quickstart-for-android/">Artisan Android Installation</a> instructions.</p>
-  <p>The capabilities of both versions are the same except that the AspectJ version automatically instruments your activities and collects all user interactions as analytics events.</p>
+  <p>The capabilities of both versions are the same except that the AspectJ version automatically instruments your activities and collects all user interactions as analytics events. Fewer development environments are supported for the AspectJ version.</p>
+  <p>For more details about what is supported with the different versions of the Artisan Android SDK, see <a href="/dev/developing-with-artisan/#android">Developing with Artisan</a>.</p>
+  <p>Supported development environments and build tools for Artisan Auto-Instrumentation with AspectJ:</p>
+  <ul>
+    <li>Eclipse (default)</li>
+    <li><a href="#intellij">IntelliJ Ultimate Edition</a></li>
+    <li><a href="#ant">Ant</a></li>
+  </ul>
 </div>
 
 ## Artisan AspectJ Eclipse Installation
