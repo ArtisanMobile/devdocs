@@ -97,6 +97,7 @@ description: "Getting started with the Artisan MEM platform for developers."
 
 Check out [this article](https://getsatisfaction.com/artisan/topics/third_party_conflicts) for more information on how to resolve the third party SDK conflicts.
 
+<div id="android"></div>
 ##Android Topics
 <table>
   <colgroup>
