@@ -15,6 +15,10 @@ As a general best practice when upgrading, you should delete the artisan directo
 rm -rf artisan
 {% endhighlight %}
 
+<div class="note note-hint">
+  <p>Questions about installing or upgrading? We are always more than happy to help! Send an email to <a href="mailto:support@useartisan.com?Subject=Android%20SDK%20Upgrade%20Help" target="_top">support@useartisan.com</a> or give us a call at 800.594.0401.</p>
+</div>
+
 ## Upgrading from Artisan 2.0.17 and below (Version installed before April 24, 2014)
 
 <div class="note note-important">
