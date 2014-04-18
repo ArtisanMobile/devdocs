@@ -11,7 +11,7 @@ description: "Getting started with the Artisan MEM platform for developers."
 * Android App with a minimum SDK of no less than Android 2.3.3 (API 10) and build against the latest Android SDK.
 
 <div class="note note-hint">
-If you are upgrading from an older (Artisan 2.0.17 and below) version of Artisan please see the <a href="/dev/android-upgrade/">Artisan upgrade instructions</a>.
+If you are upgrading from an older (Artisan 2.0.x) version of Artisan please see the <a href="/dev/android-upgrade/">Artisan upgrade instructions</a>.
 </div>
 
 ##Adding Artisan to Your App

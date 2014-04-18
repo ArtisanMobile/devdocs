@@ -19,13 +19,13 @@ rm -rf artisan
   <p>Questions about installing or upgrading? We are always more than happy to help! Send an email to <a href="mailto:support@useartisan.com?Subject=Android%20SDK%20Upgrade%20Help" target="_top">support@useartisan.com</a> or give us a call at 800.594.0401.</p>
 </div>
 
-## Upgrading from Artisan 2.0.17 and below (Version installed before April 24, 2014)
+## Upgrading from Artisan 2.0.x (Version installed before April 24, 2014)
 
 <div class="note note-important">
-  <p>Artisan Android 2.0.17 and below all used AspectJ. <strong>As of Artisan 2.0.18 the new default for Artisan Android does not use AspectJ</strong>, although that is still an option for auto-instrumentation. If you wish to continue using <a href="/dev/android-aspectj/">Artisan Auto-Instrumentation with AspectJ</a> you may, but you should still complete the steps below.</p>
+  <p>Artisan Android 2.0.x used AspectJ. <strong>As of Artisan 2.1.0 the new default for Artisan Android does not use AspectJ</strong>, although that is still an option for auto-instrumentation. If you wish to continue using <a href="/dev/android-aspectj/">Artisan Auto-Instrumentation with AspectJ</a> you may, but you should still complete the steps below.</p>
 </div>
 
-If you are upgrading from Artisan 2.0.17 and below, then there are a few steps you will need to take to transition:
+If you are upgrading from Artisan 2.0.x, then there are a few steps you will need to take to transition:
 
 ### 1\. Remove AspectJ Nature
 
