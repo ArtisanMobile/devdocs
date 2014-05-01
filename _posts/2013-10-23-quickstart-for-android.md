@@ -81,47 +81,58 @@ public class SampleArtisanCustomerActivity extends Activity implements ArtisanBo
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		ArtisanActivity.artisanOnCreate(this);
+		ArtisanActivity.artisanOnCreate(this); // Call Artisan method AFTER super.onCreate
 		setContentView(R.layout.activity_absolute_layout);
 	}
 
 	@Override
 	protected void onStart() {
 		super.onStart();
-		ArtisanActivity.artisanOnStart(this);
+		ArtisanActivity.artisanOnStart(this); // Call Artisan method AFTER super.onStart
 	}
 
 	@Override
 	protected void onStop() {
 		super.onStop();
-		ArtisanActivity.artisanOnStop(this);
+		ArtisanActivity.artisanOnStop(this); // Call Artisan method AFTER super.onStop
 	}
 
 	@Override
 	protected void onDestroy() {
-		// Call Artisan method BEFORE onDestroy
-		ArtisanActivity.artisanOnDestroy();
+		ArtisanActivity.artisanOnDestroy(); // Call Artisan method BEFORE super.onDestroy
 		super.onDestroy();
 	}
 
+        /**
+         * This is the version of setContentView that most people use.
+         * You only need to implement this if you are using this version of setContentView in this Activity or its subclasses.
+         * If you are using it it looks something like this:
+         * setContentView(R.layout.activity_main);
+         */
 	@Override
 	public void setContentView(int layoutResID) {
 		View contentView = ArtisanActivity.artisanGetContentView(layoutResID, this);
 		super.setContentView(contentView);
 	}
 
+        // You only need to implement this if you are using this version of setContentView in this Activity or its subclasses.
 	@Override
 	public void setContentView(View view) {
 		View contentView = ArtisanActivity.artisanGetContentView(view, this);
 		super.setContentView(contentView);
 	}
 
+        // You only need to implement this if you are using this version of setContentView in this Activity or its subclasses.
 	@Override
 	public void setContentView(View view, LayoutParams params) {
 		View contentView = ArtisanActivity.artisanGetContentView(view, params, this);
 		super.setContentView(contentView);
 	}
 
+        /**
+         * This method is required by the ArtisanBoundActivity interface.
+         * You can copy this implementation as is to your Activities that extend our interface.
+         */
 	@Override
 	public ArtisanService getArtisanService() {
 		return ArtisanActivity._getArtisanService();
