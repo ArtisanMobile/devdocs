@@ -5,42 +5,13 @@ author: "Artisan"
 category: dev
 description: "Getting started with the Artisan MEM platform for developers."
 ---
-#Artisan Quickstart Guide for Android in Eclipse
+#Artisan Quickstart Guide for Android
 
 ##Prerequisites
-1\. Eclipse with Android SDK (At a minimum ensure you have support for Android 2.3.3 and build against the latest Android SDK)
-
-2\. Add the AspectJ eclipse plugin:
-
-* In Eclipse click Help -> Install New Software
-* Click "Add\" on the right to add a new repository.
-  * For the name, you can name this AspectJ.
-  * For the location, you need the correct AJDT Update Site URL for your version of Eclipse:
-    * Eclipse 4.3 (Kepler) Update Site URL:  `http://download.eclipse.org/tools/ajdt/43/update`
-    * Eclipse 3.8 and 4.2 (Juno) Update Site URL:  `http://download.eclipse.org/tools/ajdt/42/update`
-    * Eclipse 3.7 (Indigo) Update Site URL:  `http://download.eclipse.org/tools/ajdt/37/update`
-    * For other versions of Eclipse find the correct Update Site URL on this page <a href="http://eclipse.org/ajdt/downloads/">http://eclipse.org/ajdt/downloads/</a>
-  * Click \"OK\"
-* Select \"AspectJ Developer Tools (Required)\" and click \"Next\" and then \"Next\" again
-* Accept the licenses and click \"Finish\"
-* You may be prompted to restart Eclipse after this installation is complete.
-
-<div class="note note-important">
-If you are using ProGuard please see the <a href="/dev/proguard-for-android/">Artisan ProGuard configuration instructions</a>.
-</div>
+* Android App with a minimum SDK of no less than Android 2.3.3 (API 10) and build against the latest Android SDK.
 
 <div class="note note-hint">
-  <p>Also note, the Artisan SDK uses the following jars, which will be copied in to your project:</p>
-  <ul>
-      <li>android-support-v4.jar</li>
-      <li>httpclientandroidlib-1.1.2.jar</li>
-      <li>jackson-annotations-2.2.3.jar</li>
-      <li>jackson-core-2.2.3.jar</li>
-      <li>jackson-databind-2.2.3.jar</li>
-      <li>otto-1.3.4.jar</li>
-      <li>volley.jar (built from source)</li>
-  </ul>
-  <p>If you are using library projects that have the same dependencies you will need to manually ensure that the dependencies do not conflict. We can only guarantee that Artisan works with these versions.</p>
+If you are upgrading from an older (Artisan 2.0.x) version of Artisan please see the <a href="/dev/android-upgrade/">Artisan upgrade instructions</a>.
 </div>
 
 ##Adding Artisan to Your App
@@ -58,58 +29,132 @@ Artisan comes bundled with an installer that will configure Eclipse and add the 
 * install.bat (on Windows)
 * sh install.sh (on Mac/OSX or linux)
 
-This will update your manifest file, add the required libraries and create the CustomArtisanService class, if one doesn\'t exist already. It will also configure an Eclipse \'Builder\' that will regenerate necessary AspectJ declarations for your Activities after every build. See \"Configuring the Artisan build script\" below for more information.
-
-<div class="note note-important">
-  <p>Note: This process will automatically update the visibility of the onStart, onStop and onDestroy of your activities so that they can be instrumented by Artisan.</p>
-</div>
+This will update your manifest file, add the **artisan_library.jar** to your libs directory and create the CustomArtisanService class, if one doesn\'t exist already.
 
 If there are any settings in your application\'s manifest that are not compatible with Artisan you will be notified and the installer will not complete. For example, you must specify a minimum Android SDK of 2.3.3 or higher. Change the specified settings and run the Artisan installer again.
 
-4\. Installation is now complete. You\'ll need to refresh the project in Eclipse so that the newly added files are pulled into the project. Right click on your project and choose \"Refresh\".
+<div class="note note-hint">
+<p>If you are using Eclipse, you'll need to refresh the project in Eclipse so that the newly added files are pulled into the project. Right click on your project and choose "Refresh".</p>
+</div>
 
-Congratulations! You are now ready to start using Artisan!
+<div id="artisan-activity"></div>
+4\. Update all of your activities to extend the ArtisanActivity or implement our interface ArtisanBoundActivity
 
-Now that the SDK is installed in your app we need to connect it to Artisan. Connecting your app verifies that the SDK has been installed correctly and that your app can communicate with the Artisan platform.
+In order for your app to be properly instrumented all of your activities need to either extend ArtisanActivity or implement the ArtisanBoundActivity interface.
+
+The simpler option is to extend ArtisanActivity. There's nothing else you need to do if you are extending from ArtisanActivity.
+
+Sample Activity that extends ArtisanActivity:
+{% highlight java %}
+import com.artisan.activity.ArtisanActivity;
+
+public class BaseActivity extends ArtisanActivity {
+  ...
+}
+{% endhighlight %}
+
+If you are already extending a third party Activity or don't wish to extend the ArtisanActivity you have the alternative of implementing our interface instead.
+
+If you do, you must also make sure to add implementations for each of these methods and call the respective ArtisanActivity static method:
+* implement **protected void onCreate(Bundle savedInstanceState)** and call **ArtisanActivity.artisanOnCreate(this)**
+* implement **protected void onStart()** and call **ArtisanActivity.artisanOnStart(this)**
+* implement **protected void onStop()** and call **ArtisanActivity.artisanOnStop(this)**
+* implement **protected void onDestroy()** and call **ArtisanActivity.artisanOnDestroy()**
+* implement **public void setContentView(int layoutResID)** if you are using this version of setContentView for this Activity or its subclasses and get the contentView from **ArtisanActivity.artisanGetContentView(layoutResID, this)** and pass that in to super.setContentView(View)
+* implement **public void setContentView(View view)** if you are using this version of setContentView for this Activity or its subclasses and get the contentview from **ArtisanActivity.artisanGetContentView(view, this)** and pass that in to super.setContentView(View)
+* implement **public void setContentView(View view, LayoutParams params)** if you are using this version of setContentView for this Activity or its subclasses and get the contentView from **ArtisanActivity.artisanGetContentView(view, params, this)** and pass that in to super.setContentView(View)
+* implement **public ArtisanService getArtisanService()** and return **ArtisanActivity._getArtisanService()**
+
+Sample Activity that implements ArtisanBoundActivity:
+
+{% highlight java %}
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+
+import com.artisan.activity.ArtisanActivity;
+import com.artisan.services.ArtisanBoundActivity;
+import com.artisan.services.ArtisanService;
+
+public class SampleArtisanCustomerActivity extends Activity implements ArtisanBoundActivity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		ArtisanActivity.artisanOnCreate(this);
+		setContentView(R.layout.activity_absolute_layout);
+	}
+
+	@Override
+	protected void onStart() {
+		super.onStart();
+		ArtisanActivity.artisanOnStart(this);
+	}
+
+	@Override
+	protected void onStop() {
+		super.onStop();
+		ArtisanActivity.artisanOnStop(this);
+	}
+
+	@Override
+	protected void onDestroy() {
+		// Call Artisan method BEFORE onDestroy
+		ArtisanActivity.artisanOnDestroy();
+		super.onDestroy();
+	}
+
+	@Override
+	public void setContentView(int layoutResID) {
+		View contentView = ArtisanActivity.artisanGetContentView(layoutResID, this);
+		super.setContentView(contentView);
+	}
+
+	@Override
+	public void setContentView(View view) {
+		View contentView = ArtisanActivity.artisanGetContentView(view, this);
+		super.setContentView(contentView);
+	}
+
+	@Override
+	public void setContentView(View view, LayoutParams params) {
+		View contentView = ArtisanActivity.artisanGetContentView(view, params, this);
+		super.setContentView(contentView);
+	}
+
+	@Override
+	public ArtisanService getArtisanService() {
+		return ArtisanActivity._getArtisanService();
+	}
+}
+{% endhighlight %}
+
+<div class="note note-important">
+If you are using ProGuard please see the <a href="/dev/proguard-for-android/">Artisan ProGuard configuration instructions</a>.
+</div>
+
+**Congratulations! You are now ready to start using Artisan!**
+
+Now that the SDK is installed in your app we need to connect it to Artisan. Connecting your app verifies that the SDK has been installed correctly and that your app can communicate with the Artisan platform. See the getting started notification in Artisan Tools to connect your device.
+
+You can also get started using the <a href="#api">Artisan API</a>.
+
+Want to know more about what the Android SDK can do? See <a href="/dev/developing-with-artisan/#android">Developing with Artisan</a>.
 
 <div id="manual"></div>
 ###Option 2: Manually Adding the Artisan SDK to your App
 
-If you prefer to manually install Artisan, follow the steps outlined in the rest of this document, including: updating your Eclipse project, setting up the Artisan Service, and configuring the Artisan Builder to generate the Artisan AspectJ files.
-
-####Eclipse Project configuration
+If you prefer to manually install Artisan, follow these steps, including: copying the Artisan jar to your libs, setting up the Artisan Service and updating your activities.
 
 1\. Download the Artisan Android SDK - You can download the SDK by clicking on your App\'s Settings icon and click the Download SDK link
 
 2\. Extract the contents of the SDK .zip file into your project\'s root directory.
 
-3\. Copy the files from the \'artisan/Support\' folder into your project\'s libs directory. You might need to create this folder in the project\'s root directory if it does not already exist. If you are using library projects that have the same dependencies as Artisan you will need to manually ensure that the dependencies do not conflict. We can only guarantee that Artisan works with these versions.
+3\. Copy all Android resources from \'artisan/androidResources/res\' to your project\'s \'res\' directory. Be sure to keep the subfolder structure intact.
 
-4\. Copy all Android resources from \'artisan/androidResources/res\' to your project\'s \'res\' directory. Be sure to keep the subfolder structure intact.
+4\. Copy all Android resources from \'artisan/androidResources/assets\' to your project\'s \'assets\' directory.
 
-5\. Copy all Android resources from \'artisan/androidResources/assets\' to your project\'s \'assets\' directory.
-
-6\. Add the AspectJ nature to the Eclipse project:
-
-* Open Eclipse. Right-click on your project in the Project Explorer and choose \"Configure -> Convert to AspectJ Project\".
-* If Eclipse prompts you whether to include AspectJ files on the build path, select \"yes\".
-
-7\. Add the artisan library to the build path:
-
-
-* Right click on your project in the Project Explorer and choose \"Properties\".
-* In the list on the left, click on \"AspectJ build\".
-* Make sure that the \"Inpath\" tab is selected.
-* If the artisan_library_4.jar is not already on the inpath, click \"Add jars\" and locate the artisan/artisan_library/artisan_library_4.jar in your project folder and add it to your inpath.
-
-8\. Export the AspectJ Runtime Library
-
-* Right click on your project in the Project Explorer and choose \"Properties\".
-* In the list on the left, click on \"Java Build Path\".
-* Make sure that the \"Order and Export\" tab is selected.
-* If the \"AspectJ Runtime Library\" is not already selected, check it and press OK.
-
-9\. Make your Activity lifecycle methods public. In order to instrument your application Artisan needs any onCreate, onStart, onStop and onDestroy methods that you have implemented in your app to be public. The default for the lifecycle methods is protected, which we are not able to instrument. If you skip this step Artisan will not work properly and you may experience errors and unpredictable behavior.
+5\. Copy artisan/artisan_library/artisan_library.jar to your project's libs directory
 
 ####Setting up the Artisan service
 
@@ -147,39 +192,111 @@ You will also need to add the following permissions to your AndroidManifest.xml 
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 {% endhighlight %}
 
-####Configuring the Artisan build script
+4\. Update all of your activities to extend the ArtisanActivity or implement our interface ArtisanBoundActivity
 
-Artisan generates AspectJ files alongside your code. These files live inside the \'gen/\' folder, next to your other generated code, such as R.java. It is very important that these files get generated or Artisan will not run in your application. In addition, this script will update the visibility of any new onStart, onStop and onDestroy methods on your activities so that we can instrument them automatically.
+In order for your app to be properly instrumented all of your activities need to either extend ArtisanActivity or implement the ArtisanBoundActivity interface.
 
-You can regenerate these files at any time by running the installer script with the \'&dash;&dash;aspectonly\' flag.
+The simpler option is to extend ArtisanActivity. There's nothing else you need to do if you are extending from ArtisanActivity.
 
-In order to regenerate these files *automatically* after every build, Eclipse needs to be configured with a \'Builder\' that will run the Artisan build script. Follow the instructions below to set up the Eclipse builder:
+Sample Activity that extends ArtisanActivity:
+{% highlight java %}
+import com.artisan.activity.ArtisanActivity;
 
-1\. Create a new Eclipse builder
+public class BaseActivity extends ArtisanActivity {
+  ...
+}
+{% endhighlight %}
 
-* Right click on your project in the Project Explorer and choose \"Properties\" UPDATE.
-* Click on \"Builders\" and select \"New\".
-* Eclipse will ask you to \"Choose a type of external tool to create\".
-* Choose \"program\" and click OK. The \'Edit Launch Configurations\' dialog will appear.
-* Give your builder a name, such as \"Artisan Build Script\".
+If you are already extending a third party Activity or don't wish to extend the ArtisanActivity you have the alternative of implementing our interface instead.
 
-2\. For the \"location\" field, click \"Browse Workspace\" and browse to your \'artisan\' folder.
+If you do, you must also make sure to add implementations for each of these methods and call the respective ArtisanActivity static method:
+* implement **protected void onCreate(Bundle savedInstanceState)** and call **ArtisanActivity.artisanOnCreate(this)**
+* implement **protected void onStart()** and call **ArtisanActivity.artisanOnStart(this)**
+* implement **protected void onStop()** and call **ArtisanActivity.artisanOnStop(this)**
+* implement **protected void onDestroy()** and call **ArtisanActivity.artisanOnDestroy()**
+* implement **public void setContentView(int layoutResID)** if you are using this version of setContentView for this Activity or its subclasses and get the contentView from **ArtisanActivity.artisanGetContentView(layoutResID, this)** and pass that in to super.setContentView(View)
+* implement **public void setContentView(View view)** if you are using this version of setContentView for this Activity or its subclasses and get the contentview from **ArtisanActivity.artisanGetContentView(view, this)** and pass that in to super.setContentView(View)
+* implement **public void setContentView(View view, LayoutParams params)** if you are using this version of setContentView for this Activity or its subclasses and get the contentView from **ArtisanActivity.artisanGetContentView(view, params, this)** and pass that in to super.setContentView(View)
+* implement **public ArtisanService getArtisanService()** and return **ArtisanActivity._getArtisanService()**
 
-* On Mac/Linux, select **install.sh** and click OK.
-* On Windows, select **install.bat** and click OK.
+Sample Activity that implements ArtisanBoundActivity:
 
-3\. For the \"working directory\" field, click on \"browse workspace\" and select your \'artisan\' folder. Click OK.
+{% highlight java %}
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
 
-4\. In the \"arguments\" text box, type **&dash;&dash;aspectonly**. Click \"OK\" to save the builder configuration.
+import com.artisan.activity.ArtisanActivity;
+import com.artisan.services.ArtisanBoundActivity;
+import com.artisan.services.ArtisanService;
 
-5\. Move the builder to the top of the list, above \"Android Resource Manager\".
+public class SampleArtisanCustomerActivity extends Activity implements ArtisanBoundActivity {
 
-Congratulations! You are now ready to start using Artisan!
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    ArtisanActivity.artisanOnCreate(this);
+    setContentView(R.layout.activity_absolute_layout);
+  }
+
+  @Override
+  protected void onStart() {
+    super.onStart();
+    ArtisanActivity.artisanOnStart(this);
+  }
+
+  @Override
+  protected void onStop() {
+    super.onStop();
+    ArtisanActivity.artisanOnStop(this);
+  }
+
+  @Override
+  protected void onDestroy() {
+    // Call Artisan method BEFORE onDestroy
+    ArtisanActivity.artisanOnDestroy();
+    super.onDestroy();
+  }
+
+  @Override
+  public void setContentView(int layoutResID) {
+    View contentView = ArtisanActivity.artisanGetContentView(layoutResID, this);
+    super.setContentView(contentView);
+  }
+
+  @Override
+  public void setContentView(View view) {
+    View contentView = ArtisanActivity.artisanGetContentView(view, this);
+    super.setContentView(contentView);
+  }
+
+  @Override
+  public void setContentView(View view, LayoutParams params) {
+    View contentView = ArtisanActivity.artisanGetContentView(view, params, this);
+    super.setContentView(contentView);
+  }
+
+  @Override
+  public ArtisanService getArtisanService() {
+    return ArtisanActivity._getArtisanService();
+  }
+}
+{% endhighlight %}
+
+**Congratulations! You are now ready to start using Artisan!**
+
+Now that the SDK is installed in your app we need to connect it to Artisan. Connecting your app verifies that the SDK has been installed correctly and that your app can communicate with the Artisan platform. See the getting started notification in Artisan Tools to connect your device.
+
+Want to know more about what the Android SDK can do? See <a href="/dev/developing-with-artisan/#android">Developing with Artisan</a>.
 
 <div id="api"></div>
+##Getting Started with the Artisan API
+
 ##Analytics
 
-Artisan automatically collects analytics events for every user, session, page view, tap and other user interactions. There's nothing you need to add to your app to capture those events. But, there are times when you want to capture an event that doesn't correspond directly to a tap or navigation, or maybe you want to capture more information with a particular tap or event. To capture these custom analytics events we have the ArtisanTrackingManager class in our API.
+Artisan automatically collects analytics events for every user, session, and page view. There's nothing you need to add to your app to capture those analytics.
+
+But, there are likely actions that your users take in your app that you'd like to record for analytics and experiment goals. To capture these custom analytics events we have the ArtisanTrackingManager class in our API.
 
 ArtisanTrackingManager manages all in-code analytics tracking designed for use with Artisan, to allow you to track custom views and events.
 
@@ -196,6 +313,93 @@ parameters.put("product name", "Artisan Developer T-Shirt");
 ArtisanTrackingManager.trackEvent("Product Purchased", parameters);
 {% endhighlight %}
 
+<div class="note note-hint">
+<p>As an alternative to having to manually add code to track all analytics events we provide the <a href="/dev/android-aspectj/">Artisan Auto-Instrumentation with AspectJ</a> version of the Android SDK.</p>
+</div>
+
+##User Profile
+
+ArtisanProfileManager is a singleton that is automatically initialized when your app starts. Use ArtisanProfileManager to manage the personalization profile for the current user from app inception to completion.
+
+###Register User Profile Variables
+
+Convenience methods existing for registering numbers, strings, dates, and locations. The value can optionally be set during the registration of the User Profile Variable.
+
+This declaration should occur in the <strong>registerUserProfileVariables</strong> method of your CustomArtisanService.
+
+{% highlight java %}
+@Override
+public void registerUserProfileVariables() {
+  ArtisanProfileManager.registerDateTime("lastSeenAt", new Date());
+  ArtisanProfileManager.registerLocation("lastKnownLocation", new ArtisanLocationValue(39.949920,-75.145102));
+  ArtisanProfileManager.registerNumber("totalOrderCount", 9);
+  ArtisanProfileManager.registerString("memberType", "gold");
+}
+{% endhighlight %}
+
+For numeric values you can pass in any java.lang.Number type
+
+{% highlight java %}
+ArtisanProfileManager.registerNumber("currentCartTotal double", 146.99); // double
+ArtisanProfileManager.registerNumber("currentCartTotal float", 146.99f); // float
+ArtisanProfileManager.registerNumber("currentCartTotal int", 146); // int
+{% endhighlight %}
+
+<div class="note note-hint">
+  <p>Hint: Valid characters for variable names include [0-9], [a-z], [A-Z], -, and _. Any other characters will automatically be stripped out.</p>
+</div>
+
+###Update User Profile Variables
+
+The updating of the User Profile Variable can be accomplished by calling the matching setter for the User Variable Variable data type.
+
+{% highlight java %}
+ArtisanProfileManager.setStringValue("memberType", "platinum");
+ArtisanProfileManager.setDateTimeValue("lastSeenAt", new Date());
+ArtisanProfileManager.setLocationValue("lastKnownLocation", new ArtisanLocationValue(39.949920, -75.145102));
+ArtisanProfileManager.setNumberValue("totalOrderCount", 9);
+{% endhighlight %}
+
+###Clear User Profile Variables
+
+The **clearProfile** method will clear out the values associated with the registered User Profile Variables.
+
+{% highlight java %}
+ArtisanProfileManager.clearProfile();
+{% endhighlight %}
+
+###Setting the shared user Id
+The **sharedUserId** User Profile Variable is used to uniquely indentify an app user.
+
+<div class="note note-important">
+  <p>Important: The sharedUserId should NOT be any of the following: email address, phone number, or social security number.  The sharedUserId should uniquely identify the user in your system.</p>
+</div>
+
+{% highlight java %}
+ArtisanProfileManager.setSharedUserId("abcdef123456789");
+{% endhighlight %}
+
+###User Profile Variables for Advanced Targeting
+
+The methods **setGender**, **setUserAge**, and **setUserAddress** can all be used like any other User Profile Variable for Advanced Targeting in Artisan Experiments. These dimensions can also be used for creating segments and reporting.
+
+The **setGender** method expects one of the following enum values: Gender.Female, Gender.Male, Gender.NA or nil (from **com.artisan.incodeapi.ArtisanProfileManager.Gender**);
+
+{% highlight java %}
+ArtisanProfileManager.setGender(Gender.Female);
+{% endhighlight %}
+
+The **setUserAge** method expects an Integer or int.
+
+{% highlight java %}
+ArtisanProfileManager.setUserAge(29);
+{% endhighlight %}
+
+The **setUserAddress** method expects a String.
+
+{% highlight java %}
+ArtisanProfileManager.setUserAddress("234 Market Street, Philadelphia, PA 19106");
+{% endhighlight %}
 
 ##Power Hooks
 
@@ -357,3 +561,7 @@ To set the goal of an in-code experiment you call the **setTargetReachedForExper
 {% highlight java %}
 ArtisanExperimentManager.setTargetReachedForExperiment("Buy Button Test");
 {% endhighlight %}
+
+## Javadoc
+
+For extensive javadoc for the Artisan API see <a href="/dev/android-javadocs">Android API Javadocs</a> for the version of the Artisan SDK that you are using.

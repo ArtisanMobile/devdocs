@@ -158,16 +158,11 @@ The **setUserAge:** method expects a NSNumber object with an integer value or ni
 [ARProfileManager setUserAge:[NSNumber numberWithInteger:22]];
 {% endhighlight %}
 
-The **setUserAddress:** method expects a String containg an address that can be geo-located.
+The **setUserAddress:** method expects a String.
 
 {% highlight objective-c %}
 [ARProfileManager setUserAddress:@"1 Lincoln Financial Field Way, Philadelphia, PA 19147"];
 {% endhighlight %}
-
-<div class="note note-hint">
-  <p>Hint: The address needs to be in CLGeocoder format. Unrecognized or unparseable address strings will automatically be converted to 0&deg;N / 0&deg;E.</p>
-</div>
-
 
 ##Power Hooks
 

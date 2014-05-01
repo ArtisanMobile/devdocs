@@ -97,6 +97,7 @@ description: "Getting started with the Artisan MEM platform for developers."
 
 Check out [this article](https://getsatisfaction.com/artisan/topics/third_party_conflicts) for more information on how to resolve the third party SDK conflicts.
 
+<div id="android"></div>
 ##Android Topics
 <table>
   <colgroup>
@@ -114,8 +115,8 @@ Check out [this article](https://getsatisfaction.com/artisan/topics/third_party_
   <tbody>
 <tr>
   <th>Development Environment</th>
-  <td>Native Android code built via Eclipse, Ant or IntelliJ*<br>*(we unofficially support IntelliJ IDEA Ultimate Edition)</td>
-  <td>Gradle, Maven, Android Studio and IntelliJ Community Edition (the AspectJ plugin is not supported by community editions of IntelliJ)</td>
+  <td>Artisan is regularly tested in apps built in Eclipse and with Ant and Proguard. Support for Gradle, Maven, Android Studio and IntelliJ is in BETA</td>
+  <td>Artisan AspectJ with auto-instrumentation (optional version of SDK) cannot be used in Android Studio or IntelliJ Community Edition because the AspectJ plugin isn't available there.</td>
 </tr>
 <tr>
   <th>Artisan &amp; onStart</th>
@@ -167,4 +168,5 @@ Check out [this article](https://getsatisfaction.com/artisan/topics/third_party_
 
 ###Known SDK Compatibility Issues for Android
 
-* Some library projects use different versions of the android support v4 jar that we add to your libs directory. You can resolve this conflict by copying the same version of the android support v4 jar to your libs directory and all library projects you are using that depend on it.
+* The Artisan SDK dependencies are bundled into the Artisan jar and obfuscated to avoid any version conflicts with other libraries. However, if you are using the **ch.boye.httpclientandroidlib** jar you might have issues when dexing due to duplicate files.
+   * SOLUTION: You can pass the --expanded flag in when you install Artisan to install a version of Artisan without our dependencies obfuscated and bundled in. Our dependencies will be copied in to your libs folder by the installer. You will have to manage any version conflicts between the Artisan dependencies and your existing dependencies.
