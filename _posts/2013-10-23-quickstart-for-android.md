@@ -129,7 +129,10 @@ public class SampleArtisanCustomerActivity extends Activity implements ArtisanBo
 		super.setContentView(contentView);
 	}
 
-        // This method is required by the ArtisanBoundActivity interface. You can copy this implementation as is to your Activities that extend our interface.
+        /**
+         * This method is required by the ArtisanBoundActivity interface.
+         * You can copy this implementation as is to your Activities that extend our interface.
+         */
 	@Override
 	public ArtisanService getArtisanService() {
 		return ArtisanActivity._getArtisanService();
