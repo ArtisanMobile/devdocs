@@ -516,6 +516,7 @@ PowerHookManager.executeBlock("showAlert", extraData);
   <p>NOTE: If you execute this Power Hook Block in your first Activity's onCreate method, before the Artisan Service has a chance to start up, the call may be ignored. The Artisan Service is started up at the time your first activity is created, and should be ready by the time your first activity gets to onResume. For the rest of your application's lifecycle you can assume that Power Hooks will work as expected.</p>
 </div>
 
+<div id="in-code"></div>
 ##In-code Experiments
 
 In-code Experiments allow you to build tests around business logic inside your app.  For example, you can create a test for showing or not showing a particular screen.  Another example is testing multiple workflows.

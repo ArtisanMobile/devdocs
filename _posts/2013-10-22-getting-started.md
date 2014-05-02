@@ -254,6 +254,7 @@ Power Hook code blocks can be used for referencing code that can be executed con
   <p>Hint: Passing a reference to a UIViewController for the context parameter enables a registered block to transition to a new screen.  This enables the injection of a new screen into an existing workflow.</p>
 </div>
 
+<div id="in-code"></div>
 ##In-code Experiments
 
 In-code Experiments allow you to build tests around business logic inside your app.  For example, you can create a test for showing or not showing a particular screen.  Another example is testing multiple workflows.
