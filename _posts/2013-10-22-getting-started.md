@@ -164,6 +164,7 @@ The **setUserAddress:** method expects a String.
 [ARProfileManager setUserAddress:@"1 Lincoln Financial Field Way, Philadelphia, PA 19147"];
 {% endhighlight %}
 
+<div id="power-hooks"></div>
 ##Power Hooks
 
 Power Hooks are key-value pairs or code blocks with key-value arguments that are passed into your application code by Artisan when your app starts, allowing for settings, text, and logic to be modified on the fly for all user devices without revisioning or updating your application.
