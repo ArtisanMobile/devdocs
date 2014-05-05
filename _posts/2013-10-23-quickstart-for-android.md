@@ -52,9 +52,9 @@ You will need to call ArtisanApplication.startArtisan in the onCreate of your Ap
       public void onCreate() {
         super.onCreate();
 
-        ArtisanApplication.startArtisan(this, "YOUR_ARTISAN_APPID_HERE";
+        ArtisanApplication.startArtisan(this, "YOUR_ARTISAN_APPID_HERE");
       }
-    }
+
 
     /**
      * Register your Artisan Power Hook variables and Power Hook blocks here
@@ -280,9 +280,8 @@ You will need to call ArtisanApplication.startArtisan in the onCreate of your Ap
       public void onCreate() {
         super.onCreate();
 
-        ArtisanApplication.startArtisan(this, "YOUR_ARTISAN_APPID_HERE";
+        ArtisanApplication.startArtisan(this, "YOUR_ARTISAN_APPID_HERE");
       }
-    }
 
     /**
      * Register your Artisan Power Hook variables and Power Hook blocks here
