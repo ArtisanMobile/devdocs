@@ -167,6 +167,7 @@ This should move to your Application class onCreate method in a new form:
 
 {% highlight java %}
 import com.artisan.application.ArtisanApplication;
+import com.artisan.manager.ArtisanManager;
 
 public class MySampleApplication extends ArtisanApplication {
 
@@ -174,7 +175,7 @@ public class MySampleApplication extends ArtisanApplication {
   public void onCreate() {
       super.onCreate();
       // ADD THIS, pass in a reference to your Application class and your Artisan AppID
-      ArtisanApplication.startArtisan(this, "52a5d8482b222086ae00001f");
+      ArtisanManager.startArtisan(this, "52a5d8482b222086ae00001f");
   }
 {% endhighlight %}
 

@@ -40,10 +40,13 @@ If there are any settings in your application\'s manifest that are not compatibl
 <div id="artisan-application"></div>
 4\. If you already have an Application class you will need to update it to extend com.artisan.application.ArtisanActivity or implement com.artisan.application.ArtisanRegisteredApplication.
 
-You will need to call ArtisanApplication.startArtisan in the onCreate of your Application class. Replace "YOUR_ARTISAN_APPID_HERE" with the appropriate string. You can find your app id in Artisan Tools on the screen after you first create your app or on the settings page for your app:
+The ArtisanRegisteredApplication has three required methods on it: **registerUserProfileVariables**, **registerPowerhooks**, and **registerInCodeExperiments**.
+
+You will also need to call ArtisanManager.startArtisan in the onCreate of your Application class. Replace "YOUR_ARTISAN_APPID_HERE" with the appropriate string. You can find your app id in Artisan Tools on the screen after you first create your app or on the settings page for your app:
 
 {% highlight java %}
     import com.artisan.application.ArtisanApplication;
+    import com.artisan.manager.ArtisanManager;
 
     // Extend ArtisanApplication or implement ArtisanRegisteredApplication
     public class MySampleApplication extends ArtisanApplication {
@@ -52,7 +55,7 @@ You will need to call ArtisanApplication.startArtisan in the onCreate of your Ap
       public void onCreate() {
         super.onCreate();
 
-        ArtisanApplication.startArtisan(this, "YOUR_ARTISAN_APPID_HERE");
+        ArtisanManager.startArtisan(this, "YOUR_ARTISAN_APPID_HERE");
       }
 
 
@@ -268,10 +271,11 @@ If you don't already have an Applicaton class, create one and add it to your man
 
 1\. Update your application class to extend com.artisan.application.ArtisanActivity or implement com.artisan.application.ArtisanRegisteredApplication.
 
-You will need to call ArtisanApplication.startArtisan in the onCreate of your Application class. Replace "YOUR_ARTISAN_APPID_HERE" with the appropriate string. You can find your app id in Artisan Tools on the screen after you first create your app or on the settings page for your app:
+You will need to call ArtisanManager.startArtisan in the onCreate of your Application class. Replace "YOUR_ARTISAN_APPID_HERE" with the appropriate string. You can find your app id in Artisan Tools on the screen after you first create your app or on the settings page for your app:
 
 {% highlight java %}
     import com.artisan.application.ArtisanApplication;
+    import com.artisan.manager.ArtisanManager;
 
     // Extend ArtisanApplication or implement ArtisanRegisteredApplication
     public class MySampleApplication extends ArtisanApplication {
@@ -280,7 +284,7 @@ You will need to call ArtisanApplication.startArtisan in the onCreate of your Ap
       public void onCreate() {
         super.onCreate();
 
-        ArtisanApplication.startArtisan(this, "YOUR_ARTISAN_APPID_HERE");
+        ArtisanManager.startArtisan(this, "YOUR_ARTISAN_APPID_HERE");
       }
 
     /**

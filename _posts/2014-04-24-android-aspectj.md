@@ -70,17 +70,18 @@ This will update your manifest file, add the required libraries and create an Ap
 
 If there are any settings in your application\'s manifest that are not compatible with Artisan you will be notified and the installer will not complete. For example, you must specify a minimum Android SDK of 2.3.3 or higher. Change the specified settings and run the Artisan installer again.
 
-If you already have an Application class you wil need to ArtisanApplication or implement ArtisanRegisteredApplication and call **ArtisanApplication.startArtisan**
+If you already have an Application class you wil need to ArtisanApplication or implement ArtisanRegisteredApplication and call **ArtisanManager.startArtisan**
 
 {% highlight java %}
     import com.artisan.application.ArtisanApplication;
+    import com.artisan.manager.ArtisanManager;
 
     public class MySampleApplication extends ArtisanApplication {
       @Override
       public void onCreate() {
         super.onCreate();
         // Put your Artisan AppID here
-        ArtisanApplication.startArtisan(this, "YOUR_ARTISAN_APPID_HERE");
+        ArtisanManager.startArtisan(this, "YOUR_ARTISAN_APPID_HERE");
       }
 {% endhighlight %}
 
@@ -88,13 +89,14 @@ OR
 
 {% highlight java %}
     import com.artisan.application.ArtisanRegisteredApplication;
+    import com.artisan.manager.ArtisanManager;
 
     public class MySampleApplication extends Application implements ArtisanRegisteredApplication {
       @Override
       public void onCreate() {
         super.onCreate();
         // Put your Artisan AppID here
-        ArtisanApplication.startArtisan(this, "YOUR_ARTISAN_APPID_HERE");
+        ArtisanManager.startArtisan(this, "YOUR_ARTISAN_APPID_HERE");
       }
 {% endhighlight %}
 
@@ -150,10 +152,11 @@ If you don't already have an Applicaton class, create one and add it to your man
 
 1\. Update your application class to extend com.artisan.application.ArtisanActivity or implement com.artisan.application.ArtisanRegisteredApplication.
 
-You will need to call ArtisanApplication.startArtisan in the onCreate of your Application class. Replace "YOUR_ARTISAN_APPID_HERE" with the appropriate string. You can find your app id in Artisan Tools on the screen after you first create your app or on the settings page for your app:
+You will need to call ArtisanManager.startArtisan in the onCreate of your Application class. Replace "YOUR_ARTISAN_APPID_HERE" with the appropriate string. You can find your app id in Artisan Tools on the screen after you first create your app or on the settings page for your app:
 
 {% highlight java %}
     import com.artisan.application.ArtisanApplication;
+    import com.artisan.manager.ArtisanManager;
 
     // Extend ArtisanApplication or implement ArtisanRegisteredApplication
     public class MySampleApplication extends ArtisanApplication {
@@ -162,7 +165,7 @@ You will need to call ArtisanApplication.startArtisan in the onCreate of your Ap
       public void onCreate() {
         super.onCreate();
 
-        ArtisanApplication.startArtisan(this, "YOUR_ARTISAN_APPID_HERE");
+        ArtisanManager.startArtisan(this, "YOUR_ARTISAN_APPID_HERE");
       }
 
     /**
