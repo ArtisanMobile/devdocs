@@ -264,7 +264,7 @@ If you prefer to manually install Artisan, follow these steps, including: copyin
 
 Artisan is configured in your Application class.
 
-If you don't already have an Applicaton class, create one and add it to your manifest (the classname goes in the android:name parameter of your \<application\> node of your AndroidManifest.xml).
+If you don't already have an Applicaton class, create one and add it to your manifest (the classname goes in the android:name parameter of your &lt;application&gt; node of your AndroidManifest.xml).
 
 1\. Update your application class to extend com.artisan.application.ArtisanActivity or implement com.artisan.application.ArtisanRegisteredApplication.
 
