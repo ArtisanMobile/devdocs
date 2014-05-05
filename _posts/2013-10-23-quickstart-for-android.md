@@ -18,7 +18,7 @@ If you are upgrading from an older version of Artisan please see the <a href="/d
 
 ###Option 1: Automatically Instrumenting your App with Artisan
 
-Artisan comes bundled with an installer that will configure Eclipse and add the necessary files to your source root. It will also edit your AndroidManifest.xml to point to the CustomArtisanService that is needed to instrument your Artisan application. For most cases, we recommend using the installer, but if you prefer to configure the project yourself, please skip forward to the next section.
+Artisan comes bundled with an installer that will configure Eclipse and add the necessary files to your source root. It will also edit your AndroidManifest.xml to point to the ArtisanService that is needed to instrument your Artisan application. For most cases, we recommend using the installer, but if you prefer to configure the project yourself, please skip forward to the next section.
 
 1\. Download the Install Wizard - You can download the Install Wizard by clicking on your App\'s Settings icon and click the Download SDK link
 
@@ -459,7 +459,7 @@ public class SampleArtisanCustomerActivity extends Activity implements ArtisanBo
 }
 {% endhighlight %}
 
-3\. The last step is updating your AndroidManifest.xml so that Android knows where to find the service and has the correct permissions. Add the following line inside the `<application>` element, using the relative path to your concrete ArtisanService class.
+3\. The last step is updating your AndroidManifest.xml so that Android knows where to find the service and has the correct permissions. Add the following line inside the `<application>` element.
 
 {% highlight java %}
 <service android:name="com.artisan.services.ArtisanService"/>
@@ -517,7 +517,7 @@ ArtisanProfileManager is a singleton that is automatically initialized when your
 
 Convenience methods existing for registering numbers, strings, dates, and locations. The value can optionally be set during the registration of the User Profile Variable.
 
-This declaration should occur in the <strong>registerUserProfileVariables</strong> method of your CustomArtisanService.
+This declaration should occur in the <strong>registerUserProfileVariables</strong> method of your Application class.
 
 {% highlight java %}
 @Override
@@ -606,7 +606,7 @@ Register a single-value Power Hook for use with Artisan.
 
 Use the method **registerVariable(String hookId, String friendlyName, String defaultValue)** to declare the existence of a Power Hook you would like to pass in from Artisan.
 
-This declaration should occur in the <strong>registerPowerhooks</strong> method of your CustomArtisanService
+This declaration should occur in the <strong>registerPowerhooks</strong> method of your Application class
 
 {% highlight java %}
 @Override
@@ -635,7 +635,7 @@ cart_button.setText(PowerHookManager.getVariableValue("addToCartButton"));
 
 Use the **registerBlock(String blockId, String friendlyName, Map&lt;String, String&gt; defaultData, ArtisanBlock block)** method to declare the existence of a code block you would like to use in your app with data that is configurable from Artisan.
 
-This declaration should occur in the **registerPowerhooks** method of your CustomArtisanService
+This declaration should occur in the **registerPowerhooks** method of your Application class
 
 * **blockId** - The name of the block to register. Name must be unique for this app.
 * **friendlyName** - The name for this code block that will be displayed in Artisan Tools.
@@ -702,7 +702,7 @@ PowerHookManager.executeBlock("showAlert", extraData);
 
 In-code Experiments allow you to build tests around business logic inside your app.  For example, you can create a test for showing or not showing a particular screen.  Another example is testing multiple workflows.
 
-An in-code experiments must be defined in the **registerInCodeExperiments** on your CustomArtisanService class.
+An in-code experiments must be defined in the **registerInCodeExperiments** on your Application class.
 
 The method **registerExperimentWithDescription(String experimentName)** or **registerExperimentWithDescription(String experimentName, String description)** takes a string representing the name of your experiment and an optional string for a description that will be displayed in Artisan Tools.
 

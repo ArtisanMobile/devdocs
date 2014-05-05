@@ -51,7 +51,7 @@ For Eclipse installation with AspectJ you can choose between an <a href="#eclips
 <div id="eclipse-automated"></div>
 ###Option 1: Automatically Instrumenting your App with Artisan
 
-Artisan comes bundled with an installer that will configure Eclipse and add the necessary files to your source root. It will also edit your AndroidManifest.xml to point to the CustomArtisanService that is needed to instrument your Artisan application. For most cases, we recommend using the installer, but if you prefer to configure the project yourself, please skip forward to the next section.
+Artisan comes bundled with an installer that will configure Eclipse and add the necessary files to your source root. It will also edit your AndroidManifest.xml to point to the ArtisanService that is needed to instrument your Artisan application. For most cases, we recommend using the installer, but if you prefer to configure the project yourself, please skip forward to the next section.
 
 1\. Download the Install Wizard - You can download the Install Wizard by clicking on your App\'s Settings icon and click the Download SDK link
 
@@ -62,7 +62,7 @@ Artisan comes bundled with an installer that will configure Eclipse and add the 
 * sh install.sh --aspectj (on Mac/OSX or linux)
 * install.bat --aspectj (on Windows)
 
-This will update your manifest file, add the required libraries and create the CustomArtisanService class, if one doesn\'t exist already. It will also configure an Eclipse \'Builder\' that will regenerate necessary AspectJ declarations for your Activities after every build. See \"Configuring the Artisan build script\" below for more information.
+This will update your manifest file, add the required libraries and create an Application class, if one doesn\'t exist already. It will also configure an Eclipse \'Builder\' that will regenerate necessary AspectJ declarations for your Activities after every build. See \"Configuring the Artisan build script\" below for more information.
 
 <div class="note note-important">
   <p>Note: This process will automatically update the visibility of the onStart, onStop and onDestroy of your activities so that they can be instrumented by Artisan.</p>
@@ -70,7 +70,35 @@ This will update your manifest file, add the required libraries and create the C
 
 If there are any settings in your application\'s manifest that are not compatible with Artisan you will be notified and the installer will not complete. For example, you must specify a minimum Android SDK of 2.3.3 or higher. Change the specified settings and run the Artisan installer again.
 
-4\. Installation is now complete. You\'ll need to refresh the project in Eclipse so that the newly added files are pulled into the project. Right click on your project and choose \"Refresh\".
+If you already have an Application class you wil need to ArtisanApplication or implement ArtisanRegisteredApplication and call **ArtisanApplication.startArtisan**
+
+{% highlight java %}
+    import com.artisan.application.ArtisanApplication;
+
+    public class MySampleApplication extends ArtisanApplication {
+      @Override
+      public void onCreate() {
+        super.onCreate();
+        // Put your Artisan AppID here
+        ArtisanApplication.startArtisan(this, "YOUR_ARTISAN_APPID_HERE");
+      }
+{% endhighlight %}
+
+OR
+
+{% highlight java %}
+    import com.artisan.application.ArtisanRegisteredApplication;
+
+    public class MySampleApplication extends Application implements ArtisanRegisteredApplication {
+      @Override
+      public void onCreate() {
+        super.onCreate();
+        // Put your Artisan AppID here
+        ArtisanApplication.startArtisan(this, "YOUR_ARTISAN_APPID_HERE");
+      }
+{% endhighlight %}
+
+4\. You\'ll need to refresh the project in Eclipse so that the newly added files are pulled into the project. Right click on your project and choose \"Refresh\".
 
 **Congratulations! You are now ready to start using Artisan!**
 
@@ -118,28 +146,103 @@ If you prefer to manually install Artisan, follow the steps outlined in the rest
 
 ####Setting up the Artisan service
 
-In order for Artisan to run within your app, the Artisan service has to be started. To do this, we will create a subclass of \'ArtisanService\' and add a declaration in the manifest which points to this service.
+If you don't already have an Applicaton class, create one and add it to your manifest (the classname goes in the android:name parameter of your &lt;application&gt; node of your AndroidManifest.xml).
 
-1\. Create a class called \'CustomArtisanService\' inside one of your source packages. This class needs to extend com.artisan.services.ArtisanService. If you would like to call it something else, you must edit the value of the \'artisan_service_name\' string resource in \'res/values/artisan_ids.xml\' to match the your custom class name.
+1\. Update your application class to extend com.artisan.application.ArtisanActivity or implement com.artisan.application.ArtisanRegisteredApplication.
 
-2\. You will need to implement one abstract method to start the Artisan service. Add the following method to your CustomArtisanService class:
+You will need to call ArtisanApplication.startArtisan in the onCreate of your Application class. Replace "YOUR_ARTISAN_APPID_HERE" with the appropriate string. You can find your app id in Artisan Tools on the screen after you first create your app or on the settings page for your app:
 
 {% highlight java %}
-import com.artisan.manager.ArtisanManager;
-import com.artisan.services.ArtisanService;
+    import com.artisan.application.ArtisanApplication;
 
-public class CustomArtisanService extends ArtisanService {
-  @Override
-  public void startArtisanManager(ArtisanManager manager) { do
-    artisanManager.start("YOUR_APP_ID");
-  }
-}
+    // Extend ArtisanApplication or implement ArtisanRegisteredApplication
+    public class MySampleApplication extends ArtisanApplication {
+
+      @Override
+      public void onCreate() {
+        super.onCreate();
+
+        ArtisanApplication.startArtisan(this, "YOUR_ARTISAN_APPID_HERE");
+      }
+
+    /**
+     * Register your Artisan Power Hook variables and Power Hook blocks here
+     *
+     * For example:
+     *
+     * PowerHookManager.registerVariable("WelcomeText", "Welcome Text Sample PowerHook", "Welcome to Artisan!");
+     *
+     * <code>
+     *  HashMap<String, String> defaultData = new HashMap<String, String>();
+     *  defaultData.put("discountCode", "012345ABC");
+     *  defaultData.put("discountAmount", "25%");
+     *  defaultData.put("shouldDisplay", "true");
+     *
+     *  PowerHookManager.registerBlock("showAlert", "Show Alert Block", defaultData, new ArtisanBlock() {
+     *    public void execute(Map<String, String> data, Map<String, Object> extraData) {
+     *      if ("true".equalsIgnoreCase(data.get("shouldDisplay"))) {
+     *        StringBuilder message = new StringBuilder();
+     *        message.append("Buy another for a friend! Use discount code ");
+     *        message.append(data.get("discountCode"));
+     *        message.append(" to get ");
+     *        message.append(data.get("discountAmount"));
+     *        message.append(" off your purchase of 2 or more!");
+     *        Toast.makeText((Context) extraData.get("context"), message, Toast.LENGTH_LONG).show();
+     *      }
+     *    }
+     * });
+     * </code>
+     *
+     * More examples at http://docs.useartisan.com/dev/quickstart-for-android/#power-hooks
+     *
+     */
+    @Override
+    public void registerPowerhooks() {
+
+    }
+
+    /**
+     * Register your Artisan In-code Experiments here
+     *
+     * For example:
+     *
+     * ArtisanExperimentManager.registerExperiment("my first experiment");
+     * ArtisanExperimentManager.addVariantForExperiment("blue variation", "my first experiment");
+     * ArtisanExperimentManager.addVariantForExperiment("green variation", "my first experiment");
+     *
+     * More examples at http://docs.useartisan.com/dev/quickstart-for-android/#in-code
+     */
+    @Override
+    public void registerInCodeExperiments() {
+
+    }
+
+    /**
+     * Register your Artisan In-code Experiments here
+     *
+     * For example:
+     *
+     * ArtisanProfileManager.registerDateTime("lastSeenAt", new Date());
+     * ArtisanProfileManager.registerLocation("lastKnownLocation");
+     * ArtisanProfileManager.registerNumber("totalOrderCount", ArtisanDemoApplication.totalOrderCount);
+     * ArtisanProfileManager.registerString("visitorType", "anonymous");
+     * ArtisanProfileManager.setGender(Gender.Female);
+     * ArtisanProfileManager.setUserAge(29);
+     * ArtisanProfileManager.setSharedUserId("abcdef123456789");
+     * ArtisanProfileManager.setUserAddress("234 Market Street, Philadelphia, PA 19106");
+     *
+     * More examples at http://docs.useartisan.com/dev/quickstart-for-android/#api
+     */
+    @Override
+    public void registerUserProfileVariables() {
+
+    }
 {% endhighlight %}
 
-3\. The last step is updating your AndroidManifest.xml so that Android knows where to find the service and has the correct permissions. Add the following line inside the `<application>` element, using the relative path to your concrete ArtisanService class.
+3\. The last step is updating your AndroidManifest.xml so that Android knows where to find the service and has the correct permissions. Add the following line inside the `<application>` element.
 
 {% highlight java %}
-<service android:name=".path.to.my.CustomArtisanService"/>
+<service android:name="com.artisan.services.ArtisanService"/>
 {% endhighlight %}
 
 You will also need to add the following permissions to your AndroidManifest.xml if they aren\'t already set:
@@ -228,7 +331,7 @@ If you are using ProGuard please see the <a href="/dev/proguard-for-android/">Ar
 
 ### Artisan AspectJ installation instructions for IntelliJ
 
-Artisan comes bundled with an installer that will configure your project and add the necessary files to your source root.It will also edit your AndroidManifest.xml to point to the CustomArtisanService that is needed to instrument your Artisan application.
+Artisan comes bundled with an installer that will configure your project and add the necessary files to your source root. It will also edit your AndroidManifest.xml to point to the ArtisanService that is needed to instrument your Artisan application.
 
 1\. Extract the contents of YourProjectName-ArtisanInstaller.zip into your project's root directory.
 
@@ -238,7 +341,7 @@ Artisan comes bundled with an installer that will configure your project and add
     sh install.sh --aspectj (on Mac/OSX or linux)
 {% endhighlight %}
 
-This will update your manifest file, add the required libraries, generate Artisan AspectJ instrumentation for all of your activities and create the CustomArtisanService class, if one doesn't exist already.
+This will update your manifest file, add the required libraries, generate Artisan AspectJ instrumentation for all of your activities and create an Application class, if one doesn't exist already.
 
 If there are any settings in your application's manifest that are not compatible with Artisan you will be notified and the installer will not complete. For example, you must specify a minimum Android SDK of 2.3.3 or higher. Change the specified settings and run the Artisan installer again.
 
