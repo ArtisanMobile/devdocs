@@ -178,8 +178,8 @@ Register a single-value Power Hook for use with Artisan.
 Use the method **registerHookWithId:friendlyName:defaultValue:** to declare the existence of a Power Hook you would like to pass in from Artisan.
 
 {% highlight objective-c %}
-[ARPowerHookManager registerHookWithId:@"slogan" friendlyName:@"Slogan" defaultValue:@"It's So Good!"];
-[ARManager startWithAppId:@""];
+// this should go in didFinishLaunchingWithOptions: in your app delegate before ARManager startWithAppId:
+[ARPowerHookManager registerHookWithId:@"marketingMessage" friendlyName:@"Marketing Message in Banner" defaultValue:@"It's So Good!"];
 {% endhighlight %}
 
 <div class="note note-important">
@@ -189,12 +189,19 @@ Use the method **registerHookWithId:friendlyName:defaultValue:** to declare the 
 The method **getValueForHookById:** retrieves the value of a Power Hook from Artisan.  This will return the value specified in the Artisan platform, or the default value if none has been specified.
 
 {% highlight objective-c %}
-NSString *configValue = [ARPowerHookManager getValueForHookById:@"slogan"];
+NSString *marketingMessage = [ARPowerHookManager getValueForHookById:@"marketingMessage"];
 {% endhighlight %}
 
 <div class="note note-hint">
   <p>HINT: Each time your code passes over a **getValueForHookById:** method call the most recently downloaded value to the user's device will be referenced.  If you do not want the value to change during the life-cycle of the object you can assign the value to a property or member variable in the object's constructor.</p>
 </div>
+
+As an alternative to getting the value one time you can also get a reference to an ARPowerHookVariable that you can then get the value from. It will always have the most recently downloaded value from Artisan. If you would like to be notified when this value changes see the section on <a href="#power-hook-callbacks">Power Hook Callbacks</a> below.
+
+{% highlight objective-c %}
+    ARPowerHookVariable *marketingMessageVariable = [ARPowerHookManager getPowerHookVariable:@"marketingMessage"];
+    NSString *marketingMessage = marketingMessageVariable.value;
+{% endhighlight %}
 
 ###Power Hook Code Blocks
 
@@ -219,20 +226,18 @@ This declaration should occur in the **didFinishLaunchingWithOptions:** method o
                                            @"discountAmount" : @"value2"
                                          }
                                andBlock:^(NSDictionary *data, id context) {
-
-   if ([data[@"shouldDisplayAlert"] isEqualToString:@"YES"]) {
-      NSString *message = [NSString stringWithFormat:@"Hello there, %@! We'd like to give you a discount of %@ on %@",
+      if ([data[@"shouldDisplayAlert"] isEqualToString:@"YES"]) {
+        NSString *message = [NSString stringWithFormat:@"Hello there, %@! We'd like to give you a discount of %@ on %@",
                            data[@"name"],
                            data[@"discountAmount"],
                            data[@"product"]];
-
-      UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Here's a Coupon!"
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Here's a Coupon!"
                                                           message:message
                                                         delegate:context
                                                 cancelButtonTitle:@"Cancel"
                                                 otherButtonTitles:@"Ok", nil];
-      [alertView show];
-  }
+        [alertView show];
+      }
 }];
 {% endhighlight %}
 
@@ -251,7 +256,81 @@ Power Hook code blocks can be used for referencing code that can be executed con
 {% endhighlight %}
 
 <div class="note note-hint">
-  <p>Hint: Passing a reference to a UIViewController for the context parameter enables a registered block to transition to a new screen.  This enables the injection of a new screen into an existing workflow.</p>
+  <p><strong>Hint:</strong> Passing a reference to a UIViewController for the context parameter enables a registered block to transition to a new screen.  This enables the injection of a new screen into an existing workflow.</p>
+</div>
+
+<div id="power-hook-callbacks"></div>
+##Power Hook Callbacks
+
+When new Power Hook values come down from Artisan you might want the option to change sometihng in your app immediately rather than waiting for the view controller to disappear and appear again.
+
+You can register callbacks for when an individual power hook changes or when any power hook changes. This is typically done in one of your view controllers.
+
+### When individual Power Hook Values change
+For individual Power Hook values you can get a reference to an ARPowerHookVariable to register a callback for when the value is updated.
+
+{% highlight objective-c %}
+@interface MYSampleViewController ()
+{
+  ARPowerHookVariable *marketingMessageVariable;
+}
+@end
+
+@implementation MYSampleViewController
+
+- (void)viewDidLoad {
+  // get a reference to the ARPowerHookVariable
+  marketingMessageVariable = [ARPowerHookManager getPowerHookVariable:@"marketingMessage"];
+}
+{% endhighlight %}
+
+Here is an example of registering a callback with the "marketingMessage" Power Hook value changes.
+
+{% highlight objective-c %}
+- (void)viewWillAppear:(BOOL)animated {
+    [marketingMessageVariable onPowerHookChanged:^(BOOL previewMode) {
+      if (previewMode) {
+        // you might only want to change a value on the screen if you are in Artisan previewMode
+        NSLog(@"In Preview Mode! Updated Marketing Message is: %@", marketingMessageVariable.value);
+      } else {
+        NSLog(@"Updated Marketing Message is: %@", marketingMessageVariable.value);
+      }
+    }];
+}
+{% endhighlight %}
+
+Artisan provides a previewMode flag to tell you if you are currently in <a href="#preview-mode">Artisan Preview Mode</a>, previewing unpublished changes for your App. For example, you may want to only change text on the screen immediately if you are in previewMode. This will make it easier to preview Power Hook values in your app while you are considering changes in Artisan Tools.
+
+<div class="note note-hint">
+  <p><strong>A NOTE ON THREADING:</strong> The thread calling the block of code is guaranteed to be the main thread.  If the code inside of the block requires executing on a background thread you will need to implement this logic.</p>
+</div>
+
+To avoid memory leaks, it is important that you also unregister your callback in the parallel method to the one in which you registered it. For example, if you registered in **viewWillAppear** it is best to unregister in **viewWillDisappear**.
+
+{% highlight objective-c %}
+-(void) viewWillDisappear:(BOOL)animated {
+  [marketingMessageVariable unregisterPowerHookChanged];
+}
+{% endhighlight %}
+
+### When any Power Hook Value changes
+
+If there are many power hooks that are used on an individual screen it may make sense to add a callback for when any power hook changes. Here is an example:
+
+Just as with the individual power hook value callbacks you have the previewMode flag to tell you if you are currently in <a href="#preview-mode">Artisan Preview Mode</a>, previewing unpublished changes for your App.
+{% highlight objective-c %}
+[ARPowerHookManager onPowerHooksChanged:^(BOOL previewMode) {
+  if (previewMode) {
+    // you might only want to change a value on the screen if you are in Artisan previewMode
+    NSLog(@"In Preview Mode! Power Hooks Changed!");
+  } else {
+    NSLog(@"Power Hooks Changed!");
+  }
+}];
+{% endhighlight %}
+
+<div class="note note-hint">
+  <p><strong>A NOTE ON THREADING:</strong> The thread calling the block of code is guaranteed to be the main thread.  If the code inside of the block requires executing on a background thread you will need to implement this logic.</p>
 </div>
 
 <div id="in-code"></div>
@@ -308,6 +387,34 @@ To set the goal of an in-code experiment you call the **setTargetReachedForExper
 [ARExperimentManager setTargetReachedForExperiment:@"Cart Process" description:@"Reached the Checkout Screen."];
 {% endhighlight %}
 
+<div id="playlist-callbacks"></div>
+##Artisan Playlist Callbacks
+
+When your app is started Artisan will fetch the latest changes from the Artisan Service. If you would like to hold up your app and wait for that first playlist to be downloaded, you can use the ARManager **onFirstPlaylistDownloaded:withTimeout:** method.
+
+This call is non-blocking so code execution will continue immediately to the next line of code.
+
+Here is an example where I wait for no more than 3 seconds for the first playlist to download:
+
+{% highlight objective-c %}
+- (void)viewDidLoad {
+    waitingViewController = [[MYSampleWaitingViewController alloc] init];
+
+    [self presentViewController:waitingViewController animated:NO completion:nil];
+
+    __block MYSampleHomeScreenViewController *_self = self;
+
+    [ARManager onFirstPlaylistDownloaded:^{
+        // this will be executed when the first playlist is downloaded or after 3 seconds, which ever is first.
+        [_self hideWaitingViewController];
+    } withTimeout:3];
+}
+{% endhighlight %}
+
+<div class="note note-hint">
+  <p><strong>A NOTE ON THREADING:</strong> The thread calling the block of code is guaranteed to be the main thread.  If the code inside of the block requires executing on a background thread you will need to implement this logic.</p>
+  <p>If the first playlist has already been downloaded when this call is made this becomes a blocking call and the block of code is executed immediately.</p>
+</div>
 
 ##Name your views
 Each UIView class contains the Apple property \'tag\' allowing you to uniquely identify a view with an NSInteger value.  The Artisan SDK adds the property artisanNameTag to all UIView classes through the use if an Objective-C category.
