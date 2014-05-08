@@ -333,6 +333,31 @@ Just as with the individual power hook value callbacks you have the previewMode 
   <p><strong>A NOTE ON THREADING:</strong> The thread calling the block of code is guaranteed to be the main thread.  If the code inside of the block requires executing on a background thread you will need to implement this logic.</p>
 </div>
 
+<div id="preview-mode"></div>
+##Artisan Preview Mode
+
+When making changes to Power Hook values you can preview the look and behavior of your application with the new values by clicking on the gear <img src="/images/gear-icon.png" /> and selecting "Preview".
+
+### Preview from the Power Hook Page
+
+<img src="/images/preview-mode-power-hook-page.png"/>
+
+### Preview from any Power Hook Experiment
+
+<img src="/images/preview-mode-experiment-preview.png"/>
+
+### Exiting Preview Mode
+
+You can exit Preview Mode by closing the modal in your browser.
+
+<img src="/images/preview-mode-modal.png"/>
+
+If you background and foreground your app while you are in preview mode you will be disconnected from Artisan Tools, but you will remain in preview mode and your changes will still be active when the app starts again.
+
+You can then exit preview mode by tapping the preview icon on your device <img src="/images/preview-mode-indicator.png"/> and selecting "Exit Preview Mode"
+
+<img src="/images/preview-mode-device.png"/>&nbsp;&nbsp;&nbsp;&nbsp;<img src="/images/preview-mode-device-exit.png"/>
+
 <div id="in-code"></div>
 ##In-code Experiments
 
