@@ -340,9 +340,13 @@ When making changes to Power Hook values you can preview the look and behavior o
 
 ### Preview from the Power Hook Page
 
+You can preview the default, current and draft values for your app's Power Hooks.
+
 <img src="/images/preview-mode-power-hook-page.png"/>
 
 ### Preview from any Power Hook Experiment
+
+You can preview any variation of your experiment.
 
 <img src="/images/preview-mode-experiment-preview.png"/>
 
