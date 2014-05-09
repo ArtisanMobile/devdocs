@@ -38,7 +38,7 @@ If there are any settings in your application\'s manifest that are not compatibl
 </div>
 
 <div id="artisan-application"></div>
-4\. If you already have an Application class you will need to update it to extend com.artisan.application.ArtisanActivity or implement com.artisan.application.ArtisanRegisteredApplication.
+4\. If you already have an Application class you will need to update it to extend com.artisan.application.ArtisanApplication or implement com.artisan.application.ArtisanRegisteredApplication.
 
 The ArtisanRegisteredApplication has three required methods on it: **registerUserProfileVariables**, **registerPowerhooks**, and **registerInCodeExperiments**.
 
