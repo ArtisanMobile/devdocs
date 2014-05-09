@@ -20,11 +20,181 @@ You can delete it from your filesystem explorer, Finder, or from your favorite I
 rm -rf artisan
 {% endhighlight %}
 
-
-
 <div class="note note-hint">
   <p>Questions about installing or upgrading? We are always more than happy to help! Send an email to <a href="mailto:support@useartisan.com?Subject=Android%20SDK%20Upgrade%20Help" target="_top">support@useartisan.com</a> or give us a call at 800.594.0401.</p>
 </div>
+
+## Upgrading from Artisan 2.1.0 to 2.1.1+
+
+As of Artisan 2.1.1 we have moved the location of that Artisan initialization from a sublcass of the ArtisanService to your Application class.
+
+### 1\. Go ahead and run the installer for the latest version of Artisan
+
+{% highlight bash %}
+# run this in a terminal
+# navigate to your project's root folder (where AndroidManifest.xml is)
+rm -rf artisan
+{% endhighlight %}
+
+In a terminal, go to the artisan directory inside your project\'s root directory and run:
+
+* install.bat (on Windows)
+* sh install.sh (on Mac/OSX or linux)
+
+### 2\. Update your Application class to extend ArtisanApplication or implement ArtisanRegisteredApplication
+
+Your Application Class needs to extend our class or implement our interface. Create a new Application class if you don't already have one.
+
+{% highlight java %}
+    import com.artisan.application.ArtisanApplication;
+
+    public class MySampleApplication extends ArtisanApplication {
+{% endhighlight %}
+
+OR
+
+{% highlight java %}
+    import com.artisan.application.ArtisanRegisteredApplication;
+
+    public class MySampleApplication extends Application implements ArtisanRegisteredApplication {
+{% endhighlight %}
+
+<div class="note note-hint">
+FYI, if you just created your Application class, you have to reference it in the android:name property of the &lt;application&gt; element in your AndroidManifest.xml.
+
+{% highlight java %}
+<application android:name=".MySampleApplication" ...>
+{% endhighlight %}
+</div>
+
+### 3\. Implement required methods for ArtisanRegisteredApplication
+
+The ArtisanRegisteredApplication has three required methods on it: **registerUserProfileVariables**, **registerPowerhooks**, and **registerInCodeExperiments**.
+
+* Since you are upgrading you may have implemented these methods on your CustomArtisanService. If so, you can simply move those methods from your CustomArtisanService to your Application class.
+
+Feel free to copy and paste these samples:
+
+{% highlight java %}
+/**
+ * Register your Artisan Power Hook variables and Power Hook blocks here
+ *
+ * For example:
+ *
+ * PowerHookManager.registerVariable("WelcomeText", "Welcome Text Sample PowerHook", "Welcome to Artisan!");
+ *
+ * <code>
+ *  HashMap<String, String> defaultData = new HashMap<String, String>();
+ *  defaultData.put("discountCode", "012345ABC");
+ *  defaultData.put("discountAmount", "25%");
+ *  defaultData.put("shouldDisplay", "true");
+ *
+ *  PowerHookManager.registerBlock("showAlert", "Show Alert Block", defaultData, new ArtisanBlock() {
+ *    public void execute(Map<String, String> data, Map<String, Object> extraData) {
+ *      if ("true".equalsIgnoreCase(data.get("shouldDisplay"))) {
+ *        StringBuilder message = new StringBuilder();
+ *        message.append("Buy another for a friend! Use discount code ");
+ *        message.append(data.get("discountCode"));
+ *        message.append(" to get ");
+ *        message.append(data.get("discountAmount"));
+ *        message.append(" off your purchase of 2 or more!");
+ *        Toast.makeText((Context) extraData.get("context"), message, Toast.LENGTH_LONG).show();
+ *      }
+ *    }
+ * });
+ * </code>
+ *
+ * More examples at http://docs.useartisan.com/dev/quickstart-for-android/#power-hooks
+ *
+ */
+@Override
+public void registerPowerhooks() {
+
+}
+
+/**
+ * Register your Artisan In-code Experiments here
+ *
+ * For example:
+ *
+ * ArtisanExperimentManager.registerExperiment("my first experiment");
+ * ArtisanExperimentManager.addVariantForExperiment("blue variation", "my first experiment");
+ * ArtisanExperimentManager.addVariantForExperiment("green variation", "my first experiment");
+ *
+ * More examples at http://docs.useartisan.com/dev/quickstart-for-android/#in-code
+ */
+@Override
+public void registerInCodeExperiments() {
+
+}
+
+/**
+ * Register your Artisan In-code Experiments here
+ *
+ * For example:
+ *
+ * ArtisanProfileManager.registerDateTime("lastSeenAt", new Date());
+ * ArtisanProfileManager.registerLocation("lastKnownLocation");
+ * ArtisanProfileManager.registerNumber("totalOrderCount", ArtisanDemoApplication.totalOrderCount);
+ * ArtisanProfileManager.registerString("visitorType", "anonymous");
+ * ArtisanProfileManager.setGender(Gender.Female);
+ * ArtisanProfileManager.setUserAge(29);
+ * ArtisanProfileManager.setSharedUserId("abcdef123456789");
+ * ArtisanProfileManager.setUserAddress("234 Market Street, Philadelphia, PA 19106");
+ *
+ * More examples at http://docs.useartisan.com/dev/quickstart-for-android/#api
+ */
+@Override
+public void registerUserProfileVariables() {
+
+}
+{% endhighlight %}
+### 4\. Move startArtisan code
+
+Your CustomArtisanService probably has code like this:
+
+{% highlight java %}
+public class CustomArtisanService extends ArtisanService {
+
+  @Override
+  public void startArtisanManager(ArtisanManager artisanManager) {
+      // REMOVE THIS
+      artisanManager.start("52a5d8482b222086ae00001f");
+  }
+{% endhighlight %}
+
+This should move to your Application class onCreate method in a new form:
+
+{% highlight java %}
+import com.artisan.application.ArtisanApplication;
+import com.artisan.manager.ArtisanManager;
+
+public class MySampleApplication extends ArtisanApplication {
+
+  @Override
+  public void onCreate() {
+      super.onCreate();
+      // ADD THIS, pass in a reference to your Application class and your Artisan AppID
+      ArtisanManager.startArtisan(this, "52a5d8482b222086ae00001f");
+  }
+{% endhighlight %}
+
+### 5\. Update your AndroidManifest.xml to remove the old Service class
+
+Remove this from your AndroidManifest.xml
+{% highlight java %}
+<service android:name=".CustomArtisanService"/>
+{% endhighlight %}
+
+And add this if it isn't there already. If you ran the installer in Step 1, then this should already be in your manifest:
+
+{% highlight java %}
+<service android:name="com.artisan.services.ArtisanService"/>
+{% endhighlight %}
+
+You can actually delete the CustomArtisanService file now, assuming that you have moved all of the user profile variable, power hook and in-code experiment configuration to your Application class already.
+
+All done! With this change we have solved issues where the Artisan API wasn't always ready in th onCreate, onStart, or onResume for the first Activity of the app.
 
 ## Upgrading from Artisan 2.0.x (Version installed before April 30, 2014)
 

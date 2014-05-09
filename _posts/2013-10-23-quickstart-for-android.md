@@ -11,14 +11,14 @@ description: "Getting started with the Artisan MEM platform for developers."
 * Android App with a minimum SDK of no less than Android 2.3.3 (API 10) and build against the latest Android SDK.
 
 <div class="note note-hint">
-If you are upgrading from an older (Artisan 2.0.x) version of Artisan please see the <a href="/dev/android-upgrade/">Artisan upgrade instructions</a>.
+If you are upgrading from an older version of Artisan please see the <a href="/dev/android-upgrade/">Artisan upgrade instructions</a>.
 </div>
 
 ##Adding Artisan to Your App
 
 ###Option 1: Automatically Instrumenting your App with Artisan
 
-Artisan comes bundled with an installer that will configure Eclipse and add the necessary files to your source root. It will also edit your AndroidManifest.xml to point to the CustomArtisanService that is needed to instrument your Artisan application. For most cases, we recommend using the installer, but if you prefer to configure the project yourself, please skip forward to the next section.
+Artisan comes bundled with an installer that will configure Eclipse and add the necessary files to your source root. It will also edit your AndroidManifest.xml to point to the ArtisanService that is needed to instrument your Artisan application. For most cases, we recommend using the installer, but if you prefer to configure the project yourself, please skip forward to the next section.
 
 1\. Download the Install Wizard - You can download the Install Wizard by clicking on your App\'s Settings icon and click the Download SDK link
 
@@ -29,7 +29,7 @@ Artisan comes bundled with an installer that will configure Eclipse and add the 
 * install.bat (on Windows)
 * sh install.sh (on Mac/OSX or linux)
 
-This will update your manifest file, add the **artisan_library.jar** to your libs directory and create the CustomArtisanService class, if one doesn\'t exist already.
+This will update your manifest file, add the **artisan_library.jar** to your libs directory and create an Application class, if one doesn\'t exist already.
 
 If there are any settings in your application\'s manifest that are not compatible with Artisan you will be notified and the installer will not complete. For example, you must specify a minimum Android SDK of 2.3.3 or higher. Change the specified settings and run the Artisan installer again.
 
@@ -37,8 +37,104 @@ If there are any settings in your application\'s manifest that are not compatibl
 <p>If you are using Eclipse, you'll need to refresh the project in Eclipse so that the newly added files are pulled into the project. Right click on your project and choose "Refresh".</p>
 </div>
 
+<div id="artisan-application"></div>
+4\. If you already have an Application class you will need to update it to extend com.artisan.application.ArtisanActivity or implement com.artisan.application.ArtisanRegisteredApplication.
+
+The ArtisanRegisteredApplication has three required methods on it: **registerUserProfileVariables**, **registerPowerhooks**, and **registerInCodeExperiments**.
+
+You will also need to call ArtisanManager.startArtisan in the onCreate of your Application class. Replace "YOUR_ARTISAN_APPID_HERE" with the appropriate string. You can find your app id in Artisan Tools on the screen after you first create your app or on the settings page for your app:
+
+{% highlight java %}
+    import com.artisan.application.ArtisanApplication;
+    import com.artisan.manager.ArtisanManager;
+
+    // Extend ArtisanApplication or implement ArtisanRegisteredApplication
+    public class MySampleApplication extends ArtisanApplication {
+
+      @Override
+      public void onCreate() {
+        super.onCreate();
+
+        ArtisanManager.startArtisan(this, "YOUR_ARTISAN_APPID_HERE");
+      }
+
+
+    /**
+     * Register your Artisan Power Hook variables and Power Hook blocks here
+     *
+     * For example:
+     *
+     * PowerHookManager.registerVariable("WelcomeText", "Welcome Text Sample PowerHook", "Welcome to Artisan!");
+     *
+     * <code>
+     *  HashMap<String, String> defaultData = new HashMap<String, String>();
+     *  defaultData.put("discountCode", "012345ABC");
+     *  defaultData.put("discountAmount", "25%");
+     *  defaultData.put("shouldDisplay", "true");
+     *
+     *  PowerHookManager.registerBlock("showAlert", "Show Alert Block", defaultData, new ArtisanBlock() {
+     *    public void execute(Map<String, String> data, Map<String, Object> extraData) {
+     *      if ("true".equalsIgnoreCase(data.get("shouldDisplay"))) {
+     *        StringBuilder message = new StringBuilder();
+     *        message.append("Buy another for a friend! Use discount code ");
+     *        message.append(data.get("discountCode"));
+     *        message.append(" to get ");
+     *        message.append(data.get("discountAmount"));
+     *        message.append(" off your purchase of 2 or more!");
+     *        Toast.makeText((Context) extraData.get("context"), message, Toast.LENGTH_LONG).show();
+     *      }
+     *    }
+     * });
+     * </code>
+     *
+     * More examples at http://docs.useartisan.com/dev/quickstart-for-android/#power-hooks
+     *
+     */
+    @Override
+    public void registerPowerhooks() {
+
+    }
+
+    /**
+     * Register your Artisan In-code Experiments here
+     *
+     * For example:
+     *
+     * ArtisanExperimentManager.registerExperiment("my first experiment");
+     * ArtisanExperimentManager.addVariantForExperiment("blue variation", "my first experiment");
+     * ArtisanExperimentManager.addVariantForExperiment("green variation", "my first experiment");
+     *
+     * More examples at http://docs.useartisan.com/dev/quickstart-for-android/#in-code
+     */
+    @Override
+    public void registerInCodeExperiments() {
+
+    }
+
+    /**
+     * Register your Artisan In-code Experiments here
+     *
+     * For example:
+     *
+     * ArtisanProfileManager.registerDateTime("lastSeenAt", new Date());
+     * ArtisanProfileManager.registerLocation("lastKnownLocation");
+     * ArtisanProfileManager.registerNumber("totalOrderCount", ArtisanDemoApplication.totalOrderCount);
+     * ArtisanProfileManager.registerString("visitorType", "anonymous");
+     * ArtisanProfileManager.setGender(Gender.Female);
+     * ArtisanProfileManager.setUserAge(29);
+     * ArtisanProfileManager.setSharedUserId("abcdef123456789");
+     * ArtisanProfileManager.setUserAddress("234 Market Street, Philadelphia, PA 19106");
+     *
+     * More examples at http://docs.useartisan.com/dev/quickstart-for-android/#api
+     */
+    @Override
+    public void registerUserProfileVariables() {
+
+    }
+{% endhighlight %}
+
 <div id="artisan-activity"></div>
-4\. Update all of your activities to extend the ArtisanActivity or implement our interface ArtisanBoundActivity
+5\. Update all of your activities to extend the ArtisanActivity or implement our interface ArtisanBoundActivity
 
 In order for your app to be properly instrumented all of your activities need to either extend ArtisanActivity or implement the ArtisanBoundActivity interface.
 
@@ -167,47 +263,109 @@ If you prefer to manually install Artisan, follow these steps, including: copyin
 
 5\. Copy artisan/artisan_library/artisan_library.jar to your project's libs directory
 
-####Setting up the Artisan service
+####Configuring Artisan
 
-In order for Artisan to run within your app, the Artisan service has to be started. To do this, we will create a subclass of \'ArtisanService\' and add a declaration in the manifest which points to this service.
+Artisan is configured in your Application class.
 
-1\. Create a class called \'CustomArtisanService\' inside one of your source packages. This class needs to extend com.artisan.services.ArtisanService. If you would like to call it something else, you must edit the value of the \'artisan_service_name\' string resource in \'res/values/artisan_ids.xml\' to match the your custom class name.
+If you don't already have an Applicaton class, create one and add it to your manifest (the classname goes in the android:name parameter of your &lt;application&gt; node of your AndroidManifest.xml).
 
-2\. You will need to implement one abstract method to start the Artisan service. Add the following method to your CustomArtisanService class:
+1\. Update your application class to extend com.artisan.application.ArtisanActivity or implement com.artisan.application.ArtisanRegisteredApplication.
 
-{% highlight java %}
-import com.artisan.manager.ArtisanManager;
-import com.artisan.services.ArtisanService;
-
-public class CustomArtisanService extends ArtisanService {
-  @Override
-  public void startArtisanManager(ArtisanManager manager) { do
-    artisanManager.start("YOUR_APP_ID");
-  }
-}
-{% endhighlight %}
-
-3\. The last step is updating your AndroidManifest.xml so that Android knows where to find the service and has the correct permissions. Add the following line inside the `<application>` element, using the relative path to your concrete ArtisanService class.
+You will need to call ArtisanManager.startArtisan in the onCreate of your Application class. Replace "YOUR_ARTISAN_APPID_HERE" with the appropriate string. You can find your app id in Artisan Tools on the screen after you first create your app or on the settings page for your app:
 
 {% highlight java %}
-<service android:name=".path.to.my.CustomArtisanService"/>
+    import com.artisan.application.ArtisanApplication;
+    import com.artisan.manager.ArtisanManager;
+
+    // Extend ArtisanApplication or implement ArtisanRegisteredApplication
+    public class MySampleApplication extends ArtisanApplication {
+
+      @Override
+      public void onCreate() {
+        super.onCreate();
+
+        ArtisanManager.startArtisan(this, "YOUR_ARTISAN_APPID_HERE");
+      }
+
+    /**
+     * Register your Artisan Power Hook variables and Power Hook blocks here
+     *
+     * For example:
+     *
+     * PowerHookManager.registerVariable("WelcomeText", "Welcome Text Sample PowerHook", "Welcome to Artisan!");
+     *
+     * <code>
+     *  HashMap<String, String> defaultData = new HashMap<String, String>();
+     *  defaultData.put("discountCode", "012345ABC");
+     *  defaultData.put("discountAmount", "25%");
+     *  defaultData.put("shouldDisplay", "true");
+     *
+     *  PowerHookManager.registerBlock("showAlert", "Show Alert Block", defaultData, new ArtisanBlock() {
+     *    public void execute(Map<String, String> data, Map<String, Object> extraData) {
+     *      if ("true".equalsIgnoreCase(data.get("shouldDisplay"))) {
+     *        StringBuilder message = new StringBuilder();
+     *        message.append("Buy another for a friend! Use discount code ");
+     *        message.append(data.get("discountCode"));
+     *        message.append(" to get ");
+     *        message.append(data.get("discountAmount"));
+     *        message.append(" off your purchase of 2 or more!");
+     *        Toast.makeText((Context) extraData.get("context"), message, Toast.LENGTH_LONG).show();
+     *      }
+     *    }
+     * });
+     * </code>
+     *
+     * More examples at http://docs.useartisan.com/dev/quickstart-for-android/#power-hooks
+     *
+     */
+    @Override
+    public void registerPowerhooks() {
+
+    }
+
+    /**
+     * Register your Artisan In-code Experiments here
+     *
+     * For example:
+     *
+     * ArtisanExperimentManager.registerExperiment("my first experiment");
+     * ArtisanExperimentManager.addVariantForExperiment("blue variation", "my first experiment");
+     * ArtisanExperimentManager.addVariantForExperiment("green variation", "my first experiment");
+     *
+     * More examples at http://docs.useartisan.com/dev/quickstart-for-android/#in-code
+     */
+    @Override
+    public void registerInCodeExperiments() {
+
+    }
+
+    /**
+     * Register your Artisan In-code Experiments here
+     *
+     * For example:
+     *
+     * ArtisanProfileManager.registerDateTime("lastSeenAt", new Date());
+     * ArtisanProfileManager.registerLocation("lastKnownLocation");
+     * ArtisanProfileManager.registerNumber("totalOrderCount", ArtisanDemoApplication.totalOrderCount);
+     * ArtisanProfileManager.registerString("visitorType", "anonymous");
+     * ArtisanProfileManager.setGender(Gender.Female);
+     * ArtisanProfileManager.setUserAge(29);
+     * ArtisanProfileManager.setSharedUserId("abcdef123456789");
+     * ArtisanProfileManager.setUserAddress("234 Market Street, Philadelphia, PA 19106");
+     *
+     * More examples at http://docs.useartisan.com/dev/quickstart-for-android/#api
+     */
+    @Override
+    public void registerUserProfileVariables() {
+
+    }
 {% endhighlight %}
 
-You will also need to add the following permissions to your AndroidManifest.xml if they aren\'t already set:
+2\. In addition to updating your Application class you will need to update all of your activities.
 
-{% highlight java %}
-<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-<uses-permission android:name="android.permission.GET_TASKS"/>
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-<uses-permission android:name="android.permission.INTERNET"/>
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-{% endhighlight %}
+In order for your app to be properly instrumented with Artisan all of your activities need to either extend ArtisanActivity or implement the ArtisanBoundActivity interface.
 
-4\. Update all of your activities to extend the ArtisanActivity or implement our interface ArtisanBoundActivity
-
-In order for your app to be properly instrumented all of your activities need to either extend ArtisanActivity or implement the ArtisanBoundActivity interface.
-
-The simpler option is to extend ArtisanActivity. There's nothing else you need to do if you are extending from ArtisanActivity.
+The simplest option is to extend ArtisanActivity. There's nothing else you need to do if you are extending from ArtisanActivity.
 
 Sample Activity that extends ArtisanActivity:
 {% highlight java %}
@@ -246,52 +404,79 @@ public class SampleArtisanCustomerActivity extends Activity implements ArtisanBo
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    ArtisanActivity.artisanOnCreate(this);
+    ArtisanActivity.artisanOnCreate(this); // Call Artisan method AFTER super.onCreate
     setContentView(R.layout.activity_absolute_layout);
   }
 
   @Override
   protected void onStart() {
     super.onStart();
-    ArtisanActivity.artisanOnStart(this);
+    ArtisanActivity.artisanOnStart(this); // Call Artisan method AFTER super.onStart
   }
 
   @Override
   protected void onStop() {
     super.onStop();
-    ArtisanActivity.artisanOnStop(this);
+    ArtisanActivity.artisanOnStop(this); // Call Artisan method AFTER super.onStop
   }
 
   @Override
   protected void onDestroy() {
-    // Call Artisan method BEFORE onDestroy
-    ArtisanActivity.artisanOnDestroy();
+    ArtisanActivity.artisanOnDestroy(); // Call Artisan method BEFORE super.onDestroy
     super.onDestroy();
   }
 
+        /**
+         * This is the version of setContentView that most people use.
+         * You only need to implement this if you are using this version of setContentView in this Activity or its subclasses.
+         * If you are using it it looks something like this:
+         * setContentView(R.layout.activity_main);
+         */
   @Override
   public void setContentView(int layoutResID) {
     View contentView = ArtisanActivity.artisanGetContentView(layoutResID, this);
     super.setContentView(contentView);
   }
 
+        // You only need to implement this if you are using this version of setContentView in this Activity or its subclasses.
   @Override
   public void setContentView(View view) {
     View contentView = ArtisanActivity.artisanGetContentView(view, this);
     super.setContentView(contentView);
   }
 
+        // You only need to implement this if you are using this version of setContentView in this Activity or its subclasses.
   @Override
   public void setContentView(View view, LayoutParams params) {
     View contentView = ArtisanActivity.artisanGetContentView(view, params, this);
     super.setContentView(contentView);
   }
 
+        /**
+         * This method is required by the ArtisanBoundActivity interface.
+         * You can copy this implementation as is to your Activities that extend our interface.
+         */
   @Override
   public ArtisanService getArtisanService() {
     return ArtisanActivity._getArtisanService();
   }
 }
+{% endhighlight %}
+
+3\. The last step is updating your AndroidManifest.xml so that Android knows where to find the service and has the correct permissions. Add the following line inside the `<application>` element.
+
+{% highlight java %}
+<service android:name="com.artisan.services.ArtisanService"/>
+{% endhighlight %}
+
+You will also need to add the following permissions to your AndroidManifest.xml if they aren\'t already set:
+
+{% highlight java %}
+<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+<uses-permission android:name="android.permission.GET_TASKS"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 {% endhighlight %}
 
 **Congratulations! You are now ready to start using Artisan!**
@@ -336,7 +521,7 @@ ArtisanProfileManager is a singleton that is automatically initialized when your
 
 Convenience methods existing for registering numbers, strings, dates, and locations. The value can optionally be set during the registration of the User Profile Variable.
 
-This declaration should occur in the <strong>registerUserProfileVariables</strong> method of your CustomArtisanService.
+This declaration should occur in the <strong>registerUserProfileVariables</strong> method of your Application class.
 
 {% highlight java %}
 @Override
@@ -412,6 +597,7 @@ The **setUserAddress** method expects a String.
 ArtisanProfileManager.setUserAddress("234 Market Street, Philadelphia, PA 19106");
 {% endhighlight %}
 
+<div id="power-hooks"></div>
 ##Power Hooks
 
 Power Hooks are key-value pairs or code blocks with key-value arguments that are passed into your application code by Artisan when your app starts, allowing for settings, text, and logic to be modified on the fly for all user devices without revisioning or updating your application.
@@ -424,7 +610,7 @@ Register a single-value Power Hook for use with Artisan.
 
 Use the method **registerVariable(String hookId, String friendlyName, String defaultValue)** to declare the existence of a Power Hook you would like to pass in from Artisan.
 
-This declaration should occur in the <strong>registerPowerhooks</strong> method of your CustomArtisanService
+This declaration should occur in the <strong>registerPowerhooks</strong> method of your Application class
 
 {% highlight java %}
 @Override
@@ -453,7 +639,7 @@ cart_button.setText(PowerHookManager.getVariableValue("addToCartButton"));
 
 Use the **registerBlock(String blockId, String friendlyName, Map&lt;String, String&gt; defaultData, ArtisanBlock block)** method to declare the existence of a code block you would like to use in your app with data that is configurable from Artisan.
 
-This declaration should occur in the **registerPowerhooks** method of your CustomArtisanService
+This declaration should occur in the **registerPowerhooks** method of your Application class
 
 * **blockId** - The name of the block to register. Name must be unique for this app.
 * **friendlyName** - The name for this code block that will be displayed in Artisan Tools.
@@ -515,11 +701,12 @@ PowerHookManager.executeBlock("showAlert", extraData);
   <p>NOTE: If you execute this Power Hook Block in your first Activity's onCreate method, before the Artisan Service has a chance to start up, the call may be ignored. The Artisan Service is started up at the time your first activity is created, and should be ready by the time your first activity gets to onResume. For the rest of your application's lifecycle you can assume that Power Hooks will work as expected.</p>
 </div>
 
+<div id="in-code"></div>
 ##In-code Experiments
 
 In-code Experiments allow you to build tests around business logic inside your app.  For example, you can create a test for showing or not showing a particular screen.  Another example is testing multiple workflows.
 
-An in-code experiments must be defined in the **registerInCodeExperiments** on your CustomArtisanService class.
+An in-code experiments must be defined in the **registerInCodeExperiments** on your Application class.
 
 The method **registerExperimentWithDescription(String experimentName)** or **registerExperimentWithDescription(String experimentName, String description)** takes a string representing the name of your experiment and an optional string for a description that will be displayed in Artisan Tools.
 
