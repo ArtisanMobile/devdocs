@@ -24,6 +24,7 @@ Depending on what you are working on, the Canvas may display additional informat
 * Tagging
 
 <div id="instant-publishing"></div>
+
 ## Instant Publishing
 With Canvas, you are able to make changes to the design of your application and publish those changes immediately to your customers.
 
@@ -38,6 +39,7 @@ Artisan makes it easy to make changes to your app, like fixing a typo or updatin
 You can also make changes and publish those changes to specific segments of users with Artisan Personalize. To learn more about personalizing your user experience read about **Artisan Personalize**.
 
 <div id="event-tagging"></div>
+
 ## Event Tagging
 Tagging allows you to associate any piece of information displayed on the screen with an action that a user performs. For example, if your app allowed users to make purchases you could associate the total cart value with each time a user taps the "Purchase" button. This additional information allows you to create more targeted segments of users and gain deeper insights into how your users are interacting with your app.
 

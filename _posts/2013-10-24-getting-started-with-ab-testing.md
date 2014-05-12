@@ -62,6 +62,7 @@ A/B testing helps you improve the business performance of your app. Listed below
 If you are new to A/B testing, Artisan provides helpful hints below for launching your Artisan A/B testing plan.
 
 ###MCommerce
+
 ####Top of Funnel
 * Homescreen CTA (text vs. Buttons)
 * Images (people vs. objects)
@@ -80,6 +81,7 @@ If you are new to A/B testing, Artisan provides helpful hints below for launchin
 * Strength of checkout wording
 
 ###Media
+
 ####Top of Funnel
 * Menu - Text, ordering of options
 * Search Box - Size, location and text
@@ -96,6 +98,7 @@ If you are new to A/B testing, Artisan provides helpful hints below for launchin
 * Share/invite
 
 ###Search and Review / Utility Apps
+
 ####Top of Funnel
 * Search Bar - size, text, location
 * Settings - Color button, CTA, size of button, location of button
