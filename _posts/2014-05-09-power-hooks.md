@@ -11,6 +11,16 @@ Power Hooks are key-value pairs or code blocks with key-value arguments that are
 
 All hooks are created using ARPowerHookManager are automatically registered with the Artisan platform when you connect your device to for the first time. The registration process will detect all registered hook keys, and will display all of the hook variables and code blocks for this app in Artisan where they can be edited. Values set on hooks on the web will automatically be downloaded by all devices upon app startup, allowing for their usage throughout your system code.
 
+<ul>
+  <li><a href="#register">Register Power Hook</a></li>
+  <li><a href="#getvalue">Get Power Hook Value</a></li>
+  <li><a href="#code-blocks">Code Blocks</a></li>
+  <li><a href="#callbacks">Callbacks</a></li>
+  <li><a href="#preview-mode">Preview Mode</a></li>
+</ul>
+
+<div id="register"></div>
+
 ##Register Power Hook
 
 Use the method **registerHookWithId:friendlyName:defaultValue:** to declare the existence of a Power Hook you would like to pass in from Artisan.
@@ -23,6 +33,8 @@ Use the method **registerHookWithId:friendlyName:defaultValue:** to declare the 
 <div class="note note-important">
   <p>Important: This declaration should occur in the **didFinishLaunchingWithOptions:** method of your main app delegate, **before** you start Artisan using the [ARManager startWithAppId:] method.</p>
 </div>
+
+<div id="getvalue"></div>
 
 ##Get Power Hook Value
 
@@ -37,7 +49,9 @@ NSNumber *configValue = [ARPowerHookManager getValueForHookById:@"numberofresult
   <p>HINT: Each time your code passes over a **getValueForHookById:** method call the most recently downloaded value to the user's device will be referenced.  If you do not want the value to change during the life-cycle of the object you can assign the value to a property or member variable in the object's constructor.</p>
 </div>
 
-##Power Hook Code Blocks
+<div id="code-blocks"></div>
+
+##Code Blocks
 
 Power Hook code blocks can be used for referencing code that can be executed conditionally. Examples are displaying a modal popup to remind the user to perform certain actions in the app, managing the logic for applying a discount code, or displaying a survey to a segment of users.
 
@@ -94,3 +108,40 @@ Use the method **executeBlockWithId:data:context** to execute a Power Hook code 
 <div class="note note-hint">
   <p>Hint: Passing a reference to a UIViewController for the context parameter enables a registered block to transition to a new screen.  This enables the injection of a new screen into an existing workflow.</p>
 </div>
+
+<div id="callbacks"></div>
+
+##Callbacks
+
+Artisan allows you to <a href="/dev/ios/callbacks/#power-hooks">register callbacks</a> for when an individual power hook changes or when any power hook changes.
+
+<div id="preview-mode"></div>
+
+##Preview Mode
+
+When making changes to Power Hook values you can preview the look and behavior of your application with the new values by clicking on the gear <img src="/images/gear-icon.png" /> and selecting "Preview".
+
+### Preview from the Power Hook Page
+
+You can preview the default, current and draft values for your app's Power Hooks.
+
+<img src="/images/preview-mode-power-hook-page.png"/>
+
+### Preview from any Power Hook Experiment
+
+You can preview any variation of your experiment.
+
+<img src="/images/preview-mode-experiment-preview.png"/>
+
+### Exiting Preview Mode
+
+You can exit Preview Mode by closing the modal in your browser.
+
+<img src="/images/preview-mode-modal.png"/>
+
+If you background and foreground your app while you are in preview mode you will be disconnected from Artisan Tools, but you will remain in preview mode and your changes will still be active when the app starts again.
+
+You can then exit preview mode by tapping the preview icon on your device <img src="/images/preview-mode-indicator.png"/> and selecting "Exit Preview Mode"
+
+<img src="/images/preview-mode-device.png"/>&nbsp;&nbsp;&nbsp;&nbsp;<img src="/images/preview-mode-device-exit.png"/>
+

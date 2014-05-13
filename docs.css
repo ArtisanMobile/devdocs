@@ -420,6 +420,9 @@ header {
           text-indent: -30000px;
           width: 139px; } }
 
+.padding-left-20 {
+  padding-left:20px;}
+
 .page-content-container nav {
   background-color: #f6f6f6;
   position: relative; }

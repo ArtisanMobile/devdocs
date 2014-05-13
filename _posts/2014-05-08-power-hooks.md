@@ -10,7 +10,15 @@ description: "Power Hooks with the Artisan Android SDK"
 
 Power Hooks are key-value pairs or code blocks with key-value arguments that are passed into your application code by Artisan when your app starts, allowing for settings, text, and logic to be modified on the fly for all user devices without revisioning or updating your application.
 
-All hooks are created using PowerHookManager are automatically registered with the Artisan platform when you connect your device to for the first time. The registration process will detect all registered hook keys, and will display all of the hook variables and code blocks for this app in Artisan where they can be edited. Values set on hooks on the web will automatically be downloaded by all devices upon app startup, allowing for their usage throughout your system code.
+All hooks are created using ARPowerHookManager are automatically registered with the Artisan platform when you connect your device to for the first time. The registration process will detect all registered hook keys, and will display all of the hook variables and code blocks for this app in Artisan where they can be edited. Values set on hooks on the web will automatically be downloaded by all devices upon app startup, allowing for their usage throughout your system code.
+
+<ul>
+  <li><a href="#register">Register Power Hook</a></li>
+  <li><a href="#getvalue">Get Power Hook Value</a></li>
+  <li><a href="#code-blocks">Code Blocks</a></li>
+</ul>
+
+<div id="register"></div>
 
 ##Register Power Hook
 
@@ -29,6 +37,8 @@ public void registerPowerhooks() {
 This declaration should occur in the <strong>registerPowerhooks</strong> method of your Application class.</p>
 </div>
 
+<div id="getvalue"></div>
+
 ##Get Power Hook Value
 
 The method **getVariableValue** retrieves the value of a Power Hook from Artisan.  This will return the value specified in the Artisan platform, or the default value if none has been specified.
@@ -46,7 +56,9 @@ cart_button.setText(PowerHookManager.getVariableValue("addToCartButton"));
   <p>HINT: Each time your code passes over a <strong>getVariableValue</strong> method call the most recently downloaded value to the user's device will be referenced.  If you do not want the value to change during the life-cycle of the object you can assign the value to a variable.</p>
 </div>
 
-##Power Hook Code Blocks
+<div id="code-blocks"></div>
+
+##Code Blocks
 
 Power Hook code blocks can be used for referencing code that can be executed conditionally. Examples are displaying a modal popup to remind the user to perform certain actions in the app, managing the logic for applying a discount code, or displaying a survey to a segment of users.
 

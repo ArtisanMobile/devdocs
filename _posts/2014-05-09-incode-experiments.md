@@ -9,6 +9,12 @@ description: "In-code experiments with the Artisan iOS SDK"
 
 In-code Experiments allow you to build tests around business logic inside your app.  For example, you can create a test for showing or not showing a particular screen.  Another example is testing multiple workflows.
 
+<ul>
+  <li><a href="#register">Register Experiment</a></li>
+</ul>
+
+<div id="register"></div>
+
 ## Register Experiment
 
 An in-code experiments must be defined in the appDelegate before the **startWithAppId:version:options:** line.
