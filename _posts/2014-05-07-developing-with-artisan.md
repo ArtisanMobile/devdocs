@@ -98,6 +98,7 @@ description: "Getting started with the Artisan MEM platform for developers."
 Check out [this article](https://getsatisfaction.com/artisan/topics/third_party_conflicts) for more information on how to resolve the third party SDK conflicts.
 
 <div id="android"></div>
+
 ##Android Topics
 <table>
   <colgroup>
@@ -155,12 +156,12 @@ Check out [this article](https://getsatisfaction.com/artisan/topics/third_party_
 </tr>
 <tr>
   <th>Multiple Conversion Goals in Same Experiment</th>
-  <td>Artisan supports multiple conversion goals via our In-Code capability. See <a href="/dev/quickstart-for-android/#api">Android In-Code</a> for more information.</td>
+  <td>Artisan supports multiple conversion goals via our In-Code capability. See <a href="/dev/android/incode-experiments/">Android In-Code</a> for more information.</td>
   <td>Artisan does not support multiple conversion goals via Canvas</td>
 </tr>
 <tr>
   <th>Experimenting with Action Bar</th>
-  <td>Artisan supports experimenting with elements in the action bar via our In-Code capability. See <a href="/dev/quickstart-for-android/#api">Android In-Code</a> for more information.</td>
+  <td>Artisan supports experimenting with elements in the action bar via our In-Code capability. See <a href="/dev/android/incode-experiments/">Android In-Code</a> for more information.</td>
   <td>Artisan does not support experimenting with elements in the action bar via Canvas.</td>
 </tr>
 </tbody>
