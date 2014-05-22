@@ -1,5 +1,5 @@
 ---
-layout: docs-landing
+layout: docs
 title: "Artisan User Guide"
 author: "Artisan"
 description: "Getting started with the Artisan MEM platform for developers."
@@ -14,21 +14,3 @@ Artisan is the industry\'s first mobile experience management (MEM) platform tha
 ## Getting Around the Artisan Platform
 
 The Artisan platform is made up of multiple products and features. Which features you have avialable depend on your subscription. If you are unsure of your subscription, please contact our Support team. The black bar on the left side of the screen is your main point of navigation around the app. Clicking the icons on the menu will take you to that product or feature. Clicking your app icon, located above the navigation items, will take you back to your list of apps.
-
-The main navigation icons include:
-
-<div id="apps-list">
-  <p><span class="icon-analyze">Analyze</span></p>
-
-  <p><span class="icon-sitemap">App Map</span></p>
-
-  <p><span class="icon-optimize">Optimize</span></p>
-
-  <p><span class="icon-goals">Goals</span></p>
-
-  <p><span class="icon-power-cord">Power Hooks</span></p>
-
-  <p><span class="icon-bubble">Notifications</span></p>
-
-  <p><span class="icon-cog">Settings</span></p>
-</div>

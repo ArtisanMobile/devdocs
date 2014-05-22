@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: user-guide
 title: "Notifications"
 author: "Artisan"
 category: user-guide

@@ -1,7 +1,5 @@
 <script type="text/javascript" charset="utf-8">
-  $("#navtab").click(function() {
-    $("nav dl").slideToggle("400", function() {
-      $("nav").toggleClass("navtab-open");
-    });
-  });
+	$(document).ready(function() {
+		$('#category-nav #nav-wrapper').waypoint('sticky');
+	})
 </script>

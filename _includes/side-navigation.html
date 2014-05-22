@@ -1,66 +1,68 @@
-<dl id="doc-navigation">
-  <dt><a href="/user-guide">Getting Started</a></dt>
-    <dd><a href="/user-guide/app-map/">App Map</a></dd>
-    <dd>
-      <a href="/user-guide/design-canvas/">Canvas</a>
-      <ul>
-        <li><a href="/user-guide/design-canvas/#instant-publishing">Instant Publishing</a></li>
-        <li><a href="/user-guide/design-canvas/#event-tagging">Event Tagging</a></li>
-      </ul>
-    </dd>
-    <dd>
-      <a href="/user-guide/analyze/">Analyze</a>
-      <ul>
-        <li><a href="/user-guide/analyze/#reports">Analyze Reports</a></li>
-        <li><a href="/user-guide/analyze/#goals">Analyze Goals</a></li>
-      </ul>
-    </dd>
-    <dd>
-      <a href="/user-guide/optimize/">Optimize</a>
-      <ul>
-        <li><a href="/user-guide/optimize/#create-experiment">Creating An Experiment</a></li>
-      </ul>
-    </dd>
-    <dd>
-      <a href="/user-guide/personalize/">Personalize</a>
-      <ul>
-        <li><a href="/user-guide/personalize/#segmenting">Segmenting Users</a></li>
-        <li><a href="/user-guide/personalize/#personalizing">Personalizing Your App</a></li>
-        <li><a href="/user-guide/personalize/#changing">Changing a Personalization</a></li>
-        <li><a href="/user-guide/personalize/#deleting">Deleting a Personalization</a></li>
-      </ul>
-    </dd>
-    <dd><a href="/user-guide/notifications/">Notifications</a></dd>
-  <dt>For Developers</dt>
+{% if page.category == "user-guide" %}
+  <h2>Getting Started</h2>
+  <ul>
+    <li><a href="/user-guide">Overview</a></li>
+    <li><a href="/user-guide/notifications/">Notifications</a></li>
+  </ul>
+
+  <h3><a href="/user-guide/analyze/">Reports &amp; Analytics</a></h3>
+  <ul>
+    <li><a href="/user-guide/analyze/#reports">Analyze Reports</a></li>
+    <li><a href="/user-guide/analyze/#goals">Analyze Goals</a></li>
+  </ul>
+
+  <h3><a href="/user-guide/optimize/">Experiments</a></h3>
+  <ul>
+    <li><a href="/user-guide/optimize/#create-experiment">Creating An Experiment</a></li>
+  </ul>
+
+  <h3><a href="/user-guide/design-canvas">Design Center</a></h3>
+  <ul>
+    <li><a href="/user-guide/design-canvas/#instant-publishing">Instant Publishing</a></li>
+    <li><a href="/user-guide/design-canvas/#event-tagging">Event Tagging</a></li>
+  </ul>
+
+  <h3>People &amp; Segmentation</h3>
+
+  <dd><a href="/user-guide/app-map/">App Map</a></dd>
   <dd>
-    <a href="/dev/ios/install/">iOS SDK</a>
+    <a href="/user-guide/design-canvas/">Canvas</a>
+
+  </dd>
+
+  <dd>
+    <a href="/user-guide/personalize/">Personalize</a>
     <ul>
-      <li><a href="/dev/ios/install/">Installation</a></li>
-      <li><a href="/dev/ios/user-profiles/">User Profiles</a></li>
-      <li><a href="/dev/ios/event-tracking/">Event Tracking</a></li>
-      <li><a href="/dev/ios/power-hooks/">Power Hooks</a></li>
-      <li><a href="/dev/ios/incode-experiments/">In-Code Experiments</a></li>
-      <li><a href="/dev/ios/callbacks/">Callbacks</a></li>
-      <li><a href="/dev/ios/appledocs/">API Appledocs</a></li>
+      <li><a href="/user-guide/personalize/#segmenting">Segmenting Users</a></li>
+      <li><a href="/user-guide/personalize/#personalizing">Personalizing Your App</a></li>
+      <li><a href="/user-guide/personalize/#changing">Changing a Personalization</a></li>
+      <li><a href="/user-guide/personalize/#deleting">Deleting a Personalization</a></li>
     </ul>
   </dd>
-  <dd>
-    <a href="/dev/android/install/">Android SDK</a>
-    <ul>
-      <li><a href="/dev/android/install/">Installation</a></li>
-      <li><a href="/dev/android/user-profiles/">User Profiles</a></li>
-      <li><a href="/dev/android/event-tracking/">Event Tracking</a></li>
-      <li><a href="/dev/android/power-hooks/">Power Hooks</a></li>
-      <li><a href="/dev/android/incode-experiments/">In-Code Experiments</a></li>
-      <li><a href="/dev/android/javadocs/">API Javadocs</a></li>
-    </ul>
-  </dd>
-  <dd><a href="/dev/developing-with-artisan/">Developing with Artisan</a></dd>
-  <dt>Best Practices</dt>
-  {% for post in site.categories.best-practices reversed %}
-    <dd>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </dd>
-  {% endfor %}
-</dl>
-<a href="#" id="navtab">Menu</a>
+  
+{% endif %}
+
+{% if page.category == "dev/ios" %}
+  <h2>iOS SDK</h2>
+  <ul>
+    <li><a href="/dev/ios/install/">Installation</a></li>
+    <li><a href="/dev/ios/user-profiles/">User Profiles</a></li>
+    <li><a href="/dev/ios/event-tracking/">Event Tracking</a></li>
+    <li><a href="/dev/ios/power-hooks/">Power Hooks</a></li>
+    <li><a href="/dev/ios/incode-experiments/">In-Code Experiments</a></li>
+    <li><a href="/dev/ios/callbacks/">Callbacks</a></li>
+    <li><a href="/dev/ios/appledocs/">API Appledocs</a></li>
+  </ul>
+{% endif %}
+
+{% if page.category == "dev/android" %}
+  <h2>Android SDK</h2>
+  <ul>
+    <li><a href="/dev/android/install/">Installation</a></li>
+    <li><a href="/dev/android/user-profiles/">User Profiles</a></li>
+    <li><a href="/dev/android/event-tracking/">Event Tracking</a></li>
+    <li><a href="/dev/android/power-hooks/">Power Hooks</a></li>
+    <li><a href="/dev/android/incode-experiments/">In-Code Experiments</a></li>
+    <li><a href="/dev/android/javadocs/">API Javadocs</a></li>
+  </ul>
+{% endif %}

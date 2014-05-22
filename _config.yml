@@ -1,4 +1,4 @@
 exclude:    ['sass']
 permalink:  /:categories/:title/index.html
 markdown: kramdown
-pygments: true
+highlighter: pygments

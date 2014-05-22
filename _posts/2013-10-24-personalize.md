@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: user-guide
 title: "Personalize"
 author: "Artisan"
 category: user-guide

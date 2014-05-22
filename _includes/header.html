@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<meta name="author" content="Artisan Mobile" />
-  <meta name="description" content="{{ page.description }}" />
+	<meta name="description" content="{{ page.description }}" />
 	{% if page.tags %}<meta name="keywords" content="{% for tag in page.tags%}{% if forloop.last %}{{ tag }}{% else %}{{ tag }}, {% endif %}{% endfor %}" />{% endif %}
 
 	<meta name="twitter:card" content="summary" />
@@ -23,14 +23,29 @@
 	<meta property="og:article:author" content="Kevin M. Jackson" />
 	<meta property="og:url" content="http://dev.useartisan.com" />
   
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="//use.typekit.net/zqm4dpz.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-  
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/base-min.css">
-  <link rel="stylesheet" href="/docs.css?1392841087" type="text/css" media="screen" charset="utf-8">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="/js/waypoints.min.js"></script>
+	<script src="/js/waypoints-sticky.min.js"></script>
+	<script type="text/javascript" src="//use.typekit.net/zqm4dpz.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/base-min.css">
+	<link rel="stylesheet" href="/docs.css?1392841087" type="text/css" media="screen" charset="utf-8">
 </head>
 <body>
-  <header>
-    <h1><a href="/user-guide">Artisan Mobile, Inc.</a></h1>
-  </header>
+<div id="header-wrapper">
+	<nav>
+		<ul id="primary-nav">
+			<li><a href="/" title="" id="logo">Logo</a></li>
+			<li><a href="/" title="">Docs Home</a></li>
+			<li><a href="/dev/ios/install" title="">iOS Developers</a></li>
+			<li><a href="/dev/android/install" title="">Android Developers</a></li>
+			<li><a href="/user-guide" title="">Getting Started</a></li>
+		</ul>
+
+		<ul id="extra-links">
+			<li><a href="http://useartisan.com" title="">Artisan Home</a></li>
+			<li><a href="http://useartisan.com/blog" title="">Blog</a></li>
+		</ul>
+	</nav>
+</div>
