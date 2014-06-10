@@ -745,21 +745,21 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/android\/javadoc\/2_0_12\/com\/artisan\/powerhooks\/package-summary.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_12\/com\/artisan\/powerhooks\/package-summary.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/_site\/android\/javadoc\/2_1_0\/com\/artisan\/manager\/ArtisanManager.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_1_0\/com\/artisan\/manager\/ArtisanManager.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/android\/javadoc\/2_0_12\/com\/artisan\/powerhooks\/package-summary.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_12\/com\/artisan\/powerhooks\/package-summary.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -888,6 +888,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "\/_site\/android\/javadoc\/2_0_9\/help-doc.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_9\/help-doc.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/ios\/appledoc\/2_1_0\/Classes\/ARExperimentManager.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -907,15 +916,6 @@
       "outputAbbreviatedPath" : "\/_site\/images\/bg-user-docs.png",
       "initialSize" : 24939,
       "fileType" : 8192
-    },
-    "\/_site\/android\/javadoc\/2_0_9\/help-doc.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_9\/help-doc.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/_site\/android\/javadoc\/2_1_0\/allclasses-frame.html" : {
       "ignoreWasSetByUser" : 0,
@@ -1291,21 +1291,21 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_1_0\/com\/artisan\/powerhooks\/PowerHookBlock.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_1_0\/com\/artisan\/powerhooks\/PowerHookBlock.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/_site\/android\/javadoc\/2_0_12\/deprecated-list.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_12\/deprecated-list.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/_site\/android\/javadoc\/2_1_0\/com\/artisan\/powerhooks\/PowerHookBlock.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_1_0\/com\/artisan\/powerhooks\/PowerHookBlock.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -1703,15 +1703,6 @@
       "initialSize" : 2825,
       "fileType" : 8192
     },
-    "\/android\/javadoc\/2_1_1\/com\/artisan\/manager\/ArtisanManager.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/android\/javadoc\/2_1_1\/com\/artisan\/manager\/ArtisanManager.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/sass\/bourbon\/css3\/_background.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1723,6 +1714,15 @@
       "outputAbbreviatedPath" : "\/_background.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/android\/javadoc\/2_1_1\/com\/artisan\/manager\/ArtisanManager.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/android\/javadoc\/2_1_1\/com\/artisan\/manager\/ArtisanManager.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/sass\/bourbon\/css3\/_user-select.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -1870,15 +1870,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_16\/overview-summary.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_16\/overview-summary.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/sass\/bourbon\/functions\/_px-to-em.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1890,6 +1881,15 @@
       "outputAbbreviatedPath" : "\/_px-to-em.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/_site\/android\/javadoc\/2_0_16\/overview-summary.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_16\/overview-summary.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/ios\/appledoc\/2_0_11\/css\/stylesPrint.css" : {
       "ignoreWasSetByUser" : 0,
@@ -2025,21 +2025,21 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_15\/overview-summary.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_15\/overview-summary.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/android\/javadoc\/2_0_15\/index.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_15\/index.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/_site\/android\/javadoc\/2_0_15\/overview-summary.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_15\/overview-summary.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -2163,15 +2163,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_14\/com\/artisan\/incodeapi\/package-frame.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_14\/com\/artisan\/incodeapi\/package-frame.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/ios\/appledoc\/2_0_12\/img\/button_bar_background.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -2182,6 +2173,15 @@
       "outputAbbreviatedPath" : "\/ios\/appledoc\/2_0_12\/img\/button_bar_background.png",
       "initialSize" : 2825,
       "fileType" : 8192
+    },
+    "\/_site\/android\/javadoc\/2_0_14\/com\/artisan\/incodeapi\/package-frame.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_14\/com\/artisan\/incodeapi\/package-frame.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/android\/javadoc\/2_1_0\/com\/artisan\/powerhooks\/PowerHookManager.html" : {
       "ignoreWasSetByUser" : 0,
@@ -2846,15 +2846,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/android\/javadoc\/2_0_12\/overview-frame.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_12\/overview-frame.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/_site\/android\/javadoc\/2_1_1\/com\/artisan\/activity\/ArtisanActivity.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -2873,15 +2864,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/android\/javadoc\/2_0_15\/deprecated-list.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_15\/deprecated-list.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/_site\/ios\/appledoc\/2_0_16\/css\/stylesPrint.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -2890,15 +2872,6 @@
       "inputAbbreviatedPath" : "\/_site\/ios\/appledoc\/2_0_16\/css\/stylesPrint.css",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
-    },
-    "\/android\/javadoc\/2_0_13\/overview-summary.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_13\/overview-summary.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/_site\/ios\/appledoc\/2_1_1\/Classes\/ARTrackingManager.html" : {
       "ignoreWasSetByUser" : 0,
@@ -2915,6 +2888,33 @@
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/index.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/android\/javadoc\/2_0_13\/overview-summary.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_13\/overview-summary.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/android\/javadoc\/2_0_12\/overview-frame.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_12\/overview-frame.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/android\/javadoc\/2_0_15\/deprecated-list.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_15\/deprecated-list.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -2965,15 +2965,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/android\/javadoc\/2_0_13\/com\/artisan\/powerhooks\/package-frame.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_13\/com\/artisan\/powerhooks\/package-frame.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/sass\/bourbon\/bourbon\/css3\/_border-image.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -2985,6 +2976,15 @@
       "outputAbbreviatedPath" : "\/_border-image.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/android\/javadoc\/2_0_13\/com\/artisan\/powerhooks\/package-frame.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_13\/com\/artisan\/powerhooks\/package-frame.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/_site\/android\/javadoc\/2_0_13\/stylesheet.css" : {
       "ignoreWasSetByUser" : 0,
@@ -3484,12 +3484,12 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/android\/javadoc\/2_1_0\/com\/artisan\/activity\/package-summary.html" : {
+    "\/_site\/android\/javadoc\/2_1_0\/com\/artisan\/activity\/package-summary.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/android\/javadoc\/2_1_0\/com\/artisan\/activity\/package-summary.html",
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_1_0\/com\/artisan\/activity\/package-summary.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -3502,12 +3502,12 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_1_0\/com\/artisan\/activity\/package-summary.html" : {
+    "\/android\/javadoc\/2_1_0\/com\/artisan\/activity\/package-summary.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_1_0\/com\/artisan\/activity\/package-summary.html",
+      "inputAbbreviatedPath" : "\/android\/javadoc\/2_1_0\/com\/artisan\/activity\/package-summary.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -3826,12 +3826,12 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/android\/javadoc\/2_0_16\/index.html" : {
+    "\/_site\/android\/javadoc\/2_0_14\/overview-frame.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_16\/index.html",
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_14\/overview-frame.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -3844,12 +3844,12 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/_site\/android\/javadoc\/2_0_14\/overview-frame.html" : {
+    "\/_site\/android\/javadoc\/2_0_9\/index.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_14\/overview-frame.html",
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_9\/index.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -3880,12 +3880,12 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_9\/index.html" : {
+    "\/android\/javadoc\/2_0_16\/index.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_9\/index.html",
+      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_16\/index.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -4122,15 +4122,6 @@
       "initialSize" : 2825,
       "fileType" : 8192
     },
-    "\/android\/javadoc\/2_0_17\/com\/artisan\/powerhooks\/PowerHookBlock.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_17\/com\/artisan\/powerhooks\/PowerHookBlock.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/_site\/docs.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -4139,6 +4130,15 @@
       "inputAbbreviatedPath" : "\/_site\/docs.css",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
+    },
+    "\/android\/javadoc\/2_0_17\/com\/artisan\/powerhooks\/PowerHookBlock.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_17\/com\/artisan\/powerhooks\/PowerHookBlock.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/_site\/android\/javadoc\/2_0_10\/com\/artisan\/incodeapi\/Experiment.html" : {
       "ignoreWasSetByUser" : 0,
@@ -4972,6 +4972,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
+    "\/_site\/android\/javadoc\/2_0_11\/allclasses-noframe.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_11\/allclasses-noframe.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/_site\/ios\/appledoc\/2_0_13\/img\/disclosure.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -4982,15 +4991,6 @@
       "outputAbbreviatedPath" : "\/_site\/ios\/appledoc\/2_0_13\/img\/disclosure.png",
       "initialSize" : 115,
       "fileType" : 8192
-    },
-    "\/_site\/android\/javadoc\/2_0_11\/allclasses-noframe.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_11\/allclasses-noframe.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/_site\/android\/javadoc\/2_0_15\/com\/artisan\/powerhooks\/ArtisanBlock.html" : {
       "ignoreWasSetByUser" : 0,
@@ -5043,11 +5043,11 @@
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
+      "outputPathIsSetByUser" : 1,
       "inputAbbreviatedPath" : "\/sass\/docs.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/docs.css",
+      "outputAbbreviatedPath" : "\/_site\/docs.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -5452,6 +5452,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "\/_layouts\/home.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_layouts\/home.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/sass\/bourbon\/bourbon\/css3\/_background.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -5463,15 +5472,6 @@
       "outputAbbreviatedPath" : "\/_background.css",
       "fileType" : 4,
       "debugStyle" : 0
-    },
-    "\/_layouts\/home.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_layouts\/home.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/_site\/ios\/appledoc\/2_0_16\/Classes\/ARManager.html" : {
       "ignoreWasSetByUser" : 0,
@@ -5511,15 +5511,6 @@
       "initialSize" : 206,
       "fileType" : 8192
     },
-    "\/_site\/android\/javadoc\/2_0_15\/allclasses-noframe.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_15\/allclasses-noframe.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/images\/artisan-logo-278x50-white.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -5530,6 +5521,15 @@
       "outputAbbreviatedPath" : "\/images\/artisan-logo-278x50-white.png",
       "initialSize" : 5823,
       "fileType" : 8192
+    },
+    "\/_site\/ios\/appledoc\/2_0_13\/Classes\/ARPowerHookManager.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/ios\/appledoc\/2_0_13\/Classes\/ARPowerHookManager.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/_site\/android\/javadoc\/2_0_11\/com\/artisan\/incodeapi\/ArtisanExperimentManager.html" : {
       "ignoreWasSetByUser" : 0,
@@ -5551,12 +5551,12 @@
       "initialSize" : 183,
       "fileType" : 8192
     },
-    "\/_site\/ios\/appledoc\/2_0_13\/Classes\/ARPowerHookManager.html" : {
+    "\/android\/javadoc\/2_0_10\/constant-values.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/ios\/appledoc\/2_0_13\/Classes\/ARPowerHookManager.html",
+      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_10\/constant-values.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -5578,12 +5578,12 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/android\/javadoc\/2_0_10\/constant-values.html" : {
+    "\/_site\/android\/javadoc\/2_0_15\/allclasses-noframe.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_10\/constant-values.html",
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_15\/allclasses-noframe.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -5903,15 +5903,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_15\/deprecated-list.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_15\/deprecated-list.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/_site\/android\/javadoc\/2_1_1\/deprecated-list.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -5921,12 +5912,12 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_13\/help-doc.html" : {
+    "\/_site\/android\/javadoc\/2_0_15\/deprecated-list.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_13\/help-doc.html",
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_15\/deprecated-list.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -5940,6 +5931,15 @@
       "outputAbbreviatedPath" : "\/ios\/appledoc\/2_0_12\/img\/disclosure_open.png",
       "initialSize" : 131,
       "fileType" : 8192
+    },
+    "\/_site\/android\/javadoc\/2_0_13\/help-doc.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_13\/help-doc.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/_site\/android\/javadoc\/2_0_13\/constant-values.html" : {
       "ignoreWasSetByUser" : 0,
@@ -5989,21 +5989,21 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_17\/com\/artisan\/incodeapi\/ArtisanExperimentManager.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_17\/com\/artisan\/incodeapi\/ArtisanExperimentManager.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/ios\/appledoc\/2_0_15\/Classes\/ARExperiment.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/ios\/appledoc\/2_0_15\/Classes\/ARExperiment.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/_site\/android\/javadoc\/2_0_17\/com\/artisan\/incodeapi\/ArtisanExperimentManager.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_17\/com\/artisan\/incodeapi\/ArtisanExperimentManager.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -6200,14 +6200,14 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/ios\/appledoc\/2_0_14\/css\/stylesPrint.css" : {
+    "\/android\/javadoc\/2_0_10\/com\/artisan\/manager\/package-tree.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/ios\/appledoc\/2_0_14\/css\/stylesPrint.css",
+      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_10\/com\/artisan\/manager\/package-tree.html",
       "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
+      "fileType" : 2048
     },
     "\/ios\/appledoc\/2_1_1\/Classes\/ARExperiment.html" : {
       "ignoreWasSetByUser" : 0,
@@ -6238,15 +6238,6 @@
       "initialSize" : 109,
       "fileType" : 8192
     },
-    "\/android\/javadoc\/2_0_10\/com\/artisan\/manager\/package-tree.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_10\/com\/artisan\/manager\/package-tree.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/android\/javadoc\/2_0_12\/help-doc.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -6255,6 +6246,15 @@
       "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_12\/help-doc.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/ios\/appledoc\/2_0_14\/css\/stylesPrint.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/ios\/appledoc\/2_0_14\/css\/stylesPrint.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/_site\/android\/javadoc\/2_0_16\/stylesheet.css" : {
       "ignoreWasSetByUser" : 0,
@@ -6465,15 +6465,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_15\/com\/artisan\/manager\/package-tree.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_15\/com\/artisan\/manager\/package-tree.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/sass\/neat\/functions\/_new-breakpoint.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -6485,6 +6476,15 @@
       "outputAbbreviatedPath" : "\/_new-breakpoint.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/_site\/android\/javadoc\/2_0_15\/com\/artisan\/manager\/package-tree.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_15\/com\/artisan\/manager\/package-tree.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/android\/javadoc\/2_0_9\/overview-frame.html" : {
       "ignoreWasSetByUser" : 0,
@@ -6735,12 +6735,12 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_9\/com\/artisan\/powerhooks\/PowerHookManager.html" : {
+    "\/_site\/android\/javadoc\/2_0_13\/overview-frame.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_9\/com\/artisan\/powerhooks\/PowerHookManager.html",
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_13\/overview-frame.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -6762,6 +6762,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "\/_site\/android\/javadoc\/2_0_9\/com\/artisan\/powerhooks\/PowerHookManager.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_9\/com\/artisan\/powerhooks\/PowerHookManager.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/ios\/appledoc\/2_0_17\/css\/styles.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -6770,15 +6779,6 @@
       "inputAbbreviatedPath" : "\/ios\/appledoc\/2_0_17\/css\/styles.css",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
-    },
-    "\/_site\/android\/javadoc\/2_0_13\/overview-frame.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_13\/overview-frame.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/ios\/appledoc\/2_1_0\/Classes\/ARPowerHookManager.html" : {
       "ignoreWasSetByUser" : 0,
@@ -6911,12 +6911,12 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_11\/allclasses-frame.html" : {
+    "\/_site\/android\/javadoc\/2_0_17\/com\/artisan\/powerhooks\/PowerHookManager.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_11\/allclasses-frame.html",
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_17\/com\/artisan\/powerhooks\/PowerHookManager.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -6929,12 +6929,12 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_17\/com\/artisan\/powerhooks\/PowerHookManager.html" : {
+    "\/_site\/android\/javadoc\/2_0_11\/allclasses-frame.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_17\/com\/artisan\/powerhooks\/PowerHookManager.html",
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_11\/allclasses-frame.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -7718,12 +7718,12 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_11\/index-all.html" : {
+    "\/_site\/android\/javadoc\/2_0_11\/constant-values.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_11\/index-all.html",
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_11\/constant-values.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -7736,21 +7736,21 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "\/_site\/android\/javadoc\/2_0_11\/index-all.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_11\/index-all.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/_site\/android\/javadoc\/2_0_13\/index.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_13\/index.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/_site\/android\/javadoc\/2_0_11\/constant-values.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_11\/constant-values.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -8388,21 +8388,21 @@
       "initialSize" : 206,
       "fileType" : 8192
     },
-    "\/ios\/appledoc\/2_0_16\/Classes\/ARExperiment.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/ios\/appledoc\/2_0_16\/Classes\/ARExperiment.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/android\/javadoc\/2_0_15\/com\/artisan\/powerhooks\/ArtisanBlock.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_15\/com\/artisan\/powerhooks\/ArtisanBlock.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/ios\/appledoc\/2_0_16\/Classes\/ARExperiment.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/ios\/appledoc\/2_0_16\/Classes\/ARExperiment.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -8609,15 +8609,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_15\/com\/artisan\/incodeapi\/package-summary.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_15\/com\/artisan\/incodeapi\/package-summary.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/_site\/android\/javadoc\/2_0_9\/overview-summary.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -8633,6 +8624,15 @@
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_17\/overview-tree.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/_site\/android\/javadoc\/2_0_15\/com\/artisan\/incodeapi\/package-summary.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_15\/com\/artisan\/incodeapi\/package-summary.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -8704,6 +8704,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "\/_site\/android\/javadoc\/2_0_10\/com\/artisan\/incodeapi\/package-summary.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_10\/com\/artisan\/incodeapi\/package-summary.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/android\/javadoc\/2_0_12\/com\/artisan\/incodeapi\/Experiment.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -8722,21 +8731,21 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_10\/com\/artisan\/incodeapi\/package-summary.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_10\/com\/artisan\/incodeapi\/package-summary.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/android\/javadoc\/2_0_16\/overview-frame.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_16\/overview-frame.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/_site\/android\/javadoc\/2_0_9\/deprecated-list.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_9\/deprecated-list.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -8750,15 +8759,6 @@
       "outputAbbreviatedPath" : "\/_site\/ios\/appledoc\/2_0_13\/img\/button_bar_background.png",
       "initialSize" : 2825,
       "fileType" : 8192
-    },
-    "\/_site\/android\/javadoc\/2_0_9\/deprecated-list.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_9\/deprecated-list.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/android\/javadoc\/2_1_1\/index.html" : {
       "ignoreWasSetByUser" : 0,
@@ -8967,6 +8967,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "\/_site\/android\/javadoc\/2_1_0\/com\/artisan\/incodeapi\/package-frame.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_1_0\/com\/artisan\/incodeapi\/package-frame.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/sass\/bourbon\/bourbon\/css3\/_radial-gradient.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -8978,15 +8987,6 @@
       "outputAbbreviatedPath" : "\/_radial-gradient.css",
       "fileType" : 4,
       "debugStyle" : 0
-    },
-    "\/_site\/android\/javadoc\/2_1_0\/com\/artisan\/incodeapi\/package-frame.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_1_0\/com\/artisan\/incodeapi\/package-frame.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/_site\/android\/javadoc\/2_0_13\/com\/artisan\/incodeapi\/package-frame.html" : {
       "ignoreWasSetByUser" : 0,
@@ -9483,15 +9483,6 @@
       "initialSize" : 4115,
       "fileType" : 8192
     },
-    "\/_site\/android\/javadoc\/2_0_15\/stylesheet.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_15\/stylesheet.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/_site\/android\/javadoc\/2_0_15\/overview-tree.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -9500,6 +9491,15 @@
       "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_15\/overview-tree.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/_site\/android\/javadoc\/2_0_15\/stylesheet.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_15\/stylesheet.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/_site\/android\/javadoc\/2_0_16\/com\/artisan\/powerhooks\/ArtisanBlock.html" : {
       "ignoreWasSetByUser" : 0,
@@ -9653,15 +9653,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_14\/com\/artisan\/manager\/package-frame.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_14\/com\/artisan\/manager\/package-frame.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/ios\/appledoc\/2_1_1\/Classes\/ARManager.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -9677,6 +9668,15 @@
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_17\/overview-frame.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/_site\/android\/javadoc\/2_0_14\/com\/artisan\/manager\/package-frame.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_14\/com\/artisan\/manager\/package-frame.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -9767,21 +9767,21 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_9\/com\/artisan\/manager\/ArtisanManager.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_9\/com\/artisan\/manager\/ArtisanManager.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/android\/javadoc\/2_0_14\/com\/artisan\/powerhooks\/package-summary.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_14\/com\/artisan\/powerhooks\/package-summary.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/android\/javadoc\/2_0_12\/index.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_12\/index.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -9794,12 +9794,12 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/android\/javadoc\/2_0_12\/index.html" : {
+    "\/_site\/android\/javadoc\/2_0_9\/com\/artisan\/manager\/ArtisanManager.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_12\/index.html",
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_9\/com\/artisan\/manager\/ArtisanManager.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -10335,15 +10335,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_13\/overview-tree.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_13\/overview-tree.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/sass\/bourbon\/bourbon\/_bourbon.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -10362,6 +10353,15 @@
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_9\/com\/artisan\/powerhooks\/package-tree.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/_site\/android\/javadoc\/2_0_13\/overview-tree.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_13\/overview-tree.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -10392,12 +10392,12 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/android\/javadoc\/2_0_13\/constant-values.html" : {
+    "\/_site\/user-guide\/tagging\/index.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_13\/constant-values.html",
+      "inputAbbreviatedPath" : "\/_site\/user-guide\/tagging\/index.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -10410,12 +10410,12 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/_site\/user-guide\/tagging\/index.html" : {
+    "\/android\/javadoc\/2_0_13\/constant-values.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/user-guide\/tagging\/index.html",
+      "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_13\/constant-values.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -10428,12 +10428,12 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_15\/com\/artisan\/powerhooks\/package-summary.html" : {
+    "\/ios\/appledoc\/2_1_1\/Classes\/ARProfileManager.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_15\/com\/artisan\/powerhooks\/package-summary.html",
+      "inputAbbreviatedPath" : "\/ios\/appledoc\/2_1_1\/Classes\/ARProfileManager.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -10446,21 +10446,21 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/ios\/appledoc\/2_1_1\/Classes\/ARProfileManager.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/ios\/appledoc\/2_1_1\/Classes\/ARProfileManager.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/_site\/ios\/appledoc\/2_0_17\/Classes\/ARPowerHookManager.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/_site\/ios\/appledoc\/2_0_17\/Classes\/ARPowerHookManager.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/_site\/android\/javadoc\/2_0_15\/com\/artisan\/powerhooks\/package-summary.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_15\/com\/artisan\/powerhooks\/package-summary.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -10556,21 +10556,21 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_9\/com\/artisan\/manager\/package-tree.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_9\/com\/artisan\/manager\/package-tree.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/_site\/android\/javadoc\/2_0_16\/com\/artisan\/manager\/package-summary.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_16\/com\/artisan\/manager\/package-summary.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/_site\/android\/javadoc\/2_0_9\/com\/artisan\/manager\/package-tree.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_9\/com\/artisan\/manager\/package-tree.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -10707,6 +10707,15 @@
       "initialSize" : 183,
       "fileType" : 8192
     },
+    "\/_site\/android\/javadoc\/2_0_16\/com\/artisan\/incodeapi\/ArtisanTrackingManager.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_16\/com\/artisan\/incodeapi\/ArtisanTrackingManager.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/sass\/bourbon\/bourbon\/functions\/_flex-grid.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -10718,15 +10727,6 @@
       "outputAbbreviatedPath" : "\/_flex-grid.css",
       "fileType" : 4,
       "debugStyle" : 0
-    },
-    "\/_site\/android\/javadoc\/2_0_16\/com\/artisan\/incodeapi\/ArtisanTrackingManager.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_16\/com\/artisan\/incodeapi\/ArtisanTrackingManager.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/ios\/appledoc\/2_0_9\/img\/library_background.png" : {
       "ignoreWasSetByUser" : 0,
@@ -11103,12 +11103,12 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_16\/com\/artisan\/incodeapi\/package-frame.html" : {
+    "\/android\/javadoc\/2_1_1\/com\/artisan\/powerhooks\/package-summary.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_16\/com\/artisan\/incodeapi\/package-frame.html",
+      "inputAbbreviatedPath" : "\/android\/javadoc\/2_1_1\/com\/artisan\/powerhooks\/package-summary.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -11124,12 +11124,12 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/android\/javadoc\/2_1_1\/com\/artisan\/powerhooks\/package-summary.html" : {
+    "\/_site\/android\/javadoc\/2_0_16\/com\/artisan\/incodeapi\/package-frame.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/android\/javadoc\/2_1_1\/com\/artisan\/powerhooks\/package-summary.html",
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_16\/com\/artisan\/incodeapi\/package-frame.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -11279,21 +11279,21 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/_site\/android\/javadoc\/2_0_9\/com\/artisan\/incodeapi\/package-summary.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_9\/com\/artisan\/incodeapi\/package-summary.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/android\/javadoc\/2_0_12\/com\/artisan\/incodeapi\/package-tree.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/android\/javadoc\/2_0_12\/com\/artisan\/incodeapi\/package-tree.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/_site\/android\/javadoc\/2_0_9\/com\/artisan\/incodeapi\/package-summary.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_site\/android\/javadoc\/2_0_9\/com\/artisan\/incodeapi\/package-summary.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },

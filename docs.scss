@@ -1,3 +1,6 @@
+---
+---
+
 $proxima-nova: "proxima-nova", "Helvetica Neue", "Segoe UI", "Trebuchet MS", arial, sans-serif;
 $desktop-size: min-width, 960px;
 
@@ -210,13 +213,12 @@ body {
     @include outer-container();
 
     aside {
-      @include span-columns(3);
-
       &#category-nav {
-        display: none;
+        display: block;
 
         @include media($desktop-size) {
           display: block;
+          @include span-columns(3);
         }
 
         #nav-wrapper {
@@ -262,6 +264,7 @@ body {
     }
 
     article {
+      font-size: 14px;
       padding: 0 30px 30px;
 
       @include media($desktop-size){
@@ -279,6 +282,16 @@ body {
 
       p, ul {
         line-height: 1.5em;
+      }
+
+      img {
+        border: none;
+      }
+
+      img {
+        height: auto;
+        width: auto;
+        max-width: 100%;
       }
 
       a {
