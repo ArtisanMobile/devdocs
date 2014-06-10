@@ -292,6 +292,14 @@ body {
         height: auto;
         width: auto;
         max-width: 100%;
+
+        &.border-full {
+          border: solid 1px #dadada;
+        }
+
+        &.border-left {
+          border-left: solid 1px #dadada;
+        }
       }
 
       a {

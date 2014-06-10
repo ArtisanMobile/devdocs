@@ -11,7 +11,7 @@ Campaigns allow you to create custom workflows to automate your mobile marketing
 Messaging campaigns let you to send Push Messages and combine them with Power Hooks to create truly engaging experiences.
 
 <div class="note note-hint">
-  <p>Before you can create a push campaign you need to make sure that push notifications are configured for you account. Learn how to setup push for iOS and Android in the developer documentation.</p>
+  <p>Before you can create a push campaign you need to make sure that push notifications are configured for you account. Learn how to <a href="/dev/ios/push-notifications">setup push for iOS</a> and <a href="/dev/android/push-notifications">Android</a> in the developer documentation.</p>
 </div>
 
 <div id="create-push-campaign"></div>
@@ -42,11 +42,25 @@ The **On Open Bevahior** dictates what should happen when a user opens the messa
 
 #### Deep Links
 
+Deep Linking is a method in which app developers create custom URL schemes to allow users to navigate directly to app screens from outside of the app. If your app supports deep linking, you can set the on open behavior of your push notification to take your users to a specific screen in your app. You'll need to check with your development team to ensure that deep linking is supported and which URLs you can use in your campaign.
+
+If you have a deep link URL that you would like to use as your on open behavior, select **Deep Link** from the list and enter your link the space provided.
+
 <img src="/images/screens/campaign-compose-deep-link-530x234.png" height="234" width="530" alt="Configuring the deep link on-open behavior." />
 
 #### Configuring a Power Hook
 
+Using a Power Hook as your on open behavior gives you the ultimate in personalizing a user's experience. Power Hooks can be used to configure a simple value or be used to configure workflow once a user opens your message. For example, your developers could build a power hook that takes your user to their shopping cart and automatically applies a discount when they open your push notification.
+
+<div class="note note-hint">
+  <p>Power Hooks must be added to your app before you can configure them in a campaign. Learn more about creating power hooks for <a href="/dev/ios/power-hooks/">iOS</a> and <a href="/dev/android/power-hooks/">Android</a>.</p>
+</div>
+
+To use a power hook as your on open behavior select **Power Hook** from the On Open Behavior list. Once you select **Power Hook** you'll be asked to select which power hook to use.
+
 <img src="/images/screens/campaign-compose-power-hook-530x420.png" height="420" width="530" alt="Configuring the power hook on-open behavior." />
+
+After you select your power hook a list of configurable values will be displayed under the **Personalized Power Hook Values** section. Your power hooks and values are specific to your app, so if you aren't sure what each power hook value does consult your development team.
 
 ## Setting the Push Time
 
