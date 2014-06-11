@@ -49,9 +49,9 @@ Artisan Push Messaging is supported for Artisan Android SDK version 2.1.4 and ab
 <p>This includes these permissions:</p>
 
 <pre>
-&lt;permission android:name="com.artisan.android.demo.permission.C2D_MESSAGE" android:protectionLevel="signature"/&gt;
+&lt;permission android:name="your.package.name.here.permission.C2D_MESSAGE" android:protectionLevel="signature"/&gt;
 <br/>
-&lt;uses-permission android:name="com.artisan.android.demo.permission.C2D_MESSAGE"/&gt;
+&lt;uses-permission android:name="your.package.name.here.permission.C2D_MESSAGE"/&gt;
 <br/>
 &lt;uses-permission android:name="android.permission.WAKE_LOCK" /&gt;
 <br/>
