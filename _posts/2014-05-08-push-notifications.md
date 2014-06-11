@@ -134,13 +134,13 @@ You will need your test device's Registration ID. If you run your app from Eclip
 <img src="/images/screens/android-push-log-registration-id-700x65.png" />
 
 <div class="note note-hint">
-    <p><strong>If You Don't See your Registration Id in the logs</strong></p>
+    <p><strong>If You Don't See Your Registration ID in the Logs</strong></p>
     <p></p>
     <ul>
       <li><strong>Logging connected?</strong> Check that your device is connected to LogCat and are seeing other log messages for your app. Check to make sure you aren't filtering the logs and that you have them set so that "info" level logs are visible.</li>
       <li><strong>Google Play Services installed?</strong> Check that you have Google Play Services installed and up to date on your device. You can get Google Play Services from the Play Store.</li>
       <li><strong>Sender ID</strong> Double check that the sender ID you set in your application class matches the project number of the project that you enabled Google Cloud Messaging for.</li>
-      <li><strong>Permissions correct</strong> Double check that you have the correct permissions in your AndroidManifest.xml. You should have android.permission.WAKE_LOCK and com.google.android.c2dm.permission.RECEIVE</li>
+      <li><strong>Permissions correct</strong> Double check that you have the correct permissions in your AndroidManifest.xml. See <a href="#artisan-version">Step 2</a>, above, for details.</li>
       <li><strong>Artisan Version</strong> Check that you have Artisan 2.1.4 or above installed. When you start the app you should see a log message that says "Starting Artisan with App ID : 012301230123 App Version : 1.0 SDK Version : 2.1.4"</li>
     </ul>
 </div>
@@ -149,11 +149,11 @@ In Artisan Tools on your app settings page there will be a new form from which y
 
 <img src="/images/screens/android-push-send-test-message-439x350.png" />
 
-If you do not see this form please make sure you have successfully set your Server API Key in step 3, above.
+If you do not see this form please make sure you have successfully set your Server API Key in <a href="#app-settings">Step 3<a/>, above.
 
 <div class="note note-hint">
     <p><strong>If You Don't Receive the Test Push Message</strong></p>
-    <p>Depending on your network it can take a minute or more for the message to arrive. If you have waited a few minutes and still haven't received the test message there are a few things to check if you don't receive your test message:</p>
+    <p>Depending on your network it can take a minute or more for the message to arrive. If you have waited a few minutes and still haven't received the test message there are a few things to check:</p>
     <ul>
       <li><strong>Registration ID</strong> Double check that you correctly copied the Registration ID from the logs for your app. You should not include the part that says "Artisan Push Registration Id: ", just the letters and numbers that come after that.</li>
       <li><strong>GCM enabled?</strong> Go back to step 1 and make sure that GCM is enabled for your project in the Google Developers Console.</li>
