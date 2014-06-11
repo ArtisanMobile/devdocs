@@ -29,8 +29,8 @@ Make sure that you have enabled Google Cloud Messaging for your app under APIs &
 
 <img src="/images/screens/android-push-gcm-enabled-700x219.png" />
 
-<div class="note note-important">
-    <p>Your app will also need to have the Google Play Services Library as a dependency, if it doesn't already. For more information on setting this up see <a target="_blank" href="http://developer.android.com/google/play-services/setup.html">Android docs for setting up Google Play Services</a>.
+<div class="note note-hint">
+    <p>Your app will need to have the Google Play Services Library as a dependency, if it doesn't already. For more information on setting this up see <a target="_blank" href="http://developer.android.com/google/play-services/setup.html">Android docs for setting up Google Play Services</a>.
 </p>
 </div>
 
@@ -43,7 +43,9 @@ Make sure that you have enabled Google Cloud Messaging for your app under APIs &
 
 Artisan Push Messaging is supported for Artisan Android SDK version 2.1.4 and above.
 
-When you run the installer it will automatically add the permissions and services required to handle receiving push messages to your AndroidManifest.xml if they aren't there already.
+<div class="note note-hint">
+  <p>When you run the installer it will automatically add the permissions and services required to handle receiving push messages to your AndroidManifest.xml if they aren't there already.</p>
+</div>
 
 ### Configure your Sender ID
 
@@ -105,6 +107,18 @@ In Artisan Tools on your app settings page there will be a new form from which y
 <img src="/images/screens/android-push-send-test-message-439x350.png" />
 
 If you do not see this form please make sure you have successfully set your Server API Key in step 3, above.
+
+<div class="note note-hint">
+    <p><strong>If You Don't Receive the Test Push Message</strong></p>
+    <p>Depending on your network it can take a minute or more for the message to arrive. If you have waited a few minutes and still haven't received the test message there are a few things to check if you don't receive your test message:</p>
+    <ul>
+      <li><strong>Registration ID</strong> Double check that you correctly copied the Registration ID from the logs for your app. You should not include the part that says "Artisan Push Registration Id: ", just the letters and numbers that come after that.</li>
+      <li><strong>GCM enabled?</strong> Go back to step 1 and make sure that GCM is enabled for your project in the Google Developers Console.</li>
+      <li><strong>Sender ID</strong> Double check that the sender ID you set in your application class matches the project number of the project that you enabled Google Cloud Messaging for.</li>
+      <li><strong>Errors?</strong> Check that there weren't any other errors logged in the console for your app.</li>
+    </ul>
+    <p>We are always more than happy to help! Send an email to <a href="mailto:support@useartisan.com?Subject=Artisan%20Android%20Push%20Help" target="_top">support@useartisan.com</a> or give us a call at 800.594.0401.</p>
+</div>
 
 <div id="done"></div>
 
