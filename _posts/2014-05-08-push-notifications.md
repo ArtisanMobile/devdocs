@@ -12,7 +12,7 @@ Through Artisan you can configure Campaigns to send out targeted push messages t
 Enabling Artisan Push includes the following steps:
 
 <ol>
-  <li><a href="#gcm">Prerequisite: Enable Google Cloud Messaging</a></li>
+  <li><a href="#gcm">Enable Google Cloud Messaging</a></li>
   <li><a href="#artisan-version">Verify Artisan SDK version and Configuration</a></li>
   <li><a href="#app-settings">Set Server API Key in Artisan Tools</a></li>
   <li><a href="#test">Send a Test Message</a></li>
@@ -21,7 +21,7 @@ Enabling Artisan Push includes the following steps:
 
 <div id="gcm"></div>
 
-## 1. Prerequisite: Enable Google Cloud Messaging
+## 1. Enable Google Cloud Messaging
 
 If you haven't already, you need to create a project for your app in the <a target="_blank" href="https://console.developers.google.com">Google Developers Console</a>. For more help see <a href="http://developer.android.com/google/gcm/gs.html">the Android developer docs for enabling GCM</a>.
 
@@ -29,15 +29,19 @@ Make sure that you have enabled Google Cloud Messaging for your app under APIs &
 
 <img src="/images/screens/android-push-gcm-enabled-700x219.png" />
 
-Your app will also need to have the Google Play Services Library as a dependency. For more information on setting this up see <a target="_blank" href="http://developer.android.com/google/play-services/setup.html">Android docs for setting up Google Play Services</a>.
+<div class="note note-important">
+    <p>Your app will also need to have the Google Play Services Library as a dependency, if it doesn't already. For more information on setting this up see <a target="_blank" href="http://developer.android.com/google/play-services/setup.html">Android docs for setting up Google Play Services</a>.
+</p>
+</div>
+
 
 <div id="artisan-version"></div>
 
 ## 2. Verify Installed Artisan SDK Version and Configuration
 
-### Artisan 2.1.4 SDK and above
+### Artisan version 2.1.4 and above
 
-Artisan Push Messaging is supported for Artisan Android SDK 2.1.4 and above.
+Artisan Push Messaging is supported for Artisan Android SDK version 2.1.4 and above.
 
 When you run the installer it will automatically add the permissions and services required to handle receiving push messages to your AndroidManifest.xml if they aren't there already.
 
