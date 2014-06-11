@@ -44,7 +44,38 @@ Make sure that you have enabled Google Cloud Messaging for your app under APIs &
 Artisan Push Messaging is supported for Artisan Android SDK version 2.1.4 and above.
 
 <div class="note note-hint">
-  <p>When you run the installer it will automatically add the permissions and services required to handle receiving push messages to your AndroidManifest.xml if they aren't there already.</p>
+<p>When you run the installer it will automatically add the permissions and services required to handle receiving push messages to your AndroidManifest.xml if they aren't there already.</p>
+
+<p>This includes these permissions:</p>
+
+<pre>
+&lt;permission android:name="com.artisan.android.demo.permission.C2D_MESSAGE" android:protectionLevel="signature"/&gt;
+<br/>
+&lt;uses-permission android:name="com.artisan.android.demo.permission.C2D_MESSAGE"/&gt;
+<br/>
+&lt;uses-permission android:name="android.permission.WAKE_LOCK" /&gt;
+<br/>
+&lt;uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/&gt;
+</pre>
+
+<p>As well as this new receiver and service inside the application element</p>
+
+<pre>
+&lt;receiver android:name="com.artisan.push.ArtisanPushReceiver" android:permission="com.google.android.c2dm.permission.SEND"&gt;
+<br/>
+&nbsp;&nbsp;&lt;intent-filter&gt;
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;action android:name="com.google.android.c2dm.intent.RECEIVE" /&gt;
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;category android:name="your.package.name.here" /&gt;
+<br/>
+&nbsp;&nbsp;&lt;/intent-filter&gt;
+<br/>
+&lt;/receiver&gt;
+<br/>
+<br/>
+  &lt;service android:name="com.artisan.push.ArtisanPushService" /&gt;
+  </pre>
 </div>
 
 ### Configure your Sender ID
@@ -101,6 +132,18 @@ Once you have added your server API key you should send a test message to your d
 You will need your test device's Registration ID. If you run your app from Eclipse or another IDE where you have access to LogCat you will be able to get your Registration ID--Artisan logs the ID each time the app is started up.
 
 <img src="/images/screens/android-push-log-registration-id-700x65.png" />
+
+<div class="note note-hint">
+    <p><strong>If You Don't See your Registration Id in the logs</strong></p>
+    <p></p>
+    <ul>
+      <li><strong>Logging connected?</strong> Check that your device is connected to LogCat and are seeing other log messages for your app. Check to make sure you aren't filtering the logs and that you have them set so that "info" level logs are visible.</li>
+      <li><strong>Google Play Services installed?</strong> Check that you have Google Play Services installed and up to date on your device. You can get Google Play Services from the Play Store.</li>
+      <li><strong>Sender ID</strong> Double check that the sender ID you set in your application class matches the project number of the project that you enabled Google Cloud Messaging for.</li>
+      <li><strong>Permissions correct</strong> Double check that you have the correct permissions in your AndroidManifest.xml. You should have android.permission.WAKE_LOCK and com.google.android.c2dm.permission.RECEIVE</li>
+      <li><strong>Artisan Version</strong> Check that you have Artisan 2.1.4 or above installed. When you start the app you should see a log message that says "Starting Artisan with App ID : 012301230123 App Version : 1.0 SDK Version : 2.1.4"</li>
+    </ul>
+</div>
 
 In Artisan Tools on your app settings page there will be a new form from which you can send a test message.
 
