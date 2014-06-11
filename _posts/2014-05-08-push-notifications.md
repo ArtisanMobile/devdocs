@@ -27,7 +27,7 @@ If you haven't already, you need to create a project for your app in the <a targ
 
 Make sure that you have enabled Google Cloud Messaging for your app under APIs & auth -> APIs
 
-<img src="/images/screens/android-push-gcm-enabled.png" />
+<img src="/images/screens/android-push-gcm-enabled-700x219.png" />
 
 Your app will also need to have the Google Play Services Library as a dependency. For more information on setting this up see <a target="_blank" href="http://developer.android.com/google/play-services/setup.html">Android docs for setting up Google Play Services</a>.
 
@@ -45,7 +45,7 @@ When you run the installer it will automatically add the permissions and service
 
 Your Artisan Push Sender ID is the same as your Google Project Number.
 
-<img src="/images/screens/android-push-project-number.png" />
+<img src="/images/screens/android-push-project-number-700x285.png" />
 
 In your Application class you need to set your Push Sender ID in the onCreate of your application before you call ArtisanManager.startArtisan.
 
@@ -80,11 +80,11 @@ In the <a target="_blank" href="https://console.developers.google.com">Google De
 
 Go to APIs & auth -> Credentials and create a new key, choose "Server Key" and leave the IP address field blank. For more help see <a href="http://developer.android.com/google/gcm/gs.html#access-key">the Android developer docs for obtaining a Server Access Key</a> Copy the key that is generated.
 
-<img src="/images/screens/android-push-server-api-key.png" />
+<img src="/images/screens/android-push-server-api-key-700x193.png" />
 
 Back in Artisan Tools on the settings page for your app you can add this Server API Key to enable Artisan Push.
 
-<img src="/images/screens/android-push-app-settings.png" />
+<img src="/images/screens/android-push-app-settings-448x350.png" />
 
 <div id="test"></div>
 
@@ -94,11 +94,11 @@ Once you have added your server API key you should send a test message to your d
 
 You will need your test device's Registration ID. If you run your app from Eclipse or another IDE where you have access to LogCat you will be able to get your Registration ID--Artisan logs the ID each time the app is started up.
 
-<img src="/images/screens/android-push-log-registration-id.png" />
+<img src="/images/screens/android-push-log-registration-id-700x65.png" />
 
 In Artisan Tools on your app settings page there will be a new form from which you can send a test message.
 
-<img src="/images/screens/android-push-send-test-message.png" />
+<img src="/images/screens/android-push-send-test-message-439x350.png" />
 
 If you do not see this form please make sure you have successfully set your Server API Key in step 3, above.
 
