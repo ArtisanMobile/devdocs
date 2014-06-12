@@ -8,7 +8,7 @@ description: "Creating a campaign in Artisan."
 # Campaigns
 Campaigns allow you to create custom workflows to automate your mobile marketing programs.
 
-Messaging campaigns let you to send Push Messages and combine them with Power Hooks to create truly engaging experiences.
+Campaigns let you to send push notifications and combine them with Power Hooks to create truly engaging experiences.
 
 <div class="note note-hint">
   <p>Before you can create a push campaign you need to make sure that push notifications are configured for you account. Learn how to <a href="/dev/ios/push-notifications">setup push for iOS</a> and <a href="/dev/android/push-notifications">Android</a> in the developer documentation.</p>

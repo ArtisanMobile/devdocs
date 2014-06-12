@@ -6,7 +6,7 @@ category: user-guide
 description: "Getting started with the Artisan MEM platform for developers."
 ---
 
-# Artisan Personalize
+# Personalizing Your App
 Identify your most important users and segment them into groups so that you can deliver unique user experiences.
 
 ## What is Personalization?
