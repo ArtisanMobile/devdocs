@@ -1,5 +1,22 @@
 <script type="text/javascript" charset="utf-8">
 	$(document).ready(function() {
-		$('#category-nav #nav-wrapper').waypoint('sticky');
+		function toStickOrNotToStick () {
+			wHeight = $(window).height();
+			navHeight = $("#nav-wrapper").outerHeight(true);
+
+			if(wHeight > navHeight ) {
+				if($('#category-nav .sticky-wrapper').length == 0) {
+					$('#category-nav #nav-wrapper').waypoint('sticky');
+				}
+			} else {
+				$('#category-nav #nav-wrapper').waypoint('unsticky');
+			}			
+		}
+
+		$(window).resize(function() {
+			toStickOrNotToStick();
+		});
+
+		toStickOrNotToStick();
 	})
 </script>

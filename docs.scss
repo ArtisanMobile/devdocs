@@ -25,7 +25,11 @@ body {
 
 #header-wrapper {
   background-color: $red;
-  margin-bottom: 2rem;
+  padding: 0 20px;
+
+  @include media($desktop-size) {
+    margin-bottom: 2rem;
+  }
 
   nav {
     @include outer-container();
@@ -58,6 +62,18 @@ body {
     &#primary-nav {
       float: left;
 
+      li {
+        display: none;
+
+        &:first-of-type {
+          display: block;
+        }
+
+        @include media($desktop-size) {
+          display: block;
+        }
+      }
+
       #logo {
         display: block;
         overflow: hidden;
@@ -76,11 +92,16 @@ body {
     }
 
     &#extra-links {
+      display: none;
       float: right;
       line-height: 36px;
 
       a {
         padding-left: 30px;
+      }
+
+      @include media($desktop-size) {
+        display: block;
       }
     }
   }
@@ -89,9 +110,10 @@ body {
 #docs-landing {
   .for-developers, .user-documentation {
     border-bottom: solid 1px #dadada;
-    padding: 60px 40px;
+    padding: 40px;
 
     @include media($desktop-size) {
+      padding: 60px 40px;
       border: solid 1px #dadada;
     }
   }
@@ -111,8 +133,10 @@ body {
   }
 
   .section-wrapper {
+    overflow: hidden;
+    position: relative;
+
     @include media($desktop-size) {
-      @include span-columns(12);
 
       .column {
         @include span-columns(6);
@@ -137,7 +161,7 @@ body {
     color: #666;
     font-size: 1rem;
     font-weight: 300;
-    margin-bottom: 3em;
+    margin-bottom: 2em;
     margin-top: 0;
   }
 
@@ -146,6 +170,41 @@ body {
     font-size: 1.25rem;
     font-weight: 300;
     margin-bottom: .5rem;
+  }
+
+  dl {
+    font-size: 1rem;
+    line-height: 1.5em;
+    margin-bottom: 1rem;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    a {
+      color: $dark-gray;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    dt, dd {
+      margin: 0;
+      padding: 0;
+    }
+
+    dt {
+      font-weight: 600;
+      margin-bottom: 1em;
+      padding-bottom: .5em;
+      border-bottom: solid 1px #dadada;
+    }
+
+    dd {
+      font-weight: 300;
+    }
   }
 
   .quick-links {
@@ -225,6 +284,7 @@ body {
           position: relative;
 
           @include media($desktop-size) {
+            margin-bottom: 50px;
             &.stuck {
               position: fixed;
               top: 30px;
@@ -265,7 +325,7 @@ body {
 
     article {
       font-size: 14px;
-      padding: 0 30px 30px;
+      padding: 0 30px 50px;
 
       @include media($desktop-size){
         @include span-columns(9);
