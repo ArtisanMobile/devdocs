@@ -160,7 +160,7 @@ If you do not see this form please make sure you have successfully set your Serv
       <li><strong>Sender ID</strong> Double check that the sender ID you set in your application class matches the project number of the project that you enabled Google Cloud Messaging for.</li>
       <li><strong>Errors?</strong> Check that there weren't any other errors logged in the console for your app.</li>
     </ul>
-    <p>We are always more than happy to help! Send an email to <a href="mailto:support@useartisan.com?Subject=Artisan%20Android%20Push%20Help" target="_top">support@useartisan.com</a> or give us a call at 800.594.0401.</p>
+    <p>We are always more than happy to help! Send an email to <a href="mailto:support@useartisan.com?Subject=Artisan%20Android%20Push%20Help" target="_top">support@useartisan.com</a>.</p>
 </div>
 
 <div id="done"></div>

@@ -67,7 +67,7 @@ In Artisan Tools on your app settings page there will be a new form from which y
       <li><strong>Certificates</strong> Double check that you have uploaded the correct certificates for your app. They need to match the provisioning profile that you are building with in XCode.</li>
       <li><strong>Errors?</strong> Check that there weren't any other errors logged in the console for your app.</li>
     </ul>
-    <p>We are always more than happy to help! Send an email to <a href="mailto:support@useartisan.com?Subject=Artisan%20iOS%20Push%20Help" target="_top">support@useartisan.com</a> or give us a call at 800.594.0401.</p>
+    <p>We are always more than happy to help! Send an email to <a href="mailto:support@useartisan.com?Subject=Artisan%20iOS%20Push%20Help" target="_top">support@useartisan.com</a>.</p>
 </div>
 
 <div id="done"></div>
