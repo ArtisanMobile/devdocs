@@ -30,7 +30,7 @@ Make sure that you have enabled Google Cloud Messaging for your app under APIs &
 <img src="/images/screens/android-push-gcm-enabled-700x219.png" />
 
 <div class="note note-hint">
-    <p>Your app will need to have the Google Play Services Library as a dependency, if it doesn't already. For more information on setting this up see <a target="_blank" href="http://developer.android.com/google/play-services/setup.html">Android docs for setting up Google Play Services</a>.
+    <p>Your app will need to have the Google Play Services Library as a dependency, if it doesn't already. For more information on setting this up see <a target="_blank" href="http://developer.android.com/google/play-services/setup.html">the Android docs for setting up Google Play Services</a>.
 </p>
 </div>
 
