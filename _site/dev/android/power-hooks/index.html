@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Power Hooks</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="imagetoolbar" content="false">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta name="author" content="Artisan Mobile" />
+	<meta name="description" content="Power Hooks with the Artisan Android SDK" />
+	<meta name="keywords" content="" />
+
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:url" content="http://dev.useartisan.com" />
+	<meta name="twitter:title" content="Power Hooks" />
+	<meta name="twitter:description" content="Power Hooks with the Artisan Android SDK" />
+	<meta name="twitter:site" content="@artisanmobile" />
+	<meta name="twitter:image" content="http://dev.useartisan.com/images/twitter-card-image.png" />
+
+	<meta property="og:site_name" content="Artisan Developers" />
+	<meta property="og:title" content="Power Hooks" />
+	<meta property="og:type" content="article" />
+	<meta property="og:article:author" content="Kevin M. Jackson" />
+	<meta property="og:url" content="http://dev.useartisan.com" />
+  
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="/js/waypoints.min.js"></script>
+	<script src="/js/waypoints-sticky.min.js"></script>
+	<script type="text/javascript" src="//use.typekit.net/zqm4dpz.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/base-min.css">
+	<link rel="stylesheet" href="/docs.css?1392841087" type="text/css" media="screen" charset="utf-8">
+</head>
+<body>
+<div id="header-wrapper">
+	<nav>
+		<ul id="primary-nav">
+			<li><a href="/" title="" id="logo">
+				<svg version="1.1" id="icon" fill="#ffffff" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="36px" width="36px" viewBox="0 0 144 144">
+					<g>
+						<path d="M11.001,97.171c12.574,0,21.169-8.989,26.592-14.575c-0.685,1.268-1.76,3.106-2.028,7.13c-0.343,5.146,2.883,7.41,6.523,7.41c11.756,0,21.49-15.313,26.176-20.028c3.151-3.17,4.429-3.686,7.166-3.686c1.515,0,2,1.4,2,2.468c0,4.489-7.395,10.992-7.395,15.779c0,3.286,2.102,5.503,7.392,5.503c8.67,0,16.73-7.361,18.731-9.294c-1.73,5.709,0.668,9.294,5.901,9.294c6.934,0,16.543-6.328,18.671-9.255c-0.95,4.409,0.461,9.255,6.01,9.255c5.165,0,10.585-3.469,17.261-9.328v-7.124c-5.301,4.903-9.864,8.877-12.489,8.877c-0.8,0-1.143-0.692-1.143-1.291c0-3.854,10.28-16.128,10.28-20.655c0-2.051-1.667-2.798-3.652-2.79c-2.535,0.01-4.433,0.689-6.143,2.992c-2.146,2.889-4.721,7.375-7.858,10.804c-5.518,6.033-11.253,10.61-14.825,10.61c-1.327,0-1.755-0.771-1.755-1.846c0-4.734,6.176-14.089,10.587-21.646c2.807,0.052,4.836,0.116,5.122,0.116c1.937,0,4.656-0.839,4.656-3.007c0-1.772-1.272-2.949-3.701-2.949c-0.142,0-1.253,0.032-2.968,0.069c0.773-1.667,1.249-3.067,1.249-4.053c0-2.164-0.864-4.023-3.485-3.974c-2.524,0.047-5.582,2.392-8.99,8.136c-5.198-0.027-10.569-0.179-11.096-0.178c-2.483,0-4.674,0.907-4.674,3.094c0,2.082,1.188,2.863,3.499,2.863c0.334,0,4.361-0.109,9.246-0.159c-1.829,3.412-4.306,7.692-7.173,11.688c-4.651,6.479-11.596,11.916-15.848,11.916c-1.344,0-1.607-0.869-1.607-1.723c0-3.468,8.203-11.075,8.203-17.023c0-4.28-4.111-5.701-9.468-5.701c-7.307,0-10.27,1.476-15.537,8.155c-6.085,7.717-14.254,15.772-16.664,15.772c-0.734,0-0.69-1.003-0.645-1.334c0.647-4.726,8.411-14.897,8.756-20.074c0.286-4.287-5.133-5.817-9.356-2.197c-0.778,0.667-20.761,23.426-30.816,23.426c-2.227,0-3.5-1.071-3.5-4.08c0-10.111,15.907-30.34,33.532-30.34c8.127,0,8.339,1.667,12.401,1.667c2.846,0,4.268-1.581,4.268-3.371c0-5.239-6.555-5.683-11.577-5.683C27.471,46.829,0,67.646,0,85.769C0,94.921,6.029,97.171,11.001,97.171z"/>
+						<path d="M138.128,55.695c0,2.164,1.623,4.103,4.181,4.103c0.596,0,1.161-0.063,1.691-0.179V50.15c-0.059-0.002-0.108-0.015-0.168-0.015C141.424,50.135,138.128,51.694,138.128,55.695z"/>
+					</g>
+					<path d="M141,3v138H3V3H141 M144,0H0v144h144V0L144,0z"/>
+				</svg>
+			</a></li>
+			<li><a href="/user-guide" title="">Getting Started</a></li>
+			<li><a href="/dev/ios/install" title="">iOS Developers</a></li>
+			<li><a href="/dev/android/install" title="">Android Developers</a></li>
+		</ul>
+
+		<ul id="extra-links">
+			<li><a href="http://useartisan.com" title="">Artisan Home</a></li>
+			<li><a href="http://useartisan.com/blog" title="">Blog</a></li>
+		</ul>
+	</nav>
+</div>
+<div id="main">
+  <div class="main-wrapper">
+    <section>
+      <aside id="category-nav">
+        <div id="nav-wrapper">
+          
+
+
+
+
+  <h2>Android SDK</h2>
+  <ul>
+    <li><a href="/dev/android/install/">Installation</a></li>
+    <li><a href="/dev/android/user-profiles/">User Profiles</a></li>
+    <li><a href="/dev/android/event-tracking/">Event Tracking</a></li>
+    <li><a href="/dev/android/power-hooks/">Power Hooks</a></li>
+    <li><a href="/dev/android/push-notifications/">Push Notifications</a></li>
+    <li><a href="/dev/android/incode-experiments/">In-Code Experiments</a></li>
+    <li><a href="/dev/android/javadocs/">API Javadocs</a></li>
+  </ul>
+
+
+        </div>
+      </aside>
+      <article>
+        <h1 id="power-hooks">Power Hooks</h1>
+
+<p>Power Hooks are key-value pairs or code blocks with key-value arguments that are passed into your application code by Artisan when your app starts, allowing for settings, text, and logic to be modified on the fly for all user devices without revisioning or updating your application.</p>
+
+<p>All hooks are created using ARPowerHookManager are automatically registered with the Artisan platform when you connect your device to for the first time. The registration process will detect all registered hook keys, and will display all of the hook variables and code blocks for this app in Artisan where they can be edited. Values set on hooks on the web will automatically be downloaded by all devices upon app startup, allowing for their usage throughout your system code.</p>
+
+<ul>
+  <li><a href="#register">Register Power Hook</a></li>
+  <li><a href="#getvalue">Get Power Hook Value</a></li>
+  <li><a href="#code-blocks">Code Blocks</a></li>
+</ul>
+
+<div id="register"></div>
+
+<h2 id="register-power-hook">Register Power Hook</h2>
+
+<p>Use the method <strong>registerVariable(String hookId, String friendlyName, String defaultValue)</strong> to declare the existence of a Power Hook you would like to pass in from Artisan.</p>
+
+<div class="highlight"><pre><code class="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">registerPowerhooks</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">PowerHookManager</span><span class="o">.</span><span class="na">registerVariable</span><span class="o">(</span><span class="s">&quot;addToCartButton&quot;</span><span class="o">,</span> <span class="s">&quot;Add To Cart Button Text&quot;</span><span class="o">,</span> <span class="s">&quot;Buy Now&quot;</span><span class="o">);</span>
+  <span class="o">...</span>
+<span class="o">}</span></code></pre></div>
+
+<div class="note note-important">
+  <p>Important: 
+This declaration should occur in the <strong>registerPowerhooks</strong> method of your Application class.</p>
+</div>
+
+<div id="getvalue"></div>
+
+<h2 id="get-power-hook-value">Get Power Hook Value</h2>
+
+<p>The method <strong>getVariableValue</strong> retrieves the value of a Power Hook from Artisan.  This will return the value specified in the Artisan platform, or the default value if none has been specified.</p>
+
+<div class="highlight"><pre><code class="java"><span class="n">Button</span> <span class="n">cart_button</span> <span class="o">=</span> <span class="o">(</span><span class="n">Button</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">AddToCartButton</span><span class="o">);</span>
+<span class="n">cart_button</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">PowerHookManager</span><span class="o">.</span><span class="na">getVariableValue</span><span class="o">(</span><span class="s">&quot;addToCartButton&quot;</span><span class="o">));</span></code></pre></div>
+
+<div class="note note-important">
+  <p>NOTE: If you request the value for this Power Hook Variable in your first Activity's onCreate method, before the Artisan Service has a chance to start up, you may get a null value in return. The Artisan Service is started up at the time your first activity is created, and should be ready by the time your first activity gets to onResume. For the rest of your application's lifecycle you can assume that Power Hooks will work as expected.</p>
+</div>
+
+<div class="note note-hint">
+  <p>HINT: Each time your code passes over a <strong>getVariableValue</strong> method call the most recently downloaded value to the user's device will be referenced.  If you do not want the value to change during the life-cycle of the object you can assign the value to a variable.</p>
+</div>
+
+<div id="code-blocks"></div>
+
+<h2 id="code-blocks">Code Blocks</h2>
+
+<p>Power Hook code blocks can be used for referencing code that can be executed conditionally. Examples are displaying a modal popup to remind the user to perform certain actions in the app, managing the logic for applying a discount code, or displaying a survey to a segment of users.</p>
+
+<p>Use this method to declare the existence of a code block you would like to use in your app with data that is configurable from Artisan.</p>
+
+<p>This declaration should occur in the <strong>registerPowerhooks</strong> method of your Application class.</p>
+
+<ul>
+  <li><strong>blockId</strong> - The name of the block to register. Name must be unique for this app.</li>
+  <li><strong>friendlyName</strong> - The name for this code block that will be displayed in Artisan Tools.</li>
+  <li><strong>defaultData</strong> - The default data for this code block. This should be string keys and values. This data will be used if no data is passed in from Artisan Tools for this code block for this app.</li>
+  <li><strong>block</strong> - The block of code executed when executeBlock is called.</li>
+</ul>
+
+<div class="highlight"><pre><code class="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">registerPowerhooks</span><span class="o">()</span> <span class="o">{</span>
+  <span class="o">...</span>
+  <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">defaultData</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;();</span>
+  <span class="n">defaultData</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;discountCode&quot;</span><span class="o">,</span> <span class="s">&quot;012345ABC&quot;</span><span class="o">);</span>
+  <span class="n">defaultData</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;discountAmount&quot;</span><span class="o">,</span> <span class="s">&quot;25%&quot;</span><span class="o">);</span>
+  <span class="n">defaultData</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;shouldDisplay&quot;</span><span class="o">,</span> <span class="s">&quot;true&quot;</span><span class="o">);</span>
+
+  <span class="n">PowerHookManager</span><span class="o">.</span><span class="na">registerBlock</span><span class="o">(</span><span class="s">&quot;showAlert&quot;</span><span class="o">,</span> <span class="s">&quot;Show Alert Block&quot;</span><span class="o">,</span> <span class="n">defaultData</span><span class="o">,</span> <span class="k">new</span> <span class="n">ArtisanBlock</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">execute</span><span class="o">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">data</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">extraData</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span><span class="s">&quot;true&quot;</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="n">data</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;shouldDisplay&quot;</span><span class="o">)))</span> <span class="o">{</span>
+        <span class="n">StringBuilder</span> <span class="n">message</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">extraData</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;productName&quot;</span><span class="o">)</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">message</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;Buy another &quot;</span><span class="o">);</span>
+          <span class="n">message</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">data</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;productName&quot;</span><span class="o">));</span>
+          <span class="n">message</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot; for a friend! &quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">message</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;Use discount code &quot;</span><span class="o">);</span>
+        <span class="n">message</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">data</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;discountCode&quot;</span><span class="o">));</span>
+        <span class="n">message</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot; to get &quot;</span><span class="o">);</span>
+        <span class="n">message</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">data</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;discountAmount&quot;</span><span class="o">));</span>
+        <span class="n">message</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot; off your next purchase!&quot;</span><span class="o">);</span>
+        <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">((</span><span class="n">Context</span><span class="o">)</span> <span class="n">extraData</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;context&quot;</span><span class="o">),</span> <span class="n">message</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+  <span class="o">});</span>
+<span class="o">}</span></code></pre></div>
+
+<div class="note note-hint">
+  <p>Hint: The ArtisanBlock execute method takes in two Maps. The <strong>data</strong> Map will include either the default data that you passed in when you registered, or updated data from Artisan. The Map <strong>extraData</strong> is data that you will pass in when you call executeBlock. This is often used to pass in an Android Context, like in the example below. Although, extraData can also be used to pass in any information that is relevant from wherever this block will be exectued, like the optional productName variable in the example below.</p>
+</div>
+
+<p>Use the method <strong>executeBlock(String blockId)</strong> or <strong>executeBlock(String blockId, Map&lt;String, Object&gt; extraData)</strong> to execute a Power Hook code block from Artisan. The code block will use the values specified in the data parameter registered in ArtisanTools.com to execute the block. You can override the default data using ArtisanTools.com.</p>
+
+<ul>
+  <li><strong>blockId</strong> - The name of the code to register. Name must be unique for this app.</li>
+  <li><strong>extraData</strong> - Additional data to use when executing this block. If you need a context to execute your block, you can pass one in here.</li>
+</ul>
+
+<p>Sample usage of a Power Hook Block (from the onClick handler for an add to cart button):</p>
+
+<div class="highlight"><pre><code class="java"><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">extraData</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;();</span>
+<span class="n">extraData</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;productName&quot;</span><span class="o">,</span> <span class="s">&quot;Artisan Andy Plush Toy&quot;</span><span class="o">);</span>
+<span class="n">extraData</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;context&quot;</span><span class="o">,</span> <span class="k">this</span><span class="o">);</span>
+<span class="n">PowerHookManager</span><span class="o">.</span><span class="na">executeBlock</span><span class="o">(</span><span class="s">&quot;showAlert&quot;</span><span class="o">,</span> <span class="n">extraData</span><span class="o">);</span></code></pre></div>
+
+<div class="note note-important">
+  <p>NOTE: If you execute this Power Hook Block in your first Activity's onCreate method, before the Artisan Service has a chance to start up, the call may be ignored. The Artisan Service is started up at the time your first activity is created, and should be ready by the time your first activity gets to onResume. For the rest of your application's lifecycle you can assume that Power Hooks will work as expected.</p>
+</div>
+
+      </article>
+    </section>
+  </div>
+</div>
+<footer>
+	<div id="footer" class="wrapper">Copyright  Artisan Mobile, Inc. All rights reserved.</div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+		function toStickOrNotToStick () {
+			wHeight = $(window).height();
+			navHeight = $("#nav-wrapper").outerHeight(true);
+
+			if(wHeight > navHeight ) {
+				if($('#category-nav .sticky-wrapper').length == 0) {
+					$('#category-nav #nav-wrapper').waypoint('sticky');
+				}
+			} else {
+				$('#category-nav #nav-wrapper').waypoint('unsticky');
+			}
+
+			if($('#category-nav').is(':hidden')) {
+				$('#category-nav #nav-wrapper').waypoint('unsticky');	
+			}
+		}
+
+		$(window).resize(function() {
+			toStickOrNotToStick();
+		});
+
+		toStickOrNotToStick();
+	})
+</script>
+</body>
+</html>

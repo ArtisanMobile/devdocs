@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Artisan Android Auto-Instrumentation</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="imagetoolbar" content="false">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta name="author" content="Artisan Mobile" />
+	<meta name="description" content="Getting started with the Artisan Auto-Instrumentation with AspectJ option for Android" />
+	<meta name="keywords" content="" />
+
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:url" content="http://dev.useartisan.com" />
+	<meta name="twitter:title" content="Artisan Android Auto-Instrumentation" />
+	<meta name="twitter:description" content="Getting started with the Artisan Auto-Instrumentation with AspectJ option for Android" />
+	<meta name="twitter:site" content="@artisanmobile" />
+	<meta name="twitter:image" content="http://dev.useartisan.com/images/twitter-card-image.png" />
+
+	<meta property="og:site_name" content="Artisan Developers" />
+	<meta property="og:title" content="Artisan Android Auto-Instrumentation" />
+	<meta property="og:type" content="article" />
+	<meta property="og:article:author" content="Kevin M. Jackson" />
+	<meta property="og:url" content="http://dev.useartisan.com" />
+  
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="/js/waypoints.min.js"></script>
+	<script src="/js/waypoints-sticky.min.js"></script>
+	<script type="text/javascript" src="//use.typekit.net/zqm4dpz.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/base-min.css">
+	<link rel="stylesheet" href="/docs.css?1392841087" type="text/css" media="screen" charset="utf-8">
+</head>
+<body>
+<div id="header-wrapper">
+	<nav>
+		<ul id="primary-nav">
+			<li><a href="/" title="" id="logo">
+				<svg version="1.1" id="icon" fill="#ffffff" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="36px" width="36px" viewBox="0 0 144 144">
+					<g>
+						<path d="M11.001,97.171c12.574,0,21.169-8.989,26.592-14.575c-0.685,1.268-1.76,3.106-2.028,7.13c-0.343,5.146,2.883,7.41,6.523,7.41c11.756,0,21.49-15.313,26.176-20.028c3.151-3.17,4.429-3.686,7.166-3.686c1.515,0,2,1.4,2,2.468c0,4.489-7.395,10.992-7.395,15.779c0,3.286,2.102,5.503,7.392,5.503c8.67,0,16.73-7.361,18.731-9.294c-1.73,5.709,0.668,9.294,5.901,9.294c6.934,0,16.543-6.328,18.671-9.255c-0.95,4.409,0.461,9.255,6.01,9.255c5.165,0,10.585-3.469,17.261-9.328v-7.124c-5.301,4.903-9.864,8.877-12.489,8.877c-0.8,0-1.143-0.692-1.143-1.291c0-3.854,10.28-16.128,10.28-20.655c0-2.051-1.667-2.798-3.652-2.79c-2.535,0.01-4.433,0.689-6.143,2.992c-2.146,2.889-4.721,7.375-7.858,10.804c-5.518,6.033-11.253,10.61-14.825,10.61c-1.327,0-1.755-0.771-1.755-1.846c0-4.734,6.176-14.089,10.587-21.646c2.807,0.052,4.836,0.116,5.122,0.116c1.937,0,4.656-0.839,4.656-3.007c0-1.772-1.272-2.949-3.701-2.949c-0.142,0-1.253,0.032-2.968,0.069c0.773-1.667,1.249-3.067,1.249-4.053c0-2.164-0.864-4.023-3.485-3.974c-2.524,0.047-5.582,2.392-8.99,8.136c-5.198-0.027-10.569-0.179-11.096-0.178c-2.483,0-4.674,0.907-4.674,3.094c0,2.082,1.188,2.863,3.499,2.863c0.334,0,4.361-0.109,9.246-0.159c-1.829,3.412-4.306,7.692-7.173,11.688c-4.651,6.479-11.596,11.916-15.848,11.916c-1.344,0-1.607-0.869-1.607-1.723c0-3.468,8.203-11.075,8.203-17.023c0-4.28-4.111-5.701-9.468-5.701c-7.307,0-10.27,1.476-15.537,8.155c-6.085,7.717-14.254,15.772-16.664,15.772c-0.734,0-0.69-1.003-0.645-1.334c0.647-4.726,8.411-14.897,8.756-20.074c0.286-4.287-5.133-5.817-9.356-2.197c-0.778,0.667-20.761,23.426-30.816,23.426c-2.227,0-3.5-1.071-3.5-4.08c0-10.111,15.907-30.34,33.532-30.34c8.127,0,8.339,1.667,12.401,1.667c2.846,0,4.268-1.581,4.268-3.371c0-5.239-6.555-5.683-11.577-5.683C27.471,46.829,0,67.646,0,85.769C0,94.921,6.029,97.171,11.001,97.171z"/>
+						<path d="M138.128,55.695c0,2.164,1.623,4.103,4.181,4.103c0.596,0,1.161-0.063,1.691-0.179V50.15c-0.059-0.002-0.108-0.015-0.168-0.015C141.424,50.135,138.128,51.694,138.128,55.695z"/>
+					</g>
+					<path d="M141,3v138H3V3H141 M144,0H0v144h144V0L144,0z"/>
+				</svg>
+			</a></li>
+			<li><a href="/user-guide" title="">Getting Started</a></li>
+			<li><a href="/dev/ios/install" title="">iOS Developers</a></li>
+			<li><a href="/dev/android/install" title="">Android Developers</a></li>
+		</ul>
+
+		<ul id="extra-links">
+			<li><a href="http://useartisan.com" title="">Artisan Home</a></li>
+			<li><a href="http://useartisan.com/blog" title="">Blog</a></li>
+		</ul>
+	</nav>
+</div>
+<div id="main">
+  <div class="main-wrapper">
+    <section>
+      <aside id="category-nav">
+        <div id="nav-wrapper">
+          
+
+
+
+
+
+        </div>
+      </aside>
+      <article>
+        <div id="aspectj"></div>
+<p>#Artisan Auto-Instrumentation with AspectJ</p>
+
+<div class="note note-important">
+  <p>If you don't wish to use AspectJ please see the default <a href="/dev/quickstart-for-android/">Artisan Android Installation</a> instructions.</p>
+  <p>The capabilities of both versions are the same except that the AspectJ version automatically instruments your activities and collects all user interactions as analytics events. Fewer development environments are supported for the AspectJ version.</p>
+  <p>For more details about what is supported with the different versions of the Artisan Android SDK, see <a href="/dev/developing-with-artisan/#android">Developing with Artisan</a>.</p>
+  <p>Supported development environments and build tools for Artisan Auto-Instrumentation with AspectJ:</p>
+  <ul>
+    <li>Eclipse (default)</li>
+    <li><a href="#intellij">IntelliJ Ultimate Edition</a></li>
+    <li><a href="#ant">Ant</a></li>
+  </ul>
+</div>
+
+<h2 id="artisan-aspectj-eclipse-installation">Artisan AspectJ Eclipse Installation</h2>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>1. Eclipse with Android SDK (At a minimum ensure you have support for Android 2.3.3 and build against the latest Android SDK)</p>
+
+<p>2. Add the AspectJ eclipse plugin (this will need to be done on each developer machine once):</p>
+
+<ul>
+  <li>In Eclipse click Help -&gt; Install New Software</li>
+  <li>Click “Add" on the right to add a new repository.
+    <ul>
+      <li>For the name, you can name this AspectJ.</li>
+      <li>For the location, you need the correct AJDT Update Site URL for your version of Eclipse:
+        <ul>
+          <li>Eclipse 4.3 (Kepler) Update Site URL:  <code>http://download.eclipse.org/tools/ajdt/43/update</code></li>
+          <li>Eclipse 3.8 and 4.2 (Juno) Update Site URL:  <code>http://download.eclipse.org/tools/ajdt/42/update</code></li>
+          <li>Eclipse 3.7 (Indigo) Update Site URL:  <code>http://download.eclipse.org/tools/ajdt/37/update</code></li>
+          <li>For other versions of Eclipse find the correct Update Site URL on this page <a href="http://eclipse.org/ajdt/downloads/">http://eclipse.org/ajdt/downloads/</a></li>
+        </ul>
+      </li>
+      <li>Click "OK"</li>
+    </ul>
+  </li>
+  <li>Select "AspectJ Developer Tools (Required)" and click "Next" and then "Next" again</li>
+  <li>Accept the licenses and click "Finish"</li>
+  <li>You may be prompted to restart Eclipse after this installation is complete.</li>
+</ul>
+
+<div class="note note-important">
+If you are using ProGuard please see the <a href="/dev/proguard-for-android/">Artisan ProGuard configuration instructions</a>.
+</div>
+
+<p>For Eclipse installation with AspectJ you can choose between an <a href="#eclipse-automated">automated</a> or a <a href="#eclipse-manual">manual</a> installation.</p>
+
+<div id="eclipse-automated"></div>
+<p>###Option 1: Automatically Instrumenting your App with Artisan</p>
+
+<p>Artisan comes bundled with an installer that will configure Eclipse and add the necessary files to your source root. It will also edit your AndroidManifest.xml to point to the ArtisanService that is needed to instrument your Artisan application. For most cases, we recommend using the installer, but if you prefer to configure the project yourself, please skip forward to the next section.</p>
+
+<p>1. Download the Install Wizard - You can download the Install Wizard by clicking on your App's Settings icon and click the Download SDK link</p>
+
+<p>2. Extract the contents of YOUR_APP_NAME-ArtisanInstaller.zip into your project's root directory.</p>
+
+<p>3. In a terminal, go to the artisan directory inside your project's root directory and run:</p>
+
+<ul>
+  <li>sh install.sh –aspectj (on Mac/OSX or linux)</li>
+  <li>install.bat –aspectj (on Windows)</li>
+</ul>
+
+<p>This will update your manifest file, add the required libraries and create an Application class, if one doesn't exist already. It will also configure an Eclipse 'Builder' that will regenerate necessary AspectJ declarations for your Activities after every build. See "Configuring the Artisan build script" below for more information.</p>
+
+<div class="note note-important">
+  <p>Note: This process will automatically update the visibility of the onStart, onStop and onDestroy of your activities so that they can be instrumented by Artisan.</p>
+</div>
+
+<p>If there are any settings in your application's manifest that are not compatible with Artisan you will be notified and the installer will not complete. For example, you must specify a minimum Android SDK of 2.3.3 or higher. Change the specified settings and run the Artisan installer again.</p>
+
+<p>If you already have an Application class you wil need to ArtisanApplication or implement ArtisanRegisteredApplication and call <strong>ArtisanManager.startArtisan</strong></p>
+
+<div class="highlight"><pre><code class="java"><span class="kn">import</span> <span class="nn">com.artisan.application.ArtisanApplication</span><span class="o">;</span>
+    <span class="kn">import</span> <span class="nn">com.artisan.manager.ArtisanManager</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MySampleApplication</span> <span class="kd">extends</span> <span class="n">ArtisanApplication</span> <span class="o">{</span>
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">();</span>
+        <span class="c1">// Put your Artisan AppID here</span>
+        <span class="n">ArtisanManager</span><span class="o">.</span><span class="na">startArtisan</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">&quot;YOUR_ARTISAN_APPID_HERE&quot;</span><span class="o">);</span>
+      <span class="o">}</span></code></pre></div>
+
+<p>OR</p>
+
+<div class="highlight"><pre><code class="java"><span class="kn">import</span> <span class="nn">com.artisan.application.ArtisanRegisteredApplication</span><span class="o">;</span>
+    <span class="kn">import</span> <span class="nn">com.artisan.manager.ArtisanManager</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MySampleApplication</span> <span class="kd">extends</span> <span class="n">Application</span> <span class="kd">implements</span> <span class="n">ArtisanRegisteredApplication</span> <span class="o">{</span>
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">();</span>
+        <span class="c1">// Put your Artisan AppID here</span>
+        <span class="n">ArtisanManager</span><span class="o">.</span><span class="na">startArtisan</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">&quot;YOUR_ARTISAN_APPID_HERE&quot;</span><span class="o">);</span>
+      <span class="o">}</span></code></pre></div>
+
+<p>4. You'll need to refresh the project in Eclipse so that the newly added files are pulled into the project. Right click on your project and choose "Refresh".</p>
+
+<p><strong>Congratulations! You are now ready to start using Artisan!</strong></p>
+
+<p>Now that the SDK is installed in your app we need to connect it to Artisan. Connecting your app verifies that the SDK has been installed correctly and that your app can communicate with the Artisan platform.</p>
+
+<div class="note note-important">
+  <p>You should not extend ArtisanActivity or manually implement the ArtisanBoundActivity interface if you are using Artisan AspectJ. This Activity instrumentation is done automatically via AspectJ</p>
+</div>
+
+<div id="eclipse-manual"></div>
+<p>###Option 2: Manually Adding the Artisan SDK to your App</p>
+
+<p>If you prefer to manually install Artisan, follow the steps outlined in the rest of this document, including: updating your Eclipse project, setting up the Artisan Service, and configuring the Artisan Builder to generate the Artisan AspectJ files.</p>
+
+<h4 id="eclipse-project-configuration">Eclipse Project configuration</h4>
+
+<p>1. Download the Artisan Android SDK - You can download the SDK by clicking on your App's Settings icon and click the Download SDK link</p>
+
+<p>2. Extract the contents of the SDK .zip file into your project's root directory.</p>
+
+<p>3. Copy all Android resources from 'artisan/androidResources/res' to your project's 'res' directory. Be sure to keep the subfolder structure intact.</p>
+
+<p>4. Copy all Android resources from 'artisan/androidResources/assets' to your project's 'assets' directory.</p>
+
+<p>5. Add the AspectJ nature to the Eclipse project:</p>
+
+<ul>
+  <li>Open Eclipse. Right-click on your project in the Project Explorer and choose "Configure -&gt; Convert to AspectJ Project".</li>
+  <li>If Eclipse prompts you whether to include AspectJ files on the build path, select "yes".</li>
+</ul>
+
+<p>6. Add the artisan library to the build path:</p>
+
+<ul>
+  <li>Right click on your project in the Project Explorer and choose "Properties".</li>
+  <li>In the list on the left, click on "AspectJ build".</li>
+  <li>Make sure that the "Inpath" tab is selected.</li>
+  <li>If the artisan_library.jar is not already on the inpath, click "Add jars" and locate the artisan/artisan_library/artisan_library.jar in your project folder and add it to your inpath.</li>
+</ul>
+
+<p>8. Export the AspectJ Runtime Library</p>
+
+<ul>
+  <li>Right click on your project in the Project Explorer and choose "Properties".</li>
+  <li>In the list on the left, click on "Java Build Path".</li>
+  <li>Make sure that the "Order and Export" tab is selected.</li>
+  <li>If the "AspectJ Runtime Library" is not already selected, check it and press OK.</li>
+</ul>
+
+<p>9. Make your Activity lifecycle methods public. In order to instrument your application Artisan needs any onCreate, onStart, onStop and onDestroy methods that you have implemented in your app to be public. The default for the lifecycle methods is protected, which we are not able to instrument. If you skip this step Artisan will not work properly and you may experience errors and unpredictable behavior.</p>
+
+<h4 id="setting-up-the-artisan-service">Setting up the Artisan service</h4>
+
+<p>If you don’t already have an Applicaton class, create one and add it to your manifest (the classname goes in the android:name parameter of your &lt;application&gt; node of your AndroidManifest.xml).</p>
+
+<p>1. Update your application class to extend com.artisan.application.ArtisanActivity or implement com.artisan.application.ArtisanRegisteredApplication.</p>
+
+<p>You will need to call ArtisanManager.startArtisan in the onCreate of your Application class. Replace “YOUR_ARTISAN_APPID_HERE” with the appropriate string. You can find your app id in Artisan Tools on the screen after you first create your app or on the settings page for your app:</p>
+
+<div class="highlight"><pre><code class="java"><span class="kn">import</span> <span class="nn">com.artisan.application.ArtisanApplication</span><span class="o">;</span>
+    <span class="kn">import</span> <span class="nn">com.artisan.manager.ArtisanManager</span><span class="o">;</span>
+
+    <span class="c1">// Extend ArtisanApplication or implement ArtisanRegisteredApplication</span>
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MySampleApplication</span> <span class="kd">extends</span> <span class="n">ArtisanApplication</span> <span class="o">{</span>
+
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">();</span>
+
+        <span class="n">ArtisanManager</span><span class="o">.</span><span class="na">startArtisan</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">&quot;YOUR_ARTISAN_APPID_HERE&quot;</span><span class="o">);</span>
+      <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Register your Artisan Power Hook variables and Power Hook blocks here</span>
+<span class="cm">     *</span>
+<span class="cm">     * For example:</span>
+<span class="cm">     *</span>
+<span class="cm">     * PowerHookManager.registerVariable(&quot;WelcomeText&quot;, &quot;Welcome Text Sample PowerHook&quot;, &quot;Welcome to Artisan!&quot;);</span>
+<span class="cm">     *</span>
+<span class="cm">     * &lt;code&gt;</span>
+<span class="cm">     *  HashMap&lt;String, String&gt; defaultData = new HashMap&lt;String, String&gt;();</span>
+<span class="cm">     *  defaultData.put(&quot;discountCode&quot;, &quot;012345ABC&quot;);</span>
+<span class="cm">     *  defaultData.put(&quot;discountAmount&quot;, &quot;25%&quot;);</span>
+<span class="cm">     *  defaultData.put(&quot;shouldDisplay&quot;, &quot;true&quot;);</span>
+<span class="cm">     *</span>
+<span class="cm">     *  PowerHookManager.registerBlock(&quot;showAlert&quot;, &quot;Show Alert Block&quot;, defaultData, new ArtisanBlock() {</span>
+<span class="cm">     *    public void execute(Map&lt;String, String&gt; data, Map&lt;String, Object&gt; extraData) {</span>
+<span class="cm">     *      if (&quot;true&quot;.equalsIgnoreCase(data.get(&quot;shouldDisplay&quot;))) {</span>
+<span class="cm">     *        StringBuilder message = new StringBuilder();</span>
+<span class="cm">     *        message.append(&quot;Buy another for a friend! Use discount code &quot;);</span>
+<span class="cm">     *        message.append(data.get(&quot;discountCode&quot;));</span>
+<span class="cm">     *        message.append(&quot; to get &quot;);</span>
+<span class="cm">     *        message.append(data.get(&quot;discountAmount&quot;));</span>
+<span class="cm">     *        message.append(&quot; off your purchase of 2 or more!&quot;);</span>
+<span class="cm">     *        Toast.makeText((Context) extraData.get(&quot;context&quot;), message, Toast.LENGTH_LONG).show();</span>
+<span class="cm">     *      }</span>
+<span class="cm">     *    }</span>
+<span class="cm">     * });</span>
+<span class="cm">     * &lt;/code&gt;</span>
+<span class="cm">     *</span>
+<span class="cm">     * More examples at http://docs.useartisan.com/dev/quickstart-for-android/#power-hooks</span>
+<span class="cm">     *</span>
+<span class="cm">     */</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">registerPowerhooks</span><span class="o">()</span> <span class="o">{</span>
+
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Register your Artisan In-code Experiments here</span>
+<span class="cm">     *</span>
+<span class="cm">     * For example:</span>
+<span class="cm">     *</span>
+<span class="cm">     * ArtisanExperimentManager.registerExperiment(&quot;my first experiment&quot;);</span>
+<span class="cm">     * ArtisanExperimentManager.addVariantForExperiment(&quot;blue variation&quot;, &quot;my first experiment&quot;);</span>
+<span class="cm">     * ArtisanExperimentManager.addVariantForExperiment(&quot;green variation&quot;, &quot;my first experiment&quot;);</span>
+<span class="cm">     *</span>
+<span class="cm">     * More examples at http://docs.useartisan.com/dev/quickstart-for-android/#in-code</span>
+<span class="cm">     */</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">registerInCodeExperiments</span><span class="o">()</span> <span class="o">{</span>
+
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Register your Artisan In-code Experiments here</span>
+<span class="cm">     *</span>
+<span class="cm">     * For example:</span>
+<span class="cm">     *</span>
+<span class="cm">     * ArtisanProfileManager.registerDateTime(&quot;lastSeenAt&quot;, new Date());</span>
+<span class="cm">     * ArtisanProfileManager.registerLocation(&quot;lastKnownLocation&quot;);</span>
+<span class="cm">     * ArtisanProfileManager.registerNumber(&quot;totalOrderCount&quot;, ArtisanDemoApplication.totalOrderCount);</span>
+<span class="cm">     * ArtisanProfileManager.registerString(&quot;visitorType&quot;, &quot;anonymous&quot;);</span>
+<span class="cm">     * ArtisanProfileManager.setGender(Gender.Female);</span>
+<span class="cm">     * ArtisanProfileManager.setUserAge(29);</span>
+<span class="cm">     * ArtisanProfileManager.setSharedUserId(&quot;abcdef123456789&quot;);</span>
+<span class="cm">     * ArtisanProfileManager.setUserAddress(&quot;234 Market Street, Philadelphia, PA 19106&quot;);</span>
+<span class="cm">     *</span>
+<span class="cm">     * More examples at http://docs.useartisan.com/dev/quickstart-for-android/#api</span>
+<span class="cm">     */</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">registerUserProfileVariables</span><span class="o">()</span> <span class="o">{</span>
+
+    <span class="o">}</span></code></pre></div>
+
+<p>3. The last step is updating your AndroidManifest.xml so that Android knows where to find the service and has the correct permissions. Add the following line inside the <code>&lt;application&gt;</code> element.</p>
+
+<div class="highlight"><pre><code class="java"><span class="o">&lt;</span><span class="n">service</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;com.artisan.services.ArtisanService&quot;</span><span class="o">/&gt;</span></code></pre></div>
+
+<p>You will also need to add the following permissions to your AndroidManifest.xml if they aren't already set:</p>
+
+<div class="highlight"><pre><code class="java"><span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;android.permission.READ_PHONE_STATE&quot;</span><span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;android.permission.GET_TASKS&quot;</span><span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;</span><span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;android.permission.INTERNET&quot;</span><span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;android.permission.ACCESS_NETWORK_STATE&quot;</span><span class="o">/&gt;</span></code></pre></div>
+
+<h4 id="configuring-the-artisan-build-script">Configuring the Artisan build script</h4>
+
+<p>Artisan generates AspectJ files alongside your code. These files live inside the 'gen/' folder, next to your other generated code, such as R.java. It is very important that these files get generated or Artisan will not run in your application. In addition, this script will update the visibility of any new onStart, onStop and onDestroy methods on your activities so that we can instrument them automatically.</p>
+
+<p>You can regenerate these files at any time by running the installer script with the '&amp;dash;&amp;dash;aspectonly' flag.</p>
+
+<p>In order to regenerate these files <em>automatically</em> after every build, Eclipse needs to be configured with a 'Builder' that will run the Artisan build script. Follow the instructions below to set up the Eclipse builder:</p>
+
+<p>1. Create a new Eclipse builder</p>
+
+<ul>
+  <li>Right click on your project in the Project Explorer and choose "Properties" UPDATE.</li>
+  <li>Click on "Builders" and select "New".</li>
+  <li>Eclipse will ask you to "Choose a type of external tool to create".</li>
+  <li>Choose "program" and click OK. The 'Edit Launch Configurations' dialog will appear.</li>
+  <li>Give your builder a name, such as "Artisan Build Script".</li>
+</ul>
+
+<p>2. For the "location" field, click "Browse Workspace" and browse to your 'artisan' folder.</p>
+
+<ul>
+  <li>On Mac/Linux, select <strong>install.sh</strong> and click OK.</li>
+  <li>On Windows, select <strong>install.bat</strong> and click OK.</li>
+</ul>
+
+<p>3. For the "working directory" field, click on "browse workspace" and select your 'artisan' folder. Click OK.</p>
+
+<p>4. In the "arguments" text box, type <strong>&amp;dash;&amp;dash;aspectonly</strong>. Click "OK" to save the builder configuration.</p>
+
+<p>5. Move the builder to the top of the list, above "Android Resource Manager".</p>
+
+<p><strong>Congratulations! You are now ready to start using Artisan with Auto-Instrumentation!</strong></p>
+
+<div id="intellij"></div>
+<p>## Android AspectJ Installation for IntelliJ</p>
+
+<div class="note note-important">
+<p>IntelliJ Ultimate Edition support for Artisan AspectJ is in BETA. The AspectJ plugin is not supported in Community Editions of IntelliJ including Android Studio, so they cannot be used with Artisan.</p>
+</div>
+
+<h3 id="prerequisites-1">Prerequisites</h3>
+
+<p>1. IntelliJ IDEA Ultimate Edition with Android Plugin(s) enabled</p>
+
+<p>2. Minimum Android SDK of 10 in Android Manifest and build against the latest Android SDK (set in <strong>project.properties</strong>)</p>
+
+<p>3. Add the AspectJ plugin to IntelliJ
+  * To make sure that the necessary plugins are enabled open the Settings/Preferences dialog.
+  * In the left-hand part of the dialog, under IDE Settings, select Plugins.
+  * On the Plugins page that opens in the right-hand part of the dialog, make sure that All plugins is selected in the Show box, and type aspectj in the search field.
+  * Make sure that the check boxes to the left of AspectJ Support and Spring-AOP and @AspectJ support are selected.
+  * Click OK in the Settings dialog.
+  * Select to restart IntelliJ IDEA if so asked.
+  * More details at <a href="http://www.jetbrains.com/idea/webhelp/enabling-aspectj-support-plugins.html" target="_blank">http://www.jetbrains.com/idea/webhelp/enabling-aspectj-support-plugins.html</a></p>
+
+<p>4. Set up an AspectJ library for your module</p>
+
+<ul>
+  <li>Create a library for the <strong>artisan/aspectj-1.7.2/aspectjrt.jar</strong> jar
+    <ul>
+      <li>From the Module Settings choose Libraries</li>
+      <li>Click the + at the top to add a new library</li>
+      <li>Set the location as the <strong>artisan/aspectj-1.7.2/aspectjrt.jar</strong> in your project.</li>
+    </ul>
+  </li>
+  <li>Add this library as a depedency of your app module</li>
+</ul>
+
+<p>5. Add the AspectJ Facet to your app module
+  * Under module settings dialog choose Facets
+  * Click the + to add a new facet and choose AspectJ</p>
+
+<p>6. Set your module to use the AspectJ compiler (ajc) instead of the Java compiler (javac)
+  * In Settings/Preferences dialog expand the Compiler section and select Java Compiler under Project Settings
+  * For Use Compiler select Ajc
+  * For Path to Ajc compiler set the path to the artisan/aspectj-1.7.2/aspectjtools.jar in your project.</p>
+
+<p>7. Download the installer from Artisan Tools. You should have a file like: YourProjectName-ArtisanInstaller.zip</p>
+
+<div class="note note-important">
+If you are using ProGuard please see the <a href="/dev/proguard-for-android/">Artisan ProGuard configuration instructions</a>.
+</div>
+
+<h3 id="artisan-aspectj-installation-instructions-for-intellij">Artisan AspectJ installation instructions for IntelliJ</h3>
+
+<p>Artisan comes bundled with an installer that will configure your project and add the necessary files to your source root. It will also edit your AndroidManifest.xml to point to the ArtisanService that is needed to instrument your Artisan application.</p>
+
+<p>1. Extract the contents of YourProjectName-ArtisanInstaller.zip into your project’s root directory.</p>
+
+<p>2. In a terminal, go to the artisan directory inside your project’s root directory and run:</p>
+
+<div class="highlight"><pre><code class="bash">install.bat --aspectj <span class="o">(</span>on Windows<span class="o">)</span>
+    sh install.sh --aspectj <span class="o">(</span>on Mac/OSX or linux<span class="o">)</span></code></pre></div>
+
+<p>This will update your manifest file, add the required libraries, generate Artisan AspectJ instrumentation for all of your activities and create an Application class, if one doesn’t exist already.</p>
+
+<p>If there are any settings in your application’s manifest that are not compatible with Artisan you will be notified and the installer will not complete. For example, you must specify a minimum Android SDK of 2.3.3 or higher. Change the specified settings and run the Artisan installer again.</p>
+
+<p>3. In IntelliJ add the <strong>artisan_library/artisan_library.jar</strong> as a Library to your module.</p>
+
+<p>4. Make your Activity lifecycle methods public. In order to instrument your application Artisan needs any onStart, onStop and onDestroy methods that you have implemented in your app to be public. The default for the lifecycle methods is protected, which we are not able to instrument. If you skip this step Artisan will not work properly and you may experience errors and you may have unexpected behavior.</p>
+
+<p>5. Installation is now complete.</p>
+
+<p><strong>Congratulations! You are now ready to start using Artisan!</strong> Now you can <a href="/dev/quickstart-for-android/#api">get started with the Artisan Android API</a>.</p>
+
+<div class="note note-important">
+<p>CRITICAL NOTE: It is imperative that at least before your final release build the artisan install script is run again with the --aspectonly flag, like this:</p>
+
+<div class="highlight"><pre><code class="bash">install.sh --aspectonly</code></pre></div>
+
+<p>This will regenerate the Artisan instrumentation, the gen/../Artisaninstrumentation.aj file(s), so that all of your activities are fully instrumented so that analytics can be gathered and changes applied.</p>
+
+<p>You can also run this script at any time without doing any harm. In fact, for Eclipse we have added a builder that takes care of re-running this script after each build, but since IntelliJ is only unofficially supported at this time the script will need to be manually run.</p>
+</div>
+
+<div id="ant"></div>
+<p>## Artisan SDK Installation for ANT</p>
+
+<div class="note note-important">
+<p>Ant support for Artisan AspectJ is in BETA.</p>
+</div>
+
+<p>Ant is an important tool for continuous integration so we want to make sure that you can build and verify your app with Artisan in it if you are using ant.</p>
+
+<p>Here’s what we need the ant build to do that it doesn’t do by default:
+* Run the artisan aspectj generator script
+* Do the aspectj compilation after the java compilation</p>
+
+<h3 id="prerequisites-2">Prerequisites</h3>
+<ul>
+  <li>Install Ant</li>
+  <li>If you aren’t already using ant to build your android app you can generate the initial build.xml by running the update project command from the root of your project in a terminal:</li>
+</ul>
+
+<div class="highlight"><pre><code class="bash">android update project --path .</code></pre></div>
+
+<ul>
+  <li>Follow the regular <a href="#aspectj">Artisan AspectJ Installation instructions</a> for your project and verify that everything is working as expected when you build and run your app with Artisan AspectJ from your favorite IDE.</li>
+</ul>
+
+<h3 id="artisan-ant-installation-instructions">Artisan Ant Installation Instructions</h3>
+
+<p>1. Create an <strong>ant.properties</strong> file if you don’t have one already.</p>
+
+<p>This should be in the root of your project, next to your build.xml file.</p>
+
+<p>The file should contain:</p>
+
+<div class="highlight"><pre><code class="bash">java.compiler.classpath<span class="o">=</span>artisan_library/artisan_library.jar</code></pre></div>
+
+<p>This will add the artisan library jar to your javac classpath even though it is not in your libs directory.</p>
+
+<p>This file should be checked in to source control.</p>
+
+<p>2. Create a <strong>custom_rules.xml</strong> file.</p>
+
+<p>This should be in the root of your project, next to your build.xml file. The contents should be:</p>
+
+<div class="highlight"><pre><code class="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">name=</span><span class="s">&quot;Artisan&quot;</span> <span class="na">default=</span><span class="s">&quot;artisan&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;taskdef</span> <span class="na">resource=</span><span class="s">&quot;org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;classpath&gt;</span>
+     <span class="nt">&lt;pathelement</span> <span class="na">location=</span><span class="s">&quot;artisan/aspectj-1.7.2/aspectjtools.jar&quot;</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;/classpath&gt;</span>
+  <span class="nt">&lt;/taskdef&gt;</span>
+
+  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;aop.output&quot;</span> <span class="na">value=</span><span class="s">&quot;bin/aop&quot;</span> <span class="nt">/&gt;</span>
+
+  <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;-post-compile&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;if</span> <span class="na">condition=</span><span class="s">&quot;${aop.enabled}&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;then&gt;</span>
+     <span class="nt">&lt;echo</span> <span class="na">message=</span><span class="s">&quot;Weaving aspects to .class files before dex converts .class files to .dex file&quot;</span> <span class="nt">/&gt;</span>
+     <span class="nt">&lt;iajc</span> <span class="na">destDir=</span><span class="s">&quot;${aop.output}&quot;</span> <span class="na">Xlintwarnings=</span><span class="s">&quot;true&quot;</span> <span class="na">showWeaveInfo=</span><span class="s">&quot;true&quot;</span> <span class="na">target=</span><span class="s">&quot;1.5&quot;</span> <span class="na">source=</span><span class="s">&quot;1.5&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;sourceRoots&gt;</span>
+          <span class="nt">&lt;pathelement</span> <span class="na">location=</span><span class="s">&quot;${gen.absolute.dir}&quot;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/sourceRoots&gt;</span>
+      <span class="nt">&lt;inpath&gt;</span>
+          <span class="nt">&lt;pathelement</span> <span class="na">location=</span><span class="s">&quot;${out.classes.absolute.dir}&quot;</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;pathelement</span> <span class="na">location=</span><span class="s">&quot;artisan_library/artisan_library_4.jar&quot;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/inpath&gt;</span>
+      <span class="nt">&lt;classpath&gt;</span>
+       <span class="nt">&lt;path</span> <span class="na">refid=</span><span class="s">&quot;project.target.class.path&quot;</span> <span class="nt">/&gt;</span>
+       <span class="nt">&lt;path</span> <span class="na">refid=</span><span class="s">&quot;project.all.jars.path&quot;</span> <span class="nt">/&gt;</span>
+       <span class="nt">&lt;pathelement</span> <span class="na">location=</span><span class="s">&quot;libs&quot;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/classpath&gt;</span>
+     <span class="nt">&lt;/iajc&gt;</span>
+     <span class="nt">&lt;move</span> <span class="na">file=</span><span class="s">&quot;${out.classes.absolute.dir}&quot;</span> <span class="na">todir=</span><span class="s">&quot;${out.dir}/classes.old&quot;</span> <span class="nt">/&gt;</span>
+
+     <span class="c">&lt;!-- If your package starts with anything besides com (like org.sample.myapp), duplicate this line and add the first level of your package, replacing com like &lt;move file=&quot;${aop.output}/org&quot; todir=&quot;${out.classes.absolute.dir}&quot; /&gt; --&gt;</span>
+     <span class="nt">&lt;move</span> <span class="na">file=</span><span class="s">&quot;${aop.output}/com&quot;</span> <span class="na">todir=</span><span class="s">&quot;${out.classes.absolute.dir}&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- Don&#39;t delete or edit this line--&gt;</span>
+     <span class="nt">&lt;delete</span> <span class="na">dir=</span><span class="s">&quot;${aop.output}&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/then&gt;</span>
+   <span class="nt">&lt;/if&gt;</span>
+  <span class="nt">&lt;/target&gt;</span>
+
+  <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;artisan&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;aop.enabled&quot;</span> <span class="na">value=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;exec</span> <span class="na">executable=</span><span class="s">&quot;bash&quot;</span> <span class="na">failonerror=</span><span class="s">&quot;true&quot;</span> <span class="na">dir=</span><span class="s">&quot;artisan&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;arg</span> <span class="na">line=</span><span class="s">&quot;install.sh --aspectonly&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/exec&gt;</span>
+  <span class="nt">&lt;/target&gt;</span>
+<span class="nt">&lt;/project&gt;</span></code></pre></div>
+
+<p>If you already have a custom_rules.xml file you can just copy the contents of the project element into your existing project element. If you already have a –post-compile target defined you can copy our steps after yours inside the post compile target.</p>
+
+<p>This file should be checked in to source control.</p>
+
+<p>3. Copy the <strong>artisan/aspectj-1.7.2/aspectjrt.jar</strong> file to your project’s libs directory. Check this in to source control too.</p>
+
+<div class="note note-hint">
+  <p>TIP: To make sure that this doesn't break your Eclipse builds, in Eclipse go to your project's properties and under Java Build Path go to order and export and uncheck "AspectJ Runtime Library" so that it isn't exported twice now that it is in your libs directory.</p>
+</div>
+
+<p>4. Now you can build and install your app via ant with this command:</p>
+
+<div class="highlight"><pre><code class="bash">ant artisan debug install</code></pre></div>
+
+<p>You can do the same with any build target (release, instrument, etc). The important thing is that you call the artisan target after cleaning and before building</p>
+
+<h3 id="troubleshooting-ant-builds-for-artisan-aspectj">Troubleshooting Ant builds for Artisan AspectJ</h3>
+
+<ul>
+  <li>Depending on your version of the Android SDK tools there are different variables for the build files. For example, if you are using an old SDK tools (possibly version 19 and below, from 2012), project.target.class.path should be android.target.classpath. If you run into any issues like this drop us a line and we will be glad to help get it sorted out!</li>
+</ul>
+
+      </article>
+    </section>
+  </div>
+</div>
+<footer>
+	<div id="footer" class="wrapper">Copyright  Artisan Mobile, Inc. All rights reserved.</div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+		function toStickOrNotToStick () {
+			wHeight = $(window).height();
+			navHeight = $("#nav-wrapper").outerHeight(true);
+
+			if(wHeight > navHeight ) {
+				if($('#category-nav .sticky-wrapper').length == 0) {
+					$('#category-nav #nav-wrapper').waypoint('sticky');
+				}
+			} else {
+				$('#category-nav #nav-wrapper').waypoint('unsticky');
+			}
+
+			if($('#category-nav').is(':hidden')) {
+				$('#category-nav #nav-wrapper').waypoint('unsticky');	
+			}
+		}
+
+		$(window).resize(function() {
+			toStickOrNotToStick();
+		});
+
+		toStickOrNotToStick();
+	})
+</script>
+</body>
+</html>
