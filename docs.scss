@@ -108,6 +108,8 @@ body {
 }
 
 #docs-landing {
+  margin-bottom: 40px;
+  
   .for-developers, .user-documentation {
     border-bottom: solid 1px #dadada;
     padding: 40px;
@@ -273,7 +275,7 @@ body {
 
     aside {
       &#category-nav {
-        display: block;
+        display: none;
 
         @include media($desktop-size) {
           display: block;
@@ -325,7 +327,7 @@ body {
 
     article {
       font-size: 14px;
-      padding: 0 30px 50px;
+      padding: 30px 30px 50px;
 
       @include media($desktop-size){
         @include span-columns(9);
