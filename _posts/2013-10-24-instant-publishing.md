@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: user-guide
 title: "Instant Publishing"
 author: "Artisan"
 category: user-guide

@@ -1,0 +1,18 @@
+{% include header.html %}
+<div id="main">
+  <div class="main-wrapper">
+    <section>
+      <aside id="category-nav">
+        <div id="nav-wrapper">
+          {% include user-guide-navigation.html %}
+        </div>
+      </aside>
+      <article>
+        {{ content }}
+      </article>
+    </section>
+  </div>
+</div>
+{% include footer.html %}
+</body>
+</html>

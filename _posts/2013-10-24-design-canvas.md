@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: user-guide
 title: "Design Canvas"
 author: "Artisan"
 category: user-guide

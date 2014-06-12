@@ -1,4 +1,9 @@
-exclude:    ['sass']
 permalink:  /:categories/:title/index.html
 markdown: kramdown
-pygments: true
+highlighter: pygments
+
+sass:
+  sass_dir: _sass
+
+ gems:
+  - jekyll-redirect-from

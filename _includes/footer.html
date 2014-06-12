@@ -1,7 +1,26 @@
 <script type="text/javascript" charset="utf-8">
-  $("#navtab").click(function() {
-    $("nav dl").slideToggle("400", function() {
-      $("nav").toggleClass("navtab-open");
-    });
-  });
+	$(document).ready(function() {
+		function toStickOrNotToStick () {
+			wHeight = $(window).height();
+			navHeight = $("#nav-wrapper").outerHeight(true);
+
+			if(wHeight > navHeight ) {
+				if($('#category-nav .sticky-wrapper').length == 0) {
+					$('#category-nav #nav-wrapper').waypoint('sticky');
+				}
+			} else {
+				$('#category-nav #nav-wrapper').waypoint('unsticky');
+			}
+
+			if($('#category-nav').is(':hidden')) {
+				$('#category-nav #nav-wrapper').waypoint('unsticky');	
+			}
+		}
+
+		$(window).resize(function() {
+			toStickOrNotToStick();
+		});
+
+		toStickOrNotToStick();
+	})
 </script>
