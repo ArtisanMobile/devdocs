@@ -10,6 +10,8 @@ description: "Links to Appledocs for Artisan iOS"
 
 For more in-depth documentation of our public API please see the Appledocs for the version of the iOS SDK that you are using.
 
+* <a target="_blank" href="/ios/appledoc/2_1_5">2.1.5</a>
+* <a target="_blank" href="/ios/appledoc/2_1_4">2.1.4</a>
 * <a target="_blank" href="/ios/appledoc/2_1_3">2.1.3</a>
 * <a target="_blank" href="/ios/appledoc/2_1_2">2.1.2</a>
 * <a target="_blank" href="/ios/appledoc/2_1_1">2.1.1</a>
