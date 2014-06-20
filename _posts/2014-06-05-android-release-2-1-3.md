@@ -1,16 +1,16 @@
 ---
 layout: docs
-title: "Android 2.1.1 Release Notes"
+title: "Android 2.1.3 Release Notes"
 author: "Artisan"
 category: release-notes
 description: "What's new in Artisan's Mobile Experience Management platform."
 ---
-#2.1.1 Release Notes
+#Android SDK 2.1.3 Release Notes
 
-Released {{ page.date | date: "%B %-d, %Y" }}
+Released {{ page.date }}
 
-All new SDK for Android, removing the dependency on AspectJ. You can also now segment your users using multiple rules.
+Added Artisan Push Notification campaign support for Android.
 
-* [NEW] Major Android SDK refactoring (removed dependencies, removed AspjectJ, and shrunk library size by 50%).
-* [NEW] Introduced multidimensional segmentation.
-* [UPDATED] Updated Power Hooks API
+* [NEW] Ability to receive push notifications from Artisan Push Notification Campaign Service.
+* [NEW] Ability to fire Artisan Power Hook Blocks via push notifications.
+* [NEW] Ability to return push notification-specific analytics.
