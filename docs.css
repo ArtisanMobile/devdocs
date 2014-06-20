@@ -351,6 +351,21 @@ body {
 
 #docs-landing {
   margin-bottom: 40px; }
+  #docs-landing #release-notes {
+    padding: 40px 41px; }
+    #docs-landing #release-notes ul {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.5em;
+      list-style-type: none;
+      padding: 0; }
+      #docs-landing #release-notes ul li {
+        margin-bottom: .5em; }
+      #docs-landing #release-notes ul a {
+        color: #383838;
+        text-decoration: none; }
+        #docs-landing #release-notes ul a:hover {
+          text-decoration: underline; }
   #docs-landing .for-developers, #docs-landing .user-documentation {
     border-bottom: solid 1px #dadada;
     padding: 40px; }
