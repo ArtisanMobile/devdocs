@@ -114,7 +114,32 @@ body {
 
 #docs-landing {
   margin-bottom: 40px;
-  
+
+  #release-notes {
+    padding: 40px 41px;
+
+    ul {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.5em;
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        margin-bottom: .5em;
+      }
+
+      a {
+        color: $dark-gray;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }   
+    }
+  }
+
   .for-developers, .user-documentation {
     border-bottom: solid 1px #dadada;
     padding: 40px;
