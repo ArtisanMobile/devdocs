@@ -11,7 +11,7 @@ Released {{ page.date | date: "%B %-d, %Y" }}
 
 Added automatic view-detection support for fragments.  Small fixes and whitelisting updates.
 
-* [NEW] Added ArtisanFragmentActivity interface to automatically track Fragment Views.
+* [NEW] Added ArtisanFragmentActivity that extends FragmentActivity. This is a convenience class that you can extend instead of implementing ArtisanBoundActivity to instrument your FragmentActivities.
 * [UPDATED] Added device name to set of information passed over when connecting an app to artisantools.com (to use for device whitelisting purposes)
 * [UPDATED] Logging tweaks.
-* [FIXED] Update to ensure all active variations for a given user are coming through their 'Backgrounded' analytics messages. 
+* [FIXED] Update to ensure all active variations for a given user are coming through their 'Backgrounded' analytics messages.
