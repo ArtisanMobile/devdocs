@@ -120,9 +120,14 @@ body {
 
     ul {
       font-size: 1rem;
+      font-weight: 300;
       line-height: 1.5em;
       list-style-type: none;
       padding: 0;
+
+      li {
+        margin-bottom: .5em;
+      }
 
       a {
         color: $dark-gray;
