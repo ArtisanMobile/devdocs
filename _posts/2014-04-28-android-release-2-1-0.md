@@ -7,7 +7,7 @@ description: "What's new in Artisan's Mobile Experience Management platform."
 ---
 #2.1.0 Release Notes
 
-Released {{ page.date }}
+Released {{ page.date | date: "%B %-d, %Y" }}
 
 Adds the Artisan User Profile Manager to the Android SDK to build dynamic user profiles for segmentation and reporting purposes.
 

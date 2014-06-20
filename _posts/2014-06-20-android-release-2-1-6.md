@@ -7,7 +7,7 @@ description: "What's new in Artisan's Mobile Experience Management platform."
 ---
 #2.1.6 Release Notes
 
-Released {{ page.date }}
+Released {{ page.date | date: "%B %-d, %Y" }}
 
 Added automatic view-detection support for fragments.  Small fixes and whitelisting updates.
 
