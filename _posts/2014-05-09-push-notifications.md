@@ -14,7 +14,8 @@ Enabling Artisan Push includes the following steps:
 <ol>
   <li><a href="#apn">Enable Apple Push Notifications for Your App</a></li>
   <li><a href="#artisan-version">Verify Artisan SDK version</a></li>
-  <li><a href="#app-settings">Add Apple Push Certificats to Artisan Tools</a></li>
+  <li><a href="#app-certificates">Add Apple Push Certificates to Artisan Tools</a></li>
+  <li><a href="#app-settings">Register for Push Notifications in your SDK</a></li>
   <li><a href="#test">Send a Test Message</a></li>
   <li><a href="#done">Build your Campaigns</a></li>
 </ol>
@@ -37,7 +38,7 @@ Next you will need to get the SSL Certificate from Apple for this App with Push 
 
 Artisan Push Messaging is supported for Artisan iOS SDK version 2.1.2 and above.
 
-<div id="app-settings"></div>
+<div id="app-certificates"></div>
 
 ## 3. Add Apple Push Certificates to Artisan Tools
 
@@ -45,9 +46,30 @@ Back in Artisan Tools on the settings page for your app you can upload your APN 
 
 <img src="/images/screens/ios-push-app-settings-500x500.png" />
 
+<div id="app-settings"></div>
+
+## 4. Register for Push Notifications in your SDK
+
+Within your iOS application, you will need to confirm that your app has registered with Apple to receive push notifications.  That means that you should have the following code in the **didFinishLaunchingWithOptions:** method of your main app delegate:
+
+{% highlight objective-c %}
+// Register for push
+[[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+{% endhighlight %}
+
+You will also want to confirm that 'Remote notifications' are enabled within the 'Capabilities' section of the build target for your app.  In XCode, access the control panel for your build target, navigate to the 'Capabilities' tab, and ensure that 'Background Modes' is set to 'ON' and 'Remote notifications' is checked.
+
+<img src="/images/screens//ios-push-build-target-settings-700x581.png" />
+
+See <a href="http://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/IPhoneOSClientImp.html#//apple_ref/doc/uid/TP40008194-CH103-SW2">Apple's iOS Developer documentation</a> for additional information on how to register your app to receive push notifications.
+
+<div class="note note-important">
+  <p>NOTE: If you are using Artisan in conjunction with another Push Notification SDK (such as Parse or Urban Airship), and are already registering for push notifications through their APIs, you will not need to re-register via the registerForRemoteNotificationTypes call to use Artisan Push Notifications.</p>
+</div>
+
 <div id="test"></div>
 
-## 4. Send a Test Message
+## 5. Send a Test Message
 
 Once you have added your Apple Push Certificates you should send a test message to your device to make sure that everything has been configured correctly.
 
@@ -72,6 +94,6 @@ In Artisan Tools on your app settings page there will be a new form from which y
 
 <div id="done"></div>
 
-## 5. Build your Campaign
+## 6. Build your Campaign
 
 Now that you have successfully set up your App with Artisan Push you can <a href="/user-guide/campaigns">get started with Push Campaigns</a>.
