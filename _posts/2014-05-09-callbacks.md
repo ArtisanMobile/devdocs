@@ -8,7 +8,7 @@ description: "Callbacks for the Artisan iOS SDK"
 
 # Callbacks
 
-If you would like to hold up your app and wait for that first playlist to be downloaded, or desire to change something in your app immediately, you can leverage our callback functionality. 
+If you would like to hold up your app and wait for that first playlist to be downloaded, or desire to change something in your app immediately, you can leverage our callback functionality.
 
 <ul>
   <li><a href="#playlist">Playlist Callbacks</a></li>
@@ -105,7 +105,7 @@ To avoid memory leaks, it is important that you also unregister your callback in
 
 If there are many power hooks that are used on an individual screen it may make sense to add a callback for when any power hook changes. Here is an example:
 
-Just as with the individual power hook value callbacks you have the previewMode flag to tell you if you are currently in <a href="#preview-mode">Artisan Preview Mode</a>, previewing unpublished changes for your App.
+Just as with the individual power hook value callbacks you have the previewMode flag to tell you if you are currently in <a href="/dev/ios/power-hooks/#preview-mode">Artisan Preview Mode</a>, previewing unpublished changes for your App.
 {% highlight objective-c %}
 [ARPowerHookManager onPowerHooksChanged:^(BOOL previewMode) {
   if (previewMode) {
