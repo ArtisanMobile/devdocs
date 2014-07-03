@@ -43,6 +43,14 @@ ArtisanManager.onFirstPlaylistDownloaded(this, new ArtisanManagerCallback() {
   <p>If the first playlist has already been downloaded when this call is made this becomes a blocking call and the block of code is executed immediately.</p>  
 </div>
 
+You can check if the first Artisan playlist has been downloaded in this app process with isFirstPlaylistDownloaded.
+
+{% highlight java %}
+ArtisanManager.isFirstPlaylistDownloaded()
+{% endhighlight %}
+
+If this is true when you first register your callback with onFirstPlaylistDownloaded(Activity, ArtisanManagerCallback) then your callback will execute immediately.
+
 <div id="power-hook"></div>
 
 ##Power Hook Callbacks
