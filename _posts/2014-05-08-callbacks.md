@@ -23,15 +23,26 @@ When your app is started Artisan will fetch the latest changes from the Artisan 
 
 This call is non-blocking so code execution will continue immediately to the next line of code.
 
-Here is an example where I wait for no more than 3 seconds for the first playlist to download:
+Here is an example where I wait for no more than 3 seconds for the first playlist to download and then transition to my MainActivity:
 
 {% highlight java %}
-ArtisanManager.onFirstPlaylistDownloaded(this, new ArtisanManagerCallback() {
+public class SplashActivity extends ArtisanActivity {
+
   @Override
-  public void execute() {
-    Toast.makeText(MainActivity.this, "First playlist is here!", Toast.LENGTH_SHORT).show();
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_splash);
+
+    ArtisanManager.onFirstPlaylistDownloaded(this, new ArtisanManagerCallback() {
+      @Override
+      public void execute() {
+        Intent nextActivityIntent = new Intent(SplashActivity.this, MainActivity.class);
+        startActivity(nextActivityIntent);
+        finish();
+      }
+    }, 3000);
   }
-}, 3000);
+}
 {% endhighlight %}
 
 <p>You can only register one onFirstPlaylistDownloaded callback, if you register new blocks they will replace the previous block.</p>
