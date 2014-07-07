@@ -54,10 +54,14 @@ public class SplashActivity extends ArtisanActivity {
   <p>If the first playlist has already been downloaded when this call is made this becomes a blocking call and the block of code is executed immediately.</p>  
 </div>
 
-You can check if the first Artisan playlist has been downloaded in this app process with isFirstPlaylistDownloaded.
+You can check if the first Artisan playlist has been downloaded in this app process with ArtisanManager.isFirstPlaylistDownloaded.
 
 {% highlight java %}
-ArtisanManager.isFirstPlaylistDownloaded()
+if (ArtisanManager.isFirstPlaylistDownloaded()) {
+  Intent nextActivityIntent = new Intent(this, MainActivity.class);
+  startActivity(nextActivityIntent);
+  finish();
+}
 {% endhighlight %}
 
 If this is true when you first register your callback with onFirstPlaylistDownloaded(Activity, ArtisanManagerCallback) then your callback will execute immediately.
