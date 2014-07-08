@@ -69,6 +69,7 @@ Setting the push time simply lets us know what time of the day we should send yo
 <img src="/images/screens/campaign-compose-time-530x242.png" height="242" width="530" alt="Setting the push notification time." />
 
 <div id="testing-your-push-campaign"></div>
+
 ## Testing Your Campaign
 
 To send yourself a test push notification, click on the **Send Test Message** located under the message preview image. Select the device you would like to send your test to and then click **Send Test Message**. If haven't added any devices, click the **Connect Your Device** button and follow the instructions to enable your device to receive test push notifications.
