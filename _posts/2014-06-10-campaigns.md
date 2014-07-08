@@ -68,6 +68,24 @@ Setting the push time simply lets us know what time of the day we should send yo
 
 <img src="/images/screens/campaign-compose-time-530x242.png" height="242" width="530" alt="Setting the push notification time." />
 
+<div id="testing-your-push-campaign"></div>
+## Testing Your Campaign
+
+To send yourself a test push notification, click on the **Send Test Message** located under the message preview image. Select the device you would like to send your test to and then click **Send Test Message**. If haven't added any devices, click the **Connect Your Device** button and follow the instructions to enable your device to receive test push notifications.
+
+### I didn't receive my test message.
+
+If you've tried to send yourself a push notification, but didn't actually receive the message your device may not be configured properly.
+
+Here are some common issues when trying to send push notifications:
+
+* **iOS Only** -- Make sure you're using a physical device and not the Xcode simulator. Apple does not allow sending push notifications to simulator devices.
+* You have accepted to receive push notifications for this app.
+* You have correctly configured push in your app settings and have received a push with those uploaded credentials.
+* Your app has a version of Artisan SDK greater than 2.1.4 installed. We added support for push notifications in version 2.1.5.
+* Your device is connected to a wireless provider.</li>
+* If you've recently deleted and then reinstalled the app on your device you'll need to reconnect your device to Artisan and send the test push again.
+
 ## Scheduling Your Campaign
 
 You can set your campaign to run one time, between a start/end date, or run indefinitely.
