@@ -84,7 +84,7 @@ Here are some common issues when trying to send push notifications:
 * You have accepted to receive push notifications for this app.
 * You have correctly configured push in your app settings and have received a push with those uploaded credentials.
 * Your app has a version of Artisan SDK greater than 2.1.4 installed. We added support for push notifications in version 2.1.5.
-* Your device is connected to a wireless provider.</li>
+* Your device is connected to a wireless provider.
 * If you've recently deleted and then reinstalled the app on your device you'll need to reconnect your device to Artisan and send the test push again.
 
 ## Scheduling Your Campaign
