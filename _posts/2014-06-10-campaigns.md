@@ -81,6 +81,7 @@ If you've tried to send yourself a push notification, but didn't actually receiv
 Here are some common issues when trying to send push notifications:
 
 * **iOS Only** -- Make sure you're using a physical device and not the Xcode simulator. Apple does not allow sending push notifications to simulator devices.
+* **iOS Only** -- Your app has been built with the provisioning profile that matches the APN certificate you uploaded when configuring push.
 * You have accepted to receive push notifications for this app.
 * You have correctly configured push in your app settings and have received a push with those uploaded credentials.
 * Your app has a version of Artisan SDK greater than 2.1.4 installed. We added support for push notifications in version 2.1.5.
