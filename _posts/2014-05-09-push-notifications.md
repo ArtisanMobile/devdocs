@@ -14,7 +14,7 @@ Enabling Artisan Push includes the following steps:
 <ol>
   <li><a href="#apn">Enable Apple Push Notifications for Your App</a></li>
   <li><a href="#artisan-version">Verify Artisan SDK version</a></li>
-  <li><a href="#app-certificates">Add Apple Push Certificates to Artisan Tools</a></li>
+  <li><a href="#app-certificates">Add your Apple Push Certificate to Artisan Tools</a></li>
   <li><a href="#app-settings">Register for Push Notifications in your SDK</a></li>
   <li><a href="#test">Send a Test Message</a></li>
   <li><a href="#done">Build your Campaigns</a></li>
@@ -40,11 +40,15 @@ Artisan Push Messaging is supported for Artisan iOS SDK version 2.1.2 and above.
 
 <div id="app-certificates"></div>
 
-## 3. Add Apple Push Certificates to Artisan Tools
+## 3. Add your Apple Push Certificate to Artisan Tools
 
-Back in Artisan Tools on the settings page for your app you can upload your APN SSL Certificates to Artisan. You will need the .p12 files and the passwords for the certificates, if any were set when the certificates were created.
+Back in Artisan Tools on the settings page for your app you can upload your APN SSL Certificate to Artisan. You will need either the .p12 or .pem file created from the APN certificate, and it's password if any was set during creation.
 
 <img src="/images/screens/ios-push-app-settings-500x500.png" />
+
+<div class="note note-important">
+  <p>NOTE: You will only be able to upload one APN certificate per Artisan application. You should use the development environment APN certificate for your development provisioning profile built applications and the production environment APN certificate for your App Store or Ad Hoc provisioning profile built applications. We'll determine which type of certificate you've uploaded and inform you in your app settings if you're unsure which you have.</p>
+</div>
 
 <div id="app-settings"></div>
 
@@ -71,7 +75,7 @@ See <a href="http://developer.apple.com/library/ios/documentation/NetworkingInte
 
 ## 5. Send a Test Message
 
-Once you have added your Apple Push Certificates you should send a test message to your device to make sure that everything has been configured correctly.
+Once you have added your Apple Push Certificate you should send a test message to your device to make sure that everything has been configured correctly.
 
 You will need your test device's push token. If you run your app from XCode you should see your device token in the console soon after your app starts.
 
@@ -86,7 +90,7 @@ In Artisan Tools on your app settings page there will be a new form from which y
     <p>Depending on your network it can take a minute or more for the message to arrive. If you have waited a few minutes and still haven't received the test message there are a few things to check:</p>
     <ul>
       <li><strong>Device Token</strong> Double check that you correctly copied the device token from the logs for your app.</li>
-      <li><strong>Certificates</strong> Double check that you have uploaded the correct certificates for your app. They need to match the provisioning profile that you are building with in XCode.</li>
+      <li><strong>Certificates</strong> Double check that you have uploaded the correct certificate for your app. The type of the uploaded certificate needs to match the type of provisioning profile that you are building with in XCode. Development builds will only receive notifications from a development certificate and distribution builds will only receive notifications from a production certificate.</li>
       <li><strong>Errors?</strong> Check that there weren't any other errors logged in the console for your app.</li>
     </ul>
     <p>We are always more than happy to help! Send an email to <a href="mailto:support@useartisan.com?Subject=Artisan%20iOS%20Push%20Help" target="_top">support@useartisan.com</a>.</p>

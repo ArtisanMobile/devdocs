@@ -10,6 +10,8 @@
 	<meta name="description" content="{{ page.description }}" />
 	{% if page.tags %}<meta name="keywords" content="{% for tag in page.tags%}{% if forloop.last %}{{ tag }}{% else %}{{ tag }}, {% endif %}{% endfor %}" />{% endif %}
 
+	<link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:url" content="http://dev.useartisan.com" />
 	<meta name="twitter:title" content="{{ page.title }}" />
