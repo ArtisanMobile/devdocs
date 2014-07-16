@@ -8,7 +8,7 @@ description: "Callbacks for the Artisan Android SDK"
 
 # Callbacks
 
-If you would like to hold up your app and wait for that first playlist to be downloaded, or desire to change something in your app immediately, you can leverage our callback functionality.
+If you would like to hold up your app and wait for that first playlist to be downloaded, or desire to change something in your app immediately when a Power Hook value changes, you can leverage our callback functionality.
 
 <ul>
   <li><a href="#playlist">Playlist Callbacks</a></li>
