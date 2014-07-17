@@ -16,6 +16,8 @@ All hooks are created using ARPowerHookManager are automatically registered with
   <li><a href="#register">Register Power Hook</a></li>
   <li><a href="#getvalue">Get Power Hook Value</a></li>
   <li><a href="#code-blocks">Code Blocks</a></li>
+  <li><a href="#callbacks">Callbacks</a></li>
+  <li><a href="#preview-mode">Preview Mode</a></li>
 </ul>
 
 <div id="register"></div>
@@ -33,7 +35,7 @@ public void registerPowerhooks() {
 {% endhighlight %}
 
 <div class="note note-important">
-  <p>Important: 
+  <p>Important:
 This declaration should occur in the <strong>registerPowerhooks</strong> method of your Application class.</p>
 </div>
 
@@ -123,3 +125,31 @@ PowerHookManager.executeBlock("showAlert", extraData);
 <div class="note note-important">
   <p>NOTE: If you execute this Power Hook Block in your first Activity's onCreate method, before the Artisan Service has a chance to start up, the call may be ignored. The Artisan Service is started up at the time your first activity is created, and should be ready by the time your first activity gets to onResume. For the rest of your application's lifecycle you can assume that Power Hooks will work as expected.</p>
 </div>
+
+<div id="callbacks"></div>
+
+##Callbacks
+
+Artisan allows you to <a href="/dev/android/callbacks/#power-hooks">register callbacks</a> for when an individual power hook changes or when any power hook changes.
+
+<div id="preview-mode"></div>
+
+##Preview Mode
+
+<div class="note note-important">
+  <p>Preview Mode is not yet supported for the Android SDK, but it is coming soon!</p>
+</div>
+
+When making changes to Power Hook values you can preview the look and behavior of your application with the new values by clicking on the gear <img src="/images/gear-icon.png" /> and selecting "Preview".
+
+### Preview from the Power Hook Page
+
+You can preview the default, current and draft values for your app's Power Hooks.
+
+<img src="/images/preview-mode-power-hook-page.png"/>
+
+### Preview from any Power Hook Experiment
+
+You can preview any variation of your experiment.
+
+<img src="/images/preview-mode-experiment-preview.png"/>
