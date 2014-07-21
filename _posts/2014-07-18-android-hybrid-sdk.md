@@ -164,10 +164,10 @@ The items will remain in the cart so that another purchase can be completed. If 
 cartCheckoutWasCancelled();
 {% endhighlight %}
 
-### cartIsEmpty
+### cartIsNotEmpty
 Check if there are items in the cart model for this Artisan Purchase Workflow.
 {% highlight javascript %}
-cartIsEmpty();
+cartIsNotEmpty();
 {% endhighlight %}
 
 ### cartWasAbandoned
