@@ -7,10 +7,10 @@ description: "Javascript API for using Android SDK in WebViews"
 ---
 # Profile Manager
 
-### setUserId
+### setSharedUserId
 Use this method to connect the current user of this app with an ID in your user management system. For example, if your user management system has a user whose ID is 'ABC123456' and that user logs into this app, you can use this method to pass that ID to Artisan as part of the personalization profile for this user. You can then use this ID to trace the data collected by Artisan directly to an existing user in your system. 
 {% highlight javascript %}
-setUserId("abc123");
+setSharedUserId("abc123");
 {% endhighlight %}
 
 ### setUserAge
