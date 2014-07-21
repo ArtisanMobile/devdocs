@@ -144,7 +144,7 @@ The items will remain in the cart so that another purchase can be completed. If 
 cartCheckoutFailed();
 {% endhighlight %}
 
-### cartCheckoutSucceededWithShippingAndTax
+### cartCheckoutSucceededWithShipping
 Record that the cart was checked out successfully. We will record an analytics event including information on all of the products that were purchased.
 
 We will automatically calculate the cart total and send that with the Artisan analytics event. It is assumed that all items in the cart will have the same currency; we will use the currency of the first item.
@@ -153,7 +153,7 @@ You may add shipping and tax information here and they will be recorded in the c
 
 The cart will be emptied and reset after this.
 {% highlight javascript %}
-cartCheckoutSucceededWithShippingAndTax("5.00", "7.00");
+cartCheckoutSucceededWithShipping("5.00", "7.00");
 {% endhighlight %}
 
 ### cartCheckoutWasCancelled
