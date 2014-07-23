@@ -76,7 +76,7 @@ setLocationValue("Last known location", "37.182, -5.938");
 ### setDateTimeValue
 Set or update the value associated with a custom date profile variable.
 
-This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes. 
+This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, taregeting, and reporting purposes. 
 
 This can be called from anywhere in your app. 
 {% highlight javascript %}
@@ -192,12 +192,6 @@ cartWasAbandoned();
 Remove all items from the cart without marking it as abandoned or checked out.
 {% highlight javascript %}
 emptyCart();
-{% endhighlight %}
-
-### getPurchaseWorkflowManagerInstance
-Use the static methods on this class rather than this instance.
-{% highlight javascript %}
-getPurchaseWorkflowManagerInstance();
 {% endhighlight %}
 
 ### productViewed
