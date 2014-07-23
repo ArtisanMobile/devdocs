@@ -5,6 +5,16 @@ author: "Artisan"
 category: dev/android
 description: "Javascript API for using Android SDK in WebViews"
 ---
+#Event Tracking
+
+###trackEvent
+Track an event with Artisan with additional data. Use this to track an event with Artisan and also supply additional data. For instance, if you have a product page that you want to check, but you also want to be able to know which products are being viewed, you could track an event named "Viewed Product" and pass the product id as additional data.
+{% highlight javascript %}
+trackEvent("Viewed Product", "{'sku':'A0123456789'}");
+{% endhighlight %}
+
+---
+
 # Profile Manager
 
 ### setSharedUserId
