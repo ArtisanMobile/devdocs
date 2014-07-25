@@ -25,7 +25,7 @@ This document provides an overview of all of the API calls available within the 
       <li><a href="#setuserage">setUserAge(age)</a></li>
       <li><a href="#setgender">setGender(gender)</a></li>
       <li><a href="#setstringvalue">setStringValue(variable, value)</a></li>
-      <li><a href="#setlocationvalue">setLocationValue(variable, value)</a></li>
+      <li><a href="#setlocationvalue">setLocationValue(variable, latitude, longitude)</a></li>
       <li><a href="#setDateTimeValue">setDateTimeValue(variable, value)</a></li>
       <li><a href="#clearProfile">clearProfile()</a></li>
     </ul>
@@ -81,7 +81,7 @@ Use the `parameters` parameter to supply additional context data in the form of 
 
 {% highlight javascript %}
 trackEvent("Logged In");
-trackEvent("Viewed Product", "{'sku':'A0123456789'}");
+trackEvent("Viewed Product", {'sku':'A0123456789'});
 {% endhighlight %}
 
 
@@ -109,7 +109,7 @@ setSharedUserId("abc123");
 
 #### Parameters
 
-* age: (String) Age value to associate with this user.
+* age: (Integer) Age value to associate with this user.
 
 Specify the age for the current user.
 
@@ -118,7 +118,7 @@ This information is added to the personalization profile of the current user for
 This can be called from anywhere in your app. 
 
 {% highlight javascript %}
-setUserAge("21");
+setUserAge(21);
 {% endhighlight %}
 
 <div id="setgender"></div>
@@ -136,7 +136,7 @@ This information is added to the personalization profile of the current user for
 This can be called from anywhere in your app.
 
 {% highlight javascript %}
-setGender("Male");
+setGender("male");
 {% endhighlight %}
 
 <div id="setstringvalue"></div>
@@ -167,33 +167,34 @@ Set or update the value associated with a custom number profile variable.
 #### Parameters
 
 * variable: (String) Name of the profile variable to update.
-* value: (String) New value to assign to the profile variable.  Needs to be convertable to a valid float or integer value.
+* value: (Integer or Float) New value to assign to the profile variable.
 
 This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes. 
 
 This can be called from anywhere in your app. 
 
 {% highlight javascript %}
-setNumberValue("Number of kids", "3");
+setNumberValue("Number of kids", 3);
 {% endhighlight %}
 
 <div id="setlocationvalue"></div>
 
-### setLocationValue
+### setLocationValue(variable, latitude, longitude)
 
 Set or update the value associated with a custom location profile variable.
 
 #### Parameters
 
 * variable: (String) Name of the profile variable to update.
-* value: (String) New value to assign to the profile variable.  Needs to be a decimal latitude / longitude pairing. (i.e. `"39.9523, -75.1637"`)
+* latitude: (Float) Decimal latitude of location. (i.e. `39.9523`)
+* longitude: (Float) Decimal longitude of location. (i.e. `-75.1637`)
 
 This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes. 
 
 This can be called from anywhere in your app. 
 
 {% highlight javascript %}
-setLocationValue("Last known location", "37.182, -5.938");
+setLocationValue("Last known location", 37.182, -5.938);
 {% endhighlight %}
 
 <div id="setdatetimevalue"></div>
@@ -339,7 +340,7 @@ getValueForHookById("hookId");
 Add an item to the cart for the current purchase workflow.
 
 {% highlight javascript %}
-addItemToCart("productId", "25.00", "A nice shirt", "WOMENS_APPAREL", "1", "{'Size':'M'}", "USD");
+addItemToCart("productId", "25.00", "A nice shirt", "WOMENS_APPAREL", "1", {'Size':'M'}, "USD");
 {% endhighlight %}
 
 <div id="cartcheckoutfailed"></div>
@@ -442,7 +443,7 @@ emptyCart();
 Record an analytics event for a customer viewing a product.
 
 {% highlight javascript %}
-productViewed("productId", "25.00", "A nice shirt", "T-Shirts", "{'Fabric':'Cloth'}", "USD");
+productViewed("productId", "25.00", "A nice shirt", "T-Shirts", {'Fabric':'Cloth'}, "USD");
 {% endhighlight %}
 
 <div id="removeitemfromcart"></div>
@@ -488,7 +489,7 @@ removeItemFromCart("productId", "25.00", "A nice shirt", "T-Shirts", "1");
 Record a social sharing event with Artisan.
 
 {% highlight javascript %}
-shareOnServiceType("Flickr", "true", "{'post-description':'Small album of wildlife photos'}");
+shareOnServiceType("FLICKR", true, {'post-description':'Small album of wildlife photos'});
 {% endhighlight %}
 
 

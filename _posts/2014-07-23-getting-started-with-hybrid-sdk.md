@@ -11,8 +11,8 @@ description: "Getting Started with the Artisan Javascript SDK"
 The Artisan SDK doesn't end with just your native code -- it can be integrated with your Android and iOS WebViews to provide all of the same capability for your HTML5 code.  This capability includes:
 
 * Automatic analytics collection for all pageviews, buttons, and links.
-* Full Power Hooks support.
-* Full access to set Artisan User Profile data.
+* Power Hooks support.
+* Ability to update Artisan User Profile data.
 * Full in-code A/B testing support.
 
 This guide walks through how to get the Artisan SDK integrated with the HTML5 code in your app, as well as the best way to use the Artisan Javascript APIs.
@@ -33,7 +33,7 @@ This guide walks through how to get the Artisan SDK integrated with the HTML5 co
 To enable usage of the Artisan Javascript API within a UIKit WebView, you'll want to add the following line of code to the `<head>` tag of your HTML document:
 
 {% highlight javascript %}
-<script type="text/javascript" src="ArtisanSDK.js"></script>
+<script type="text/javascript" src="ArtisanSDK.js"/>
 {% endhighlight %}
 
 This will import the Artisan Javascript API into the page and will enable all of the methods defined in the [Javascript API Reference Guide]({% post_url 2014-07-18-hybrid-sdk-reference-guide %}).  The Artisan iOS SDK will take care of the rest.
@@ -86,7 +86,7 @@ The Javascript API enables you access to the user's Artisan Profile, including a
 
 ## Running A/B Experiments
 
-The Artisan Javascript API includes the [Experiment API]({% post_url 2014-07-18-hybrid-sdk-reference-guide %}#profileapi), which offers the same in-code A/B testing capability present in the Native SDKs.  
+The Artisan Javascript API includes the [Experiment API]({% post_url 2014-07-18-hybrid-sdk-reference-guide %}#experimentapi), which offers the same in-code A/B testing capability present in the Native SDKs.  
 
 Register your in-code A/B tests in your native wrapper (via the `registerExperiment` and `addVariant` methods in the Artisan ExperimentManager), and then define how different variants will behave in your WebView by wrapping pieces of your JS code with `if` statements using the [`isCurrentVariantForExperiment(variantName, experimentName)`]({% post_url 2014-07-18-hybrid-sdk-reference-guide %}#iscurrentvariantforexperiment) method.  You can also manually specify your test entrance and conversion points via the Experiment API, allowing fine-grained control over how conversion rate is calculated for your test.  
 
