@@ -10,7 +10,8 @@ description: "In-code experiments with the Artisan Android SDK"
 In-code Experiments allow you to build tests around business logic inside your app.  For example, you can create a test for showing or not showing a particular screen.  Another example is testing multiple workflows.
 
 <ul>
-  <li><a href="#register">Register Experiment</a></li>
+  <li><a href="#register">Register In-code Experiments</a></li>
+  <li><a href="#usage">Using In-code Experiments in your App</a></li>
 </ul>
 
 <div id="register"></div>
@@ -27,7 +28,6 @@ The method **registerExperimentWithDescription(String experimentName)** or **reg
 @Override
 public void registerInCodeExperiments() {
   ArtisanExperimentManager.registerExperiment("Cart Process", "Skip or don't skip the product detail page");
-  ...
 }
 {% endhighlight %}
 
@@ -46,17 +46,33 @@ public void registerInCodeExperiments() {
 }
 {% endhighlight %}
 
+If no variation is explicitly marked as the default the first one registered for the experiment will be the default.
+
 <div class="note note-important">
-  <p>Important: If the experiment is not running the default variant will be selected.</p>
+  <p>Important: If the experiment is not running the default variant will be returned when **isCurrentVariantForExperiment** is called.</p>
 </div>
 
+<div id="usage"></div>
+
+## Using Experiments in your App
+
+There are three parts to using Artisan In-code experiments in your app: marking the experiment as viewed, checking the current variant for this user, and marking the goal of the experiment as reached.
+
+In order for a conversion to count for a given variation of your experiment there must be a view recorded before the target of the experiment is reached during the user's app session.
+
+### 1. Marking an Experiment as Viewed
+
 Call the method **setExperimentViewedForExperiment(String experimentName)** to mark the experiment has been viewed for the current user session. This call should be made at the location within the code where you want to mark the experiment as viewed.
+
+{% highlight java %}
+ArtisanExperimentManager.setExperimentViewedForExperiment("Buy Button Test");
+{% endhighlight %}
+
+### 2. Checking the Current Variant for the Experiment for this User
 
 Use the method **isCurrentVariantForExperiment(String variantName, String experimentName)** to determine which experiment variation is active.
 
 {% highlight java %}
-ArtisanExperimentManager.setExperimentViewedForExperiment("Buy Button Test");
-
 if (ArtisanExperimentManager.isCurrentVariantForExperiment("button says add to cart", "Buy Button Test")) {
   textView.setText("Add to Cart");
 } else if (ArtisanExperimentManager.isCurrentVariantForExperiment("button says buy now", "Buy Button Test")) {
@@ -68,9 +84,14 @@ if (ArtisanExperimentManager.isCurrentVariantForExperiment("button says add to c
   <p>Hint: The logic for choosing the variant should generally be in the <strong>onResume</strong> method of your Activity or in a location where the code will be exercised each time the screen is displayed.  This is necessary so the test can be turned on and off without requiring the rebuilding of the screen.</p>
 </div>
 
+### 3. Marking an Experiment Goal as Reached
+
 To set the goal of an in-code experiment you call the **setTargetReachedForExperiment(String experimentName)** method.  This call should be made at the location within the code where you want to mark the goal as achieved.
 
 {% highlight java %}
 ArtisanExperimentManager.setTargetReachedForExperiment("Buy Button Test");
 {% endhighlight %}
 
+<div class="note note-hint">
+  <p>It is possible to override this goal when you are setting up your experiment in Artisan Tools. From the experiment configuration screen you can use this goal or choose an interactive or session-length goal instead.</p>
+</div>
