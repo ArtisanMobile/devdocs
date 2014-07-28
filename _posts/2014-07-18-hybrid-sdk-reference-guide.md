@@ -80,8 +80,8 @@ Manually track an analytics event with the specified name.
 Use the `parameters` parameter to supply additional context data in the form of key-value pairs. For instance, if you have a product page that you want to check, but you also want to be able to know which products are being viewed, you could track an event named "Viewed Product" and pass the product ID as additional data.
 
 {% highlight javascript %}
-trackEvent("Logged In");
-trackEvent("Viewed Product", {'sku':'A0123456789'});
+ArtisanSDK.trackEvent("Logged In");
+ArtisanSDK.trackEvent("Viewed Product", {'sku':'A0123456789'});
 {% endhighlight %}
 
 
@@ -100,7 +100,7 @@ trackEvent("Viewed Product", {'sku':'A0123456789'});
 Use this method to connect the current user of this app with an ID in your user management system. For example, if your user management system has a user whose ID is 'ABC123456' and that user logs into this app, you can use this method to pass that ID to Artisan as part of the personalization profile for this user. You can then use this ID to trace the data collected by Artisan directly to an existing user in your system. 
 
 {% highlight javascript %}
-setSharedUserId("abc123");
+ArtisanSDK.setSharedUserId("abc123");
 {% endhighlight %}
 
 <div id="setuserage"></div>
@@ -118,7 +118,7 @@ This information is added to the personalization profile of the current user for
 This can be called from anywhere in your app. 
 
 {% highlight javascript %}
-setUserAge(21);
+ArtisanSDK.setUserAge(21);
 {% endhighlight %}
 
 <div id="setgender"></div>
@@ -136,7 +136,7 @@ This information is added to the personalization profile of the current user for
 This can be called from anywhere in your app.
 
 {% highlight javascript %}
-setGender("male");
+ArtisanSDK.setGender("male");
 {% endhighlight %}
 
 <div id="setstringvalue"></div>
@@ -155,7 +155,7 @@ This new value will be used as part of this user's personalization profile, and 
 This can be called from anywhere in your app. 
 
 {% highlight javascript %}
-setStringValue("Favorite Pet", "Dog");
+ArtisanSDK.setStringValue("Favorite Pet", "Dog");
 {% endhighlight %}
 
 <div id="setnumbervalue"></div>
@@ -174,7 +174,7 @@ This new value will be used as part of this user's personalization profile, and 
 This can be called from anywhere in your app. 
 
 {% highlight javascript %}
-setNumberValue("Number of kids", 3);
+ArtisanSDK.setNumberValue("Number of kids", 3);
 {% endhighlight %}
 
 <div id="setlocationvalue"></div>
@@ -194,7 +194,7 @@ This new value will be used as part of this user's personalization profile, and 
 This can be called from anywhere in your app. 
 
 {% highlight javascript %}
-setLocationValue("Last known location", 37.182, -5.938);
+ArtisanSDK.setLocationValue("Last known location", 37.182, -5.938);
 {% endhighlight %}
 
 <div id="setdatetimevalue"></div>
@@ -212,7 +212,7 @@ This new value will be used as part of this user's personalization profile, and 
 
 This can be called from anywhere in your app. 
 {% highlight javascript %}
-setDateTimeValue("Last seen at", "2014-07-18T12:57:38Z");
+ArtisanSDK.setDateTimeValue("Last seen at", "2014-07-18T12:57:38Z");
 {% endhighlight %}
 
 <div id="clearprofile"></div>
@@ -226,7 +226,7 @@ Use this method to clear out all data previously specified for the current user,
 This can be called from anywhere in your app.
 
 {% highlight javascript %}
-clearProfile();
+ArtisanSDK.clearProfile();
 {% endhighlight %}
 
 <div id="experimentapi"></div>
@@ -246,7 +246,7 @@ clearProfile();
 Checks to see if the specified variant is currently running for the given experiment.  Use this in the condition of an `if` block to cordon off code that should only run when the 'A' or 'B' of an A/B test is running.
 
 {% highlight javascript %}
-if(isCurrentVariantForExperiment("Green Variant", "Checkout Button Experiment")) {
+if(ArtisanSDK.isCurrentVariantForExperiment("Green Variant", "Checkout Button Experiment")) {
   makeCheckoutButtonGreen();
 };
 {% endhighlight %}
@@ -264,7 +264,7 @@ Use this method to specify that your experiment has been viewed by the user. Whe
 It is essential to call this method at least once for each experiment that you build to ensure that you will get an accurate conversion rate.
 
 {% highlight javascript %}
-setExperimentViewedForExperiment("Checkout Button Experiment");
+ArtisanSDK.setExperimentViewedForExperiment("Checkout Button Experiment");
 {% endhighlight %}
 
 <div class="note note-hint">
@@ -286,7 +286,7 @@ Use this method to specify what the conversion target should be for an in-code e
 The target set in code can be overridden by Artisan Tools as necessary. In these cases, the target will be tracked as an ordinary analytics event.
 
 {% highlight javascript %}
-setTargetReachedForExperiment("Checkout Button Experiment", "Experiment to optimize checkout flow");
+ArtisanSDK.setTargetReachedForExperiment("Checkout Button Experiment", "Experiment to optimize checkout flow");
 {% endhighlight %}
 
 <div class="note note-hint">
@@ -310,7 +310,7 @@ setTargetReachedForExperiment("Checkout Button Experiment", "Experiment to optim
 Gets the value of a Power Hook Variable. Use this method to get the value of a Power Hook Variable from Artisan. This will return the value specified in Artisan Tools, or the default value if none has been specified.  Returned value is a String.
 
 {% highlight javascript %}
-getValueForHookById("hookId");
+ArtisanSDK.getValueForHookById("hookId");
 {% endhighlight %}
 
 <div id="purchaseworkflowapi"></div>
@@ -340,7 +340,7 @@ getValueForHookById("hookId");
 Add an item to the cart for the current purchase workflow.
 
 {% highlight javascript %}
-addItemToCart("productId", "25.00", "A nice shirt", "WOMENS_APPAREL", "1", {'Size':'M'}, "USD");
+ArtisanSDK.addItemToCart("productId", "25.00", "A nice shirt", "WOMENS_APPAREL", "1", {'Size':'M'}, "USD");
 {% endhighlight %}
 
 <div id="cartcheckoutfailed"></div>
@@ -352,7 +352,7 @@ Record that the checkout failed. An analytics event is triggered to record the f
 The items will remain in the cart so that another purchase can be completed. If you want to empty the cart you should use <a href="#emptyCart">emptyCart()</a>.
 
 {% highlight javascript %}
-cartCheckoutFailed();
+ArtisanSDK.cartCheckoutFailed();
 {% endhighlight %}
 
 <div id="cartcheckoutsucceeded"></div>
@@ -373,7 +373,7 @@ You may add shipping and tax information here and they will be recorded in the c
 
 The cart will be emptied and reset after this.
 {% highlight javascript %}
-cartCheckoutSucceededWithShipping("5.00", "7.00");
+ArtisanSDK.cartCheckoutSucceededWithShipping("5.00", "7.00");
 {% endhighlight %}
 
 <div id="cartcheckoutwascancelled"></div>
@@ -385,7 +385,7 @@ Record that the checkout was cancelled by the customer.
 The items will remain in the cart so that another purchase can be completed. If you want to empty the cart you should use <a href="#emptyCart">emptyCart()</a>.
 
 {% highlight javascript %}
-cartCheckoutWasCancelled();
+ArtisanSDK.cartCheckoutWasCancelled();
 {% endhighlight %}
 
 <div id="cartisnotempty"></div>
@@ -395,7 +395,7 @@ cartCheckoutWasCancelled();
 Check if there are items in the cart model for this Artisan Purchase Workflow.  Returns a boolean.
 
 {% highlight javascript %}
-cartIsNotEmpty();
+ArtisanSDK.cartIsNotEmpty();
 {% endhighlight %}
 
 <div id="cartwasabandoned"></div>
@@ -407,7 +407,7 @@ Record that the cart was abandoned.
 The items will remain in the cart so that another purchase can be completed. If you want to empty the cart you should use <a href="#emptyCart">emptyCart()</a>.
 
 {% highlight javascript %}
-cartWasAbandoned();
+ArtisanSDK.cartWasAbandoned();
 {% endhighlight %}
 
 <div id="emptycart"></div>
@@ -417,7 +417,7 @@ cartWasAbandoned();
 Remove all items from the cart without marking it as abandoned or checked out.
 
 {% highlight javascript %}
-emptyCart();
+ArtisanSDK.emptyCart();
 {% endhighlight %}
 
 <div id="productviewed"></div>
@@ -443,7 +443,7 @@ emptyCart();
 Record an analytics event for a customer viewing a product.
 
 {% highlight javascript %}
-productViewed("productId", "25.00", "A nice shirt", "T-Shirts", {'Fabric':'Cloth'}, "USD");
+ArtisanSDK.productViewed("productId", "25.00", "A nice shirt", "T-Shirts", {'Fabric':'Cloth'}, "USD");
 {% endhighlight %}
 
 <div id="removeitemfromcart"></div>
@@ -467,7 +467,7 @@ Call this method to remove an item from the Artisan shopping cart model for the 
 It will remove the first item in the cart that matches the productIdentifier, price, and quantity.
 
 {% highlight javascript %}
-removeItemFromCart("productId", "25.00", "A nice shirt", "T-Shirts", "1");
+ArtisanSDK.removeItemFromCart("productId", "25.00", "A nice shirt", "T-Shirts", "1");
 {% endhighlight %}
 
 <div id="socialsharingapi"></div>
@@ -489,7 +489,7 @@ removeItemFromCart("productId", "25.00", "A nice shirt", "T-Shirts", "1");
 Record a social sharing event with Artisan.
 
 {% highlight javascript %}
-shareOnServiceType("FLICKR", true, {'post-description':'Small album of wildlife photos'});
+ArtisanSDK.shareOnServiceType("FLICKR", true, {'post-description':'Small album of wildlife photos'});
 {% endhighlight %}
 
 
