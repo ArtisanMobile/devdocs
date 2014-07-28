@@ -32,7 +32,7 @@ This guide walks through how to get the Artisan SDK integrated with the HTML5 co
 
 To enable usage of the Artisan Javascript API within a UIKit WebView, you'll want to add the following line of code to the `<head>` tag of your HTML document:
 
-{% highlight javascript %}
+{% highlight html %}
 <script type="text/javascript" src="ArtisanSDK.js"></script>
 {% endhighlight %}
 
@@ -50,7 +50,7 @@ This will enable Javascript in your WebView and will allow the Artisan Android S
 
 To then use the Artisan Javascript API within that WebView, you'll want to add the following line of code to the `<head>` tag of your HTML document:
 
-{% highlight javascript %}
+{% highlight html %}
 <script type="text/javascript" src="ArtisanSDK.js"></script>
 {% endhighlight %}
 
