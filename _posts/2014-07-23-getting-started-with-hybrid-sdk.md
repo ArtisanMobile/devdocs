@@ -33,7 +33,7 @@ This guide walks through how to get the Artisan SDK integrated with the HTML5 co
 To enable usage of the Artisan Javascript API within a UIKit WebView, you'll want to add the following line of code to the `<head>` tag of your HTML document:
 
 {% highlight javascript %}
-<script type="text/javascript" src="ArtisanSDK.js"/>
+<script type="text/javascript" src="ArtisanSDK.js"></script>
 {% endhighlight %}
 
 This will import the Artisan Javascript API into the page and will enable all of the methods defined in the [Javascript API Reference Guide]({% post_url 2014-07-18-hybrid-sdk-reference-guide %}).  The Artisan iOS SDK will take care of the rest.
@@ -97,10 +97,3 @@ These Javascript API methods work interchangeably with their Native SDK equivale
 ## Using Power Hooks
 
 Artisan Power Hooks are fully accessible within WebViews via the [Power Hook API]({% post_url 2014-07-18-hybrid-sdk-reference-guide %}#powerhookapi).  All Power Hooks registered in the native wrapper are available via the [`getValueForHookById(id)`]({% post_url 2014-07-18-hybrid-sdk-reference-guide %}#getvaluebyhookid) method, which will return as String whatever value of that Power Hook has most recently been retrieved from Artisan.
-
-
-
-
-
-
-
