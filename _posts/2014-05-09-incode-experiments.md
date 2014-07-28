@@ -19,7 +19,7 @@ In-code Experiments allow you to build tests around business logic inside your a
 
 ## Register Experiments
 
-An in-code experiments must be defined in the appDelegate before **ARManager startWithAppId:version:options:**.
+An in-code experiment must be defined in the appDelegate before **ARManager startWithAppId:version:options:**.
 
 The method **registerExperiment:** takes a string representing the name of your experiment.
 
