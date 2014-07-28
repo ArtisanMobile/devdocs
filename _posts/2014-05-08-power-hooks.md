@@ -46,12 +46,23 @@ This declaration should occur in the <strong>registerPowerhooks</strong> method 
 The method **getVariableValue** retrieves the value of a Power Hook from Artisan.  This will return the value specified in the Artisan platform, or the default value if none has been specified.
 
 {% highlight java %}
-Button cart_button = (Button) findViewById(R.id.AddToCartButton);
-cart_button.setText(PowerHookManager.getVariableValue("addToCartButton"));
+String myPowerHookValue = PowerHookManager.getVariableValue("sampleButtonText")
+{% endhighlight %}
+
+A good place to retrieve this value is in the onResume or onStart method of your Activity so that you always have the latest value when your Activity is visible.
+
+Here's a sample of setting the button text using a Power Hook variable:
+
+{% highlight java %}
+@Override
+protected void onResume() {
+  Button sample_button = (Button) findViewById(R.id.SampleButton);
+  sample_button.setText(PowerHookManager.getVariableValue("sampleButtonText"));
+}
 {% endhighlight %}
 
 <div class="note note-important">
-  <p>NOTE: If you request the value for this Power Hook Variable in your first Activity's onCreate method, before the Artisan Service has a chance to start up, you may get a null value in return. The Artisan Service is started up at the time your first activity is created, and should be ready by the time your first activity gets to onResume. For the rest of your application's lifecycle you can assume that Power Hooks will work as expected.</p>
+  <p>NOTE: If you request the value for this Power Hook Variable in your first Activity's onCreate method, before the Artisan Service has a chance to start up, you may get the default value in return. The Artisan Service is started up at the time your first activity is created, and should be ready by the time your first activity gets to onResume. For the rest of your application's lifecycle you can assume that Power Hooks will work as expected.</p>
 </div>
 
 <div class="note note-hint">
