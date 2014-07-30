@@ -42,7 +42,7 @@
 
 {% endif %}
 
-{% if page.category == "dev/ios" %}
+{% if page.category == "dev/ios" or page.category == "dev/js" %}
   <h2>iOS SDK</h2>
   <ul>
     <li><a href="/dev/ios/install/">Installation</a></li>
@@ -56,7 +56,7 @@
   </ul>
 {% endif %}
 
-{% if page.category == "dev/android" %}
+{% if page.category == "dev/android" or page.category == "dev/js" %}
   <h2>Android SDK</h2>
   <ul>
     <li><a href="/dev/android/install/">Installation</a></li>
@@ -69,5 +69,13 @@
     <li><a href="/dev/android/callbacks/">Callbacks</a></li>
     <li><a href="/dev/android/advanced/">Advanced Configuration</a></li>
     <li><a href="/dev/android/javadocs/">API Javadocs</a></li>
+  </ul>
+{% endif %}
+
+{% if page.category == "dev/ios" or page.category == "dev/android" or page.category == "dev/js" %}
+  <h2>Javascript SDK</h2>
+  <ul>
+    <li><a href="/dev/js/getting-started-with-hybrid-sdk/">Getting Started</a></li>
+    <li><a href="/dev/js/hybrid-sdk-reference-guide/">API Reference Guide</a></li>
   </ul>
 {% endif %}
