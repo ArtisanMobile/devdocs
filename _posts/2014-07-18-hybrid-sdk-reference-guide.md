@@ -75,7 +75,7 @@ This document provides an overview of all of the API calls available within the 
 * eventName: (String) Name of the event to track.
 * parameters: (Associative Array) Context parameters to tag to the event. [Optional]
 
-Manually track an analytics event with the specified name. 
+Manually track an analytics event with the specified name.
 
 Use the `parameters` parameter to supply additional context data in the form of key-value pairs. For instance, if you have a product page that you want to check, but you also want to be able to know which products are being viewed, you could track an event named "Viewed Product" and pass the product ID as additional data.
 
@@ -97,7 +97,7 @@ ArtisanSDK.trackEvent("Viewed Product", {'sku':'A0123456789'});
 
 * id: (String) Profile ID to associate with this user.
 
-Use this method to connect the current user of this app with an ID in your user management system. For example, if your user management system has a user whose ID is 'ABC123456' and that user logs into this app, you can use this method to pass that ID to Artisan as part of the personalization profile for this user. You can then use this ID to trace the data collected by Artisan directly to an existing user in your system. 
+Use this method to connect the current user of this app with an ID in your user management system. For example, if your user management system has a user whose ID is 'ABC123456' and that user logs into this app, you can use this method to pass that ID to Artisan as part of the personalization profile for this user. You can then use this ID to trace the data collected by Artisan directly to an existing user in your system.
 
 {% highlight javascript %}
 ArtisanSDK.setSharedUserId("abc123");
@@ -113,9 +113,9 @@ ArtisanSDK.setSharedUserId("abc123");
 
 Specify the age for the current user.
 
-This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes. 
+This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
 
-This can be called from anywhere in your app. 
+This can be called from anywhere in your app.
 
 {% highlight javascript %}
 ArtisanSDK.setUserAge(21);
@@ -131,7 +131,7 @@ ArtisanSDK.setUserAge(21);
 
 Specify the gender of the current user.
 
-This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes. 
+This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
 
 This can be called from anywhere in your app.
 
@@ -152,7 +152,7 @@ Set or update the value associated with a custom string profile variable.
 
 This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes.
 
-This can be called from anywhere in your app. 
+This can be called from anywhere in your app.
 
 {% highlight javascript %}
 ArtisanSDK.setStringValue("Favorite Pet", "Dog");
@@ -169,9 +169,9 @@ Set or update the value associated with a custom number profile variable.
 * variable: (String) Name of the profile variable to update.
 * value: (Integer or Float) New value to assign to the profile variable.
 
-This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes. 
+This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes.
 
-This can be called from anywhere in your app. 
+This can be called from anywhere in your app.
 
 {% highlight javascript %}
 ArtisanSDK.setNumberValue("Number of kids", 3);
@@ -189,9 +189,9 @@ Set or update the value associated with a custom location profile variable.
 * latitude: (Float) Decimal latitude of location. (i.e. `39.9523`)
 * longitude: (Float) Decimal longitude of location. (i.e. `-75.1637`)
 
-This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes. 
+This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes.
 
-This can be called from anywhere in your app. 
+This can be called from anywhere in your app.
 
 {% highlight javascript %}
 ArtisanSDK.setLocationValue("Last known location", 37.182, -5.938);
@@ -208,9 +208,9 @@ ArtisanSDK.setLocationValue("Last known location", 37.182, -5.938);
 
 Set or update the value associated with a custom date profile variable.
 
-This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes. 
+This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes.
 
-This can be called from anywhere in your app. 
+This can be called from anywhere in your app.
 {% highlight javascript %}
 ArtisanSDK.setDateTimeValue("Last seen at", "2014-07-18T12:57:38Z");
 {% endhighlight %}
@@ -221,7 +221,7 @@ ArtisanSDK.setDateTimeValue("Last seen at", "2014-07-18T12:57:38Z");
 
 Clear out all previously specified profile information.
 
-Use this method to clear out all data previously specified for the current user, including any data set via setSharedUserId(id), setUserAge(age), setGender(gender), setStringValue(variable, value) et al. 
+Use this method to clear out all data previously specified for the current user, including any data set via setSharedUserId(id), setUserAge(age), setGender(gender), setStringValue(variable, value) et al.
 
 This can be called from anywhere in your app.
 
@@ -340,7 +340,7 @@ ArtisanSDK.getValueForHookById("hookId");
 Add an item to the cart for the current purchase workflow.
 
 {% highlight javascript %}
-ArtisanSDK.addItemToCart("productId", "25.00", "A nice shirt", "WOMENS_APPAREL", "1", {'Size':'M'}, "USD");
+ArtisanSDK.addItemToCart("productId", 25.00, "A nice shirt", "WOMENS_APPAREL", 1, {'Size':'M'}, "USD");
 {% endhighlight %}
 
 <div id="cartcheckoutfailed"></div>
@@ -373,7 +373,7 @@ You may add shipping and tax information here and they will be recorded in the c
 
 The cart will be emptied and reset after this.
 {% highlight javascript %}
-ArtisanSDK.cartCheckoutSucceededWithShipping("5.00", "7.00");
+ArtisanSDK.cartCheckoutSucceeded(5.00, 7.00);
 {% endhighlight %}
 
 <div id="cartcheckoutwascancelled"></div>
@@ -443,7 +443,7 @@ ArtisanSDK.emptyCart();
 Record an analytics event for a customer viewing a product.
 
 {% highlight javascript %}
-ArtisanSDK.productViewed("productId", "25.00", "A nice shirt", "T-Shirts", {'Fabric':'Cloth'}, "USD");
+ArtisanSDK.productViewed("productId", 25.00, "A nice shirt", "T-Shirts", {'Fabric':'Cloth'}, "USD");
 {% endhighlight %}
 
 <div id="removeitemfromcart"></div>
@@ -467,7 +467,7 @@ Call this method to remove an item from the Artisan shopping cart model for the 
 It will remove the first item in the cart that matches the productIdentifier, price, and quantity.
 
 {% highlight javascript %}
-ArtisanSDK.removeItemFromCart("productId", "25.00", "A nice shirt", "T-Shirts", "1");
+ArtisanSDK.removeItemFromCart("productId", 25.00, "A nice shirt", "T-Shirts", 1);
 {% endhighlight %}
 
 <div id="socialsharingapi"></div>
@@ -491,6 +491,3 @@ Record a social sharing event with Artisan.
 {% highlight javascript %}
 ArtisanSDK.shareOnServiceType("FLICKR", true, {'post-description':'Small album of wildlife photos'});
 {% endhighlight %}
-
-
-
