@@ -70,6 +70,7 @@ This document provides an overview of all of the API calls available within the 
 <div id="trackEvent"></div>
 
 ### trackEvent(eventName)<br>trackEvent(eventName, parameters)
+### trackEvent(eventName)<br>trackEvent(eventName)
 
 #### Parameters
 
@@ -321,6 +322,8 @@ ArtisanSDK.getValueForHookById("hookId");
 <div id="additemtocart"></div>
 
 ### addItemToCart(id, price, description, category, quantity, productInfo, priceLocale)
+### addItemToCart(id, price, description, category, quantity, productInfo)
+### addItemToCart(id, price, description, category, quantity)
 
 #### Parameters
 
@@ -334,9 +337,9 @@ ArtisanSDK.getValueForHookById("hookId");
 
 * quantity: (String) Number of items being added.  String value should be convertible to an integer.
 
-* productInfo: (Associative Array) Key-value pairs to provide additional info and context about this item.
+* productInfo: (Associative Array) Key-value pairs to provide additional info and context about this item. [Optional]
 
-* priceLocale: (String) ISO 4217 currency code associated with the price (i.e. 'USD', 'GBP', 'EUR', etc.)
+* priceLocale: (String) ISO 4217 currency code associated with the price (i.e. 'USD', 'GBP', 'EUR', etc.). [Optional--if blank then the device's default locale/currency is used]
 
 Add an item to the cart for the current purchase workflow.
 
@@ -424,6 +427,8 @@ ArtisanSDK.emptyCart();
 <div id="productviewed"></div>
 
 ### productViewed(id, price, description, category, quantity, productInfo, priceLocale)
+### productViewed(id, price, description, category, quantity, productInfo)
+### productViewed(id, price, description, category, quantity)
 
 #### Parameters
 
@@ -437,9 +442,9 @@ ArtisanSDK.emptyCart();
 
 * quantity: (String) Number of items being added.  String value should be convertible to an integer.
 
-* productInfo: (Associative Array) Key-value pairs to provide additional info and context about this item.
+* productInfo: (Associative Array) Key-value pairs to provide additional info and context about this item. [Optional]
 
-* priceLocale: (String) ISO 4217 currency code associated with the price (i.e. 'USD', 'GBP', 'EUR', etc.)
+* priceLocale: (String) ISO 4217 currency code associated with the price (i.e. 'USD', 'GBP', 'EUR', etc.). [Optional--if blank then the device's default locale/currency is used]
 
 Record an analytics event for a customer viewing a product.
 
