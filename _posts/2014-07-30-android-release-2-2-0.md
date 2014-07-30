@@ -9,4 +9,6 @@ description: "What's new in Artisan's Mobile Experience Management platform."
 
 Released {{ page.date | date: "%B %-d, %Y" }}
 
-* [NEW] Added support for the Artisan Javascript API. Now you can use Artisan's APIs for analytics, in-code experiments and power hooks seamlessly across your native and web-based code. See <a href="{% post_url 2014-07-23-getting-started-with-hybrid-sdk %}">Artisan Javascript SDK docs</a> to get started.
+Introduction of the new Artisan Javascript API. The Artisan iOS SDK now provides support for WebViews to automatically collect analytics, access Power Hooks, and build in-code A/B tests.  See [Getting Started with the Artisan Javascript SDK]({% post_url 2014-07-23-getting-started-with-hybrid-sdk %}) for more information.
+
+* [NEW] Added support for the Artisan Javascript API
