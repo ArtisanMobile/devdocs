@@ -57,6 +57,7 @@ This document provides an overview of all of the API calls available within the 
   </li>
   <li><a href="#socialsharingapi">Social Sharing Manager</a>
     <ul>
+      <li><a href="#shareonservicetype">shareOnServiceType(serviceType, wasSuccessful)</a></li>
       <li><a href="#shareonservicetype">shareOnServiceType(serviceType, wasSuccessful, metadata)</a></li>
     </ul>
   </li>
@@ -476,7 +477,7 @@ ArtisanSDK.removeItemFromCart("productId", 25.00, "A nice shirt", "T-Shirts", 1)
 
 <div id="shareonservicetype"></div>
 
-### shareOnServiceType(serviceType, wasSuccessful, metadata)
+### shareOnServiceType(serviceType, wasSuccessful)<br>shareOnServiceType(serviceType, wasSuccessful, metadata)
 
 #### Parameters
 
@@ -484,7 +485,7 @@ ArtisanSDK.removeItemFromCart("productId", 25.00, "A nice shirt", "T-Shirts", 1)
 
 * wasSuccessful: (Boolean) or (String) Whether the share was successful.
 
-* metadata: (Associative Array) Additional key-value metadata associated with this social share.
+* metadata: (Associative Array) Additional key-value metadata associated with this social share. [OPTIONAL]
 
 Record a social sharing event with Artisan.
 
