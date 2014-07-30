@@ -26,7 +26,7 @@ This document provides an overview of all of the API calls available within the 
       <li><a href="#setgender">setGender(gender)</a></li>
       <li><a href="#setstringvalue">setStringValue(variable, value)</a></li>
       <li><a href="#setlocationvalue">setLocationValue(variable, latitude, longitude)</a></li>
-      <li><a href="#setDateTimeValue">setDateTimeValue(variable, value)</a></li>
+      <li><a href="#setdatetimevalue">setDateTimeValue(variable, value)</a></li>
       <li><a href="#clearProfile">clearProfile()</a></li>
     </ul>
   </li>
