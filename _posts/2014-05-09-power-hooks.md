@@ -17,6 +17,7 @@ All hooks are created using ARPowerHookManager are automatically registered with
   <li><a href="#code-blocks">Code Blocks</a></li>
   <li><a href="#callbacks">Callbacks</a></li>
   <li><a href="#preview-mode">Preview Mode</a></li>
+  <li><a href="#binding-to-screen">Binding to Screen Elements</a></li>
 </ul>
 
 <div id="register"></div>
@@ -145,3 +146,23 @@ You can then exit preview mode by tapping the preview icon on your device <img s
 
 <img src="/images/preview-mode-device.png"/>&nbsp;&nbsp;&nbsp;&nbsp;<img src="/images/preview-mode-device-exit.png"/>
 
+<div id="binding-to-screen"></div>
+
+##Binding to Screen Elements
+
+Artisan provides convenience methods to directly bind the attribute of an UIElement to the value of a Power Hook.  These attributes will update automatically when the value of its bound Powerhook changes, with no boilerplate code or additional configuration necessary.
+
+**These convenience methods include:**
+
+{% highlight objective-c %}
++ (void)bindPowerHookAsStringToUIElementProperty:(NSString *)powerHookId UIElement:(id)element attribute:(NSString *)attribute
++ (void)bindPowerHookAsStringToUIElementProperty:(NSString *)powerHookId stringWithFormat:(NSString *)stringWithFormat UIElement:(id)element attribute:(NSString *)attribute
++ (void)bindPowerHookAsFloatToUIElementProperty:(NSString *)powerHookId stringWithFormat:(NSString *)stringWithFormat UIElement:(id)element attribute:(NSString *)attribute
++ (void)bindPowerHookAsIntegerToUIElementProperty:(NSString *)powerHookId stringWithFormat:(NSString *)stringWithFormat UIElement:(id)element attribute:(NSString *)attribute
+{% endhighlight %}
+
+By using these convenience methods within the `viewDidLoad:` method of your view controllers, you can ensure that the given attribute of the bound UIElement always matches the most recently retrieved Power Hook value.
+
+<img src="/images/powerhook-binding-example.png"/>
+
+Additionally, all Power Hooks bound in this manner will change in real-time when using Preview Mode, allowing for dynamic preview of the updated values.
