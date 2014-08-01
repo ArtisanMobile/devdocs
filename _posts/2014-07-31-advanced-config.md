@@ -19,11 +19,11 @@ The Artisan iOS SDK has a number of additional configurations that can be applie
 
 ## The Artisan Configuration Dictionary
 
-The `[ARManager startWithAppId:]` command used to start Artisan can optionally accept an NSDictionary of configuration parameters.  This NSDictionary can contain any or all of the advanced configuration options described later in this guide, and can be applied as follows:
+The `[ARManager startWithAppId:]` command used to start Artisan can optionally accept an NSDictionary of configuration parameters.  This NSDictionary can contain any or all of the advanced configuration options described later in this guide.  The following is an example usage of the configuration dictionary to permanently disable the Artisan Gesture:
 
 {% highlight objective-c %}
-NSDictionary *advancedConfig = @{@"override_enable_artisan_gesture" : @YES,
-                                 @"never_enable_artisan_gesture" : @NO};
+NSDictionary *advancedConfig = @{@"override_enable_artisan_gesture" : @NO,
+                                 @"never_enable_artisan_gesture" : @YES};
 
 [ARManager startWithAppId:@"YOUR_APP_ID" options:advancedConfig];      
 {% endhighlight %}
