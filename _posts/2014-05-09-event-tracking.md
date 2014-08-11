@@ -118,7 +118,7 @@ The optional product info can be any key/value pairs of information about this p
                                               withPriceLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
                                                andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
                                                   andCategory:@"T-Shirts"
-                                                   andQuanity:[NSNumber numberWithInt:1]
+                                                   andQuantity:[NSNumber numberWithInt:1]
                                               withProductInfo:@{@"style":@"organic cotton",@"size":@"medium"}];
 {% endhighlight %}
 
@@ -132,7 +132,7 @@ When a product is added to your cart model you can track this event with Artisan
                                               withPriceLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
                                                andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
                                                   andCategory:@"T-Shirts"
-                                                   andQuanity:[NSNumber numberWithInt:1]
+                                                   andQuantity:[NSNumber numberWithInt:1]
                                               withProductInfo:@{ @"style":@"organic cotton", @"size":@"medium" }];
 {% endhighlight %}
 
@@ -143,7 +143,7 @@ When adding products to the cart, the locale, category and additional product in
                                                            atPrice:[NSNumber numberWithFloat:24.99f]
                                                     andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
                                                        andCategory:@"T-Shirts"
-                                                        andQuanity:[NSNumber numberWithInt:1]];
+                                                        andQuantity:[NSNumber numberWithInt:1]];
 {% endhighlight %}
 
 It will remove the first item in the cart that matches the productIdentifier, price, description and quantity.
