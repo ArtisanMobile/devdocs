@@ -394,7 +394,8 @@ Use the method **isCurrentVariant:forExperiment:** to determine which experiment
 [ARExperimentManager setExperimentViewedForExperiment:@"Cart Process"];
 
 if ([ARExperimentManager isCurrentVariant:@"Skip Product Screen" forExperiment:@"Cart Process"]) {
-  ARPCartModel *cart = [ARPCartModel instance];
+  // Sample code for skipping the product detail screen and going straight to the cart.
+  MYSampleCartModel *cart = [MYSampleCartModel instance];
   [cart addProduct:productClicked];
   [self performSegueWithIdentifier:@"navigateToCart" sender:self];
 }
