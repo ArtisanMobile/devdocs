@@ -208,11 +208,23 @@ Artisan provides convenience methods to directly bind the attribute of an UIElem
 **These convenience methods include:**
 
 {% highlight objective-c %}
-+ (void)bindPowerHookAsStringToUIElementProperty:(NSString *)powerHookId UIElement:(id)element attribute:(NSString *)attribute
-+ (void)bindPowerHookAsStringToUIElementProperty:(NSString *)powerHookId stringWithFormat:(NSString *)stringWithFormat UIElement:(id)element attribute:(NSString *)attribute
-+ (void)bindPowerHookAsFloatToUIElementProperty:(NSString *)powerHookId stringWithFormat:(NSString *)stringWithFormat UIElement:(id)element attribute:(NSString *)attribute
-+ (void)bindPowerHookAsIntegerToUIElementProperty:(NSString *)powerHookId stringWithFormat:(NSString *)stringWithFormat UIElement:(id)element attribute:(NSString *)attribute
+// Objective-C
+
+\+ (void)bindPowerHookAsStringToUIElementProperty:(NSString *)powerHookId UIElement:(id)element attribute:(NSString *)attribute
+\+ (void)bindPowerHookAsStringToUIElementProperty:(NSString *)powerHookId stringWithFormat:(NSString *)stringWithFormat UIElement:(id)element attribute:(NSString *)attribute
+\+ (void)bindPowerHookAsFloatToUIElementProperty:(NSString *)powerHookId stringWithFormat:(NSString *)stringWithFormat UIElement:(id)element attribute:(NSString *)attribute
+\+ (void)bindPowerHookAsIntegerToUIElementProperty:(NSString *)powerHookId stringWithFormat:(NSString *)stringWithFormat UIElement:(id)element attribute:(NSString *)attribute
 {% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+func bindPowerHookAsStringToUIElementProperty(powerHookId:String, element:UIElement, attribute:String)
+func bindPowerHookAsStringToUIElementProperty(powerHookId:String, stringWithFormat:String, element:UIElement, attribute:String)
+func bindPowerHookAsFloatToUIElementProperty(powerHookId:String, stringWithFormat:String, element:UIElement, attribute:String)
+func bindPowerHookAsIntegerToUIElementProperty(powerHookId:String, stringWithFormat:String, element:UIElement, attribute:String)
+{% endhighlight %}
+
 
 By using these convenience methods within the `viewDidLoad:` method of your view controllers, you can ensure that the given attribute of the bound UIElement always matches the most recently retrieved Power Hook value.
 
