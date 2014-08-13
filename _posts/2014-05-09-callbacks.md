@@ -26,7 +26,9 @@ This call is non-blocking so code execution will continue immediately to the nex
 Here is an example where I wait for no more than 3 seconds for the first playlist to download:
 
 {% highlight objective-c %}
-- (void)viewDidLoad {
+// Objective-C
+
+\- (void)viewDidLoad {
     waitingViewController = [[MYSampleWaitingViewController alloc] init];
 
     [self presentViewController:waitingViewController animated:NO completion:nil];
@@ -34,9 +36,28 @@ Here is an example where I wait for no more than 3 seconds for the first playlis
     __block MYSampleHomeScreenViewController *_self = self;
 
     [ARManager onFirstPlaylistDownloaded:^{
-        // this will be executed when the first playlist is downloaded or after 3 seconds, which ever is first.
+        // this will be executed when the first playlist is downloaded or after 3 seconds, whichever is first.
         [_self hideWaitingViewController];
     } withTimeout:3];
+}
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+	
+	let waitingViewController = MYSampleWaitingViewController()
+	
+	self.presentViewController(waitingViewController, animated:false, completion:nil)
+	
+	let _self: MYSampleHomeScreenViewController = self
+	
+	ARManager.onFirstPlaylistDownloaded({
+			// This will be executed when the first playlist is donwloaded or after 3 seconds, whichever is first
+			_self.hideWaitingViewController()
+		}, withTimeout:3)
 }
 {% endhighlight %}
 
@@ -58,6 +79,8 @@ You can register callbacks for when an individual power hook changes or when any
 For individual Power Hook values you can get a reference to an ARPowerHookVariable to register a callback for when the value is updated.
 
 {% highlight objective-c %}
+// Objective-C
+
 @interface MYSampleViewController ()
 {
   ARPowerHookVariable *marketingMessageVariable;
@@ -72,10 +95,25 @@ For individual Power Hook values you can get a reference to an ARPowerHookVariab
 }
 {% endhighlight %}
 
+{% highlight swift %}
+// Swift
+
+class MYSampleViewController {
+	let marketingMessageVariable: ARPowerHookVariable
+	
+	override func viewDidLoad() {
+		// Get a reference to the ARPowerHookVariable
+		marketingMessageVariable = ARPowerHookManager.getPowerHookVariable("marketingMessage")
+	}
+}
+{% endhighlight %}
+
 Here is an example of registering a callback with the "marketingMessage" Power Hook value changes.
 
 {% highlight objective-c %}
-- (void)viewWillAppear:(BOOL)animated {
+// Objective-C
+
+\- (void)viewWillAppear:(BOOL)animated {
     [marketingMessageVariable onPowerHookChanged:^(BOOL previewMode) {
       if (previewMode) {
         // you might only want to change a value on the screen if you are in Artisan previewMode
@@ -84,6 +122,21 @@ Here is an example of registering a callback with the "marketingMessage" Power H
         NSLog(@"Updated Marketing Message is: %@", marketingMessageVariable.value);
       }
     }];
+}
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+override func viewWillAppear(animated:Bool) {
+	marketingMessageVariable.onPowerHookChanged({(previewMode:Bool) in
+		if previewMode {
+			// you might only want to change a value on the screen if you are in Artisan previewMode
+			println("In Preview Mode! Updated Marketing Message is: \\(marketingMessageVariable.value)")
+		} else {
+			println("Updated Marketing Message is: \\(marketingMessageVariable.value)")
+		}
+	})
 }
 {% endhighlight %}
 
@@ -96,8 +149,18 @@ Artisan provides a previewMode flag to tell you if you are currently in <a href=
 To avoid memory leaks, it is important that you also unregister your callback in the parallel method to the one in which you registered it. For example, if you registered in **viewWillAppear** it is best to unregister in **viewWillDisappear**.
 
 {% highlight objective-c %}
+// Objective-C
+
 -(void) viewWillDisappear:(BOOL)animated {
   [marketingMessageVariable unregisterPowerHookChanged];
+}
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+override func viewWillDisappear(animated:Bool) {
+	marketingMessageVariable.unregisterPowerHookChanged()
 }
 {% endhighlight %}
 
@@ -107,6 +170,8 @@ If there are many power hooks that are used on an individual screen it may make 
 
 Just as with the individual power hook value callbacks you have the previewMode flag to tell you if you are currently in <a href="/dev/ios/power-hooks/#preview-mode">Artisan Preview Mode</a>, previewing unpublished changes for your App.
 {% highlight objective-c %}
+// Objective-C
+
 [ARPowerHookManager onPowerHooksChanged:^(BOOL previewMode) {
   if (previewMode) {
     // you might only want to change a value on the screen if you are in Artisan previewMode
@@ -115,6 +180,19 @@ Just as with the individual power hook value callbacks you have the previewMode 
     NSLog(@"Power Hooks Changed!");
   }
 }];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+ARPowerHookManager.onPowerHooksChanged({(previewMode:Bool) in
+	if previewMode {
+		// you might only want to change a value on the screen if you are in Artisan previewMode
+		println("In Preview Mode! Power Hooks Changed!")
+	} else {
+		println("Power Hooks Changed!")
+	}
+})
 {% endhighlight %}
 
 <div class="note note-hint">
