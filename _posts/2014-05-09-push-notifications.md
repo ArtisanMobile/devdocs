@@ -54,11 +54,20 @@ Back in Artisan Tools on the settings page for your app you can upload your APN 
 
 ## 4. Register for Push Notifications in your SDK
 
-Within your iOS application, you will need to confirm that your app has registered with Apple to receive push notifications.  That means that you should have the following code in the **didFinishLaunchingWithOptions:** method of your main app delegate:
+Within your iOS application, you will need to confirm that your app has registered with Apple to receive push notifications.  That means that you should have the following code in the **didFinishLaunchingWithOptions:** method in Objective-C, **application** method in Swift, of your main app delegate:
 
 {% highlight objective-c %}
+// Objective-C
+
 // Register for push
 [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+// Register for push
+UIApplication.sharedApplication().registerForRemoteNotificationTypes(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)
 {% endhighlight %}
 
 You will also want to confirm that 'Remote notifications' are enabled within the 'Capabilities' section of the build target for your app.  In XCode, access the control panel for your build target, navigate to the 'Capabilities' tab, and ensure that 'Background Modes' is set to 'ON' and 'Remote notifications' is checked.
