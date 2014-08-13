@@ -27,12 +27,21 @@ All hooks are created using ARPowerHookManager are automatically registered with
 Use the method **registerHookWithId:friendlyName:defaultValue:** to declare the existence of a Power Hook you would like to pass in from Artisan.
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARPowerHookManager registerHookWithId:@"slogan" friendlyName:@"Slogan" defaultValue:@"It's So Good!"];
 [ARManager startWithAppId:@""];
 {% endhighlight %}
 
+{% highlight swift %}
+// Swift
+
+ARPowerHookManager.registerHookWithId("slogan", friendlyName: "Slogan", defaultValue: "It's so good")
+ARPManager.startWithAppId("")
+{% endhighlight %}
+
 <div class="note note-important">
-  <p>Important: This declaration should occur in the **didFinishLaunchingWithOptions:** method of your main app delegate, **before** you start Artisan using the [ARManager startWithAppId:] method.</p>
+  <p>Important: This declaration should occur in the **didFinishLaunchingWithOptions:** method in Objective-C, **application** method in Swift, of your main app delegate, **before** you start Artisan using the **startWithAppId:** method.</p>
 </div>
 
 <div id="getvalue"></div>
@@ -42,8 +51,17 @@ Use the method **registerHookWithId:friendlyName:defaultValue:** to declare the 
 The method **getValueForHookById:** retrieves the value of a Power Hook from Artisan.  This will return the value specified in the Artisan platform, or the default value if none has been specified.
 
 {% highlight objective-c %}
+// Objective-C
+
 NSString *configValue = [ARPowerHookManager getValueForHookById:@"slogan"];
 NSNumber *configValue = [ARPowerHookManager getValueForHookById:@"numberofresults"];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+let configValue1 = ARPowerHookManager.getValueForHookById("slogan")
+let configValue2 = ARPowerHookManager.getValueForHookById("numberofresults")
 {% endhighlight %}
 
 <div class="note note-hint">
@@ -58,7 +76,7 @@ Power Hook code blocks can be used for referencing code that can be executed con
 
 Use this method to declare the existence of a code block you would like to use in your app with data that is configurable from Artisan.
 
-This declaration should occur in the **didFinishLaunchingWithOptions:** method of your main app delegate, *before* you start Artisan using the \[ARManager startWithAppId:] method.
+This declaration should occur in the **didFinishLaunchingWithOptions:** method in Objective-C, **application** method in Swift, of your main app delegate, *before* you start Artisan using the startWithAppId: method.
 
 * **id** - The name of the code to register. Name must be unique for this app.
 * **friendlyName** - The name for this code block that will be displayed in Artisan Tools.
@@ -66,6 +84,8 @@ This declaration should occur in the **didFinishLaunchingWithOptions:** method o
 * **andBlock** - The block of code executed.
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARPowerHookManager registerBlockWithId:@"discountPopup"
                            friendlyName:@"discount popup"
                                    data:@{ @"shouldDisplayAlert" : @"NO",
@@ -90,6 +110,29 @@ This declaration should occur in the **didFinishLaunchingWithOptions:** method o
 }];
 {% endhighlight %}
 
+{% highlight swift %}
+// Swift
+
+ARPowerHookManager.registerBlockWithId("discountPopup",
+						 friendlyName: "discount popup",
+						 		 data: ["shouldDisplayAlert":"false",
+								 		"name":"value1",
+										"discountAmount":"value2"],
+							 andBlock: { (data:[NSObject: AnyObject]!, context:AnyObject!) -> Void in
+    if (data["shouldDisplayAlert"] as NSString == "true") {
+        
+		let name: String 			= data["name"] as NSString
+        let discountAmount: String 	= data["discountAmount"] as NSString
+        let product: String 		= data["product"] as NSString
+		
+        let message = "Hello there, \(name)! We'd like to give you a discount of \(discountAmount) on \(product)"
+        let alertView = UIAlertView(title: "Here's a Coupon!", message:message, delegate:context, cancelButtonTitle:"Cancel")
+        
+		alertView.show()
+    }
+})
+{% endhighlight %}
+
 <div class="note note-hint">
   <p>Hint: The data parameter contains name/value pairs that are private to the Power Hook Code Block.</p>
 </div>
@@ -101,9 +144,19 @@ Use the method **executeBlockWithId:data:context** to execute a Power Hook code 
 * **context** - A reference to an object passed into the block.
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARPowerHookManager executeBlockWithId:@"discountPopup"
                                   data:nil
                                context:self];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+ARPowerHookManager.executeBlockWithId("discountPopup",
+								data: nil,
+							 context: self)
 {% endhighlight %}
 
 <div class="note note-hint">
