@@ -114,21 +114,16 @@ This declaration should occur in the **didFinishLaunchingWithOptions:** method i
 // Swift
 
 ARPowerHookManager.registerBlockWithId("discountPopup",
-						 friendlyName: "discount popup",
-						 		 data: ["shouldDisplayAlert":"false",
-								 		"name":"value1",
-										"discountAmount":"value2"],
-							 andBlock: { (data:[NSObject: AnyObject]!, context:AnyObject!) -> Void in
+                         friendlyName: "discount popup",
+                                 data: ["shouldDisplayAlert":"false",
+                                        "name":"value1",
+                                        "discountAmount":"value2"],
+                             andBlock: { (data:[NSObject: AnyObject]!, context:AnyObject!) -> Void in
     if (data["shouldDisplayAlert"] as NSString == "true") {
-        
-		let name: String 			= data["name"] as NSString
-        let discountAmount: String 	= data["discountAmount"] as NSString
-        let product: String 		= data["product"] as NSString
-		
-        let message = "Hello there, \(name)! We'd like to give you a discount of \(discountAmount) on \(product)"
+        let message = "Hello there, " + data["name"] + "! We'd like to give you a discount of " + data["discountAmount"] + " on " + data["product"]
         let alertView = UIAlertView(title: "Here's a Coupon!", message:message, delegate:context, cancelButtonTitle:"Cancel")
         
-		alertView.show()
+        alertView.show()
     }
 })
 {% endhighlight %}
@@ -155,8 +150,8 @@ Use the method **executeBlockWithId:data:context** to execute a Power Hook code 
 // Swift
 
 ARPowerHookManager.executeBlockWithId("discountPopup",
-								data: nil,
-							 context: self)
+                                data: nil,
+                             context: self)
 {% endhighlight %}
 
 <div class="note note-hint">
@@ -210,10 +205,10 @@ Artisan provides convenience methods to directly bind the attribute of an UIElem
 {% highlight objective-c %}
 // Objective-C
 
-\+ (void)bindPowerHookAsStringToUIElementProperty:(NSString *)powerHookId UIElement:(id)element attribute:(NSString *)attribute
-\+ (void)bindPowerHookAsStringToUIElementProperty:(NSString *)powerHookId stringWithFormat:(NSString *)stringWithFormat UIElement:(id)element attribute:(NSString *)attribute
-\+ (void)bindPowerHookAsFloatToUIElementProperty:(NSString *)powerHookId stringWithFormat:(NSString *)stringWithFormat UIElement:(id)element attribute:(NSString *)attribute
-\+ (void)bindPowerHookAsIntegerToUIElementProperty:(NSString *)powerHookId stringWithFormat:(NSString *)stringWithFormat UIElement:(id)element attribute:(NSString *)attribute
++ (void)bindPowerHookAsStringToUIElementProperty:(NSString *)powerHookId UIElement:(id)element attribute:(NSString *)attribute
++ (void)bindPowerHookAsStringToUIElementProperty:(NSString *)powerHookId stringWithFormat:(NSString *)stringWithFormat UIElement:(id)element attribute:(NSString *)attribute
++ (void)bindPowerHookAsFloatToUIElementProperty:(NSString *)powerHookId stringWithFormat:(NSString *)stringWithFormat UIElement:(id)element attribute:(NSString *)attribute
++ (void)bindPowerHookAsIntegerToUIElementProperty:(NSString *)powerHookId stringWithFormat:(NSString *)stringWithFormat UIElement:(id)element attribute:(NSString *)attribute
 {% endhighlight %}
 
 {% highlight swift %}
