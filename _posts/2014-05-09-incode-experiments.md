@@ -27,14 +27,14 @@ The method **registerExperiment:** takes a string representing the name of your 
 // Objective-C
 
 [ARExperimentManager registerExperiment:@"Cart Process"];
-[ARManager startWithAppId:@"xxx"]
+[ARManager startWithAppId:@"YOURAPPID"]
 {% endhighlight %}
 
 {% highlight swift %}
 // Swift
 
 ARExperimentManager.registerExperiment("Cart Process")
-ARManager.startWithAppId("xxx")
+ARManager.startWithAppId("YOURAPPID")
 {% endhighlight %}
 
 Next, register each variant by name with the experiment.
@@ -48,7 +48,7 @@ Next, register each variant by name with the experiment.
 [ARExperimentManager addVariant:@"Don't Skip Product Screen"
                   forExperiment:@"Cart Process"
                       isDefault:YES];
-[ARManager startWithAppId:@"xxx"]
+[ARManager startWithAppId:@"YOURAPPID"]
 {% endhighlight %}
 
 {% highlight swift %}
@@ -60,7 +60,7 @@ ARExperimentManager.addVariant("Skip Product Screen",
 ARExperimentManager.addVariant("Don't Skip Product Screen",
                 forExperiment: "Cart Process",
                     isDefault: true)
-ARManager.startWithAppId("xxx")
+ARManager.startWithAppId("YOURAPPID")
 {% endhighlight %}
 
 
