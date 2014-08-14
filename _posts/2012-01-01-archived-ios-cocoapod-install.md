@@ -78,7 +78,7 @@ To enable Artisan at this point requires the addition of two lines to your AppDe
 9\. Add the following line to the bottom of the **didFinishLaunchingWithOptions:** method of the AppDelegate.
 
 {% highlight objective-c %}
-[ARManager startWithAppId:@"YOURAPPID"];
+[ARManager startWithAppId:@"YOUR_APP_ID"];
 {% endhighlight %}
 
 <div class="note note-important">
