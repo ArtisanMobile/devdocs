@@ -59,7 +59,15 @@ The Artisan SDK adds the property artisanNameTag to all UIViewController classes
 If the artisanNameTag property is assigned the Artisan platform will use the artisanNameTag instead of the generated name when displaying the view controller while building an experiment and in analytic reports.
 
 {% highlight objective-c %}
+// Objective-C
+
 self.artisanNameTag = @"Login Screen";
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+self.artisanNameTag = "Login Screen"
 {% endhighlight %}
 
 <div id="nameview"></div>
@@ -70,10 +78,21 @@ Each UIView class contains the Apple property \'tag\' allowing you to uniquely i
 If the artisanNameTag property is assigned the Artisan platform will use the artisanNameTag instead of the generated name for the view as it appears in the Artisan Canvas and in analytic reports.
 
 {% highlight objective-c %}
+// Objective-C
+
 button = [UIButton buttonWithType:UIButtonTypeCustom];
 button.artisanNameTag = @"Add Button";
 
 [self.view addSubview:button];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+let button = UIButton.buttonWithType(MYSampleUIButtonType)
+button.artisanNameTag = "Add Button"
+
+self.view.addSubView(button)
 {% endhighlight %}
 
 <div class="note note-hint">
