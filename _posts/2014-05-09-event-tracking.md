@@ -127,16 +127,6 @@ This is an example of what this will look like in your app:
 }
 {% endhighlight %}
 
-{% highlight swift %}
-// Swift
-
-func productsRequest(request:SKProductsRequest, response:SKProductsResponse) {
-    ARStoreKitTracker(response.products)
-	
-    // The rest of your handling for the product request...
-}
-{% endhighlight %}
-
 This will automatically generate analytics events for purchases and whether they succeeded or failed. You can call this method more than once depending on how you’ve implemented Store Kit in your app. If you send a product a second time the new version of the product will be used for analytics reporting.
 
 ###Purchase Workflow API for non-StoreKit purchases
