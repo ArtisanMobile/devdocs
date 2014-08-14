@@ -30,14 +30,14 @@ Use the method **registerHookWithId:friendlyName:defaultValue:** to declare the 
 // Objective-C
 
 [ARPowerHookManager registerHookWithId:@"slogan" friendlyName:@"Slogan" defaultValue:@"It's So Good!"];
-[ARManager startWithAppId:@""];
+[ARManager startWithAppId:@"YOURAPPID"];
 {% endhighlight %}
 
 {% highlight swift %}
 // Swift
 
 ARPowerHookManager.registerHookWithId("slogan", friendlyName: "Slogan", defaultValue: "It's so good")
-ARPManager.startWithAppId("")
+ARPManager.startWithAppId("YOURAPPID")
 {% endhighlight %}
 
 <div class="note note-important">
