@@ -56,10 +56,10 @@ Next, register each variant by name with the experiment.
 
 ARExperimentManager.registerExperiment("Cart Process")
 ARExperimentManager.addVariant("Skip Product Screen",
-				forExperiment: "Cart Process")
+                forExperiment: "Cart Process")
 ARExperimentManager.addVariant("Don't Skip Product Screen",
-				forExperiment: "Cart Process",
-					isDefault: true)
+                forExperiment: "Cart Process",
+                    isDefault: true)
 ARManager.startWithAppId("xxx")
 {% endhighlight %}
 
@@ -106,8 +106,7 @@ if ([ARExperimentManager isCurrentVariant:@"Skip Product Screen" forExperiment:@
   MYSampleCartModel *cart = [MYSampleCartModel instance];
   [cart addProduct:productClicked];
   [self performSegueWithIdentifier:@"navigateToCart" sender:self];
-}
-else{
+} else {
   // Don't Skip Product Screen
   MYSampleProductDetailViewController *detailViewContoller = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDetail"];
   [self.navigationController pushViewController:detailViewContoller animated:YES];
@@ -119,13 +118,13 @@ else{
 
 if ARExperimentManager.isCurrentVariant("Skip Product Screen", forExperiment: "Cart Process") {
     // Sample code for skipping the product detail screen and going straight to the cart.
-	let cart = MYSampleCartModel()
-	cart.addProduct(productClicked)
-	self.performSegueWithIdentifier("navigateToCart", sender:self)
+    let cart = MYSampleCartModel()
+    cart.addProduct(productClicked)
+    self.performSegueWithIdentifier("navigateToCart", sender:self)
 } else {
-	// Don't Skip Product Screen
-	let detailViewController = self.storyboard.instantiateViewControllerWithIdentifier("MYSampleProductDetail") // this will be of type MYSampleProductDetailViewController
-	self.navigationController.pushViewController(detailViewController, animated:true)
+    // Don't Skip Product Screen
+    let detailViewController = self.storyboard.instantiateViewControllerWithIdentifier("MYSampleProductDetail") // this will be of type MYSampleProductDetailViewController
+    self.navigationController.pushViewController(detailViewController, animated:true)
 }
 {% endhighlight %}
 
@@ -148,7 +147,7 @@ To set the goal of an in-code experiment you call the **setTargetReachedForExper
 // Swift
 
 ARExperimentManager.setTargetReachedForExperiment("Cart Process",
-									descriptions: "Reached the Checkout Screen.")
+                                    descriptions: "Reached the Checkout Screen.")
 {% endhighlight %}
 
 <div class="note note-hint">
@@ -164,6 +163,8 @@ If you would like to retrieve the variation IDs for the experiment variations th
 This will give you all of the unique variation ids for all of the Artisan experiments that this user is participating in. This includes all kinds of experiments: in-code, power hook, and canvas experiments.
 
 {% highlight objective-c %}
+// Objective-C
+
 NSSet *variationIds = [ARExperimentManager getCurrentVariationIds];
 {% endhighlight %}
 
