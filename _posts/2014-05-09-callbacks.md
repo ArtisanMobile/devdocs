@@ -28,7 +28,7 @@ Here is an example where I wait for no more than 3 seconds for the first playlis
 {% highlight objective-c %}
 // Objective-C
 
-\- (void)viewDidLoad {
+- (void)viewDidLoad {
     waitingViewController = [[MYSampleWaitingViewController alloc] init];
 
     [self presentViewController:waitingViewController animated:NO completion:nil];
@@ -48,16 +48,16 @@ Here is an example where I wait for no more than 3 seconds for the first playlis
 override func viewDidLoad() {
     super.viewDidLoad()
 	
-	let waitingViewController = MYSampleWaitingViewController()
+    let waitingViewController = MYSampleWaitingViewController()
 	
-	self.presentViewController(waitingViewController, animated:false, completion:nil)
+    self.presentViewController(waitingViewController, animated:false, completion:nil)
 	
-	let _self: MYSampleHomeScreenViewController = self
+    let _self: MYSampleHomeScreenViewController = self
 	
-	ARManager.onFirstPlaylistDownloaded({
-			// This will be executed when the first playlist is donwloaded or after 3 seconds, whichever is first
-			_self.hideWaitingViewController()
-		}, withTimeout:3)
+    ARManager.onFirstPlaylistDownloaded({
+        // This will be executed when the first playlist is donwloaded or after 3 seconds, whichever is first
+        _self.hideWaitingViewController()
+    }, withTimeout:3)
 }
 {% endhighlight %}
 
@@ -99,12 +99,12 @@ For individual Power Hook values you can get a reference to an ARPowerHookVariab
 // Swift
 
 class MYSampleViewController {
-	let marketingMessageVariable: ARPowerHookVariable
+    let marketingMessageVariable: ARPowerHookVariable
 	
-	override func viewDidLoad() {
-		// Get a reference to the ARPowerHookVariable
-		marketingMessageVariable = ARPowerHookManager.getPowerHookVariable("marketingMessage")
-	}
+    override func viewDidLoad() {
+        // Get a reference to the ARPowerHookVariable
+        marketingMessageVariable = ARPowerHookManager.getPowerHookVariable("marketingMessage")
+    }
 }
 {% endhighlight %}
 
@@ -113,7 +113,7 @@ Here is an example of registering a callback with the "marketingMessage" Power H
 {% highlight objective-c %}
 // Objective-C
 
-\- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     [marketingMessageVariable onPowerHookChanged:^(BOOL previewMode) {
       if (previewMode) {
         // you might only want to change a value on the screen if you are in Artisan previewMode
@@ -129,14 +129,14 @@ Here is an example of registering a callback with the "marketingMessage" Power H
 // Swift
 
 override func viewWillAppear(animated:Bool) {
-	marketingMessageVariable.onPowerHookChanged({(previewMode:Bool) in
-		if previewMode {
-			// you might only want to change a value on the screen if you are in Artisan previewMode
-			println("In Preview Mode! Updated Marketing Message is: \\(marketingMessageVariable.value)")
-		} else {
-			println("Updated Marketing Message is: \\(marketingMessageVariable.value)")
-		}
-	})
+    marketingMessageVariable.onPowerHookChanged({(previewMode:Bool) in
+        if previewMode {
+            // you might only want to change a value on the screen if you are in Artisan previewMode
+            println("In Preview Mode! Updated Marketing Message is: \\(marketingMessageVariable.value)")
+        } else {
+            println("Updated Marketing Message is: \\(marketingMessageVariable.value)")
+        }
+    })
 }
 {% endhighlight %}
 
@@ -151,7 +151,7 @@ To avoid memory leaks, it is important that you also unregister your callback in
 {% highlight objective-c %}
 // Objective-C
 
--(void) viewWillDisappear:(BOOL)animated {
+- (void) viewWillDisappear:(BOOL)animated {
   [marketingMessageVariable unregisterPowerHookChanged];
 }
 {% endhighlight %}
@@ -160,7 +160,7 @@ To avoid memory leaks, it is important that you also unregister your callback in
 // Swift
 
 override func viewWillDisappear(animated:Bool) {
-	marketingMessageVariable.unregisterPowerHookChanged()
+    marketingMessageVariable.unregisterPowerHookChanged()
 }
 {% endhighlight %}
 
@@ -186,12 +186,12 @@ Just as with the individual power hook value callbacks you have the previewMode 
 // Swift
 
 ARPowerHookManager.onPowerHooksChanged({(previewMode:Bool) in
-	if previewMode {
-		// you might only want to change a value on the screen if you are in Artisan previewMode
-		println("In Preview Mode! Power Hooks Changed!")
-	} else {
-		println("Power Hooks Changed!")
-	}
+    if previewMode {
+        // you might only want to change a value on the screen if you are in Artisan previewMode
+        println("In Preview Mode! Power Hooks Changed!")
+    } else {
+        println("Power Hooks Changed!")
+    }
 })
 {% endhighlight %}
 
