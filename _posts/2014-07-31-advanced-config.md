@@ -34,7 +34,7 @@ NSDictionary *advancedConfig = @{@"override_enable_artisan_gesture" : @NO,
 // Swift
 
 let advancedConfig = ["override_enable_artisan_gesture":false,
-					  "never_enable_artisan_gesture":true]
+                      "never_enable_artisan_gesture":true]
 ARManager.startWithAppId("YOUR_APP_ID", options:advancedConfig)
 {% endhighlight %}
 
