@@ -24,21 +24,45 @@ An in-code experiment must be defined in the appDelegate before **ARManager star
 The method **registerExperiment:** takes a string representing the name of your experiment.
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARExperimentManager registerExperiment:@"Cart Process"];
-[ARManager startWithAppId:@"xxx"]
+[ARManager startWithAppId:@"YOUR_APP_ID"]
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+ARExperimentManager.registerExperiment("Cart Process")
+ARManager.startWithAppId("YOUR_APP_ID")
 {% endhighlight %}
 
 Next, register each variant by name with the experiment.
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARExperimentManager registerExperiment:@"Cart Process"];
 [ARExperimentManager addVariant:@"Skip Product Screen"
                   forExperiment:@"Cart Process"];
 [ARExperimentManager addVariant:@"Don't Skip Product Screen"
                   forExperiment:@"Cart Process"
                       isDefault:YES];
-[ARManager startWithAppId:@"xxx"]
+[ARManager startWithAppId:@"YOUR_APP_ID"]
 {% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+ARExperimentManager.registerExperiment("Cart Process")
+ARExperimentManager.addVariant("Skip Product Screen",
+                forExperiment: "Cart Process")
+ARExperimentManager.addVariant("Don't Skip Product Screen",
+                forExperiment: "Cart Process",
+                    isDefault: true)
+ARManager.startWithAppId("YOUR_APP_ID")
+{% endhighlight %}
+
 
 If no variation is explicitly marked as the default the first one registered for the experiment will be the default.
 
@@ -59,7 +83,15 @@ In order for a conversion to count for a given variation of your experiment ther
 Call the method **setExperimentViewedForExperiment:** to mark the experiment has been viewed for the current user session.  This call should be made at the location within the code where you want to mark the experiment as viewed.
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARExperimentManager setExperimentViewedForExperiment:@"Cart Process"];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+ARExperimentManager.setExperimentViewedForExperiment("Cart Process")
 {% endhighlight %}
 
 ### 2. Checking the Current Variant for the Experiment for this User
@@ -67,16 +99,32 @@ Call the method **setExperimentViewedForExperiment:** to mark the experiment has
 Use the method **isCurrentVariant:forExperiment:** to determine which experiment variation is active.
 
 {% highlight objective-c %}
+// Objective-C
+
 if ([ARExperimentManager isCurrentVariant:@"Skip Product Screen" forExperiment:@"Cart Process"]) {
   // Sample code for skipping the product detail screen and going straight to the cart.
   MYSampleCartModel *cart = [MYSampleCartModel instance];
   [cart addProduct:productClicked];
   [self performSegueWithIdentifier:@"navigateToCart" sender:self];
-}
-else{
+} else {
   // Don't Skip Product Screen
-  ARPProductDetailViewController *detailViewContoller = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDetail"];
+  MYSampleProductDetailViewController *detailViewContoller = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDetail"];
   [self.navigationController pushViewController:detailViewContoller animated:YES];
+}
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+if ARExperimentManager.isCurrentVariant("Skip Product Screen", forExperiment: "Cart Process") {
+    // Sample code for skipping the product detail screen and going straight to the cart.
+    let cart = MYSampleCartModel()
+    cart.addProduct(productClicked)
+    self.performSegueWithIdentifier("navigateToCart", sender:self)
+} else {
+    // Don't Skip Product Screen
+    let detailViewController = self.storyboard.instantiateViewControllerWithIdentifier("MYSampleProductDetail") // this will be of type MYSampleProductDetailViewController
+    self.navigationController.pushViewController(detailViewController, animated:true)
 }
 {% endhighlight %}
 
@@ -89,8 +137,17 @@ else{
 To set the goal of an in-code experiment you call the **setTargetReachedForExperiment:description:** method.  This call should be made at the location within the code where you want to mark the goal as achieved.
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARExperimentManager setTargetReachedForExperiment:@"Cart Process"
                                        description:@"Reached the Checkout Screen."];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+ARExperimentManager.setTargetReachedForExperiment("Cart Process",
+                                    descriptions: "Reached the Checkout Screen.")
 {% endhighlight %}
 
 <div class="note note-hint">
@@ -101,19 +158,27 @@ To set the goal of an in-code experiment you call the **setTargetReachedForExper
 
 ## Advanced Experiment Analytics
 
-If you would like to retrieve the variation IDs for the experiment variations that a user is experiencing for exporting to a third-party analytics tool you can use the **[ARExperimentManager getCurrentVariationIds]** method.
+If you would like to retrieve the variation IDs for the experiment variations that a user is experiencing for exporting to a third-party analytics tool you can use the **getCurrentVariationIds** method from **ARExperimentManager**.
 
 This will give you all of the unique variation ids for all of the Artisan experiments that this user is participating in. This includes all kinds of experiments: in-code, power hook, and canvas experiments.
 
 {% highlight objective-c %}
+// Objective-C
+
 NSSet *variationIds = [ARExperimentManager getCurrentVariationIds];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+let variationIds = ARExperimentManager.getCurrentVariationIds()
 {% endhighlight %}
 
 <div class="note note-hint">
 <p>NOTE: the variation IDs returned are NSStrings and they are the unique alphanumeric identifiers for the experiment variations. This is different from the variant names that you define in your app delegate for In-code Experiment Variations.</p>
 </div>
 
-For in-code experiments there is also **[ARExperimentManager getCurrentExperimentDetails]**, which will return a dictionary of **ARExperimentDetails** objects where the keys are the experiment in-code names.
+For in-code experiments there is also **getCurrentExperimentDetails** from **ARExperimentManager**, which will return a dictionary of **ARExperimentDetails** objects where the keys are the experiment in-code names.
 
 These experiment details can tell you what the current variation is for each experiment, but it won’t give you the unique ids, just the in-code names.
 
