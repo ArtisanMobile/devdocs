@@ -26,13 +26,29 @@ ARTrackingManager manages all in-code custom analytics tracking designed for use
 The **trackEvent:** and **trackEvent:parameters** methods allow you to track an event by name.
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARTrackingManager trackEvent:@"itemsInCartAreNowOutofStock"];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+ARTrackingManager.trackEvent("itemsInCartAreNowOutofStock")
 {% endhighlight %}
 
 with an optional dictionary of name/value pairs.
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARTrackingManager trackEvent:@"itemsInCartAreNowOutofStock" parameters:@{@"numberOfItems":@"2"}];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+ARTrackingManager.trackEvent("itemsInCartAreNowOutofStock", parameters:["numberOfItems":"2"])
 {% endhighlight %}
 
 <div id="nameviewcontroller"></div>
@@ -43,7 +59,15 @@ The Artisan SDK adds the property artisanNameTag to all UIViewController classes
 If the artisanNameTag property is assigned the Artisan platform will use the artisanNameTag instead of the generated name when displaying the view controller while building an experiment and in analytic reports.
 
 {% highlight objective-c %}
+// Objective-C
+
 self.artisanNameTag = @"Login Screen";
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+self.artisanNameTag = "Login Screen"
 {% endhighlight %}
 
 <div id="nameview"></div>
@@ -54,10 +78,21 @@ Each UIView class contains the Apple property \'tag\' allowing you to uniquely i
 If the artisanNameTag property is assigned the Artisan platform will use the artisanNameTag instead of the generated name for the view as it appears in the Artisan Canvas and in analytic reports.
 
 {% highlight objective-c %}
+// Objective-C
+
 button = [UIButton buttonWithType:UIButtonTypeCustom];
 button.artisanNameTag = @"Add Button";
 
 [self.view addSubview:button];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+let button = UIButton.buttonWithType(UIButtonTypeCustom)
+button.artisanNameTag = "Add Button"
+
+self.view.addSubView(button)
 {% endhighlight %}
 
 <div class="note note-hint">
@@ -82,6 +117,8 @@ This should be called in the **ProductRequest:didReceiveResponse:** method that 
 This is an example of what this will look like in your app:
 
 {% highlight objective-c %}
+// Objective-C
+
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
 {
   [ARStoreKitTracker initWithSKProducts:response.products];
@@ -113,6 +150,8 @@ You can include an optional priceLocale to track different currencies and an add
 The optional product info can be any key/value pairs of information about this product. This data will be attached to the analytics event in Artisan. All keys and values must be NSString objects, or they will be ignored.
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARPurchaseWorkflowManager productViewedWithProductIdentifier:@"ABC0000001"
                                                       atPrice:[NSNumber numberWithFloat:24.99f]
                                               withPriceLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
@@ -122,11 +161,25 @@ The optional product info can be any key/value pairs of information about this p
                                               withProductInfo:@{@"style":@"organic cotton",@"size":@"medium"}];
 {% endhighlight %}
 
+{% highlight swift %}
+// Swift 
+
+ARPurchaseWorkflowManager.productViewedWithProductIdentifier("ABC0000001",
+                                                    atPrice: 24.99,
+                                            withPriceLocale: NSLocale(localeIdentifier: "en_US"),
+                                             andDescription: "Artisan T-Shirt made in Old City, Philadelphia",
+                                                andCategory: "T-Shirts",
+                                                 andQuanity: 1,
+                                            withProductInfo: ["style":"organic cotton", "sizez":"medium"])
+{% endhighlight %}
+
 #### Adding and Removing Products
 
 When a product is added to your cart model you can track this event with Artisan by calling **ARPurchaseWorkflowManager addItemToCartWithProductIdentifier...**
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARPurchaseWorkflowManager addItemToCartWithProductIdentifier:@"ABC0000001"
                                                       atPrice:[NSNumber numberWithFloat:24.99f]
                                               withPriceLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
@@ -136,9 +189,23 @@ When a product is added to your cart model you can track this event with Artisan
                                               withProductInfo:@{ @"style":@"organic cotton", @"size":@"medium" }];
 {% endhighlight %}
 
+{% highlight swift %}
+// Swift
+
+ARPurchaseWorkflowManager.addItemToCartWithProductIdentifier("ABC0000001",
+                                                    atPrice: 24.99,
+                                            withPriceLocale: NSLocale(localeIdentifier: "en_US"),
+                                             andDescription: "Artisan T-Shirt made in Old City, Philadelphia",
+                                                andCategory: "T-Shirts",
+                                                 andQuanity: 1,
+                                            withProductInfo: ["style":"organic cotton", "size":"medium"])
+{% endhighlight %}
+
 When adding products to the cart, the locale, category and additional product info are optional. The identifier, price, description and quantity are used to uniquely identify the product in the Artisan model for the cart. This makes it possible to also remove items from the cart:
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARPurchaseWorkflowManager removeItemFromCartWithProductIdentifier:@"ABC0000001"
                                                            atPrice:[NSNumber numberWithFloat:24.99f]
                                                     andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
@@ -146,14 +213,34 @@ When adding products to the cart, the locale, category and additional product in
                                                         andQuantity:[NSNumber numberWithInt:1]];
 {% endhighlight %}
 
+{% highlight swift %}
+// Swift
+
+ARPurchaseWorkflowManager.removeItemFromCartWithProductIdentifier("ABC0000001",
+                                                         atPrice: 24.99,
+                                                  andDescription: "Artisan T-Shirt made in Old City, Philadelphia",
+                                                     andCategory: "T-Shirts",
+                                                      andQuanity: 1)
+{% endhighlight %}
+
 It will remove the first item in the cart that matches the productIdentifier, price, description and quantity.
 
-At any time you can check on the Artisan Purchase Workflow cart model to see if we still have items in the cart with **[ARPurchaseWorkflowManager cartIsNotEmpty]** which will return true if there are items in the cart. You can also empty the cart for this Purchase Workflow with **[ARPurchaseWorkflowManager emptyCart]**.
+At any time you can check on the Artisan Purchase Workflow cart model to see if we still have items in the cart with **cartIsNotEmpty** from **ARPurchaseWorkflowManager** which will return true if there are items in the cart. You can also empty the cart for this Purchase Workflow with  **emptyCart** from **ARPurchaseWorkflowManager**.
 
 {% highlight objective-c %}
+// Objective-C
+
 if ([ARPurchaseWorkflowManager cartIsNotEmpty])
 {
     [ARPurchaseWorkflowManager emptyCart];
+}
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+if ARPurchaseWorkflowManager.cartIsNotEmpty() {
+    ARPurchaseWorkflowManager.emptyCart()
 }
 {% endhighlight %}
 
@@ -161,9 +248,11 @@ if ([ARPurchaseWorkflowManager cartIsNotEmpty])
 
 After items have been added to the cart your might have one of several outcomes: the cart could be checked out or abandoned or the payment might fail or be cancelled. Artisan provides methods for each of these.
 
-For cart abandonment, or checkout failed or cancelled the items will remain in the cart so that another purchase can be completed. If you want to empty the cart you should use **[ARPurchaseWorkflowManager emptyCart]**.
+For cart abandonment, or checkout failed or cancelled the items will remain in the cart so that another purchase can be completed. If you want to empty the cart you should use **emptyCart** from **ARPurchaseWorkflowManager**.
 
 {% highlight objective-c %}
+// Objective-C
+
 // cart abandoned
 [ARPurchaseWorkflowManager cartWasAbandoned];
 
@@ -174,11 +263,33 @@ For cart abandonment, or checkout failed or cancelled the items will remain in t
 [ARPurchaseWorkflowManager cartCheckoutFailed];
 {% endhighlight %}
 
+{% highlight swift %}
+// Swift
+
+// cart abandoned
+ARPurchaseWorkflowManager.cartWasAbandoned()
+
+// cart checkout cancelled
+ARPurchaseWorkflowManager.cartCheckoutWasCancelled()
+
+// cart checkout failed
+ARPurchaseWorkflowManager.cartCheckoutFailed()
+{% endhighlight %}
+
 In the event of a successful checkout record this outcome with **cartCheckoutSucceededWithShipping:withTax:** and optionally provide amounts for shipping and tax to be added to the order total that will be recorded with the analytics event for this purchase. The amounts for shipping and tax are assumed to be in the same priceLocale as the items in the cart.
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARPurchaseWorkflowManager cartCheckoutSucceededWithShipping:[NSNumber numberWithFloat:2.25f]
                                                      withTax:[NSNumber numberWithFloat:3.00f]];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+ARPurchaseWorkflowManager.cartCheckoutSucceededWithShipping(2.25,
+                                                   withTax: 3.00)
 {% endhighlight %}
 
 We will record an analytics event including information on all of the products that were purchased. We will automatically calculate the cart total and send that with the Artisan analytics event. It is assumed that all items in the cart will have the same price locale; we will use the price locale of the first item.
@@ -208,6 +319,8 @@ The ARSocialSharingManager manages all analytics tracking related to social shar
 Here's how you can record a social sharing event
 
 {% highlight objective-c %}
+// Objective-C
+
 // record successful share
 [ARSocialSharingManager shareOnServiceType:@"Flickr"
                              wasSuccessful:YES];
@@ -217,10 +330,32 @@ Here's how you can record a social sharing event
                              wasSuccessful:NO];
 {% endhighlight %}
 
+{% highlight swift %}
+// Swift
+
+// record successful share
+ARSocialSharingManager.shareOnServiceType("Flickr",
+                           wasSuccessful: true)
+
+// record attempted share that failed
+ARSocialSharingManager.shareOnServiceType("Flickr",
+                           wasSuccessful: false)
+{% endhighlight %}
+
 Optionally, you can include metadata, a dictionary of key value pairs containing any additional information that you would like to record for this social event. All keys and values must be NSString objects, or they will be ignored.
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARSocialSharingManager shareOnServiceType:@"Flickr"
                              wasSuccessful:YES
                               withMetadata:@{@"post-description":postDescription}];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+ARSocialSharingManager.shareOnServiceType("Flickr",
+                           wasSuccessful: false,
+                            withMetadata: ["post-description":postDescription])
 {% endhighlight %}

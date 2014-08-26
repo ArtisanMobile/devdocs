@@ -23,11 +23,23 @@ Artisan accepts user profile data for advanced segmentation, targeting and perso
 ARProfileManager is a singleton that is automatically initialized when your app starts. Convenience methods existing for registering numbers, strings, dates, and locations. The value can optionally be set during the registration of the User Profile Variable.
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARProfileManager registerNumber:@"currentCartTotal" withValue:[NSNumber numberWithDouble:0]];
 [ARProfileManager registerString:@"memberType" withValue:@"unknown"];
 
 [ARProfileManager registerDateTime:@"lastPurchase"];
 [ARProfileManager registerLocation:@"lastKnownLocation"];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+ARProfileManager.registerNumber("currentCartTotal", withValue:NSNumber.numberWithDouble(0))
+ARProfileManager.registerString("memberType", withValue:"unknown")
+
+ARProfileManager.registerDateTime("lastPurchase")
+ARProfileManager.registerLocation("lastKnownLocation")
 {% endhighlight %}
 
 <div class="note note-hint">
@@ -40,11 +52,23 @@ ARProfileManager is a singleton that is automatically initialized when your app 
 The updating of the User Profile Variable can be accomplished by calling the matching setter for the User Variable Variable data type.
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARProfileManager setNumberValue:[NSNumber numberWithDouble:150.00] forVariable:@"currentCartTotal"];
 [ARProfileManager setStringValue:@"platinum" forVariable:@"memberType"];
 
 [ARProfileManager setDateTimeValue:[NSDate new] forVariable:@"lastPurchase"];
 [ARProfileManager setLocationValue:CLLocationCoordinate2DMake(39.949934, -75.145012) forVariable:@"lastKnownLocation"];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+ARProfileManager.setNumberValue(NSNumber.numberWithDouble(150.00), forVariable:"currentCartTotal")
+ARProfileManager.setStringValue("platinum", forVariable:"memberType")
+
+ARProfileManager.setDateTimeValue(NSDate(), forVariable:"lastPurchase")
+ARProfileManager.setLocationValue(CLLocationCoordinate2DMake(39.949934, -75.145012), forVariable:"lastKnownLocation")
 {% endhighlight %}
 
 <div id="clear"></div>
@@ -53,7 +77,15 @@ The updating of the User Profile Variable can be accomplished by calling the mat
 The **clearProfile:** method will clear out the values associated with the registered User Profile Variables.
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARProfileManager clearProfile];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+ARProfileManager.clearProfile()
 {% endhighlight %}
 
 <div id="sharedid"></div>
@@ -63,7 +95,15 @@ The **sharedUserId** User Profile Variable is used to uniquely indentify an app 
 
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARProfileManager setSharedUserId:@"624597b0e106e732a3204001"];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+ARProfileManager.setSharedUserId("624597b0e106e732a3204001")
 {% endhighlight %}
 
 <div class="note note-important">
