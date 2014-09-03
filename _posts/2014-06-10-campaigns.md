@@ -40,6 +40,12 @@ To compose your push notification start typing in the **Message** text area. As 
 
 <img src="/images/screens/campaign-compose-message-900x320.png" height="320" width="900" alt="Composing a push notification in Artisan." />
 
+<div id="push-notification-size"></div>
+
+#### Push Notification Size (iOS Only)
+
+Apple's Push Notification Service requires the size of their payload to be under **256 bytes**. This size requirement is enforced when composing your push notification and can be seen just below the preview area. You can learn more from Apple's documentation <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1" target="_blank">here</a>.
+
 ### On Open Behavior
 
 The **On Open Bevahior** dictates what should happen when a user opens the message from lock screen or notification center in iOS or Android. Artisan allows you to choose between **opening the app**, setting a **deep link**, or configuring a **power hook**. By default, we'll simply open the app for your user, but you can choose what you would like to happen. Both deep links and power hooks are configured by your development team.
