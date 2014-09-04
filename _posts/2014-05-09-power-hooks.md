@@ -45,7 +45,7 @@ ARPManager.startWithAppId("YOUR_APP_ID")
 </div>
 
 <div class="note note-important">
-  <p> Power Hooks used for push notifications are limited in size to 256 bytes due to <a href='https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1'>limits imposed by the Apple Push Notification Service</a>. If your Power Hook exceeds that size, you will receive an error when attempting to send the associated push notification. Keeping your keys and values short will help mitigate this limitation. </p>
+  <p> Power Hooks used for push notifications are sent as part of the push notification payload. That payload's size must not exceed 256 bytes due to <a href='https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1'>limits imposed by the Apple Push Notification Service</a>. If your Power Hook exceeds that size, you will receive an error when attempting to send the associated push notification. Keeping your keys and values short will help mitigate this limitation. </p>
 </div>
 
 

@@ -58,7 +58,7 @@ Using a Power Hook as your on open behavior gives you the ultimate in personaliz
 
 <div class="note note-hint">
   <p>Power Hooks must be added to your app before you can configure them in a campaign. 
-  Power Hooks used for push notifications are limited in size to 256 bytes due to <a href='https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1'>limits imposed by the Apple Push Notification Service</a>.
+  Power Hooks used for push notifications get sent as part of the push notification payload. That paylod's size must not exceed 256 bytes due to <a href='https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1'>limits imposed by the Apple Push Notification Service</a>.
   Learn more about creating power hooks for <a href="/dev/ios/power-hooks/">iOS</a> and <a href="/dev/android/power-hooks/">Android</a>.</p>
 </div>
 
