@@ -28,6 +28,7 @@ This document provides an overview of all of the API calls available within the 
       <li><a href="#setlocationvalue">setLocationValue(variable, latitude, longitude)</a></li>
       <li><a href="#setdatetimevalue">setDateTimeValue(variable, value)</a></li>
       <li><a href="#clearProfile">clearProfile()</a></li>
+      <li><a href="#clearVariableValue">clearVariableValue()</a></li>
     </ul>
   </li>
   <li><a href="#experimentapi">Experiment API</a>
@@ -228,6 +229,22 @@ This can be called from anywhere in your app.
 
 {% highlight javascript %}
 ArtisanSDK.clearProfile();
+{% endhighlight %}
+
+<div id="clearVariableValue"></div>
+
+### clearVariableValue()
+
+Unset the value for a user profile variable.
+
+Use this method to clear out the value for any custom user profile variable. This is equivalent to setting the value to nil using one of the set**Value methods.
+
+To clear one of the pre-defined Artisan user profile variables, simply set the value to null.
+
+This can be called from anywhere in your app.
+
+{% highlight javascript %}
+ArtisanSDK.clearVariableValue("Favorite Pet");
 {% endhighlight %}
 
 <div id="experimentapi"></div>
