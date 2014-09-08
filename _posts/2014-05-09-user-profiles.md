@@ -75,12 +75,16 @@ ARProfileManager.setLocationValue(CLLocationCoordinate2DMake(39.949934, -75.1450
 <div id="clear"></div>
 
 ##Clear Profile Variables
+
 The **clearProfile:** method will clear out the values associated with the registered User Profile Variables.
+
+The **clearVariable:variableName** method will clear out the value for a single profile variable.
 
 {% highlight objective-c %}
 // Objective-C
 
 [ARProfileManager clearProfile];
+[ARProfileManager clearVariable:@"memberType"];
 {% endhighlight %}
 
 {% highlight swift %}
@@ -119,6 +123,8 @@ There are several profile dimensions that we have pre-defined for you. By defaul
 Specify the gender and age of the current user:
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARProfileManager setGender:ARGenderFemale];
 [ARProfileManager setUserAge:@29];
 {% endhighlight %}
@@ -126,6 +132,8 @@ Specify the gender and age of the current user:
 Set the name of the user:
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARProfileManager setUserPrefix:@"Dr."];
 [ARProfileManager setUserFirstName:@"Arty"];
 [ARProfileManager setUserMiddleName:@"Sans"];
@@ -136,6 +144,8 @@ Set the name of the user:
 You can record information about the source of this user and when they first started using your app or service:
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARProfileManager setUserReferralSource:@"Bob"];
 [ARProfileManager setFirstSeen:[NSDate new]];
 [ARProfileManager setSignUpDate:[NSDate new]];
@@ -146,6 +156,8 @@ You can record information about the source of this user and when they first sta
 You can record information about the users physical and virtual addresses:
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARProfileManager setUserStreetAddress:@"234 Market Street"];
 [ARProfileManager setUserStreetAddress2:@"4th Floor"];
 [ARProfileManager setUserCompanyName:@"Artisan Mobile Inc."];
@@ -168,6 +180,8 @@ You can record information about the users physical and virtual addresses:
 You can record contact information and preferences that the user has set in your app or service related to those contact paths:
 
 {% highlight objective-c %}
+// Objective-C
+
 [ARProfileManager setOptedOutEmail:NO];
 [ARProfileManager setOptedOutPush:YES];
 [ARProfileManager setOptedOutText:YES];
