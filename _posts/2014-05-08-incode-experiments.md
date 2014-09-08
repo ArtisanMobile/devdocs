@@ -12,6 +12,7 @@ In-code Experiments allow you to build tests around business logic inside your a
 <ul>
   <li><a href="#register">Register In-code Experiments</a></li>
   <li><a href="#usage">Using In-code Experiments in your App</a></li>
+  <li><a href="#advanced">Advanced Experiment Analytics</a></li>
 </ul>
 
 <div id="register"></div>
@@ -95,3 +96,25 @@ ArtisanExperimentManager.setTargetReachedForExperiment("Buy Button Test");
 <div class="note note-hint">
   <p>It is possible to override this goal when you are setting up your experiment in Artisan Tools. From the experiment configuration screen you can use this goal or choose an interactive or session-length goal instead.</p>
 </div>
+
+<div id="advanced"></div>
+
+## Advanced Experiment Analytics
+
+If you would like to retrieve the variation IDs for the experiment variations that a user is experiencing for exporting to a third-party analytics tool you can use the **getCurrentVariationIds** method from **ArtisanExperimentManager**.
+
+This will give you all of the unique variation ids for all of the Artisan experiments that this user is participating in. This includes all kinds of experiments: in-code, power hook, and canvas experiments.
+
+{% highlight java %}
+Set<String> variationIds = ArtisanExperimentManager.getCurrentVariationIds();
+{% endhighlight %}
+
+<div class="note note-hint">
+<p>NOTE: the variation ids returned are Strings and they are the unique alphanumeric identifiers for the experiment variations. This is different from the variant names that you define in your Application class for In-code Experiment Variations.</p>
+</div>
+
+For in-code experiments there is also **getCurrentExperimentDetails** from **ArtisanExperimentManager**, which will return a Map of **ExperimentDetails** objects where the keys are the experiment in-code names.
+
+These experiment details can tell you what the current variation is for each experiment, but it won’t give you the unique ids, just the in-code names.
+
+The in-code names for the experiment and variation are the string values that you set when you registered these experiments in your Application class.
