@@ -15,7 +15,7 @@ Artisan accepts user profile data for advanced segmentation, targeting and perso
   <li><a href="#update">Update Profile Variable</a></li>
   <li><a href="#clear">Clear Profile Variables</a></li>
   <li><a href="#sharedid">Shared User ID</a></li>
-  <li><a href="#dimensions">Other Artisan Profile Dimensions</a></li>
+  <li><a href="#dimensions">Other Artisan Profile Variables</a></li>
 </ul>
 
 <div id="register"></div>
@@ -86,7 +86,7 @@ ArtisanProfileManager.setSharedUserId("abcdef123456789");
 
 <div id="dimensions"></div>
 
-##Other Artisan Profile Dimensions
+##Other Artisan Profile Variables
 
 There are several profile dimensions that we have pre-defined for you. By default the values will be empty, but you can use the provided API calls to set the value. This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes.
 

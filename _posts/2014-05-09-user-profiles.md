@@ -14,6 +14,7 @@ Artisan accepts user profile data for advanced segmentation, targeting and perso
   <li><a href="#update">Update Profile Variable</a></li>
   <li><a href="#clear">Clear Profile Variables</a></li>
   <li><a href="#sharedid">Shared User ID</a></li>
+  <li><a href="#dimensions">Other Artisan Profile Variables</a></li>
 </ul>
 
 <div id="register"></div>
@@ -93,7 +94,6 @@ ARProfileManager.clearProfile()
 ##Shared User ID
 The **sharedUserId** User Profile Variable is used to uniquely indentify an app user and will be associated with all user events.
 
-
 {% highlight objective-c %}
 // Objective-C
 
@@ -109,3 +109,66 @@ ARProfileManager.setSharedUserId("624597b0e106e732a3204001")
 <div class="note note-important">
   <p>Important: The sharedUserId should NOT be any of the following: email address, phone number, or social security number.  The sharedUserId should uniquely identify the user in your system.</p>
 </div>
+
+<div id="dimensions"></div>
+
+##Other Artisan Profile Variables
+
+There are several profile dimensions that we have pre-defined for you. By default the values will be empty, but you can use the provided API calls to set the value. This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes.
+
+Specify the gender and age of the current user:
+
+{% highlight objective-c %}
+[ARProfileManager setGender:ARGenderFemale];
+[ARProfileManager setUserAge:@29];
+{% endhighlight %}
+
+Set the name of the user:
+
+{% highlight objective-c %}
+[ARProfileManager setUserPrefix:@"Dr."];
+[ARProfileManager setUserFirstName:@"Arty"];
+[ARProfileManager setUserMiddleName:@"Sans"];
+[ARProfileManager setUserLastName:@"Elibom"];
+[ARProfileManager setUserSuffix:@"III"];
+{% endhighlight %}
+
+You can record information about the source of this user and when they first started using your app or service:
+
+{% highlight objective-c %}
+[ARProfileManager setUserReferralSource:@"Bob"];
+[ARProfileManager setFirstSeen:[NSDate new]];
+[ARProfileManager setSignUpDate:[NSDate new]];
+{% endhighlight %}
+
+### Physical and Virtual Addresses
+
+You can record information about the users physical and virtual addresses:
+
+{% highlight objective-c %}
+[ARProfileManager setUserStreetAddress:@"234 Market Street"];
+[ARProfileManager setUserStreetAddress2:@"4th Floor"];
+[ARProfileManager setUserCompanyName:@"Artisan Mobile Inc."];
+[ARProfileManager setUserCity:@"Philadelphia"];
+[ARProfileManager setUserStateProvince:@"PA"];
+[ARProfileManager setUserPostalCode:@"19106"];
+[ARProfileManager setUserCountry:@"USA"];
+
+[ARProfileManager setUserAvatarUrl:@"http://useartisan.com/wp-content/themes/artisan-mf/images/role_developer.svg"];
+[ARProfileManager setUserFacebook:@"Arty Sans"];
+[ARProfileManager setUserTwitterName:@"ArtisanMobile"];
+[ARProfileManager setUserUrl:@"http://useartisan.com"];
+
+[ARProfileManager setUserPhoneNumber:@"555-555-1234"];
+[ARProfileManager setUserEmail:@"sales@useartisan.com"];
+{% endhighlight %}
+
+###User Preferences
+
+You can record contact information and preferences that the user has set in your app or service related to those contact paths:
+
+{% highlight objective-c %}
+[ARProfileManager setOptedOutEmail:NO];
+[ARProfileManager setOptedOutPush:YES];
+[ARProfileManager setOptedOutText:YES];
+{% endhighlight %}
