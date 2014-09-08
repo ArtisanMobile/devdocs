@@ -67,8 +67,11 @@ ArtisanProfileManager.setNumberValue("totalOrderCount", 9);
 
 The **clearProfile** method will clear out the values associated with the registered User Profile Variables.
 
+The **clearVariableValue** method will clear out the value for a single profile variable.
+
 {% highlight java %}
 ArtisanProfileManager.clearProfile();
+ArtisanProfileManager.clearVariableValue("memberType");
 {% endhighlight %}
 
 <div id="sharedid"></div>
