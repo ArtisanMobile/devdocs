@@ -5,7 +5,7 @@ author: "Artisan"
 category: release-notes
 description: "What's new in Artisan's Mobile Experience Management platform."
 ---
-#2.1.5 Release Notes
+#Android SDK 2.1.5 Release Notes
 
 Released {{ page.date | date: "%B %-d, %Y" }}
 
