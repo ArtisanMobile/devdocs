@@ -165,14 +165,12 @@ This will give you all of the experiments including experiment name, experiment 
 {% highlight objective-c %}
 // Objective-C
 NSArray *experiments = [ARExperimentManager getCurrentExperimentDetails];
-}];
 {% endhighlight %}
 
 We recommend that you call this method anytime after the first playlist is downloaded so that you have the most up-to-date information about what experiments the user is participating in. Here's an example of using this method in a callback for onFirstPlaylistDownloaded, which would be the way to guarantee that the first playlist has been downloaded:
 
 {% highlight objective-c %}
 // Objective-C
-
 [ARManager onFirstPlaylistDownloaded:^{
     NSArray *experiments = [ARExperimentManager getCurrentExperimentDetails];
     // ... use the details as needed
