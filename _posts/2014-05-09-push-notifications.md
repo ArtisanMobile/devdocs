@@ -59,15 +59,27 @@ Within your iOS application, you will need to confirm that your app has register
 {% highlight objective-c %}
 // Objective-C
 
-// Register for push
+// Register for push in iOS 7
 [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+
+// Register for push in iOS 8
+[[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+[[UIApplication sharedApplication] registerForRemoteNotifications];
+
 {% endhighlight %}
 
 {% highlight swift %}
 // Swift
 
-// Register for push
+// Register for push in iOS 7
 UIApplication.sharedApplication().registerForRemoteNotificationTypes(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)
+
+// Register for push in iOS 8
+let settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Sound | UIUserNotificationType.Badge, categories: nil)
+UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+UIApplication.sharedApplication().registerForRemoteNotifications()
+
+
 {% endhighlight %}
 
 You will also want to confirm that 'Remote notifications' are enabled within the 'Capabilities' section of the build target for your app.  In XCode, access the control panel for your build target, navigate to the 'Capabilities' tab, and ensure that 'Background Modes' is set to 'ON' and 'Remote notifications' is checked.
