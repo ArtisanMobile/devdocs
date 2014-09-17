@@ -158,9 +158,26 @@ ARExperimentManager.setTargetReachedForExperiment("Cart Process",
 
 ## Advanced Experiment Analytics
 
-If you would like to retrieve the variation IDs for the experiment variations that a user is experiencing for exporting to a third-party analytics tool you can use the **getCurrentVariationIds** method from **ARExperimentManager**.
+If you would like to retrieve the variation IDs for the experiment variations that a user is experiencing for exporting to a third-party analytics tool you can use the **getCurrentExperimentDetails** method from **ARExperimentManager**.
 
-This will give you all of the unique variation ids for all of the Artisan experiments that this user is participating in. This includes all kinds of experiments: in-code, power hook, and canvas experiments.
+This will give you all of the experiments including experiment name, experiment id, variation name and variation id for all of the Artisan experiments that this user is participating in. This includes all kinds of experiments: in-code, power hook, and canvas experiments.
+
+{% highlight objective-c %}
+// Objective-C
+NSArray *experiments = [ARExperimentManager getCurrentExperimentDetails];
+{% endhighlight %}
+
+We recommend that you call this method anytime after the first playlist is downloaded so that you have the most up-to-date information about what experiments the user is participating in. Here's an example of using this method in a callback for onFirstPlaylistDownloaded, which would be the way to guarantee that the first playlist has been downloaded:
+
+{% highlight objective-c %}
+// Objective-C
+[ARManager onFirstPlaylistDownloaded:^{
+    NSArray *experiments = [ARExperimentManager getCurrentExperimentDetails];
+    // ... use the details as needed
+}];
+{% endhighlight %}
+
+There is also **getCurrentVariationIds** from **ARExperimentManager**, which will return just the variation ids for all experiments.
 
 {% highlight objective-c %}
 // Objective-C
@@ -177,9 +194,3 @@ let variationIds = ARExperimentManager.getCurrentVariationIds()
 <div class="note note-hint">
 <p>NOTE: the variation IDs returned are NSStrings and they are the unique alphanumeric identifiers for the experiment variations. This is different from the variant names that you define in your app delegate for In-code Experiment Variations.</p>
 </div>
-
-For in-code experiments there is also **getCurrentExperimentDetails** from **ARExperimentManager**, which will return a dictionary of **ARExperimentDetails** objects where the keys are the experiment in-code names.
-
-These experiment details can tell you what the current variation is for each experiment, but it won’t give you the unique ids, just the in-code names.
-
-The in-code names for the experiment and variation are the string values that you set when you registered these experiments in your AppDelegate.
