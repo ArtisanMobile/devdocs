@@ -47,40 +47,56 @@ Back in Artisan Tools on the settings page for your app you can upload your APN 
 <img src="/images/screens/ios-push-app-settings-500x500.png" />
 
 <div class="note note-important">
-  <p>NOTE: You will only be able to upload one APN certificate per Artisan application. You should use the development environment APN certificate for your development provisioning profile built applications and the production environment APN certificate for your App Store or Ad Hoc provisioning profile built applications. We'll determine which type of certificate you've uploaded and inform you in your app settings if you're unsure which you have.</p>
+  <p><strong>NOTE:</strong> You will only be able to upload one APN certificate per Artisan application. You should use the development environment APN certificate for your development provisioning profile built applications and the production environment APN certificate for your App Store or Ad Hoc provisioning profile built applications. We'll determine which type of certificate you've uploaded and inform you in your app settings if you're unsure which you have.</p>
 </div>
 
 <div id="app-settings"></div>
 
 ## 4. Register for Push Notifications in your SDK
 
-Within your iOS application, you will need to confirm that your app has registered with Apple to receive push notifications.  That means that you should have the following code in the **didFinishLaunchingWithOptions:** method in Objective-C, **application** method in Swift, of your main app delegate:
+Within your iOS application, you will need to confirm that your app has registered with Apple to receive push notifications.  
+
+You should therefore have the following code in either the `didFinishLaunchingWithOptions:` method (for Objective-C) or the `application` method (for Swift) of your main app delegate:
 
 {% highlight objective-c %}
 // Objective-C
 
-// Register for push in iOS 7
-[[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
-
-// Register for push in iOS 8
-[[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
-[[UIApplication sharedApplication] registerForRemoteNotifications];
+// Check to see if this is an iOS 8 device.
+if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+{
+  // Register for push in iOS 8.
+  [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+  [[UIApplication sharedApplication] registerForRemoteNotifications];
+}
+else
+{
+  // Register for push in iOS 7 and under.
+  [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
+}
 
 {% endhighlight %}
 
 {% highlight swift %}
 // Swift
 
-// Register for push in iOS 7
-UIApplication.sharedApplication().registerForRemoteNotificationTypes(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)
+// Check to see if this is an iOS 8 device.
+if UIDevice.currentDevice().systemVersion().floatValue >= 8.0 {
 
-// Register for push in iOS 8
-let settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Sound | UIUserNotificationType.Badge, categories: nil)
-UIApplication.sharedApplication().registerUserNotificationSettings(settings)
-UIApplication.sharedApplication().registerForRemoteNotifications()
+  // Register for push in iOS 8
+  let settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Sound | UIUserNotificationType.Badge, categories: nil)
+  UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+  UIApplication.sharedApplication().registerForRemoteNotifications()
+} else {
 
+  // Register for push in iOS 7
+  UIApplication.sharedApplication().registerForRemoteNotificationTypes(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert) 
+}
 
 {% endhighlight %}
+
+<div class="note note-hint">
+    <strong>NOTE:</strong> These code snipppets assume that your app will support push notifications on both iOS 7 and iOS 8 devices.  If you are only supporting one or the other, remove the applicable statements as noted in the comments.
+</div>
 
 You will also want to confirm that 'Remote notifications' are enabled within the 'Capabilities' section of the build target for your app.  In XCode, access the control panel for your build target, navigate to the 'Capabilities' tab, and ensure that 'Background Modes' is set to 'ON' and 'Remote notifications' is checked.
 
@@ -89,7 +105,7 @@ You will also want to confirm that 'Remote notifications' are enabled within the
 See <a href="http://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/IPhoneOSClientImp.html#//apple_ref/doc/uid/TP40008194-CH103-SW2">Apple's iOS Developer documentation</a> for additional information on how to register your app to receive push notifications.
 
 <div class="note note-important">
-  <p>NOTE: If you are using Artisan in conjunction with another Push Notification SDK (such as Parse or Urban Airship), and are already registering for push notifications through their APIs, you will not need to re-register via the registerForRemoteNotificationTypes call to use Artisan Push Notifications.</p>
+  <p><strong>NOTE:</strong> If you are using Artisan in conjunction with another Push Notification SDK (such as Parse or Urban Airship), and are already registering for push notifications through their APIs, you will not need to re-register via the registerForRemoteNotificationTypes call to use Artisan Push Notifications.</p>
 </div>
 
 <div id="test"></div>
