@@ -113,8 +113,9 @@ for (ExperimentDetails experiment : experimentDetails) {
   String experimentName = experiment.getExperimentName();
   String currentVariationId = experiment.getCurrentVariationId();
   String currentVariationName = experiment.getCurrentVariationName();
+
   Log.d("Just Testing", "Experiment: " + experimentName + " (" + experimentID + ") variation: " + currentVariationName + " (" + currentVariationId + ")");
-  }
+}
 {% endhighlight %}
 
 We recommend that you call this method anytime after the first playlist is downloaded so that you have the most up-to-date information about what experiments the user is participating in. Here's an example of using this method in a callback for onFirstPlaylistDownloaded, which would be the way to guarantee that the first playlist has been downloaded:
