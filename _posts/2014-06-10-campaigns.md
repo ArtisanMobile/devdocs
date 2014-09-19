@@ -44,7 +44,7 @@ To compose your push notification start typing in the **Message** text area. As 
 
 #### Push Notification Size (iOS Only)
 
-Apple's Push Notification Service requires the size of their payload to be under **256 bytes**. This size requirement is enforced when composing your push notification and can be seen just below the preview area. You can learn more from Apple's documentation <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1" target="_blank">here</a>.
+Apple's Push Notification Service requires the size of their payload to be under **2048 bytes**. This size requirement is enforced when composing your push notification and can be seen just below the preview area. You can learn more from Apple's documentation <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1" target="_blank">here</a>.
 
 ### On Open Behavior
 
@@ -64,7 +64,7 @@ Using a Power Hook as your on open behavior gives you the ultimate in personaliz
 
 <div class="note note-hint">
   <p>Power Hooks must be added to your app before you can configure them in a campaign. 
-  Power Hooks used for push notifications get sent as part of the push notification payload. That paylod's size must not exceed 256 bytes due to <a href='https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1'>limits imposed by the Apple Push Notification Service</a>.
+  Power Hooks used for push notifications get sent as part of the push notification payload. That paylod's size must not exceed **2048 bytes** due to <a href='https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1'>limits imposed by the Apple Push Notification Service</a>.
   Learn more about creating power hooks for <a href="/dev/ios/power-hooks/">iOS</a> and <a href="/dev/android/power-hooks/">Android</a>.</p>
 </div>
 
