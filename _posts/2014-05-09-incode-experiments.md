@@ -158,9 +158,9 @@ ARExperimentManager.setTargetReachedForExperiment("Cart Process",
 
 ## Advanced Experiment Analytics
 
-If you would like to retrieve the variation IDs for the experiment variations that a user is experiencing for exporting to a third-party analytics tool you can use the **getCurrentExperimentDetails** method from **ARExperimentManager**.
+If you would like to retrieve the variation IDs for the experiment variations that a user is experiencing for exporting to a third-party analytics tool you can use the **getCurrentExperimentDetails** or **getInCodeExperimentDetails** methods from **ARExperimentManager**.
 
-This will give you all of the experiments including experiment name, experiment id, variation name and variation id for all of the Artisan experiments that this user is participating in. This includes all kinds of experiments: in-code, power hook, and canvas experiments.
+The **getCurrentExperimentDetails** will give you all of the details on currently running experiments including experiment name, experiment id, variation name and variation id for all of the Artisan experiments that this user is participating in. This includes all kinds of experiments: in-code, power hook, and canvas experiments.
 
 {% highlight objective-c %}
 // Objective-C
@@ -175,6 +175,24 @@ We recommend that you call this method anytime after the first playlist is downl
     NSArray *experiments = [ARExperimentManager getCurrentExperimentDetails];
     // ... use the details as needed
 }];
+{% endhighlight %}
+
+The **getInCodeExperimentDetails** method will give you **all** (regardless if they're running or not) in-code experiments in your app. These in-code specific details will allow you to find your in-code experiment by the name you registered in your code. See the example below.
+
+{% highlight objective-c %}
+// Objective-C
+// in the view controller you're changing via your in-code experiment
+- (void) viewWillAppear:(BOOL)animated {
+    // Your other code...
+    NSDictionary *detailsDictionary = [ARExperimentManager getInCodeExperimentDetails];
+    ARInCodeExperimentDetails *inCodeDetails = [detailsDictionary objectForKey:@"Your Experiment Name"];
+
+    if (inCodeDetails.isRunning) {
+        // This experiment has been started from Artisan Tools and all details are available to you.
+        // You can use these details to feed into your third party analytics tool
+    }
+    // Your code continued...
+}
 {% endhighlight %}
 
 There is also **getCurrentVariationIds** from **ARExperimentManager**, which will return just the variation ids for all experiments.
