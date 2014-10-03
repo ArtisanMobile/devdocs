@@ -101,9 +101,9 @@ ArtisanExperimentManager.setTargetReachedForExperiment("Buy Button Test");
 
 ## Advanced Experiment Analytics
 
-If you would like to retrieve the variation IDs for the experiment variations that a user is experiencing for exporting to a third-party analytics tool you can use the **getCurrentExperimentDetails** method from **ArtisanExperimentManager**.
+If you would like to retrieve the variation IDs for the experiment variations that a user is experiencing for exporting to a third-party analytics tool you can use the **getCurrentExperimentDetails** or **getInCodeExperimentDetails** methods from **ArtisanExperimentManager**.
 
-This will give you all of the experiments including experiment name, experiment id, variation name and variation id for all of the Artisan experiments that this user is participating in. This includes all kinds of experiments: in-code, power hook, and canvas experiments.
+The **getCurrentExperimentDetails** method will give you all currently running experiments including experiment name, experiment id, variation name and variation id for all of the Artisan experiments that this user is participating in. This includes all kinds of experiments: in-code, power hook, and canvas experiments.
 
 {% highlight java %}
 List<ExperimentDetails> experimentDetails = ArtisanExperimentManager.getCurrentExperimentDetails();
@@ -128,6 +128,31 @@ ArtisanManager.onFirstPlaylistDownloaded(this, new ArtisanManagerCallback() {
   }
 });
 {% endhighlight %}
+
+The **getInCodeExperimentDetails** method will give you **all** (regardless if they're running or not) in-code experiments in your app. These in-code specific details will allow you to find your in-code experiment by the name you registered in your code. See the example below.
+
+{% highlight java %}
+  @Override
+  public void onResume() {
+    super.onResume();
+    // Your other onResume code here where you're most likely making changes to your 
+    // UI according the current variation for the below experiment.
+
+    Map<String, InCodeExperimentDetails> allInCodeDetails = ArtisanExperimentManager.getInCodeExperimentDetails();
+    InCodeExperimentDetails yourExperimentDetails = allInCodeDetails.get("Your In-Code Experiment Name");
+    if (yourExperimentDetails != null && yourExperimentDetails.isRunning()) {
+      // This experiment has been started from Artisan Tools and all details are available to you.
+      // You can use these details to feed into your third party analytics tool
+      String experimentID = yourExperimentDetails.getExperimentId();
+      String experimentName = yourExperimentDetails.getExperimentName();
+      String currentVariationId = yourExperimentDetails.getCurrentVariationId();
+      String currentVariationName = yourExperimentDetails.getCurrentVariationName();
+
+      Log.d(TAG, "In-Code Experiment: " + experimentName + " (" + experimentID + ") variation: " + currentVariationName + " (" + currentVariationId + ")");
+    }
+  }
+{% endhighlight %}
+
 
 There is also **getCurrentVariationIds** from **ArtisanExperimentManager**, which will return just the variation ids for all experiments.
 
