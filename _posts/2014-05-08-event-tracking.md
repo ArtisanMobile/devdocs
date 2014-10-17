@@ -80,12 +80,16 @@ The ArtisanPurchaseWorkflowManager manages all analytics tracking related to pur
 
 Here's how you can record an analytics event for a customer viewing a product.
 
+Tracking category hierarchies applies here as well by passing the optional **category**, **subCategory**, and **subSubCategory** parameters to the **productViewed** method.
+
+There are many variations of the **productViewed** method so [please consult the ArtisanPurchaseWorkflowManager javadocs](http://docs.useartisan.com/dev/android/javadocs/) for your current version.
+
 {% highlight java %}
 Map<String, String> productInfo = new HashMap<String, String>();
  productInfo.put("style", "organic cotton");
  productInfo.put("size", "medium");
  Currency usCurrency = Currency.getInstance(Locale.US);
- ArtisanPurchaseWorkflowManager.productViewed("ABC0000001", 24.99f, usCurrency, "Artisan T-Shirt made in Old City, Philadelphia", "T-Shirts", productInfo);
+ ArtisanPurchaseWorkflowManager.productViewed("ABC0000001", 24.99f, usCurrency, "Artisan T-Shirt made in Old City, Philadelphia", "Men", "Clothes", "T-Shirts", productInfo);
 {% endhighlight %}
 
 <div class="note note-hint">
@@ -98,15 +102,19 @@ The optional product info can include any key/value pairs of information about t
 
 When a product is added to your cart model you can track this event with Artisan by calling **addItemToCart**
 
+Tracking category hierarchies applies here as well by passing the optional **category**, **subCategory**, and **subSubCategory** parameters to the **addItemToCart** method.
+
+There are many variations of the **addToCartMethod** method so [please consult the ArtisanPurchaseWorkflowManager javadocs](http://docs.useartisan.com/dev/android/javadocs/) for your current version.
+
 {% highlight java %}
  Map<String, String> extraInfo = new HashMap<String, String>();
  extraInfo.put("style", "organic cotton");
  extraInfo.put("size", "medium");
  Currency usCurrency = Currency.getInstance(Locale.US);
- ArtisanPurchaseWorkflowManager.addItemToCart("ABC0000001", 24.99f, usCurrency, "Artisan T-Shirt made in Old City, Philadelphia", "T-Shirts", 1, extraInfo);
+ ArtisanPurchaseWorkflowManager.addItemToCart("ABC0000001", 24.99f, usCurrency, "Artisan T-Shirt made in Old City, Philadelphia", "Men", "Clothes", "T-Shirts", 1, extraInfo);
 {% endhighlight %}
 
-When adding products to the cart, the locale, category and additional product info are optional. The identifier, price, description and quantity are used to uniquely identify the product in the Artisan model for the cart. This makes it possible to also remove items from the cart:
+When adding products to the cart, the locale, category, subCategory, and subSubCategory and any additional product info are optional. The identifier, price, description and quantity are used to uniquely identify the product in the Artisan model for the cart. This makes it possible to also remove items from the cart:
 
 {% highlight java %}
  ArtisanPurchaseWorkflowManager.removeItemFromCart("ABC0000001", 24.99f, "Artisan T-Shirt made in Old City, Philadelphia", "T-Shirts", 1);

@@ -185,7 +185,11 @@ Here's how you can record an analytics event for a customer viewing a product.
 
 You can include an optional priceLocale to track different currencies and an additional dictionary of product info.
 
+Tracking category hierarchies applies here as well by using the **:andSubCategory** and **:andSubCategory:andSubSubCategory** variations of the **productViewed...** method.
+
 The optional product info can be any key/value pairs of information about this product. This data will be attached to the analytics event in Artisan. All keys and values must be NSString objects, or they will be ignored.
+
+There are many variations of the **productViewed...** method so [please consult the ARPurchaseWorkflowManager Appledocs](http://docs.useartisan.com/dev/ios/appledocs/) for your current version.
 
 {% highlight objective-c %}
 // Objective-C
@@ -194,8 +198,9 @@ The optional product info can be any key/value pairs of information about this p
                                                       atPrice:[NSNumber numberWithFloat:24.99f]
                                               withPriceLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
                                                andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
-                                                  andCategory:@"T-Shirts"
-                                                   andQuantity:[NSNumber numberWithInt:1]
+                                                  andCategory:@"Mens"
+                                               andSubCategory:@"Clothes"
+                                            andSubSubCategory:@"T-Shirts"
                                               withProductInfo:@{@"style":@"organic cotton",@"size":@"medium"}];
 {% endhighlight %}
 
@@ -206,14 +211,19 @@ ARPurchaseWorkflowManager.productViewedWithProductIdentifier("ABC0000001",
                                                     atPrice: 24.99,
                                             withPriceLocale: NSLocale(localeIdentifier: "en_US"),
                                              andDescription: "Artisan T-Shirt made in Old City, Philadelphia",
-                                                andCategory: "T-Shirts",
-                                                 andQuanity: 1,
+                                                andCategory: "Men",
+                                             andSubCategory: "Clothes",
+                                          andSubSubCategory: "T-Shirts",
                                             withProductInfo: ["style":"organic cotton", "sizez":"medium"])
 {% endhighlight %}
 
 #### Adding and Removing Products
 
-When a product is added to your cart model you can track this event with Artisan by calling **ARPurchaseWorkflowManager addItemToCartWithProductIdentifier...**
+When a product is added to your cart model you can track this event with Artisan by calling **ARPurchaseWorkflowManager addItemToCart...**
+
+Tracking category hierarchies applies here as well by using the **:andSubCategory** and **:andSubCategory:andSubSubCategory** variations of the **addItemToCart...** method.
+
+There are many variations of the **addItemToCart...** method so [please consult the ARPurchaseWorkflowManager Appledocs](docs.useartisan.com/dev/ios/appledocs/) for your current version.
 
 {% highlight objective-c %}
 // Objective-C
@@ -222,8 +232,10 @@ When a product is added to your cart model you can track this event with Artisan
                                                       atPrice:[NSNumber numberWithFloat:24.99f]
                                               withPriceLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
                                                andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
-                                                  andCategory:@"T-Shirts"
-                                                   andQuantity:[NSNumber numberWithInt:1]
+                                                  andCategory:@"Men"
+                                               andSubCategory:@"Clothes"
+                                            andSubSubCategory:@"T-Shirts"
+                                                  andQuantity:[NSNumber numberWithInt:1]
                                               withProductInfo:@{ @"style":@"organic cotton", @"size":@"medium" }];
 {% endhighlight %}
 
@@ -234,7 +246,9 @@ ARPurchaseWorkflowManager.addItemToCartWithProductIdentifier("ABC0000001",
                                                     atPrice: 24.99,
                                             withPriceLocale: NSLocale(localeIdentifier: "en_US"),
                                              andDescription: "Artisan T-Shirt made in Old City, Philadelphia",
-                                                andCategory: "T-Shirts",
+                                                andCategory: "Men",
+                                             andSubCategory: "Clothes"
+                                          andSubSubCategory: "T-Shirts"
                                                  andQuanity: 1,
                                             withProductInfo: ["style":"organic cotton", "size":"medium"])
 {% endhighlight %}
