@@ -61,9 +61,20 @@ With extra parameters
 
 {% highlight objective-c %}
 // Objective-C
-[ARTrackingManager trackEvent:@"User Tapped In-App Coupon" parameters:@{@"coupon-code":@"B012345"} category:@"Men"];
-[ARTrackingManager trackEvent:@"User Tapped In-App Coupon" parameters:@{@"coupon-code":@"B012345"} category:@"Men" subCategory:@"Shoes"];
-[ARTrackingManager trackEvent:@"User Tapped In-App Coupon" parameters:@{@"coupon-code":@"B012345"} category:@"Men" subCategory:@"Shoes" subSubCategory:@"Vans"];
+[ARTrackingManager trackEvent:@"User Tapped In-App Coupon"
+  parameters:@{@"coupon-code":@"B012345"}
+                     category:@"Men"];
+
+[ARTrackingManager trackEvent:@"User Tapped In-App Coupon"
+  parameters:@{@"coupon-code":@"B012345"}
+                     category:@"Men"
+                   ubCategory:@"Shoes"];
+
+[ARTrackingManager trackEvent:@"User Tapped In-App Coupon"
+  parameters:@{@"coupon-code":@"B012345"}
+                     category:@"Men"
+                  subCategory:@"Shoes"
+               subSubCategory:@"Vans"];
 {% endhighlight %}
 
 {% highlight swift %}
@@ -77,9 +88,17 @@ Without extra parameters
 
 {% highlight objective-c %}
 // Objective-C
-[ARTrackingManager trackEvent:@"User Tapped In-App Coupon" category:@"Men"];
-[ARTrackingManager trackEvent:@"User Tapped In-App Coupon" category:@"Men" subCategory:@"Shoes"];
-[ARTrackingManager trackEvent:@"User Tapped In-App Coupon" category:@"Men" subCategory:@"Shoes" subSubCategory:@"Vans"];
+[ARTrackingManager trackEvent:@"User Tapped In-App Coupon"
+                     category:@"Men"];
+
+[ARTrackingManager trackEvent:@"User Tapped In-App Coupon"
+                     category:@"Men"
+                  subCategory:@"Shoes"];
+
+[ARTrackingManager trackEvent:@"User Tapped In-App Coupon"
+                     category:@"Men"
+                  subCategory:@"Shoes"
+               subSubCategory:@"Vans"];
 {% endhighlight %}
 
 {% highlight swift %}
@@ -205,7 +224,7 @@ There are many variations of the **productViewed...** method so [please consult 
 {% endhighlight %}
 
 {% highlight swift %}
-// Swift 
+// Swift
 
 ARPurchaseWorkflowManager.productViewedWithProductIdentifier("ABC0000001",
                                                     atPrice: 24.99,
