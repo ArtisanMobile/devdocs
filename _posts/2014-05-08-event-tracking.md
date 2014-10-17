@@ -37,6 +37,27 @@ parameters.put("product name", "Artisan Developer T-Shirt");
 ArtisanTrackingManager.trackEvent("Product Purchased", parameters);
 {% endhighlight %}
 
+### Tracking Categories
+
+Along with tracking custom parameters for your events, ArtisanTrackingManager also allows you to associate a hierarchy of categories with your events. You can then view and filter these category values via the events report on Artisan Tools.
+
+The **trackEvent** method with optional parameters, category, subCategory, and subSubCategory allows you to track your category hierarchy per event.
+
+{% highlight java %}
+Map<String, String> parameters = new HashMap<String, String>();
+// Track without extra parameters (include an empty Map)
+ArtisanTrackingManager.trackEvent("User Tapped In-App Coupon", parameters, "Men");
+ArtisanTrackingManager.trackEvent("User Tapped In-App Coupon", parameters, "Men", "Shoes");
+ArtisanTrackingManager.trackEvent("User Tapped In-App Coupon", parameters, "Men", "Shoes", "Vans");
+
+// Track with extra parameters
+parameters.put("coupon code", "B012345");
+ArtisanTrackingManager.trackEvent("User Tapped In-App Coupon", parameters, "Men");
+ArtisanTrackingManager.trackEvent("User Tapped In-App Coupon", parameters, "Men", "Shoes");
+ArtisanTrackingManager.trackEvent("User Tapped In-App Coupon", parameters, "Men", "Shoes", "Vans");
+{% endhighlight %}
+
+
 <div id="commerce"></div>
 
 ##Purchase Workflow Tracking

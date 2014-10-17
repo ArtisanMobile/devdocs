@@ -51,6 +51,44 @@ with an optional dictionary of name/value pairs.
 ARTrackingManager.trackEvent("itemsInCartAreNowOutofStock", parameters:["numberOfItems":"2"])
 {% endhighlight %}
 
+### Tracking Categories
+
+Along with tracking custom parameters for your events, ARTrackingManager also allows you to associate a hierarchy of categories with your events. You can then view and filter these category values via the events report on Artisan Tools.
+
+The **trackEvent:parameters:category:**, **trackEvent:parameters:category:subCategory:**, **trackEvent:parameters:category:subCategory:subSubCategory:**, **trackEvent:category:**, **trackEvent:category:subCategory:**, and **trackEvent:category:subCategory:subSubCategory** methods allow you to track your category hierarchy per event.
+
+With extra parameters
+
+{% highlight objective-c %}
+// Objective-C
+[ARTrackingManager trackEvent:@"User Tapped In-App Coupon" parameters:@{@"coupon-code":@"B012345"} category:@"Men"];
+[ARTrackingManager trackEvent:@"User Tapped In-App Coupon" parameters:@{@"coupon-code":@"B012345"} category:@"Men" subCategory:@"Shoes"];
+[ARTrackingManager trackEvent:@"User Tapped In-App Coupon" parameters:@{@"coupon-code":@"B012345"} category:@"Men" subCategory:@"Shoes" subSubCategory:@"Vans"];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+ARTrackingManager.trackEvent("User Tapped In-App Coupon", parameters:["coupon-code":"B012345"], category:"Men")
+ARTrackingManager.trackEvent("User Tapped In-App Coupon", parameters:["coupon-code":"B012345"], category:"Men", subCategory:@"Shoes")
+ARTrackingManager.trackEvent("User Tapped In-App Coupon", parameters:["coupon-code":"B012345"], category:"Men", subCategory:@"Shoes", subSubCategory:@"Vans")
+{% endhighlight %}
+
+Without extra parameters
+
+{% highlight objective-c %}
+// Objective-C
+[ARTrackingManager trackEvent:@"User Tapped In-App Coupon" category:@"Men"];
+[ARTrackingManager trackEvent:@"User Tapped In-App Coupon" category:@"Men" subCategory:@"Shoes"];
+[ARTrackingManager trackEvent:@"User Tapped In-App Coupon" category:@"Men" subCategory:@"Shoes" subSubCategory:@"Vans"];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+ARTrackingManager.trackEvent("User Tapped In-App Coupon", category:"Men")
+ARTrackingManager.trackEvent("User Tapped In-App Coupon", category:"Men", subCategory:@"Shoes")
+ARTrackingManager.trackEvent("User Tapped In-App Coupon", category:"Men", subCategory:@"Shoes", subSubCategory:@"Vans")
+{% endhighlight %}
+
 <div id="nameviewcontroller"></div>
 
 ##Naming View Controllers
