@@ -45,14 +45,14 @@ This document provides an overview of all of the API calls available within the 
   </li>
   <li><a href="#purchaseworkflowapi">Purchase Workflow API</a>
     <ul>
-      <li><a href="#additemtocart">addItemToCart(id, price, description, category, quantity, productInfo, priceLocale)</a></li>
+      <li><a href="#additemtocart">addItemToCart(id, price, description, category, subCategory, subSubCategory, quantity, productInfo, priceLocale)</a></li>
       <li><a href="#cartcheckoutfailed">cartCheckoutFailed()</a></li>
       <li><a href="#cartcheckoutsucceeded">cartCheckoutSucceeded(shipping, tax)</a></li>
       <li><a href="#cartcheckoutwascancelled">cartCheckoutWasCancelled()</a></li>
       <li><a href="#cartisnotempty">cartIsNotEmpty()</a></li>
       <li><a href="#cartwasabandoned">cartWasAbandoned()</a></li>
       <li><a href="#emptycart">emptyCart()</a></li>
-      <li><a href="#productviewed">productViewed(id, price, description, category, productInfo, priceLocale)</a></li>
+      <li><a href="#productviewed">productViewed(id, price, description, category, subCategory, subSubCategory, productInfo, priceLocale)</a></li>
       <li><a href="#removeitemfromcart">removeItemFromCart(id, price, description, category, quantity)</a></li>
     </ul>
   </li>
@@ -79,11 +79,14 @@ This document provides an overview of all of the API calls available within the 
 
 Manually track an analytics event with the specified name.
 
-Use the `parameters` parameter to supply additional context data in the form of key-value pairs. For instance, if you have a product page that you want to check, but you also want to be able to know which products are being viewed, you could track an event named "Viewed Product" and pass the product ID as additional data.
+Use the `parameters` parameter to supply additional context data in the form of key-value pairs. For instance, if you have a product page that you want to check, but you also want to be able to know which products are being viewed, you could track an event named "Viewed Product" and pass the product ID as additional data. Optionally, you can provide a category, sub-category and sub-sub-category for the event, which can be used for reporting on Artisan Tools.
 
 {% highlight javascript %}
 ArtisanSDK.trackEvent("Logged In");
 ArtisanSDK.trackEvent("Viewed Product", {'sku':'A0123456789'});
+ArtisanSDK.trackEvent("Viewed Product", {'sku':'A0123456789'}, "Womens");
+ArtisanSDK.trackEvent("Viewed Product", {'sku':'A0123456789'}, "Womens", "Tops");
+ArtisanSDK.trackEvent("Viewed Product", {'sku':'A0123456789'}, "Womens", "Tops", "T-Shirts");
 {% endhighlight %}
 
 
@@ -337,7 +340,7 @@ ArtisanSDK.getValueForHookById("hookId");
 
 <div id="additemtocart"></div>
 
-### addItemToCart(id, price, description, category, quantity, productInfo, priceLocale)<br>addItemToCart(id, price, description, category, quantity, productInfo)<br>addItemToCart(id, price, description, category, quantity)
+### addItemToCart(id, price, description, category, subCategory, subSubCategory, quantity, productInfo, priceLocale)<br>addItemToCart(id, price, description, category, quantity, productInfo, priceLocale)<br>addItemToCart(id, price, description, category, quantity, productInfo)
 
 #### Parameters
 
@@ -348,6 +351,10 @@ ArtisanSDK.getValueForHookById("hookId");
 * description: (String) Description for the added item.
 
 * category: (String) Product category for the item being added.
+
+* subCategory: (String) Product sub-category for the item being added.
+
+* subSubCategory: (String) Product sub-sub-category for the item being added.
 
 * quantity: (String) Number of items being added.  String value should be convertible to an integer.
 
@@ -440,7 +447,7 @@ ArtisanSDK.emptyCart();
 
 <div id="productviewed"></div>
 
-### productViewed(id, price, description, category, quantity, productInfo, priceLocale)<br>productViewed(id, price, description, category, quantity, productInfo)<br>productViewed(id, price, description, category, quantity)
+### productViewed(id, price, description, category, subCategory, subSubCategory, productInfo, priceLocale)<br>productViewed(id, price, description, category, productInfo, priceLocale)<br>productViewed(id, price, description, category, productInfo)
 
 #### Parameters
 
@@ -452,7 +459,9 @@ ArtisanSDK.emptyCart();
 
 * category: (String) Product category for the item being added.
 
-* quantity: (String) Number of items being added.  String value should be convertible to an integer.
+* subCategory: (String) Product sub-category for the item being added.
+
+* subSubCategory: (String) Product sub-sub-category for the item being added.
 
 * productInfo: (Associative Array) Key-value pairs to provide additional info and context about this item. [Optional]
 
