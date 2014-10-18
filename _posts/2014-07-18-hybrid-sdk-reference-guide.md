@@ -465,11 +465,11 @@ ArtisanSDK.emptyCart();
 
 * description: (String) Description for the added item.
 
-* category: (String) Product category for the item being added.
+* category: (String) Product category for the item being added. [Optional]
 
-* subCategory: (String) Product sub-category for the item being added.
+* subCategory: (String) Product sub-category for the item being added. [Optional]
 
-* subSubCategory: (String) Product sub-sub-category for the item being added.
+* subSubCategory: (String) Product sub-sub-category for the item being added. [Optional]
 
 * productInfo: (Associative Array) Key-value pairs to provide additional info and context about this item. [Optional]
 
