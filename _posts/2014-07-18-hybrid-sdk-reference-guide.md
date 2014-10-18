@@ -17,6 +17,7 @@ This document provides an overview of all of the API calls available within the 
     <ul>
       <li><a href="#trackEvent">trackEvent(eventName)</a></li>
       <li><a href="#trackEvent">trackEvent(eventName, parameters)</a></li>
+      <li><a href="#trackEvent">trackEvent(eventName, parameters, category, subCategory, subSubCategory)</a></li>
     </ul>
   </li>
   <li><a href="#profileapi">Profile API</a>
@@ -70,12 +71,19 @@ This document provides an overview of all of the API calls available within the 
 
 <div id="trackEvent"></div>
 
-### trackEvent(eventName)<br>trackEvent(eventName, parameters)
+### trackEvent(eventName)<br>trackEvent(eventName, parameters)<br>trackEvent(eventName, parameters, category)<br>trackEvent(eventName, parameters, category, subCategory)<br>trackEvent(eventName, parameters, category, subCategory, subSubCategory)
 
 #### Parameters
 
 * eventName: (String) Name of the event to track.
+
 * parameters: (Associative Array) Context parameters to tag to the event. [Optional]
+
+* category: (String) Category for the event for use in filtering and reporting. [Optional]
+
+* subCategory: (String) Sub-category for the event for use in filtering and reporting. [Optional]
+
+* subSubCategory: (String) Sub-sub-category for the event for use in filtering and reporting. [Optional]
 
 Manually track an analytics event with the specified name.
 
