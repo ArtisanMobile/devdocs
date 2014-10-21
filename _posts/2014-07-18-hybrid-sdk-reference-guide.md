@@ -54,7 +54,7 @@ This document provides an overview of all of the API calls available within the 
       <li><a href="#cartwasabandoned">cartWasAbandoned()</a></li>
       <li><a href="#emptycart">emptyCart()</a></li>
       <li><a href="#productviewed">productViewed(id, price, description, category, subCategory, subSubCategory, productInfo, priceLocale)</a></li>
-      <li><a href="#removeitemfromcart">removeItemFromCart(id, price, description, category, quantity)</a></li>
+      <li><a href="#removeitemfromcart">removeItemFromCart(id, price, description, quantity)</a></li>
     </ul>
   </li>
   <li><a href="#socialsharingapi">Social Sharing Manager</a>
@@ -483,7 +483,7 @@ ArtisanSDK.productViewed("productId", 25.00, "A nice shirt", "T-Shirts", {'Fabri
 
 <div id="removeitemfromcart"></div>
 
-### removeItemFromCart(id, price, description, category, quantity)
+### removeItemFromCart(id, price, description, quantity)
 
 #### Parameters
 
@@ -493,8 +493,6 @@ ArtisanSDK.productViewed("productId", 25.00, "A nice shirt", "T-Shirts", {'Fabri
 
 * description: (String) Description for the added item.
 
-* category: (String) Product category for the item being added.
-
 * quantity: (String) Number of items being added.  String value should be convertible to an integer.
 
 Call this method to remove an item from the Artisan shopping cart model for the current purchase workflow.
@@ -502,7 +500,7 @@ Call this method to remove an item from the Artisan shopping cart model for the 
 It will remove the first item in the cart that matches the productIdentifier, price, and quantity.
 
 {% highlight javascript %}
-ArtisanSDK.removeItemFromCart("productId", 25.00, "A nice shirt", "T-Shirts", 1);
+ArtisanSDK.removeItemFromCart("productId", 25.00, "A nice shirt", 1);
 {% endhighlight %}
 
 <div id="socialsharingapi"></div>
