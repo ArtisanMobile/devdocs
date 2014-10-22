@@ -354,7 +354,7 @@ ArtisanSDK.getValueForHookById("hookId");
 
 * id: (String) ID (or SKU Number) for the item being added to the cart.
 
-* price: (String) Price of the item. String value must be convertible to a float.
+* price: (String or Number) Price of the item. String value must be convertible to a float.
 
 * description: (String) Description for the added item.
 
@@ -364,7 +364,7 @@ ArtisanSDK.getValueForHookById("hookId");
 
 * subSubCategory: (String) Product sub-sub-category for the item being added. [Optional, may be null]
 
-* quantity: (String) Number of items being added.  String value should be convertible to an integer.
+* quantity: (String or Number) Number of items being added.  String value should be convertible to an integer.
 
 * productInfo: (Associative Array) Key-value pairs to provide additional info and context about this item. [Optional, may be null]
 
@@ -461,7 +461,7 @@ ArtisanSDK.emptyCart();
 
 * id: (String) ID (or SKU Number) for the item being added to the cart.
 
-* price: (String) Price of the item. String value must be convertible to a float.
+* price: (String or Number) Price of the item. String value must be convertible to a float.
 
 * description: (String) Description for the added item.
 
@@ -489,11 +489,11 @@ ArtisanSDK.productViewed("productId", 25.00, "A nice shirt", "T-Shirts", {'Fabri
 
 * id: (String) ID (or SKU Number) for the item being added to the cart.
 
-* price: (String) Price of the item. String value must be convertible to a float.
+* price: (String or Number) Price of the item. String value must be convertible to a float.
 
 * description: (String) Description for the added item.
 
-* quantity: (String) Number of items being added.  String value should be convertible to an integer.
+* quantity: (String or Number) Number of items being added.  String value should be convertible to an integer.
 
 Call this method to remove an item from the Artisan shopping cart model for the current purchase workflow.
 
