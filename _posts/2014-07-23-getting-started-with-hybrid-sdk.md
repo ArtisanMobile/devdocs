@@ -36,8 +36,8 @@ To enable usage of the Artisan Javascript API within a UIKit WebView, you'll wan
 <script type="text/javascript" src="https://cdn-api.artisantools.com/1.4/ArtisanSDK-min.js"></script>
 {% endhighlight %}
 
-This will import the Artisan Javascript API into the page and will enable all of the methods defined in the [Javascript API Reference Guide]({% post_url 2014-07-18-hybrid-sdk-reference-guide %}).  
-Your controller must implement the 
+This will import the Artisan Javascript API into the page and will enable all of the methods defined in the [Javascript API Reference Guide]({% post_url 2014-07-18-hybrid-sdk-reference-guide %}).
+Your view controller must implement the UIWebViewDelegate protocol.
 
 {% highlight html %}
 @interface ViewController : UIViewController <UIWebViewDelegate> {
