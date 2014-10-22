@@ -36,7 +36,20 @@ To enable usage of the Artisan Javascript API within a UIKit WebView, you'll wan
 <script type="text/javascript" src="https://cdn-api.artisantools.com/1.4/ArtisanSDK-min.js"></script>
 {% endhighlight %}
 
-This will import the Artisan Javascript API into the page and will enable all of the methods defined in the [Javascript API Reference Guide]({% post_url 2014-07-18-hybrid-sdk-reference-guide %}).  The Artisan iOS SDK will take care of the rest.
+This will import the Artisan Javascript API into the page and will enable all of the methods defined in the [Javascript API Reference Guide]({% post_url 2014-07-18-hybrid-sdk-reference-guide %}).  
+Your controller must implement the 
+
+{% highlight html %}
+@interface ViewController : UIViewController <UIWebViewDelegate> {
+...
+}
+{% endhighlight %}
+
+Then set viewController as the webView's delegate:
+
+<img src="/images/webviewdelegate.png" height="402" width="529" alt="The Artisan Campaign Types." />
+
+The Artisan iOS SDK will take care of the rest.
 
 ### Android
 
