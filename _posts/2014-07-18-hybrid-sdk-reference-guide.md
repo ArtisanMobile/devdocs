@@ -77,13 +77,13 @@ This document provides an overview of all of the API calls available within the 
 
 * eventName: (String) Name of the event to track.
 
-* parameters: (Associative Array) Context parameters to tag to the event. [Optional]
+* parameters: (Associative Array) Context parameters to tag to the event. [Optional, may be null]
 
-* category: (String) Category for the event for use in filtering and reporting. [Optional]
+* category: (String) Category for the event for use in filtering and reporting. [Optional, may be null]
 
-* subCategory: (String) Sub-category for the event for use in filtering and reporting. [Optional]
+* subCategory: (String) Sub-category for the event for use in filtering and reporting. [Optional, may be null]
 
-* subSubCategory: (String) Sub-sub-category for the event for use in filtering and reporting. [Optional]
+* subSubCategory: (String) Sub-sub-category for the event for use in filtering and reporting. [Optional, may be null]
 
 Manually track an analytics event with the specified name.
 
@@ -348,7 +348,7 @@ ArtisanSDK.getValueForHookById("hookId");
 
 <div id="additemtocart"></div>
 
-### addItemToCart(id, price, description, category, subCategory, subSubCategory, quantity, productInfo, priceLocale)<br>addItemToCart(id, price, description, category, quantity, productInfo, priceLocale)<br>addItemToCart(id, price, description, category, quantity, productInfo)
+### addItemToCart(id, price, description, category, subCategory, subSubCategory, quantity, productInfo, priceLocale)
 
 #### Parameters
 
@@ -358,17 +358,17 @@ ArtisanSDK.getValueForHookById("hookId");
 
 * description: (String) Description for the added item.
 
-* category: (String) Product category for the item being added.
+* category: (String) Product category for the item being added. [Optional, may be null]
 
-* subCategory: (String) Product sub-category for the item being added.
+* subCategory: (String) Product sub-category for the item being added. [Optional, may be null]
 
-* subSubCategory: (String) Product sub-sub-category for the item being added.
+* subSubCategory: (String) Product sub-sub-category for the item being added. [Optional, may be null]
 
 * quantity: (String) Number of items being added.  String value should be convertible to an integer.
 
-* productInfo: (Associative Array) Key-value pairs to provide additional info and context about this item. [Optional]
+* productInfo: (Associative Array) Key-value pairs to provide additional info and context about this item. [Optional, may be null]
 
-* priceLocale: (String) ISO 4217 currency code associated with the price (i.e. 'USD', 'GBP', 'EUR', etc.). [Optional--if blank then the device's default locale/currency is used]
+* priceLocale: (String) ISO 4217 currency code associated with the price (i.e. 'USD', 'GBP', 'EUR', etc.). [Optional, may be null--if blank then the device's default locale/currency is used]
 
 Add an item to the cart for the current purchase workflow.
 
@@ -455,7 +455,7 @@ ArtisanSDK.emptyCart();
 
 <div id="productviewed"></div>
 
-### productViewed(id, price, description, category, subCategory, subSubCategory, productInfo, priceLocale)<br>productViewed(id, price, description, category, productInfo, priceLocale)<br>productViewed(id, price, description, category, productInfo)
+### productViewed(id, price, description, category, subCategory, subSubCategory, productInfo, priceLocale)
 
 #### Parameters
 
@@ -465,15 +465,15 @@ ArtisanSDK.emptyCart();
 
 * description: (String) Description for the added item.
 
-* category: (String) Product category for the item being added. [Optional]
+* category: (String) Product category for the item being added. [Optional, may be null]
 
-* subCategory: (String) Product sub-category for the item being added. [Optional]
+* subCategory: (String) Product sub-category for the item being added. [Optional, may be null]
 
-* subSubCategory: (String) Product sub-sub-category for the item being added. [Optional]
+* subSubCategory: (String) Product sub-sub-category for the item being added. [Optional, may be null]
 
-* productInfo: (Associative Array) Key-value pairs to provide additional info and context about this item. [Optional]
+* productInfo: (Associative Array) Key-value pairs to provide additional info and context about this item. [Optional, may be null]
 
-* priceLocale: (String) ISO 4217 currency code associated with the price (i.e. 'USD', 'GBP', 'EUR', etc.). [Optional--if blank then the device's default locale/currency is used]
+* priceLocale: (String) ISO 4217 currency code associated with the price (i.e. 'USD', 'GBP', 'EUR', etc.). [Optional, may be null--if blank then the device's default locale/currency is used]
 
 Record an analytics event for a customer viewing a product.
 
