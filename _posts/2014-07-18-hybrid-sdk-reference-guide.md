@@ -46,14 +46,14 @@ This document provides an overview of all of the API calls available within the 
   </li>
   <li><a href="#purchaseworkflowapi">Purchase Workflow API</a>
     <ul>
-      <li><a href="#additemtocart">addItemToCart(id, price, description, category, subCategory, subSubCategory, quantity, productInfo, priceLocale)</a></li>
+      <li><a href="#additemtocart">addItemToCart(id, price, description, category, subCategory, subSubCategory, quantity, productInfo, currencyCode)</a></li>
       <li><a href="#cartcheckoutfailed">cartCheckoutFailed()</a></li>
       <li><a href="#cartcheckoutsucceeded">cartCheckoutSucceeded(shipping, tax)</a></li>
       <li><a href="#cartcheckoutwascancelled">cartCheckoutWasCancelled()</a></li>
       <li><a href="#cartisnotempty">cartIsNotEmpty()</a></li>
       <li><a href="#cartwasabandoned">cartWasAbandoned()</a></li>
       <li><a href="#emptycart">emptyCart()</a></li>
-      <li><a href="#productviewed">productViewed(id, price, description, category, subCategory, subSubCategory, productInfo, priceLocale)</a></li>
+      <li><a href="#productviewed">productViewed(id, price, description, category, subCategory, subSubCategory, productInfo, currencyCode)</a></li>
       <li><a href="#removeitemfromcart">removeItemFromCart(id, price, description, quantity)</a></li>
     </ul>
   </li>
@@ -348,7 +348,7 @@ ArtisanSDK.getValueForHookById("hookId");
 
 <div id="additemtocart"></div>
 
-### addItemToCart(id, price, description, category, subCategory, subSubCategory, quantity, productInfo, priceLocale)
+### addItemToCart(id, price, description, category, subCategory, subSubCategory, quantity, productInfo, currencyCode)
 
 #### Parameters
 
@@ -368,7 +368,7 @@ ArtisanSDK.getValueForHookById("hookId");
 
 * productInfo: (Associative Array) Key-value pairs to provide additional info and context about this item. [Optional, may be null]
 
-* priceLocale: (String) ISO 4217 currency code associated with the price (i.e. 'USD', 'GBP', 'EUR', etc.). [Optional, may be null--if blank then the device's default locale/currency is used]
+* currencyCode: (String) ISO 4217 currency code associated with the price (i.e. 'USD', 'GBP', 'EUR', etc.). [Optional, may be null--if blank then the device's default locale/currency is used]
 
 Add an item to the cart for the current purchase workflow.
 
@@ -455,7 +455,7 @@ ArtisanSDK.emptyCart();
 
 <div id="productviewed"></div>
 
-### productViewed(id, price, description, category, subCategory, subSubCategory, productInfo, priceLocale)
+### productViewed(id, price, description, category, subCategory, subSubCategory, productInfo, currencyCode)
 
 #### Parameters
 
@@ -473,7 +473,7 @@ ArtisanSDK.emptyCart();
 
 * productInfo: (Associative Array) Key-value pairs to provide additional info and context about this item. [Optional, may be null]
 
-* priceLocale: (String) ISO 4217 currency code associated with the price (i.e. 'USD', 'GBP', 'EUR', etc.). [Optional, may be null--if blank then the device's default locale/currency is used]
+* currencyCode: (String) ISO 4217 currency code associated with the price (i.e. 'USD', 'GBP', 'EUR', etc.). [Optional, may be null--if blank then the device's default locale/currency is used]
 
 Record an analytics event for a customer viewing a product.
 
