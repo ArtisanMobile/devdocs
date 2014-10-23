@@ -202,7 +202,7 @@ The ARPurchaseWorkflowManager manages all analytics tracking related to non-Stor
 
 Here's how you can record an analytics event for a customer viewing a product.
 
-You can include an optional priceLocale to track different currencies and an additional dictionary of product info.
+You can include an optional currency code to track different currencies and an additional dictionary of product info.
 
 Tracking category hierarchies applies here as well by using the **:andSubCategory** and **:andSubCategory:andSubSubCategory** variations of the **productViewed...** method.
 
@@ -215,7 +215,7 @@ There are many variations of the **productViewed...** method so [please consult 
 
 [ARPurchaseWorkflowManager productViewedWithProductIdentifier:@"ABC0000001"
                                                       atPrice:[NSNumber numberWithFloat:24.99f]
-                                              withPriceLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+                                             withCurrencyCode:@"USD"
                                                andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
                                                   andCategory:@"Mens"
                                                andSubCategory:@"Clothes"
@@ -228,7 +228,7 @@ There are many variations of the **productViewed...** method so [please consult 
 
 ARPurchaseWorkflowManager.productViewedWithProductIdentifier("ABC0000001",
                                                     atPrice: 24.99,
-                                            withPriceLocale: NSLocale(localeIdentifier: "en_US"),
+                                           withCurrencyCode: "USD",
                                              andDescription: "Artisan T-Shirt made in Old City, Philadelphia",
                                                 andCategory: "Men",
                                              andSubCategory: "Clothes",
@@ -249,7 +249,7 @@ There are many variations of the **addItemToCart...** method so [please consult 
 
 [ARPurchaseWorkflowManager addItemToCartWithProductIdentifier:@"ABC0000001"
                                                       atPrice:[NSNumber numberWithFloat:24.99f]
-                                              withPriceLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+                                             withCurrencyCode:@"USD"
                                                andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
                                                   andCategory:@"Men"
                                                andSubCategory:@"Clothes"
@@ -263,7 +263,7 @@ There are many variations of the **addItemToCart...** method so [please consult 
 
 ARPurchaseWorkflowManager.addItemToCartWithProductIdentifier("ABC0000001",
                                                     atPrice: 24.99,
-                                            withPriceLocale: NSLocale(localeIdentifier: "en_US"),
+                                           withCurrencyCode: "USD",
                                              andDescription: "Artisan T-Shirt made in Old City, Philadelphia",
                                                 andCategory: "Men",
                                              andSubCategory: "Clothes"
@@ -272,7 +272,7 @@ ARPurchaseWorkflowManager.addItemToCartWithProductIdentifier("ABC0000001",
                                             withProductInfo: ["style":"organic cotton", "size":"medium"])
 {% endhighlight %}
 
-When adding products to the cart, the locale, category and additional product info are optional. The identifier, price, description and quantity are used to uniquely identify the product in the Artisan model for the cart. This makes it possible to also remove items from the cart:
+When adding products to the cart, the currency, category and additional product info are optional. The identifier, price, description and quantity are used to uniquely identify the product in the Artisan model for the cart. This makes it possible to also remove items from the cart:
 
 {% highlight objective-c %}
 // Objective-C
@@ -280,7 +280,6 @@ When adding products to the cart, the locale, category and additional product in
 [ARPurchaseWorkflowManager removeItemFromCartWithProductIdentifier:@"ABC0000001"
                                                            atPrice:[NSNumber numberWithFloat:24.99f]
                                                     andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
-                                                       andCategory:@"T-Shirts"
                                                         andQuantity:[NSNumber numberWithInt:1]];
 {% endhighlight %}
 
@@ -290,7 +289,6 @@ When adding products to the cart, the locale, category and additional product in
 ARPurchaseWorkflowManager.removeItemFromCartWithProductIdentifier("ABC0000001",
                                                          atPrice: 24.99,
                                                   andDescription: "Artisan T-Shirt made in Old City, Philadelphia",
-                                                     andCategory: "T-Shirts",
                                                       andQuanity: 1)
 {% endhighlight %}
 
@@ -347,7 +345,7 @@ ARPurchaseWorkflowManager.cartCheckoutWasCancelled()
 ARPurchaseWorkflowManager.cartCheckoutFailed()
 {% endhighlight %}
 
-In the event of a successful checkout record this outcome with **cartCheckoutSucceededWithShipping:withTax:** and optionally provide amounts for shipping and tax to be added to the order total that will be recorded with the analytics event for this purchase. The amounts for shipping and tax are assumed to be in the same priceLocale as the items in the cart.
+In the event of a successful checkout record this outcome with **cartCheckoutSucceededWithShipping:withTax:** and optionally provide amounts for shipping and tax to be added to the order total that will be recorded with the analytics event for this purchase. The amounts for shipping and tax are assumed to be in the same currency as the items in the cart.
 
 {% highlight objective-c %}
 // Objective-C
@@ -363,7 +361,7 @@ ARPurchaseWorkflowManager.cartCheckoutSucceededWithShipping(2.25,
                                                    withTax: 3.00)
 {% endhighlight %}
 
-We will record an analytics event including information on all of the products that were purchased. We will automatically calculate the cart total and send that with the Artisan analytics event. It is assumed that all items in the cart will have the same price locale; we will use the price locale of the first item.
+We will record an analytics event including information on all of the products that were purchased. We will automatically calculate the cart total and send that with the Artisan analytics event. It is assumed that all items in the cart will have the same currency; we will use the price currency of the first item.
 
 After a successful checkout the cart will automatically be emptied. The Purchase Workflow Manager is then automatically ready to track the next workflow.
 
