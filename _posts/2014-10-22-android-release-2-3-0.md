@@ -13,3 +13,4 @@ For customers using the Javascript SDK it is recommended to use version 1.4 or a
 
 * [NEW] Added support for categories, sub-categories and sub-sub-categories for custom analytics events both from the native code and from the Artisan Javascript SDK. For more information see <a href="/dev/android/event-tracking">event tracking</a> and <a href="/dev/js/getting-started-with-hybrid-sdk">Artisan Javascript SDK Reference</a>.
 * [UPDATED] Changes to Public API methods in the ArtisanPurchaseWorkflowManager class. Removed the category argument from the **ArtisanPurchaseWorkflowManager.removeItemFromCart(String productIdentifier, Number price, String description, int quantity)** method.
+* [FIX BUG] Address rare crash issue on app startup having to do with ActivityManager.getRunningTasks returning an empty list.
