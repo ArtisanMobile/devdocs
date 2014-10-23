@@ -89,7 +89,7 @@ Map<String, String> productInfo = new HashMap<String, String>();
  productInfo.put("style", "organic cotton");
  productInfo.put("size", "medium");
  Currency usCurrency = Currency.getInstance(Locale.US);
- ArtisanPurchaseWorkflowManager.productViewed("ABC0000001", 24.99f, usCurrency, "Artisan T-Shirt made in Old City, Philadelphia", "Men", "Clothes", "T-Shirts", productInfo);
+ ArtisanPurchaseWorkflowManager.productViewed("ABC0000001", 24.99, usCurrency, "Artisan T-Shirt made in Old City, Philadelphia", "Men", "Clothes", "T-Shirts", productInfo);
 {% endhighlight %}
 
 <div class="note note-hint">
@@ -111,13 +111,13 @@ There are many variations of the **addToCartMethod** method so [please consult t
  extraInfo.put("style", "organic cotton");
  extraInfo.put("size", "medium");
  Currency usCurrency = Currency.getInstance(Locale.US);
- ArtisanPurchaseWorkflowManager.addItemToCart("ABC0000001", 24.99f, usCurrency, "Artisan T-Shirt made in Old City, Philadelphia", "Men", "Clothes", "T-Shirts", 1, extraInfo);
+ ArtisanPurchaseWorkflowManager.addItemToCart("ABC0000001", 24.99, usCurrency, "Artisan T-Shirt made in Old City, Philadelphia", "Men", "Clothes", "T-Shirts", 1, extraInfo);
 {% endhighlight %}
 
 When adding products to the cart, the locale, category, subCategory, and subSubCategory and any additional product info are optional. The identifier, price, description and quantity are used to uniquely identify the product in the Artisan model for the cart. This makes it possible to also remove items from the cart:
 
 {% highlight java %}
- ArtisanPurchaseWorkflowManager.removeItemFromCart("ABC0000001", 24.99f, "Artisan T-Shirt made in Old City, Philadelphia", 1);
+ ArtisanPurchaseWorkflowManager.removeItemFromCart("ABC0000001", 24.99, "Artisan T-Shirt made in Old City, Philadelphia", 1);
 {% endhighlight %}
 
 It will remove the first item in the cart that matches the productIdentifier, price, description and quantity.
