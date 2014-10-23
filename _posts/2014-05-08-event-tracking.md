@@ -117,7 +117,7 @@ There are many variations of the **addToCartMethod** method so [please consult t
 When adding products to the cart, the locale, category, subCategory, and subSubCategory and any additional product info are optional. The identifier, price, description and quantity are used to uniquely identify the product in the Artisan model for the cart. This makes it possible to also remove items from the cart:
 
 {% highlight java %}
- ArtisanPurchaseWorkflowManager.removeItemFromCart("ABC0000001", 24.99f, "Artisan T-Shirt made in Old City, Philadelphia", "T-Shirts", 1);
+ ArtisanPurchaseWorkflowManager.removeItemFromCart("ABC0000001", 24.99f, "Artisan T-Shirt made in Old City, Philadelphia", 1);
 {% endhighlight %}
 
 It will remove the first item in the cart that matches the productIdentifier, price, description and quantity.

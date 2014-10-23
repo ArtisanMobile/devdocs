@@ -280,7 +280,6 @@ When adding products to the cart, the locale, category and additional product in
 [ARPurchaseWorkflowManager removeItemFromCartWithProductIdentifier:@"ABC0000001"
                                                            atPrice:[NSNumber numberWithFloat:24.99f]
                                                     andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
-                                                       andCategory:@"T-Shirts"
                                                         andQuantity:[NSNumber numberWithInt:1]];
 {% endhighlight %}
 
@@ -290,7 +289,6 @@ When adding products to the cart, the locale, category and additional product in
 ARPurchaseWorkflowManager.removeItemFromCartWithProductIdentifier("ABC0000001",
                                                          atPrice: 24.99,
                                                   andDescription: "Artisan T-Shirt made in Old City, Philadelphia",
-                                                     andCategory: "T-Shirts",
                                                       andQuanity: 1)
 {% endhighlight %}
 
