@@ -104,7 +104,7 @@ When a product is added to your cart model you can track this event with Artisan
 
 Tracking category hierarchies applies here as well by passing the optional **category**, **subCategory**, and **subSubCategory** parameters to the **addItemToCart** method.
 
-There are many variations of the **addToCartMethod** method so [please consult the ArtisanPurchaseWorkflowManager javadocs](http://docs.useartisan.com/dev/android/javadocs/) for your current version.
+There are many variations of the **addItemToCart** method so [please consult the ArtisanPurchaseWorkflowManager javadocs](http://docs.useartisan.com/dev/android/javadocs/) for your current version.
 
 {% highlight java %}
  Map<String, String> extraInfo = new HashMap<String, String>();
