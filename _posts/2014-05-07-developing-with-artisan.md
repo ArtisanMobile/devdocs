@@ -169,5 +169,4 @@ Check out [this article](https://getsatisfaction.com/artisan/topics/third_party_
 
 ###Known SDK Compatibility Issues for Android
 
-* The Artisan SDK dependencies are bundled into the Artisan jar and obfuscated to avoid any version conflicts with other libraries. However, if you are using the **ch.boye.httpclientandroidlib** jar you might have issues when dexing due to duplicate files.
-   * SOLUTION: You can pass the --expanded flag in when you install Artisan to install a version of Artisan without our dependencies obfuscated and bundled in. Our dependencies will be copied in to your libs folder by the installer. You will have to manage any version conflicts between the Artisan dependencies and your existing dependencies.
+* No known issues
