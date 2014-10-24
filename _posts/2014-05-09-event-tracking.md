@@ -68,7 +68,7 @@ With extra parameters
 [ARTrackingManager trackEvent:@"User Tapped In-App Coupon"
   parameters:@{@"coupon-code":@"B012345"}
                      category:@"Men"
-                   ubCategory:@"Shoes"];
+                   subCategory:@"Shoes"];
 
 [ARTrackingManager trackEvent:@"User Tapped In-App Coupon"
   parameters:@{@"coupon-code":@"B012345"}
