@@ -373,7 +373,7 @@ ArtisanSDK.getValueForHookById("hookId");
 Add an item to the cart for the current purchase workflow.
 
 {% highlight javascript %}
-ArtisanSDK.addItemToCart("productId", 25.00, "A nice shirt", "WOMENS_APPAREL", 1, {'Size':'M'}, "USD");
+ArtisanSDK.addItemToCart("productId", 25.00, "A nice shirt", "Womens", "Tops", "T-Shirts", 1, {'Size':'M'}, "USD");
 {% endhighlight %}
 
 <div id="cartcheckoutfailed"></div>
@@ -478,7 +478,7 @@ ArtisanSDK.emptyCart();
 Record an analytics event for a customer viewing a product.
 
 {% highlight javascript %}
-ArtisanSDK.productViewed("productId", 25.00, "A nice shirt", "T-Shirts", {'Fabric':'Cloth'}, "USD");
+ArtisanSDK.productViewed("productId", 25.00, "A nice shirt", "Womens", "Tops", "T-Shirts", {'Fabric':'Cloth'}, "USD");
 {% endhighlight %}
 
 <div id="removeitemfromcart"></div>
