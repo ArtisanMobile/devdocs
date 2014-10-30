@@ -50,12 +50,12 @@ The entire infrastructure has been designed to be fully fault tolerant with no s
 
 To further ensure a high level of availability, we have deployed industry-leading monitoring tools that constantly perform a wide array of checks on all of our services and alerts are monitored on an around the clock basis.
 
-We employ state of the art security policies and technology to ensure your data is kept safe at all times. Each and every communication is SSL/TLS with 128-bit encryption using VeriSign verified certificates. In addition, all passwords and private keys are protected with state of the art cryptographic hash functions. All data collected in Artisan is stored anonymously and is never shared with anyone. 
+We employ state of the art security policies and technology to ensure your data is kept safe at all times. Each and every communication is SSL/TLS with 128-bit encryption using VeriSign verified certificates. In addition, all passwords and private keys are protected with state of the art cryptographic hash functions. All data collected in Artisan is stored anonymously and is never shared with anyone.
 Our systems also undergo annual 3rd-party penetration testing and constant peer review. All employees undergo an extensive criminal, educational and employment background check and are subject to our least access privilege policies.
 
 ## The Artisan SDK
 
-We have engineered the Artisan SDK to be lightweight and fault tolerant, never interfering with the function and performance of your app. The Artisan SDK is exceptionally easy to install (takes just a few minutes) and acts as the communication layer between the app and Artisan’s secure cloud. It enables the Artisan product suite to connect with your app for key functionality such as discovering and interpreting screen designs, dynamic delivery of changes to the UI/UX, and auto-collection of analytics for submission back to the Artisan Analytics Cloud. 
+We have engineered the Artisan SDK to be lightweight and fault tolerant, never interfering with the function and performance of your app. The Artisan SDK is exceptionally easy to install (takes just a few minutes) and acts as the communication layer between the app and Artisan’s secure cloud. It enables the Artisan product suite to connect with your app for key functionality such as discovering and interpreting screen designs, dynamic delivery of changes to the UI/UX, and auto-collection of analytics for submission back to the Artisan Analytics Cloud.
 
 The SDK adds minimal size to your app (roughly 2 megabytes) and during live experiments there is a modest 2 megabytes of additional memory overhead when in use. Message payload is also minimal at 9 kilobytes per 50 analytics messages and 3 to 5 kilobytes for “playlists” (how we describe and render UX/UI changes). Response time latency is sub-millisecond when processing message requests.
 
@@ -68,11 +68,11 @@ The Artisan SDK is designed to work both with apps with UIs built programmatical
 ## Installation and Upgrades
 
 Artisan currently supports iOS 6+ and Android 2.3.3 (API Level 10)+ devices. Google Chrome or Mozilla Firefox is required to access artisantools.com.
-Installing and upgrading Artisan is simple. The easiest way to get started is by registering on our website (useartisan.com), logging into your newly created aritsantools.com account, and downloading our SDK distribution. 
+Installing and upgrading Artisan is simple. The easiest way to get started is by registering on our website (useartisan.com), logging into your newly created aritsantools.com account, and downloading our SDK distribution.
 
-For iOS, decompress the archive, copy the framework and bundle files into your project, and following the remaining few steps described in your artisantools.com account. You may also install or upgrade the Artisan SDK using CocoaPods — the central CocoaPods repository (http://cocoapods.org) contains the latest Artisan distribution for easy integration.   The iOS Artisan SDK requires the CoreData, CoreLocation, CFNetwork, Security, QuartzCore, and SystemConfiguration frameworks to be enabled. 
+For iOS, decompress the archive, copy the framework and bundle files into your project, and following the remaining few steps described in your artisantools.com account. You may also install or upgrade the Artisan SDK using CocoaPods — the central CocoaPods repository (http://cocoapods.org) contains the latest Artisan distribution for easy integration.   The iOS Artisan SDK requires the CoreData, CoreLocation, CFNetwork, Security, QuartzCore, and SystemConfiguration frameworks to be enabled.
 
-For Android, execute the installation wizard, which will download the necessary JARs, update your project manifest, and configure your project to be integrated with Artisan.  The Android SDK requires the GET_TASKS, WRITE_EXTERNAL_STORAGE, INTERNET, and ACCESS_NETWORK_STATE permissions to be enabled. Installation details can be found at docs.useartisan.com.
+For Android, execute the installation wizard, which will download the necessary JARs, update your project manifest, and configure your project to be integrated with Artisan.  The Android SDK requires the WRITE_EXTERNAL_STORAGE, INTERNET, and ACCESS_NETWORK_STATE permissions to be enabled. Installation details can be found at docs.useartisan.com.
 
 ## Artisan in Operation
 

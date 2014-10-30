@@ -250,7 +250,7 @@ You can safely remove any dependencies from your libs folder that were added whe
 
 <ul>
     <li>android-support-v4.jar</li>
-    <li>httpclientandroidlib-1.1.2.jar</li>
+    <li>httpmime-4.2.1.jar</li>
     <li>jackson-annotations-2.2.3.jar</li>
     <li>jackson-core-2.2.3.jar</li>
     <li>jackson-databind-2.2.3.jar</li>
