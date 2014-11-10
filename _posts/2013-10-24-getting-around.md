@@ -41,3 +41,15 @@ Invite team members to our platform by selecting the "Invite a User" button and 
 <div class="note note-important">
   <p>Important: Please remember to remove users from your account that leave the organization.</p>
 </div>
+
+### Two-factor Authentication
+
+From your Account Settings you can enable two-factor authentication for your organization. This will require all users in the organization to enter an 8-digit code in addition to their username and password in order to access Artisan. Authentication codes are sent via email to the address associated with the user account.
+
+<img src="/images/screens/two-factor-enable-organization.png"/>
+
+A two-factor code will be required each time the user authenticates with Artisan from the web and when connecting a device to Artisan. You can opt to "Remember me for 30 days" when logging in to artisantools.com. When connecting a device your authentication token will be stored and you can make the Artisan gesture to re-connect without having to enter your credentials as long as your session is valid or until you log out on the web or via the "Log Out" button on the Artisan overlay (or by tapping the Artisan notification for Android).
+
+When logging in each user has a maximum of 3 attempts to enter a valid two-factor code. If the maximum attempts have been made the user will be locked out of the Artisan platform. As an organization administrator you can unlock the user by clicking "Unlock" next to their user account information.
+
+<img src="/images/screens/two-factor-unlock-user.png"/>
