@@ -50,8 +50,9 @@ The entire infrastructure has been designed to be fully fault tolerant with no s
 
 To further ensure a high level of availability, we have deployed industry-leading monitoring tools that constantly perform a wide array of checks on all of our services and alerts are monitored on an around the clock basis.
 
-We employ state of the art security policies and technology to ensure your data is kept safe at all times. Each and every communication is SSL/TLS with 128-bit encryption using VeriSign verified certificates. In addition, all passwords and private keys are protected with state of the art cryptographic hash functions. All data collected in Artisan is stored anonymously and is never shared with anyone.
-Our systems also undergo annual 3rd-party penetration testing and constant peer review. All employees undergo an extensive criminal, educational and employment background check and are subject to our least access privilege policies.
+We employ state of the art security policies and technology to ensure your data is kept safe at all times. Each and every communication is SSL/TLS with 128-bit encryption using VeriSign verified certificates. In addition, all passwords and private keys are protected with state of the art cryptographic hash functions. Additionally, organizations can enable two-factor authentication for an extra layer of protection when connecting to Artisan.
+
+All data collected in Artisan is stored anonymously and is never shared with anyone. Our systems also undergo annual 3rd-party penetration testing and constant peer review. All employees undergo an extensive criminal, educational and employment background check and are subject to our least access privilege policies.
 
 ## The Artisan SDK
 
