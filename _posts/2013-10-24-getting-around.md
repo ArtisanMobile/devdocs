@@ -55,5 +55,5 @@ When logging in each user has a maximum of 3 attempts to enter a valid two-facto
 <img src="/images/screens/two-factor-unlock-user.png"/>
 
 <div class="note note-important">
-	<pFor connecting devices to Artisan with two-factor authentication you will need to have at least Artisan iOS SDK v2.3.5 or Artisan Android SDK v2.3.2 installed.</p>
+	<p>For connecting devices to Artisan with two-factor authentication you will need to have at least Artisan iOS SDK v2.3.5 or Artisan Android SDK v2.3.2 installed.</p>
 </div>
