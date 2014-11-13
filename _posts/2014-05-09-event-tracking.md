@@ -51,6 +51,10 @@ with an optional dictionary of name/value pairs.
 ARTrackingManager.trackEvent("itemsInCartAreNowOutofStock", parameters:["numberOfItems":"2"])
 {% endhighlight %}
 
+<div class="note note-hint">
+  <p><b>NOTE:</b> By default, each name/value pair attached to an Artisan analytics event is capped at 10,000 possible values.  For parameters where a greater number of values are anticipated, contact <a href="mailto:support@useartisan.com?Subject=Raise%20Event%20Parameter%20Value%20Limit" target="_top">support@useartisan.com</a> to raise the account limit.</p>
+</div>
+
 ### Tracking Categories
 
 Along with tracking custom parameters for your events, ARTrackingManager also allows you to associate a hierarchy of categories with your events. You can then view and filter these category values via the events report on Artisan Tools.
@@ -153,7 +157,7 @@ self.view.addSubView(button)
 {% endhighlight %}
 
 <div class="note note-hint">
-  <p>Hint: Using a unique artisanNameTag for UIViews enables the targeting of specific UI changes made with the Artisan Canvas.  This works well for dynamic views that may or may not appear every time a particular screen is displayed.</p>
+  <p><b>HINT:</b> Using a unique artisanNameTag for UIViews enables the targeting of specific UI changes made with the Artisan Canvas.  This works well for dynamic views that may or may not appear every time a particular screen is displayed.</p>
 </div>
 
 
@@ -376,7 +380,7 @@ These analytics events are automatically synced with Artisan and can be used for
 ###Automatic Tracking of SocialFramework sharing
 
 <div class="note note-hint">
-<p>NOTE: There is no need to manually track share events if you are using Apple SocialFramework for sharing to social networks. Artisan is already automatically collecting analytics events for shares via the SocialFramework.</p>
+<p><b>NOTE:</b> There is no need to manually track share events if you are using Apple SocialFramework for sharing to social networks. Artisan is already automatically collecting analytics events for shares via the SocialFramework.</p>
 </div>
 
 Artisan will automatically record the share event along with the service type and result (success, failed, cancelled, unknown).
