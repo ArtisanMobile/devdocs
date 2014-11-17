@@ -5,31 +5,17 @@ author: "Artisan"
 category: dev/ios
 description: "Deep Linking for iOS"
 ---
+
 #Deep Linking with Artisan
 
-Through Artisan you can leverage deep links for your application. Out of the box, Artisan will automatically collect analytics events for any deep link that is used to open the application. Additionally, by adding a few simple url parameters you can automatically track extra analytics information or kick of an Artisan Power Hook Block when the link is clicked to open the app. This combination makes it possible to generate targeted, dynamic deep links for your app users at any time.
+Through Artisan you can leverage and track interaction with deep links for your app. Out of the box, Artisan will automatically collect analytics events for any deep link that is used to open the application. Additionally, by adding a few simple url parameters you can automatically track extra analytics information or kick of an Artisan Power Hook Block when the link is clicked. This combination makes it possible to generate targeted, dynamic deep links for your app users at any time.
+
+There is nothing in particular that you need to do to benefit from automatic tracking of Deep Link events in your iOS app. If you have implemented a custom URL Scheme for your app, then Artisan will automatically record when a deep link happens and will not interfere with your existing code to handle the event and route the user to a specific location. For more information about getting started with deep links on iOS, see Apple's documentation for <a href="https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Inter-AppCommunication/Inter-AppCommunication.html#//apple_ref/doc/uid/TP40007072-CH6-SW1">Implementing Custom URL Schemes</a>.
 
 <ul>
-  <li><a href="#basic-usage">Basic Usage</a></li>
   <li><a href="#additional-information">Tracking Additional Information</a></li>
   <li><a href="#power-hooks">Triggering Artisan Power Hook Blocks</a></li>
 </ul>
-
-<div id="basic-usage"></div>
-
-## Getting Started with Deep Links on iOS with Artisan
-
-There is nothing in particular that you need to do to benefit form automatic tracking of Deep Link events in your iOS app. If you have implemented a custom URL Scheme for your app, then Artisan will automatically record when a deep link happens and will not interfere with your existing code to handle the event and route the user to a specific location.
-
-For more information about getting started with deep links on iOS, see Apple's documentation for <a href="https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Inter-AppCommunication/Inter-AppCommunication.html#//apple_ref/doc/uid/TP40007072-CH6-SW1">Implementing Custom URL Schemes</a>.
-
-### Example:
-
-Here's a sample URL that will open a deep link in that Artisan would automatically record. Nothing about this is specific to Artisan, the protocol mysampleapp:// refers to the scheme that is registered in my iOS app.
-
-{% highlight text %}
-mysampleapp://reportviewer
-{% endhighlight %}
 
 <div id="additional-information"></div>
 
@@ -98,14 +84,24 @@ mysampleapp://cart?SRC=EMAIL&FCID=278730
 
 By including the PH parameter and matching the name of one of your registered Power Hook Blocks you can automatically trigger a Power Hook Block from a deep link click after the app is opened.
 
+For more information about registering Artisan Power Hook Block see our documentation for <a href="/dev/ios/power-hooks/#code-blocks">Power Hook Code Blocks</a>.
+
 ### Power Hook Parameters
 
 <dt>PH</dt>
-<dd>The name of the powerhook to execute.</dd>
+<dd>The name of the Power Hook to execute.</dd>
 <dt>ARPHP_*</dt>
-<dd>If there are powerhook parameters they should each be url parameters. Each powerhook parameter name should the prefix ARPHP_ in the URL parameter. For example, if the powerhook parameter was COUPON_CODE the URL parameter would be ARPHP_COUPON_CODE</dd>
+<dd>If there are extra Power Hook parameters they should each be url parameters. Each powerhook parameter name should the prefix ARPHP_ in the URL parameter. For example, if the powerhook parameter was COUPON_CODE the URL parameter would be ARPHP_COUPON_CODE</dd>
 
-When the deep link is clicked the Power Hook Block will be executed with the provided parameters.
+When the deep link is clicked the Power Hook Block will be executed with the current values from Artisan with the provided parameters as the extra_data dictionary. This has a similar effect to calling:
+
+{% highlight text %}
+[ARPowerHookManager executeBlockWithId:samplePowerHookName data:powerHookParameters context:nil];
+{% endhighlight %}
+
+<div class="note note-important">
+  <p>The Power Hook parameters that you pass in here are used as the extra_data for your power hook block. These may add to or override the current values configured in Artisan Tools or for any active Power Hook experiments that the user is participating in.</p>
+</div>
 
 ### Example:
 
