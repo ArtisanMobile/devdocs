@@ -180,6 +180,10 @@ Configuring when an in app message is triggered is critical and plays a signific
 
 <img src="/images/screens/campaign-compose-trigger-475x300.png" height="300" width="475" alt="The Artisan Campaign In App Compose Screen - Triggers." />
 
+<div class="note note-hint">
+  <p><strong>NOTE:</strong> For In-App message triggers, the <strong>Starts App</strong> event actually corresponds to the first time the Artisan playlist is downloaded after the user starts the app. That way you can be sure the latest In-App messages are present when the first one is triggered.</p>
+</div>
+
 ## Testing Your Campaign
 
 To send yourself a test in app message, click on the **Preview On Device** located under the message preview image. You must connect your device.
