@@ -63,7 +63,7 @@ If you have a deep link URL that you would like to use as your on open behavior,
 Using a Power Hook as your on open behavior gives you the ultimate in personalizing a user's experience. Power Hooks can be used to configure a simple value or be used to configure workflow once a user opens your message. For example, your developers could build a power hook that takes your user to their shopping cart and automatically applies a discount when they open your push notification.
 
 <div class="note note-hint">
-  <p>Power Hooks must be added to your app before you can configure them in a campaign. 
+  <p>Power Hooks must be added to your app before you can configure them in a campaign.
   Power Hooks used for push notifications get sent as part of the push notification payload. That paylod's size must not exceed **2048 bytes** due to <a href='https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1'>limits imposed by the Apple Push Notification Service</a>.
   Learn more about creating power hooks for <a href="/dev/ios/power-hooks/">iOS</a> and <a href="/dev/android/power-hooks/">Android</a>.</p>
 </div>
@@ -148,7 +148,7 @@ The **background** of your content area is customizable, as are buttons if the l
 
 ### Customize Behaviors
 
-**Bevahiors** dictate what should happen when a user interacts with your message. Interacting can be clicking on the call to action button, cancel button, or content area, depending on the layout chosen. Artisan allows you to choose between **opening the app**, setting a **deep link**, or configuring a **power hook**. Deep links and power hooks are configured by your development team.
+**Behaviors** dictate what should happen when a user interacts with your message. Interacting can be clicking on the call to action button, cancel button, or content area, depending on the layout chosen. Artisan allows you to choose between **opening the app**, setting a **deep link**, or configuring a **power hook**. Deep links and power hooks are configured by your development team.
 
 <img src="/images/screens/campaign-in-app-button-470x560.png" height="339" width="700" alt="The Artisan Campaign In App Compose Screen - Button." />
 
