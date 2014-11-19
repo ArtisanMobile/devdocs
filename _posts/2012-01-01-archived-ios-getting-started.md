@@ -95,7 +95,7 @@ with an optional dictionary of name/value pairs.
 {% endhighlight %}
 
 <div class="note note-hint">
-  <p>Note: By default, each name/value pair attached to an Artisan analytics event is capped at 10,000 possible values.  For parameters where a greater number of values are anticipated, contact <a href="mailto:support@useartisan.com?Subject=Raise%20Event%20Parameter%20Value%20Limit" target="_top">support@useartisan.com</a> to raise the account limit.</p>
+  <p>Note: By default, each name/value pair attached to an Artisan analytics event is capped at 100,000 possible values.  For parameters where a greater number of values are anticipated, contact <a href="mailto:support@useartisan.com?Subject=Raise%20Event%20Parameter%20Value%20Limit" target="_top">support@useartisan.com</a> to raise the account limit.</p>
 </div>
 
 ##User Profile
