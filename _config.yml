@@ -4,3 +4,5 @@ highlighter: pygments
 
 sass:
   sass_dir: _sass
+
+exclude: [sdk_release.sh, templates]
