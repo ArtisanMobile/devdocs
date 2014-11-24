@@ -51,14 +51,14 @@ create_release_notes() {
 
   if [ ${IS_ANDROID} ]; then
     NOTES_PATH="`date +%Y-%m-%d`-android-release-${DASH_VERSION}.md"
-    TITLE_STRING="Android SDK #{VERSION} Release Notes"
+    TITLE_STRING="Android SDK ${VERSION} Release Notes"
   else
     NOTES_PATH="`date +%Y-%m-%d`-ios-release-${DASH_VERSION}.md"
-    TITLE_STRING="iOS SDK #{VERSION} Release Notes"
+    TITLE_STRING="iOS SDK ${VERSION} Release Notes"
   fi
 
   # Copy the template file and substitute in the correct title and header.
-  cp ${TEMPLATE_FILE} NOTES_PATH
+  cp ${TEMPLATE_FILE} ${NOTES_PATH}
   sed -i "" "s/title\: \"\"/title\: ${TITLE_STRING}/g" ${NOTES_PATH}
   sed -i "" "s/\# SDK Release Notes/\# ${TITLE_STRING}/g" ${NOTES_PATH}
 
@@ -84,4 +84,5 @@ while getopts "hv:a" opt;
 
 if [ -n "$version" ]; then
   get_api_docs $version $is_android;
+  create_release_notes $version $is_android;
 fi
