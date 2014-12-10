@@ -164,7 +164,7 @@ A good place to register your ArtisanEventTags for your view controller is in **
 {% endhighlight %}
 
 <div class="note note-hint">
-<p><b>HINT:</b> Our screen appeared event is recorded just after viewWillAppear so we will use whatever values we have at that time..</p>
+<p><b>HINT:</b> Our screen appeared event is recorded just after viewWillAppear so we will use whatever values we have at that time.</p>
 </div>
 
 ### Tags and Categories for Events on a View
