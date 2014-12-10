@@ -7,10 +7,11 @@ description: "Event tracking with the Artisan iOS SDK"
 ---
 #Event Tracking
 
-Artisan automatically collects analytics events for every user, session, page view, tap and other user interactions. There's nothing you need to add to your app to capture those events. But, there are times when you want to capture an event that doesn't correspond directly to a tap or navigation, or maybe you want to capture more information with a particular tap or event. To capture these custom analytics events we have the ARTrackingManager class in our API.
+Artisan automatically collects analytics events for every user, session, page view, tap and other user interactions. There's nothing you need to add to your app to capture those events. But, there are times when you want to capture an event that doesn't correspond directly to a tap or navigation, or maybe you want to capture more information with a particular tap or event. Below you can read more about our APIs for event tracking.
 
 <ul>
   <li><a href="#trackevent">Track Event</a></li>
+  <li><a href="#artisan-event-tags">Automatic Event Tagging</a></li>
   <li><a href="#nameviewcontroller">Naming View Controllers</a></li>
   <li><a href="#nameview">Naming Views</a></li>
   <li><a href="#commerce">Purchase Workflow Tracking</a></li>
@@ -111,6 +112,113 @@ ARTrackingManager.trackEvent("User Tapped In-App Coupon", category:"Men")
 ARTrackingManager.trackEvent("User Tapped In-App Coupon", category:"Men", subCategory:@"Shoes")
 ARTrackingManager.trackEvent("User Tapped In-App Coupon", category:"Men", subCategory:@"Shoes", subSubCategory:@"Vans")
 {% endhighlight %}
+
+<div id="artisan-event-tags"></div>
+
+##Automatic Event Tagging
+
+As we mentioned above, Artisan automatically collects analytics events for every user, session, page view, tap and other user interactions. There's nothing you need to add to your app to capture those events. But, there are times when you want to  capture more information with a particular tap or event. In that case you can use **ArtisanEventTags**.
+
+ArtisanEventTags are a collection of key/values that can be attached to a UIView or UIViewController so that any automatically collected analytics events, like screen view events or button tap events, will be tagged or categorized with the appropriate values.
+
+The **artisanEventTags** property is added to your UIViews and UIViewControllers automatically via category.
+
+You have two options for adding tags: fixed values and selectors. Additionally, you can register a category, subCategory, and subSubCategory on your ArtisanEventTags and those categories will be applied to the automatically-collected events as well.
+
+{% highlight objective-c %}
+ArtisanEventTags *extraButtonInfo = [ArtisanEventTags artisanEventTags];
+[extraButtonInfo setValue:self.productDescription.text
+                   forKey:@"productDescription"]; // FIXED VALUE TAG
+[extraButtonInfo setSelector:@selector(currentTitle)
+                      forKey:@"buttonTitle"];  // SELECTOR TAG
+[extraButtonInfo setCategory:@"Women"
+                 subCategory:@"Shoes"
+              subSubCategory:@"Boots"]; // CATEGORIES
+self.addToCartButton.artisanEventTags = extraButtonInfo;
+{% endhighlight %}
+
+If you set a fixed value for a tag that value will be used as is, but with a selector the Artisan SDK will perform the given selector on your UIView or UIViewController at the time that the automatically-collected event occurs. This can be useful if there is some data that is dynamic and changing that you want to capture as additional context for a given analytics event.
+
+You can add as many tags as you like and you can mix and match fixed values and selector values. Duplicate tagName values will overwrite one another; the last value added for a given tagName will be used. Also, selector values will overwrite tagValues with the same tagName.
+
+Event tags and categories can be used for filtering Artisan analytics, segmenting your users and targeting Artisan campaigns and experiments.
+
+### Tags and Categories for Screen Appeared Events
+
+When a view controller appears we automatically record a screen appeared event. If you have defined any ArtisanEventTags for the view controller we will include those with the screen appeared event.
+
+A good place to register your ArtisanEventTags for your view controller is in **viewWillAppear:** or **viewDidLoad** on your view controller.
+
+{% highlight objective-c %}
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+
+  // Adding SKU and Description to all autocollected events on screen
+  ArtisanEventTags *screenEventTags = [ArtisanEventTags artisanEventTags];
+  [screenEventTags setValue:self.product.skuId
+                             forKey:@"SKU_ID"];
+  [screenEventTags setValue:self.product.name
+                             forKey:@"PRODUCT_NAME"];
+  self.artisanEventTags = screenEventTags;
+}
+{% endhighlight %}
+
+<div class="note note-hint">
+<p><b>HINT:</b> Our screen appeared event is recorded just after viewWillAppear so we will use whatever values we have at that time..</p>
+</div>
+
+### Tags and Categories for Events on a View
+
+We automatically record analytics events for interactions on UIControls. An example of this is a button tap. The Artisan SDK will include values from the ArtisanEventTags attached to both the view itself (e.g. the button) and the view controller it is attached to.
+
+{% highlight objective-c %}
+ArtisanEventTags *addToCartButtonEventTags = [ArtisanEventTags artisanEventTags];
+// This line will make sure we're getting the updated text on the button label when the events are auto-collected
+[addToCartButtonEventTags setSelector:@selector(currentTitle)
+                               forKey:@"ADD_TO_CART_BUTTON_TEXT"];
+self.addToCartButton.artisanEventTags = addToCartButtonEventTags;
+{% endhighlight %}
+
+### Tags and Categories for Table View and Collection View Selection Events
+
+When a table view or collection view cell selection event is automatically recorded by Artisan we will look for any ArtisanEventTags on the view controller, table view or collection view, and selected cell and add the corresponding tag values to the analytics event.
+
+Here's an example of adding ArtisanEventTags to a collection view cell:
+
+{% highlight objective-c %}
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                 cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+
+  UICollectionViewCell *productCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ProductListCell"
+                                                                                forIndexPath:indexPath];
+  int row = (int)[indexPath row];
+
+  ARPProductModel *currProduct = [[self products] objectAtIndex:row];
+  // ... other setup
+
+  // Adding Sku ID and Product Name to auto-collected events on collection view cell
+  ArtisanEventTags *cellEventTags = [ArtisanEventTags artisanEventTags];
+  [cellEventTags setValue:currProduct.skuId
+                          forKey:@"SKU_ID"];
+  [cellEventTags setValue:currProduct.name
+                          forKey:@"PRODUCT_NAME"];
+  productCell.artisanEventTags = cellEventTags;
+
+  return productCell;
+}
+{% endhighlight %}
+
+<div class="note note-hint">
+<p><b>HINT:</b> A good place to set the ArtisanEventTags for a table or collection view cell is in <strong>collectionView:cellForItemAtIndexPath:</strong> or <strong>tableView:cellForRowAtIndexPath:</strong>. That way if a cell is recycled you can be sure that it doesn't have the ArtisanEventTags from a previous usage.</p>
+</div>
+
+### Tags and Categories for StoreKit and SocialFramework events
+
+When a StoreKit purchase or SocialFramework share event is recorded we will include the ArtisanEventTags for any visible view controllers to the analytics event.
+
+<div class="note note-important">
+<p><b>IMPORTANT:</b> It is possible to have multiple view controllers on the screen at the same time. We recommend that if you have multiple view controllers with ArtisanEventTags on the screen at the same time and you are using StoreKit purchases or SocialFramework that they do not have overlapping tagNames in the ArtisanEventTags for your different view controllers. If they do overlap you may find that filtering and segmenting based on these tags will be difficult because of how the values will appear in ArtisanTools.</p>
+</div>
 
 <div id="nameviewcontroller"></div>
 
