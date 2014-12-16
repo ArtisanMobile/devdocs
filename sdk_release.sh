@@ -51,10 +51,10 @@ create_release_notes() {
 
   if [ ${IS_ANDROID} ]; then
     NOTES_PATH="`date +%Y-%m-%d`-android-release-${DASH_VERSION}.md"
-    TITLE_STRING="Android SDK ${VERSION} Release Notes"
+    TITLE_STRING="Android ${VERSION} Release Notes"
   else
     NOTES_PATH="`date +%Y-%m-%d`-ios-release-${DASH_VERSION}.md"
-    TITLE_STRING="iOS SDK ${VERSION} Release Notes"
+    TITLE_STRING="iOS ${VERSION} Release Notes"
   fi
 
   # Copy the template file and substitute in the correct title and header.
