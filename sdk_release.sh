@@ -46,7 +46,7 @@ create_release_notes() {
   VERSION=$1
   IS_ANDROID=$2
 
-  DASH_VERSION=`echo ${VERSION} | tr . _`
+  DASH_VERSION=`echo ${VERSION} | tr . -`
   TEMPLATE_FILE='./templates/release_notes.md'
 
   if [ ${IS_ANDROID} ]; then
