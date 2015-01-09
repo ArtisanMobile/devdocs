@@ -41,21 +41,43 @@ Here are two examples of naming views in Android. First, assigning an id in the 
 
 Events collected on this checkbox will be labled "Crop Picture Toggle" because that is the resource name for this view's resource id.
 
-For views that are created in code you can still assign an android resource id with **View.setId(id)**. In order for this to have a resource name the id needs to be pre-defined in your ids.xml.
+For views that are created in code you can still assign an android resource id with **View.setId(int id)**. In order for this to have a resource name the id needs to be pre-defined in your ids.xml.
 
 {% highlight java %}
-RelativeLayout layout = (RelativeLayout) findViewById(R.id.profile_layout);
+RelativeLayout layout = (RelativeLayout) findViewById(R.id.my_profile_layout);
+
 Button mButton = new Button(this);
 mButton.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 mButton.setText("Invite Friends");
-// Giving a pre-defined resource id to this button so that the auto-events will be tagged with this resource name "Invite friends button"
+
+// Giving a pre-defined resource id to this button
+// So that the auto-events will be tagged with "Invite friends button"
 mButton.setId(R.id.invite_friends_button);
+
 layout.addView(mButton);
 {% endhighlight %}
 
 ### Disabling Automatic Event Tracking
 
 If desired you can disable automatic event tracking for your entire app by calling **ArtisanManager.disableAutoEventCollection()** in your Application's onCreate method before the call to startArtisan.
+
+{% highlight java %}
+import com.artisan.application.ArtisanApplication;
+import com.artisan.manager.ArtisanManager;
+
+public class MySampleApplication extends ArtisanApplication {
+
+  @Override
+  public void onCreate() {
+    super.onCreate();
+
+    ArtisanManager.disableAutoEventCollection();
+
+    ArtisanManager.startArtisan(this, "YOURAPPIDHERE");
+  }
+}
+{% endhighlight %}
+
 
 <div id="trackevent"></div>
 
