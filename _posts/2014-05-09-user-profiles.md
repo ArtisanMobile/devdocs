@@ -23,14 +23,14 @@ Artisan accepts user profile data for advanced segmentation, targeting and perso
 
 By default, Artisan collects information about the user's device which is automatically added to the user profile and can be used for targeting, segmentation and personalization. These automatically collected values include:
 
-<dt>App Version</dt><dd>The value corresponds to CFBundleShortVersionString. This is the release version number of your app in the App Store. For example, "3.2.0".</dd>
-<dt>App Build Number</dt><dd>This value corresponds to CFBundleVersion. It is the build version number for your app bundle. For example, "119".</dd>
+<dt>App Version</dt><dd>The value corresponds to CFBundleShortVersionString--the release version name of your app. For example, "3.2.0".</dd>
+<dt>App Build Number</dt><dd>This value corresponds to CFBundleVersion--the build version number for your app bundle. For example, "119".</dd>
 <dt>Device Type</dt><dd>This will be iPhone or iPad.</dd>
-<dt>Hardware Type</dt><dd>This is the return value from hw.machine property on UIDevice. For example, "iPhone 5s"</dd>
-<dt>Language</dt><dd>This is the language for the device. The value comes from [[NSLocale preferredLanguages] objectAtIndex:0].</dd>
-<dt>Last Session Date</dt><dd>the date of the last time the user's last app session.</dd>
+<dt>Hardware Type</dt><dd>The return value from hw.machine property on UIDevice. For example, "iPhone 5s"</dd>
+<dt>Language</dt><dd>The language for the device. The value comes from [[NSLocale preferredLanguages] objectAtIndex:0].</dd>
+<dt>Last Session Date</dt><dd>The date of the second to last time the user started the app.</dd>
 <dt>Minutes from GMT</dt><dd>Minutes from GMT for the device's timezone.</dd>
-<dt>OS Version</dt><dd>This is the return value from [[UIDevice currentDevice] systemVersion]. For example, "8.1".</dd>
+<dt>OS Version</dt><dd>The return value from [[UIDevice currentDevice] systemVersion]. For example, "8.1".</dd>
 <dt>OS Name</dt><dd>For iOS apps this is "iOS".</dd>
 <dt>Push Enabled</dt><dd>Whether or not push messaging is enabled for the app and user.</dd>
 <dt>Session Count</dt><dd>The total number of times the user has opened your app. A session begins when the app is foregrounded and ends when it is backgrounded.</dd>

@@ -24,14 +24,14 @@ Artisan accepts user profile data for advanced segmentation, targeting and perso
 
 By default, Artisan collects information about the user's device which is automatically added to the user profile and can be used for targeting, segmentation and personalization. These automatically collected values include:
 
-<dt>App Version</dt><dd>This is the version name of your app from your Android Manifest. The value is from PackageInfo.versionName (Available in Artisan SDK 2.4.0 and above).</dd>
-<dt>App Build Number</dt><dd>This is the version number of your app from your Android Manifest. The value is from PackageInfo.versionCode (Available in Artisan SDK 2.4.0 and above).</dd>
-<dt>Device Type</dt><dd>This will be set as Phone or Tablet depending on if the screen is at least approximately 480x640 dp units.</dd>
-<dt>Hardware Type</dt><dd>This is the return value from android.os.Build.MODEL.</dd>
+<dt>App Version</dt><dd>The version name of your app from your Android Manifest. The value is from PackageInfo.versionName (Available in Artisan SDK 2.4.0 and above).</dd>
+<dt>App Build Number</dt><dd>The version number of your app from your Android Manifest. The value is from PackageInfo.versionCode (Available in Artisan SDK 2.4.0 and above).</dd>
+<dt>Device Type</dt><dd>Phone or Tablet depending on if the screen is at least approximately 480x640 dp units.</dd>
+<dt>Hardware Type</dt><dd>The return value from android.os.Build.MODEL.</dd>
 <dt>Language</dt><dd>This is equal to the value returned from the device's default locale's language.</dd>
-<dt>Last Session Date</dt><dd>the date of the last time the user's last app session.</dd>
+<dt>Last Session Date</dt><dd>The date of the second to last time the user started the app</dd>
 <dt>Minutes from GMT</dt><dd>Minutes from GMT for the device's timezone.</dd>
-<dt>OS Version</dt><dd>This is the return value from android.os.Build.VERSION.RELEASE, like "5.0.1".</dd>
+<dt>OS Version</dt><dd>The return value from android.os.Build.VERSION.RELEASE, like "5.0.1".</dd>
 <dt>OS Name</dt><dd>For android apps this is "Android".</dd>
 <dt>Push Enabled</dt><dd>Whether or not push messaging is enabled via Google Cloud Messaging for the device and user.</dd>
 <dt>Session Count</dt><dd>The total number of times the user has opened your app. A session begins when the app is foregrounded and ends when it is backgrounded.</dd>
