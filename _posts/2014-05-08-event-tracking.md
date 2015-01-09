@@ -27,7 +27,7 @@ The taps and user interactions that are automatically collected include taps on 
 
 There's nothing you need to add to your app to capture those events. However, in order to generate the most descriptive auto event names you may want to define an Android resource name for the views that users interact with.
 
-Here are two examples of naming views in Android. First, assigning an id in the layout.xml:
+Here are two examples of naming views in Android. First, assigning an id in the layout xml:
 
 {% highlight xml %}
 <CheckBox
