@@ -8,17 +8,58 @@ description: "Event tracking with the Artisan Android SDK"
 
 #Event Tracking
 
-Artisan automatically collects analytics events for every user, session and page views. There's nothing you need to add to your app to capture those events. To capture other analytics events like taps and other user interactions we have the ArtisanTrackingManager class in our API.
+Artisan automatically collects analytics events for every user, session and page views. There's nothing you need to add to your app to capture those events. As of Artisan Android SDK 2.4.0 we also automatically collect analytics events for user tap events like buttons or checkboxes. To capture other analytics events like taps and other user interactions we have the ArtisanTrackingManager class in our API.
 
 <ul>
-  <li><a href="#trackevent">Track Event</a></li>
+  <li><a href="#automatic">Automatic Event Tracking</a></li>
+  <li><a href="#trackevent">Track Custom Events</a></li>
   <li><a href="#commerce">Purchase Workflow Tracking</a></li>
   <li><a href="#social">Social Event Tracking</a></li>
 </ul>
 
+<div id="automatic"></div>
+
+##Automatic Event Tracking
+
+As mentioned above, Artisan automatically collects analytics events for every page view, tap and other user interactions.
+
+The taps and user interactions that are automatically collected include taps on views like buttons, checkboxes, toggles and other views with click listeners attached to them that are under the content view for your Activities. Artisan even tracks events for views that are added after the screen appears by watching your view hierarchy for changes.
+
+There's nothing you need to add to your app to capture those events. However, in order to generate the most descriptive auto event names you may want to define an Android resource name for the views that users interact with.
+
+Here are two examples of naming views in Android. First, assigning an id in the layout.xml:
+
+{% highlight xml %}
+<CheckBox
+  android:id="@+id/cropPictureToggle"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:text="@string/crop_picture_label"
+  android:checked="true"
+/>
+{% endhighlight %}
+
+Events collected on this checkbox will be labled "Crop Picture Toggle" because that is the resource name for this view's resource id.
+
+For views that are created in code you can still assign an android resource id with **View.setId(id)**. In order for this to have a resource name the id needs to be pre-defined in your ids.xml.
+
+{% highlight java %}
+RelativeLayout layout = (RelativeLayout) findViewById(R.id.profile_layout);
+Button mButton = new Button(this);
+mButton.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+mButton.setText("Invite Friends");
+// Giving a pre-defined resource id to this button so that the auto-events will be tagged with this resource name "Invite friends button"
+mButton.setId(R.id.invite_friends_button);
+layout.addView(mButton);
+{% endhighlight %}
+
+### Disabling Automatic Event Tracking
+
+If desired you can disable automatic event tracking for your entire app by calling **ArtisanManager.disableAutoEventCollection()** in your Application's onCreate method before the call to startArtisan.
+
 <div id="trackevent"></div>
 
-##Track Event
+##Track Custom Events
 
 ArtisanTrackingManager manages all in-code custom analytics tracking designed for use with Artisan.
 
