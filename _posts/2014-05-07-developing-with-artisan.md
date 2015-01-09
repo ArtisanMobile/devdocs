@@ -116,8 +116,7 @@ Check out [this article](https://getsatisfaction.com/artisan/topics/third_party_
   <tbody>
 <tr>
   <th>Development Environment</th>
-  <td>Artisan is regularly tested in apps built in Eclipse and with Ant and Proguard. Support for Gradle, Maven, Android Studio and IntelliJ is in BETA</td>
-  <td>Artisan AspectJ with auto-instrumentation (optional version of SDK) cannot be used in Android Studio or IntelliJ Community Edition because the AspectJ plugin isn't available there.</td>
+  <td>Artisan is regularly tested in apps built in Eclipse and Android Studio and with Ant, Gradle and Proguard.</td>
 </tr>
 <tr>
   <th>Artisan &amp; onStart</th>
