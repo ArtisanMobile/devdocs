@@ -78,8 +78,8 @@ This will import the Artisan Javascript code into the page and will enable all o
 Once the SDK Javascript file is included in your HTML document, Artisan will automatically track the following events:
 
 * All pageviews, with the location set to the URL of the current document.
-* All `click` events on all `<button>` elements that have an `id` or `name` attribute defined and are included in the HTML document upon pageload.
-* All `click` events on all `<a>` elements that have an `id`, `name`, or `href` attribute defined and are included in the HTML document upon pageload.
+* All `click` events on all `<button>` elements that have an `id` or `name` attribute defined.
+* All `click` events on all `<a>` elements that have an `id`, `name`, or `href` attribute defined.
 
 These events will appear in the Artisan Events and Retention reports just like the events Artisan tracks within the native iOS and Android code.
 
