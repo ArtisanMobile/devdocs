@@ -10,7 +10,7 @@ description: "Event tracking with the Artisan iOS SDK"
 Artisan automatically collects analytics events for every user, session, page view, tap and other user interactions. There's nothing you need to add to your app to capture those events. But, there are times when you want to capture an event that doesn't correspond directly to a tap or navigation, or maybe you want to capture more information with a particular tap or event. Below you can read more about our APIs for event tracking.
 
 <ul>
-  <li><a href="#trackevent">Track Event</a></li>
+  <li><a href="#trackevent">Track Custom Events</a></li>
   <li><a href="#artisan-event-tags">Automatic Event Tagging</a></li>
   <li><a href="#nameviewcontroller">Naming View Controllers</a></li>
   <li><a href="#nameview">Naming Views</a></li>
@@ -20,7 +20,7 @@ Artisan automatically collects analytics events for every user, session, page vi
 
 <div id="trackevent"></div>
 
-##Track Event
+##Track Custom Events
 
 ARTrackingManager manages all in-code custom analytics tracking designed for use with Artisan.
 
