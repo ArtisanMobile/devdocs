@@ -30,7 +30,7 @@ This guide walks through how to get the Artisan SDK integrated with the HTML5 co
 
 ### iOS
 
-To enable usage of the Artisan Javascript API within a UIKit WebView, you'll want to add the following line of code to the `<head>` tag of your HTML document:
+To then use the Artisan Javascript API within that WebView, you'll want to include the javascript SDK as described below. You should include the ArtisanSDK before other libraries to ensure that all clicks are instrumented.
 
 {% highlight html %}
 <script type="text/javascript" src="https://cdn-api.artisantools.com/2.0/ArtisanSDK-min.js"></script>
@@ -61,7 +61,7 @@ ArtisanJavascriptBridge.addArtisanJavascriptInterfaceToWebView(this, [YOUR_WEB_V
 
 This will enable Javascript in your WebView and will allow the Artisan Android SDK to communicate with the Artisan Javascript API.
 
-To then use the Artisan Javascript API within that WebView, you'll want to add the following line of code to the `<head>` tag of your HTML document:
+To then use the Artisan Javascript API within that WebView, you'll want to include the javascript SDK as described below. You should include the ArtisanSDK before other libraries to ensure that all clicks are instrumented.
 
 {% highlight html %}
 <script type="text/javascript" src="https://cdn-api.artisantools.com/2.0/ArtisanSDK-min.js"></script>
@@ -77,9 +77,13 @@ This will import the Artisan Javascript code into the page and will enable all o
 
 Once the SDK Javascript file is included in your HTML document, Artisan will automatically track the following events:
 
-* All pageviews, with the location set to the URL of the current document.
-* All `click` events on all `<button>` elements that have an `id` or `name` attribute defined and are included in the HTML document upon pageload.
-* All `click` events on all `<a>` elements that have an `id`, `name`, or `href` attribute defined and are included in the HTML document upon pageload.
+* Pageviews will be recorded with URL of the current document. If no document name can be determined, the pageview will be omitted.
+* All `click` events on all HTML elements with click handler(s) assigned will be recorded, whether dynamically loaded, or included at the time the page is loaded.
+* All `click` events on anchors and buttons will be sent even if no click handler is defined.
+* All `click` events will be sent using the following attributes (in priority order) as an identifier: "name", "ng:click", "ng-click", "href", "id"
+* If you prefer to assign you own identifier, you can add an attribute called "artisanName" which will override the identifier collected from the attributes listed above.
+
+
 
 These events will appear in the Artisan Events and Retention reports just like the events Artisan tracks within the native iOS and Android code.
 
