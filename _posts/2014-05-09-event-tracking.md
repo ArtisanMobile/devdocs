@@ -230,8 +230,8 @@ If you would like to use the Artisan Event Tags to add context to your custom an
 // Objective-C
 
 NSMutableDictionary *myParameters = [NSMutableDictionary dictionaryWithDictionary:[ARTrackingManager getArtisanEventTagsForActiveViewControllers]];
-[myParameters setObject:@“myValue” forKey:@“myKey”];
-[ARTrackingManager trackEvent:@“myEvent” parameters:[NSDictionary dictionaryWithDictionary:myParameters]];
+[myParameters setObject:@"myValue" forKey:@"myKey"];
+[ARTrackingManager trackEvent:@"myEvent" parameters:[NSDictionary dictionaryWithDictionary:myParameters]];
 {% endhighlight %}
 
 <div class="note note-hint"><p>Note: This method was added with Artisan SDK 2.4.1.</p></div>
