@@ -224,13 +224,7 @@ When a StoreKit purchase or SocialFramework share event is recorded we will incl
 
 ###Automatic Event Tags for Custom Analytics Events
 
-If you would like to use the Artisan Event Tags to add context to your custom analytics events you can get an NSDictionary of all the ArtisanEventTags in all active view controllers
-
-This can be used in parameters a trackEvent call to attach all of the ArtisanEventTags in all active view controller.
-
-<div class="note note-hint"><p>Note: This method was added with Artisan SDK 2.4.1.</p></div>
-
-<div class="note note-hint"><p>Note: ArtisanEventTags for the most recent view controller sare accessible AFTER ViewWillAppear and inside of ViewDidAppear.</p></div>
+If you would like to use the Artisan Event Tags to add context to your custom analytics events you can get an NSDictionary of all the ArtisanEventTags in all active view controllers with **[ARTrackingManager getArtisanEventTagsForActiveViewControllers]**
 
 {% highlight objective-c %}
 // Objective-C
@@ -239,6 +233,10 @@ NSMutableDictionary *myParameters = [NSMutableDictionary dictionaryWithDictionar
 [myParameters setObject:@“myValue” forKey:@“myKey”];
 [ARTrackingManager trackEvent:@“myEvent” parameters:[NSDictionary dictionaryWithDictionary:myParameters]];
 {% endhighlight %}
+
+<div class="note note-hint"><p>Note: This method was added with Artisan SDK 2.4.1.</p></div>
+
+<div class="note note-hint"><p>Note: ArtisanEventTags for the most recent view controller sare accessible AFTER ViewWillAppear and inside of ViewDidAppear.</p></div>
 
 <div id="nameviewcontroller"></div>
 
