@@ -220,6 +220,26 @@ When a StoreKit purchase or SocialFramework share event is recorded we will incl
 <p><b>IMPORTANT:</b> It is possible to have multiple view controllers on the screen at the same time. We recommend that if you have multiple view controllers with ArtisanEventTags on the screen at the same time and you are using StoreKit purchases or SocialFramework that they do not have overlapping tagNames in the ArtisanEventTags for your different view controllers. If they do overlap you may find that filtering and segmenting based on these tags will be difficult because of how the values will appear in ArtisanTools.</p>
 </div>
 
+<div id="get-artisan-event-tags"></div>
+
+###Automatic Event Tags for Custom Analytics Events
+
+If you would like to use the Artisan Event Tags to add context to your custom analytics events you can get an NSDictionary of all the ArtisanEventTags in all active view controllers
+
+This can be used in parameters a trackEvent call to attach all of the ArtisanEventTags in all active view controller.
+
+<div class="note note-hint"><p>Note: This method was added with Artisan SDK 2.4.1.</p></div>
+
+<div class="note note-hint"><p>Note: ArtisanEventTags for the most recent view controller sare accessible AFTER ViewWillAppear and inside of ViewDidAppear.</p></div>
+
+{% highlight objective-c %}
+// Objective-C
+
+NSMutableDictionary *myParameters = [NSMutableDictionary dictionaryWithDictionary:[ARTrackingManager getArtisanEventTagsForActiveViewControllers]];
+[myParameters setObject:@“myValue” forKey:@“myKey”];
+[ARTrackingManager trackEvent:@“myEvent” parameters:[NSDictionary dictionaryWithDictionary:myParameters]];
+{% endhighlight %}
+
 <div id="nameviewcontroller"></div>
 
 ##Naming View Controllers
