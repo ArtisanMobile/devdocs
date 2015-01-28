@@ -47,19 +47,44 @@ Here is an example where I wait for no more than 3 seconds for the first playlis
 
 override func viewDidLoad() {
     super.viewDidLoad()
-	
+
     let waitingViewController = MYSampleWaitingViewController()
-	
+
     self.presentViewController(waitingViewController, animated:false, completion:nil)
-	
+
     let _self: MYSampleHomeScreenViewController = self
-	
+
     ARManager.onFirstPlaylistDownloaded({
         // This will be executed when the first playlist is donwloaded or after 3 seconds, whichever is first
         _self.hideWaitingViewController()
     }, withTimeout:3)
 }
 {% endhighlight %}
+
+<div class="note note-hint">
+<p><strong>FIRST VIEW CONTROLLERS:</strong> If you are registering a callback from the viewDidLoad of your first view controller, make sure that your call to start Artisan happens <strong>before</strong> the call to makeKeyAndVisible for that first view controller's window. Otherwise your callback won't actually be registered.</p>
+
+{% highlight objective-c %}
+- (BOOL)application:(UIApplication *)application
+        didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+  // This controller has the callbacks registered in viewDidLoad
+  self.rootViewController = [[ExampleRootViewController alloc] init];
+  self.window.rootViewController = self.rootViewController;
+
+  // Start Artisan *before* making the window visible
+  // So that callback registerations in viewDidLoad will be successful
+  [ARManager startWithAppId:@"YOUR_APP_ID"];
+
+  [self.window makeKeyAndVisible];
+
+  return YES;
+}
+{% endhighlight %}
+</div>
+
 
 <div class="note note-hint">
   <p><strong>A NOTE ON THREADING:</strong> The thread calling the block of code is guaranteed to be the main thread.  If the code inside of the block requires executing on a background thread you will need to implement this logic.</p>
@@ -100,7 +125,7 @@ For individual Power Hook values you can get a reference to an ARPowerHookVariab
 
 class MYSampleViewController {
     let marketingMessageVariable: ARPowerHookVariable
-	
+
     override func viewDidLoad() {
         // Get a reference to the ARPowerHookVariable
         marketingMessageVariable = ARPowerHookManager.getPowerHookVariable("marketingMessage")
