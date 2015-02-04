@@ -69,6 +69,15 @@ To then use the Artisan Javascript API within that WebView, you'll want to inclu
 
 This will import the Artisan Javascript code into the page and will enable all of the calls defined in the [Javascript API Reference Guide]({% post_url 2014-07-18-hybrid-sdk-reference-guide %}).
 
+<div class="note note-hint">
+<p><strong>Crosswalk/Cordova hybrid apps:</strong> If you are using <a href="https://crosswalk-project.org/">Crosswalk</a> webviews there is ArtisanCrosswalkJavascriptBridge available with SDK 2.4.1 and above.</p>
+<p>Add the following line of code to the `onCreate` method of the Activity containing your org.xwalk.core.XWalkView.</p>
+{% highlight java %}
+ArtisanCrosswalkJavascriptBridge.addArtisanJavascriptInterfaceToWebView(this, [YOUR_XWALK_WEB_VIEW]);
+{% endhighlight %}
+<p>This is a drop in replacement for the ArtisanJavascriptBridge and offers all of the same functionality.</p>
+</div>
+
 <div id="collectinganalytics"></div>
 
 ## Collecting Analytics
