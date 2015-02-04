@@ -1,0 +1,1109 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>ARExperimentManager Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">ArtisanSDK </a></h1>
+				<a id="developerHome" href="../index.html">appRenaissance</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">ARExperimentManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/addVariant:forExperiment:">&nbsp;&nbsp;&nbsp;&nbsp;+ addVariant:forExperiment:</option>
+	
+	<option value="//api/name/addVariant:forExperiment:isDefault:">&nbsp;&nbsp;&nbsp;&nbsp;+ addVariant:forExperiment:isDefault:</option>
+	
+	<option value="//api/name/getCurrentExperimentDetails">&nbsp;&nbsp;&nbsp;&nbsp;+ getCurrentExperimentDetails</option>
+	
+	<option value="//api/name/getCurrentVariationIds">&nbsp;&nbsp;&nbsp;&nbsp;+ getCurrentVariationIds</option>
+	
+	<option value="//api/name/getInCodeExperimentDetails">&nbsp;&nbsp;&nbsp;&nbsp;+ getInCodeExperimentDetails</option>
+	
+	<option value="//api/name/isCurrentVariant:forExperiment:">&nbsp;&nbsp;&nbsp;&nbsp;+ isCurrentVariant:forExperiment:</option>
+	
+	<option value="//api/name/registerExperiment:">&nbsp;&nbsp;&nbsp;&nbsp;+ registerExperiment:</option>
+	
+	<option value="//api/name/registerExperiment:description:">&nbsp;&nbsp;&nbsp;&nbsp;+ registerExperiment:description:</option>
+	
+	<option value="//api/name/setExperimentViewedForExperiment:">&nbsp;&nbsp;&nbsp;&nbsp;+ setExperimentViewedForExperiment:</option>
+	
+	<option value="//api/name/setTargetReachedForExperiment:">&nbsp;&nbsp;&nbsp;&nbsp;+ setTargetReachedForExperiment:</option>
+	
+	<option value="//api/name/setTargetReachedForExperiment:description:">&nbsp;&nbsp;&nbsp;&nbsp;+ setTargetReachedForExperiment:description:</option>
+	
+	<option value="//api/name/startExperiment:variantName:">&nbsp;&nbsp;&nbsp;&nbsp;+ startExperiment:variantName:</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addVariant:forExperiment:">addVariant:forExperiment:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addVariant:forExperiment:isDefault:">addVariant:forExperiment:isDefault:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getCurrentExperimentDetails">getCurrentExperimentDetails</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getCurrentVariationIds">getCurrentVariationIds</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getInCodeExperimentDetails">getInCodeExperimentDetails</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isCurrentVariant:forExperiment:">isCurrentVariant:forExperiment:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerExperiment:">registerExperiment:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerExperiment:description:">registerExperiment:description:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setExperimentViewedForExperiment:">setExperimentViewedForExperiment:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setTargetReachedForExperiment:">setTargetReachedForExperiment:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setTargetReachedForExperiment:description:">setTargetReachedForExperiment:description:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startExperiment:variantName:">startExperiment:variantName:</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="ARExperimentManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">ARExperimentManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">ARExperimentManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Manages all in-code experiments designed for use with Artisan. This includes:</p>
+
+<ul>
+<li>Create in-code experiments</li>
+<li>Adding variants to in-code experiments</li>
+<li>Wrapping the code blocks to be executed for each variant</li>
+<li>Setting additional analytics events to be tracked for in-code experiments</li>
+<li>Setting the conversion target for an in-code experiment</li>
+<li>Retrieving information about experiments to tie into third party analytics tools</li>
+</ul>
+
+
+<p>ARExperimentManager is a singleton that is automatically initialized when your app starts.  Use ARExperimentManager to manage all of your in-code experiments from inception to completion.</p>
+
+<p>All in-code experiments created using ARExperimentManager can be registered with Artisan Tools.  The registration process will automatically detect all created experiments along with their variants, and will automatically create a corresponding experiment on the Artisan Tools App page for this app.  This experiment can then be modified, published, and observed like any other Artisan experiment.
+To test out your experiments before publishing your app, you should use the startExperiment API call to programatically start your experiments in your test environment.</p>
+
+<h1>Best Practices</h1>
+
+<ul>
+<li>For in-code experiements employing this class, you should test them out prior to shipping to the app store using <a href="#//api/name/startExperiment:variantName:"><code>startExperiment:variantName:</code></a>. This way you can preview their behavior and appearance.</li>
+<li>Don&rsquo;t forget to remove the call to <a href="#//api/name/startExperiment:variantName:"><code>startExperiment:variantName:</code></a> before you ship.</li>
+<li>User the <a href="#//api/name/getCurrentExperimentDetails">getCurrentExperimentDetails</a> and <a href="#//api/name/getInCodeExperimentDetails">getInCodeExperimentDetails</a> methods to retrieve information on experiments</li>
+</ul>
+
+
+<h1>Usage Example</h1>
+
+<p><code><pre>
+//in your app delegate
+-(BOOL)application:(UIApplication <em>)application didFinishLaunchingWithOptions:(NSDictionary </em>)launchOptions
+{
+[ARExperimentManager registerExperiment:@&ldquo;first experiement&rdquo; description:@&ldquo;This is the first experiment&rdquo;];
+[ARExperimentManager addVariant:@&ldquo;hello&rdquo; forExperiment:@&ldquo;first experiement&rdquo; isDefault:YES];
+[ARExperimentManager addVariant:@&ldquo;hey&rdquo; forExperiment:@&ldquo;first experiement&rdquo;];
+[ARExperimentManager addVariant:@&ldquo;whats up&rdquo; forExperiment:@&ldquo;first experiement&rdquo;];
+[<a href="../Classes/ARManager.html">ARManager</a> startWithAppId:@&ldquo;517eda139297c44526000006&rdquo; version:@&ldquo;1.0&rdquo;];
+}
+</pre></code></p>
+
+<p><code><pre>
+//in your viewcontroller
+-(void) viewDidAppear:(BOOL)animated
+{
+[ARExperimentManager setExperimentViewedForExperiment:@&ldquo;first experiment&rdquo;];
+}
+- (void) viewWillAppear:(BOOL)animated
+{
+if ([ARExperimentManager isCurrentVariant:@&ldquo;hey&rdquo; forExperiment:@&ldquo;first experiment&rdquo;]) {
+//apply variant specific changes to your app in here.
+//for example, change buttons, labels, colors
+//alternately, move this if statement to initWithNibName:bundle: and load different nibs for different variants
+}
+}
+//if your target is a IBAction callback
+-(IBaction) buttonClicked
+{
+[ARExperimentManager setTargetReachedForExperiment:@&ldquo;first experiment&rdquo;];
+}
+</pre></code></p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/registerExperiment:">+&nbsp;registerExperiment:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/registerExperiment:description:">+&nbsp;registerExperiment:description:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addVariant:forExperiment:isDefault:">+&nbsp;addVariant:forExperiment:isDefault:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addVariant:forExperiment:">+&nbsp;addVariant:forExperiment:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isCurrentVariant:forExperiment:">+&nbsp;isCurrentVariant:forExperiment:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setTargetReachedForExperiment:">+&nbsp;setTargetReachedForExperiment:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setTargetReachedForExperiment:description:">+&nbsp;setTargetReachedForExperiment:description:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setExperimentViewedForExperiment:">+&nbsp;setExperimentViewedForExperiment:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startExperiment:variantName:">+&nbsp;startExperiment:variantName:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getCurrentExperimentDetails">+&nbsp;getCurrentExperimentDetails</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getInCodeExperimentDetails">+&nbsp;getInCodeExperimentDetails</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getCurrentVariationIds">+&nbsp;getCurrentVariationIds</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/addVariant:forExperiment:" title="addVariant:forExperiment:"></a>
+	<h3 class="subsubtitle method-title">addVariant:forExperiment:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add a variant to an in-code experiment with Artisan.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)addVariant:(NSString *)<em>variantName</em> forExperiment:(NSString *)<em>experimentName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>variantName</em></dt>
+			<dd><p>The name of the variant to add.  This needs to be unique for the experiment. If you add multiple variants with the same name for the same experiment, the first one added becomes effective.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>experimentName</em></dt>
+			<dd><p>The name of the experiment to which this variant should be added.  This needs to be the name of an experiement previously created via initExperiment:experimentName:. Leading and trailing whitespace of experimentName will be trimmed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Add a variant to an in-code experiment with Artisan.</p>
+
+<p>Use this method to add variants to your Artisan in-code experiment.  Variants should be added immediately after the experiment is created via registerExperiment:experimentName:.  Added variants will automatically be detected when the experiment is registered with Artisan Tools.</p><div class="warning"><p><strong>Warning:</strong> At least one variant must be marked as the default.  If no variants are marked as the default, the first variant added to the experiment will automatically be the default.  Use <a href="#//api/name/addVariant:forExperiment:isDefault:">addVariant:forExperiment:isDefault:</a> to explicitly mark a variant as the default. If multiple variants are marked as default, the last one added will become the default.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARExperimentManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addVariant:forExperiment:isDefault:" title="addVariant:forExperiment:isDefault:"></a>
+	<h3 class="subsubtitle method-title">addVariant:forExperiment:isDefault:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add a variant to an in-code experiment with Artisan.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)addVariant:(NSString *)<em>variantName</em> forExperiment:(NSString *)<em>experimentName</em> isDefault:(BOOL)<em>isDefault</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>variantName</em></dt>
+			<dd><p>The name of the variant to add.  This needs to be unique for the experiment. Leading and trailing whitespace will be trimmed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>experimentName</em></dt>
+			<dd><p>The name of the experiment to which this variant should be added.  This needs to be the name of an experiment previously created via registerExperiment:experimentName:. Leading and trailing whitespace of experimentName will be trimmed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>isDefault</em></dt>
+			<dd><p>Sets whether this variant is the default.  The default variant will be used in instances where the experiment is not active (i.e. completed or not yet published)</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Add a variant to an in-code experiment with Artisan.</p>
+
+<p>Use this method to add variants to your Artisan in-code experiment.  Variants should be added immediately after the experiment is created via registerExperiment:experimentName:.  Added variants will automatically be detected when the experiment is registered with Artisan Tools.</p><div class="warning"><p><strong>Warning:</strong> At least one variant must be marked as the default.  If no variants as marked as default, the first variant added to the experiment will automatically be the default.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARExperimentManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getCurrentExperimentDetails" title="getCurrentExperimentDetails"></a>
+	<h3 class="subsubtitle method-title">getCurrentExperimentDetails</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieve all current details for running experiments.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)getCurrentExperimentDetails</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Retrieve all current details for running experiments.</p><div class="warning"><p><strong>Warning:</strong> It is suggested that the earliest you call this method is within the <code>[ArtisanManager onFirstPlaylistDownloaded:block]</code> callback.</p>
+
+<p>Returns an <code>NSArray</code> of the current experiments which are <a href="../Classes/ARExperimentDetails.html"><code>ARExperimentDetails</code></a> objects.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARExperimentManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getCurrentVariationIds" title="getCurrentVariationIds"></a>
+	<h3 class="subsubtitle method-title">getCurrentVariationIds</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieve the list of all currently active experiment variation ids</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSSet *)getCurrentVariationIds</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Retrieve the list of all currently active experiment variation ids</p>
+
+<p>Returns an <code>NSSet</code> of the current experiment variation ids, where the elements are the <code>NSString</code> names of the experiment variation ids.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARExperimentManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getInCodeExperimentDetails" title="getInCodeExperimentDetails"></a>
+	<h3 class="subsubtitle method-title">getInCodeExperimentDetails</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieve details for all in-code experiments.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)getInCodeExperimentDetails</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Retrieve details for all in-code experiments.</p>
+
+<h1>Usage Example</h1>
+
+<p><code><pre>
+// in the view controller you&rsquo;re changing via your in-code experiment
+- (void) viewWillAppear:(BOOL)animated {
+// Your other code&hellip;
+NSDictionary <em>detailsDictionary = <a href="#//api/name/getInCodeExperimentDetails">[ARExperimentManager getInCodeExperimentDetails]</a>;
+<a href="../Classes/ARInCodeExperimentDetails.html">ARInCodeExperimentDetails</a> </em>inCodeDetails = [detailsDictionary objectForKey:@&ldquo;Your Experiment Name&rdquo;];</p>
+
+<p>if (inCodeDetails.isRunning) {
+// This experiment has been started from Artisan Tools and all details are available to you.
+// You can use these details to feed into your third party analytics tool
+}
+// Your code continued&hellip;
+}
+</pre></code></p>
+
+<p>Returns an <code>NSDictionary</code> of all in-code experiments where the keys are the in-code name of the experiment and the values are <code>ARInCodeExperimentDetail</code> objects.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARExperimentManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isCurrentVariant:forExperiment:" title="isCurrentVariant:forExperiment:"></a>
+	<h3 class="subsubtitle method-title">isCurrentVariant:forExperiment:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Check to see which variant is currently active.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isCurrentVariant:(NSString *)<em>variantName</em> forExperiment:(NSString *)<em>experimentName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>variantName</em></dt>
+			<dd><p>Name of the variant. This must be the name of a variant already added to this experiment, otherwise <code>NO</code> will automatically be returned.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>experimentName</em></dt>
+			<dd><p>Name of the experiment to which this variant belongs. This must be the name of an experiment already added to this app, otherwise <code>NO</code> will automatically be returned. Leading and trailing whitespace of experimentName will be trimmed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Check to see which variant is currently active.</p>
+
+<p>Use this method to wrap blocks of code that you want to execute for this variant of the specified experiment.  For example, if you want to set the text of a UILabel to &lsquo;Buy Now!&rsquo; for variant &lsquo;A&rsquo; of experiment &lsquo;Buy Button Test&rsquo;, your code would appear as follows:</p>
+
+<p><code>if ([ARExperimentManager isCurrentVariant:@"A" forExperiment:@"Buy Button Test"]) {
+label.text = @"Buy Now!";
+}</code></p>
+
+<p>Any experiment code can be wrapped in this manner, and these conditional blocks can be used in more than one location throughout your app.
+If you haven&rsquo;t yet called startAppWithId, isCurrentVariant will always return false for everything except the default variant.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARExperimentManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/registerExperiment:" title="registerExperiment:"></a>
+	<h3 class="subsubtitle method-title">registerExperiment:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a new in-code experiment with Artisan.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)registerExperiment:(NSString *)<em>experimentName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>experimentName</em></dt>
+			<dd><p>The name of the experiment to register. This needs to be unique within your app, not including leading and trailing whitespace.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Create a new in-code experiment with Artisan.</p>
+
+<p>Use this method to declare the existence of an experiment you want to run with Artisan.  This declaration should occur in the <code>didFinishLaunchingWithOptions:</code> method of your main app delegate, <em>before</em> you start Artisan using the <a href="../Classes/ARManager.html#//api/name/startWithAppId:version:"><code>[ARManager startWithAppId:version:]</code></a> method.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARExperimentManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/registerExperiment:description:" title="registerExperiment:description:"></a>
+	<h3 class="subsubtitle method-title">registerExperiment:description:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a new in-code experiment with Artisan.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)registerExperiment:(NSString *)<em>experimentName</em> description:(NSString *)<em>description</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>experimentName</em></dt>
+			<dd><p>The name of the experiment to register. This needs to be unique within your app, not including leading and trailing whitespace. If you attempt to register multiple experiments with the same name, the first one registered becomes effective.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>description</em></dt>
+			<dd><p>The description for this test. This will appear automatically when the test is registered with Artisan Tools.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Create a new in-code experiment with Artisan.</p>
+
+<p>Use this method to declare the existence of an experiment you want to run with Artisan.  This declaration should occur in the <code>didFinishLaunchingWithOptions:</code> method of your main app delegate, <em>before</em> you start Artisan using the <a href="../Classes/ARManager.html#//api/name/startWithAppId:version:"><code>[ARManager startWithAppId:version:]</code></a> method.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARExperimentManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setExperimentViewedForExperiment:" title="setExperimentViewedForExperiment:"></a>
+	<h3 class="subsubtitle method-title">setExperimentViewedForExperiment:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicate that the experiment has been viewed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setExperimentViewedForExperiment:(NSString *)<em>experimentName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>experimentName</em></dt>
+			<dd><p>Name of the experiment that has been viewed. Leading and trailing whitespace will be trimmed. Must be a valid experiment.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Indicate that the experiment has been viewed.</p>
+
+<p>Use this method to specify that your experiment has been viewed by the user. When this code is triggered, an experiment &lsquo;view&rsquo; officially begins.  This experiment view counts as a &lsquo;conversion&rsquo; if <a href="#//api/name/setTargetReachedForExperiment:">setTargetReachedForExperiment:</a> is called for this experiment before (a) setExperimentViewedForExperiment: gets called again for this experiment or (b) the app is backgrounded.</p>
+
+<p>It is essential to call this method at least once for each experiment that you build to ensure that you will get an accurate conversion rate.</p><div class="warning"><p><strong>Warning:</strong> Placement of this event is critical to creating useful and accurate analytics. Make sure this code fires ONLY when you deem that the user has encountered your experiment. Consider cases where this method is fired, then the target for this experiment is reached, which transitions back to the same code that originally triggered this method. The conversion rate would now be 50%, rather than 100%, since this method was called twice.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARExperimentManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setTargetReachedForExperiment:" title="setTargetReachedForExperiment:"></a>
+	<h3 class="subsubtitle method-title">setTargetReachedForExperiment:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the conversion target for the specified experiment.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setTargetReachedForExperiment:(NSString *)<em>experimentName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>experimentName</em></dt>
+			<dd><p>Name of the experiment for which the target is being set. Leading and trailing whitespace of experimentName will be trimmed. Must be a valid experiment.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Set the conversion target for the specified experiment.</p>
+
+<p>Use this method to specify what the conversion target should be for an in-code experiment.  The conversion target is the end of your funnel - the action that this variant is trying to maximize.</p>
+
+<p>The target set in code can be overridden by Artisan Tools as necessary.  In these cases, the target will be tracked as an ordinary analytics event.</p><div class="warning"><p><strong>Warning:</strong> If no target is specified for an experiment, your conversion rate for this test will default to zero percent. If more than one target is specified for an experiment, the target will be the first conversion event reported by a user device.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARExperimentManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setTargetReachedForExperiment:description:" title="setTargetReachedForExperiment:description:"></a>
+	<h3 class="subsubtitle method-title">setTargetReachedForExperiment:description:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the conversion target for the specified experiment, with an attached description.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setTargetReachedForExperiment:(NSString *)<em>experimentName</em> description:(NSString *)<em>description</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>experimentName</em></dt>
+			<dd><p>Name of the experiment for which the target is being set. Leading and trailing whitespace of experimentName will be trimmed. Must be a valid experiment.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>description</em></dt>
+			<dd><p>Description of the target, which will be displayed to the user on the Artisan Tools website.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Set the conversion target for the specified experiment, with an attached description.</p>
+
+<p>Use this method to specify what the conversion target should be for an in-code experiment.  The conversion target is the end of your funnel - the action that this variant is trying to maximize.</p><div class="warning"><p><strong>Warning:</strong> If no target is specified for an experiment, your conversion rate for this test will default to zero percent. If more than one target is specified for an experiment, the target will be the first conversion event reported by a user device.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARExperimentManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startExperiment:variantName:" title="startExperiment:variantName:"></a>
+	<h3 class="subsubtitle method-title">startExperiment:variantName:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Start an in-code Artisan experiment manually.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)startExperiment:(NSString *)<em>experimentName</em> variantName:(NSString *)<em>variantName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>experimentName</em></dt>
+			<dd><p>Name of the experiment being started. Leading and trailing whitespace will be trimmed. An error will be logged if a valid experiement is not specified.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>variantName</em></dt>
+			<dd><p>Name of the variant to apply for this experiment.  This should be one of the variants added to the experiment.  If the name is invalid, the experiment will apply the default variant.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Start an in-code Artisan experiment manually.</p>
+
+<p>Use this method to manually apply an experiment built using the Artisan in-code API.  The app will behave as if the experiment has been published and the user has received the variant specified. Because this is a test method not intended for production use, you don&rsquo;t need a valid app ID, nor do you need to call startAppwithId, for this to work.</p>
+
+<p>This method should be called in   the <code>didFinishLaunchingWithOptions:</code> method of your main app delegate, immediately after all of the variants for your test have been added via calls to <a href="#//api/name/addVariant:forExperiment:isDefault:"><code>addVariant:forExperiment:isDefault:</code></a>.</p><div class="warning"><p><strong>Warning:</strong> This method is intended for local test and QA use only, and should <em>not</em> be used within production code. If you accidentally leave this in your production code, the variant specified will effectively become the default.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARExperimentManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 appRenaissance. All rights reserved. (Last updated: 2015-02-04)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
