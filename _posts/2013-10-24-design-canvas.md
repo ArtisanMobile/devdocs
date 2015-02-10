@@ -6,22 +6,50 @@ category: user-guide
 description: "Getting started with the Artisan MEM platform for developers."
 ---
 # Canvas
-The Canvas is used to make changes to your app in Artisan such as modifying screens, building an A/B test, creating a personalization, or adding a tag.
+The Canvas is a WYSIWYG editor used to make dynamic, code-free changes to the visuals of your app.  These changes can include the following:
 
-## Getting to Know the Canvas
-After you select a screen to work on from the App Map you will be placed in the Canvas.
+* Building an A/B test
+* Creating a visual personalization
+* Adding visual tags to enrich the event data collected on each screen
 
-The screen you selected from your app is displayed in the center of the canvas. You can directly interact with the screen shown in the Canvas to resize and move things on the screen such as buttons and images.
+The Canvas is best used to make small UI tweaks that you want to apply immediately, without deploying code or an app update to your users.
 
-Selecting an item on the screen also displays all of the properties available for you to change for that item. The properties are displayed on the right hand side of the page. Different items on the screen have different properties available for you to change, so depending on the item you selected you will be able to update text, change images, modify the font size of a paragraph, and much more.
+## Supported Apps
+
+The Canvas supports the following app screens:
+
+* iOS App screens built using UIKit elements.
+
+The Canvas does *not* support the following:
+
+* Android apps (and associated activities)
+* Interfaces created using game engines and other non-UIKit-based frameworks (e.g. Unity, Cocos2D)
+* Web Views and HTML5-constructed interfaces (e.g. Apache Cordova-based apps)
+* UIs drawn using CoreGraphics and other direct-draw capabilities.
+
+## Getting Started With the Canvas
+Once you've connected your app to the Artisan [Design Center]({% post_url 2013-10-24-app-map %}), you can navigate within your app to see the different actions available for each screen.  Once you've navigated to your target screen, if it's eligible for use with the Canvas, you should see the following options:
+
+* Create a New Experiment
+* Modify and Personalize
+* Add a tag
+
+Selecting any of these will automatically open the Canvas for the currently selected screen.  You can now directly interact with the screen shown in the Canvas to resize and move things on the screen such as buttons and images.
+
+<p><img src="/images/screens/canvas-sample-screenshot-700x569.jpg" width="700" height="569" alt="Screen capture of an A/B test being built via Canvas." /></p>
 
 On the left of the Canvas you will see the Screen Browser. The Screen Browser is a tree listing of each of the UI items that are available on your screen. Sometimes multiple items may be stacked on top of each other making it difficult to select the item that you want to make changes to. The Screen Browser makes this easy by allowing you to simply click on the name of the element you would like to change. Clicking an item in the list selects the item on the screen and displays the available properties.
 
-Depending on what you are working on, the Canvas may display additional information. For instance, if you are working on an Experiment a list of variations is displayed. If you are personalizing a screen a list of segments will appear. You can learn more about using these tools in:
+Selecting an item on the screen also displays all of the properties available for you to change for that item. The properties are displayed on the right hand side of the page. Different items on the screen have different properties available for you to change, so depending on the item you selected you will be able to update text, change images, modify the font size of a paragraph, and much more.
 
-* Personalize
-* Optimize
-* Tagging
+<div class="note note-hint">
+  <p>Note: For iOS UIs built using Auto-Layout, repositioning elements will fix their position to a specific static coordinate, with associated relationships updating to reflect this new static position.</p>
+</div>
+
+Depending on what you are working on, the Canvas may display additional information. For instance, if you are working on an Experiment, a list of variations is displayed. If you are personalizing a screen a list of segments will appear. You can learn more about using these tools in:
+
+* [Personalize] { % post_url 2013-10-24-personalize.md % }
+* [Optimize] { % post_url 2013-10-24-optimize.md % }
 
 <div id="instant-publishing"></div>
 
@@ -38,12 +66,12 @@ Artisan makes it easy to make changes to your app, like fixing a typo or updatin
 
 You can also make changes and publish those changes to specific segments of users with Artisan Personalize. To learn more about personalizing your user experience read about **Artisan Personalize**.
 
-<div id="event-tagging"></div>
+<div id="canvas-tagging"></div>
 
-## Event Tagging
-Tagging allows you to associate any piece of information displayed on the screen with an action that a user performs. For example, if your app allowed users to make purchases you could associate the total cart value with each time a user taps the "Purchase" button. This additional information allows you to create more targeted segments of users and gain deeper insights into how your users are interacting with your app.
+## Canvas Tagging
+Canvas tagging allows you to associate any piece of information displayed on the screen with an action that a user performs. For example, if your app allowed users to make purchases you could associate the total cart value with each time a user taps the "Purchase" button. This additional information allows you to create more targeted segments of users and gain deeper insights into how your users are interacting with your app.
 
-### Tagging Events
+### Applying Canvas Tags
 * Click 'Create New Tag' on the right hand side of the screen
 * Click Start Tagging
 * Click on the object on the screen (button, switch, etc…) that triggers the event you wish to tag and click "Next"
@@ -53,7 +81,7 @@ Tagging allows you to associate any piece of information displayed on the screen
 
 ### Deleting a Tag
 * Navigate to the screen the tag is on through App Map.
-* Click "Modify and Personalize", and click the Tag tab on the right hand side. (or alternatively, Add a tag).
+* Click "Modify and Personalize", and click the Tag tab on the right hand side. (or alternatively, `Add a Tag`).
 * This will open up your list of tags for the current screen.
 * Click the X icon next to the tag you would like to remove.
 
@@ -66,6 +94,3 @@ To see reports on the relationship between the target behavior and the label or 
 
 In the drop down above the Event Report, the tag that was just identified should be available. This tag will allow you to filter the Event Report to show only events that happened while this tag was present on the screen (i.e. show only when this event happened with '$24' shown as the Product Price).
 You can then enter the data (e.g. Product Price of $24) to see the trend line associated with that product.
-
-
-
