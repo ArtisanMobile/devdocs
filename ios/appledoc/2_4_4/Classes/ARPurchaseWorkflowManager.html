@@ -1,0 +1,940 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>ARPurchaseWorkflowManager Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">ArtisanSDK </a></h1>
+				<a id="developerHome" href="../index.html">appRenaissance</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">ARPurchaseWorkflowManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/addItemToCartWithProductIdentifier:atPrice:withCurrencyCode:andDescription:andCategory:andSubCategory:andSubSubCategory:andQuantity:withProductInfo:">&nbsp;&nbsp;&nbsp;&nbsp;+ addItemToCartWithProductIdentifier:atPrice:withCurrencyCode:andDescription:andCategory:andSubCategory:andSubSubCategory:andQuantity:withProductInfo:</option>
+	
+	<option value="//api/name/cartCheckoutFailed">&nbsp;&nbsp;&nbsp;&nbsp;+ cartCheckoutFailed</option>
+	
+	<option value="//api/name/cartCheckoutSucceededWithShipping:withTax:">&nbsp;&nbsp;&nbsp;&nbsp;+ cartCheckoutSucceededWithShipping:withTax:</option>
+	
+	<option value="//api/name/cartCheckoutWasCancelled">&nbsp;&nbsp;&nbsp;&nbsp;+ cartCheckoutWasCancelled</option>
+	
+	<option value="//api/name/cartIsNotEmpty">&nbsp;&nbsp;&nbsp;&nbsp;+ cartIsNotEmpty</option>
+	
+	<option value="//api/name/cartWasAbandoned">&nbsp;&nbsp;&nbsp;&nbsp;+ cartWasAbandoned</option>
+	
+	<option value="//api/name/emptyCart">&nbsp;&nbsp;&nbsp;&nbsp;+ emptyCart</option>
+	
+	<option value="//api/name/productViewedWithProductIdentifier:atPrice:withCurrencyCode:andDescription:andCategory:andSubCategory:andSubSubCategory:withProductInfo:">&nbsp;&nbsp;&nbsp;&nbsp;+ productViewedWithProductIdentifier:atPrice:withCurrencyCode:andDescription:andCategory:andSubCategory:andSubSubCategory:withProductInfo:</option>
+	
+	<option value="//api/name/removeItemFromCartWithProductIdentifier:atPrice:andDescription:andQuantity:">&nbsp;&nbsp;&nbsp;&nbsp;+ removeItemFromCartWithProductIdentifier:atPrice:andDescription:andQuantity:</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addItemToCartWithProductIdentifier:atPrice:withCurrencyCode:andDescription:andCategory:andSubCategory:andSubSubCategory:andQuantity:withProductInfo:">addItemToCartWithProductIdentifier:atPrice:withCurrencyCode:andDescription:andCategory:andSubCategory:andSubSubCategory:andQuantity:withProductInfo:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cartCheckoutFailed">cartCheckoutFailed</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cartCheckoutSucceededWithShipping:withTax:">cartCheckoutSucceededWithShipping:withTax:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cartCheckoutWasCancelled">cartCheckoutWasCancelled</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cartIsNotEmpty">cartIsNotEmpty</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cartWasAbandoned">cartWasAbandoned</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/emptyCart">emptyCart</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/productViewedWithProductIdentifier:atPrice:withCurrencyCode:andDescription:andCategory:andSubCategory:andSubSubCategory:withProductInfo:">productViewedWithProductIdentifier:atPrice:withCurrencyCode:andDescription:andCategory:andSubCategory:andSubSubCategory:withProductInfo:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeItemFromCartWithProductIdentifier:atPrice:andDescription:andQuantity:">removeItemFromCartWithProductIdentifier:atPrice:andDescription:andQuantity:</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="ARPurchaseWorkflowManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">ARPurchaseWorkflowManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">ARPurchaseWorkflowManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Manages a purchase workflow with Artisan. This includes recording Artisan analytics events for:</p>
+
+<ul>
+<li>when items are viewed by the customer</li>
+<li>when items are added or removed from the customer&rsquo;s cart.</li>
+<li>when the cart is abandoned (user left the app without checking out)</li>
+<li>when the customer checks out successfully or unsuccessfully</li>
+<li>when the customer cancels checkout</li>
+</ul>
+
+
+<p>ARPurchaseWorkflowManager is a singleton that is automatically initialized when your app starts.</p>
+
+<p>NOTE: You do not need to manually track Apple StoreKit purchases&ndash;those purchases are already automatically tracked by Artisan.</p>
+
+<p>These analytics events are automatically synced with Artisan and can be used for Advanced segmentation and personalization with the Artisan analytics reports, experiments, power hooks and campaigns.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/productViewedWithProductIdentifier:atPrice:withCurrencyCode:andDescription:andCategory:andSubCategory:andSubSubCategory:withProductInfo:">+&nbsp;productViewedWithProductIdentifier:atPrice:withCurrencyCode:andDescription:andCategory:andSubCategory:andSubSubCategory:withProductInfo:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addItemToCartWithProductIdentifier:atPrice:withCurrencyCode:andDescription:andCategory:andSubCategory:andSubSubCategory:andQuantity:withProductInfo:">+&nbsp;addItemToCartWithProductIdentifier:atPrice:withCurrencyCode:andDescription:andCategory:andSubCategory:andSubSubCategory:andQuantity:withProductInfo:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeItemFromCartWithProductIdentifier:atPrice:andDescription:andQuantity:">+&nbsp;removeItemFromCartWithProductIdentifier:atPrice:andDescription:andQuantity:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/emptyCart">+&nbsp;emptyCart</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cartIsNotEmpty">+&nbsp;cartIsNotEmpty</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cartWasAbandoned">+&nbsp;cartWasAbandoned</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cartCheckoutWasCancelled">+&nbsp;cartCheckoutWasCancelled</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cartCheckoutFailed">+&nbsp;cartCheckoutFailed</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cartCheckoutSucceededWithShipping:withTax:">+&nbsp;cartCheckoutSucceededWithShipping:withTax:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/addItemToCartWithProductIdentifier:atPrice:withCurrencyCode:andDescription:andCategory:andSubCategory:andSubSubCategory:andQuantity:withProductInfo:" title="addItemToCartWithProductIdentifier:atPrice:withCurrencyCode:andDescription:andCategory:andSubCategory:andSubSubCategory:andQuantity:withProductInfo:"></a>
+	<h3 class="subsubtitle method-title">addItemToCartWithProductIdentifier:atPrice:withCurrencyCode:andDescription:andCategory:andSubCategory:andSubSubCategory:andQuantity:withProductInfo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add an item to the cart for the current purchase workflow.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)addItemToCartWithProductIdentifier:(NSString *)<em>productIdentifier</em> atPrice:(NSNumber *)<em>price</em> withCurrencyCode:(NSString *)<em>currencyCode</em> andDescription:(NSString *)<em>description</em> andCategory:(NSString *)<em>category</em> andSubCategory:(NSString *)<em>subCategory</em> andSubSubCategory:(NSString *)<em>subSubCategory</em> andQuantity:(NSNumber *)<em>quantity</em> withProductInfo:(NSDictionary *)<em>productInfo</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>productIdentifier</em></dt>
+			<dd><p>An identifier for the product</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>price</em></dt>
+			<dd><p>The price of the item. This should be the price of a single item.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>currencyCode</em></dt>
+			<dd><p>The ISO4217 currency code of the given price value.  (optional, may be nil) If this is left nil then the [NSLocale objectForKey:NSLocaleCurrencyCode] will be substituted.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>description</em></dt>
+			<dd><p>A description of the product. (optional, may be nil)</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>category</em></dt>
+			<dd><p>The category that you would like to record for this product. (optional, may be nil)</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>subCategory</em></dt>
+			<dd><p>The sub category that you would like to record for this product. (optional, may be nil)</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>subSubCategory</em></dt>
+			<dd><p>The sub sub category that you would like to record for this product. (optional, may be nil)</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>quantity</em></dt>
+			<dd><p>The quantity of the product.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>productInfo</em></dt>
+			<dd><p>A dictionary of any key/value pairs of information about this product. This data will be attached to the analytics event in Artisan. All keys and values must be NSString objects, or they will be ignored. (optional, may be nil)</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Add an item to the cart for the current purchase workflow.</p>
+
+<p>[ARPurchaseWorkflowManager addItemToCartWithProductIdentifier:@&ldquo;ABC0000001&rdquo;
+                                                       atPrice:[NSNumber numberWithFloat:24.99f]
+                                               withCurrencyCode:@&ldquo;USD&rdquo;
+                                                andDescription:@&ldquo;Artisan T-Shirt made in Old City, Philadelphia&rdquo;
+                                                   andCategory:@&ldquo;T-Shirts&rdquo;
+                                                andSubCategory:@&ldquo;Crew-Necks&rdquo;
+                                             andSubSubCategory:@&ldquo;Artisan Paint It Black Tee&rdquo;
+                                                   andQuantity:[NSNumber numberWithInt:1]
+                                               withProductInfo:@{ @&ldquo;style&rdquo;:@&ldquo;organic cotton&rdquo;, @&ldquo;size&rdquo;:@&ldquo;medium&rdquo; }];</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARPurchaseWorkflowManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cartCheckoutFailed" title="cartCheckoutFailed"></a>
+	<h3 class="subsubtitle method-title">cartCheckoutFailed</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Record that the checkout failed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)cartCheckoutFailed</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Record that the checkout failed.</p>
+
+<p>The items will remain in the cart so that another purchase can be completed. If you want to empty the cart you should use <a href="#//api/name/emptyCart">[ARPurchaseWorkflowManager emptyCart]</a></p>
+
+<h1>Usage Example</h1>
+
+<p><code><pre>
+<a href="#//api/name/cartCheckoutFailed">[ARPurchaseWorkflowManager cartCheckoutFailed]</a>;
+</pre></code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARPurchaseWorkflowManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cartCheckoutSucceededWithShipping:withTax:" title="cartCheckoutSucceededWithShipping:withTax:"></a>
+	<h3 class="subsubtitle method-title">cartCheckoutSucceededWithShipping:withTax:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Record that the cart was checked out successfully. We will record an analytics event including information on all of the products that were purchased.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)cartCheckoutSucceededWithShipping:(NSNumber *)<em>shipping</em> withTax:(NSNumber *)<em>tax</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>shipping</em></dt>
+			<dd><p>Amount of shipping to add to the cart total to make the transaction total. The amount is assumed to be in the same priceLocale as the items in the cart.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tax</em></dt>
+			<dd><p>Amount of tax to add to the cart total to make the transaction total. The amount is assumed to be in the same priceLocale as the items in the cart.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Record that the cart was checked out successfully. We will record an analytics event including information on all of the products that were purchased.</p>
+
+<p>We will automatically calculate the cart total and send that with the Artisan analytics event. It is assumed that all items in the cart will have the same price locale; we will use the price locale of the first item.</p>
+
+<p>You may add shipping and tax information here and they will be recorded in the cart total. The amounts are assumed to be in the same priceLocale as the items in the cart.</p>
+
+<h1>Usage Example</h1>
+
+<p><code><pre>
+[ARPurchaseWorkflowManager cartCheckoutSucceededWithShipping:[NSNumber numberWithFloat:2.25f] withTax:[NSNumber numberWithFloat:3.00f]];
+</pre></code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARPurchaseWorkflowManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cartCheckoutWasCancelled" title="cartCheckoutWasCancelled"></a>
+	<h3 class="subsubtitle method-title">cartCheckoutWasCancelled</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Record that the checkout was cancelled by the customer.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)cartCheckoutWasCancelled</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Record that the checkout was cancelled by the customer.</p>
+
+<p>The items will remain in the cart so that another purchase can be completed. If you want to empty the cart you should use <a href="#//api/name/emptyCart">[ARPurchaseWorkflowManager emptyCart]</a></p>
+
+<h1>Usage Example</h1>
+
+<p><code><pre>
+<a href="#//api/name/cartCheckoutWasCancelled">[ARPurchaseWorkflowManager cartCheckoutWasCancelled]</a>;
+</pre></code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARPurchaseWorkflowManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cartIsNotEmpty" title="cartIsNotEmpty"></a>
+	<h3 class="subsubtitle method-title">cartIsNotEmpty</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Check if there are items in the cart model for this Artisan Purchase Workflow.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)cartIsNotEmpty</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>true if there are any items in the cart model.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Check if there are items in the cart model for this Artisan Purchase Workflow.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARPurchaseWorkflowManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cartWasAbandoned" title="cartWasAbandoned"></a>
+	<h3 class="subsubtitle method-title">cartWasAbandoned</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Record that the cart was abandoned.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)cartWasAbandoned</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Record that the cart was abandoned.</p>
+
+<p>The items will remain in the cart so that another purchase can be completed. If you want to empty the cart you should use <a href="#//api/name/emptyCart">[ARPurchaseWorkflowManager emptyCart]</a></p>
+
+<h1>Usage Example</h1>
+
+<p><code><pre>
+<a href="#//api/name/cartWasAbandoned">[ARPurchaseWorkflowManager cartWasAbandoned]</a>;
+</pre></code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARPurchaseWorkflowManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/emptyCart" title="emptyCart"></a>
+	<h3 class="subsubtitle method-title">emptyCart</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Remove all items from the cart without marking it as abandoned or checked out.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)emptyCart</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Remove all items from the cart without marking it as abandoned or checked out.</p>
+
+<h1>Usage Example</h1>
+
+<p><code><pre>
+<a href="#//api/name/emptyCart">[ARPurchaseWorkflowManager emptyCart]</a>;
+</pre></code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARPurchaseWorkflowManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/productViewedWithProductIdentifier:atPrice:withCurrencyCode:andDescription:andCategory:andSubCategory:andSubSubCategory:withProductInfo:" title="productViewedWithProductIdentifier:atPrice:withCurrencyCode:andDescription:andCategory:andSubCategory:andSubSubCategory:withProductInfo:"></a>
+	<h3 class="subsubtitle method-title">productViewedWithProductIdentifier:atPrice:withCurrencyCode:andDescription:andCategory:andSubCategory:andSubSubCategory:withProductInfo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Record an analytics event for a customer viewing a product.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)productViewedWithProductIdentifier:(NSString *)<em>productIdentifier</em> atPrice:(NSNumber *)<em>price</em> withCurrencyCode:(NSString *)<em>currencyCode</em> andDescription:(NSString *)<em>description</em> andCategory:(NSString *)<em>category</em> andSubCategory:(NSString *)<em>subCategory</em> andSubSubCategory:(NSString *)<em>subSubCategory</em> withProductInfo:(NSDictionary *)<em>productInfo</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>productIdentifier</em></dt>
+			<dd><p>An identifier for the product.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>price</em></dt>
+			<dd><p>The price of the item.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>currencyCode</em></dt>
+			<dd><p>The ISO4217 currency code of the given price value.  (optional, may be nil) If this is left nil then the [NSLocale objectForKey:NSLocaleCurrencyCode] will be substituted.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>description</em></dt>
+			<dd><p>A description of the product. (optional, may be nil)</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>category</em></dt>
+			<dd><p>The category that you would like to record for this product. (optional, may be nil)</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>subCategory</em></dt>
+			<dd><p>The sub category that you would like to record for this product. (optional, may be nil)</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>subSubCategory</em></dt>
+			<dd><p>The sub sub category that you would like to record for this product. (optional, may be nil)</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>productInfo</em></dt>
+			<dd><p>A dictionary of any key/value pairs of information about this product. This data will be attached to the analytics event in Artisan. All keys and values must be NSString objects, or they will be ignored. (optional, may be nil)</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Record an analytics event for a customer viewing a product.</p>
+
+<p>[ARPurchaseWorkflowManager productViewedWithProductIdentifier:@&ldquo;ABC0000001&rdquo;
+                                                       atPrice:[NSNumber numberWithFloat:24.99f]
+                                              withCurrencyCode:@&ldquo;USD&rdquo;
+                                                andDescription:@&ldquo;Artisan T-Shirt made in Old City, Philadelphia&rdquo;
+                                                   andCategory:@&ldquo;T-Shirts&rdquo;
+                                                andSubCategory:@&ldquo;Crew-Necks&rdquo;
+                                             andSubSubCategory:@&ldquo;Artisan Paint It Black Tee&rdquo;
+                                               withProductInfo:@{@&ldquo;style&rdquo;:@&ldquo;organic cotton&rdquo;,@&ldquo;size&rdquo;:@&ldquo;medium&rdquo;}];</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARPurchaseWorkflowManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeItemFromCartWithProductIdentifier:atPrice:andDescription:andQuantity:" title="removeItemFromCartWithProductIdentifier:atPrice:andDescription:andQuantity:"></a>
+	<h3 class="subsubtitle method-title">removeItemFromCartWithProductIdentifier:atPrice:andDescription:andQuantity:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Call this method to remove an item from the Artisan cart model for the current purchase workflow.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)removeItemFromCartWithProductIdentifier:(NSString *)<em>productIdentifier</em> atPrice:(NSNumber *)<em>price</em> andDescription:(NSString *)<em>description</em> andQuantity:(NSNumber *)<em>quantity</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>productIdentifier</em></dt>
+			<dd><p>The identifier of the cart item that should be removed</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>price</em></dt>
+			<dd><p>The price of the cart item that should be removed</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>description</em></dt>
+			<dd><p>The description of the cart item that should be removed</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>quantity</em></dt>
+			<dd><p>The quantity of the cart item that should be removed</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Call this method to remove an item from the Artisan cart model for the current purchase workflow.</p>
+
+<p>It will remove the first item in the cart that matches the productIdentifier, price, description and quantity.</p>
+
+<pre><code>[ARPurchaseWorkflowManager removeItemFromCartWithProductIdentifier:@"ABC0000001"
+                                                           atPrice:[NSNumber numberWithFloat:24.99f]
+                                                    andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
+                                                        andQuantity:[NSNumber numberWithInt:1]];
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARPurchaseWorkflowManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 appRenaissance. All rights reserved. (Last updated: 2015-02-11)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
