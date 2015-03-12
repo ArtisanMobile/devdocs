@@ -171,7 +171,7 @@ If you do not see this form please make sure you have successfully set your Serv
 
 Optionally, you can customize the notifications Artisan will show when a push is received.
 
-To provide Artisan with notification settings you can construct an ** ArtisanNotificationBuilder**, which the SDK will use to build notification objects.
+To provide Artisan with notification settings you can construct an  ArtisanNotificationBuilder, which the SDK will use to build notification objects.
 
 {% highlight java %}
 import com.artisan.application.ArtisanApplication;
