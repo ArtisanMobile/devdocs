@@ -18,6 +18,7 @@ All hooks are created using ARPowerHookManager are automatically registered with
   <li><a href="#callbacks">Callbacks</a></li>
   <li><a href="#preview-mode">Preview Mode</a></li>
   <li><a href="#binding-to-screen">Binding to Screen Elements</a></li>
+  <li><a href="#experiment-details">Power Hook Experiment Details</a></li>
 </ul>
 
 <div id="register"></div>
@@ -127,7 +128,7 @@ ARPowerHookManager.registerBlockWithId("discountPopup",
     if (data["shouldDisplayAlert"] as NSString == "true") {
         let message = "Hello there, " + data["name"] + "! We'd like to give you a discount of " + data["discountAmount"] + " on " + data["product"]
         let alertView = UIAlertView(title: "Here's a Coupon!", message:message, delegate:context, cancelButtonTitle:"Cancel")
-        
+
         alertView.show()
     }
 })
@@ -225,9 +226,52 @@ func bindPowerHookAsFloatToUIElementProperty(powerHookId:String, stringWithForma
 func bindPowerHookAsIntegerToUIElementProperty(powerHookId:String, stringWithFormat:String, element:UIElement, attribute:String)
 {% endhighlight %}
 
-
 By using these convenience methods within the `viewDidLoad:` method of your view controllers, you can ensure that the given attribute of the bound UIElement always matches the most recently retrieved Power Hook value.
 
 <img src="/images/powerhook-binding-example.png"/>
 
 Additionally, all Power Hooks bound in this manner will change in real-time when using Preview Mode, allowing for dynamic preview of the updated values.
+
+<div id="experiment-details"></div>
+
+##Power Hook Experiment Details
+
+You can access details about currently running Power Hook Experiments via **getPowerHookVariableExperimentDetails** and **getPowerHookBlockExperimentDetails** for Power Hook Variabls and Blocks, respectively. The value returned from these methods is an NSDictionary where they keys are the hook or block ids and the values are **ARPowerHookExperimentDetails** objects, which include information on the experiment name and id, variation name and id, and the start date and end date of the experiment.
+
+The experiment and variation ids are unique identifiers for the experiment that is running with Artisan and the variation that this device has been assigned. You may use this to report to a third-party analytics tool. The experiment and variation names are the same that you can see in Artisan Tools.
+
+{% highlight objective-c %}
+// Objective-C
+
+NSDictionary *powerHookDetails = [ARPowerHookManager getPowerHookVariableExperimentDetails];
+[powerHookDetails enumerateKeysAndObjectsUsingBlock:^(NSString *hookId, ARPowerHookExperimentDetails *details, BOOL *stop) {
+  NSLog(@"Details for hook: %@", hookId);
+  NSLog(@"experimentId: %@", [details experimentId]);
+  NSLog(@"experimentName: %@", [details experimentName]);
+  NSLog(@"experimentType: %@", [details experimentType]);
+  NSLog(@"experiment Start: %@", [details experimentStartDate]);
+  NSLog(@"experiment End: %@", [details experimentEndDate]);
+  NSLog(@"experiment isRunning: %@", [details isRunning] ? @"YES" : @"NO");
+  NSLog(@"experiment hook id: %@", [details hookId]);
+  NSLog(@"variation ID: %@", [details currentVariantId]);
+  NSLog(@"variation name: %@", [details currentVariantName]);
+}];
+
+NSDictionary *powerHookBlockDetails = [ARPowerHookManager getPowerHookBlockExperimentDetails];
+[powerHookBlockDetails enumerateKeysAndObjectsUsingBlock:^(NSString *blockId, ARPowerHookExperimentDetails *details, BOOL *stop) {
+  NSLog(@"Details for block: %@", blockId);
+  NSLog(@"experimentId: %@", [details experimentId]);
+  NSLog(@"experimentName: %@", [details experimentName]);
+  NSLog(@"experimentType: %@", [details experimentType]);
+  NSLog(@"experiment Start: %@", [details experimentStartDate]);
+  NSLog(@"experiment End: %@", [details experimentEndDate]);
+  NSLog(@"experiment isRunning: %@", [details isRunning] ? @"YES" : @"NO");
+  NSLog(@"experiment hook id: %@", [details hookId]);
+  NSLog(@"variation ID: %@", [details currentVariantId]);
+  NSLog(@"variation name: %@", [details currentVariantName]);
+}];
+{% endhighlight %}
+
+<div class="note note-hint">
+<p>We recommend that you retrieve the current Power Hook Experiment Details no sooner than <a href="/dev/ios/callbacks/#playlist">after the first playlist has been downloaded</a>. That way you can be sure to have the most up to date experiment details.</p>
+</div>

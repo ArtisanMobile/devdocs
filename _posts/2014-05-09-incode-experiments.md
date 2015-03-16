@@ -212,3 +212,7 @@ let variationIds = ARExperimentManager.getCurrentVariationIds()
 <div class="note note-hint">
 <p>NOTE: the variation IDs returned are NSStrings and they are the unique alphanumeric identifiers for the experiment variations. This is different from the variant names that you define in your app delegate for In-code Experiment Variations.</p>
 </div>
+
+<div class="note note-hint">
+<p>For Experiment details specific to Power Hooks see <a href="/dev/ios/power-hooks/#experiment-details">Power Hook Experiment Details</a></p>
+</div>
