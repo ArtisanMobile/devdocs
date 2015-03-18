@@ -339,7 +339,7 @@ Tracking category hierarchies applies here as well by using the **:andSubCategor
 
 The optional product info can be any key/value pairs of information about this product. This data will be attached to the analytics event in Artisan. All keys and values must be NSString objects, or they will be ignored.
 
-There are many variations of the **productViewed...** method so [please consult the ARPurchaseWorkflowManager Appledocs](http://docs.useartisan.com/dev/ios/appledocs/) for your current version.
+There are many variations of the **productViewed...** method so [please consult the ARPurchaseWorkflowManager Appledocs](/dev/ios/appledocs/) for your current version.
 
 {% highlight objective-c %}
 // Objective-C
