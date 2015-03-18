@@ -37,7 +37,7 @@ public void registerPowerhooks() {
 
 <div class="note note-important">
   <p>Important:
-This declaration should occur in the <strong>registerPowerhooks</strong> method of your Application class.</p>
+This declaration should occur in the <strong>registerPowerhooks</strong> method of your Application class. All of the parameters are required and cannot be null.</p>
 </div>
 
 <div id="getvalue"></div>
@@ -80,10 +80,10 @@ Use this method to declare the existence of a code block you would like to use i
 
 This declaration should occur in the **registerPowerhooks** method of your Application class.
 
-* **blockId** - The name of the block to register. Name must be unique for this app.
-* **friendlyName** - The name for this code block that will be displayed in Artisan Tools.
-* **defaultData** - The default data for this code block. This should be string keys and values. This data will be used if no data is passed in from Artisan Tools for this code block for this app.
-* **block** - The block of code executed when executeBlock is called.
+* **blockId** - The name of the block to register. Name must be unique for this app and cannot be null.
+* **friendlyName** - The name for this code block that will be displayed in Artisan Tools. This value cannot be null.
+* **defaultData** - The default data for this code block. This should be string keys and values. This data will be used if no data is passed in from Artisan Tools for this code block for this app. This may be an empty Map but cannot be null.
+* **block** - The block of code executed when executeBlock is called. This ArtisanBlock cannot be null.
 
 {% highlight java %}
 @Override

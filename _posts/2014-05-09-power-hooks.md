@@ -42,7 +42,7 @@ ARPManager.startWithAppId("YOUR_APP_ID")
 {% endhighlight %}
 
 <div class="note note-important">
-  <p>Important: This declaration should occur in the **didFinishLaunchingWithOptions:** method in Objective-C, **application** method in Swift, of your main app delegate, **before** you start Artisan using the **startWithAppId:** method.</p>
+  <p>Important: This declaration should occur in the **didFinishLaunchingWithOptions:** method in Objective-C, **application** method in Swift, of your main app delegate, **before** you start Artisan using the **startWithAppId:** method. The hook id and friendly name cannot be empty or nil and the default value cannot be nil.</p>
 </div>
 
 <div class="note note-important">
@@ -84,10 +84,10 @@ Use this method to declare the existence of a code block you would like to use i
 
 This declaration should occur in the **didFinishLaunchingWithOptions:** method in Objective-C, **application** method in Swift, of your main app delegate, *before* you start Artisan using the startWithAppId: method.
 
-* **id** - The name of the code to register. Name must be unique for this app.
-* **friendlyName** - The name for this code block that will be displayed in Artisan Tools.
-* **data** - The default data for this code block. This should be string keys and string values. This data will be used if no data is passed in from ArtisanTools.com for this code block for this app.
-* **andBlock** - The block of code executed.
+* **id** - The name of the code to register. Name must be unique for this app and cannot be empty or nil.
+* **friendlyName** - The name for this code block that will be displayed in Artisan Tools. This value cannot be empty or nil.
+* **data** - The default data for this code block. This should be string keys and string values. This data will be used if no data is passed in from ArtisanTools.com for this code block for this app. This dictionary may be empty but it cannot be nil.
+* **andBlock** - The block of code executed. This block cannot be nil.
 
 {% highlight objective-c %}
 // Objective-C
