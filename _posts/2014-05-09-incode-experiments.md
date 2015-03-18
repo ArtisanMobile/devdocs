@@ -172,8 +172,16 @@ We recommend that you call this method anytime after the first playlist is downl
 {% highlight objective-c %}
 // Objective-C
 [ARManager onFirstPlaylistDownloaded:^{
-    NSArray *experiments = [ARExperimentManager getCurrentExperimentDetails];
-    // ... use the details as needed
+    NSArray *experimentDetails = [ARExperimentManager getCurrentExperimentDetails];
+    // Here is an example of iterating through all of the running experiments and logging the details:
+    [experimentDetails enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+      ARExperimentDetails *details = (ARExperimentDetails*)obj;
+      NSLog(@"experimentId: %@", [details experimentId]);
+      NSLog(@"experimentName: %@", [details experimentName]);
+      NSLog(@"experimentType: %@", [details experimentType]);
+      NSLog(@"variation ID: %@", [details currentVariantId]);
+      NSLog(@"variation name: %@", [details currentVariantName]);
+    }];
 }];
 {% endhighlight %}
 
@@ -185,11 +193,22 @@ The **getInCodeExperimentDetails** method will give you **all** (regardless if t
 - (void) viewWillAppear:(BOOL)animated {
     // Your other code...
     NSDictionary *detailsDictionary = [ARExperimentManager getInCodeExperimentDetails];
-    ARInCodeExperimentDetails *inCodeDetails = [detailsDictionary objectForKey:@"Your Experiment Name"];
+    ARInCodeExperimentDetails *details = [detailsDictionary objectForKey:@"Your Experiment Name"];
 
-    if (inCodeDetails.isRunning) {
+    if (details.isRunning) {
         // This experiment has been started from Artisan Tools and all details are available to you.
-        // You can use these details to feed into your third party analytics tool
+        // You can use these details to feed into your third party analytics tool.
+        NSLog(@"experimentId: %@", [details experimentId]);
+        NSLog(@"experimentName: %@", [details experimentName]);
+        NSLog(@"experimentType: %@", [details experimentType]);
+        NSLog(@"variation ID: %@", [details currentVariantId]);
+        NSLog(@"variation name: %@", [details currentVariantName]);
+        NSLog(@"experiment Start: %@", [details startDate]);
+        NSLog(@"experiment End: %@", [details endDate]);
+        NSLog(@"experiment in-code name: %@", [details inCodeName]);
+        NSLog(@"experiment default variant: %@", [details defaultVariant]);
+        NSLog(@"experiment description: %@", [details experimentDescription]);
+        NSLog(@"experiment isRunning: %@", [details isRunning] ? @"YES" : @"NO");
     }
     // Your code continued...
 }
@@ -211,4 +230,8 @@ let variationIds = ARExperimentManager.getCurrentVariationIds()
 
 <div class="note note-hint">
 <p>NOTE: the variation IDs returned are NSStrings and they are the unique alphanumeric identifiers for the experiment variations. This is different from the variant names that you define in your app delegate for In-code Experiment Variations.</p>
+</div>
+
+<div class="note note-hint">
+<p>For Experiment details specific to Power Hooks see <a href="/dev/ios/power-hooks/#experiment-details">Power Hook Experiment Details</a></p>
 </div>

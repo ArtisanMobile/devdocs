@@ -17,6 +17,7 @@ All hooks are created using ARPowerHookManager are automatically registered with
   <li><a href="#getvalue">Get Power Hook Value</a></li>
   <li><a href="#code-blocks">Code Blocks</a></li>
   <li><a href="#callbacks">Callbacks</a></li>
+  <li><a href="#experiment-details">Power Hook Experiment Details</a></li>
   <li><a href="#preview-mode">Preview Mode</a></li>
 </ul>
 
@@ -36,7 +37,7 @@ public void registerPowerhooks() {
 
 <div class="note note-important">
   <p>Important:
-This declaration should occur in the <strong>registerPowerhooks</strong> method of your Application class.</p>
+This declaration should occur in the <strong>registerPowerhooks</strong> method of your Application class. All of the parameters are required and cannot be null.</p>
 </div>
 
 <div id="getvalue"></div>
@@ -79,10 +80,10 @@ Use this method to declare the existence of a code block you would like to use i
 
 This declaration should occur in the **registerPowerhooks** method of your Application class.
 
-* **blockId** - The name of the block to register. Name must be unique for this app.
-* **friendlyName** - The name for this code block that will be displayed in Artisan Tools.
-* **defaultData** - The default data for this code block. This should be string keys and values. This data will be used if no data is passed in from Artisan Tools for this code block for this app.
-* **block** - The block of code executed when executeBlock is called.
+* **blockId** - The name of the block to register. Name must be unique for this app and cannot be null.
+* **friendlyName** - The name for this code block that will be displayed in Artisan Tools. This value cannot be null.
+* **defaultData** - The default data for this code block. This should be string keys and values. This data will be used if no data is passed in from Artisan Tools for this code block for this app. This may be an empty Map but cannot be null.
+* **block** - The block of code executed when executeBlock is called. This ArtisanBlock cannot be null.
 
 {% highlight java %}
 @Override
@@ -142,6 +143,36 @@ PowerHookManager.executeBlock("showAlert", extraData);
 ##Callbacks
 
 Artisan allows you to <a href="/dev/android/callbacks/#power-hooks">register callbacks</a> for when an individual power hook changes or when any power hook changes.
+
+<div id="experiment-details"></div>
+
+##Power Hook Experiment Details
+
+You can access details about currently running Power Hook Experiments via **PowerHookManager.getPowerHookBlockExperimentDetails()** and **PowerHookManager.getPowerHookVariableExperimentDetails()** for Power Hook Variables and Blocks, respectively. The value returned from these methods is an Map where they keys are the hook or block ids and the values are **PowerHookExperimentDetails** objects, which include information on the experiment name and id, variation name and id, and the start date and end date of the experiment.
+
+The experiment and variation ids are unique identifiers for the experiment that is running with Artisan and the variation that this device has been assigned. You may use this to report to a third-party analytics tool. The experiment and variation names are the same that you can see in Artisan Tools.
+
+
+{% highlight java %}
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_home);
+
+  ArtisanManager.onFirstPlaylistDownloaded(this, new ArtisanManagerCallback() {
+    @Override
+    public void execute() {
+      // First playlist has been downloaded, now you can get the latest power hook experiment details
+      PowerHookManager.getPowerHookBlockExperimentDetails();
+      PowerHookManager.getPowerHookVariableExperimentDetails();
+    }
+    });
+  }
+{% endhighlight %}
+
+<div class="note note-hint">
+<p>We recommend that you retrieve the current Power Hook Experiment Details no sooner than after the first playlist has been downloaded. This is shown in the example, above. That way you can be sure to have the most up to date experiment details.</p>
+</div>
 
 <div id="preview-mode"></div>
 

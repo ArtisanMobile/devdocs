@@ -16,6 +16,7 @@ Enabling Artisan Push includes the following steps:
   <li><a href="#artisan-version">Verify Artisan SDK version and Configuration</a></li>
   <li><a href="#app-settings">Set Server API Key in Artisan Tools</a></li>
   <li><a href="#test">Send a Test Message</a></li>
+  <li><a href="#customizing-notifications">Customizing Artisan Notifications</a></li>
   <li><a href="#done">Build your Campaigns</a></li>
 </ol>
 
@@ -89,6 +90,7 @@ In your Application class you need to set your Push Sender ID in the onCreate of
 {% highlight java %}
 import com.artisan.application.ArtisanApplication;
 import com.artisan.manager.ArtisanManager;
+import com.artisan.push.ArtisanPushNotificationSettings;
 
 public class ArtisanDemoApplication extends ArtisanApplication {
 
@@ -96,8 +98,8 @@ public class ArtisanDemoApplication extends ArtisanApplication {
   public void onCreate() {
     super.onCreate();
 
-    // Add this line to enable Artisan Push
-    ArtisanManager.setPushSenderId("000012345670000");
+    // One line for configuring Artisan Push
+    ArtisanManager.setPushNotificationSettings(new ArtisanPushNotificationSettings("000012345670000"));
 
     ArtisanManager.startArtisan(this, "YOUR_ARTISAN_APP_ID");
 
@@ -163,8 +165,60 @@ If you do not see this form please make sure you have successfully set your Serv
     <p>We are always more than happy to help! Send an email to <a href="mailto:support@useartisan.com?Subject=Artisan%20Android%20Push%20Help" target="_top">support@useartisan.com</a>.</p>
 </div>
 
+<div id="customizing-notifications"></div>
+
+## 5. Customizing Artisan Push Notifications
+
+Optionally, you can customize the notifications Artisan will show when a push is received.
+
+To provide Artisan with notification settings you can construct an  **ArtisanNotificationBuilder**, which the SDK will use to build notification objects.
+
+{% highlight java %}
+import com.artisan.application.ArtisanApplication;
+import com.artisan.manager.ArtisanManager;
+import com.artisan.push.ArtisanPushNotificationSettings;
+import com.artisan.push.ArtisanNotificationBuilder;
+
+public class ArtisanDemoApplication extends ArtisanApplication {
+
+  @Override
+  public void onCreate() {
+    super.onCreate();
+
+    // Create Artisan Notification Builder
+    ArtisanNotificationBuilder builder = new ArtisanNotificationBuilder();
+    builder.setSmallIcon(R.drawable.ic_notification);
+    builder.setSortKey("AAA");
+    builder.setAutoCancel(false);
+    builder.setGroup("My Group");
+    builder.setColor(Color.GREEN);
+    builder.setVisibility(NotificationCompat.VISIBILITY_PUBLIC);
+
+    // Create settings
+    ArtisanPushNotificationSettings settings = new ArtisanPushNotificationSettings("000012345670000", builder);
+
+    // Pass your push settings to Artisan
+    ArtisanManager.setPushNotificationSettings(settings);
+
+    ArtisanManager.startArtisan(this, "YOUR_ARTISAN_APP_ID");
+
+    // ...
+  }
+
+  // ...
+}
+{% endhighlight %}
+
+<div class="note note-important">
+<p>Important: If you do not provide a small icon for your notifications we will default to using your app icon. This may look odd if your app is targeting API 21+ because the OS will take only the alpha of the icon and display that on a neutral background. If your app is set to target API 21+ we strongly recommend that you take advantage of the ArtisanNotificationBuilder API.</p>
+</div>
+
+<div class="note note-hint">
+<p>Note: Some notification properties are not applicable to older versions of Android. Color and Visibility, for example, only apply for API 21+ devices. Behind the scenes we are using <a href="http://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html">NotificationCompat.Builder</a> so that Notifications will degrade nicely on older versions of Android.</p>
+</div>
+
 <div id="done"></div>
 
-## 5. Build your Campaign
+## 6. Build your Campaign
 
 Now that you have successfully set up your App with Google Cloud Messaging and configured Artisan Push you can <a href="/user-guide/campaigns">get started with Push Campaigns</a>.

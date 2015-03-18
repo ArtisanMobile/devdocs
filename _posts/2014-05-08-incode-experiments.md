@@ -135,7 +135,7 @@ The **getInCodeExperimentDetails** method will give you **all** (regardless if t
   @Override
   public void onResume() {
     super.onResume();
-    // Your other onResume code here where you're most likely making changes to your 
+    // Your other onResume code here where you're most likely making changes to your
     // UI according the current variation for the below experiment.
 
     Map<String, InCodeExperimentDetails> allInCodeDetails = ArtisanExperimentManager.getInCodeExperimentDetails();
@@ -162,4 +162,8 @@ Set<String> variationIds = ArtisanExperimentManager.getCurrentVariationIds();
 
 <div class="note note-hint">
 <p>NOTE: the variation ids returned are Strings and they are the unique alphanumeric identifiers for the experiment variations. This is different from the variant names that you define in your Application class for In-code Experiment Variations.</p>
+</div>
+
+<div class="note note-hint">
+<p>For Experiment details specific to Power Hooks see <a href="/dev/android/power-hooks/#experiment-details">Power Hook Experiment Details</a></p>
 </div>
