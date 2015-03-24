@@ -1,8 +1,16 @@
+# Formatting
 permalink:  /:categories/:title/index.html
 markdown: kramdown
 highlighter: pygments
 
+# GH Pages Gems
+gems:
+  - jekyll-sitemap
+
+# Sass Settings
 sass:
   sass_dir: _sass
+  style: :compressed
 
+# Exclusions
 exclude: [sdk_release.sh, templates]
