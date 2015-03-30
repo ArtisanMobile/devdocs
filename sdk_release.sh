@@ -13,14 +13,14 @@ get_api_docs() {
     DOCURL="http://artisan-android-release.s3.amazonaws.com/${DOCNAME}"
 
     DOCPATH="/android/javadoc/${UNDERSCORE_VERSION}"
-    HUBFILE="./_posts/2014-05-08-javadocs.md"
+    HUBFILE="./_posts/android/2014-05-08-javadocs.md"
   else
     DOCFOLDER="com.apprenaissance.ArtisanSDK.docset.html"
     DOCNAME="${DOCFOLDER}.${VERSION}.tar.gz"
     DOCURL="http://artisan-releases.s3.amazonaws.com/${DOCNAME}"
 
     DOCPATH="/ios/appledoc/${UNDERSCORE_VERSION}"
-    HUBFILE="./_posts/2014-05-09-appledocs.md"
+    HUBFILE="./_posts/ios/2014-05-09-appledocs.md"
   fi
 
   # Create a new home for the documentation download.
@@ -62,7 +62,7 @@ create_release_notes() {
   sed -i "" "s/title\: \"\"/title\: ${TITLE_STRING}/g" ${NOTES_PATH}
   sed -i "" "s/\# SDK Release Notes/\# ${TITLE_STRING}/g" ${NOTES_PATH}
 
-  mv ${NOTES_PATH} _posts/${NOTES_PATH}
+  mv ${NOTES_PATH} _posts/releases/${NOTES_PATH}
 }
 
 if [ $# -lt 1 ]; then
