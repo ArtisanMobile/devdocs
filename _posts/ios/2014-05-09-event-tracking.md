@@ -17,6 +17,7 @@ Artisan automatically collects analytics events for every user, session, page vi
   <li><a href="#commerce">Purchase Workflow Tracking</a></li>
   <li><a href="#social">Social Event Tracking</a></li>
   <li><a href="#crashes">Automatic Crash Logging</a></li>
+  <li><a href="#table-and-collection-view">UITableView and UICollectionView Event Tracking</a></li>
 </ul>
 
 <div id="trackevent"></div>
@@ -565,3 +566,9 @@ ARSocialSharingManager.shareOnServiceType("Flickr",
 ##Automatic Crash Logging
 
 As of Artisan 2.4.3 we are automatically collecting crash information any time your app crashes. Artisan will record crash information including the exception details and send that information back to Artisan the next time the app starts. These crash events will be available in your Events report on Artisan Tools and can be used for segmenting and personalizing your app experience just like any other event.
+
+<div id="table-and-collection-view"></div>
+
+##UITableView and UICollectionView Event Tracking
+
+TODO!
