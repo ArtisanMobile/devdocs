@@ -82,7 +82,7 @@ This declaration should occur in the **registerPowerhooks** method of your Appli
 
 * **blockId** - The name of the block to register. Name must be unique for this app and cannot be null.
 * **friendlyName** - The name for this code block that will be displayed in Artisan Tools. This value cannot be null.
-* **defaultData** - The default data for this code block. This should be string keys and values. This data will be used if no data is passed in from Artisan Tools for this code block for this app. This may be an empty Map but cannot be null.
+* **defaultData** - The default data for this code block. This should be string keys and values. This data will be used if no data is passed in from Artisan Tools for this code block for this app. This may be an empty Map but cannot be null. The keys and values cannot be null either.
 * **block** - The block of code executed when executeBlock is called. This ArtisanBlock cannot be null.
 
 {% highlight java %}
