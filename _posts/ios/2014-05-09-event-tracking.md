@@ -569,6 +569,20 @@ As of Artisan 2.4.3 we are automatically collecting crash information any time y
 
 <div id="table-and-collection-view"></div>
 
-##UITableView and UICollectionView Event Tracking
+## UITableView and UICollectionView Automatic Event Tracking
 
-TODO!
+Artisan automatically adds a proxy to all UITableView and UICollectionView delegates and data sources so that we can automatically collect analytics events for cell selection and set up metadata to collect events for interactions with views inside of cells.
+
+By default we look for table views and collection views to proxy at two times: (1) when the screen first appears (just after viewWillAppear) and (2) anytime a view is added to the screen after (1) is complete--we will look from the added view down through all of its subviews. If the delegate or datasource is not set at those times, or gets reset after the Artisan SDK has completed both (1) and (2), the delegate or dataSource may not be proxied. This can result in missing or inconsistent analytics events. If you are swapping out your delegate or dataSource after your view controller has already appeared or the UITableView or UICollectionView has already been added to the screen, see the steps below to re-enable proxying from the setDelegate and setDataSource implementations.
+
+### Re-enabling Artisan Auto-Proxying directly from setDelegate and setDataSource
+
+By default the Artisan SDK will not interfere directly with the setDelegate and setDataSource implementations on UITableView and UICollectionView. This behavior can be re-enabled using the ArtisanConfiguration.plist: add a file called **ArtisanConfiguration.plist** to your app bundle and including the following contents:
+
+{% highlight xml %}
+<key>EnabledClasses</key>
+<array>
+    <string>UITableView+ArtisanProxy</string>
+    <string>UICollectionView+ArtisanProxy</string>
+</array>
+{% endhighlight %}
