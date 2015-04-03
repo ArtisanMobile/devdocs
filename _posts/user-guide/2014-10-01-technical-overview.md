@@ -17,6 +17,8 @@ The Artisan Mobile Experience Management (MEM) platform is an enterprise-grade s
 
 The Artisan Cloud is a true multi-tenant architecture that is globally accessible through an Internet browser. All customers share a single, common infrastructure and a code base that is centrally maintained. Our platform has been engineered to be secure, stable and highly scalable – capable of supporting businesses with tens of millions of monthly active users.
 
+<p><img src="/images/artisan-technical-overview-diagram.png" width="700" height="480" alt="Overview of the Artisan Cloud." /></p>
+
 The Artisan Cloud is hosted by Amazon via the Amazon Elastic Compute Cloud (EC2) and derives all the benefits of its elastic computing infrastructure, including SOC1/SSAE 16/ISAE 3402 and ISO 27001 certification. We use all Linux-based EC2 instances for our servers. Our application services are fault-tolerant and automatically load-balanced across multiple dynamically allocated application instances.
 
 The Artisan Cloud is composed of four essential pieces:
