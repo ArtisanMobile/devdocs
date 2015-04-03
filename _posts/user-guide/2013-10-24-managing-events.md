@@ -5,6 +5,8 @@ author: "Artisan"
 category: user-guide
 description: "Getting started with the Artisan MEM platform for developers."
 ---
+# Reports & Analytics
+
 ## Managing Events
 
 The Event Report provides visibility into the actions triggered by users within your app (e.g. screens viewed, buttons tapped, events instrumented via the [iOS]({% post_url ios/2014-05-09-event-tracking %}), [Android]({% post_url android/2014-05-08-event-tracking %}) or [Javascript]({% post_url js/2014-07-18-hybrid-sdk-reference-guide %}#trackingapi) Event Tracking APIs, etc.).  
