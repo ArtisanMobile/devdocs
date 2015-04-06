@@ -113,6 +113,10 @@ public class MainActivity extends ArtisanActivity {
   <p><strong>A NOTE ON THREADING:</strong> The thread calling the block of code is guaranteed to be the main thread.  If the code inside of the block requires executing on a background thread you will need to implement this logic.</p>
 </div>
 
+<div class="note note-important">
+  <p>Don't forget to  <a href="#unregister-your-callback">unregister your callbacks</a> on Power Hook variables.</p>
+</div>
+
 Artisan provides a previewMode flag to tell you if you are currently in <a href="/dev/android/power-hooks/#preview-mode">Artisan Preview Mode</a>, previewing unpublished changes for your App. For example, you may want to only change text on the screen immediately if you are in previewMode. This will make it easier to preview Power Hook values in your app while you are considering changes in Artisan Tools.
 
 <div class="note note-important">

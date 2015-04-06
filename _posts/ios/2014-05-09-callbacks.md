@@ -13,6 +13,7 @@ If you would like to hold up your app and wait for that first playlist to be dow
 <ul>
   <li><a href="#playlist">Playlist Callbacks</a></li>
   <li><a href="#power-hook">Power Hook Callbacks</a></li>
+  <li><a href="#blocks-and-variables">On Blocks and Variables</a></li>
 </ul>
 
 <div id="playlist"></div>
@@ -61,6 +62,10 @@ override func viewDidLoad() {
 }
 {% endhighlight %}
 
+<div class="note note-important">
+  <p>If you are unfamiliar with Blocks in ObjC please see our section below on <a href="#blocks-and-variables">Blocks and Variables</a></p>
+</div>
+
 <div class="note note-hint">
 <p><strong>FIRST VIEW CONTROLLERS:</strong> If you are registering a callback from the viewDidLoad of your first view controller, make sure that your call to start Artisan happens <strong>before</strong> the call to makeKeyAndVisible for that first view controller's window. Otherwise your callback won't actually be registered.</p>
 
@@ -90,7 +95,6 @@ override func viewDidLoad() {
   <p><strong>A NOTE ON THREADING:</strong> The thread calling the block of code is guaranteed to be the main thread.  If the code inside of the block requires executing on a background thread you will need to implement this logic.</p>
   <p>If the first playlist has already been downloaded when this call is made this becomes a blocking call and the block of code is executed immediately.</p>
 </div>
-
 
 <div id="power-hook"></div>
 
@@ -165,11 +169,17 @@ override func viewWillAppear(animated:Bool) {
 }
 {% endhighlight %}
 
+<div class="note note-important">
+  <p>Don't forget to  <a href="#unregister-your-callbacks">unregister your callbacks</a> on Power Hook variables.</p>
+</div>
+
 Artisan provides a previewMode flag to tell you if you are currently in <a href="#preview-mode">Artisan Preview Mode</a>, previewing unpublished changes for your App. For example, you may want to only change text on the screen immediately if you are in previewMode. This will make it easier to preview Power Hook values in your app while you are considering changes in Artisan Tools.
 
 <div class="note note-hint">
   <p><strong>A NOTE ON THREADING:</strong> The thread calling the block of code is guaranteed to be the main thread.  If the code inside of the block requires executing on a background thread you will need to implement this logic.</p>
 </div>
+
+### Unregister your Callbacks
 
 To avoid memory leaks, it is important that you also unregister your callback in the parallel method to the one in which you registered it. For example, if you registered in **viewWillAppear** it is best to unregister in **viewWillDisappear**.
 
@@ -223,3 +233,17 @@ ARPowerHookManager.onPowerHooksChanged({(previewMode:Bool) in
 <div class="note note-hint">
   <p><strong>A NOTE ON THREADING:</strong> The thread calling the block of code is guaranteed to be the main thread.  If the code inside of the block requires executing on a background thread you will need to implement this logic.</p>
 </div>
+
+<div class="note note-important">
+  <p>If you are unfamiliar with Blocks in ObjC please see our section below on <a href="#blocks-and-variables">Blocks and Variables</a></p>
+</div>
+
+<div id="blocks-and-variables"></div>
+
+## On Blocks and Variables
+
+Blocks are different from regular functions in how variables may be used and what the implications are for memory management. We recommend that in your callback blocks you reference global variables and functions wherever possible.
+
+If you access an instance variable inside your block by reference (not declared with __block), a strong reference is made to self, which may have undesirable results. If you wish to reference self or an instance variable we recommend that you declare it as a __block variable.
+
+For more information see <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/Blocks/Articles/bxVariables.html">Apple's Documentation on Blocks and Variables</a>.
