@@ -23,9 +23,9 @@ Artisan automatically collects all key information about how your app is used by
 * App Crashes (iOS Only)
 * Push Notification Opens
 
-All collected events are automatically added to the Artisan Event Library, and will appear on the Artisan Event Report in near-real time.  The names and locations for all automatically collected events are inferred from the code of your app, and can be customized in the Artisan Event Report as needed.  
+All collected events are automatically added to the Artisan Event Library, and will appear on the [Artisan Event Report]({% post_url user-guide/2013-10-24-managing-events %}) in near-real time.  The names and locations for all automatically collected events are inferred from the code of your app, and can be customized in the Artisan Event Report as needed.  
 
-Additionally, Artisan will begin assembling a user profile for all users using the app, which can be used to support Artisan Personalization and Segmentation.  User profile information that Artisan will automatically collect for each user includes:
+Additionally, Artisan will begin assembling a user profile for all users using the app, which can be used to support [Artisan Personalization and Segmentation]({% post_url user-guide/2014-06-11-people %}).  User profile information that Artisan will automatically collect for each user includes:
 
 * The number of times this user has used this app (since Artisan was installed).
 * The last time this user used this app.
@@ -45,6 +45,8 @@ Additionally, Artisan will begin assembling a user profile for all users using t
 Additional custom events can be manually collected via the Artisan Event Tracking API ([iOS]({% post_url ios/2014-05-09-event-tracking %}), [Android]({% post_url android/2014-05-08-event-tracking %}), [JS]({% post_url js/2014-07-18-hybrid-sdk-reference-guide %}/#trackEvent)). This API is available for capturing events triggered within the business logic of your app or events not automatically collected by Artisan.
 
 All custom events are automatically added to the Artisan Event Library with the name specified in the SDK, and can be tagged and modified as necessary.
+
+<div id="context-tags"></div>
 
 #### Context Tags
 
