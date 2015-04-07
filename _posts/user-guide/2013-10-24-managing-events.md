@@ -13,6 +13,8 @@ The Event Report provides visibility into the actions triggered by users within 
 
 <p><img src="/images/screens/reports-event-example-700x576.jpg" width="700" height="576" alt="Screen capture of a sample event report." /></p>
 
+<div id="event-library"></div>
+
 ### The Artisan Event Library
 
 The left side of the screen shows your current event library.  You can add items to the event library by clicking the `Discover` button in the top-left corner of the screen.  This will open up the Event Discovery modal, where you can (a) select new events from the complete list of actions Artisan has automatically tracked, or (b) connect your device directly to Artisan to find the events you want to add to your library.
