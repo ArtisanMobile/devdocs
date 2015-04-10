@@ -2,7 +2,7 @@
 layout: user-guide
 title: "Tracking and Tagging Events"
 author: "Artisan"
-category: user-guide
+category: user-guide/analyze
 description: "Getting started with the Artisan MEM platform for developers."
 ---
 # Reports & Analytics
