@@ -146,13 +146,26 @@
 		</div>
 		<div id="release-notes">
 			<h2>Release Notes</h2>
-    		<ul>
+    		<ul style="float: left">
+                <h3>iOS</h3>
 				{% for post in site.categories.release-notes %}
+                    {% if post.title contains "iOS" %}
 				    <li>
-				      <a href="{{ post.url }}">{{ post.title }}</a>
+				      <a href="release-notes/ios.html#{{ post.title }}">{{ post.title }}</a>
 				    </li>
+                    {% endif %}
 				{% endfor %}
-			</ul>
+            </ul>
+            <ul style="float: center">
+                <h3>Android</h3>
+				{% for post in site.categories.release-notes %}
+                    {% if post.title contains "Android" %}
+				    <li>
+				      <a href="release-notes/android.html#{{ post.title }}">{{ post.title }}</a>
+				    </li>
+                    {% endif %}
+				{% endfor %}
+            </ul>
 
 
 		</div>
