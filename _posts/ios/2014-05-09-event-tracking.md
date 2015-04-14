@@ -565,19 +565,25 @@ ARSocialSharingManager.shareOnServiceType("Flickr",
 
 ##Automatic Crash Logging
 
-As of Artisan 2.4.3 we are automatically collecting crash information any time your app crashes. Artisan will record crash information including the exception details and send that information back to Artisan the next time the app starts. These crash events will be available in your Events report on Artisan Tools and can be used for segmenting and personalizing your app experience just like any other event.
+As of Artisan 2.4.3, we are automatically collecting crash information any time your app crashes. Artisan will record crash information including the exception details and send that information back to Artisan the next time the app starts. These crash events will be available in your Events report on Artisan Tools and can be used for segmenting and personalizing your app experience just like any other event.
 
 <div id="table-and-collection-view"></div>
 
 ## UITableView and UICollectionView Automatic Event Tracking
 
-Artisan automatically adds a proxy to all UITableView and UICollectionView delegates and data sources so that we can automatically collect analytics events for cell selection and set up metadata to collect events for interactions with views inside of cells.
+Artisan automatically adds a proxy to all UITableView and UICollectionView data sources so that we can automatically assign metadata to collect events for interactions with views inside of cells.
 
-By default we look for table views and collection views to proxy at two times: (1) when the screen first appears (just after viewWillAppear) and (2) anytime a view is added to the screen after (1) is complete--we will look from the added view down through all of its subviews. If the delegate or datasource is not set at those times, or gets reset after the Artisan SDK has completed both (1) and (2), the delegate or dataSource may not be proxied. This can result in missing or inconsistent analytics events. If you are swapping out your delegate or dataSource after your view controller has already appeared or the UITableView or UICollectionView has already been added to the screen, see the steps below to re-enable proxying from the setDelegate and setDataSource implementations.
+By default, we look for table views and collection views to proxy at two times: (1) when the screen first appears (just after viewWillAppear) and (2) anytime a view is added to the screen after (1) is complete--we will look from the added view down through all of its subviews. If the data source is not set at those times, or gets reset after the Artisan SDK has completed both (1) and (2), the data source may not be proxied. This can result in missing or inconsistent analytics events. If you are swapping out your data source after your view controller has already appeared or the UITableView or UICollectionView has already been added to the screen, see the steps below to re-enable proxying from the setDataSource implementations.
 
-### Re-enabling Artisan Auto-Proxying directly from setDelegate and setDataSource
+Additionally, Artisan detects when cells in a UITableView and UICollectionView are selected by observing when the corresponding delegate is applied to the parent via `setDelegate:`.  
 
-By default the Artisan SDK will not interfere directly with the setDelegate and setDataSource implementations on UITableView and UICollectionView. This behavior can be re-enabled using the ArtisanConfiguration.plist: add a file called **ArtisanConfiguration.plist** to your app bundle and including the following contents:
+In cases where Artisan's addition of a data source proxy (or of a `setDelegate:` observer) is not desired, see the steps below to deactivate that functionality.
+
+### Re-enabling Artisan Auto-Proxying directly from setDataSource
+
+By default, the Artisan SDK will not interfere directly with the setDataSource implementations on UITableView and UICollectionView. This behavior can be re-enabled using the ArtisanConfiguration properties listing file.
+
+To use the ArtisanConfiguration properties listing file, add a file called **ArtisanConfiguration.plist** to your app bundle and include the following contents:
 
 {% highlight xml %}
 <key>EnabledClasses</key>
@@ -586,3 +592,37 @@ By default the Artisan SDK will not interfere directly with the setDelegate and 
     <string>UICollectionView+ArtisanProxy</string>
 </array>
 {% endhighlight %}
+
+Auto-proxying will automatically be enabled upon startup.
+
+<div class="note note-important">
+<p><strong>NOTE:</strong> Use of ArtisanConfiguration.plist is for advanced Artisan users only.  Please contact <a href="mailto:support@useartisan.com?Subject=Artisan%20iOS%20Configuration%20Help" target="_top">support@useartisan.com</a> with any questions prior to using these advanced configuration options.</p>
+</div>
+
+### Disabling Artisan Data Source Proxying or SetDelegate Observing
+
+By default, Artisan will add a proxy to your UITableView or UICollectionView DataSources, and will add an observer to your UITableView or UICollectionView delegates.  You may disable this behavior using the ArtisanConfiguration properties listing file.
+
+To use the ArtisanConfiguration properties listing file, add a file called **ArtisanConfiguration.plist** (if it does not already exist) to your app bundle and include the following contents:
+
+{% highlight xml %}
+<key>DisabledClasses</key>
+<array>
+    <string>UITableView+ArtisanProxy</string>
+    <string>ArtisanUITableViewDelegateProxies</string>
+    <string>ArtisanUITableViewwDataSource</string>
+    <string>ArtisanUITableViewDelegate</string>
+</array>
+{% endhighlight %}
+
+* The 'UITableView+ArtisanProxy' option will disable all observation of your data sources and delegates.  This will mean that Artisan will not collect any analytics for selections to your cells, NOR will it collect any analytics for interactions with UI elements contained within your cells.
+
+* The 'ArtisanUITableViewDelegateProxies' option will disable all observation of your delegates when your delegates are actually NSProxies.  This is useful for select cases where your app (or an external library used by your app) is using proxies for your Table and CollectionView delegates and Artisan shouldn't be observing the proxy object, just the base object.
+
+* The 'ArtisanUITableViewwDataSource' option will disable all proxying of your data sources.  This will mean that Artisan will not collect any analytics for interactions with UI elements contained within your cells.  It will also mean that no Canvas capability will be support for UI elements within those cells.
+
+* The 'ArtisanUITableViewDelegate' option will disable any observation of your UITableView or UICollectionView delegates.  This means that Artisan will not automatically be able to detect when table or collection cells are tapped.
+
+<div class="note note-important">
+<p><strong>NOTE:</strong> Use of ArtisanConfiguration.plist is for advanced Artisan users only.  Please contact <a href="mailto:support@useartisan.com?Subject=Artisan%20iOS%20Configuration%20Help" target="_top">support@useartisan.com</a> with any questions prior to using these advanced configuration options.</p>
+</div>
