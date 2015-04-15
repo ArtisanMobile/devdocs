@@ -150,9 +150,9 @@
                 <h3>iOS</h3>
 				{% for post in site.categories.release-notes %}
                     {% if post.title contains "iOS" %}
-				    <li>
-				      <a href="release-notes/ios.html#{{ post.title }}">{{ post.title }}</a>
-				    </li>
+                      <li>
+                        <a href="release-notes/ios.html#{{ post.title }}">{{ post.title }}</a>
+                      </li>
                     {% endif %}
 				{% endfor %}
             </ul>
@@ -160,14 +160,12 @@
                 <h3>Android</h3>
 				{% for post in site.categories.release-notes %}
                     {% if post.title contains "Android" %}
-				    <li>
-				      <a href="release-notes/android.html#{{ post.title }}">{{ post.title }}</a>
-				    </li>
+                      <li>
+                        <a href="release-notes/android.html#{{ post.title }}">{{ post.title }}</a>
+                      </li>
                     {% endif %}
 				{% endfor %}
             </ul>
-
-
 		</div>
 	</div>
 	{% include footer.html %}

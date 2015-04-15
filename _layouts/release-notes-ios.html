@@ -4,26 +4,26 @@
     <section>
       <aside id="category-nav">
         <div id="nav-wrapper">
-            <h2>iOS Releases</h2>
-            <ul>
+          <h2>iOS Releases</h2>
+          <ul>
             {% for post in site.categories.release-notes %}
-                {% if post.title contains "iOS" %}
-                <li>
-                  <a href="#{{ post.title }}">{{ post.title }}</a>
-                </li>
-                {% endif %}
+              {% if post.title contains "iOS" %}
+              <li>
+                <a href="#{{ post.title }}">{{ post.title }}</a>
+              </li>
+              {% endif %}
             {% endfor %}
-            </ul> 
+          </ul> 
         </div>
       </aside>
       <article>
-                {% for post in site.categories.release-notes %}
-                    {% if post.title contains "iOS" %}
-                    <a name="{{ post.title }}"></a>
-                    {{ post.content }}
-                      <hr/>
-                    {% endif %}
-                {% endfor %}
+        {% for post in site.categories.release-notes %}
+          {% if post.title contains "iOS" %}
+            <a name="{{ post.title }}"></a>
+            {{ post.content }}
+            <hr/>
+          {% endif %}
+        {% endfor %}
       </article>
     </section>
   </div>
