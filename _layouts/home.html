@@ -144,29 +144,31 @@
 				</div>
 			</div>
 		</div>
-		<div id="release-notes">
-			<h2>Release Notes</h2>
-    		<ul style="float: left">
-                <h3>iOS</h3>
-				{% for post in site.categories.release-notes %}
-                    {% if post.title contains "iOS" %}
-                      <li>
-                        <a href="release-notes/ios.html#{{ post.title }}">{{ post.title }}</a>
-                      </li>
-                    {% endif %}
-				{% endfor %}
-            </ul>
-            <ul style="float: center">
-                <h3>Android</h3>
-				{% for post in site.categories.release-notes %}
-                    {% if post.title contains "Android" %}
-                      <li>
-                        <a href="release-notes/android.html#{{ post.title }}">{{ post.title }}</a>
-                      </li>
-                    {% endif %}
-				{% endfor %}
-            </ul>
-		</div>
+		<div id="release-notes" style="height: auto;">
+            <div style="position: relative">
+                <h2>Release Notes</h2>
+                <ul style="position: relative; margin-right: 50px; float: left;">
+                    <h4>iOS</h4>
+                    {% for post in site.categories.release-notes %}
+                        {% if post.title contains "iOS" %}
+                          <li>
+                            <a href="release-notes/ios.html#{{ post.title }}">{{ post.title }}</a>
+                          </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <ul style="position: relative; float: left;">
+                    <h4>Android</h4>
+                    {% for post in site.categories.release-notes %}
+                        {% if post.title contains "Android" %}
+                          <li>
+                            <a href="release-notes/android.html#{{ post.title }}">{{ post.title }}</a>
+                          </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+          </div>
 	</div>
 	{% include footer.html %}
 </body>
