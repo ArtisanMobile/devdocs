@@ -353,12 +353,22 @@ body {
   margin-bottom: 40px; }
   #docs-landing #release-notes {
     padding: 40px 41px; }
+    
+    #docs-landing #release-notes div {
+      position: relative; }
+    #docs-landing #release-notes #ios-releases {
+      margin-right: 75px; }
     #docs-landing #release-notes ul {
+      margin-top: 0px;
       font-size: 1rem;
       font-weight: 300;
       line-height: 1.5em;
       list-style-type: none;
+      float: left;
       padding: 0; }
+      #docs-landing #release-notes ul p {
+        font-size: 1.2rem;
+        font-weight: 600; }
       #docs-landing #release-notes ul li {
         margin-bottom: .5em; }
       #docs-landing #release-notes ul a {

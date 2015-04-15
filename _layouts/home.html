@@ -144,11 +144,11 @@
 				</div>
 			</div>
 		</div>
-		<div id="release-notes" style="height: auto;">
-            <div style="position: relative">
+		<div id="release-notes">
+            <div>
                 <h2>Release Notes</h2>
-                <ul style="position: relative; margin-right: 50px; float: left;">
-                    <h4>iOS</h4>
+                <ul id="ios-releases">
+                    <p>iOS</p>
                     {% for post in site.categories.release-notes %}
                         {% if post.title contains "iOS" %}
                           <li>
@@ -157,8 +157,9 @@
                         {% endif %}
                     {% endfor %}
                 </ul>
-                <ul style="position: relative; float: left;">
-                    <h4>Android</h4>
+
+                <ul id="android-releases">
+                    <p>Android</p>
                     {% for post in site.categories.release-notes %}
                         {% if post.title contains "Android" %}
                           <li>
