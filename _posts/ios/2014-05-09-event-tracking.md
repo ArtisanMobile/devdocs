@@ -603,26 +603,56 @@ Auto-proxying will automatically be enabled upon startup.
 
 By default, Artisan will add a proxy to your UITableView or UICollectionView DataSources, and will add an observer to your UITableView or UICollectionView delegates.  You may disable this behavior using the ArtisanConfiguration properties listing file.
 
-To use the ArtisanConfiguration properties listing file, add a file called **ArtisanConfiguration.plist** (if it does not already exist) to your app bundle and include the following contents:
+To use the ArtisanConfiguration properties listing file, add a file called **ArtisanConfiguration.plist** (if it does not already exist) to your app bundle and include an array with the key "DisabledClasses." For example:
+
+{% highlight xml %}
+<key>DisabledClasses</key>
+<array>
+</array>
+{% endhighlight %}
+
+Inside of this array you can list the specific behavior that you would like to disable. These flags can be combined as needed.
+
+* The 'UITableView+ArtisanProxy' or 'UICollectionView+ArtisanProxy' options will disable all observation of your data sources and delegates. This will mean that Artisan will not collect any analytics for selections to your cells, NOR will it collect any analytics for interactions with UI elements contained within your cells. If you have these flags in your Artisan Configuration then you do not need to specify the others--this flag supersedes them all.
 
 {% highlight xml %}
 <key>DisabledClasses</key>
 <array>
     <string>UITableView+ArtisanProxy</string>
-    <string>ArtisanUITableViewDelegateProxies</string>
-    <string>ArtisanUITableViewwDataSource</string>
-    <string>ArtisanUITableViewDelegate</string>
+    <string>UICollectionView+ArtisanProxy</string>
 </array>
 {% endhighlight %}
 
-* The 'UITableView+ArtisanProxy' option will disable all observation of your data sources and delegates.  This will mean that Artisan will not collect any analytics for selections to your cells, NOR will it collect any analytics for interactions with UI elements contained within your cells.
+* The 'ArtisanUITableViewDelegateProxies' and 'ArtisanUICollectionViewDelegateProxies' options will disable all observation of your delegates when your delegates are actually NSProxies. This is useful for select cases where your app (or an external library used by your app) is using proxies for your Table and CollectionView delegates and Artisan shouldn't be observing the proxy object, just the base object.
 
-* The 'ArtisanUITableViewDelegateProxies' option will disable all observation of your delegates when your delegates are actually NSProxies.  This is useful for select cases where your app (or an external library used by your app) is using proxies for your Table and CollectionView delegates and Artisan shouldn't be observing the proxy object, just the base object.
+{% highlight xml %}
+<key>DisabledClasses</key>
+<array>
+    <string>ArtisanUITableViewDelegateProxies</string>
+    <string>ArtisanUICollectionViewDelegateProxies</string>
+</array>
+{% endhighlight %}
 
-* The 'ArtisanUITableViewwDataSource' option will disable all proxying of your data sources.  This will mean that Artisan will not collect any analytics for interactions with UI elements contained within your cells.  It will also mean that no Canvas capability will be support for UI elements within those cells.
+* The 'ArtisanUITableViewwDataSource' or 'ArtisanUICollectionViewwDataSource' options will disable all proxying of your data sources. Artisan will still collect analytics for interactions with UI elements contained within your cells, but they will not be grouped with other events on the same screen. It is also possible that the analytics events will not be consistent--taps on the same view at different times may result in different events. It will also mean that no Canvas capability will be support for UI elements within those cells.
 
-* The 'ArtisanUITableViewDelegate' option will disable any observation of your UITableView or UICollectionView delegates.  This means that Artisan will not automatically be able to detect when table or collection cells are tapped.
+{% highlight xml %}
+<key>DisabledClasses</key>
+<array>
+    <string>ArtisanUITableViewwDataSource</string>
+    <string>ArtisanUICollectionViewwDataSource</string>
+</array>
+{% endhighlight %}
+
+* The 'ArtisanUITableViewDelegate' or 'ArtisanUICollectionViewDelegate' options will disable any observation of your UITableView or UICollectionView delegates. This means that Artisan will not automatically be able to detect when table or collection cells are tapped.
+
+{% highlight xml %}
+<key>DisabledClasses</key>
+<array>
+    <string>ArtisanUITableViewDelegate</string>
+    <string>ArtisanUICollectionViewDelegate</string>
+</array>
+{% endhighlight %}
 
 <div class="note note-important">
-<p><strong>NOTE:</strong> Use of ArtisanConfiguration.plist is for advanced Artisan users only.  Please contact <a href="mailto:support@useartisan.com?Subject=Artisan%20iOS%20Configuration%20Help" target="_top">support@useartisan.com</a> with any questions prior to using these advanced configuration options.</p>
+<p><strong>NOTE:</strong> Use of ArtisanConfiguration.plist is for advanced Artisan users only. Please contact <a href="mailto:support@useartisan.com?Subject=Artisan%20iOS%20Configuration%20Help" target="_top">support@useartisan.com</a> with any questions prior to using these advanced configuration options.</p>
 </div>
