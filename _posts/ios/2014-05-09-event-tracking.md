@@ -618,8 +618,8 @@ Inside of this array you can list the specific behavior that you would like to d
 {% highlight xml %}
 <key>DisabledClasses</key>
 <array>
-    <string>ArtisanUITableViewwDataSource</string>
-    <string>ArtisanUICollectionViewwDataSource</string>
+    <string>ArtisanUITableViewDataSource</string>
+    <string>ArtisanUICollectionViewDataSource</string>
 </array>
 {% endhighlight %}
 
