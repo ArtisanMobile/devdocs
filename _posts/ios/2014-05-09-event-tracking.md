@@ -579,7 +579,7 @@ Additionally, Artisan detects when cells in a UITableView and UICollectionView a
 
 In cases where Artisan's addition of a data source proxy (or of a `setDelegate:` observer) is not desired, see the steps below to deactivate that functionality.
 
-## Disabling Artisan Data Source Proxying or SetDelegate Observing
+### Disabling Artisan Data Source Proxying or SetDelegate Observing
 
 By default, Artisan will add a proxy to your UITableView or UICollectionView DataSources, and will add an observer to your UITableView or UICollectionView delegates.  You may disable this behavior using the ArtisanConfiguration properties listing file.
 
