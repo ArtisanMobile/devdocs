@@ -91,6 +91,8 @@ If you have a deep link URL that you would like to use as your on open behavior,
 
 <img src="/images/screens/campaign-compose-in-app-deep-link-480x217.png" height="234" width="530" alt="Configuring the deep link on-open behavior." />
 
+<div id="power-hook"></div>
+
 #### Configuring a Power Hook
 
 Using a Power Hook as your on open behavior gives you the ultimate in personalizing a user's experience. Power Hooks can be used to configure a simple value or be used to configure workflow once a user interacts with your message. For example, your developers could build a power hook that takes your user to their shopping cart and automatically applies a discount when they open your in-app message.
@@ -117,7 +119,7 @@ The **frequency** for the in-app message defines how frequently this notificatio
 * Once every X days (when the trigger event is tripped)
 * Every X number of times the trigger event is tripped.
 
-<img src="/images/screens/campaign-compose-trigger-475x300.png" height="300" width="475" alt="The Artisan Campaign In App Compose Screen - Triggers." />
+<img src="/images/screens/campaign-compose-trigger-475x300.png" height="300" width="475" class="border-full" alt="The Artisan Campaign In App Compose Screen - Triggers." />
 
 <div class="note note-hint">
   <p><strong>NOTE:</strong> For In-App message triggers, the <strong>Starts App</strong> event actually corresponds to the first time the Artisan playlist is downloaded after the user starts the app. That way you can be sure the latest In-App messages are present when the first one is triggered.</p>

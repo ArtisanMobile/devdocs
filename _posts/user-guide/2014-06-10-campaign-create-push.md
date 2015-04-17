@@ -66,6 +66,8 @@ If you have a deep link URL that you would like to use as your on open behavior,
 
 <img src="/images/screens/campaign-compose-deep-link-530x234.png" height="234" width="530" alt="Configuring the deep link on-open behavior." />
 
+<div id="power-hook"></div>
+
 ### Configuring a Power Hook
 
 Using a Power Hook as your on open behavior gives you the ultimate in personalizing a user's experience. Power Hooks can be used to configure a simple value or be used to configure workflow once a user opens your message. For example, your developers could build a power hook that takes your user to their shopping cart and automatically applies a discount when they open your push notification.
