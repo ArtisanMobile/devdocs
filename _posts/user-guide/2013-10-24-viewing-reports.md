@@ -29,7 +29,7 @@ Report data can be filtered across a number of different criteria, including:
     * Device Model
     * Device Language
     * User Country
-* User Experiment Variation (for users who have participated in an A/B Test, see [Experiments]({% post_url user-guide/2013-10-24-optimize %}))
+* User Experiment Variation (for users who have participated in an A/B Test, see [Experiments]({% post_url user-guide/2013-10-24-experiments %}))
 * User Campaign (for users who had been engaged in a campaign, see [Campaigns]({% post_url user-guide/2014-06-10-campaigns %}))
 
 The Event Report includes additional filters to provide additional insight into event-level data:
