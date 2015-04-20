@@ -6,75 +6,15 @@ category: user-guide
 description: "Getting started with the Artisan MEM platform for developers."
 ---
 # Experiments
-A/B test different designs to identify the variation that produces the best results.
+Experiments allow you to test different variations of your app against live users to see which generates the highest level of engagement, retention, and conversion. These winning variations can then be pubished as the 'official' verison of your app to all new and existing users.  Use this capability to iterate quickly and optimize the performance of your app in all the ways it counts.
 
 ## Getting Started
-In order to get the most out of your A/B tests, start by deciding on your most important key performance indicators, or KPI, such as sign up rate, conversion rate or time in app. Once you've identified the KPI that matters most, you can focus your testing effort on that particular area.
+There are three types of experiments that Artisan offers, each which balances power with ease of deployment:
 
-<div id="create-experiment"></div>
+<p><img src="/images/screens/experiment-types-800x305.jpg" width="800" height="305" alt="Types of Artisan Experiments." /></p>
 
-## Creating your First Experiment
+* **Canvas / Web Interface**: Use the [Artisan Design Center]({% post_url user-guide/2013-10-24-app-map %}) and [Canvas]({% post_url user-guide/2013-10-24-design-canvas %}) to make simple UI changes without writing any code or deploying anything to the App Store.  The WYSIWYG Canvas can support editing most properties on UIKit-based UIs, and requires no setup or code deployment beyond the Artisan SDK being installed.  (__iOS Only__)
+* **Power Hooks**: Use [Artisan Power Hooks]({% post_url user-guide/2015-04-15-powerhooks %}) to experiment with feature flag values, business logic flags, and other code-level parameters.  Once the applicable Power Hooks are integrated into your app, you can run unlimited A/B tests without any ongoing code or app deployments.  You can also use Aritsan Experiments to target Power Hook values to specific segments.
+* **In-Code SDK**: Use the [Artisan In-Code Experiment API]({% post_url ios/2014-05-09-power-hooks %}) to build variations directly within the code of your app.  These variations can then be registered with Artisan, which will manage distributing them to different users, compiling the results, and enabling a winner.
 
-### Designing Your Experiment
-* Starting in App Map, select the screen that you would like to experiment on
-* Click on Create a New Experiment located on the Action Sheet on the right of the screen. This will take you to the design canvas.
-
-The Variations panel located at the top left of the Canvas allows you to create multiple versions of the screen to experiment with. When you create a new experiment you will see two variations:
-
-* "A" is your control. This is the current version of your screen that contains no changes and that your users are seeing on their devices. You'll notice that you can't make any changes to your control.
-* "B" is a duplicate of your control. This is where you'll start making changes for experiment.
-
-You can add as many variations that you need to by clicking the "+" button on the Variations panel. You can also duplicate a variation by hovering your mouse over the variation and clicking the "duplicate" icon that appears to the right of the variation name.
-
-To change the design of a variation simply choose the variation that you would like to work with by clicking on the name in the variation panel. From there you can select items on the screen to move, resize, or change the properties of.
-
-When you are ready to start testing your designs click the "Ready to Test" button at the top of the Canvas. This will allow you to continue configuring your experiment.
-
-### Configure Your Experiment
-The Experiment Configure tab lets you set the parameters of your Experiment — such as duration of the experiment, target audience, distribution, and your experiment goal.
-
-#### Changing Duration
-You can change the duration of your experiment by selecting the Minutes, Hours, Days, or Weeks from the drop down menu and entering in a length of time for your experiment to run.
-
-#### Choosing an Audience
-Before an experiment can begin you need to tell Artisan how many of your users should participate in the experiment. You can do this by entering the number of users in the field provided in the Audience section of the Configure tab.
-
-You can also target your experiment to a specific segment of users. For instance you could target your experiment to users who have iPhones. To target your experiment to a segment:
-
-* Click the Target Experiment to a Segment checkbox in the Audience section of the Configure tab
-* Select the type of users you would like to target using the drop down box provided and enter a value
-
-#### Setting a Conversion Goal
-A Conversion Goal is how we measure success for an experiment and how we calculate which variation in your experiment is winning. A conversion goal can trigger when your users interact with a specific object in your app (ex. tap a button) or when a user has used your app for a specific amount of time.
-
-To set a conversion goal, first select "Interacts with" or "Uses your app for more than" from the drop down box in the Conversion Goals section of the Configure tab. Then set your criteria:
-
-* **Interacts with** — Click the Set Interaction button. If you're device isn't already connected to Artisan, you'll be prompted to do so. Using your device navigate to the screen in your app where the action will take place, then tap on the button or control that you would like to use. After you're done, click the Set Goal button.
-
-* **Uses your app for more than** — Select Seconds, Minutes, or Hours from the drop down box and then enter the length of time that your users need to be actively using your app to count as a conversion.
-
-### Starting Your Experiment
-
-After you've configured your experiment. Click the "Save Experiment" link on the right side of the screen. If there are any issues with your experiment configuration we'll let you know with some helpful error messages. If there are no errors, you should see a "Start Experiment" link. When you are ready to continue, click the "Start Experiment" to begin.
-
-Your experiment is now running. Your experiment results will be displayed on the Summary tab for your experiment.
-
-### Changing your Experiment
-
-If you have saved an Experiment as a draft, you can modify it by navigating to Experiments on the navigation bar and clicking on the name of your experiment.
-
-* To edit a Variation select Edit Variation from the right side and if your app is not already connected you will be prompted to do so, you will now be in Canvas and be able to make your modifications.
-* If you have already published (started) the Experiment you cannot make any changes to it. You can manually end the Experiment from the Configuration tab and then recreate it with the appropriate changes.
-
-### Deleting your Experiment
-
-* Open your list of experiments and click on the experiment you would like to delete.
-* You will now be on the draft Experiment Configure page, on the right side you will see an option to Delete.
-
-### Understanding Your Experiment Results
-
-Artisan uses confidence levels to explain the results of A/B Tests. A confidence level signifies the amount of certainty that the conversion rate of a variation within an experiment will beat the conversion rate of the control when published to the total population of app users.
-
-The industry standard is to achieve a 95% confidence level. This means that there is a 95% chance that the conversion rate of the variation will be higher than that of the control when published. Artisan signals that 95% confidence has been achieved by adding a yellow/green medal to the variation on the experiment screen. For the exact confidence level, hover over the yellow/green medal or download the detailed statistics for the experiment.
-
-A yellow medal indicates that the particular variation has a 95% confidence level that its conversion rate is better than the control. A green medal indicates that the particular variation has a 95% confidence level that its conversion rate is better than all other variations.
+For each of these experiment types, Artisan will [show the results for the test]({% user-guide/2013-10-24-experiments-results %}), and the winning variation can be published to all users within the target segment for the purposes of improving your app's performance in the wild.
