@@ -10,3 +10,7 @@ A/B test different designs to identify the variation that produces the best resu
 
 ## Creating a Power Hook Experiment
 In order to get the most out of your A/B tests, start by deciding on your most important key performance indicators, or KPI, such as sign up rate, conversion rate or time in app. Once you've identified the KPI that matters most, you can focus your testing effort on that particular area.
+
+## Configuring and Publishing a Power Hook Experiment
+
+See [Configuring Your Experiment]({% post_url user-guide/2013-10-24-experiments-settings %}).

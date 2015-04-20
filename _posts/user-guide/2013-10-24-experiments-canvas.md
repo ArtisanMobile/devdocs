@@ -11,7 +11,7 @@ description: "Getting started with the Artisan MEM platform for developers."
 
 To create a new Canvas Experiment, you'll need an instance of your app with the Artisan SDK installed running on either your device or within the simulator.  With this installation, observe the following steps:
 
-* Navigate to the Artisan Design Center.
+* Navigate to the [Artisan Design Center]({% post_url user-guide/2013-10-24-app-map %}).
 * Follow the instructions to connect your app to Artisan.
 * Navigate to the screen on which you want to conduct the UI experiment.
 * Click 'Create A New Experiment' on the right sidebar.
