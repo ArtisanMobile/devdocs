@@ -25,7 +25,7 @@ Once added, you can use Power Hook Code Blocks in a number of different ways.
 
 By default, when called, Power Hook blocks will execute according to the parameters passed via the Control Panel.  For example, if I have a Power Hook block that automatically navigates the user to their shopping cart and takes a discount code to display as a parameter, that discount code will be whatever is set in the Power Hook Control Panel.
 
-<img src="/images/screens/powerhooks-block-1400x445.png" height="223" width="700" alt="The Artisan Campaign In App Compose Screen - Triggers." />
+<img src="/images/screens/powerhooks-block-1400x445.png" height="223" width="700" class="border-full" alt="The Artisan Campaign In App Compose Screen - Triggers." />
 
 You can therefore change, A/B test, and personalize the value of this code the same way as a normal Power Hook.  Update the value in the 'Draft Value' column, hit the 'Preview' option to connect your device, navigate to the part of your app that executes the Power Block, and watch it spring into action with the new values in place.
 

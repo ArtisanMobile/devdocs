@@ -48,8 +48,8 @@ Selecting an item on the screen also displays all of the properties available fo
 
 Depending on what you are working on, the Canvas may display additional information. For instance, if you are working on an Experiment, a list of variations is displayed. If you are personalizing a screen a list of segments will appear. You can learn more about using these tools in:
 
-* [Personalize] { % post_url 2013-10-24-personalize.md % }
-* [Optimize] { % post_url 2013-10-24-optimize.md % }
+* [Personalize]({ % post_url 2013-10-24-personalize.md % })
+* [Optimize]({ % post_url 2013-10-24-optimize.md % })
 
 <div id="instant-publishing"></div>
 
