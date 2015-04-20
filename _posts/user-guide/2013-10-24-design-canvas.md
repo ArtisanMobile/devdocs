@@ -27,6 +27,8 @@ The Canvas does *not* support the following:
 * Web Views and HTML5-constructed interfaces (e.g. Apache Cordova-based apps)
 * UIs drawn using CoreGraphics and other direct-draw capabilities.
 
+<div id="getting-started"></div>
+
 ## Getting Started With the Canvas
 Once you've connected your app to the Artisan [Design Center]({% post_url user-guide/2013-10-24-app-map %}), you can navigate within your app to see the different actions available for each screen.  Once you've navigated to your target screen, if it's eligible for use with the Canvas, you should see the following options:
 
@@ -49,7 +51,7 @@ Selecting an item on the screen also displays all of the properties available fo
 Depending on what you are working on, the Canvas may display additional information. For instance, if you are working on an Experiment, a list of variations is displayed. If you are personalizing a screen a list of segments will appear. You can learn more about using these tools in:
 
 * [Personalize]({ % post_url 2013-10-24-personalize.md % })
-* [Optimize]({ % post_url 2013-10-24-optimize.md % })
+* [Experiments]({ % post_url 2013-10-24-optimize.md % })
 
 <div id="instant-publishing"></div>
 
