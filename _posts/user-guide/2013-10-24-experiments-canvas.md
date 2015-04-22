@@ -18,6 +18,10 @@ To create a new Canvas Experiment, you'll need an instance of your app with the 
 
 <img src="/images/screens/experiment-app-map-800x496.png" height="496" width="800" class="border-full" alt="Creating a new Canvas Experiment." />
 
+<div class="note note-hint">
+  <p><strong>NOTE:</strong> The Artisan Canvas is currently only supported for iOS.</p>
+</div>
+
 ### Designing Your Experiment
 
 Once your new experiment is created, you will automatically be navigated to the [Artisan Canvas](% post_url user-guide/2013-10-24-design-canvas %}).  Here, you'll be able to create all of the variations for your experiment, design them, and get them ready to be published.

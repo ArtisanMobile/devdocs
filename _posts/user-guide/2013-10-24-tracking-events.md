@@ -16,7 +16,7 @@ Artisan automatically collects all key information about how your app is used by
 * Screen Views
 * Button Taps
 * Segmented Control Taps
-* Table Cell Selections
+* Table Cell Selections (iOS Only)
 * Session Start and Completion
 * In-App Purchases and Commerce Events (iOS Only)
 * Social Shares via Social Share API (iOS Only)
@@ -59,7 +59,7 @@ For example, an 'Order Complete' event can be tagged with the StoreID where the 
 There are three ways in which context tags can be applied to your analytics events:
 
 * Pass them as parameters to a custom Artisan trackEvent call via the Artisan Event Tracking API.
-* Attach tags to your app's screens in code to apply them to any event Artisan automatically collects on that screen.  See the [Artisan Event Tracking API]({% post_url ios/2014-05-09-event-tracking %}/#event-tagging) for more detail.
+* Attach tags to your app's screens in code to apply them to any event Artisan automatically collects on that screen.  See the [Artisan Event Tracking API]({% post_url ios/2014-05-09-event-tracking %}/#event-tagging) for more detail. (iOS Only)
 * Register User Profile Variables and use the Artisan Profile Tagging capability to apply them to a specific event.  See [Managing Events]({% post_url user-guide/2013-10-24-managing-events %}/#profile-tags) for more detail.
 
 Through any of these methods, these context tags will automatically be collected to enrich your Artisan analytics data and better illustrate what your users are doing in your app and what you can do to improve it.

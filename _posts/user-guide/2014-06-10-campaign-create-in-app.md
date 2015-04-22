@@ -125,6 +125,10 @@ The **frequency** for the in-app message defines how frequently this notificatio
   <p><strong>NOTE:</strong> For In-App message triggers, the <strong>Starts App</strong> event actually corresponds to the first time the Artisan playlist is downloaded after the user starts the app. That way you can be sure the latest In-App messages are present when the first one is triggered.</p>
 </div>
 
+#### Building Multiple Variations
+
+If you wish to compose multiple variations of this in-app campaign to publish as part of an A/B test, see [A/B Testing Campaigns]({% post_url 2013-10-24-campaign-ab-testing %}).
+
 ## Publishing Your Campaign
 
 To publish your campaign, click 'Continue' from the Compose screen.  Here, you can validate all of your settings, send yourself a test notification, and confirm that your campaign is ready to broadcast.
@@ -135,9 +139,9 @@ To send yourself a test notification, click on the **Send Test Message** located
 
 ### Starting Your Campaign
 
-If all of your settings are correct and your test message is received successfully, hit 'Start Campaign' to publish your campaign draft.  If you do not wish to start your campaign just yet, you can leave this screen and come back to your campaign draft at any time.
+If all of your settings are correct and your test message is received successfully, hit 'Start Campaign' to publish your campaign draft.  The campaign will begin when it reaches the start time you specified.  If you do not wish to publish your campaign just yet, you can leave this screen and come back to your campaign draft at any time.
 
-## Editing a Push Campaign
+## Editing an In-App Campaign
 
 You can edit any active campaign or campaign draft at any time.  Options include:
 
@@ -147,3 +151,7 @@ You can edit any active campaign or campaign draft at any time.  Options include
 * Deleting completed campaigns or campaign drafts.
 
 To access these editing options, navigate to the 'Campaigns' area in Artisan and click the Campaign you wish to edit.
+
+<div class="note note-hint">
+  <p><strong>NOTE:</strong> Editing a currently-running In-App Campaign <strong>does not</strong> reset the event triggers for users who have already seen the campaign. If the campaign is set so that it is triggered 'Only Once' and the user has already seen it, editing the campaign will not cause them to see it again (unless you chance the trigger so it is no longer 'Only Once').</p>
+</div>
