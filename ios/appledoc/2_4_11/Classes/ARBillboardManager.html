@@ -1,0 +1,877 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>ARBillboardManager Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">ArtisanSDK </a></h1>
+				<a id="developerHome" href="../index.html">Artisan Mobile, Inc.</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">ARBillboardManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/billboardIsAvailableWithId:inBillboardBundleWithId:">&nbsp;&nbsp;&nbsp;&nbsp;+ billboardIsAvailableWithId:inBillboardBundleWithId:</option>
+	
+	<option value="//api/name/getBillboardCollectionViewCellWithId:fromBillboardBundleWithId:forCollectionView:atIndexPath:">&nbsp;&nbsp;&nbsp;&nbsp;+ getBillboardCollectionViewCellWithId:fromBillboardBundleWithId:forCollectionView:atIndexPath:</option>
+	
+	<option value="//api/name/getBillboardTableViewCellWithId:fromBillboardBundleWithId:forTableView:">&nbsp;&nbsp;&nbsp;&nbsp;+ getBillboardTableViewCellWithId:fromBillboardBundleWithId:forTableView:</option>
+	
+	<option value="//api/name/getBillboardViewWithId:fromBillboardBundleWithId:">&nbsp;&nbsp;&nbsp;&nbsp;+ getBillboardViewWithId:fromBillboardBundleWithId:</option>
+	
+	<option value="//api/name/getSizeOfBillboardWithId:fromBillboardBundleWithId:">&nbsp;&nbsp;&nbsp;&nbsp;+ getSizeOfBillboardWithId:fromBillboardBundleWithId:</option>
+	
+	<option value="//api/name/registerBillboardBundleWithId:friendlyName:description:">&nbsp;&nbsp;&nbsp;&nbsp;+ registerBillboardBundleWithId:friendlyName:description:</option>
+	
+	<option value="//api/name/registerBillboardWithId:forBillboardBundleId:friendlyName:description:size:dynamicWidth:dyanamicHeight:">&nbsp;&nbsp;&nbsp;&nbsp;+ registerBillboardWithId:forBillboardBundleId:friendlyName:description:size:dynamicWidth:dyanamicHeight:</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/billboardIsAvailableWithId:inBillboardBundleWithId:">billboardIsAvailableWithId:inBillboardBundleWithId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getBillboardCollectionViewCellWithId:fromBillboardBundleWithId:forCollectionView:atIndexPath:">getBillboardCollectionViewCellWithId:fromBillboardBundleWithId:forCollectionView:atIndexPath:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getBillboardTableViewCellWithId:fromBillboardBundleWithId:forTableView:">getBillboardTableViewCellWithId:fromBillboardBundleWithId:forTableView:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getBillboardViewWithId:fromBillboardBundleWithId:">getBillboardViewWithId:fromBillboardBundleWithId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSizeOfBillboardWithId:fromBillboardBundleWithId:">getSizeOfBillboardWithId:fromBillboardBundleWithId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerBillboardBundleWithId:friendlyName:description:">registerBillboardBundleWithId:friendlyName:description:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerBillboardWithId:forBillboardBundleId:friendlyName:description:size:dynamicWidth:dyanamicHeight:">registerBillboardWithId:forBillboardBundleId:friendlyName:description:size:dynamicWidth:dyanamicHeight:</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="ARBillboardManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">ARBillboardManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">ARBillboardManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Manages the Artisan Billboards. This includes:</p>
+
+<ul>
+<li>Registering Artisan Billboard bundles and billboards for those bundles so that they can be customized in Artisan Tools</li>
+<li>Checking to see if a billboard is available from Artisan for this device</li>
+<li>Getting UIView, UICollectionViewCell, and UITableViewCell instances of those billboards</li>
+<li>Getting the size of billboard instances</li>
+</ul>
+
+
+<p>Billboards are grouped into bundles, where each billboard in the bundle is sized to fit with a different device, layout, or orientation.</p>
+
+<p>When building a marketing campaign in Artisan Tools you will be able to provide content and assets for each of the billboards in the bundle.</p>
+
+<p>ARBillboardManager is a singleton that is automatically initialized when your app starts.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/registerBillboardBundleWithId:friendlyName:description:">+&nbsp;registerBillboardBundleWithId:friendlyName:description:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/registerBillboardWithId:forBillboardBundleId:friendlyName:description:size:dynamicWidth:dyanamicHeight:">+&nbsp;registerBillboardWithId:forBillboardBundleId:friendlyName:description:size:dynamicWidth:dyanamicHeight:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/billboardIsAvailableWithId:inBillboardBundleWithId:">+&nbsp;billboardIsAvailableWithId:inBillboardBundleWithId:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getBillboardViewWithId:fromBillboardBundleWithId:">+&nbsp;getBillboardViewWithId:fromBillboardBundleWithId:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getBillboardTableViewCellWithId:fromBillboardBundleWithId:forTableView:">+&nbsp;getBillboardTableViewCellWithId:fromBillboardBundleWithId:forTableView:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getBillboardCollectionViewCellWithId:fromBillboardBundleWithId:forCollectionView:atIndexPath:">+&nbsp;getBillboardCollectionViewCellWithId:fromBillboardBundleWithId:forCollectionView:atIndexPath:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getSizeOfBillboardWithId:fromBillboardBundleWithId:">+&nbsp;getSizeOfBillboardWithId:fromBillboardBundleWithId:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/billboardIsAvailableWithId:inBillboardBundleWithId:" title="billboardIsAvailableWithId:inBillboardBundleWithId:"></a>
+	<h3 class="subsubtitle method-title">billboardIsAvailableWithId:inBillboardBundleWithId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Check if a billboard is available.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)billboardIsAvailableWithId:(NSString *)<em>billboardId</em> inBillboardBundleWithId:(NSString *)<em>billboardBundleId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>billboardId</em></dt>
+			<dd><p>a unique identifier for this billboard.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>billboardBundleId</em></dt>
+			<dd><p>the bundle identifier for the bundle to which this billboard belongs.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Check if a billboard is available.</p>
+
+<p>If you haven&rsquo;t configured any billboard content via Artisan Tools or if the current user is not elegible for the campaign then there may not be a billboard to show on this device. Therefore, you should always call billboardIsAvailableWithId before requesting a billboard view.</p>
+
+<p>Usage Example</p>
+
+<p><code><pre>
+if ([ARBillboardManager billboardIsAvailableWithId:@&ldquo;mainScreeniPhone&rdquo; inBillboardBundleWithId:@&ldquo;mainScreenBillboard&rdquo;]) {
+    UIView *billboardView = [ARBillboardManager getBillboardViewWithId:@&ldquo;mainScreeniPhone&rdquo; fromBillboardBundleWithId:@&ldquo;mainScreenBillboard&rdquo;];
+    // add this billboard to your screen
+    [myMainScreenView addSubview:billboardView];
+} else {
+    // If the billboard is not available you should handle this in your app however it makes sense for your layout.
+}
+</pre></code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARBillboardManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getBillboardCollectionViewCellWithId:fromBillboardBundleWithId:forCollectionView:atIndexPath:" title="getBillboardCollectionViewCellWithId:fromBillboardBundleWithId:forCollectionView:atIndexPath:"></a>
+	<h3 class="subsubtitle method-title">getBillboardCollectionViewCellWithId:fromBillboardBundleWithId:forCollectionView:atIndexPath:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get a billboard to display as a collection view cell</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (UICollectionViewCell *)getBillboardCollectionViewCellWithId:(NSString *)<em>billboardId</em> fromBillboardBundleWithId:(NSString *)<em>billboardBundleId</em> forCollectionView:(UICollectionView *)<em>collectionView</em> atIndexPath:(NSIndexPath *)<em>indexPath</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>billboardId</em></dt>
+			<dd><p>a unique identifier for this billboard.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>billboardBundleId</em></dt>
+			<dd><p>the bundle identifier for the bundle to which this billboard belongs.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>collectionView</em></dt>
+			<dd><p>the collectionView to add the billboard cell to.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>indexPath</em></dt>
+			<dd><p>the indexPath to add the cell to in the collection view</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Get a billboard to display as a collection view cell</p>
+
+<p>Usage Example</p>
+
+<p><code><pre>
+-(UICollectionViewCell <em>)collectionView:(UICollectionView </em>)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (((indexPath.row == 4) || (indexPath.row == 9) || (indexPath.row == 13) ) &amp;&amp; ([ARBillboardManager billboardIsAvailableWithId:@&ldquo;mainScreeniPhone&rdquo; inBillboardBundleWithId:@&ldquo;mainScreenBillboard&rdquo;]) ) {
+        return [ARBillboardManager getBillboardCollectionViewCellWithId:@&ldquo;mainScreeniPhone&rdquo; fromBillboardBundleWithId:@&ldquo;mainScreenBillboard&rdquo; forCollectionView:collectionView atIndexPath:indexPath];
+    } else {
+        // &hellip;
+    }
+}
+</pre></code></p><div class="warning"><p><strong>Warning:</strong> Always check billboardIsAvailableWithId before calling this method so that you are guaranteed to get a billboard back. If the billboard is not available and you call getBillboardCollectionViewCellWithId we will return a non-null but empty cell and log an error to the console.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARBillboardManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getBillboardTableViewCellWithId:fromBillboardBundleWithId:forTableView:" title="getBillboardTableViewCellWithId:fromBillboardBundleWithId:forTableView:"></a>
+	<h3 class="subsubtitle method-title">getBillboardTableViewCellWithId:fromBillboardBundleWithId:forTableView:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get a billboard to display as a table view cell</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (UITableViewCell *)getBillboardTableViewCellWithId:(NSString *)<em>billboardId</em> fromBillboardBundleWithId:(NSString *)<em>billboardBundleId</em> forTableView:(UITableView *)<em>tableView</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>billboardId</em></dt>
+			<dd><p>a unique identifier for this billboard.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>billboardBundleId</em></dt>
+			<dd><p>the bundle identifier for the bundle to which this billboard belongs.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tableView</em></dt>
+			<dd><p>the tableview to add the billboard cell to.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Get a billboard to display as a table view cell</p>
+
+<p>Usage Example</p>
+
+<p><code><pre>
+- (UITableViewCell <em>)tableView:(UITableView </em>)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0 &amp;&amp; indexPath.row == billboardIndex) { // only add the billboard to a specific section and row
+        if ([ARBillboardManager billboardIsAvailableWithId:@&ldquo;mainScreeniPhone&rdquo; inBillboardBundleWithId:@&ldquo;mainScreenBillboard&rdquo;]) {
+            return [ARBillboardManager getBillboardTableViewCellWithId:@&ldquo;mainScreeniPhone&rdquo; fromBillboardBundleWithId:@&ldquo;mainScreenBillboard&rdquo; forTableView:tableView];
+        } else {
+            // If the billboard is not available you should handle this in your app however it makes sense for your layout.
+        }
+    }
+    // &hellip;
+}
+</pre></code></p><div class="warning"><p><strong>Warning:</strong> Always check billboardIsAvailableWithId before calling this method so that you are guaranteed to get a billboard back. If the billboard is not available and you call getBillboardTableViewCellWithId we will return a non-null but empty cell and log an error to the console.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARBillboardManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getBillboardViewWithId:fromBillboardBundleWithId:" title="getBillboardViewWithId:fromBillboardBundleWithId:"></a>
+	<h3 class="subsubtitle method-title">getBillboardViewWithId:fromBillboardBundleWithId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get a billboard view to display.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (UIView *)getBillboardViewWithId:(NSString *)<em>billboardId</em> fromBillboardBundleWithId:(NSString *)<em>billboardBundleId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>billboardId</em></dt>
+			<dd><p>a unique identifier for this billboard.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>billboardBundleId</em></dt>
+			<dd><p>the bundle identifier for the bundle to which this billboard belongs.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Get a billboard view to display.</p>
+
+<p>Usage Example</p>
+
+<p><code><pre>
+if ([ARBillboardManager billboardIsAvailableWithId:@&ldquo;mainScreeniPhone&rdquo; inBillboardBundleWithId:@&ldquo;mainScreenBillboard&rdquo;]) {
+    UIView *billboardView = [ARBillboardManager getBillboardViewWithId:@&ldquo;mainScreeniPhone&rdquo; fromBillboardBundleWithId:@&ldquo;mainScreenBillboard&rdquo;];
+    // add this billboard to your screen
+    [myMainScreenView addSubview:billboardView];
+} else {
+    // If the billboard is not available you should handle this in your app however it makes sense for your layout.
+}
+</pre></code></p><div class="warning"><p><strong>Warning:</strong> Always check billboardIsAvailableWithId before calling this method so that you are guaranteed to get a billboard back. If the billboard is not available and you call getBillboardViewWithId we will return an empty view and log an error to the console.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARBillboardManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getSizeOfBillboardWithId:fromBillboardBundleWithId:" title="getSizeOfBillboardWithId:fromBillboardBundleWithId:"></a>
+	<h3 class="subsubtitle method-title">getSizeOfBillboardWithId:fromBillboardBundleWithId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the size of a billboard.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CGSize)getSizeOfBillboardWithId:(NSString *)<em>billboardId</em> fromBillboardBundleWithId:(NSString *)<em>billboardBundleId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>billboardId</em></dt>
+			<dd><p>a unique identifier for this billboard.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>billboardBundleId</em></dt>
+			<dd><p>the bundle identifier for the bundle to which this billboard belongs.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Get the size of a billboard.</p>
+
+<p>Typically a billboard will be the size that you registered it with, but if you have dynamicWidth or dynamicHeight turned on then the size may vary depending on the contents that were configured in Artisan Tools.</p>
+
+<p>Usage Example</p>
+
+<p><code><pre>
+- (CGFloat)tableView:(UITableView <em>)tableView heightForRowAtIndexPath:(NSIndexPath </em>)indexPath {
+    if(indexPath.section == 0 &amp;&amp; indexPath.row == 3) {
+        return [ARBillboardManager getSizeOfBillboardWithId:@&ldquo;mainScreeniPhone&rdquo; fromBillboardBundleWithId:@&ldquo;mainScreenBillboard&rdquo;].height;
+    } else {
+        return 150.0;
+    }
+}
+</pre></code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARBillboardManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/registerBillboardBundleWithId:friendlyName:description:" title="registerBillboardBundleWithId:friendlyName:description:"></a>
+	<h3 class="subsubtitle method-title">registerBillboardBundleWithId:friendlyName:description:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Register a billboard bundle with Artisan</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)registerBillboardBundleWithId:(NSString *)<em>billboardBundleId</em> friendlyName:(NSString *)<em>friendlyName</em> description:(NSString *)<em>description</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>billboardBundleId</em></dt>
+			<dd><p>unique identifier for this billboard bundle</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>friendlyName</em></dt>
+			<dd><p>a human-friendly name for this billboard bundle that will be displayed in Artisan Tools</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>description</em></dt>
+			<dd><p>a description for this billboard bundle, which will be visible to your business users in Artisan Tools. You may wish to include a description of the screens and layouts where this bundle is used in your app.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Register a billboard bundle with Artisan</p>
+
+<p>A billboard bundle represents a group of billboards. For example, in a universal app you might have one billboard bundle, but two billboards in the bundle: one for iPhones and one for iPads. Or, if your layout changes upon rotation you might have multiple billboards in the bundle, each sized to fit with a different device orientation.</p>
+
+<p>When building a marketing campaign in Artisan Tools you will be able to provide content and assets for each of the billboards in the bundle.</p>
+
+<p>This registration should occur in the <code>didFinishLaunchingWithOptions:</code> method of your main app delegate, <em>before</em> you start Artisan using the <a href="../Classes/ARManager.html#//api/name/startWithAppId:version:"><code>[ARManager startWithAppId:version:]</code></a> method.</p>
+
+<p>Usage Example</p>
+
+<p><code><pre>
+[ARBillboardManager registerBillboardBundleWithId:@&ldquo;mainScreenBillboard&rdquo;
+                                      friendlyName:@&ldquo;Billboard for the app main screen&rdquo;
+                                       description:@&ldquo;This billboard will be shown prominently on the main screen for iPhones and iPads.&rdquo;];
+</pre></code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARBillboardManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/registerBillboardWithId:forBillboardBundleId:friendlyName:description:size:dynamicWidth:dyanamicHeight:" title="registerBillboardWithId:forBillboardBundleId:friendlyName:description:size:dynamicWidth:dyanamicHeight:"></a>
+	<h3 class="subsubtitle method-title">registerBillboardWithId:forBillboardBundleId:friendlyName:description:size:dynamicWidth:dyanamicHeight:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Register a billboard with Artisan</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)registerBillboardWithId:(NSString *)<em>billboardId</em> forBillboardBundleId:(NSString *)<em>billboardBundleId</em> friendlyName:(NSString *)<em>friendlyName</em> description:(NSString *)<em>description</em> size:(CGSize)<em>size</em> dynamicWidth:(BOOL)<em>dynamicWidth</em> dyanamicHeight:(BOOL)<em>dynamicHeight</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>billboardId</em></dt>
+			<dd><p>a unique identifier for this billboard.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>billboardBundleId</em></dt>
+			<dd><p>the bundle identifier for the bundle to which this billboard belongs.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>friendlyName</em></dt>
+			<dd><p>a human-friendly name for this billboard that will be displayed in Artisan Tools</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>description</em></dt>
+			<dd><p>a description for this billboard, which will be visible to your business users in Artisan Tools. You may wish to describe the specific layouts and devices that this billboard is used for.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>size</em></dt>
+			<dd><p>the size for this billboard. If dynamicWidth and dynamicHeight are both NO, then this will be the fixed height of the billboard.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dynamicWidth</em></dt>
+			<dd><p>whether this billboard should adjust its horizontal size to match the contents.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dynamicHeight</em></dt>
+			<dd><p>whether this billboard should adjust its vertical size to match the contents.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Register a billboard with Artisan</p>
+
+<p>A billboard is a view whose contents can be dynamically configured via Artisan Tools.</p>
+
+<p>This registration should occur in the <code>didFinishLaunchingWithOptions:</code> method of your main app delegate, <em>before</em> you start Artisan using the <a href="../Classes/ARManager.html#//api/name/startWithAppId:version:"><code>[ARManager startWithAppId:version:]</code></a> method.</p>
+
+<p>Usage Example</p>
+
+<p><code><pre>
+[ARBillboardManager registerBillboardWithId:@&ldquo;mainScreeniPhone&rdquo;
+                        forBillboardBundleId:@&ldquo;mainScreenBillboard&rdquo;
+                                friendlyName:@&ldquo;Main Screen iPhone Billboard&rdquo;
+                                 description:@&ldquo;This is visible on all iPhones&rdquo;
+                                        size:CGSizeMake(320, 133)
+                                dynamicWidth:NO
+                              dyanamicHeight:YES];
+</pre></code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARBillboardManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 Artisan Mobile, Inc.. All rights reserved. (Last updated: 2015-04-22)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
