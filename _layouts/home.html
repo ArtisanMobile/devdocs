@@ -167,17 +167,31 @@
 			</div>
 		</div>
 		<div id="release-notes">
-			<h2>Release Notes</h2>
-    		<ul>
-				{% for post in site.categories.release-notes %}
-				    <li>
-				      <a href="{{ post.url }}">{{ post.title }}</a>
-				    </li>
-				{% endfor %}
-			</ul>
+            <div>
+                <h2>Release Notes</h2>
+                <ul id="ios-releases">
+                    <p>iOS</p>
+                    {% for post in site.categories.release-notes %}
+                        {% if post.title contains "iOS" %}
+                          <li>
+                            <a href="release-notes/ios.html#{{ post.title }}">{{ post.title }}</a>
+                          </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
 
-
-		</div>
+                <ul id="android-releases">
+                    <p>Android</p>
+                    {% for post in site.categories.release-notes %}
+                        {% if post.title contains "Android" %}
+                          <li>
+                            <a href="release-notes/android.html#{{ post.title }}">{{ post.title }}</a>
+                          </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+          </div>
 	</div>
 	{% include footer.html %}
 </body>

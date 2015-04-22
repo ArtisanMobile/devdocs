@@ -37,6 +37,10 @@ Learn more about [creating posts](http://jekyllrb.com/docs/posts/) on the Jekyll
  jekyll serve
 ```
 
-Now browse to http://localhost:4000
+If you get the error: `cannot load such file -- jekyll-sitemap (LoadError)`. Then you should also run:
+
+    gem install jekyll-sitemap
+
+Now browse to: `http://localhost:4000`
 
 Have fun and write responsibly.

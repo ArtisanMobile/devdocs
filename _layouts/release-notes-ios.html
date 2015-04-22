@@ -1,0 +1,33 @@
+{% include header.html %}
+<div id="main">
+  <div class="main-wrapper">
+    <section>
+      <aside id="category-nav">
+        <div id="nav-wrapper">
+          <h2>iOS Releases</h2>
+          <ul>
+            {% for post in site.categories.release-notes %}
+              {% if post.title contains "iOS" %}
+              <li>
+                <a href="#{{ post.title }}">{{ post.title }}</a>
+              </li>
+              {% endif %}
+            {% endfor %}
+          </ul> 
+        </div>
+      </aside>
+      <article>
+        {% for post in site.categories.release-notes %}
+          {% if post.title contains "iOS" %}
+            <a name="{{ post.title }}"></a>
+            {{ post.content }}
+            <hr/>
+          {% endif %}
+        {% endfor %}
+      </article>
+    </section>
+  </div>
+</div>
+{% include footer.html %}
+</body>
+</html>
