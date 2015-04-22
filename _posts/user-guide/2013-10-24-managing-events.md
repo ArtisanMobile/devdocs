@@ -11,7 +11,7 @@ description: "Getting started with the Artisan MEM platform for developers."
 
 The Event Report provides visibility into the actions triggered by users within your app (e.g. screens viewed, buttons tapped, events instrumented via the [iOS]({% post_url ios/2014-05-09-event-tracking %}), [Android]({% post_url android/2014-05-08-event-tracking %}) or [Javascript]({% post_url js/2014-07-18-hybrid-sdk-reference-guide %}#trackingapi) Event Tracking APIs, etc.).  
 
-<p><img src="/images/screens/reports-event-example-700x576.jpg" width="700" height="576" class="border-full" alt="Screen capture of a sample event report." /></p>
+<p><img src="/images/screens/reports-event-example-700x522.jpg" width="700" height="522" class="border-full" alt="Screen capture of a sample event report." /></p>
 
 <div id="event-library"></div>
 
@@ -29,7 +29,7 @@ As noted in [Tracking and Tagging Events]({% post_url user-guide/2013-10-24-trac
 
 For example, an 'Order Complete' event can be tagged with the StoreID where the user placed their order, as well as the CouponID they used when they made the order.  This will allow you to see the breakdown of which coupons users have used in the app, as well as which stores they've placed orders from.
 
-<p><img src="/images/screens/event-tagging-screenshot-1000x750.png" width="700" height="525" class="border-full" alt="Screen capture of an example of Artisan tags." /></p>
+<p><img src="/images/screens/event-tagging-screenshot-1000x697.png" width="700" height="488" class="border-full" alt="Screen capture of an example of Artisan tags." /></p>
 
 <div id="profile-tags"></div>
 
