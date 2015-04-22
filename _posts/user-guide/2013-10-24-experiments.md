@@ -11,7 +11,7 @@ Experiments allow you to test different variations of your app against live user
 ## Getting Started
 There are three types of experiments that Artisan offers, each which balances power with ease of deployment:
 
-<p><img src="/images/screens/experiment-types-800x305.jpg" width="800" height="305" alt="Types of Artisan Experiments." /></p>
+<p><img src="/images/screens/experiment-types-800x305.jpg" width="800" height="305" class="border-full" alt="Types of Artisan Experiments." /></p>
 
 * **[Canvas / Web Interface]({% post_url user-guide/2013-10-24-experiments-canvas %})**: Use the [Artisan Design Center]({% post_url user-guide/2013-10-24-app-map %}) and [Canvas]({% post_url user-guide/2013-10-24-design-canvas %}) to make simple UI changes without writing any code or deploying anything to the App Store.  The WYSIWYG Canvas can support editing most properties on UIKit-based UIs, and requires no setup or code deployment beyond the Artisan SDK being installed.  (__iOS Only__)
 * **[Power Hooks]({% post_url user-guide/2013-10-24-experiments-powerhook %})**: Use [Artisan Power Hooks]({% post_url user-guide/2015-04-15-powerhooks %}) to experiment with feature flag values, business logic flags, and other code-level parameters.  Once the applicable Power Hooks are integrated into your app, you can run unlimited A/B tests without any ongoing code or app deployments.  You can also use Aritsan Experiments to target Power Hook values to specific segments.

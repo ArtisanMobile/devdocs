@@ -81,7 +81,7 @@ The Retention Report allows for your users to be divided into cohorts -- users w
 
 For example, if you want to see how frequently users who complete an order return to make another purchase over the next few months, you can use the Retention Report to view this trend.  As illustrated:
 
-<p><img src="/images/screens/retention-report-example-700x480.gif" width="700" height="480" alt="Screen capture of a user building an example Retention Report." /></p>
+<p><img src="/images/screens/retention-report-example-700x480.gif" width="700" height="480" class="border-full" alt="Screen capture of a user building an example Retention Report." /></p>
 
 * Select users who triggered the 'Order Complete' action to be your cohort.
 * Select 'Order Complete' to be your follow-up action.

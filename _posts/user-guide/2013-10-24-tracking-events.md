@@ -54,7 +54,7 @@ The Artisan Event Tracking API can also add context tags and categories to the i
 
 For example, an 'Order Complete' event can be tagged with the StoreID where the user placed their order, as well as the CouponID they used when they made the order.  This will allow you to see the breakdown of which coupons users have used in the app, as well as which stores they've placed orders from, as noted in the Artisan Event Report example below.
 
-<p><img src="/images/screens/event-tagging-screenshot-1000x750.png" width="700" height="525" alt="Screen capture of an example of Artisan tags." /></p>
+<p><img src="/images/screens/event-tagging-screenshot-1000x750.png" width="700" height="525" class="border-full" alt="Screen capture of an example of Artisan tags." /></p>
 
 There are three ways in which context tags can be applied to your analytics events:
 

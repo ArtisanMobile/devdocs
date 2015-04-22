@@ -38,7 +38,7 @@ Once you've connected your app to the Artisan [Design Center]({% post_url user-g
 
 Selecting any of these will automatically open the Canvas for the currently selected screen.  You can now directly interact with the screen shown in the Canvas to resize and move things on the screen such as buttons and images.
 
-<p><img src="/images/screens/canvas-sample-screenshot-700x569.jpg" width="700" height="569" alt="Screen capture of an A/B test being built via Canvas." /></p>
+<p><img src="/images/screens/canvas-sample-screenshot-700x569.jpg" width="700" height="569" class="border-full" alt="Screen capture of an A/B test being built via Canvas." /></p>
 
 On the left of the Canvas you will see the Screen Browser. The Screen Browser is a tree listing of each of the UI items that are available on your screen. Sometimes multiple items may be stacked on top of each other making it difficult to select the item that you want to make changes to. The Screen Browser makes this easy by allowing you to simply click on the name of the element you would like to change. Clicking an item in the list selects the item on the screen and displays the available properties.
 

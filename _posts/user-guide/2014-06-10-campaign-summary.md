@@ -31,12 +31,12 @@ Artisan will also track how your campaign performs over time, to determine the o
 #### Tap-Through and Dismissal Rate
 The **Tap-Throughs** and **Dimissals** charts indicate how the tap-through and dismissal rates for your in-app campaign have changed over time, providing insight on when your campaign is reaching the saturation point for the targeted audience and how effective it has been in driving conversions.
 
-<img src="/images/screens/campaign-summary-in-app-rates-760x378.png" height="378" width="760" alt="Shows the rates for an in-app campaign." />
+<img src="/images/screens/campaign-summary-in-app-rates-760x378.png" height="378" width="760" class="border-full" alt="Shows the rates for an in-app campaign." />
 
 #### Impression Counts
 The **Total Impressions** and **Unique Impressions** charts keep track of the cumulative number of message impressions that have been delivered.  The uniques impressions chart tracks how many unique users have received the campaign, while the total chart tracks all impressions (including cases where the same user sees the campaign multiple times).
 
-<img src="/images/screens/campaign-summary-in-app-impressions-760x382.png" height="382" width="760" alt="Shows the impressions for an in-app campaign." />
+<img src="/images/screens/campaign-summary-in-app-impressions-760x382.png" height="382" width="760" class="border-full" alt="Shows the impressions for an in-app campaign." />
 
 #### Sessions & Session Length
 The Sessions and Session Length charts display the number of sessions and the length of time your users used your app both during your campaign and before your campaign start date.

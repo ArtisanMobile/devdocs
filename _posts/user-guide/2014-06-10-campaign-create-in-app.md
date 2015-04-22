@@ -15,7 +15,7 @@ description: "Creating a campaign in Artisan."
 
 From the 'Campaign' area, click the 'New Campaign' button.  Then click 'Create In-App Message'.  This will bring up the different options of In-App message that Artisan supports:
 
-<img src="/images/screens/campaign-compose-in-app-options-818x378.png" height="323" width="700" alt="ARtisan in-app campaign types." />
+<img src="/images/screens/campaign-compose-in-app-options-818x378.png" height="323" width="700" class="border-full" alt="Artisan in-app campaign types." />
 
 Artisan currently supports the following in-app message types:
 
@@ -30,7 +30,7 @@ Artisan currently supports the following in-app message types:
 
 Click the desired message type to create a draft campaign of that message.
 
-<img src="/images/screens/campaign-push-settings-1051x1195.png" height="796" width="700" alt="The Artisan Campaign overview screen." />
+<img src="/images/screens/campaign-push-settings-1051x1195.png" height="796" width="700" class="border-full" alt="The Artisan Campaign overview screen." />
 
 ### Configuring Your Campaign Settings
 
@@ -61,7 +61,7 @@ You can configure your Artisan Campaign to start immediately and run indefinitel
 
 To compose your in-app message, start by selecting a layout.  Layout options depend on the type of message being composed.  For Pop Up messages, you can select between: two buttons (a call to action and cancel), one button (a call to action), and no buttons (an actionable content area).
 
-<img src="/images/screens/campaign-in-app-layouts-390x200.png" height="200" width="390" alt="The Artisan Campaign In App Compose Screen - Layouts." />
+<img src="/images/screens/campaign-in-app-layouts-390x200.png" height="200" width="390" class="border-full" alt="The Artisan Campaign In App Compose Screen - Layouts." />
 
 For Slide In messages, you can choose the side of the screen the slide in will appear from, as well as how long the message will remain on screen.
 
@@ -71,17 +71,17 @@ For Take Over messages, you can choose way in which the message transitions onto
 
 Once a desired layout has been selected, start typing in the text areas. As you type, your in-app message will be displayed in the message preview.
 
-<img src="/images/screens/campaign-in-app-message-700x344.png" height="344" width="700" alt="The Artisan Campaign In App Compose Screen - Message." />
+<img src="/images/screens/campaign-in-app-message-700x344.png" height="344" width="700" class="border-full" alt="The Artisan Campaign In App Compose Screen - Message." />
 
 You can also further customize your content's color and background image.
 
-<img src="/images/screens/campaign-in-app-background-700x339.png" height="339" width="700" alt="The Artisan Campaign In App Compose Screen - Background." />
+<img src="/images/screens/campaign-in-app-background-700x339.png" height="339" width="700" class="border-full" alt="The Artisan Campaign In App Compose Screen - Background." />
 
 ### Customize Behaviors
 
 **Behaviors** dictate what should happen when a user interacts with your message. Interacting can be clicking on the call to action button, cancel button, or content area, depending on the layout chosen. Artisan allows you to choose between **opening the app**, setting a **deep link**, or configuring a **power hook**. Deep links and power hooks are configured by your development team.
 
-<img src="/images/screens/campaign-in-app-button-470x560.png" height="339" width="700" alt="The Artisan Campaign In App Compose Screen - Button." />
+<img src="/images/screens/campaign-in-app-button-470x560.png" height="339" width="700" class="border-full" alt="The Artisan Campaign In App Compose Screen - Button." />
 
 #### Deep Links
 
@@ -89,7 +89,7 @@ Deep Linking is a method in which app developers create custom URL schemes to al
 
 If you have a deep link URL that you would like to use as your on open behavior, select **Deep Link** from the list and enter your link the space provided.
 
-<img src="/images/screens/campaign-compose-in-app-deep-link-480x217.png" height="234" width="530" alt="Configuring the deep link on-open behavior." />
+<img src="/images/screens/campaign-compose-in-app-deep-link-480x217.png" height="234" width="530" class="border-full" alt="Configuring the deep link on-open behavior." />
 
 <div id="power-hook"></div>
 
@@ -103,7 +103,7 @@ Using a Power Hook as your on open behavior gives you the ultimate in personaliz
 
 To use a power hook as your on open behavior select **Power Hook** from the On Open Behavior list. Once you select **Power Hook** you'll be asked to select which power hook to use.
 
-<img src="/images/screens/campaign-compose-in-app-power-hook-478x419.png" height="420" width="530" alt="Configuring the power hook on-open behavior." />
+<img src="/images/screens/campaign-compose-in-app-power-hook-478x419.png" height="420" width="530" class="border-full" alt="Configuring the power hook on-open behavior." />
 
 After you select your power hook a list of configurable values will be displayed under the **Personalized Power Hook Values** section. Your power hooks and values are specific to your app, so if you aren't sure what each power hook value does consult your development team.
 

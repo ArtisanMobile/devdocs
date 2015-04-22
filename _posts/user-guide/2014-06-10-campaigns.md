@@ -14,7 +14,7 @@ Campaigns allow you to create custom workflows to automate your mobile marketing
 To get started, click the new campaign button on the Campaigns page.
 
 <br />
-<img src="/images/campaign-types.png" height="300" width="395" alt="The Artisan Campaign Types." />
+<img src="/images/campaign-types.png" height="300" width="395" class="border-full" alt="The Artisan Campaign Types." />
 <br />
 
 **Here, you can do each of the following:**
