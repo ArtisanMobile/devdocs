@@ -53,9 +53,9 @@ Once your Push Notification campaign begins, the campaign results screen will in
 
 Key performance indicators that Artisan collects include:
 
-<img src="/images/screens/campaign-summary-kpis-840x145.png" height="145" width="840" class="border-full" alt="The Artisan Push Campaign Summary KPIs." />
+<img src="/images/screens/campaign-summary-kpis-800x159.png" height="159" width="800" class="border-full" alt="The Artisan Push Campaign Summary KPIs." />
 
-* **Messages Sent** -- Total number of push messages sent to your users during the campaign.
+* **Messages Sent** -- Total number of push messages sent to your users during the campaign.  The **Bounce Rate** is noted beneath this count, and indicates what percentage of these messages failed to reach their destination because the user turned off push notifications or deleted the app off their phone.
 * **Open Rate** -- The Open Rate lets you know what percentage of your users actually opened your push notification.
 * **Audience Size** -- The number of users for your app who are eligible to receive this push notification.  Includes all people who are a member of the targeted segment who have push messaging enabled for your app.
 
