@@ -10,7 +10,7 @@ description: "Creating a campaign in Artisan."
 ## Creating a Push Campaign
 
 <div class="note note-hint">
-  <p>Before you can create a push campaign you need to make sure that push notifications are configured for you account. Learn how to <a href="/dev/ios/push-notifications">setup push for iOS</a> and <a href="/dev/android/push-notifications">Android</a> in the developer documentation.</p>
+  <p>Before you can create a push campaign, you'll need ensure sure that push notifications are configured for you account. Learn how to set up push for <a href="/dev/ios/push-notifications">iOS</a> and <a href="/dev/android/push-notifications">Android</a> in the developer documentation.</p>
 </div>
 
 From the 'Campaign' area, click the 'New Campaign' button.  Then click 'Create Push Notification'. This will create a draft for your new push campaign and bring you to the Campaign Settings screen.
@@ -48,7 +48,7 @@ To compose your push notification, click 'Continue' from the Campaign Details sc
 
 <img src="/images/screens/campaign-compose-message-900x320.png" height="320" width="900" class="border-full" alt="Composing a push notification in Artisan." />
 
-If you wish to compose multiple variations of this push campaign as part of an A/B test, see [A/B Testing Campaigns]({% post_url 2013-10-24-campaign-ab-testing %}).
+If you wish to compose multiple variations of this push campaign as part of an A/B test, see [A/B Testing Campaigns]({% post_url user-guide/2014-06-10-campaign-ab-testing %}).
 
 <div id="push-notification-size"></div>
 
@@ -90,7 +90,7 @@ After you select your power hook a list of configurable values will be displayed
 
 Setting the push time indicates what time of the day your notification should be sent. Messages are sent according to the time you specify, according to the timezone you specified for your campaign. You can also configure your campaign to send the push notification in the user's local time. For example, if you say to send the notification at 1:00 PM local time, users on Eastern Standard Time will receive the push at 1:00 PM their time, and then an hour later, users on Central Standard Time will receive the push at 1:00 PM their time.
 
-<img src="/images/screens/campaign-compose-time-474x289" height="289" width="474" class="border-full" alt="Setting the push notification time." />
+<img src="/images/screens/campaign-compose-time-474x289.png" height="289" width="474" class="border-full" alt="Setting the push notification time." />
 
 <div id="testing-your-push-campaign"></div>
 

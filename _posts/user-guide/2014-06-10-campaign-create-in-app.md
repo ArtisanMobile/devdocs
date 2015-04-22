@@ -127,7 +127,7 @@ The **frequency** for the in-app message defines how frequently this notificatio
 
 #### Building Multiple Variations
 
-If you wish to compose multiple variations of this in-app campaign to publish as part of an A/B test, see [A/B Testing Campaigns]({% post_url 2013-10-24-campaign-ab-testing %}).
+If you wish to compose multiple variations of this in-app campaign to publish as part of an A/B test, see [A/B Testing Campaigns]({% post_url user-guide/2014-06-10-campaign-ab-testing %}).
 
 ## Publishing Your Campaign
 
@@ -153,5 +153,5 @@ You can edit any active campaign or campaign draft at any time.  Options include
 To access these editing options, navigate to the 'Campaigns' area in Artisan and click the Campaign you wish to edit.
 
 <div class="note note-hint">
-  <p><strong>NOTE:</strong> Editing a currently-running In-App Campaign <strong>does not</strong> reset the event triggers for users who have already seen the campaign. If the campaign is set so that it is triggered 'Only Once' and the user has already seen it, editing the campaign will not cause them to see it again (unless you chance the trigger so it is no longer 'Only Once').</p>
+  <p><strong>NOTE:</strong> Editing a currently-running In-App Campaign <strong>does not</strong> reset the event triggers for users who have already seen the campaign. If the campaign is set so that it is triggered 'Only Once' and the user has already seen it, editing the campaign will not cause them to see it again (unless you change the trigger so it is no longer 'Only Once').</p>
 </div>
