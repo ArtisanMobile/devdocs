@@ -30,17 +30,31 @@ View your account usage, including the number of monthly active users (MAU) used
 
 ### Manage Users
 
-Invite team members to our platform by selecting the "Invite a User" button and providing the neccessary information.  Roles currently available for use are as follows:
+The 'Users' area can be used to add, remove, and edit all of the users who have access to your organization within Artisan.  Use this to manage who can log into artisantools.com, as well as what level of access they have to use Artisan functionality and view analytics.
 
-<ul>
-	<li><strong>User</strong> - full platform access</li>
-	<li><strong>Read Only User</strong> - can only view reports and build funnels</li>
-	<li><strong>Administrator</strong> - full platform access, can also add and remove user accounts</li>
-</ul>
+#### Adding Users
 
-<div class="note note-important">
-  <p>Important: Please remember to remove users from your account that leave the organization.</p>
+To invite a new user to your organization, click `Invite a User` on the right-hand side of the 'Users' area, then fill in the information in the prompt.
+
+Artisan currently supports the following roles within an organization:
+
+* **Read-Only User**: This user will only have access to view Artisan analytics data, as well as the results of your experiments and campaigns.  They will not be able to create new experiments or campaigns, edit power hook values, publish personalization changes, or anything else that modifies the experience of your app.
+* **User**: This user will have full enablement of Artisan functionality -- including the ability to create and publish experiments, UI changes, Power Hooks, and other app modifications.
+* **Administrator**: This user will have full enablement of Artisan functionality, and will also be able to add, remove, and modify other user accounts within this organization.
+
+Upon clicking 'Send Invite', Artisan will automatically send an email to that user with instructions on how to register with Artisan.  Once they register, they will automatically be added to your organization.  
+
+You can revoke this invite at any time, which will invalidate the temporary credentials included in the Artisan registration email.
+
+#### Editing and Removing Users
+
+You can edit a user account at any time by clicking their name in the 'Users' table.  Here, you can edit their name, job title, email address, and access role.
+
+<div class="note note-hint">
+  <p><strong>NOTE:</strong> If you edit a user's email address, this will change their username when logging into Artisan.</p>
 </div>
+
+You can also delete any user out of the system by clicking the 'Delete' button in their row of the User table.  Their access to Artisan will be revoked immediately.
 
 ### Two-factor Authentication
 
