@@ -31,6 +31,8 @@ To update the Power Hook values currently being used by your app, observe the fo
 
 The values in the 'Draft Value' column will overwrite the values in the 'Current Value' column, and are now live.  Users using the app will now automatically receive the newly published values for each Power Hook.
 
+<div id="preview"></div>
+
 ### Previewing Power Hooks
 
 There are instances where you may want to preview how new Power Hook values will influence your app's behavior before you publish them live to your users.  This can be achieved through the Artisan Power Hook Preview capability.
