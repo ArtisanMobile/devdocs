@@ -145,6 +145,8 @@ You can add as many tags as you like and you can mix and match fixed values and 
 
 Event tags and categories can be used for filtering Artisan analytics, segmenting your users and targeting Artisan campaigns and experiments.
 
+<div id="event-tagging"></div>
+
 ### Tags and Categories for Screen Appeared Events
 
 When a view controller appears we automatically record a screen appeared event. If you have defined any ArtisanEventTags for the view controller we will include those with the screen appeared event.
