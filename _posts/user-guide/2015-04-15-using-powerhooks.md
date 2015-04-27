@@ -51,7 +51,7 @@ Your draft Power Hook values will be pushed to your device or simulator automati
 Once you have valided your new Power Hook values, you can exit preview mode by clicking the 'Exit Preview' button in your browser or the 'Eye' icon in the corner of your device.  You may now publish these Power Hook values as usual.
 
 <div class="note note-hint">
-  <p><strong>NOTE: </strong>Since Artisan does not apply changes to the screen currently being viewed by default, you may have to navigate away from the currently viewed screen and back again to see the previewed Power Hook values take effect.  To enable live, dynamic preview, see the [Binding to Screen Elements]({% post_url ios/2014-05-09-power-hooks %}/#binding-to-screen) section of the iOS Developer Guide.</p>
+  <p><strong>NOTE: </strong>Since Artisan does not apply changes to the screen currently being viewed by default, you may have to navigate away from the currently viewed screen and back again to see the previewed Power Hook values take effect.  To enable live, dynamic preview, see the <a href="{% post_url ios/2014-05-09-power-hooks %}/#binding-to-screen">Binding to Screen Elements</a> section of the iOS Developer Guide.</p>
 </div>
 
 <div class="note note-important">
