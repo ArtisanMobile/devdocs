@@ -25,7 +25,7 @@ Selecting an event from the event library will produce a report on how many time
 
 ### Context Tags
 
-As noted in [Tracking and Tagging Events]({% post_url user-guide/2013-10-24-tracking-events %}/#profile-tags), the Artisan Event Tracking API can add context tags and categories to the information that Artisan tracks.  These tags and categories can be used to filter the event report, as well as to see a breakdown of how often a given tagged event occurs in the wild.
+As noted in [Tracking and Tagging Events]({% post_url user-guide/2013-10-24-tracking-events %}#profile-tags), the Artisan Event Tracking API can add context tags and categories to the information that Artisan tracks.  These tags and categories can be used to filter the event report, as well as to see a breakdown of how often a given tagged event occurs in the wild.
 
 For example, an 'Order Complete' event can be tagged with the StoreID where the user placed their order, as well as the CouponID they used when they made the order.  This will allow you to see the breakdown of which coupons users have used in the app, as well as which stores they've placed orders from.
 
