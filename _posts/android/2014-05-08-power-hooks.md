@@ -96,7 +96,7 @@ public void registerPowerhooks() {
 
   PowerHookManager.registerBlock("showAlert", "Show Alert Block", defaultData, new ArtisanBlock() {
     @Override
-    public void execute(Map<String, String> data, Map<String, Object> extraData) {
+    public void execute(Map<String, String> data, Map<String, Object> extraData, Context context) {
       if ("true".equalsIgnoreCase(data.get("shouldDisplay"))) {
         StringBuilder message = new StringBuilder();
         if (extraData.get("productName") != null) {
@@ -109,7 +109,7 @@ public void registerPowerhooks() {
         message.append(" to get ");
         message.append(data.get("discountAmount"));
         message.append(" off your next purchase!");
-        Toast.makeText((Context) extraData.get("context"), message, Toast.LENGTH_LONG).show();
+        Toast.makeText(context, message, Toast.LENGTH_LONG).show();
       }
     }
   });
@@ -117,21 +117,21 @@ public void registerPowerhooks() {
 {% endhighlight %}
 
 <div class="note note-hint">
-  <p>Hint: The ArtisanBlock execute method takes in two Maps. The <strong>data</strong> Map will include either the default data that you passed in when you registered, or updated data from Artisan. The Map <strong>extraData</strong> is data that you will pass in when you call executeBlock. This is often used to pass in an Android Context, like in the example below. Although, extraData can also be used to pass in any information that is relevant from wherever this block will be exectued, like the optional productName variable in the example below.</p>
+  <p>Hint: The ArtisanBlock execute method takes in two Maps. The <strong>data</strong> Map will include either the default data that you passed in when you registered, or updated data from Artisan. The Map <strong>extraData</strong> is data that you will pass in when you call executeBlock. This can be used to pass in any information that is relevant from wherever this block will be executed, like the optional productName variable in the example below. The context will be the context that you pass in to execute block later.</p>
 </div>
 
-Use the method **executeBlock(String blockId)** or **executeBlock(String blockId, Map&lt;String, Object&gt; extraData)** to execute a Power Hook code block from Artisan. The code block will use the values specified in the data parameter registered in ArtisanTools.com to execute the block. You can override the default data using ArtisanTools.com.
+Use the method **executeBlock(String blockId)** or **executeBlock(String blockId, Map&lt;String, Object&gt; extraData)** or **executeBlock(String blockId, Map&lt;String, Object&gt; extraData, Context context)** to execute a Power Hook code block from Artisan. The code block will use the values specified in the data parameter registered in ArtisanTools.com to execute the block. You can override the default data using ArtisanTools.com.
 
 * **blockId** - The name of the code to register. Name must be unique for this app.
-* **extraData** - Additional data to use when executing this block. If you need a context to execute your block, you can pass one in here.
+* **extraData** - Additional data to use when executing this block.
+* **context** - If you need a context to execute your block, you can pass one in here.
 
 Sample usage of a Power Hook Block (from the onClick handler for an add to cart button):
 
 {% highlight java %}
 Map<String, Object> extraData = new HashMap<String, Object>();
 extraData.put("productName", "Artisan Andy Plush Toy");
-extraData.put("context", this);
-PowerHookManager.executeBlock("showAlert", extraData);
+PowerHookManager.executeBlock("showAlert", extraData, this);
 {% endhighlight %}
 
 <div class="note note-important">
