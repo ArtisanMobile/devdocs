@@ -28,7 +28,7 @@ The method **registerExperimentWithDescription(String experimentName)** or **reg
 {% highlight java %}
 @Override
 public void registerInCodeExperiments() {
-  ArtisanExperimentManager.registerExperiment("Cart Process", "Skip or don't skip the product detail page");
+  ArtisanExperimentManager.registerExperimentWithDescription("Cart Process", "Skip or don't skip the product detail page");
 }
 {% endhighlight %}
 
@@ -41,7 +41,7 @@ Next, register each variant by name with the experiment with **addVariantForExpe
 {% highlight java %}
 @Override
 public void registerInCodeExperiments() {
-  ArtisanExperimentManager.registerExperiment("Cart Process", "Skip or don't skip the product detail page");
+  ArtisanExperimentManager.registerExperimentWithDescription("Cart Process", "Skip or don't skip the product detail page");
   ArtisanExperimentManager.addVariantForExperiment("Don't Skip Product Details", "Cart Process", true);
   ArtisanExperimentManager.addVariantForExperiment("Skip Product Details", "Cart Process");
 }
