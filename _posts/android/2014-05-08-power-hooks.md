@@ -135,7 +135,7 @@ PowerHookManager.executeBlock("showAlert", extraData, this);
 {% endhighlight %}
 
 <div class="note note-important">
-  <p>NOTE: If you execute this Power Hook Block in your first Activity's onCreate method, before the Artisan Service has a chance to start up, the call may be ignored. The Artisan Service is started up at the time your first activity is created, and should be ready by the time your first activity gets to onResume. For the rest of your application's lifecycle you can assume that Power Hooks will work as expected.</p>
+  <p>NOTE: If you execute this Power Hook Block in your first Activity's onCreate method, before the Artisan Service has a chance to start up, the block may execute without the latest values from Artisan. If the most recent Artisan playlist hasn't been downloaded yet and the previous playlist isn't loaded from disk yet, we will use the default values that you provided when you first registered this block. The Artisan Service is started up at the time your first activity is created, and should be ready by the time your first activity gets to onResume. For the rest of your application's lifecycle you can assume that Power Hooks will work as expected.</p>
 </div>
 
 <div id="callbacks"></div>
