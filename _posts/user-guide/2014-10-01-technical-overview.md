@@ -75,7 +75,7 @@ Installing and upgrading Artisan is simple. The easiest way to get started is by
 
 For iOS, decompress the archive, copy the framework and bundle files into your project, and following the remaining few steps described in your artisantools.com account. You may also install or upgrade the Artisan SDK using CocoaPods — the central CocoaPods repository (http://cocoapods.org) contains the latest Artisan distribution for easy integration.   The iOS Artisan SDK requires the CoreData, CoreLocation, CFNetwork, Security, QuartzCore, and SystemConfiguration frameworks to be enabled.
 
-For Android, execute the installation wizard, which will download the necessary JARs, update your project manifest, and configure your project to be integrated with Artisan.  The Android SDK requires the WRITE_EXTERNAL_STORAGE, INTERNET, and ACCESS_NETWORK_STATE permissions to be enabled. Installation details can be found at docs.useartisan.com.
+For Android, execute the installation wizard, which will download the necessary JARs, update your project manifest, and configure your project to be integrated with Artisan.  The Android SDK requires the INTERNET and ACCESS_NETWORK_STATE permissions to be enabled. Installation details can be found at docs.useartisan.com.
 
 ## Artisan in Operation
 
