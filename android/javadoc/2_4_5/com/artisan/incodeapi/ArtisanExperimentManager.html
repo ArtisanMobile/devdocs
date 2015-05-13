@@ -348,7 +348,7 @@ extends java.lang.Object</pre>
  <pre>
  &#064;Override
  public void registerInCodeExperiments() {
-        ArtisanExperimentManager.registerExperiment(&quot;Cart Process&quot;, &quot;Skip or don't skip the product detail page&quot;);
+        ArtisanExperimentManager.registerExperimentWithDescription(&quot;Cart Process&quot;, &quot;Skip or don't skip the product detail page&quot;);
   ...
  }
  </pre></div>
@@ -640,16 +640,16 @@ extends java.lang.Object</pre>
  <br>
  Usage Example:<br>
  <br>
- 
+
  <pre>
  // onResume for the activity where you're starting your Artisan in-code experiment
- 
+
  &#064;Override
  public void onResume() {
         super.onResume();
- 
+
         // Your code to check which variation is current running via ArtisanExperimentManager#isCurrentVariantForExperiment and modify your UI.
- 
+
         Map&lt;String, InCodeExperimentDetails&gt; allInCodeDetails = ArtisanExperimentManager.getInCodeExperimentDetails();
         InCodeExperimentDetails buyNowExperimentDetails = allInCodeDetails.get(ArtisanDemoApplication.BUY_NOW_EXPERIMENT);
         if (buyNowExperimentDetails != null &amp;&amp; buyNowExperimentDetails.isRunning()) {
