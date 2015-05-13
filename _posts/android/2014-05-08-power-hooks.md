@@ -47,7 +47,7 @@ This declaration should occur in the <strong>registerPowerhooks</strong> method 
 The method **getVariableValue** retrieves the value of a Power Hook from Artisan.  This will return the value specified in the Artisan platform, or the default value if none has been specified.
 
 {% highlight java %}
-String myPowerHookValue = PowerHookManager.getVariableValue("sampleButtonText")
+String myPowerHookValue = PowerHookManager.getVariableValue("sampleButtonText");
 {% endhighlight %}
 
 A good place to retrieve this value is in the onResume or onStart method of your Activity so that you always have the latest value when your Activity is visible.
