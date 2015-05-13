@@ -49,6 +49,8 @@ create_release_notes() {
   DASH_VERSION=`echo ${VERSION} | tr . -`
   TEMPLATE_FILE='./templates/release_notes.md'
 
+  DATE_STRING=`date +'%B %d, %Y'`
+
   if [ ${IS_ANDROID} ]; then
     NOTES_PATH="`date +%Y-%m-%d`-android-release-${DASH_VERSION}.md"
     TITLE_STRING="Android ${VERSION} Release Notes"
@@ -61,6 +63,7 @@ create_release_notes() {
   cp ${TEMPLATE_FILE} ${NOTES_PATH}
   sed -i "" "s/title\: \"\"/title\: ${TITLE_STRING}/g" ${NOTES_PATH}
   sed -i "" "s/\# SDK Release Notes/\# ${TITLE_STRING}/g" ${NOTES_PATH}
+  sed -i "" "s/DATE_STRING/${DATE_STRING}/g" ${NOTES_PATH}
 
   mv ${NOTES_PATH} _posts/releases/${NOTES_PATH}
 }
