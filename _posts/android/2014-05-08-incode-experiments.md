@@ -23,12 +23,12 @@ An in-code experiments must be defined in the **registerInCodeExperiments** on y
 
 The method **registerExperiment:** takes a string representing the name of your experiment.
 
-The method **registerExperimentWithDescription(String experimentName)** or **registerExperimentWithDescription(String experimentName, String description)** takes a string representing the name of your experiment and an optional string for a description that will be displayed in Artisan Tools.
+The method **registerExperimentWithDescription(String experimentName, String description)** takes a string representing the name of your experiment and a string for a description that will be displayed in Artisan Tools.
 
 {% highlight java %}
 @Override
 public void registerInCodeExperiments() {
-  ArtisanExperimentManager.registerExperiment("Cart Process", "Skip or don't skip the product detail page");
+  ArtisanExperimentManager.registerExperimentWithDescription("Cart Process", "Skip or don't skip the product detail page");
 }
 {% endhighlight %}
 
@@ -41,7 +41,7 @@ Next, register each variant by name with the experiment with **addVariantForExpe
 {% highlight java %}
 @Override
 public void registerInCodeExperiments() {
-  ArtisanExperimentManager.registerExperiment("Cart Process", "Skip or don't skip the product detail page");
+  ArtisanExperimentManager.registerExperimentWithDescription("Cart Process", "Skip or don't skip the product detail page");
   ArtisanExperimentManager.addVariantForExperiment("Don't Skip Product Details", "Cart Process", true);
   ArtisanExperimentManager.addVariantForExperiment("Skip Product Details", "Cart Process");
 }

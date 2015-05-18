@@ -7,7 +7,7 @@ description: "What's new in Artisan's Mobile Experience Management platform."
 ---
 # Android 2.4.4 Release Notes
 
-Released {{ page.date | date: "%B %-d, %Y" }}
+Released April 6, 2015
 
 With this release we have taken a big step to alleviate the impact that the Artisan SDK has on your app's method count (65k dex limit). We have reduced the SDK's method count by about 50%.
 
