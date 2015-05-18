@@ -7,7 +7,7 @@ description: "What's new in Artisan's Mobile Experience Management platform."
 ---
 # Android 2.4.6 Release Notes
 
-Released May 14, 2015
+Released May 18, 2015
 
 * [UPDATED] Dramatically improved our ability to enable and disable Artisan functionality remotely.
 * [UPDATED] We no longer require WRITE_EXTERNAL_STORAGE. Please remove this from your Application Manifest if your app doesn't require it for some other reason.
