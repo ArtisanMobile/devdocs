@@ -23,7 +23,7 @@ An in-code experiments must be defined in the **registerInCodeExperiments** on y
 
 The method **registerExperiment:** takes a string representing the name of your experiment.
 
-The method **registerExperimentWithDescription(String experimentName)** or **registerExperimentWithDescription(String experimentName, String description)** takes a string representing the name of your experiment and an optional string for a description that will be displayed in Artisan Tools.
+The method **registerExperimentWithDescription(String experimentName, String description)** takes a string representing the name of your experiment and a string for a description that will be displayed in Artisan Tools.
 
 {% highlight java %}
 @Override
