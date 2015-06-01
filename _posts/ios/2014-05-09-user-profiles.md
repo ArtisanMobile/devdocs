@@ -175,6 +175,10 @@ ARProfileManager.registerLocation("lastKnownLocation")
   <p>Hint: Valid characters for this name include [0-9], [a-z], [A-Z], -, and _. Any other characters will automatically be stripped out.</p>
 </div>
 
+<div class="note note-hint">
+  <p>If you call register for the same user profile variable more than once only the first call will succeed. Subsequent calls will be ignored.</p>
+</div>
+
 <div id="update"></div>
 
 ##Update Profile Variable
