@@ -141,6 +141,10 @@ NSString *pushToken = [ARProfileManager getPushToken];
 
 These values can be useful for integrating with third-party analytics or push services or connecting with the Artisan web APIs.
 
+<div class="note note-hint">
+<p>If push is not enabled for this app or it has not yet been set by APNS, then getPushToken will return an empty string.</p>
+</div>
+
 <div id="register"></div>
 
 ##Register Custom Profile Variable
