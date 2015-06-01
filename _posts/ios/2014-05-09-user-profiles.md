@@ -12,6 +12,7 @@ Artisan accepts user profile data for advanced segmentation, targeting and perso
 <ul>
   <li><a href="#dimensions">Artisan Profile Variables</a></li>
   <li><a href="#sharedid">Shared User ID</a></li>
+  <li><a href="#artisan-id">Getting the Artisan ID and Push Token</a></li>
   <li><a href="#register">Register Custom Profile Variable</a></li>
   <li><a href="#update">Update Profile Variable</a></li>
   <li><a href="#clear">Clear Profile Variables</a></li>
@@ -125,6 +126,25 @@ ARProfileManager.setSharedUserId("624597b0e106e732a3204001")
 <p>Important: The sharedUserId should NOT be any of the following: email address, phone number, or social security number.  The sharedUserId should uniquely identify the user in your system.</p>
 </div>
 
+<div id="artisan-id"></div>
+
+##Getting the Artisan ID and Push Token
+
+The ARProfileManager can be used to access the Artisan ID for the current device as well as the Push Token from Apple Push Notification Service, if push is enabled for your app.
+
+{% highlight objective-c %}
+// Objective-C
+
+NSString *artisanID = [ARProfileManager getArtisanId];
+NSString *pushToken = [ARProfileManager getPushToken];
+{% endhighlight %}
+
+These values can be useful for integrating with third-party analytics or push services or connecting with the Artisan web APIs.
+
+<div class="note note-hint">
+<p>If push is not enabled for this app or it has not yet been set by APNS, then getPushToken will return an empty string.</p>
+</div>
+
 <div id="register"></div>
 
 ##Register Custom Profile Variable
@@ -153,6 +173,10 @@ ARProfileManager.registerLocation("lastKnownLocation")
 
 <div class="note note-hint">
   <p>Hint: Valid characters for this name include [0-9], [a-z], [A-Z], -, and _. Any other characters will automatically be stripped out.</p>
+</div>
+
+<div class="note note-hint">
+  <p>If you call register for the same user profile variable more than once only the first call will succeed. Subsequent calls will be ignored.</p>
 </div>
 
 <div id="update"></div>

@@ -33,7 +33,7 @@ This guide walks through how to get the Artisan SDK integrated with the HTML5 co
 To then use the Artisan Javascript API within that WebView, you'll want to include the javascript SDK as described below. You should include the ArtisanSDK before other libraries to ensure that all clicks are instrumented.
 
 {% highlight html %}
-<script type="text/javascript" src="https://cdn-api.artisantools.com/2.1/ArtisanSDK-min.js"></script>
+<script type="text/javascript" src="https://cdn-api.artisantools.com/2.2/ArtisanSDK-min.js"></script>
 {% endhighlight %}
 
 This will import the Artisan Javascript API into the page and will enable all of the methods defined in the [Javascript API Reference Guide]({% post_url js/2014-07-18-hybrid-sdk-reference-guide %}).
@@ -64,7 +64,7 @@ This will enable Javascript in your WebView and will allow the Artisan Android S
 To then use the Artisan Javascript API within that WebView, you'll want to include the javascript SDK as described below. You should include the ArtisanSDK before other libraries to ensure that all clicks are instrumented.
 
 {% highlight html %}
-<script type="text/javascript" src="https://cdn-api.artisantools.com/2.1/ArtisanSDK-min.js"></script>
+<script type="text/javascript" src="https://cdn-api.artisantools.com/2.2/ArtisanSDK-min.js"></script>
 {% endhighlight %}
 
 This will import the Artisan Javascript code into the page and will enable all of the calls defined in the [Javascript API Reference Guide]({% post_url js/2014-07-18-hybrid-sdk-reference-guide %}).
