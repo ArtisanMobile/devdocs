@@ -30,6 +30,8 @@ This document provides an overview of all of the API calls available within the 
       <li><a href="#setdatetimevalue">setDateTimeValue(variable, value)</a></li>
       <li><a href="#clearProfile">clearProfile()</a></li>
       <li><a href="#clearVariableValue">clearVariableValue()</a></li>
+      <li><a href="#getArtisanId">getArtisanId()</a></li>
+      <li><a href="#getPushToken">getPushToken()</a></li>
     </ul>
   </li>
   <li><a href="#experimentapi">Experiment API</a>
@@ -256,6 +258,26 @@ This can be called from anywhere in your app.
 
 {% highlight javascript %}
 ArtisanSDK.clearVariableValue("Favorite Pet");
+{% endhighlight %}
+
+<div id="getArtisanId"></div>
+
+### getArtisanId()
+
+Get the Artisan ID for the current device. This value can be useful for integrating with third-party analytics services or connecting with the Artisan web APIs.
+
+{% highlight javascript %}
+ArtisanSDK.getArtisanId();
+{% endhighlight %}
+
+<div id="getPushToken"></div>
+
+### getPushToken()
+
+If push is enabled for the native app and device then you can get the Apple Push Notification Services or Google Cloud Messaging push token for the current device. This value can be useful for integrating with third-party analytics or push services or connecting with the Artisan web APIs.
+
+{% highlight javascript %}
+ArtisanSDK.getPushToken();
 {% endhighlight %}
 
 <div id="experimentapi"></div>
