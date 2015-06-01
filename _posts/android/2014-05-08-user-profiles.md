@@ -13,6 +13,7 @@ Artisan accepts user profile data for advanced segmentation, targeting and perso
 <ul>
   <li><a href="#dimensions">Artisan Profile Variables</a></li>
   <li><a href="#sharedid">Shared User ID</a></li>
+  <li><a href="#artisan-id">Getting the Artisan ID and Push Token</a></li>
   <li><a href="#register">Register Custom Profile Variable</a></li>
   <li><a href="#update">Update Profile Variable</a></li>
   <li><a href="#clear">Clear Profile Variables</a></li>
@@ -111,6 +112,19 @@ ArtisanProfileManager.setSharedUserId("abcdef123456789");
 <div class="note note-important">
 <p>Important: The sharedUserId should NOT be any of the following: email address, phone number, or social security number.  The sharedUserId should uniquely identify the user in your system.</p>
 </div>
+
+<div id="artisan-id"></div>
+
+##Getting the Artisan ID and Push Token
+
+The ArtisanProfileManager can be used to access the Artisan ID for the current device as well as the Push Token from Google Cloud Messaging, if it is enabled for your app.
+
+{% highlight java %}
+String artisanId = ArtisanProfileManager.getArtisanId();
+String pushToken = ArtisanProfileManager.getPushToken();
+{% endhighlight %}
+
+These values can be useful for integrating with third-party services or connecting with the Artisan web APIs.
 
 <div id="register"></div>
 
