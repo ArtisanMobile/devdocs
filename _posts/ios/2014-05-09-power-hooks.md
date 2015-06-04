@@ -272,6 +272,39 @@ NSDictionary *powerHookBlockDetails = [ARPowerHookManager getPowerHookBlockExper
 }];
 {% endhighlight %}
 
+{% highlight swift %}
+// Swift
+
+var powerHookDetails: NSDictionary = ARPowerHookManager.getPowerHookVariableExperimentDetails()
+  powerHookDetails.enumerateKeysAndObjectsUsingBlock({(hookId, details, stop) -> Void in
+    println("Details for hook: \(hookId)")
+    println("experimentId: \(details.experimentId)")
+    println("experimentName: \(details.experimentName)")
+    println("experimentType: \(details.experimentType)")
+    println("experiment Start: \(details.experimentStartDate)")
+    println("experiment End: \(details.experimentEndDate)")
+    println("experiment isRunning: \(details.isRunning)")
+    println("experiment hook id: \(details.hookId)")
+    println("variation ID: \(details.currentVariantId)")
+    println("variation name: \(details.currentVariantName)")
+})
+
+var powerHookBlockDetails: NSDictionary = ARPowerHookManager.getPowerHookBlockExperimentDetails()
+  powerHookBlockDetails.enumerateKeysAndObjectsUsingBlock({(blockId, details, stop) -> Void in
+    println("Details for block: \(blockId)")
+    println("experimentId: \(details.experimentId)")
+    println("experimentName: \(details.experimentName)")
+    println("experimentType: \(details.experimentType)")
+    println("experiment Start: \(details.experimentStartDate)")
+    println("experiment End: \(details.experimentEndDate)")
+    println("experiment isRunning: \(details.isRunning)")
+    println("experiment hook id: \(details.hookId)")
+    println("variation ID: \(details.currentVariantId)")
+    println("variation name: \(details.currentVariantName)")
+})
+
+{% endhighlight %}
+
 <div class="note note-hint">
 <p>We recommend that you retrieve the current Power Hook Experiment Details no sooner than <a href="/dev/ios/callbacks/#playlist">after the first playlist has been downloaded</a>. That way you can be sure to have the most up to date experiment details.</p>
 </div>
