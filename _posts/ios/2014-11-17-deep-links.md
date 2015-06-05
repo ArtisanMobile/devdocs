@@ -95,8 +95,14 @@ For more information about registering Artisan Power Hook Block see our document
 
 When the deep link is clicked the Power Hook Block will be executed with the current values from Artisan with the provided parameters as the extra_data dictionary. This has a similar effect to calling:
 
-{% highlight text %}
+{% highlight objective-c %}
+// Objective-C
 [ARPowerHookManager executeBlockWithId:samplePowerHookName data:powerHookParameters context:nil];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+ARPowerHookManager.executeBlockWithId(samplePowerHookName, data: powerHookParameters, context: nil)
 {% endhighlight %}
 
 <div class="note note-important">

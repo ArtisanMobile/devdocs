@@ -55,6 +55,15 @@ NSString *emailAddressFilter = @"^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,
 [ARManager startWithAppId:@"YOUR_APP_ID" options:advancedConfig];
 {% endhighlight %}
 
+{% highlight swift %}
+// Swift
+
+let longNumberFilter = "^[1-9][0-9]{5,50}$"
+let emailAddressFilter = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$"
+let advancedConfig = ["PIIRegexFilters" : [longNumberFilter, emailAddressFilter]]
+ARManager.startWithAppId("YOUR_APP_ID", options: advancedConfig)
+{% endhighlight %}
+
 All analytics variables will be compared against the supplied regular expressions. This includes <a href="/dev/ios/user-profiles/">user profile variable</a> values, <a href="/dev/ios/event-tracking/#artisan-event-tags">tags for automatically collected events</a>, <a href="/dev/ios/event-tracking/#trackevent">custom event</a> metadata and <a href="/dev/ios/event-tracking/#commerce">commerce</a> and <a href="/dev/ios/event-tracking/#social">social</a> event metadata.
 
 Values that match the supplied regular expressions will be replaced with REDACTED before they leave the device and are sent over to Artisan. You may see these in your Events report on Artisan tools as tags or category values.
