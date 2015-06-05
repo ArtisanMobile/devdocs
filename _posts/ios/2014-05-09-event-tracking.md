@@ -128,6 +128,8 @@ The **artisanEventTags** property is added to your UIViews and UIViewControllers
 You have two options for adding tags: fixed values and selectors. Additionally, you can register a category, subCategory, and subSubCategory on your ArtisanEventTags and those categories will be applied to the automatically-collected events as well.
 
 {% highlight objective-c %}
+// Objective-C
+
 ArtisanEventTags *extraButtonInfo = [ArtisanEventTags artisanEventTags];
 [extraButtonInfo setValue:self.productDescription.text
                    forKey:@"productDescription"]; // FIXED VALUE TAG
@@ -137,6 +139,16 @@ ArtisanEventTags *extraButtonInfo = [ArtisanEventTags artisanEventTags];
                  subCategory:@"Shoes"
               subSubCategory:@"Boots"]; // CATEGORIES
 self.addToCartButton.artisanEventTags = extraButtonInfo;
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+var extraButtonInfo: ArtisanEventTags = ArtisanEventTags()
+extraButtonInfo.setValue(self.productDescription.text, forKey: "productDescription") // FIXED VALUE TAG
+extraButtonInfo.setSelector("currentTitle", forKey: "buttonTitle") // SELECTOR TAG
+extraButtonInfo.setCategory("Women", subCategory: "Shoes", subSubCategory: "Boots")
+self.addToCartButton.artisanEventTags = extraButtonInfo
 {% endhighlight %}
 
 If you set a fixed value for a tag that value will be used as is, but with a selector the Artisan SDK will perform the given selector on your UIView or UIViewController at the time that the automatically-collected event occurs. This can be useful if there is some data that is dynamic and changing that you want to capture as additional context for a given analytics event.
@@ -154,6 +166,7 @@ When a view controller appears we automatically record a screen appeared event. 
 A good place to register your ArtisanEventTags for your view controller is in **viewWillAppear:** or **viewDidLoad** on your view controller.
 
 {% highlight objective-c %}
+// Objective-C
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
 
@@ -167,6 +180,20 @@ A good place to register your ArtisanEventTags for your view controller is in **
 }
 {% endhighlight %}
 
+{% highlight swift %}
+// Swift
+
+override func viewWillAppear(animated: Bool) {
+  super.viewWillAppear(animated);
+        
+  // Adding SKU and Description to all autocollected events on screen
+  var screenEventTags: ArtisanEventTags = ArtisanEventTags()
+  screenEventTags.setValue(self.product.skuId, forKey: "SKU_ID")
+  screenEventTags.setValue(self.product.name, forKey: "PRODUCT_NAME")
+  self.artisanEventTags = screenEventTags
+}
+{% endhighlight %}
+
 <div class="note note-hint">
 <p><b>HINT:</b> Our screen appeared event is recorded just after viewWillAppear so we will use whatever values we have at that time.</p>
 </div>
@@ -176,11 +203,20 @@ A good place to register your ArtisanEventTags for your view controller is in **
 We automatically record analytics events for interactions on UIControls. An example of this is a button tap. The Artisan SDK will include values from the ArtisanEventTags attached to both the view itself (e.g. the button) and the view controller it is attached to.
 
 {% highlight objective-c %}
+// Objective-C
 ArtisanEventTags *addToCartButtonEventTags = [ArtisanEventTags artisanEventTags];
 // This line will make sure we're getting the updated text on the button label when the events are auto-collected
 [addToCartButtonEventTags setSelector:@selector(currentTitle)
                                forKey:@"ADD_TO_CART_BUTTON_TEXT"];
 self.addToCartButton.artisanEventTags = addToCartButtonEventTags;
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+var addToCartButtonEventTags: ArtisanEventTags = ArtisanEventTags()
+// This line will make sure we're getting the updated text on the button label when the events are auto-collected
+addToCartButtonEventTags.setSelector("currentTitle", forKey: "ADD_TO_CART_BUTTON_TEXT")
+self.addToCartButton.artisanEventTags = addToCartButtonEventTags
 {% endhighlight %}
 
 ### Tags and Categories for Table View and Collection View Selection Events
@@ -212,6 +248,27 @@ Here's an example of adding ArtisanEventTags to a collection view cell:
 }
 {% endhighlight %}
 
+{% highlight swift %}
+// Swift
+
+override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+  let productCell = collectionView.dequeueReusableCellWithReuseIdentifier("ProductListCell", forIndexPath: indexPath) as! UICollectionViewCell
+  
+  let row = indexPath.row
+  
+  var currProduct: ARProductModel = self.products[row]
+  // ... other setup
+  
+  // Adding Sku ID and Product Name to auto-collected events on collection view cell
+  var cellEventTags: ArtisanEventTags = ArtisanEventTags()
+  cellEventTags.setValue(currProduct.skuId, forKey: "SKU_ID")
+  cellEventTags.setValue(currProduct.name, forKey: "PRODUCT_NAME")
+  productCell.artisanEventTags = cellEventTags
+  
+  return productCell
+}
+{% endhighlight %>
+
 <div class="note note-hint">
 <p><b>HINT:</b> A good place to set the ArtisanEventTags for a table or collection view cell is in <strong>collectionView:cellForItemAtIndexPath:</strong> or <strong>tableView:cellForRowAtIndexPath:</strong>. That way if a cell is recycled you can be sure that it doesn't have the ArtisanEventTags from a previous usage.</p>
 </div>
@@ -238,9 +295,17 @@ NSMutableDictionary *myParameters = [NSMutableDictionary dictionaryWithDictionar
 [ARTrackingManager trackEvent:@"myEvent" parameters:[NSDictionary dictionaryWithDictionary:myParameters]];
 {% endhighlight %}
 
+{% highlight swift %}
+// Swift
+
+var myParameters: NSMutableDictionary = NSMutableDictionary(dictionary: ARTrackingManager.getArtisanEventTagsForActiveViewControllers())
+myParameters.setObject("myValue", forKey: "myKey")
+ARTrackingManager.trackEvent("myEvent", parameters: myParameters as [NSObject : AnyObject])
+{% endhighlight %}
+
 <div class="note note-hint"><p>Note: This method was added with Artisan SDK 2.4.1.</p></div>
 
-<div class="note note-hint"><p>Note: ArtisanEventTags for the most recent view controller sare accessible AFTER ViewWillAppear and inside of ViewDidAppear.</p></div>
+<div class="note note-hint"><p>Note: ArtisanEventTags for the most recent view controllers are accessible AFTER ViewWillAppear and inside of ViewDidAppear.</p></div>
 
 <div id="nameviewcontroller"></div>
 
@@ -314,6 +379,16 @@ This is an example of what this will look like in your app:
 {
   [ARStoreKitTracker initWithSKProducts:response.products];
 
+  // The rest of your handling for the product request...
+}
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+func productsRequest(request: SKProductsRequest!, didReceiveResponse response: SKProductsResponse!) {
+  ARStoreKitTracker.initWithSKProducts(response.products)
+  
   // The rest of your handling for the product request...
 }
 {% endhighlight %}

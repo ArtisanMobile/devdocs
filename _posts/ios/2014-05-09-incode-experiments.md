@@ -167,6 +167,11 @@ The **getCurrentExperimentDetails** will give you all of the details on currentl
 NSArray *experiments = [ARExperimentManager getCurrentExperimentDetails];
 {% endhighlight %}
 
+{% highlight swift %}
+// Swift
+var experiments: NSArray = ARExperimentManager.getCurrentExperimentDetails()
+{% endhighlight %}
+
 We recommend that you call this method anytime after the first playlist is downloaded so that you have the most up-to-date information about what experiments the user is participating in. Here's an example of using this method in a callback for onFirstPlaylistDownloaded, which would be the way to guarantee that the first playlist has been downloaded:
 
 {% highlight objective-c %}
@@ -183,6 +188,23 @@ We recommend that you call this method anytime after the first playlist is downl
       NSLog(@"variation name: %@", [details currentVariantName]);
     }];
 }];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+ARManager.onFirstPlaylistDownloaded({() -> Void in
+    var experimentDetails: NSArray = ARExperimentManager.getCurrentExperimentDetails()
+    // Here is an example of iterating through all of the running experiments and logging the details:
+    experimentDetails.enumerateObjectsUsingBlock({(obj, idx, stop) -> Void in
+	var details: ARExperimentDetails = obj as! ARExperimentDetails
+	println("experimentId: \(details.experimentId)")
+	println("experimentName: \(details.experimentName)")
+	println("experimentType: \(details.experimentType)")
+	println("variation ID: \(details.currentVariantId)")
+	println("variation name: \(details.currentVariantName)")
+    })
+})
 {% endhighlight %}
 
 The **getInCodeExperimentDetails** method will give you **all** (regardless if they're running or not) in-code experiments in your app. These in-code specific details will allow you to find your in-code experiment by the name you registered in your code. See the example below.
@@ -211,6 +233,34 @@ The **getInCodeExperimentDetails** method will give you **all** (regardless if t
         NSLog(@"experiment isRunning: %@", [details isRunning] ? @"YES" : @"NO");
     }
     // Your code continued...
+}
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+override func viewWillAppear(animated: Bool) {
+  super.viewWillAppear(animated)
+  // Your other code...
+  var detailsDictionary: NSDictionary = ARExperimentManager.getInCodeExperimentDetails()
+  var details: ARInCodeExperimentDetails = detailsDictionary.objectForKey("Your Experiment Name") as! ARInCodeExperimentDetails
+  
+  if (details.isRunning) {
+    // This experiment has been started from Artisan Tools and all details are available to you.
+    // You can use these details to feed into your third party analytics tool.
+    println("experimentId: \(details.experimentId)")
+    println("experimentName: \(details.experimentName)")
+    println("experimentType: \(details.experimentType)")
+    println("variation ID: \(details.currentVariantId)")
+    println("variation name: \(details.currentVariantName)")
+    println("experiment Start: \(details.startDate)")
+    println("experiment End: \(details.endDate)")
+    println("experiment in-code name: \(details.inCodeName)")
+    println("experiment default variant: \(details.defaultVariant)")
+    println("experiment description: \(details.experimentDescription)")
+    println("experiment isRunning: \(details.isRunning)")
+  }
+  // Your code continued...
 }
 {% endhighlight %}
 

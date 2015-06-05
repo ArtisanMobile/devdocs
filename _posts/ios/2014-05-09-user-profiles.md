@@ -47,6 +47,13 @@ Specify the gender and age of the current user:
 [ARProfileManager setUserAge:@29];
 {% endhighlight %}
 
+{% highlight swift %}
+// Swift
+
+ARProfileManager.setGender(ARGender.Female);
+ARProfileManager.setUserAge(29);
+{% endhighlight %}
+
 Set the name of the user:
 
 {% highlight objective-c %}
@@ -59,6 +66,16 @@ Set the name of the user:
 [ARProfileManager setUserSuffix:@"III"];
 {% endhighlight %}
 
+{% highlight swift %}
+// Swift
+
+ARProfileManager.setUserPrefix("Dr.")
+ARProfileManager.setUserFirstName("Arty")
+ARProfileManager.setUserMiddleName("Sans")
+ARProfileManager.setUserLastName("Elibom")
+ARProfileManager.setUserSuffix("III")
+{% endhighlight %}
+
 You can record information about the source of this user and when they first started using your app or service:
 
 {% highlight objective-c %}
@@ -67,6 +84,14 @@ You can record information about the source of this user and when they first sta
 [ARProfileManager setUserReferralSource:@"Bob"];
 [ARProfileManager setFirstSeen:[NSDate new]];
 [ARProfileManager setSignUpDate:[NSDate new]];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+ARProfileManager.setUserReferralSource("Bob")
+ARProfileManager.setFirstSeen(NSDate())
+ARProfileManager.setSignUpDate(NSDate())
 {% endhighlight %}
 
 ### Physical and Virtual Addresses
@@ -93,6 +118,21 @@ You can record information about the users physical and virtual addresses:
 [ARProfileManager setUserEmail:@"sales@useartisan.com"];
 {% endhighlight %}
 
+{% highlight swift %}
+// Swift
+
+ARProfileManager.setUserStreetAddress("234 Market Street")
+ARProfileManager.setUserStreetAddress2("4th Floor")
+ARProfileManager.setUserCompanyName("Artisan Mobile Inc.")
+ARProfileManager.setUserCity("Philadelphia")
+ARProfileManager.setUserStateProvince("PA")
+ARProfileManager.setUserPostalCode("19106")
+ARProfileManager.setUserCountry("USA")
+
+ARProfileManager.setUserPhoneNumber("555-555-1234")
+ARProfileManager.setUserEmail("sales@useartisan.com")
+{% endhighlight %}
+
 ###User Preferences
 
 You can record contact information and preferences that the user has set in your app or service related to those contact paths:
@@ -103,6 +143,14 @@ You can record contact information and preferences that the user has set in your
 [ARProfileManager setOptedOutEmail:NO];
 [ARProfileManager setOptedOutPush:YES];
 [ARProfileManager setOptedOutText:YES];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+ARProfileManager.setOptedOutEmail(false)
+ARProfileManager.setOptedOutPush(true)
+ARProfileManager.setOptedOutText(true)
 {% endhighlight %}
 
 <div id="sharedid"></div>
@@ -137,6 +185,13 @@ The ARProfileManager can be used to access the Artisan ID for the current device
 
 NSString *artisanID = [ARProfileManager getArtisanId];
 NSString *pushToken = [ARProfileManager getPushToken];
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+let artisanID = ARProfileManager.getArtisanId()
+let pushToken = ARProfileManager.getPushToken()
 {% endhighlight %}
 
 These values can be useful for integrating with third-party analytics or push services or connecting with the Artisan web APIs.

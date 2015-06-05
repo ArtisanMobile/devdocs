@@ -70,6 +70,8 @@ override func viewDidLoad() {
 <p><strong>FIRST VIEW CONTROLLERS:</strong> If you are registering a callback from the viewDidLoad of your first view controller, make sure that your call to start Artisan happens <strong>before</strong> the call to makeKeyAndVisible for that first view controller's window. Otherwise your callback won't actually be registered.</p>
 
 {% highlight objective-c %}
+// Objective-C
+
 - (BOOL)application:(UIApplication *)application
         didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
@@ -86,6 +88,24 @@ override func viewDidLoad() {
   [self.window makeKeyAndVisible];
 
   return YES;
+}
+{% endhighlight %}
+
+{% highlight swift %}
+// Swift
+
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+  self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+  // This controller has the callbacks registered in viewDidLoad
+  self.rootViewController = ExampleRootViewController()
+  self.window!.rootViewController = self.rootViewController
+  
+  // Start Artisan *before* making the window visible
+  // So that callback registerations in viewDidLoad will be successful
+  ARManager.startWithAppId("YOUR_APP_ID")
+  
+  self.window!.makeKeyAndVisible()
 }
 {% endhighlight %}
 </div>
