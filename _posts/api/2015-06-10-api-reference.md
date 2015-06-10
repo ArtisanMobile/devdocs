@@ -58,13 +58,9 @@ List all segments by id and name.
 
 `POST /public/api/apps/{app_id}/segments/{segment_id}`
 
-Asynchronously prepare an export file containing all segments. See next section for segment downloading.
+`Parameters: {"callbackUrl": "callbackUrl"}`
 
-### Downloading Segments
-
-`GET /public/api/apps/{app_id}/segments/{segment_id}/download`
-
-Download the export file (see previous section for details on how to request an export file). This call will return a raw response that can be consumed incrementally to write it to disk.
+Asynchronously prepare an export file containing all segments. When the export file has been created, `callbackUrl` is called so that the file can be downloaded. `callbackUrl` will include the URL from which to download the export file.
 
 <div id="profiles"></div>
 
@@ -96,7 +92,14 @@ Get a single user profile by their Shared User ID.
 
 Get a list of user profiles by their Shared User IDs.
 
-### Exporting and Downloading Profiles
+### Exporting Profiles
+
+`POST /public/api/apps/{app_id}/users/export`
+
+`Parameters: {"callbackUrl": "callbackUrl"}`
+
+Asynchronously prepare an export file containing all profiles. When the export file has been created, `callbackUrl` is called so that the file can be downloaded.
+
 
 
 
