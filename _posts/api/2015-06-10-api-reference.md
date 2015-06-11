@@ -14,9 +14,9 @@ This document provides an overview of the REST API endpoints for the Artisan pla
 
 <ul>
   <li><a href="#authentication">Authentication</a></li>	
-  <li><a href="#status">Status</a></li>
   <li><a href="#segments">Segments</a></li>
   <li><a href="#profiles">Profiles</a></li>
+  <li><a href="#jobs">Jobs</a></li>
 </ul>
 
 <div id="authentication"></div>
@@ -32,19 +32,9 @@ Authorization: Token token="your_secret_key"
 public-api-key: your_public_key
 {% endhighlight %}
 
-<div id="Status"></div>
-
-## Status Endpoints
-
-### Getting Job Status
-
-`GET /public/api/status`
-
-List all jobs and their statuses.
-
 <div id="Segments"></div>
 
-## Segments Endpoints
+## Segment Endpoints
 
 Segments allow you to group users into lists based on behavior, in-app events, device type, operating sytem, geography, and other user profile attributes. You can request segment information and export segments using the `/public/api/apps/{app_id}/segments/` endpoint.
 
@@ -64,7 +54,7 @@ Asynchronously prepare an export file containing all segments. When the export f
 
 <div id="profiles"></div>
 
-## Profiles Endpoints
+## Profile Endpoints
 
 ### Getting User Profiles by Artisan ID
 
@@ -76,7 +66,7 @@ Get a single user profile by their Artisan (device) ID.
 
 `Parameters: {"ids": "id_1,id_2"}`
 
-Get a list of profiles by their Artisan (device) IDs.
+Get a list of profiles by their Artisan (device) IDs, where "id_1,id_2" is a comma-separated string of the Artisan IDs of the desired profiles.
 
 ### Getting User Profiles by Shared User ID
 
@@ -90,7 +80,7 @@ Get a single user profile by their Shared User ID.
 
 `Parameters: {"source": "custom", "ids": "shared_user_id_1,shared_user_id_2"}`
 
-Get a list of user profiles by their Shared User IDs.
+Get a list of user profiles by their Shared User IDs, where "shared_user_id_1,shared_user_id_2" is a comma-separated string of the Shared User IDs of the desired profiles.
 
 ### Exporting Profiles
 
@@ -100,6 +90,24 @@ Get a list of user profiles by their Shared User IDs.
 
 Asynchronously prepare an export file containing all profiles. When the export file has been created, `callbackUrl` is called so that the file can be downloaded.
 
+<div id="jobs"></div>
 
+## Job Endpoints
+
+### Getting Job Status For All Jobs
+
+`GET /public/api/jobs`
+
+List all jobs and their statuses.
+
+**(TODO: qualifiers? (running, queued, etc.))**
+
+### Getting Individual Job Status
+
+`GET /public/api/jobs/{job_id}`
+
+List details for the job denoted by `{job_id}`.
+
+(TODO: export jobs?)
 
 
