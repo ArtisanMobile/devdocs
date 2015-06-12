@@ -6,7 +6,7 @@ category: dev/api
 description: "Artisan API Ruby Gem Guide"
 ---
 
-# Ruby gem API
+# Ruby Gem API
 
 This document provides an overview of the Ruby gem wrapper for the Artisan API.
 
@@ -17,14 +17,13 @@ This document provides an overview of the Ruby gem wrapper for the Artisan API.
       <li><a href="#rb-getProfileById">get_profile_by_shared_user_id(application_id, shared_user_id)</a></li>
       <li><a href="#rb-getProfileById">get_profiles_by_artisan_id(application_id, [profile])</a></li>
       <li><a href="#rb-getProfileById">get_profiles_by_shared_user_id(application_id, [shared_user_id])</a></li>
-      <li><a href="#rb-downloadProfileExport">download_profile_export(url, path)</a></li>
+      <li><a href="#rb-profileExport">export_profiles(application_id, callback_url)</a></li>
     </ul>
   </li>
   <li><a href="#rb-segmentapi">Segments</a>
     <ul>
       <li><a href="#rb-listSegments">list_segments(application_id)</a></li>
-      <li><a href="#rb-segmentExport">export_segment(application_id, segment_id, callback_url))</a></li>
-      <li><a href="#rb-segmentExport">download_export(url, path)</a></li>
+      <li><a href="#rb-segmentExport">export_segment(application_id, segment_id, callback_url)</a></li>
     </ul>
   </li>
   <li><a href="#rb-statusapi">Status</a>
@@ -64,22 +63,21 @@ This document provides an overview of the Ruby gem wrapper for the Artisan API.
 @client.get_profiles_by_shared_user_id("your_app_id", ["shared_user_id_1", "shared_user_id_2"])
 {% endhighlight %}
 
-<div id="rb-downloadProfileExport"></div>
+<div id="rb-profileExport"></div>
 
-### download_profile_export(url,path)
+### export_profiles(application_id, callback_url)
 
 #### Parameters
 
-* url: (String) Endpoint from which to download the segment.
+* application_id: (String) Application ID for your app.
 
-* path: (String) Local path to which the downloaded profile export will be saved.
+* callback_url: (String) Once the job finishes, this URL will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
 
-Download the export file containing the requested user profile data.
+Request the profiles to be exported.
 
 {% highlight ruby %}
-path = "/tmp/profile.json"
-url = @client.endpoint + "/public/api/apps/#{app}/users/#{segment}/download"
-@client.download_segment_export(url,path)
+@client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
+@client.export_profiles("your_app_id", "your_callback_url")
 {% endhighlight %}
 
 <div id="rb-segmentapi"></div>
@@ -90,21 +88,32 @@ url = @client.endpoint + "/public/api/apps/#{app}/users/#{segment}/download"
 
 ### list_segments(application_id)
 
-(TODO)
+List segments by ID and name.
+
+{% highlight ruby %}
+@client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
+segments = @client.list_segments(app)
+puts segments
+{% endhighlight %}
 
 <div id="rb-segmentExport"></div>
 
-### export_segment(application_id, segment_id, callback_url)<br />download_export(url,path)
+### export_segment(application_id, segment_id, callback_url)
 
 #### Parameters
 
 * application_id: (String) Application ID for your app.
 
-* segment_id: (String) ID of the segment to be exported
+* segment_id: (String) ID of the segment to be exported.
 
-* callback_url: (String) (INSERT DESCRIPTION HERE)
+* callback_url: (String) Once the job finishes, this URL will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
 
-Request the specified segment to be exported. (INSERT MORE ABOUT DOWNLOADING THE EXPORT HERE)
+Request the specified segment to be exported.
+
+{% highlight ruby %}
+@client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
+@client.export_segment(app,segment,"your_callback_url")
+{% endhighlight %}
 
 <div id="rb-statusapi"></div>
 
