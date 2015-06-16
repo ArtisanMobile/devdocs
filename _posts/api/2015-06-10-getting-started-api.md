@@ -24,7 +24,7 @@ To use the Artisan API, you must first create an API Key and Secret Key:
 
 ## Calling the Artisan API
 
-See the [Artisan API Reference]({% post_url api/2015-06-10-api-reference %}) for a list available calls, their parameters, and sample responses.
+See the [Artisan API Reference]({% post_url api/2015-06-10-api-reference %}) for a list of available calls, their parameters, and sample responses.
 
 ## Installing the Ruby Gem
 

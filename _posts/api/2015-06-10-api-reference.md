@@ -24,7 +24,8 @@ This document provides an overview of the REST API endpoints for the Artisan pla
   	<ul>
   		<li><a href="#getIndividualProfilesArtisanId">Getting Individual User Profiles by Artisan ID</a></li>
       <li><a href="#getMultipleProfilesArtisanId">Getting Multiple User Profiles by Artisan ID</a></li>
-  		<li><a href="#getProfilesSUID">Getting User Profiles by Shared User ID</a></li>
+  		<li><a href="#getIndividualProfilesSUID">Getting Individual User Profiles by Shared User ID</a></li>
+      <li><a href="#getMultipleProfilesSUID">Getting Multiple User Profiles by Shared User ID</a></li>
   		<li><a href="#exportProfiles">Exporting Profiles</a></li>
   	</ul>
   </li>
@@ -83,7 +84,7 @@ Example response:
     },
     {
       "id": "557ee49c7d891cd26f000007",
-      "name": "20 to 28 year-olds"
+      "name": "20 to 28 year olds"
     },
     {
       "id": "557ee4a77d891cd26f000009",
@@ -181,15 +182,9 @@ Parameters: {"ids": "id_1,id_2"}
 
 Get a list of profiles by their Artisan (device) IDs, where `"id_1,id_2"` is a comma-separated string of the Artisan IDs of the desired profiles. Make sure to replace `{app_id}` with your unique application ID.
 
-Example response:
+<div id="getIndividualProfilesSUID"></div>
 
-{% highlight json %}
-
-{% endhighlight %}
-
-<div id="getProfilesSUID"></div>
-
-### Getting User Profiles by Shared User ID
+### Getting Individual User Profiles by Shared User ID
 
 {% highlight rest %}
 POST /public/api/apps/{app_id}/users/{user_id}
@@ -198,6 +193,10 @@ Parameters: {"source": "custom"}
 
 Get a single user profile by their Shared User ID. Make sure to replace `{app_id}` with your unique application ID. 
 
+<div id="getMultipleProfilesSUID"></div>
+
+### Getting Multiple User Profiles by Shared User ID
+
 {% highlight rest %}
 POST /public/api/apps/{app_id}/users
 Parameters: {"source": "custom",
@@ -205,12 +204,6 @@ Parameters: {"source": "custom",
 {% endhighlight %}
 
 Get a list of user profiles by their Shared User IDs, where `"shared_user_id_1,shared_user_id_2"` is a comma-separated string of the Shared User IDs of the desired profiles. Make sure to replace `{app_id}` with your unique application ID.
-
-Example response:
-
-{% highlight json %}
-
-{% endhighlight %}
 
 <div id="exportProfiles"></div>
 
