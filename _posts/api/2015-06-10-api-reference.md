@@ -14,6 +14,11 @@ This document provides an overview of the REST API endpoints for the Artisan pla
 
 <ul>
   <li><a href="#authentication">Authentication</a></li>	
+  <li><a href="#apps">Apps</a>
+    <ul>
+      <li><a href="#listApps">Listing Apps</a></li>
+    </ul>
+  </li>
   <li><a href="#segments">Segments</a>
   	<ul>
   		<li><a href="#listSegments">Listing Segments</a></li>
@@ -48,6 +53,37 @@ Accept-Encoding: application/json
 Content-Type: application/json
 Authorization: Token token="your_secret_key"
 public-api-key: your_public_key
+{% endhighlight %}
+
+<div id="apps"></div>
+
+## App Endpoints
+
+<div id="listApps"></div>
+
+### Listing Apps
+
+{% highlight rest %}
+GET /public/api/apps
+{% endhighlight %}
+
+List all the apps belonging to your organization by app ID and name.
+
+Example response:
+
+{% highlight json %}
+{
+  "apps": [
+    {
+      "id": "5550dd57330eb93d8700000c",
+      "name": "Demo App 1"
+    },
+    {
+      "id": "5564e1bf330eb98a9a00003a",
+      "name": "Demo App 2"
+    }
+  ]
+}
 {% endhighlight %}
 
 <div id="segments"></div>
