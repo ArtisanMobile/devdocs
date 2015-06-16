@@ -15,8 +15,8 @@ This document provides an overview of the Ruby gem wrapper for the Artisan API.
   <li><a href="#rb-profileapi">Profiles</a>
     <ul>
       <li><a href="#rb-getProfileById">get_profile_by_artisan_id(application_id, profile)</a></li>
-      <li><a href="#rb-getProfileById">get_profiles_by_artisan_id(application_id, [profiles])</a></li>
       <li><a href="#rb-getProfileById">get_profile_by_shared_user_id(application_id, shared_user_id)</a></li>
+      <li><a href="#rb-getProfileById">get_profiles_by_artisan_id(application_id, [profiles])</a></li>
       <li><a href="#rb-getProfileById">get_profiles_by_shared_user_id(application_id, [shared_user_ids])</a></li>
       <li><a href="#rb-profileExport">export_profiles(application_id, callback_url)</a></li>
     </ul>
