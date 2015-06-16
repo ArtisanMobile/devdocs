@@ -11,7 +11,7 @@ description: "Artisan API Ruby Gem Guide"
 This document provides an overview of the Ruby gem wrapper for the Artisan API.
 
 <ul>
-  <li><a href="#rb-installation">Installation</a>
+  <li><a href="#rb-installation">Installation</a></li>
   <li><a href="#rb-profileapi">Profiles</a>
     <ul>
       <li><a href="#rb-getProfileById">get_profile_by_artisan_id(application_id, profile)</a></li>
