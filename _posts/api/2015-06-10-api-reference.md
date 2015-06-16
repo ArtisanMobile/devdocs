@@ -244,13 +244,9 @@ GET /public/api/jobs
 List all jobs for your organization and their associated information, including:
 
 * job ID
-
 * job description
-
 * job status (queued, running, completed, or failed)
-
 * start and end times
-
 * the result URL. This URL points to the location from which to download the results of the job, and will also be sent to the callback URL associated with the job (if applicable). 
 
 Example response:

@@ -11,12 +11,13 @@ description: "Artisan API Ruby Gem Guide"
 This document provides an overview of the Ruby gem wrapper for the Artisan API.
 
 <ul>
+  <li><a href="#rb-installation">Installation</a>
   <li><a href="#rb-profileapi">Profiles</a>
     <ul>
       <li><a href="#rb-getProfileById">get_profile_by_artisan_id(application_id, profile)</a></li>
+      <li><a href="#rb-getProfileById">get_profiles_by_artisan_id(application_id, [profiles])</a></li>
       <li><a href="#rb-getProfileById">get_profile_by_shared_user_id(application_id, shared_user_id)</a></li>
-      <li><a href="#rb-getProfileById">get_profiles_by_artisan_id(application_id, [profile])</a></li>
-      <li><a href="#rb-getProfileById">get_profiles_by_shared_user_id(application_id, [shared_user_id])</a></li>
+      <li><a href="#rb-getProfileById">get_profiles_by_shared_user_id(application_id, [shared_user_ids])</a></li>
       <li><a href="#rb-profileExport">export_profiles(application_id, callback_url)</a></li>
     </ul>
   </li>
@@ -28,10 +29,16 @@ This document provides an overview of the Ruby gem wrapper for the Artisan API.
   </li>
   <li><a href="#rb-statusapi">Status</a>
     <ul>
-      <li><a href="#rb-listJobs">list_jobs</a></li>
+      <li><a href="#rb-listJobs">list_jobs()</a></li>
     </ul>
   </li>
 </ul>
+
+<div id="rb-installation"></div>
+
+## Installation
+
+(TODO once we decide where to keep the gem? i.e. in the rubygems repo?)
 
 <div id="rb-profileapi"></div>
 
@@ -39,21 +46,17 @@ This document provides an overview of the Ruby gem wrapper for the Artisan API.
 
 <div id="rb-getProfileById"></div>
 
-### get_profile_by_artisan_id(application_id, profile)<br />get_profile_by_shared_user_id(application_id, shared_user_id)<br />get_profiles_by_artisan_id(application_id, [profile])<br />get_profiles_by_shared_user_id(application_id, [shared_user_id]
+### get_profile_by_artisan_id(application_id, profile)<br />get_profiles_by_artisan_id(application_id, [profiles])<br />get_profile_by_shared_user_id(application_id, shared_user_id)<br />get_profiles_by_shared_user_id(application_id, [shared_user_ids])
 
 #### Parameters
 
-* application_id: (String) Application ID for your app.
+* `application_id`: (String) Application ID for your app.
+* `profile`: (String) Artisan-assigned ID (device ID) for the profile you want to fetch.
+* `shared_user_id`: (String) Shared User ID for the profile you want to fetch.
+* `[profiles]`: (array) Device IDs for the profiles you want to fetch.
+* `[shared_user_ids]`: (array) Shared User IDs for the profiles you want to fetch.
 
-* profile: (String) Artisan-assigned ID (device ID) for the profile you want to fetch.
-
-* shared_user_id: (String) Shared User ID for the profile you want to fetch.
-
-* \[profile]: (array) Device IDs for the profiles you want to fetch.
-
-* \[shared_user_id]: (array) Shared User IDs for the profiles you want to fetch.
-
-(INSERT DESCRIPTION OF OUTPUT)
+Returns a JSON object containing details about the requested profile(s).
 
 {% highlight ruby %}
 @client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
@@ -69,11 +72,10 @@ This document provides an overview of the Ruby gem wrapper for the Artisan API.
 
 #### Parameters
 
-* application_id: (String) Application ID for your app.
+* `application_id`: (String) Application ID for your app.
+* `callback_url`: (String) Once the job finishes, this URL will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
 
-* callback_url: (String) Once the job finishes, this URL will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
-
-Request the profiles to be exported.
+Request all user profiles to be exported.
 
 {% highlight ruby %}
 @client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
@@ -88,7 +90,11 @@ Request the profiles to be exported.
 
 ### list_segments(application_id)
 
-List segments by ID and name.
+#### Parameters
+
+* `application_id`: (String) Application ID for your app.
+
+List segments with ID and name.
 
 {% highlight ruby %}
 @client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
@@ -102,11 +108,9 @@ puts segments
 
 #### Parameters
 
-* application_id: (String) Application ID for your app.
-
-* segment_id: (String) ID of the segment to be exported.
-
-* callback_url: (String) Once the job finishes, this URL will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
+* `application_id`: (String) Application ID for your app.
+* `segment_id`: (String) ID of the segment to be exported.
+* `callback_url`: (String) Once the job finishes, this URL will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
 
 Request the specified segment to be exported.
 
@@ -121,7 +125,7 @@ Request the specified segment to be exported.
 
 <div id="rb-listJobs"></div>
 
-### list_jobs
+### list_jobs()
 
 Return a list of jobs and their statuses for the client.
 
