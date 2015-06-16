@@ -39,7 +39,7 @@ This document provides an overview of the REST API endpoints for the Artisan pla
 
 ## Authentication
 
-Every call made to the Artisan API must be authenticated using a public key and a secret key. For information on how to generate a new pair of keys for your organization, see the guide to [Managing Your Account]({% post_url user-guide/2015-06-10-managing-account %}).
+Every call made to the Artisan API must be authenticated using a public key and a secret key. For information on how to generate a pair of keys for your organization, see the [Getting Started Guide]({% post_url api/2015-06-10-getting-started-api %}).
 
 Authenticate your API calls by including the following headers:
 
@@ -97,10 +97,10 @@ Example response:
 
 {% highlight rest %}
 POST /public/api/apps/{app_id}/segments/{segment_id}
-Parameters: {"callbackUrl": "your_callback_url"}
+Parameters: {"callback": "callback_url"}
 {% endhighlight %}
 
-Once the requested segment export finishes, the callback URL (specified by `your_callback_url`) will be sent the download path for the file. This URL should point to a local server with the appropriate port open. Make sure to replace `{app_id}` with your unique application ID, and `{segment_id}` with the ID of the segment you wish to export.
+Once the requested segment export finishes, the callback URL (specified by `callback_url`) will be sent the download path for the file. This URL should point to a local server with the appropriate port open. Make sure to replace `{app_id}` with your unique application ID, and `{segment_id}` with the ID of the segment you wish to export.
 
 Example response:
 
