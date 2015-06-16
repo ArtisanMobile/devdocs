@@ -28,6 +28,7 @@ This document provides an overview of all of the API calls available within the 
       <li><a href="#setstringvalue">setStringValue(variable, value)</a></li>
       <li><a href="#setlocationvalue">setLocationValue(variable, latitude, longitude)</a></li>
       <li><a href="#setdatetimevalue">setDateTimeValue(variable, value)</a></li>
+      <li><a href="#setversionvalue">setVersionValue(variable, value)</a></li>
       <li><a href="#clearProfile">clearProfile()</a></li>
       <li><a href="#clearVariableValue">clearVariableValue()</a></li>
       <li><a href="#getArtisanId">getArtisanId()</a></li>
@@ -130,8 +131,6 @@ Specify the age for the current user.
 
 This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
 
-This can be called from anywhere in your app.
-
 {% highlight javascript %}
 ArtisanSDK.setUserAge(21);
 {% endhighlight %}
@@ -147,8 +146,6 @@ ArtisanSDK.setUserAge(21);
 Specify the gender of the current user.
 
 This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
-
-This can be called from anywhere in your app.
 
 {% highlight javascript %}
 ArtisanSDK.setGender("male");
@@ -167,8 +164,6 @@ Set or update the value associated with a custom string profile variable.
 
 This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes.
 
-This can be called from anywhere in your app.
-
 {% highlight javascript %}
 ArtisanSDK.setStringValue("Favorite Pet", "Dog");
 {% endhighlight %}
@@ -185,8 +180,6 @@ Set or update the value associated with a custom number profile variable.
 * value: (Integer or Float) New value to assign to the profile variable.
 
 This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes.
-
-This can be called from anywhere in your app.
 
 {% highlight javascript %}
 ArtisanSDK.setNumberValue("Number of kids", 3);
@@ -206,8 +199,6 @@ Set or update the value associated with a custom location profile variable.
 
 This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes.
 
-This can be called from anywhere in your app.
-
 {% highlight javascript %}
 ArtisanSDK.setLocationValue("Last known location", 37.182, -5.938);
 {% endhighlight %}
@@ -225,9 +216,25 @@ Set or update the value associated with a custom date profile variable.
 
 This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes.
 
-This can be called from anywhere in your app.
 {% highlight javascript %}
 ArtisanSDK.setDateTimeValue("Last seen at", "2014-07-18T12:57:38Z");
+{% endhighlight %}
+
+<div id="setversionvalue"></div>
+
+### setVersionValue(variable, value)
+
+#### Parameters
+
+* variable: (String) Name of the profile variable to update.
+* value: (String) New value to assign to the profile variable. Valid version strings match what you'd expect for an Apache Maven version: the value must start with a non-zero number and can have up to three multi-digit numbers separated by periods. Optionally, a version qualifier may follow a dash at the end, as in 2.4.8-beta. Invalid values will not be recorded.
+
+Set or update the value associated with a custom version profile variable.
+
+This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes. For comparison purposes when building segments, the leftmost value of a version takes precedence (i.e. 2.4.6 is less than 3.1) and the more numbers defined, the greater the value (i.e. 3.3 is less than 3.3.1).
+
+{% highlight javascript %}
+ArtisanSDK.setVersionValue("apiVersion", "2.1-beta");
 {% endhighlight %}
 
 <div id="clearprofile"></div>
@@ -237,8 +244,6 @@ ArtisanSDK.setDateTimeValue("Last seen at", "2014-07-18T12:57:38Z");
 Clear out all previously specified profile information.
 
 Use this method to clear out all data previously specified for the current user, including any data set via setSharedUserId(id), setUserAge(age), setGender(gender), setStringValue(variable, value) et al.
-
-This can be called from anywhere in your app.
 
 {% highlight javascript %}
 ArtisanSDK.clearProfile();
@@ -253,8 +258,6 @@ Unset the value for a user profile variable.
 Use this method to clear out the value for any custom user profile variable. This is equivalent to setting the value to nil using one of the set**Value methods.
 
 To clear one of the pre-defined Artisan user profile variables, simply set the value to null.
-
-This can be called from anywhere in your app.
 
 {% highlight javascript %}
 ArtisanSDK.clearVariableValue("Favorite Pet");
