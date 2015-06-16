@@ -345,7 +345,7 @@ Example response:
 GET /public/api/jobs/status/{status}
 {% endhighlight %}
 
-List details for all jobs that have the specified status. Make sure to replace `{status}` with the desired status you wish to query for. Valid statuses are `QUEUED`, `RUNNING`, `COMPLETED`, and `FAILED`.
+List details for all jobs that have the specified status. Make sure to replace `{status}` with the desired status you wish to query for. Valid statuses are `QUEUED`, `RUNNING`, `COMPLETE`, and `FAILED`.
 
 Example response:
 
