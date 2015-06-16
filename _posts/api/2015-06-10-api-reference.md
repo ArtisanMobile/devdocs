@@ -248,34 +248,40 @@ Example response:
 {
   "jobs": [
     {
-      "jobs": {
-        "_id": "557b14cb2e62106169000002",
-        "created_at": "2015-06-12T17:20:11Z",
-        "description": "",
-        "end": null,
-        "result_url": null,
-        "identifier": "",
-        "organization_id": "556cb0c52e62109ed6000006",
-        "start": "2015-06-12T17:14:17+00:00",
-        "status": "RUNNING",
-        "type": "",
-        "updated_at": "2015-06-12T18:39:07Z"
-      }
+      "id": "557b13922e62106169000001",
+      "type": "",
+      "created_at": "2015-06-12T17:14:58Z",
+      "start": "2015-06-12T17:14:17+00:00",
+      "end": null,
+      "status": "RUNNING",
+      "result_url": null
     },
     {
-      "jobs": {
-        "_id": "557b2f092e62106169000003",
-        "created_at": "2015-06-12T19:12:09Z",
-        "description": "",
-        "end": null,
-        "identifier": "",
-        "organization_id": "556cb0c52e62109ed6000006",
-        "result_url": null,
-        "start": "2015-06-12T17:14:17+00:00",
-        "status": "QUEUED",
-        "type": "",
-        "updated_at": "2015-06-12T19:12:27Z"
-      }
+      "id": "557b14cb2e62106169000002",
+      "type": "",
+      "created_at": "2015-06-12T17:20:11Z",
+      "start": "2015-06-12T17:14:17+00:00",
+      "end": null,
+      "status": "COMPLETE",
+      "result_url": null
+    },
+    {
+      "id": "557b2f092e62106169000003",
+      "type": "",
+      "created_at": "2015-06-12T19:12:09Z",
+      "start": "2015-06-12T17:14:17+00:00",
+      "end": null,
+      "status": "COMPLETE",
+      "result_url": null
+    },
+    {
+      "id": "557b39552e62101883000001",
+      "type": "",
+      "created_at": "2015-06-12T19:59:00Z",
+      "start": "2015-06-12T19:55:52+00:00",
+      "end": null,
+      "status": "COMPLETE",
+      "result_url": null
     }
   ]
 }
@@ -297,19 +303,13 @@ Example response:
 {
   "jobs": [
     {
-      "jobs": {
-        "_id": "557b14cb2e62106169000002",
-        "created_at": "2015-06-12T17:20:11Z",
-        "description": "",
-        "end": null,
-        "result_url": null,
-        "identifier": "",
-        "organization_id": "556cb0c52e62109ed6000006",
-        "start": "2015-06-12T17:14:17+00:00",
-        "status": "RUNNING",
-        "type": "",
-        "updated_at": "2015-06-12T18:39:07Z"
-      }
+      "id": "557b13922e62106169000001",
+      "type": "",
+      "created_at": "2015-06-12T17:14:58Z",
+      "start": "2015-06-12T17:14:17+00:00",
+      "end": null,
+      "status": "RUNNING",
+      "result_url": null
     }
   ]
 }
@@ -331,34 +331,31 @@ Example response:
 {
   "jobs": [
     {
-      "jobs": {
-        "_id": "557b14cb2e62106169000002",
-        "created_at": "2015-06-12T17:20:11Z",
-        "description": "",
-        "end": null,
-        "result_url": null,
-        "identifier": "",
-        "organization_id": "556cb0c52e62109ed6000006",
-        "start": "2015-06-12T17:14:17+00:00",
-        "status": "COMPLETE",
-        "type": "",
-        "updated_at": "2015-06-12T18:39:07Z"
-      }
+      "id": "557b14cb2e62106169000002",
+      "type": "",
+      "created_at": "2015-06-12T17:20:11Z",
+      "start": "2015-06-12T17:14:17+00:00",
+      "end": null,
+      "status": "COMPLETE",
+      "result_url": null
     },
     {
-      "jobs": {
-        "_id": "557ed46a2e621085d0000001",
-        "created_at": "2015-06-15T13:37:15Z",
-        "description": "",
-        "end": null,
-        "result_url": null,
-        "identifier": "",
-        "organization_id": "556cb0c52e62109ed6000006",
-        "start": "2015-06-15T13:34:34+00:00",
-        "status": "COMPLETE",
-        "type": "",
-        "updated_at": "2015-06-15T13:37:15Z"
-      }
+      "id": "557b2f092e62106169000003",
+      "type": "",
+      "created_at": "2015-06-12T19:12:09Z",
+      "start": "2015-06-12T17:14:17+00:00",
+      "end": null,
+      "status": "COMPLETE",
+      "result_url": null
+    },
+    {
+      "id": "557b39552e62101883000001",
+      "type": "",
+      "created_at": "2015-06-12T19:59:00Z",
+      "start": "2015-06-12T19:55:52+00:00",
+      "end": null,
+      "status": "COMPLETE",
+      "result_url": null
     }
   ]
 }
