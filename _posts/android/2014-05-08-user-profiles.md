@@ -145,6 +145,7 @@ public void registerUserProfileVariables() {
   ArtisanProfileManager.registerLocation("lastKnownLocation", new ArtisanLocationValue(39.949920,-75.145102));
   ArtisanProfileManager.registerNumber("totalOrderCount", 9);
   ArtisanProfileManager.registerString("memberType", "gold");
+  ArtisanProfileManager.registerVersion("apiVersion", "1.2.15-beta2");
 }
 {% endhighlight %}
 
@@ -158,6 +159,7 @@ ArtisanProfileManager.registerNumber("currentCartTotal int", 146); // int
 
 <div class="note note-hint">
   <p>Hint: Valid characters for variable names include [0-9], [a-z], [A-Z], -, and _. Any other characters will automatically be stripped out.</p>
+  <p>For version-type variables valid version strings match what you'd expect for an Apache Maven version: the value must start with a non-zero number and can have up to three multi-digit numbers separated by periods. Optionally, a version qualifier may follow a dash at the end, as in 2.4.8-beta. For comparison purposes when building segments, the leftmost value takes precedence (i.e. 2.4.6 is less than 3.1) and the more numbers defined, the greater the value (i.e. 3.3 is less than 3.3.1). Invalid values will not be recorded.</p>
 </div>
 
 <div id="update"></div>
@@ -171,6 +173,7 @@ ArtisanProfileManager.setStringValue("memberType", "platinum");
 ArtisanProfileManager.setDateTimeValue("lastSeenAt", new Date());
 ArtisanProfileManager.setLocationValue("lastKnownLocation", new ArtisanLocationValue(39.949920, -75.145102));
 ArtisanProfileManager.setNumberValue("totalOrderCount", 9);
+ArtisanProfileManager.setVersionValue("apiVersion", "1.2.16");
 {% endhighlight %}
 
 <div id="clear"></div>
