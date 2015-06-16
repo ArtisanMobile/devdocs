@@ -22,11 +22,8 @@ This document provides an overview of the REST API endpoints for the Artisan pla
   </li>
   <li><a href="#profiles">Profiles</a>
   	<ul>
-  		<li><a href="#getIndividualProfilesArtisanId">Getting Individual User Profiles by Artisan ID</a></li>
-      <li><a href="#getMultipleProfilesArtisanId">Getting Multiple User Profiles by Artisan ID</a></li>
-  		<li><a href="#getIndividualProfilesSUID">Getting Individual User Profiles by Shared User ID</a></li>
-      <li><a href="#getMultipleProfilesSUID">Getting Multiple User Profiles by Shared User ID</a></li>
-  		<li><a href="#exportProfiles">Exporting Profiles</a></li>
+  		<li><a href="#getProfiles">Getting User Profile Information</a></li>
+      <li><a href="#exportProfiles">Exporting User Profiles</a></li>
   	</ul>
   </li>
   <li><a href="#jobs">Jobs</a>
@@ -115,15 +112,26 @@ Example response:
 
 ## Profile Endpoints
 
-<div id="getIndividualProfilesArtisanId"></div>
+<div id="getProfiles"></div>
 
-### Getting Individual User Profile Details by Artisan ID
+### Getting User Profile Information
+
+#### Getting User Profile Information by Artisan ID
 
 {% highlight rest %}
 GET /public/api/apps/{app_id}/users/{user_id}
 {% endhighlight %}
 
-Get a single user profile by their Artisan (device) ID. Make sure to replace `{app_id}` with your unique application ID.
+Get details for a single user profile by their Artisan (device) ID. Make sure to replace `{app_id}` with your unique application ID.
+
+#### Getting User Profile Information by Shared User ID
+
+{% highlight rest %}
+POST /public/api/apps/{app_id}/users/{user_id}
+Parameters: {"source": "custom"}
+{% endhighlight %}
+
+Get details for a single user profile by their Shared User ID. Make sure to include the `{"source": "custom"}` parameter and replace `{app_id}` with your unique application ID. 
 
 Example of a successful response:
 
@@ -171,56 +179,34 @@ Example of an unsuccessful response:
 }
 {% endhighlight %}
 
-<div id="getMultipleProfilesArtisanId"></div>
-
-### Getting Multiple User Profile Details by Artisan ID
-
-{% highlight rest %}
-POST /public/api/apps/{app_id}/users
-Parameters: {"ids": "id_1,id_2"}
-{% endhighlight %}
-
-Get a list of profiles by their Artisan (device) IDs, where `"id_1,id_2"` is a comma-separated string of the Artisan IDs of the desired profiles. Make sure to replace `{app_id}` with your unique application ID.
-
-<div id="getIndividualProfilesSUID"></div>
-
-### Getting Individual User Profiles by Shared User ID
-
-{% highlight rest %}
-POST /public/api/apps/{app_id}/users/{user_id}
-Parameters: {"source": "custom"}
-{% endhighlight %}
-
-Get a single user profile by their Shared User ID. Make sure to replace `{app_id}` with your unique application ID. 
-
-<div id="getMultipleProfilesSUID"></div>
-
-### Getting Multiple User Profiles by Shared User ID
-
-{% highlight rest %}
-POST /public/api/apps/{app_id}/users
-Parameters: {"source": "custom",
-             "ids": "shared_user_id_1,shared_user_id_2"}
-{% endhighlight %}
-
-Get a list of user profiles by their Shared User IDs, where `"shared_user_id_1,shared_user_id_2"` is a comma-separated string of the Shared User IDs of the desired profiles. Make sure to replace `{app_id}` with your unique application ID.
-
 <div id="exportProfiles"></div>
 
 ### Exporting Profiles
 
+#### Exporting Profiles by Artisan ID
+
 {% highlight rest %}
-POST /public/api/apps/{app_id}/users/export
-Parameters: {"callbackUrl": "your_callback_url"}
+POST /public/api/apps/{app_id}/users
+Parameters: {"ids": "id_1,id_2",
+             "callback": "callback_url"}
 {% endhighlight %}
 
-Once the requested profiles export finishes, the callback URL (specified by `your_callback_url`) will be sent the download path for the file. This URL should point to a local server with the appropriate port open. Make sure to replace `{app_id}` with your unique application ID.
+Request an export of the profiles denoted by `"id_1,id_2"`, a comma-separated string of Artisan IDs. Make sure to replace `{app_id}` with your unique application ID.
 
-Example response:
+Once the requested profiles export finishes, the callback URL (specified by `callback_url`) will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
 
-{% highlight json %}
+#### Exporting Profiles by Shared User ID
 
+{% highlight rest %}
+POST /public/api/apps/{app_id}/users
+Parameters: {"source": "custom",
+             "ids": "shared_user_id_1,shared_user_id_2",
+             "callback": "callback_url"}
 {% endhighlight %}
+
+Request an export of the profiles denoted by `"shared_user_id_1,shared_user_id_2"`, a comma-separated string of Shared User IDs. Make sure to replace `{app_id}` with your unique application ID.
+
+Once the requested profiles export finishes, the callback URL (specified by `callback_url`) will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
 
 <div id="jobs"></div>
 
