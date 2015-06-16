@@ -237,6 +237,10 @@ This new value will be used as part of this user's personalization profile, and 
 ArtisanSDK.setVersionValue("apiVersion", "2.1-beta");
 {% endhighlight %}
 
+<div class="note note-hint">
+  <p>Added in Hybrid SDK version 2.3, iOS SDK version 2.4.15, and Android SDK version 2.4.8.</p>
+</div>
+
 <div id="clearprofile"></div>
 
 ### clearProfile()
