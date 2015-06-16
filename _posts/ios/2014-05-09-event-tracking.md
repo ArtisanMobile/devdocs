@@ -185,7 +185,7 @@ A good place to register your ArtisanEventTags for your view controller is in **
 
 override func viewWillAppear(animated: Bool) {
   super.viewWillAppear(animated);
-        
+
   // Adding SKU and Description to all autocollected events on screen
   var screenEventTags: ArtisanEventTags = ArtisanEventTags()
   screenEventTags.setValue(self.product.skuId, forKey: "SKU_ID")
@@ -253,21 +253,21 @@ Here's an example of adding ArtisanEventTags to a collection view cell:
 
 override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
   let productCell = collectionView.dequeueReusableCellWithReuseIdentifier("ProductListCell", forIndexPath: indexPath) as! UICollectionViewCell
-  
+
   let row = indexPath.row
-  
+
   var currProduct: ARProductModel = self.products[row]
   // ... other setup
-  
+
   // Adding Sku ID and Product Name to auto-collected events on collection view cell
   var cellEventTags: ArtisanEventTags = ArtisanEventTags()
   cellEventTags.setValue(currProduct.skuId, forKey: "SKU_ID")
   cellEventTags.setValue(currProduct.name, forKey: "PRODUCT_NAME")
   productCell.artisanEventTags = cellEventTags
-  
+
   return productCell
 }
-{% endhighlight %>
+{% endhighlight %}
 
 <div class="note note-hint">
 <p><b>HINT:</b> A good place to set the ArtisanEventTags for a table or collection view cell is in <strong>collectionView:cellForItemAtIndexPath:</strong> or <strong>tableView:cellForRowAtIndexPath:</strong>. That way if a cell is recycled you can be sure that it doesn't have the ArtisanEventTags from a previous usage.</p>
@@ -388,7 +388,7 @@ This is an example of what this will look like in your app:
 
 func productsRequest(request: SKProductsRequest!, didReceiveResponse response: SKProductsResponse!) {
   ARStoreKitTracker.initWithSKProducts(response.products)
-  
+
   // The rest of your handling for the product request...
 }
 {% endhighlight %}
