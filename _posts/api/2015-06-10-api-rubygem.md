@@ -12,13 +12,17 @@ This document provides an overview of the Ruby gem wrapper for the Artisan API.
 
 <ul>
   <li><a href="#rb-installation">Installation</a></li>
+  <li><a href="#rb-apps">Apps</a>
+    <ul>
+      <li><a href="#rb-listApps">Listing Apps</a></li>
+    </ul>
+  </li>
   <li><a href="#rb-profileapi">Profiles</a>
     <ul>
       <li><a href="#rb-getProfileById">get_profile_by_artisan_id(application_id, profile)</a></li>
       <li><a href="#rb-getProfileById">get_profile_by_shared_user_id(application_id, shared_user_id)</a></li>
-      <li><a href="#rb-getProfileById">get_profiles_by_artisan_id(application_id, [profiles])</a></li>
-      <li><a href="#rb-getProfileById">get_profiles_by_shared_user_id(application_id, [shared_user_ids])</a></li>
-      <li><a href="#rb-profileExport">export_profiles(application_id, callback_url)</a></li>
+      <li><a href="#rb-getProfilesById">get_profiles_by_artisan_id(application_id, [profiles])</a></li>
+      <li><a href="#rb-getProfilesById">get_profiles_by_shared_user_id(application_id, [shared_user_ids])</a></li>
     </ul>
   </li>
   <li><a href="#rb-segmentapi">Segments</a>
@@ -40,46 +44,80 @@ This document provides an overview of the Ruby gem wrapper for the Artisan API.
 
 (TODO once we decide where to keep the gem? i.e. in the rubygems repo?)
 
+<div id="rb-apps"></div>
+
+## Apps API
+
+<div id="rb-listApps"></div>
+
+### list_apps()
+
+
+List all the apps belonging to your organization by app ID and name.
+
+Example call:
+
+{% highlight ruby %}
+@client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
+puts @client.list_apps()
+{% endhighlight %}
+
+Example response:
+
+{% highlight json %}
+{
+  "apps": [
+    {
+      "id": "5550dd57330eb93d8700000c",
+      "name": "Demo App 1"
+    },
+    {
+      "id": "5564e1bf330eb98a9a00003a",
+      "name": "Demo App 2"
+    }
+  ]
+}
+{% endhighlight %}
+
 <div id="rb-profileapi"></div>
 
 ## Profile API
 
 <div id="rb-getProfileById"></div>
 
-### get_profile_by_artisan_id(application_id, profile)<br />get_profiles_by_artisan_id(application_id, [profiles])<br />get_profile_by_shared_user_id(application_id, shared_user_id)<br />get_profiles_by_shared_user_id(application_id, [shared_user_ids])
+### get_profile_by_artisan_id(application_id, profile)<br />get_profile_by_shared_user_id(application_id, shared_user_id)
 
 #### Parameters
 
 * `application_id`: (String) Application ID for your app.
 * `profile`: (String) Artisan-assigned ID (device ID) for the profile you want to fetch.
 * `shared_user_id`: (String) Shared User ID for the profile you want to fetch.
-* `[profiles]`: (array) Device IDs for the profiles you want to fetch.
-* `[shared_user_ids]`: (array) Shared User IDs for the profiles you want to fetch.
 
-Returns a JSON object containing details about the requested profile(s).
+Returns a JSON object containing details about the requested profile.
 
 {% highlight ruby %}
 @client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
 @client.get_profile_by_artisan_id("your_app_id", "555652247d891c8b7a000002")
 @client.get_profile_by_shared_user_id("your_app_id", "z5k5x7tcpmmr5p4on3aw")
-@client.get_profiles_by_artisan_id("your_app_id", ["555652247d891c8b7a000002", "15652247d891c8b7a000504"])
-@client.get_profiles_by_shared_user_id("your_app_id", ["shared_user_id_1", "shared_user_id_2"])
 {% endhighlight %}
 
-<div id="rb-profileExport"></div>
+<div id="rb-getProfilesById"></div>
 
-### export_profiles(application_id, callback_url)
+### get_profiles_by_artisan_id(application_id, [profiles])<br />get_profiles_by_shared_user_id(application_id, [shared_user_ids])
 
 #### Parameters
 
 * `application_id`: (String) Application ID for your app.
+* `[profiles]`: (array) Device IDs for the profiles you want to fetch.
+* `[shared_user_ids]`: (array) Shared User IDs for the profiles you want to fetch.
 * `callback_url`: (String) Once the job finishes, this URL will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
 
-Request all user profiles to be exported.
+Request the specified user profile(s) to be exported.
 
 {% highlight ruby %}
 @client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
-@client.export_profiles("your_app_id", "your_callback_url")
+@client.get_profiles_by_artisan_id("your_app_id", ["555652247d891c8b7a000002", "15652247d891c8b7a000504"], "your_callback_url")
+@client.get_profiles_by_shared_user_id("your_app_id", ["shared_user_id_1", "shared_user_id_2"], "your_callback_url")
 {% endhighlight %}
 
 <div id="rb-segmentapi"></div>
