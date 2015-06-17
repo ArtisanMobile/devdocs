@@ -11,18 +11,15 @@ description: "Artisan API Ruby Gem Guide"
 This document provides an overview of the Ruby gem wrapper for the Artisan API.
 
 <ul>
-  <li><a href="#rb-installation">Installation</a></li>
   <li><a href="#rb-apps">Apps</a>
     <ul>
-      <li><a href="#rb-listApps">Listing Apps</a></li>
+      <li><a href="#rb-listApps">list_apps()</a></li>
     </ul>
   </li>
   <li><a href="#rb-profileapi">Profiles</a>
     <ul>
-      <li><a href="#rb-getProfileById">get_profile_by_artisan_id(application_id, profile)</a></li>
-      <li><a href="#rb-getProfileById">get_profile_by_shared_user_id(application_id, shared_user_id)</a></li>
-      <li><a href="#rb-getProfilesById">get_profiles_by_artisan_id(application_id, [profiles])</a></li>
-      <li><a href="#rb-getProfilesById">get_profiles_by_shared_user_id(application_id, [shared_user_ids])</a></li>
+      <li><a href="#rb-getProfiles">get_profile(application_id, artisan_id: nil, shared_user_id: nil)</a></li>
+      <li><a href="#rb-exportProfiles">export_profiles(application_id, callback_url, artisan_ids: nil, shared_user_ids: nil)</a></li>
     </ul>
   </li>
   <li><a href="#rb-segmentapi">Segments</a>
@@ -34,16 +31,10 @@ This document provides an overview of the Ruby gem wrapper for the Artisan API.
   <li><a href="#rb-jobapi">Jobs</a>
     <ul>
       <li><a href="#rb-getJob">get_job(job_id)</a></li>
-      <li><a href="#rb-listJobs">list_jobs(status)</a></li>
+      <li><a href="#rb-listJobs">list_jobs(status=nil)</a></li>
     </ul>
   </li>
 </ul>
-
-<div id="rb-installation"></div>
-
-## Installation
-
-(TODO once we decide where to keep the gem? i.e. in the rubygems repo?)
 
 <div id="rb-apps"></div>
 
@@ -84,22 +75,22 @@ Example response:
 
 ## Profile API
 
-<div id="rb-getProfileById"></div>
+<div id="rb-getProfiles"></div>
 
-### get_profile_by_artisan_id(application_id, profile)<br />get_profile_by_shared_user_id(application_id, shared_user_id)
+### get_profile(application_id, artisan_id: nil, shared_user_id: nil)
 
 #### Parameters
 
 * `application_id`: (String) Application ID for your app.
-* `profile`: (String) Artisan-assigned ID (device ID) for the profile you want to fetch.
+* `artisan_id`: (String) Artisan-assigned ID (device ID) for the profile you want to fetch.
 * `shared_user_id`: (String) Shared User ID for the profile you want to fetch.
 
-Returns a JSON object containing details about the requested profile.
+Returns a JSON object containing details about the requested profile. Note that you must pass in either `artisan_id` or `shared_user_id`, but not both.
 
 {% highlight ruby %}
 @client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
-puts @client.get_profile_by_artisan_id("your_app_id", "555652247d891c8b7a000002")
-puts @client.get_profile_by_shared_user_id("your_app_id", "z5k5x7tcpmmr5p4on3aw")
+puts @client.get_profile("your_app_id", artisan_id: "555652247d891c8b7a000002")
+puts @client.get_profile("your_app_id", shared_user_id: "z5k5x7tcpmmr5p4on3aw")
 {% endhighlight %}
 
 Example response:
@@ -139,23 +130,23 @@ Example response:
 }
 {% endhighlight %}
 
-<div id="rb-getProfilesById"></div>
+<div id="rb-exportProfiles"></div>
 
-### get_profiles_by_artisan_id(application_id, [profiles])<br />get_profiles_by_shared_user_id(application_id, [shared_user_ids])
+### export_profiles(application_id, callback_url, artisan_ids: nil, shared_user_ids: nil)
 
 #### Parameters
 
 * `application_id`: (String) Application ID for your app.
-* `[profiles]`: (array) Device IDs for the profiles you want to fetch.
-* `[shared_user_ids]`: (array) Shared User IDs for the profiles you want to fetch.
 * `callback_url`: (String) Once the job finishes, this URL will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
+* `artisan_ids`: (array) Device IDs for the profiles you want to fetch.
+* `shared_user_ids`: (array) Shared User IDs for the profiles you want to fetch.
 
-Request the specified user profile(s) to be exported.
+Request the specified user profile(s) to be exported. Note that you must pass in either `artisan_ids` or `shared_user_ids`, but not both.
 
 {% highlight ruby %}
 @client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
-@client.get_profiles_by_artisan_id("your_app_id", ["555652247d891c8b7a000002", "15652247d891c8b7a000504"], "your_callback_url")
-@client.get_profiles_by_shared_user_id("your_app_id", ["shared_user_id_1", "shared_user_id_2"], "your_callback_url")
+@client.export_profiles("your_app_id", "your_callback_url", artisan_ids: ["555652247d891c8b7a000002", "15652247d891c8b7a000504"])
+@client.export_profiles("your_app_id", "your_callback_url", shared_user_ids: ["shared_id_1", "shared_id_2"])
 {% endhighlight %}
 
 <div id="rb-segmentapi"></div>
@@ -234,17 +225,17 @@ Example response:
 
 <div id="rb-listJobs"></div>
 
-### list_jobs(status)
+### list_jobs(status=nil)
 
 #### Parameters
 
 * *(optional)* `status`: (String) If specified, only jobs with this status will be listed. Valid statuses are `QUEUED`, `RUNNING`, `COMPLETE`, and `FAILED`.
 
-List details for all jobs that have the specified status.
+List details for all jobs that have the specified status. If no status is specified, all jobs for the organization will be listed.
 
 {% highlight ruby %}
 @client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
-all_jobs = @client.list_jobs
+all_jobs = @client.list_jobs()
 completed_jobs = @client.list_jobs("COMPLETE")
 {% endhighlight %}
 
@@ -283,13 +274,3 @@ Example response:
   ]
 }
 {% endhighlight %}
-
-<div id=""></div>
-
-<div id=""></div>
-
-<div id=""></div>
-
-<div id=""></div>
-
-<div id=""></div>
