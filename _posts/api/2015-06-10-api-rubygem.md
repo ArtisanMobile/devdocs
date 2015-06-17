@@ -239,7 +239,7 @@ all_jobs = @client.list_jobs()
 completed_jobs = @client.list_jobs("COMPLETE")
 {% endhighlight %}
 
-Example response:
+Example response for `completed_jobs`:
 
 {% highlight json %}
 {
