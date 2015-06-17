@@ -19,16 +19,16 @@ This document provides an overview of the REST API endpoints for the Artisan pla
       <li><a href="#listApps">Listing Apps</a></li>
     </ul>
   </li>
+  <li><a href="#profiles">Profiles</a>
+    <ul>
+      <li><a href="#getProfiles">Getting User Profile Information</a></li>
+      <li><a href="#exportProfiles">Exporting User Profiles</a></li>
+    </ul>
+  </li>
   <li><a href="#segments">Segments</a>
   	<ul>
   		<li><a href="#listSegments">Listing Segments</a></li>
   		<li><a href="#exportSegments">Exporting Segments</a></li>
-  	</ul>
-  </li>
-  <li><a href="#profiles">Profiles</a>
-  	<ul>
-  		<li><a href="#getProfiles">Getting User Profile Information</a></li>
-      <li><a href="#exportProfiles">Exporting User Profiles</a></li>
   	</ul>
   </li>
   <li><a href="#jobs">Jobs</a>
@@ -84,64 +84,6 @@ Example response:
     }
   ]
 }
-{% endhighlight %}
-
-<div id="segments"></div>
-
-## Segment Endpoints
-
-Segments allow you to group users into lists based on behavior, in-app events, device type, operating sytem, geography, and other user profile attributes. You can request segment information and export segments using the `/public/api/apps/{app_id}/segments/` endpoint.
-
-<div id="listSegments"></div>
-
-### Listing Segments
-
-{% highlight rest %}
-GET /public/api/apps/{app_id}/segments/
-{% endhighlight %}
-
-List all segments by segment ID and name. Make sure to replace `{app_id}` with your unique application ID.
-
-Example response:
-
-{% highlight json %}
-{
-  "segments": [
-    {
-      "id": "557ee4697d891cd26f000003",
-      "name": "Philadelphians"
-    },
-    {
-      "id": "557ee4757d891cd26f000005",
-      "name": "Under 20"
-    },
-    {
-      "id": "557ee49c7d891cd26f000007",
-      "name": "20 to 28 year olds"
-    },
-    {
-      "id": "557ee4a77d891cd26f000009",
-      "name": "Over 28"
-    }
-  ]
-}
-{% endhighlight %}
-
-<div id="exportSegments"></div>
-
-### Exporting Segments
-
-{% highlight rest %}
-POST /public/api/apps/{app_id}/segments/{segment_id}
-Parameters: {"callback": "callback_url"}
-{% endhighlight %}
-
-Once the requested segment export finishes, the callback URL (specified by `callback_url`) will be sent the download path for the file. This URL should point to a local server with the appropriate port open. Make sure to replace `{app_id}` with your unique application ID, and `{segment_id}` with the ID of the segment you wish to export.
-
-Example response:
-
-{% highlight json %}
-
 {% endhighlight %}
 
 <div id="profiles"></div>
@@ -244,6 +186,65 @@ Request an export of the profiles denoted by `"shared_user_id_1,shared_user_id_2
 
 Once the requested profiles export finishes, the callback URL (specified by `callback_url`) will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
 
+
+<div id="segments"></div>
+
+## Segment Endpoints
+
+Segments allow you to group users into lists based on behavior, in-app events, device type, operating sytem, geography, and other user profile attributes. You can request segment information and export segments using the `/public/api/apps/{app_id}/segments/` endpoint.
+
+<div id="listSegments"></div>
+
+### Listing Segments
+
+{% highlight rest %}
+GET /public/api/apps/{app_id}/segments/
+{% endhighlight %}
+
+List all segments by segment ID and name. Make sure to replace `{app_id}` with your unique application ID.
+
+Example response:
+
+{% highlight json %}
+{
+  "segments": [
+    {
+      "id": "557ee4697d891cd26f000003",
+      "name": "Philadelphians"
+    },
+    {
+      "id": "557ee4757d891cd26f000005",
+      "name": "Under 20"
+    },
+    {
+      "id": "557ee49c7d891cd26f000007",
+      "name": "20 to 28 year olds"
+    },
+    {
+      "id": "557ee4a77d891cd26f000009",
+      "name": "Over 28"
+    }
+  ]
+}
+{% endhighlight %}
+
+<div id="exportSegments"></div>
+
+### Exporting Segments
+
+{% highlight rest %}
+POST /public/api/apps/{app_id}/segments/{segment_id}
+Parameters: {"callback": "callback_url"}
+{% endhighlight %}
+
+Once the requested segment export finishes, the callback URL (specified by `callback_url`) will be sent the download path for the file. This URL should point to a local server with the appropriate port open. Make sure to replace `{app_id}` with your unique application ID, and `{segment_id}` with the ID of the segment you wish to export.
+
+Example response:
+
+{% highlight json %}
+
+{% endhighlight %}
+
 <div id="jobs"></div>
 
 ## Job Endpoints
@@ -270,39 +271,30 @@ Example response:
 {
   "jobs": [
     {
-      "id": "557b13922e62106169000001",
-      "type": "",
-      "created_at": "2015-06-12T17:14:58Z",
-      "start": "2015-06-12T17:14:17+00:00",
-      "end": null,
-      "status": "RUNNING",
-      "result_url": null
-    },
-    {
-      "id": "557b14cb2e62106169000002",
-      "type": "",
-      "created_at": "2015-06-12T17:20:11Z",
-      "start": "2015-06-12T17:14:17+00:00",
+      "id": "558093b47d891c3089000001",
+      "type": "Segments Export",
+      "created_at": "2015-06-16T21:23:00Z",
+      "start": "2015-06-16T21:09:53+00:00",
       "end": null,
       "status": "COMPLETE",
       "result_url": null
     },
     {
-      "id": "557b2f092e62106169000003",
-      "type": "",
-      "created_at": "2015-06-12T19:12:09Z",
-      "start": "2015-06-12T17:14:17+00:00",
+      "id": "55809c9c7d891cb1bc000001",
+      "type": "Profiles Export",
+      "created_at": "2015-06-16T22:01:00Z",
+      "start": "2015-06-16T22:00:56+00:00",
       "end": null,
-      "status": "COMPLETE",
+      "status": "QUEUED",
       "result_url": null
     },
     {
-      "id": "557b39552e62101883000001",
-      "type": "",
-      "created_at": "2015-06-12T19:59:00Z",
-      "start": "2015-06-12T19:55:52+00:00",
+      "id": "55809e237d891c07bd000001",
+      "type": "Profiles Export",
+      "created_at": "2015-06-16T22:07:31Z",
+      "start": "2015-06-16T22:00:56+00:00",
       "end": null,
-      "status": "COMPLETE",
+      "status": "QUEUED",
       "result_url": null
     }
   ]
@@ -323,17 +315,17 @@ Example response:
 
 {% highlight json %}
 {
-  "jobs": [
-    {
-      "id": "557b13922e62106169000001",
-      "type": "",
-      "created_at": "2015-06-12T17:14:58Z",
-      "start": "2015-06-12T17:14:17+00:00",
-      "end": null,
-      "status": "RUNNING",
-      "result_url": null
-    }
-  ]
+  "_id": "558093b47d891c3089000001",
+  "created_at": "2015-06-16T21:23:00Z",
+  "description": "",
+  "end": null,
+  "identifier": "sgmt-export",
+  "organization_id": "52e7df69e206e7f84e000005",
+  "result_url": null,
+  "start": "2015-06-16T21:09:53+00:00",
+  "status": "QUEUED",
+  "type": "Segments Export",
+  "updated_at": "2015-06-16T21:23:00Z"
 }
 {% endhighlight %}
 
@@ -353,30 +345,21 @@ Example response:
 {
   "jobs": [
     {
-      "id": "557b14cb2e62106169000002",
-      "type": "",
-      "created_at": "2015-06-12T17:20:11Z",
-      "start": "2015-06-12T17:14:17+00:00",
+      "id": "55809c9c7d891cb1bc000001",
+      "type": "Profiles Export",
+      "created_at": "2015-06-16T22:01:00Z",
+      "start": "2015-06-16T22:00:56+00:00",
       "end": null,
-      "status": "COMPLETE",
+      "status": "QUEUED",
       "result_url": null
     },
     {
-      "id": "557b2f092e62106169000003",
-      "type": "",
-      "created_at": "2015-06-12T19:12:09Z",
-      "start": "2015-06-12T17:14:17+00:00",
+      "id": "55809e237d891c07bd000001",
+      "type": "Profiles Export",
+      "created_at": "2015-06-16T22:07:31Z",
+      "start": "2015-06-16T22:00:56+00:00",
       "end": null,
-      "status": "COMPLETE",
-      "result_url": null
-    },
-    {
-      "id": "557b39552e62101883000001",
-      "type": "",
-      "created_at": "2015-06-12T19:59:00Z",
-      "start": "2015-06-12T19:55:52+00:00",
-      "end": null,
-      "status": "COMPLETE",
+      "status": "QUEUED",
       "result_url": null
     }
   ]
