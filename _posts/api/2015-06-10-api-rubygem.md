@@ -216,8 +216,7 @@ Example response:
       "created_at": "2015-06-12T17:14:58Z",
       "start": "2015-06-12T17:14:17+00:00",
       "end": null,
-      "status": "RUNNING",
-      "result_url": null
+      "status": "RUNNING"
     }
   ]
 }
@@ -250,8 +249,7 @@ Example response for `completed_jobs`:
       "created_at": "2015-06-12T17:20:11Z",
       "start": "2015-06-12T17:14:17+00:00",
       "end": null,
-      "status": "COMPLETE",
-      "result_url": null
+      "status": "COMPLETE"
     },
     {
       "id": "557b2f092e62106169000003",
@@ -259,8 +257,7 @@ Example response for `completed_jobs`:
       "created_at": "2015-06-12T19:12:09Z",
       "start": "2015-06-12T17:14:17+00:00",
       "end": null,
-      "status": "COMPLETE",
-      "result_url": null
+      "status": "COMPLETE"
     },
     {
       "id": "557b39552e62101883000001",
@@ -268,8 +265,7 @@ Example response for `completed_jobs`:
       "created_at": "2015-06-12T19:59:00Z",
       "start": "2015-06-12T19:55:52+00:00",
       "end": null,
-      "status": "COMPLETE",
-      "result_url": null
+      "status": "COMPLETE"
     }
   ]
 }
