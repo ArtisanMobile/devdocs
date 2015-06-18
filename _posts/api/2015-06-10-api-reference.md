@@ -260,7 +260,7 @@ Example response:
 
 ## Job Endpoints
 
-The jobs endpoint allows you to view all jobs for your organization, with the option to filter jobs by their status, and download the results when the job is finished.
+The jobs endpoint allows you to view all jobs for your organization, filter jobs by status, and download the results when a job is finished.
 
 <div id="listJobs"></div>
 
@@ -343,16 +343,11 @@ Example response:
 GET /public/api/jobs/{job_id}/download
 {% endhighlight %}
 
-Incrementally retrieve the results of the specified job after the job is finished.  
+Retrieve the results of the specified job after the job is finished.  
 
-Example of a successful response:
-
-{% highlight json %}
-TODO
-{% endhighlight %}
-
-Example of an unsuccessful response:
+Example response:
 
 {% highlight json %}
 TODO
 {% endhighlight %}
+
