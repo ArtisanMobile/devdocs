@@ -186,6 +186,14 @@ Request an export of the profiles denoted by `shared_user_id_1,shared_user_id_2`
 
 Once the requested profiles export finishes, the callback URL (specified by `your_callback_url`) will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
 
+Example response:
+
+{% highlight json %}
+{
+  "message": "Job queued successfully.",
+  "job": "55809c9c7d891cb1bc000001"
+}
+{% endhighlight %}
 
 <div id="segments"></div>
 
@@ -242,7 +250,10 @@ Once the requested segment export finishes, the callback URL (specified by `call
 Example response:
 
 {% highlight json %}
-
+{
+  "message": "Job queued successfully.",
+  "job": "558093b47d891c3089000001"
+}
 {% endhighlight %}
 
 <div id="jobs"></div>
@@ -266,7 +277,6 @@ List all jobs for your organization and their associated information, including:
 * job type
 * job status
 * start and end times
-* the result URL. This URL points to the location from which to download the results of the job, and will also be sent to the callback URL associated with the job (if applicable).
 
 If the `status` parameter is included, only jobs with the specified status (`job_status`) will be listed. Valid statuses are `QUEUED`, `RUNNING`, `COMPLETE`, and `FAILED`.
 
@@ -281,8 +291,7 @@ Example response:
       "created_at": "2015-06-16T21:23:00Z",
       "start": "2015-06-16T21:09:53+00:00",
       "end": null,
-      "status": "COMPLETE",
-      "result_url": null
+      "status": "COMPLETE"
     },
     {
       "id": "55809c9c7d891cb1bc000001",
@@ -290,8 +299,7 @@ Example response:
       "created_at": "2015-06-16T22:01:00Z",
       "start": "2015-06-16T22:00:56+00:00",
       "end": null,
-      "status": "QUEUED",
-      "result_url": null
+      "status": "QUEUED"
     },
     {
       "id": "55809e237d891c07bd000001",
@@ -299,8 +307,7 @@ Example response:
       "created_at": "2015-06-16T22:07:31Z",
       "start": "2015-06-16T22:00:56+00:00",
       "end": null,
-      "status": "QUEUED",
-      "result_url": null
+      "status": "QUEUED"
     }
   ]
 }
@@ -314,7 +321,7 @@ Example response:
 GET /public/api/jobs/{job_id}
 {% endhighlight %}
 
-List details for the job denoted by `{job_id}`. See the previous section for a description of what information is included among these details.
+List details for the job denoted by `{job_id}`.
 
 Example response:
 
@@ -325,8 +332,7 @@ Example response:
   "description": "",
   "end": null,
   "identifier": "sgmt-export",
-  "organization_id": "52e7df69e206e7f84e000005",
-  "result_url": null,
+  "organization_id": "52e7df69e206e7f84e000005"
   "start": "2015-06-16T21:09:53+00:00",
   "status": "QUEUED",
   "type": "Segments Export",
@@ -342,9 +348,15 @@ Example response:
 GET /public/api/jobs/{job_id}/download
 {% endhighlight %}
 
-TODO
+Incrementally retrieve the results of the specified job after the job is finished.  
 
-Example response:
+Example of a successful response:
+
+{% highlight json %}
+TODO
+{% endhighlight %}
+
+Example of an unsuccessful response:
 
 {% highlight json %}
 TODO
