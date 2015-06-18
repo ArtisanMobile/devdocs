@@ -150,6 +150,8 @@ Request the specified user profile(s) to be exported. Note that you must pass in
 @client.export_profiles("your_app_id", "your_callback_url", shared_user_ids: ["shared_id_1", "shared_id_2"])
 {% endhighlight %}
 
+Returns a JSON object upon success that contains the job ID, which can be used to download the export when it is complete. (See the <a href="#rb-downloadJob">job download</a> section for details.)
+
 <div id="rb-segmentapi"></div>
 
 ## Segments API
