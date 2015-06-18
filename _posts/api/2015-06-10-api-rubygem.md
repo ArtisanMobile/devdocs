@@ -30,8 +30,9 @@ This document provides an overview of the Ruby gem wrapper for the Artisan API.
   </li>
   <li><a href="#rb-jobapi">Jobs</a>
     <ul>
-      <li><a href="#rb-getJob">get_job(job_id)</a></li>
       <li><a href="#rb-listJobs">list_jobs(status=nil)</a></li>
+      <li><a href="#rb-getJob">get_job(job_id)</a></li>
+      <li><a href="#rb-downloadJob">download_job(job_id, download_path)</a></li>
     </ul>
   </li>
 </ul>
@@ -190,6 +191,55 @@ Request the specified segment to be exported.
 
 ## Status API
 
+<div id="rb-listJobs"></div>
+
+### list_jobs(status=nil)
+
+#### Parameters
+
+* *(optional)* `status`: (String) If specified, only jobs with this status will be listed. Valid statuses are `QUEUED`, `RUNNING`, `COMPLETE`, and `FAILED`.
+
+List details for all jobs that have the specified status. If no status is specified, all jobs for the organization will be listed.
+
+{% highlight ruby %}
+@client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
+all_jobs = @client.list_jobs()
+completed_jobs = @client.list_jobs("COMPLETE")
+{% endhighlight %}
+
+Example response (stored in `completed_jobs`):
+
+{% highlight json %}
+{
+  "jobs": [
+    {
+      "id": "557b14cb2e62106169000002",
+      "type": "",
+      "created_at": "2015-06-12T17:20:11Z",
+      "start": "2015-06-12T17:14:17+00:00",
+      "end": null,
+      "status": "COMPLETE"
+    },
+    {
+      "id": "557b2f092e62106169000003",
+      "type": "",
+      "created_at": "2015-06-12T19:12:09Z",
+      "start": "2015-06-12T17:14:17+00:00",
+      "end": null,
+      "status": "COMPLETE"
+    },
+    {
+      "id": "557b39552e62101883000001",
+      "type": "",
+      "created_at": "2015-06-12T19:59:00Z",
+      "start": "2015-06-12T19:55:52+00:00",
+      "end": null,
+      "status": "COMPLETE"
+    }
+  ]
+}
+{% endhighlight %}
+
 <div id="rb-getJob"></div>
 
 ### get_job(job_id)
@@ -222,51 +272,28 @@ Example response:
 }
 {% endhighlight %}
 
-<div id="rb-listJobs"></div>
+<div id="rb-downloadJob"></div>
 
-### list_jobs(status=nil)
+### download_job(job_id, download_path)
 
 #### Parameters
 
-* *(optional)* `status`: (String) If specified, only jobs with this status will be listed. Valid statuses are `QUEUED`, `RUNNING`, `COMPLETE`, and `FAILED`.
+* `job_id`: (String) ID of the job you wish to retrieve details for.
+* `download_path`: (String) Path to a local file where the downloaded results will be saved. If the file exists, its previous contents will be overwritten; if it doesn't exist, it will be created.
 
-List details for all jobs that have the specified status. If no status is specified, all jobs for the organization will be listed.
+Download the results of the specified job to the file at `download_path`.
 
 {% highlight ruby %}
 @client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
-all_jobs = @client.list_jobs()
-completed_jobs = @client.list_jobs("COMPLETE")
+# ...
+# After the job has been created and the callback URL has been called,
+# indicating that the job is complete
+# ...
+@client.download_job(job_id, "/tmp/job-export-results.json")
 {% endhighlight %}
 
-Example response for `completed_jobs`:
+Example response:
 
 {% highlight json %}
-{
-  "jobs": [
-    {
-      "id": "557b14cb2e62106169000002",
-      "type": "",
-      "created_at": "2015-06-12T17:20:11Z",
-      "start": "2015-06-12T17:14:17+00:00",
-      "end": null,
-      "status": "COMPLETE"
-    },
-    {
-      "id": "557b2f092e62106169000003",
-      "type": "",
-      "created_at": "2015-06-12T19:12:09Z",
-      "start": "2015-06-12T17:14:17+00:00",
-      "end": null,
-      "status": "COMPLETE"
-    },
-    {
-      "id": "557b39552e62101883000001",
-      "type": "",
-      "created_at": "2015-06-12T19:59:00Z",
-      "start": "2015-06-12T19:55:52+00:00",
-      "end": null,
-      "status": "COMPLETE"
-    }
-  ]
-}
+TODO
 {% endhighlight %}
