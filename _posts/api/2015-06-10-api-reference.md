@@ -167,24 +167,24 @@ Example of an unsuccessful response:
 {% highlight rest %}
 POST /public/api/apps/{app_id}/users/export
 Parameters: {"ids": "id_1,id_2",
-             "callback": "callback_url"}
+             "callback_url": "your_callback_url"}
 {% endhighlight %}
 
 Request an export of the profiles denoted by `id_1,id_2`, a comma-separated string of Artisan IDs. Make sure to replace `{app_id}` with your unique application ID.
 
-Once the requested profiles export finishes, the callback URL (specified by `callback_url`) will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
+Once the requested profiles export finishes, the callback URL (specified by `your_callback_url`) will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
 
 #### Exporting Profiles by Shared User ID
 
 {% highlight rest %}
 POST /public/api/apps/{app_id}/users/shared_id/export
 Parameters: {"ids": "shared_user_id_1,shared_user_id_2",
-             "callback": "callback_url"}
+             "callback_url": "your_callback_url"}
 {% endhighlight %}
 
 Request an export of the profiles denoted by `shared_user_id_1,shared_user_id_2`, a comma-separated string of Shared User IDs. Make sure to replace `{app_id}` with your unique application ID.
 
-Once the requested profiles export finishes, the callback URL (specified by `callback_url`) will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
+Once the requested profiles export finishes, the callback URL (specified by `your_callback_url`) will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
 
 
 <div id="segments"></div>
@@ -234,7 +234,7 @@ Example response:
 
 {% highlight rest %}
 POST /public/api/apps/{app_id}/segments/{segment_id}/export
-Parameters: {"callback": "callback_url"}
+Parameters: {"callback_url": "your_callback_url"}
 {% endhighlight %}
 
 Once the requested segment export finishes, the callback URL (specified by `callback_url`) will be sent the download path for the file. This URL should point to a local server with the appropriate port open. Make sure to replace `{app_id}` with your unique application ID, and `{segment_id}` with the ID of the segment you wish to export.
