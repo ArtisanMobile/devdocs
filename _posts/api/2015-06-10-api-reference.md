@@ -33,9 +33,8 @@ This document provides an overview of the REST API endpoints for the Artisan pla
   </li>
   <li><a href="#jobs">Jobs</a>
   	<ul>
-  		<li><a href="#getJobs">Getting Details For All Jobs</a></li>
+  		<li><a href="#listJobs">Listing Jobs</a></li>
   		<li><a href="#getJob">Getting Individual Job Details</a></li>
-  		<li><a href="#getJobsByStatus">Getting Jobs By Status</a></li>
   	</ul>
   </li>
 </ul>
@@ -249,12 +248,13 @@ Example response:
 
 ## Job Endpoints
 
-<div id="getJobs"></div>
+<div id="listJobs"></div>
 
-### Getting Details For All Jobs
+### Listing Jobs
 
 {% highlight rest %}
 GET /public/api/jobs
+Optional Parameters: { "status": "job_status" }
 {% endhighlight %}
 
 List all jobs for your organization and their associated information, including:
@@ -263,7 +263,9 @@ List all jobs for your organization and their associated information, including:
 * job description
 * job status (queued, running, completed, or failed)
 * start and end times
-* the result URL. This URL points to the location from which to download the results of the job, and will also be sent to the callback URL associated with the job (if applicable). 
+* the result URL. This URL points to the location from which to download the results of the job, and will also be sent to the callback URL associated with the job (if applicable).
+
+If the `status` parameter is included, only jobs with the specified status (`job_status`) will be listed. Valid statuses are `QUEUED`, `RUNNING`, `COMPLETE`, and `FAILED`.
 
 Example response:
 
@@ -328,41 +330,3 @@ Example response:
   "updated_at": "2015-06-16T21:23:00Z"
 }
 {% endhighlight %}
-
-<div id="getJobsByStatus"></div>
-
-### Getting Jobs By Status
-
-{% highlight rest %}
-GET /public/api/jobs/status/{status}
-{% endhighlight %}
-
-List details for all jobs that have the specified status. Make sure to replace `{status}` with the desired status you wish to query for. Valid statuses are `QUEUED`, `RUNNING`, `COMPLETE`, and `FAILED`.
-
-Example response:
-
-{% highlight json %}
-{
-  "jobs": [
-    {
-      "id": "55809c9c7d891cb1bc000001",
-      "type": "Profiles Export",
-      "created_at": "2015-06-16T22:01:00Z",
-      "start": "2015-06-16T22:00:56+00:00",
-      "end": null,
-      "status": "QUEUED",
-      "result_url": null
-    },
-    {
-      "id": "55809e237d891c07bd000001",
-      "type": "Profiles Export",
-      "created_at": "2015-06-16T22:07:31Z",
-      "start": "2015-06-16T22:00:56+00:00",
-      "end": null,
-      "status": "QUEUED",
-      "result_url": null
-    }
-  ]
-}
-{% endhighlight %}
-
