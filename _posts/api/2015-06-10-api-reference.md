@@ -90,6 +90,8 @@ Example response:
 
 ## Profile Endpoints
 
+User profiles contain information about the users for an app, and can be queried using their Artisan-assigned IDs or their Shared User IDs. Multiple user profiles can be exported and downloaded as a JSON file.
+
 <div id="getProfiles"></div>
 
 ### Getting User Profile Information
@@ -168,7 +170,7 @@ Parameters: {"ids": "id_1,id_2",
              "callback": "callback_url"}
 {% endhighlight %}
 
-Request an export of the profiles denoted by `"id_1,id_2"`, a comma-separated string of Artisan IDs. Make sure to replace `{app_id}` with your unique application ID.
+Request an export of the profiles denoted by `id_1,id_2`, a comma-separated string of Artisan IDs. Make sure to replace `{app_id}` with your unique application ID.
 
 Once the requested profiles export finishes, the callback URL (specified by `callback_url`) will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
 
@@ -180,7 +182,7 @@ Parameters: {"ids": "shared_user_id_1,shared_user_id_2",
              "callback": "callback_url"}
 {% endhighlight %}
 
-Request an export of the profiles denoted by `"shared_user_id_1,shared_user_id_2"`, a comma-separated string of Shared User IDs. Make sure to replace `{app_id}` with your unique application ID.
+Request an export of the profiles denoted by `shared_user_id_1,shared_user_id_2`, a comma-separated string of Shared User IDs. Make sure to replace `{app_id}` with your unique application ID.
 
 Once the requested profiles export finishes, the callback URL (specified by `callback_url`) will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
 
