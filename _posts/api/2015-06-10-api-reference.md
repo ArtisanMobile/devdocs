@@ -271,12 +271,7 @@ GET /public/api/jobs
 Optional Parameters: { "status": "job_status" }
 {% endhighlight %}
 
-List all jobs for your organization and their associated information, including:
-
-* job ID
-* job type
-* job status
-* start and end times
+List all jobs for your organization and their associated information.
 
 If the `status` parameter is included, only jobs with the specified status (`job_status`) will be listed. Valid statuses are `QUEUED`, `RUNNING`, `COMPLETE`, and `FAILED`.
 
