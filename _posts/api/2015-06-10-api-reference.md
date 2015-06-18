@@ -189,7 +189,7 @@ Once the requested profiles export finishes, the callback URL (specified by `cal
 
 ## Segment Endpoints
 
-Segments allow you to group users into lists based on behavior, in-app events, device type, operating sytem, geography, and other user profile attributes. You can request segment information and export segments using the `/public/api/apps/{app_id}/segments/` endpoint.
+Segments allow you to group users into lists based on behavior, in-app events, device type, operating sytem, geography, and other user profile attributes. You can request segment information and export segments using the `/public/api/apps/{app_id}/segments` endpoint.
 
 <div id="listSegments"></div>
 
@@ -231,7 +231,7 @@ Example response:
 ### Exporting Segments
 
 {% highlight rest %}
-POST /public/api/apps/{app_id}/segments/{segment_id}
+POST /public/api/apps/{app_id}/segments/{segment_id}/export
 Parameters: {"callback": "callback_url"}
 {% endhighlight %}
 
@@ -246,6 +246,8 @@ Example response:
 <div id="jobs"></div>
 
 ## Job Endpoints
+
+The jobs endpoint allows you to view all jobs for your organization, with the option to filter jobs by their status (`QUEUED`, `RUNNING`, `COMPLETE`, OR `FAILED`), and download the results when the job is finished.
 
 <div id="listJobs"></div>
 
