@@ -35,6 +35,7 @@ This document provides an overview of the REST API endpoints for the Artisan pla
   	<ul>
   		<li><a href="#listJobs">Listing Jobs</a></li>
   		<li><a href="#getJob">Getting Individual Job Details</a></li>
+      <li><a href="#downloadJob">Downloading A Job</a></li>
   	</ul>
   </li>
 </ul>
@@ -104,11 +105,10 @@ Get details for a single user profile by their Artisan (device) ID. Make sure to
 #### Getting User Profile Information by Shared User ID
 
 {% highlight rest %}
-POST /public/api/apps/{app_id}/users/{user_id}
-Parameters: {"source": "custom"}
+GET /public/api/apps/{app_id}/users/shared_id/{shared_user_id}
 {% endhighlight %}
 
-Get details for a single user profile by their Shared User ID. Make sure to include the `{"source": "custom"}` parameter and replace `{app_id}` with your unique application ID. 
+Get details for a single user profile by their Shared User ID. Make sure to replace `{app_id}` with your unique application ID and `{shared_user_id}` with the shared user ID of the profile you wish to fetch.
 
 Example of a successful response:
 
@@ -163,7 +163,7 @@ Example of an unsuccessful response:
 #### Exporting Profiles by Artisan ID
 
 {% highlight rest %}
-POST /public/api/apps/{app_id}/users
+POST /public/api/apps/{app_id}/users/export
 Parameters: {"ids": "id_1,id_2",
              "callback": "callback_url"}
 {% endhighlight %}
@@ -175,9 +175,8 @@ Once the requested profiles export finishes, the callback URL (specified by `cal
 #### Exporting Profiles by Shared User ID
 
 {% highlight rest %}
-POST /public/api/apps/{app_id}/users
-Parameters: {"source": "custom",
-             "ids": "shared_user_id_1,shared_user_id_2",
+POST /public/api/apps/{app_id}/users/shared_id/export
+Parameters: {"ids": "shared_user_id_1,shared_user_id_2",
              "callback": "callback_url"}
 {% endhighlight %}
 
@@ -329,4 +328,20 @@ Example response:
   "type": "Segments Export",
   "updated_at": "2015-06-16T21:23:00Z"
 }
+{% endhighlight %}
+
+<div id="downloadJob"></div>
+
+### Downloading A Job
+
+{% highlight rest %}
+GET /public/api/jobs/{job_id}/download
+{% endhighlight %}
+
+TODO
+
+Example response:
+
+{% highlight json %}
+TODO
 {% endhighlight %}
