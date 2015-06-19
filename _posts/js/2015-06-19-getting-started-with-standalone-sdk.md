@@ -28,3 +28,15 @@ ArtisanSDK.send("startArtisan", YOUR_APP_ID, POST_INTERVAL, TRACER_INTERVAL, YOU
 <div id="collectinganalytics"></div>
 
 ## Collecting Analytics
+
+### Automatic Instrumentation
+
+Once the Javascript Web SDK code block is included in your HTML document, Artisan will automatically track the following events:
+
+* Pageviews will be recorded with URL of the current document. If no document name can be determined, the pageview will be omitted.
+* All `click` events on all HTML elements with click handler(s) assigned will be recorded, whether dynamically loaded or included at the time the page is loaded.
+* All `click` events on anchors and buttons will be sent even if no click handler is defined.
+* All `click` events will be sent using the following attributes (in priority order) as an identifier: "name", "ng:click", "ng-click", "href", "id"
+* If you prefer to assign your own identifier, you can add an attribute called "artisanName" which will override the identifier collected from the attributes listed above.
+
+These events will appear in the Artisan Events and Retention reports.
