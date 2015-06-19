@@ -13,8 +13,7 @@ This document provides an overview of all of the API calls available within the 
 ## Table of Contents
 
 <ul>
-  <li><a href="#sdkobject">The ArtisanSDK Object</a></li>
-  <li><a href="#sendmethod">The send() Method</a></li>
+  <li><a href="#artisansendmethod">The send() Method</a></li>
   <li><a href="#sendcalls">Functions To Call Through send()</a>
     <ul>
       <li><a href="#sdkcontrol">SDK Control</a>
@@ -43,13 +42,19 @@ This document provides an overview of all of the API calls available within the 
   </li>
 </ul>
 
-<div id="sdkobject"></div>
-
-## The ArtisanSDK Object
-
-<div id="sendmethod"></div>
+<div id="artisansendmethod"></div>
 
 ## The send() Method
+
+### ArtisanSDK.send(functionName, parameter1, parameter2, ...)
+
+### Parameters
+
+* functionName: (String) The name of the function being called
+
+* parameter1, parameter2, ... : (varies per function) The parameters to pass to the given function
+
+The `send()` method allows all of the functionality of Artisan's analytics to be condensed into one compact function. The first parameter `send()` takes is the name of the desired function call as a string. The subsequent parameters will all be sent as parameters to the function.
 
 <div id="sendcalls"></div>
 
