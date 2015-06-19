@@ -66,19 +66,56 @@ The `send()` method allows all of the functionality of Artisan's analytics to be
 
 <div id="startartisan"></div>
 
-### send('startArtisan', appId, postInterval, tracerInterval, screenName)
+### send("startArtisan", appId, postInterval, tracerInterval, screenName)
+
+#### Parameters
+
+* appId: (String) The website's ID, a 24-character alphanumerical String
+
+* postInterval: (Int) Sets the interval, in milliseconds, at which collected analytics events are sent to Artisan [Optional, may be null]
+
+* tracerInterval: (Int) Sets the interval, in milliseconds, at which the SDK will send the current user profile information to Artisan [Optional, may be null]
+
+* screenName: (String) A custom name to use in place of the URL domain [Optional, may be null]
+
+This function kickstarts the Artisan analytics functionality. The appId parameter is the only required parameter, and is client-generated. If the appId is not included, incorrect, or null, then NO analytics will be collected.
+
+{% highlight javascript %}
+ArtisanSDK.send("startArtisan", "yourAppId");
+ArtisanSDK.send("startArtisan", "yourAppId", 5000);
+ArtisanSDK.send("startArtisan", "yourAppId", 5000, 3600000);
+ArtisanSDK.send("startArtisan", "yourAppId", 5000, 3600000, "yourScreenName");
+{% endhighlight %}
 
 <div id="turnoff"></div>
 
-### send('turnArtisanOff')
+### send("turnArtisanOff")
+
+Turn off automatic analytics tracking.
+
+{% highlight javascript %}
+ArtisanSDK.send("turnArtisanOff");
+{% endhighlight %}
 
 <div id="turnon"></div>
 
-### send('turnArtisanOn')
+### send("turnArtisanOn")
+
+Turn on automatic analytics tracking.
+
+{% highlight javascript %}
+ArtisanSDK.send("turnArtisanOn");
+{% endhighlight %}
 
 <div id="removepushstate"></div>
 
-### send('removePushStateListener')
+### send("removePushStateListener")
+
+Turn off page view events for push states.
+
+{% highlight javascript %}
+ArtisanSDK.send("removePushStateListener");
+{% endhighlight %}
 
 <div id="trackingapi"></div>
 
@@ -155,7 +192,7 @@ ArtisanSDK.send("clearProfileVariable", "firstName");
 
 <div id="clearprofile"></div>
 
-### send('clearProfile')
+### send("clearProfile")
 
 Clear out all previously specified profile information for the current user.
 
