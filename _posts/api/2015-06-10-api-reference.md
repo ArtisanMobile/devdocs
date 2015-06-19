@@ -268,12 +268,15 @@ The jobs endpoint allows you to view all jobs for your organization, filter jobs
 
 {% highlight rest %}
 GET /public/api/jobs
-Optional Parameters: { "status": "job_status" }
 {% endhighlight %}
 
 List all jobs for your organization and their associated information.
 
-If the `status` parameter is included, only jobs with the specified status (`job_status`) will be listed. Valid statuses are `QUEUED`, `RUNNING`, `COMPLETE`, and `FAILED`.
+{% highlight rest %}
+GET /public/api/jobs?status={job_status}
+{% endhighlight %}
+
+List all jobs with the status specified by `{job_status}`. Valid statuses are `QUEUED`, `RUNNING`, `COMPLETE`, and `FAILED`.
 
 Example response:
 
@@ -281,28 +284,28 @@ Example response:
 {
   "jobs": [
     {
-      "id": "558093b47d891c3089000001",
+      "id": "5584469c7d891c1d06000001",
       "type": "Segments Export",
-      "created_at": "2015-06-16T21:23:00Z",
-      "start": "2015-06-16T21:09:53+00:00",
+      "created_at": "2015-06-19T16:43:08Z",
+      "start": "2015-06-19T16:33:56+00:00",
+      "end": null,
+      "status": "QUEUED"
+    },
+    {
+      "id": "55844c787d891c7f56000001",
+      "type": "Segments Export",
+      "created_at": "2015-06-19T17:08:08Z",
+      "start": "2015-06-19T17:04:16+00:00",
+      "end": null,
+      "status": "QUEUED"
+    },
+    {
+      "id": "5584566b7d891ce0ab000001",
+      "type": "Segments Export",
+      "created_at": "2015-06-19T17:50:35Z",
+      "start": "2015-06-19T17:50:10+00:00",
       "end": null,
       "status": "COMPLETE"
-    },
-    {
-      "id": "55809c9c7d891cb1bc000001",
-      "type": "Profiles Export",
-      "created_at": "2015-06-16T22:01:00Z",
-      "start": "2015-06-16T22:00:56+00:00",
-      "end": null,
-      "status": "QUEUED"
-    },
-    {
-      "id": "55809e237d891c07bd000001",
-      "type": "Profiles Export",
-      "created_at": "2015-06-16T22:07:31Z",
-      "start": "2015-06-16T22:00:56+00:00",
-      "end": null,
-      "status": "QUEUED"
     }
   ]
 }
@@ -322,16 +325,16 @@ Example response:
 
 {% highlight json %}
 {
-  "_id": "558093b47d891c3089000001",
-  "created_at": "2015-06-16T21:23:00Z",
+  "_id": "5584566b7d891ce0ab000001",
+  "created_at": "2015-06-19T17:50:35Z",
   "description": "",
   "end": null,
   "identifier": "sgmt-export",
-  "organization_id": "52e7df69e206e7f84e000005"
-  "start": "2015-06-16T21:09:53+00:00",
-  "status": "QUEUED",
+  "organization_id": "52e7df69e206e7f84e000005",
+  "start": "2015-06-19T17:50:10+00:00",
+  "status": "COMPLETE",
   "type": "Segments Export",
-  "updated_at": "2015-06-16T21:23:00Z"
+  "updated_at": "2015-06-19T17:51:55Z"
 }
 {% endhighlight %}
 

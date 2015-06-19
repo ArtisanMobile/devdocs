@@ -133,12 +133,12 @@ Example response:
 
 <div id="rb-exportProfiles"></div>
 
-### export_profiles(application_id, callback_url, artisan_ids: nil, shared_user_ids: nil)
+### export_profiles(application_id, callback_url=nil, artisan_ids: nil, shared_user_ids: nil)
 
 #### Parameters
 
 * `application_id`: (String) Application ID for your app.
-* `callback_url`: (String) Once the job finishes, this URL will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
+* *(optional)* `callback_url`: (String) Once the job finishes, this URL will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
 * `artisan_ids`: (array) Device IDs for the profiles you want to fetch.
 * `shared_user_ids`: (array) Shared User IDs for the profiles you want to fetch.
 
@@ -174,13 +174,13 @@ puts segments
 
 <div id="rb-segmentExport"></div>
 
-### export_segment(application_id, segment_id, callback_url)
+### export_segment(application_id, segment_id, callback_url=nil)
 
 #### Parameters
 
 * `application_id`: (String) Application ID for your app.
 * `segment_id`: (String) ID of the segment to be exported.
-* `callback_url`: (String) Once the job finishes, this URL will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
+* *(optional)* `callback_url`: (String) Once the job finishes, this URL will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
 
 Request the specified segment to be exported.
 
@@ -215,26 +215,26 @@ Example response (stored in `completed_jobs`):
 {
   "jobs": [
     {
-      "id": "557b14cb2e62106169000002",
-      "type": "",
-      "created_at": "2015-06-12T17:20:11Z",
-      "start": "2015-06-12T17:14:17+00:00",
+      "id": "5584469c7d891c1d06000001",
+      "type": "Segments Export",
+      "created_at": "2015-06-19T16:43:08Z",
+      "start": "2015-06-19T16:33:56+00:00",
       "end": null,
-      "status": "COMPLETE"
+      "status": "QUEUED"
     },
     {
-      "id": "557b2f092e62106169000003",
-      "type": "",
-      "created_at": "2015-06-12T19:12:09Z",
-      "start": "2015-06-12T17:14:17+00:00",
+      "id": "55844c787d891c7f56000001",
+      "type": "Segments Export",
+      "created_at": "2015-06-19T17:08:08Z",
+      "start": "2015-06-19T17:04:16+00:00",
       "end": null,
-      "status": "COMPLETE"
+      "status": "QUEUED"
     },
     {
-      "id": "557b39552e62101883000001",
-      "type": "",
-      "created_at": "2015-06-12T19:59:00Z",
-      "start": "2015-06-12T19:55:52+00:00",
+      "id": "5584566b7d891ce0ab000001",
+      "type": "Segments Export",
+      "created_at": "2015-06-19T17:50:35Z",
+      "start": "2015-06-19T17:50:10+00:00",
       "end": null,
       "status": "COMPLETE"
     }
@@ -261,16 +261,16 @@ Example response:
 
 {% highlight json %}
 {
-  "jobs": [
-    {
-      "id": "your_job_id",
-      "type": "",
-      "created_at": "2015-06-12T17:14:58Z",
-      "start": "2015-06-12T17:14:17+00:00",
-      "end": null,
-      "status": "RUNNING"
-    }
-  ]
+  "_id": "5584566b7d891ce0ab000001",
+  "created_at": "2015-06-19T17:50:35Z",
+  "description": "",
+  "end": null,
+  "identifier": "sgmt-export",
+  "organization_id": "52e7df69e206e7f84e000005",
+  "start": "2015-06-19T17:50:10+00:00",
+  "status": "COMPLETE",
+  "type": "Segments Export",
+  "updated_at": "2015-06-19T17:51:55Z"
 }
 {% endhighlight %}
 
