@@ -8,9 +8,18 @@ description: "Getting Started with the Artisan Javascript Web SDK"
 
 # Getting Started with the Artisan Javascript Web SDK
 
+Artisan can now be integrated into your websites and web apps. All of the power and capability of our mobile SDK is now available in our web SDK. This capability includes:
+
+* Automatic analytics collection for all pageviews, buttons, and links.
+* Ability to update Artisan User Profile data.
+* Analytics tracking for custom events
+
+This guide walks through how to get the Artisan Web SDK integrated with your website or web app, as well as the best way to use the Artisan Javascript APIs.
+
 <ul>
   <li><a href="#installation">Installation</a></li>
   <li><a href="#collectinganalytics">Collecting Analytics</a></li>
+  <li><a href="#manualinstrumentation">Manual Instrumentation</a></li>
 </ul>
 
 <div id="installation"></div>
@@ -40,6 +49,8 @@ Once the Javascript Web SDK code block is included in your HTML document, Artisa
 * If you prefer to assign your own identifier, you can add an attribute called "artisanName" which will override the identifier collected from the attributes listed above.
 
 These events will appear in the Artisan Events and Retention reports.
+
+<div id="manualinstrumentation"></div>
 
 ### Manuel Instrumentation
 
