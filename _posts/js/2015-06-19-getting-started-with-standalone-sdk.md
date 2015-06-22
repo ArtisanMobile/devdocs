@@ -19,9 +19,9 @@ description: "Getting Started with the Artisan Javascript Web SDK"
 
 {% highlight html %}
 <script type="text/javascript">
-!function(e){window.ArtisanSDK={sendQ:[],setProfileQ:[],setProfileVariable:function(){ArtisanSDK.setProfileQ.push(arguments)},send:function(){ArtisanSDK.sendQ.push(arguments)}},e?ArtisanSDK.send("turnArtisanOff"):(Element.prototype._addEventListener=Element.prototype.addEventListener,Element.prototype.addEventListener=function(e,t,n){if("click"===e){var s=function(n){ArtisanSDK.send("trackWebViewElementEvent",e,n.target),t.apply(this,arguments)};this._addEventListener(e,s,n)}else this._addEventListener(e,t,n)});var t=document.createElement("script");t.async=!0,t.src="http://version.artisantools.com.s3.amazonaws.com/ArtisanSDK-web.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)}();
+  !function(e){window.ArtisanSDK={sendQ:[],setProfileQ:[],setProfileVariable:function(){ArtisanSDK.setProfileQ.push(arguments)},send:function(){ArtisanSDK.sendQ.push(arguments)}},e?ArtisanSDK.send("turnArtisanOff"):(Element.prototype._addEventListener=Element.prototype.addEventListener,Element.prototype.addEventListener=function(e,t,n){if("click"===e){var s=function(n){ArtisanSDK.send("trackWebViewElementEvent",e,n.target),t.apply(this,arguments)};this._addEventListener(e,s,n)}else this._addEventListener(e,t,n)});var t=document.createElement("script");t.async=!0,t.src="http://version.artisantools.com.s3.amazonaws.com/ArtisanSDK-web.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)}();
 
-ArtisanSDK.send("startArtisan", YOUR_APP_ID, POST_INTERVAL, TRACER_INTERVAL, YOUR_SCREEN_NAME);
+  ArtisanSDK.send("startArtisan", YOUR_APP_ID, POST_INTERVAL, TRACER_INTERVAL, YOUR_SCREEN_NAME);
 </script>
 {% endhighlight %}
 
@@ -40,3 +40,14 @@ Once the Javascript Web SDK code block is included in your HTML document, Artisa
 * If you prefer to assign your own identifier, you can add an attribute called "artisanName" which will override the identifier collected from the attributes listed above.
 
 These events will appear in the Artisan Events and Retention reports.
+
+### Manuel Instrumentation
+
+Artisan also provides the ability to manually track analytics events within your Javascript code. The [send('trackEvent', eventName)]({% post_url js/2015-06-18-standalone-sdk-reference-guide %}#trackevent) and [send('trackEvent', eventName, parameters)]({% post_url js/2015-06-18-standalone-sdk-reference-guide %}#trackevent) methods are available to record any events and bundle them with additional context. You can then bind these API calls to event listeners or call them manually to send additional information to Artisan.
+
+
+<style type="text/css">
+#main .main-wrapper article pre {
+  word-wrap: break-word !important;
+}
+</style>
