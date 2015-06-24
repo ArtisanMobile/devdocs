@@ -251,8 +251,11 @@ Example response:
 
 {% highlight json %}
 {
-  "message": "Job queued successfully.",
-  "job": "558093b47d891c3089000001"
+  "response": {
+    "message": "Job queued successfully.",
+    "job": "558093b47d891c3089000001"
+  },
+  "success": "True"
 }
 {% endhighlight %}
 
@@ -351,6 +354,59 @@ Retrieve the results of the specified job after the job is finished.
 Example response:
 
 {% highlight json %}
-TODO
+{
+  "artisanUserIds": [
+    {
+      "minutesFromGMT": "-240",
+      "appVersion": "1.0",
+      "osName": "iPhone OS",
+      "sdkVersion": "2.2.8",
+      "pushEnabled": "NO",
+      "deviceToken": "02479158-4741-48ac-8562-532f7d4a3208",
+      "interfaceIdiom": "iPad",
+      "appBuild": "2.0",
+      "artisanAppId": "558ad2897d891c541a000001",
+      "lastSessionDate": "",
+      "geo-administrativeArea": "PA",
+      "age": "29",
+      "language": "en",
+      "artisanId": "02479158-4741-48ac-8562-532f7d4a3208",
+      "artisanSessionCount": "1",
+      "userSessionCount": "1",
+      "sharedUserId": "2e899294-e839-45e9-8129-80c82313e32c",
+      "geo-countryCode": "US",
+      "osVersion": "8.0.2",
+      "currentSegments": "558ada6e7d891cd34e000002",
+      "geo-locality": "Philadelphia",
+      "hardwareType": "iPhone3,2",
+      "geo-coordinate": "-5.0000,120.0000"
+    },
+    {
+      "minutesFromGMT": "240",
+      "appVersion": "1.5",
+      "osName": "iPhone OS",
+      "sdkVersion": "2.2.8",
+      "interfaceIdiom": "iPhone",
+      "deviceToken": "037a17ab-e989-4a08-8841-0a5edb9b6a02",
+      "pushEnabled": "YES",
+      "appBuild": "2.0",
+      "lastSessionDate": "2015-06-24T06:54:36Z",
+      "artisanAppId": "558ad2897d891c541a000001",
+      "geo-administrativeArea": "PA",
+      "age": "38",
+      "language": "de",
+      "artisanId": "037a17ab-e989-4a08-8841-0a5edb9b6a02",
+      "artisanSessionCount": "2",
+      "userSessionCount": "2",
+      "sharedUserId": "95920574-e6c8-470b-8834-95ce68b67d53",
+      "geo-countryCode": "US",
+      "osVersion": "7.1.2",
+      "currentSegments": "558ada6e7d891cd34e000002",
+      "geo-locality": "Philadelphia",
+      "hardwareType": "iPhone5,1",
+      "geo-coordinate": "-30.0000,-71.0000"
+    }
+  ]
+}
 {% endhighlight %}
 
