@@ -150,7 +150,19 @@ Request the specified user profile(s) to be exported. Note that you must pass in
 @client.export_profiles("your_app_id", "your_callback_url", shared_user_ids: ["shared_id_1", "shared_id_2"])
 {% endhighlight %}
 
-Returns a JSON object upon success that contains the job ID, which can be used to download the export when it is complete. (See the <a href="#rb-downloadJob">job download</a> section for details.)
+Upon success, returns a JSON object that contains the job ID, which can be used to download the export when it is complete. (See the <a href="#rb-downloadJob">job download</a> section for details.)
+
+Example response:
+
+{% highlight json %}
+{
+  "response": {
+    "message": "Job queued successfully.",
+    "job": "558093b47d891c3089000001"
+  },
+  "success": "True"
+}
+{% endhighlight %}
 
 <div id="rb-segmentapi"></div>
 
@@ -187,6 +199,20 @@ Request the specified segment to be exported.
 {% highlight ruby %}
 @client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
 @client.export_segment(app,segment,"your_callback_url")
+{% endhighlight %}
+
+Upon success, returns a JSON object that contains the job ID, which can be used to download the export when it is complete. (See the <a href="#rb-downloadJob">job download</a> section for details.)
+
+Example response:
+
+{% highlight json %}
+{
+  "response": {
+    "message": "Job queued successfully.",
+    "job": "558093b47d891c3089000001"
+  },
+  "success": "True"
+}
 {% endhighlight %}
 
 <div id="rb-jobapi"></div>
@@ -281,7 +307,7 @@ Example response:
 #### Parameters
 
 * `job_id`: (String) ID of the job you wish to retrieve details for.
-* `download_path`: (String) Path to a local file where the downloaded results will be saved. If the file exists, its previous contents will be overwritten; if it doesn't exist, it will be created.
+* `download_path`: (String) Path to a local file where the downloaded results will be saved. If a file already exists at that path, its previous contents will be overwritten; if the file doesn't exist, it will be created.
 
 Download the results of the specified job to the file at `download_path`.
 
@@ -291,11 +317,64 @@ Download the results of the specified job to the file at `download_path`.
 # After the job has been created and the callback URL has been called,
 # indicating that the job is complete
 # ...
-@client.download_job(job_id, "/tmp/job-export-results.json")
+@client.download_job("job_id", "/tmp/job-export-results.json")
 {% endhighlight %}
 
-Example response:
+Example response (downloading the results of a segment export job):
 
 {% highlight json %}
-TODO
+{
+  "artisanUserIds": [
+    {
+      "minutesFromGMT": "-240",
+      "appVersion": "1.0",
+      "osName": "iPhone OS",
+      "sdkVersion": "2.2.8",
+      "pushEnabled": "NO",
+      "deviceToken": "02479158-4741-48ac-8562-532f7d4a3208",
+      "interfaceIdiom": "iPad",
+      "appBuild": "2.0",
+      "artisanAppId": "558ad2897d891c541a000001",
+      "lastSessionDate": "",
+      "geo-administrativeArea": "PA",
+      "age": "29",
+      "language": "en",
+      "artisanId": "02479158-4741-48ac-8562-532f7d4a3208",
+      "artisanSessionCount": "1",
+      "userSessionCount": "1",
+      "sharedUserId": "2e899294-e839-45e9-8129-80c82313e32c",
+      "geo-countryCode": "US",
+      "osVersion": "8.0.2",
+      "currentSegments": "558ada6e7d891cd34e000002",
+      "geo-locality": "Philadelphia",
+      "hardwareType": "iPhone3,2",
+      "geo-coordinate": "-5.0000,120.0000"
+    },
+    {
+      "minutesFromGMT": "240",
+      "appVersion": "1.5",
+      "osName": "iPhone OS",
+      "sdkVersion": "2.2.8",
+      "interfaceIdiom": "iPhone",
+      "deviceToken": "037a17ab-e989-4a08-8841-0a5edb9b6a02",
+      "pushEnabled": "YES",
+      "appBuild": "2.0",
+      "lastSessionDate": "2015-06-24T06:54:36Z",
+      "artisanAppId": "558ad2897d891c541a000001",
+      "geo-administrativeArea": "PA",
+      "age": "38",
+      "language": "de",
+      "artisanId": "037a17ab-e989-4a08-8841-0a5edb9b6a02",
+      "artisanSessionCount": "2",
+      "userSessionCount": "2",
+      "sharedUserId": "95920574-e6c8-470b-8834-95ce68b67d53",
+      "geo-countryCode": "US",
+      "osVersion": "7.1.2",
+      "currentSegments": "558ada6e7d891cd34e000002",
+      "geo-locality": "Philadelphia",
+      "hardwareType": "iPhone5,1",
+      "geo-coordinate": "-30.0000,-71.0000"
+    }
+  ]
+}
 {% endhighlight %}
