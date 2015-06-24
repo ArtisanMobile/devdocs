@@ -351,7 +351,7 @@ GET /public/api/jobs/{job_id}/download
 
 Retrieve the results of the specified job after the job is finished.  
 
-Example response:
+Example response (downloading the results of a segment export job):
 
 {% highlight json %}
 {
