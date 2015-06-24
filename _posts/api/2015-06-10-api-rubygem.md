@@ -314,8 +314,7 @@ Download the results of the specified job to the file at `download_path`.
 {% highlight ruby %}
 @client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
 # ...
-# After the job has been created and the callback URL has been called,
-# indicating that the job is complete
+# After the job has been created and completed
 # ...
 @client.download_job("job_id", "/tmp/job-export-results.json")
 {% endhighlight %}
