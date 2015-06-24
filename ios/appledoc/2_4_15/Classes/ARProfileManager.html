@@ -1,0 +1,1467 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>ARProfileManager Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">ArtisanSDK </a></h1>
+				<a id="developerHome" href="../index.html">appRenaissance</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">ARProfileManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/clearProfile">&nbsp;&nbsp;&nbsp;&nbsp;+ clearProfile</option>
+	
+	<option value="//api/name/enableProfileAnalytics:">&nbsp;&nbsp;&nbsp;&nbsp;+ enableProfileAnalytics:</option>
+	
+	<option value="//api/name/registerDateTime:">&nbsp;&nbsp;&nbsp;&nbsp;+ registerDateTime:</option>
+	
+	<option value="//api/name/registerDateTime:withValue:">&nbsp;&nbsp;&nbsp;&nbsp;+ registerDateTime:withValue:</option>
+	
+	<option value="//api/name/registerLocation:">&nbsp;&nbsp;&nbsp;&nbsp;+ registerLocation:</option>
+	
+	<option value="//api/name/registerLocation:withValue:">&nbsp;&nbsp;&nbsp;&nbsp;+ registerLocation:withValue:</option>
+	
+	<option value="//api/name/registerNumber:">&nbsp;&nbsp;&nbsp;&nbsp;+ registerNumber:</option>
+	
+	<option value="//api/name/registerNumber:withValue:">&nbsp;&nbsp;&nbsp;&nbsp;+ registerNumber:withValue:</option>
+	
+	<option value="//api/name/registerString:">&nbsp;&nbsp;&nbsp;&nbsp;+ registerString:</option>
+	
+	<option value="//api/name/registerString:withValue:">&nbsp;&nbsp;&nbsp;&nbsp;+ registerString:withValue:</option>
+	
+	<option value="//api/name/setDateTimeValue:forVariable:">&nbsp;&nbsp;&nbsp;&nbsp;+ setDateTimeValue:forVariable:</option>
+	
+	<option value="//api/name/setGender:">&nbsp;&nbsp;&nbsp;&nbsp;+ setGender:</option>
+	
+	<option value="//api/name/setLocationValue:forVariable:">&nbsp;&nbsp;&nbsp;&nbsp;+ setLocationValue:forVariable:</option>
+	
+	<option value="//api/name/setNumberValue:forVariable:">&nbsp;&nbsp;&nbsp;&nbsp;+ setNumberValue:forVariable:</option>
+	
+	<option value="//api/name/setSharedUserId:">&nbsp;&nbsp;&nbsp;&nbsp;+ setSharedUserId:</option>
+	
+	<option value="//api/name/setStringValue:forVariable:">&nbsp;&nbsp;&nbsp;&nbsp;+ setStringValue:forVariable:</option>
+	
+	<option value="//api/name/setUserAddress:">&nbsp;&nbsp;&nbsp;&nbsp;+ setUserAddress:</option>
+	
+	<option value="//api/name/setUserAge:">&nbsp;&nbsp;&nbsp;&nbsp;+ setUserAge:</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearProfile">clearProfile</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enableProfileAnalytics:">enableProfileAnalytics:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerDateTime:">registerDateTime:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerDateTime:withValue:">registerDateTime:withValue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerLocation:">registerLocation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerLocation:withValue:">registerLocation:withValue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerNumber:">registerNumber:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerNumber:withValue:">registerNumber:withValue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerString:">registerString:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerString:withValue:">registerString:withValue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDateTimeValue:forVariable:">setDateTimeValue:forVariable:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setGender:">setGender:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setLocationValue:forVariable:">setLocationValue:forVariable:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setNumberValue:forVariable:">setNumberValue:forVariable:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setSharedUserId:">setSharedUserId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setStringValue:forVariable:">setStringValue:forVariable:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setUserAddress:">setUserAddress:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setUserAge:">setUserAge:</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="ARProfileManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">ARProfileManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">ARProfileManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Manages the Artisan Profiling and Segmentation capability. This includes:</p>
+
+<ul>
+<li>Setting user information for use in targeting experiments and personalizing content.</li>
+<li>Collecting user information for analytics reporting and segmentation.</li>
+</ul>
+
+
+<p>ARProfileManager is a singleton that is automatically initialized when your app starts.  Use ARProfileManager to manage the personalization profile for the current user from app inception to completion.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setSharedUserId:">+&nbsp;setSharedUserId:</a></code>
+		<span class="tooltip"><p>Specify an external User ID for the current user.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setUserAge:">+&nbsp;setUserAge:</a></code>
+		<span class="tooltip"><p>Specify the age for the current user.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setUserAddress:">+&nbsp;setUserAddress:</a></code>
+		<span class="tooltip"><p>Specify the address for the current user.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setGender:">+&nbsp;setGender:</a></code>
+		<span class="tooltip"><p>Specify the gender of the current user.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/registerString:">+&nbsp;registerString:</a></code>
+		<span class="tooltip"><p>Register a custom profile variable for this user.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/registerNumber:">+&nbsp;registerNumber:</a></code>
+		<span class="tooltip"><p>Register a custom profile variable for this user.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/registerDateTime:">+&nbsp;registerDateTime:</a></code>
+		<span class="tooltip"><p>Register a custom profile variable for this user.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/registerLocation:">+&nbsp;registerLocation:</a></code>
+		<span class="tooltip"><p>Register a custom profile variable for this user.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/registerString:withValue:">+&nbsp;registerString:withValue:</a></code>
+		<span class="tooltip"><p>Register a custom profile variable for this user.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/registerNumber:withValue:">+&nbsp;registerNumber:withValue:</a></code>
+		<span class="tooltip"><p>Register a custom profile variable for this user.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/registerDateTime:withValue:">+&nbsp;registerDateTime:withValue:</a></code>
+		<span class="tooltip"><p>Register a custom profile variable for this user.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/registerLocation:withValue:">+&nbsp;registerLocation:withValue:</a></code>
+		<span class="tooltip"><p>Register a custom profile variable for this user.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setStringValue:forVariable:">+&nbsp;setStringValue:forVariable:</a></code>
+		<span class="tooltip"><p>Set or update the value associated with a custom string profile variable.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setNumberValue:forVariable:">+&nbsp;setNumberValue:forVariable:</a></code>
+		<span class="tooltip"><p>Set or update the value associated with a custom number profile variable.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setDateTimeValue:forVariable:">+&nbsp;setDateTimeValue:forVariable:</a></code>
+		<span class="tooltip"><p>Set or update the value associated with a custom date profile variable.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setLocationValue:forVariable:">+&nbsp;setLocationValue:forVariable:</a></code>
+		<span class="tooltip"><p>Set or update the value associated with a custom location profile variable.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enableProfileAnalytics:">+&nbsp;enableProfileAnalytics:</a></code>
+		<span class="tooltip"><p>Specify whether to submit user profile information to Artisan Analytics.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/clearProfile">+&nbsp;clearProfile</a></code>
+		<span class="tooltip"><p>Clear out all previously specified profile information.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/clearProfile" title="clearProfile"></a>
+	<h3 class="subsubtitle method-title">clearProfile</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Clear out all previously specified profile information.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)clearProfile</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Clear out all previously specified profile information.</p>
+
+<p>Use this method to clear out all data previously specified for the current user, including any data set via <a href="#//api/name/setSharedUserId:">setSharedUserId:</a>, <a href="#//api/name/setUserAge:">setUserAge:</a>, <a href="#//api/name/setUserAddress:">setUserAddress:</a>, <a href="#//api/name/setGender:">setGender:</a>, <a href="#//api/name/setUserAddress:">setUserAddress:</a>, and setValue:forVariable:.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARProfileManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/enableProfileAnalytics:" title="enableProfileAnalytics:"></a>
+	<h3 class="subsubtitle method-title">enableProfileAnalytics:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Specify whether to submit user profile information to Artisan Analytics.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)enableProfileAnalytics:(BOOL)<em>enabled</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>enabled</em></dt>
+			<dd><p>Whether to enable collection of user profile data by Artisan Analytics.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Specify whether to submit user profile information to Artisan Analytics.</p>
+
+<p>The user profile information collected via <a href="#//api/name/setSharedUserId:">setSharedUserId:</a>, <a href="#//api/name/setUserAge:">setUserAge:</a>, <a href="#//api/name/setUserAddress:">setUserAddress:</a>, setGender, and setValue:forVariable: is sent by default to Artisan Analytics to enrich the experiment results.  Use this API call to deactivate (or reactivate) collection of this data.</p>
+
+<p>If profile data is not enabled for analytics collection, it can still be used to target experiments to specific user segments.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARProfileManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/registerDateTime:" title="registerDateTime:"></a>
+	<h3 class="subsubtitle method-title">registerDateTime:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Register a custom profile variable for this user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)registerDateTime:(NSString *)<em>variableName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>variableName</em></dt>
+			<dd><p>Name of the variable to register for the current user.  Valid characters for this name include [0-9],[a-z],[A-Z], &ndash;, and _.  Any other characters will automatically be stripped out.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Register a custom profile variable for this user.</p>
+
+<p>This custom variable will be included in this user&rsquo;s personalization profile, and can be used for segmentation, targeting, and reporting purposes.</p>
+
+<p>Once registered, the value for this variable can be set using <a href="#//api/name/setDateTimeValue:forVariable:">setDateTimeValue:forVariable:</a>.  The default value is nil.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARProfileManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/registerDateTime:withValue:" title="registerDateTime:withValue:"></a>
+	<h3 class="subsubtitle method-title">registerDateTime:withValue:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Register a custom profile variable for this user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)registerDateTime:(NSString *)<em>variableName</em> withValue:(NSDate *)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>variableName</em></dt>
+			<dd><p>Name of the variable to register for the current user.  Valid characters for this name include [0-9],[a-z],[A-Z], &ndash;, and _.  Any other characters will automatically be stripped out.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>Initial value for the variable.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Register a custom profile variable for this user.</p>
+
+<p>This custom variable will be included in this user&rsquo;s personalization profile, and can be used for segmentation, targeting, and reporting purposes.</p>
+
+<p>Once registered, the value for this variable can be set using <a href="#//api/name/setDateTimeValue:forVariable:">setDateTimeValue:forVariable:</a>.  The default value is nil.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARProfileManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/registerLocation:" title="registerLocation:"></a>
+	<h3 class="subsubtitle method-title">registerLocation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Register a custom profile variable for this user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)registerLocation:(NSString *)<em>variableName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>variableName</em></dt>
+			<dd><p>Name of the variable to register for the current user.  Valid characters for this name include [0-9],[a-z],[A-Z], &ndash;, and _.  Any other characters will automatically be stripped out.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Register a custom profile variable for this user.</p>
+
+<p>This custom variable will be included in this user&rsquo;s personalization profile, and can be used for segmentation, targeting, and reporting purposes.</p>
+
+<p>Once registered, the value for this variable can be set using <a href="#//api/name/setLocationValue:forVariable:">setLocationValue:forVariable:</a>.  The default value is nil.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARProfileManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/registerLocation:withValue:" title="registerLocation:withValue:"></a>
+	<h3 class="subsubtitle method-title">registerLocation:withValue:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Register a custom profile variable for this user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)registerLocation:(NSString *)<em>variableName</em> withValue:(CLLocationCoordinate2D)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>variableName</em></dt>
+			<dd><p>Name of the variable to register for the current user.  Valid characters for this name include [0-9],[a-z],[A-Z], &ndash;, and _.  Any other characters will automatically be stripped out.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>Initial value for the variable.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Register a custom profile variable for this user.</p>
+
+<p>This custom variable will be included in this user&rsquo;s personalization profile, and can be used for segmentation, targeting, and reporting purposes.</p>
+
+<p>Once registered, the value for this variable can be set using <a href="#//api/name/setLocationValue:forVariable:">setLocationValue:forVariable:</a>.  The default value is nil.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARProfileManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/registerNumber:" title="registerNumber:"></a>
+	<h3 class="subsubtitle method-title">registerNumber:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Register a custom profile variable for this user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)registerNumber:(NSString *)<em>variableName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>variableName</em></dt>
+			<dd><p>Name of the variable to register for the current user.  Valid characters for this name include [0-9],[a-z],[A-Z], &ndash;, and _.  Any other characters will automatically be stripped out.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Register a custom profile variable for this user.</p>
+
+<p>This custom variable will be included in this user&rsquo;s personalization profile, and can be used for segmentation, targeting, and reporting purposes.</p>
+
+<p>Once registered, the value for this variable can be set using <a href="#//api/name/setNumberValue:forVariable:">setNumberValue:forVariable:</a>.  The default value is nil.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARProfileManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/registerNumber:withValue:" title="registerNumber:withValue:"></a>
+	<h3 class="subsubtitle method-title">registerNumber:withValue:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Register a custom profile variable for this user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)registerNumber:(NSString *)<em>variableName</em> withValue:(NSNumber *)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>variableName</em></dt>
+			<dd><p>Name of the variable to register for the current user.  Valid characters for this name include [0-9],[a-z],[A-Z], &ndash;, and _.  Any other characters will automatically be stripped out.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>Initial value for the variable.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Register a custom profile variable for this user.</p>
+
+<p>This custom variable will be included in this user&rsquo;s personalization profile, and can be used for segmentation, targeting, and reporting purposes.</p>
+
+<p>Once registered, the value for this variable can be set using <a href="#//api/name/setNumberValue:forVariable:">setNumberValue:forVariable:</a>.  The default value is nil.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARProfileManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/registerString:" title="registerString:"></a>
+	<h3 class="subsubtitle method-title">registerString:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Register a custom profile variable for this user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)registerString:(NSString *)<em>variableName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>variableName</em></dt>
+			<dd><p>Name of the variable to register for the current user.  Valid characters for this name include [0-9],[a-z],[A-Z], &ndash;, and _.  Any other characters will automatically be stripped out.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Register a custom profile variable for this user.</p>
+
+<p>This custom variable will be included in this user&rsquo;s personalization profile, and can be used for segmentation, targeting, and reporting purposes.</p>
+
+<p>Once registered, the value for this variable can be set using <a href="#//api/name/setStringValue:forVariable:">setStringValue:forVariable:</a>.  The default value is nil.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARProfileManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/registerString:withValue:" title="registerString:withValue:"></a>
+	<h3 class="subsubtitle method-title">registerString:withValue:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Register a custom profile variable for this user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)registerString:(NSString *)<em>variableName</em> withValue:(NSString *)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>variableName</em></dt>
+			<dd><p>Name of the variable to register for the current user.  Valid characters for this name include [0-9],[a-z],[A-Z], &ndash;, and _.  Any other characters will automatically be stripped out.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>Initial value for the variable.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Register a custom profile variable for this user.</p>
+
+<p>This custom variable will be included in this user&rsquo;s personalization profile, and can be used for segmentation, targeting, and reporting purposes.</p>
+
+<p>Once registered, the value for this variable can be set using <a href="#//api/name/setStringValue:forVariable:">setStringValue:forVariable:</a>.  The default value is nil.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARProfileManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setDateTimeValue:forVariable:" title="setDateTimeValue:forVariable:"></a>
+	<h3 class="subsubtitle method-title">setDateTimeValue:forVariable:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set or update the value associated with a custom date profile variable.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setDateTimeValue:(NSDate *)<em>value</em> forVariable:(NSString *)<em>variableName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>Value to use for the given variable.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>variableName</em></dt>
+			<dd><p>Variable to which this value should be assigned.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Set or update the value associated with a custom date profile variable.</p>
+
+<p>This new value will be used as part of this user&rsquo;s personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARProfileManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setGender:" title="setGender:"></a>
+	<h3 class="subsubtitle method-title">setGender:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Specify the gender of the current user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setGender:(ARGender)<em>gender</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>gender</em></dt>
+			<dd><p>The gender of the current user.  Possible values for ARGender include ARGenderMale, ARGenderFemale, and ARGenderNA.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Specify the gender of the current user.</p>
+
+<p>This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARProfileManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setLocationValue:forVariable:" title="setLocationValue:forVariable:"></a>
+	<h3 class="subsubtitle method-title">setLocationValue:forVariable:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set or update the value associated with a custom location profile variable.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setLocationValue:(CLLocationCoordinate2D)<em>value</em> forVariable:(NSString *)<em>variableName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>Value to use for the given variable.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>variableName</em></dt>
+			<dd><p>Variable to which this value should be assigned.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Set or update the value associated with a custom location profile variable.</p>
+
+<p>This new value will be used as part of this user&rsquo;s personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARProfileManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setNumberValue:forVariable:" title="setNumberValue:forVariable:"></a>
+	<h3 class="subsubtitle method-title">setNumberValue:forVariable:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set or update the value associated with a custom number profile variable.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setNumberValue:(NSNumber *)<em>value</em> forVariable:(NSString *)<em>variableName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>Value to use for the given variable.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>variableName</em></dt>
+			<dd><p>Variable to which this value should be assigned.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Set or update the value associated with a custom number profile variable.</p>
+
+<p>This new value will be used as part of this user&rsquo;s personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARProfileManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setSharedUserId:" title="setSharedUserId:"></a>
+	<h3 class="subsubtitle method-title">setSharedUserId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Specify an external User ID for the current user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setSharedUserId:(NSString *)<em>sharedUserId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sharedUserId</em></dt>
+			<dd><p>The ID string to associate with the current user.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Specify an external User ID for the current user.</p>
+
+<p>Use this method to connect the current user of this app with an ID in your user management system.  For example, if your user management system has a user whose ID is &lsquo;ABC123456&rsquo; and that user logs into this app, you can use this method to pass that ID to Artisan as part of the personalization profile for this user.  You can then use this ID to trace the data collected by Artisan directly to an existing user in your system.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARProfileManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setStringValue:forVariable:" title="setStringValue:forVariable:"></a>
+	<h3 class="subsubtitle method-title">setStringValue:forVariable:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set or update the value associated with a custom string profile variable.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setStringValue:(NSString *)<em>value</em> forVariable:(NSString *)<em>variableName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>Value to use for the given variable.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>variableName</em></dt>
+			<dd><p>Variable to which this value should be assigned.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Set or update the value associated with a custom string profile variable.</p>
+
+<p>This new value will be used as part of this user&rsquo;s personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARProfileManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setUserAddress:" title="setUserAddress:"></a>
+	<h3 class="subsubtitle method-title">setUserAddress:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Specify the address for the current user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setUserAddress:(NSString *)<em>address</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>address</em></dt>
+			<dd><p>The address of the current user.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Specify the address for the current user.</p>
+
+<p>This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARProfileManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setUserAge:" title="setUserAge:"></a>
+	<h3 class="subsubtitle method-title">setUserAge:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Specify the age for the current user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setUserAge:(NSNumber *)<em>age</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>age</em></dt>
+			<dd><p>The age of the current user.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Specify the age for the current user.</p>
+
+<p>This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+This is the age in years of the current user.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ARProfileManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 appRenaissance. All rights reserved. (Last updated: 2014-07-24)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
