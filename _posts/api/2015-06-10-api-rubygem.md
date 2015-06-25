@@ -51,7 +51,7 @@ List all the apps belonging to your organization by app ID and name.
 Example call:
 
 {% highlight ruby %}
-@client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
+@client = Useartisan::Client.new('https://artisantools.com','your_public_api_key','your_secret_api_key')
 puts @client.list_apps()
 {% endhighlight %}
 
@@ -89,9 +89,9 @@ Example response:
 Returns a JSON object containing details about the requested profile. Note that you must pass in either `artisan_id` or `shared_user_id`, but not both.
 
 {% highlight ruby %}
-@client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
-puts @client.get_profile("your_app_id", artisan_id: "555652247d891c8b7a000002")
-puts @client.get_profile("your_app_id", shared_user_id: "z5k5x7tcpmmr5p4on3aw")
+@client = Useartisan::Client.new('https://artisantools.com','your_public_api_key','your_secret_api_key')
+puts @client.get_profile('your_app_id', artisan_id: '555652247d891c8b7a000002')
+puts @client.get_profile('your_app_id', shared_user_id: 'z5k5x7tcpmmr5p4on3aw')
 {% endhighlight %}
 
 Example response:
@@ -145,9 +145,9 @@ Example response:
 Request the specified user profile(s) to be exported. Note that you must pass in either `artisan_ids` or `shared_user_ids`, but not both.
 
 {% highlight ruby %}
-@client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
-@client.export_profiles("your_app_id", "your_callback_url", artisan_ids: ["555652247d891c8b7a000002", "15652247d891c8b7a000504"])
-@client.export_profiles("your_app_id", "your_callback_url", shared_user_ids: ["shared_id_1", "shared_id_2"])
+@client = Useartisan::Client.new('https://artisantools.com','your_public_api_key','your_secret_api_key')
+@client.export_profiles('your_app_id', 'your_callback_url', artisan_ids: ['555652247d891c8b7a000002', '15652247d891c8b7a000504'])
+@client.export_profiles('your_app_id', 'your_callback_url', shared_user_ids: ['shared_id_1', 'shared_id_2'])
 {% endhighlight %}
 
 Upon success, returns a JSON object that contains the job ID, which can be used to download the export when it is complete. (See the <a href="#rb-downloadJob">job download</a> section for details.)
@@ -179,9 +179,8 @@ Example response:
 List segments with ID and name.
 
 {% highlight ruby %}
-@client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
-segments = @client.list_segments(app)
-puts segments
+@client = Useartisan::Client.new('https://artisantools.com','your_public_api_key','your_secret_api_key')
+puts @client.list_segments(app)
 {% endhighlight %}
 
 <div id="rb-segmentExport"></div>
@@ -197,8 +196,8 @@ puts segments
 Request the specified segment to be exported.
 
 {% highlight ruby %}
-@client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
-@client.export_segment(app,segment,"your_callback_url")
+@client = Useartisan::Client.new('https://artisantools.com','your_public_api_key','your_secret_api_key')
+@client.export_segment(app,segment,'your_callback_url')
 {% endhighlight %}
 
 Upon success, returns a JSON object that contains the job ID, which can be used to download the export when it is complete. (See the <a href="#rb-downloadJob">job download</a> section for details.)
@@ -230,12 +229,12 @@ Example response:
 List details for all jobs that have the specified status. If no status is specified, all jobs for the organization will be listed.
 
 {% highlight ruby %}
-@client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
+@client = Useartisan::Client.new('https://artisantools.com','your_public_api_key','your_secret_api_key')
 all_jobs = @client.list_jobs()
-completed_jobs = @client.list_jobs("COMPLETE")
+completed_jobs = @client.list_jobs('COMPLETE')
 {% endhighlight %}
 
-Example response (stored in `completed_jobs`):
+Example response for `all_jobs`:
 
 {% highlight json %}
 {
@@ -250,7 +249,7 @@ Example response (stored in `completed_jobs`):
     },
     {
       "id": "55844c787d891c7f56000001",
-      "type": "Segments Export",
+      "type": "Profiles Export",
       "created_at": "2015-06-19T17:08:08Z",
       "start": "2015-06-19T17:04:16+00:00",
       "end": null,
@@ -279,8 +278,8 @@ Example response (stored in `completed_jobs`):
 Returns a JSON object containing details for the specified job.
 
 {% highlight ruby %}
-@client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
-puts @client.get_job("your_job_id")
+@client = Useartisan::Client.new('https://artisantools.com','your_public_api_key','your_secret_api_key')
+puts @client.get_job('your_job_id')
 {% endhighlight %}
 
 Example response:
@@ -309,14 +308,14 @@ Example response:
 * `job_id`: (String) ID of the job you wish to retrieve details for.
 * `download_path`: (String) Path to a local file where the downloaded results will be saved. If a file already exists at that path, its previous contents will be overwritten; if the file doesn't exist, it will be created.
 
-Download the results of the specified job to the file at `download_path`.
+Download the results of the specified job to the file at `download_path`. This method should only be called once the job's status has been set to `COMPLETE`.
 
 {% highlight ruby %}
-@client = Useartisan::Client.new("https://artisantools.com","your_public_api_key","your_secret_api_key")
+@client = Useartisan::Client.new('https://artisantools.com','your_public_api_key','your_secret_api_key')
 # ...
 # After the job has been created and completed
 # ...
-@client.download_job("job_id", "/tmp/job-export-results.json")
+@client.download_job('job_id', '/tmp/job-export-results.json')
 {% endhighlight %}
 
 Example response (downloading the results of a segment export job):
