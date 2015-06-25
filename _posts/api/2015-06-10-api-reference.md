@@ -44,7 +44,7 @@ This document provides an overview of the REST API endpoints for the Artisan pla
 
 ## Authentication
 
-Every call made to the Artisan API must be authenticated using a public key and a secret key. For information on how to generate a pair of keys for your organization, see the [Getting Started Guide]({% post_url api/2015-06-10-getting-started-api %}).
+Every call made to the Artisan API must be authenticated using a public key and a secret key. For information on how to generate a pair of API keys for your organization, see the [Getting Started Guide]({% post_url api/2015-06-10-getting-started-api %}).
 
 Authenticate your API calls by including the following headers:
 
@@ -90,7 +90,7 @@ Example response:
 
 ## Profile Endpoints
 
-User profiles contain information about the users for an app, and can be queried using their Artisan-assigned IDs or their Shared User IDs. Multiple user profiles can be exported and downloaded as a JSON file.
+User profiles contain information about the users for an app, and can be queried by Artisan-assigned ID or their Shared User ID. Multiple user profiles can be exported and downloaded as a JSON file.
 
 <div id="getProfiles"></div>
 
@@ -110,7 +110,7 @@ Get details for a single user profile by their Artisan (device) ID. Make sure to
 GET /public/api/apps/{app_id}/users/shared_id/{shared_user_id}
 {% endhighlight %}
 
-Get details for a single user profile by their Shared User ID. Make sure to replace `{app_id}` with your unique application ID and `{shared_user_id}` with the shared user ID of the profile you wish to fetch.
+Get details for a single user profile by their Shared User ID. Make sure to replace `{app_id}` with your unique application ID and `{shared_user_id}` with the Shared User ID of the profile you wish to fetch.
 
 Example of a successful response:
 
@@ -172,7 +172,9 @@ Parameters: {"ids": "id_1,id_2",
 
 Request an export of the profiles denoted by `id_1,id_2`, a comma-separated string of Artisan IDs. Make sure to replace `{app_id}` with your unique application ID.
 
-Once the requested profiles export finishes, the callback URL (specified by `your_callback_url`) will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
+Upon success, this request returns a JSON object that contains the job ID, which can be used to download the export when it is complete. (See the <a href="#downloadJob">job download</a> section for details.)
+
+Alternatively, once the requested profiles export finishes, the callback URL (optionally specified by `your_callback_url`) will be sent the download path for the file. If specified, this URL should point to a local server with the appropriate port open. If not, it should just be an empty string.
 
 #### Exporting Profiles by Shared User ID
 
@@ -184,14 +186,19 @@ Parameters: {"ids": "shared_user_id_1,shared_user_id_2",
 
 Request an export of the profiles denoted by `shared_user_id_1,shared_user_id_2`, a comma-separated string of Shared User IDs. Make sure to replace `{app_id}` with your unique application ID.
 
-Once the requested profiles export finishes, the callback URL (specified by `your_callback_url`) will be sent the download path for the file. This URL should point to a local server with the appropriate port open.
+Upon success, this request returns a JSON object that contains the job ID, which can be used to download the export when it is complete. (See the <a href="#downloadJob">job download</a> section for details.)
+
+Alternatively, once the requested profiles export finishes, the callback URL (optionally specified by `your_callback_url`) will be sent the download path for the file. If specified, this URL should point to a local server with the appropriate port open. If not, it should just be an empty string.
 
 Example response:
 
 {% highlight json %}
 {
-  "message": "Job queued successfully.",
-  "job": "55809c9c7d891cb1bc000001"
+  "response": {
+    "message": "Job queued successfully.",
+    "job": "55809c9c7d891cb1bc000001"
+  },
+  "success": "True"
 }
 {% endhighlight %}
 
@@ -245,7 +252,11 @@ POST /public/api/apps/{app_id}/segments/{segment_id}/export
 Parameters: {"callback_url": "your_callback_url"}
 {% endhighlight %}
 
-Once the requested segment export finishes, the callback URL (specified by `callback_url`) will be sent the download path for the file. This URL should point to a local server with the appropriate port open. Make sure to replace `{app_id}` with your unique application ID, and `{segment_id}` with the ID of the segment you wish to export.
+Request an export of the segment denoted by `{segment_id}`. Make sure to replace `{app_id}` with your unique application ID.
+
+Upon success, this request returns a JSON object that contains the job ID, which can be used to download the export when it is complete. (See the <a href="#downloadJob">job download</a> section for details.)
+
+Alternatively, once the requested profiles export finishes, the callback URL (optionally specified by `your_callback_url`) will be sent the download path for the file. If specified, this URL should point to a local server with the appropriate port open. If not, it should just be an empty string.
 
 Example response:
 
