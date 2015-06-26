@@ -96,7 +96,8 @@ This declaration should occur in the **didFinishLaunchingWithOptions:** method i
                            friendlyName:@"discount popup"
                                    data:@{ @"shouldDisplayAlert" : @"NO",
                                            @"name" : @"value1",
-                                           @"discountAmount" : @"value2"
+                                           @"discountAmount" : @"value2",
+                                           @"product" : @"value3"
                                          }
                                andBlock:^(NSDictionary *data, id context) {
 
