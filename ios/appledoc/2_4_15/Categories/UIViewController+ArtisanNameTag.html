@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>ARStoreKitTracker Class Reference</title>
+		<title>UIViewController(ArtisanNameTag) Category Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">ARStoreKitTracker Class Reference</h1>
+				<h1 class="hideInXcode">UIViewController(ArtisanNameTag) Category Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -31,17 +31,10 @@
 	
 	
 	
-	<option value="tasks">Tasks</option>
 	
 	
 	
 	
-	
-	
-	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/initWithSKProducts:">&nbsp;&nbsp;&nbsp;&nbsp;+ initWithSKProducts:</option>
 	
 	
 	
@@ -59,21 +52,11 @@
 
 
 
-<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
-	
-</ul></li>
 
 
 
 
 
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithSKProducts:">initWithSKProducts:</a></span></li>
-	
-</ul></li>
 
 
 
@@ -82,7 +65,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="ARStoreKitTracker Class Reference" name="top"></a>
+				<a title="UIViewController(ArtisanNameTag) Category Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -91,18 +74,15 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">ARStoreKitTracker Class Reference</h1>
+						<h1 class="title title-header">UIViewController(ArtisanNameTag) Category Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">NSObject</td>
-</tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">ARStoreKitTracker.h</td>
+	<td class="specification-value">UIViewController+ArtisanNameTag.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -112,31 +92,16 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Enables tracking Store Kit transactions.</p>
-					</div>
-					
-					
-					
-					
-					
-					<div class="section section-tasks">
-						<a title="Tasks" name="tasks"></a>
-						<h2 class="subtitle subtitle-tasks">Tasks</h2>
-						
-						
-						
-						
+						<p>If the artisanNameTag property is assigned the Artisan platform will use the artisanNameTag instead of the generated name when displaying the view controller while building an experiment and in analytic reports.</p>
 
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/initWithSKProducts:">+&nbsp;initWithSKProducts:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
+<p>For best results you should set this value in viewDidLoad.</p>
+
+<h3>Usage Example</h3>
+
+
+<p><code><pre>
+self.artisanNameTag = @&ldquo;Login Screen&rdquo;;
+</pre></code></p>
 					</div>
 					
 					
@@ -145,78 +110,9 @@
 					
 					
 					
-					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/initWithSKProducts:" title="initWithSKProducts:"></a>
-	<h3 class="subsubtitle method-title">initWithSKProducts:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Initialize the automatic tracking of Store Kit transactions.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (void)initWithSKProducts:(NSArray *)<em>products</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>products</em></dt>
-			<dd><p>An NSArray of SKProduct objects that were returned from the Store Kit</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Initialize the automatic tracking of Store Kit transactions.</p>
-
-<p>  This should be called in the ProductRequest:didReceiveResponse: method that gets called after you
-  start your SKProductsRequest. You pass in the products that are contained in the response (response.products).
-  This will automatically generate analytics events for purchases and whether they succeeded or failed.
-  You can call this method more than once depending on how you&rsquo;ve implemented Store Kit in your app.  If you
-  send a product a second time the new version of the product will be used for analytics reporting.</p>
-
-<p>  This is an example of what this will look like in your app:</p>
-
-<pre><code>  - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
-  {
-       [ARStoreKitTracker initWithSKProducts:response.products];
-
-        &lt;The rest of your handling for the product request...&gt;
-  }
-</code></pre>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ARStoreKitTracker.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
+					
+					
+					
 					
 					
 					
