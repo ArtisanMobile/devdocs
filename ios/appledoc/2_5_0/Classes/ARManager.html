@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ARManager Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">ArtisanSDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Artisan Mobile, Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/hasFirstPlaylistDownloaded">+ hasFirstPlaylistDownloaded</option>
+		
+		<option value="//api/name/onFirstPlaylistDownloaded:">+ onFirstPlaylistDownloaded:</option>
+		
+		<option value="//api/name/onFirstPlaylistDownloaded:withTimeout:">+ onFirstPlaylistDownloaded:withTimeout:</option>
+		
+		<option value="//api/name/startWithAppId:">+ startWithAppId:</option>
+		
+		<option value="//api/name/startWithAppId:options:">+ startWithAppId:options:</option>
+		
+		<option value="//api/name/startWithAppId:version:">+ startWithAppId:version:</option>
+		
+		<option value="//api/name/startWithAppId:version:options:">+ startWithAppId:version:options:</option>
+		
+		<option value="//api/name/startWithConfigurationFile">+ startWithConfigurationFile</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ARManager Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ARManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Initializes Artisan and manages its lifecycle.</p>
+
+<p>ARManager is a singleton that is automatically initialized when your app starts.  Use ARManager to connect to Artisan and automatically download all experiments, configuration, and published changes for your app.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/startWithAppId:" title="startWithAppId:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startWithAppId:">+&nbsp;startWithAppId:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Start your Artisan instance.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)startWithAppId:(NSString *)<em>appId</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>appId</code></th>
+						<td><p>The Artisan ID for your app (e.g. &lsquo;506adf5ed6fbbc5222000018&rsquo;). This ID is available in your Aritsan Tools dashboard.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Start your Artisan instance.</p>
+
+<p>Use this method to start Artisan.  This declaration should occur at the top of the <code>didFinishLaunchingWithOptions:</code> method of your main app delegate.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startWithAppId:version:" title="startWithAppId:version:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startWithAppId:version:">+&nbsp;startWithAppId:version:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Start your Artisan instance.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)startWithAppId:(NSString *)<em>appId</em> version:(NSString *)<em>version</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>appId</code></th>
+						<td><p>The Artisan ID for your app (e.g. &lsquo;506adf5ed6fbbc5222000018&rsquo;). This ID is available in your Aritsan Tools dashboard.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>version</code></th>
+						<td><p>The Artisan version number for your app (e.g &lsquo;1.0&rsquo;). This corresponds with the &lsquo;Current Version&rsquo; value in your Artisan Tools dashboard for this app.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Start your Artisan instance.</p>
+
+<p>Use this method to start Artisan.  This declaration should occur at the top of the <code>didFinishLaunchingWithOptions:</code> method of your main app delegate.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startWithAppId:options:" title="startWithAppId:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startWithAppId:options:">+&nbsp;startWithAppId:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Start your Artisan instance.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)startWithAppId:(NSString *)<em>appId</em> options:(NSDictionary *)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>appId</code></th>
+						<td><p>The Artisan ID for your app (e.g. &lsquo;506adf5ed6fbbc5222000018&rsquo;). This ID is available in your Aritsan Tools dashboard.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>Dictionary of configuration options. These options will override the Artisan defaults.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Start your Artisan instance.</p>
+
+<p>Use this method to start Artisan.  This declaration should occur at the top of the <code>didFinishLaunchingWithOptions:</code> method of your main app delegate.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startWithAppId:version:options:" title="startWithAppId:version:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startWithAppId:version:options:">+&nbsp;startWithAppId:version:options:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Start your Artisan instance.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)startWithAppId:(NSString *)<em>appId</em> version:(NSString *)<em>version</em> options:(NSDictionary *)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>appId</code></th>
+						<td><p>The Artisan ID for your app (e.g. &lsquo;506adf5ed6fbbc5222000018&rsquo;). This ID is available in your Aritsan Tools dashboard.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>version</code></th>
+						<td><p>The Artisan version number for your app (e.g &lsquo;1.0&rsquo;). This corresponds with the &lsquo;Current Version&rsquo; value in your Artisan Tools dashboard for this app.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>options</code></th>
+						<td><p>Dictionary of configuration options. These options will override the Artisan defaults.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Start your Artisan instance.</p>
+
+<p>Use this method to start Artisan.  This declaration should occur at the top of the <code>didFinishLaunchingWithOptions:</code> method of your main app delegate.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startWithConfigurationFile" title="startWithConfigurationFile"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startWithConfigurationFile">+&nbsp;startWithConfigurationFile</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Start your Artisan instance.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)startWithConfigurationFile</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Start your Artisan instance.</p>
+
+<p>Use this method to start Artisan.  This declaration should occur at the top of the <code>didFinishLaunchingWithOptions:</code> method of your main app delegate.</p>
+
+<p>This function assume you have ArtisanConfiguration.plist in your project with an AppID set</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/onFirstPlaylistDownloaded:" title="onFirstPlaylistDownloaded:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/onFirstPlaylistDownloaded:">+&nbsp;onFirstPlaylistDownloaded:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Register block for callback when the first play list is downloaded.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)onFirstPlaylistDownloaded:(void ( ^ ) ( ))<em>block</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>The block of code to be executed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Register block for callback when the first play list is downloaded.</p>
+
+<p>Use this method to register a block for callback the first time an Artisan playlist is downloaded.  This call is non-blocking so code execution will continue immediately to the next line of code.</p>
+
+<p>The thread calling the block of code is not gaurenteed to be the main thread.  If the code inside of the block requires executing on the main thread you will need to implement this logic.</p>
+
+<p>If the first playlist has already been downloaded when this call is made this becomes a blocking call and the block of code is executed immediately.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/onFirstPlaylistDownloaded:withTimeout:" title="onFirstPlaylistDownloaded:withTimeout:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/onFirstPlaylistDownloaded:withTimeout:">+&nbsp;onFirstPlaylistDownloaded:withTimeout:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Register block for callback when the first play list is downloaded.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)onFirstPlaylistDownloaded:(void ( ^ ) ( ))<em>block</em> withTimeout:(NSTimeInterval)<em>timeout</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>The block of code to be executed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>timeout</code></th>
+						<td><p>The timeout interval in seconds to wait for the playlist to be downloaded.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Register block for callback when the first play list is downloaded.</p>
+
+<p>Use this method to register a block for callback the first time an Artisan playlist is downloaded.  This call is non-blocking so code execution will continue immediately to the next line of code.</p>
+
+<p>The thread calling the block of code is guaranteed to be the main thread.  If the code inside of the block requires executing on a background thread you will need to implement this logic.</p>
+
+<p>If the first playlist has already been downloaded when this call is made this becomes a blocking call and the block of code is executed immediately.</p>
+
+<p>If the timeout is greater than zero the block of code will fire the earliest of the timeout expiring or the first playlist is downloaded.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hasFirstPlaylistDownloaded" title="hasFirstPlaylistDownloaded"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasFirstPlaylistDownloaded">+&nbsp;hasFirstPlaylistDownloaded</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Check if the first Artisan playlist has been downloaded</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)hasFirstPlaylistDownloaded</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Check if the first Artisan playlist has been downloaded</p>
+
+<p>Use this method to see if the Artisan playlist has already been downloaded at least once</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 Artisan Mobile, Inc. All rights reserved. Updated: 2015-09-24</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ArtisanEventTags Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">ArtisanSDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Artisan Mobile, Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/artisanEventTags">+ artisanEventTags</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/setCategory:">- setCategory:</option>
+		
+		<option value="//api/name/setCategory:subCategory:">- setCategory:subCategory:</option>
+		
+		<option value="//api/name/setCategory:subCategory:subSubCategory:">- setCategory:subCategory:subSubCategory:</option>
+		
+		<option value="//api/name/setSelector:forKey:">- setSelector:forKey:</option>
+		
+		<option value="//api/name/setValue:forKey:">- setValue:forKey:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ArtisanEventTags Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ArtisanEventTags.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>ArtisanEventTags are a collection of key/values that can be attached to a UIView or UIViewController so that any automatically collected analytics events, like screen view events or button tap events, will be tagged or categorized with the appropriate values.</p>
+
+<p>The artisanEventTags property is added to your UIViews and UIViewControllers automatically via category.</p>
+
+<p>You have two options for adding tags: fixed values and selectors.</p>
+
+<p><code><pre>
+ArtisanEventTags *extraButtonInfo = <a href="#//api/name/artisanEventTags">[ArtisanEventTags artisanEventTags]</a>;
+[extraButtonInfo setValue:self.productDescription.text forKey:@&ldquo;productDescription&rdquo;]; // FIXED VALUE TAG
+[extraButtonInfo setSelector:@selector(currentTitle) forKey:@&ldquo;buttonTitle&rdquo;];  // SELECTOR TAG
+self.addToCartButton.<a href="#//api/name/artisanEventTags">artisanEventTags</a> = extraButtonInfo;
+</pre></code></p>
+
+<p>If you set a fixed value for a tag that value will be used as is, but with a selector the Artisan SDK will perform the given selector on your UIView or UIViewController at the time that the automatically-collected event occurs. This can be useful if there is some data that is dynamic and changing that you want to capture as additional context for a given analytics event.</p>
+
+<p>You can add as many tags as you like and you can mix and match fixed values and selector values. Duplicate tagName values will overwrite one another; the last value added for a given tagName will be used. Also, selector values will overwrite tagValues with the same tagName.</p>
+
+<p>Additionally you can register a category, subCategory, and subSubCategory on your ArtisanEventTags and those categories will be applied to the automatically-collected events as well.</p>
+
+<p>Event tags and categories can be used for filtering Artisan analytics, segmenting your users and targeting Artisan campaigns and experiments.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/artisanEventTags" title="artisanEventTags"></a>
+	<h3 class="method-title"><code><a href="#//api/name/artisanEventTags">+&nbsp;artisanEventTags</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This is a convenient method to build an ArtisanEventTags for your UIView or UIViewController.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (ArtisanEventTags *)artisanEventTags</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This is a convenient method to build an ArtisanEventTags for your UIView or UIViewController.</p>
+
+<p><strong>Usage Example from a UIViewController</strong></p>
+
+<p><code><pre>
+- (void)viewWillAppear:(BOOL)animated
+{
+   [super viewWillAppear:animated];</p>
+
+<p>   ArtisanEventTags *extraInfoForScreen = <a href="#//api/name/artisanEventTags">[ArtisanEventTags artisanEventTags]</a>;
+   [extraInfoForScreen setValue:@&ldquo;HOLIDAY&rdquo; forKey:@&ldquo;Shopping Season&rdquo;];
+   self.artisanEventTags = extraInfoForScreen;
+}
+</pre></code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ArtisanEventTags.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setValue:forKey:" title="setValue:forKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setValue:forKey:">&ndash;&nbsp;setValue:forKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Register a key/value pair that will be added to any automatically collected events as tags. These tags can be used for filtering Artisan analytics on Artisan Tools.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setValue:(NSString *)<em>tagValue</em> forKey:(NSString *)<em>tagName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tagValue</code></th>
+						<td><p>An NSString that provides an extra informat for this event, e.g. &ldquo;Womens&rdquo; or &ldquo;Mens&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tagName</code></th>
+						<td><p>An NSString that provides an extra classification for this event, e.g. &ldquo;Womens&rdquo; or &ldquo;Mens&rdquo;.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Register a key/value pair that will be added to any automatically collected events as tags. These tags can be used for filtering Artisan analytics on Artisan Tools.</p>
+
+<h3>Usage Example</h3>
+
+
+<p>Here I am adding tags to a UICollectionViewCell so that automatically collected events (e.g. cell selection event) will be tagged with this additional information.</p>
+
+<p><code><pre>
+ArtisanEventTags *extraInfoForProduct = <a href="#//api/name/artisanEventTags">[ArtisanEventTags artisanEventTags]</a>;
+[extraInfoForProduct setValue:[currentProduct priceAsString] forKey:@&ldquo;price&rdquo;];
+[extraInfoForProduct setValue:[currentProduct discountedPriceAsString] forKey:@&ldquo;discountedPrice&rdquo;];
+[extraInfoForProduct setValue:currentProduct.name forKey:@&ldquo;productName&rdquo;];
+productCell.<a href="#//api/name/artisanEventTags">artisanEventTags</a> = extraInfoForProduct;
+</pre></code></p><div class="warning"><p><strong>Warning:</strong> Duplicate key values will overwrite one another; the last value added for a given key will be used.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ArtisanEventTags.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setSelector:forKey:" title="setSelector:forKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setSelector:forKey:">&ndash;&nbsp;setSelector:forKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Register a selector whose return value will be added as a tagged variable to the Artisan Event Tags so that any automatically collected events will be tagged with the current value.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setSelector:(SEL)<em>selector</em> forKey:(NSString *)<em>tagName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>selector</code></th>
+						<td><p>An NSSelector for a method on either the UIView or UIViewController which returns an NSString value.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tagName</code></th>
+						<td><p>An NSString that provides an extra classification for this event, e.g. &ldquo;Womens&rdquo; or &ldquo;Mens&rdquo;.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Register a selector whose return value will be added as a tagged variable to the Artisan Event Tags so that any automatically collected events will be tagged with the current value.</p>
+
+<h3>Usage Example</h3>
+
+
+<p>Here I am adding a tag for the button title which will perform the currentTitle selector to get the current title of the button at the time that any automatically-collected analytics event is recorded. This could be useful if the title on my button changes while it is on the screen and I want to know what it said when the user tapped on it.</p>
+
+<p><code><pre>
+ArtisanEventTags *extraButtonInfo = <a href="#//api/name/artisanEventTags">[ArtisanEventTags artisanEventTags]</a>;
+[extraButtonInfo setSelector:@selector(currentTitle) forKey:@&ldquo;buttonTitle&rdquo;];
+self.addToCartButton.<a href="#//api/name/artisanEventTags">artisanEventTags</a> = extraButtonInfo;
+</pre></code></p><div class="warning"><p><strong>Warning:</strong> The UIView or UIViewController to which these ArtisanEventTags are attached must respond to the given selector and the method must return an NSString or this value will be ignored.</p></div><div class="warning"><p><strong>Warning:</strong> Duplicate key values will overwrite one another; the last value added for a given key will be used. Also, selector values will overwrite tagValues with the same tagName.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ArtisanEventTags.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setCategory:" title="setCategory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setCategory:">&ndash;&nbsp;setCategory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add a category to the Artisan Event Tags so that any automatically collected events will be categorized accordingly.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setCategory:(NSString *)<em>category</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>category</code></th>
+						<td><p>An NSString that provides an extra classification for this event, e.g. &ldquo;Womens&rdquo; or &ldquo;Mens&rdquo;.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Add a category to the Artisan Event Tags so that any automatically collected events will be categorized accordingly.</p>
+
+<h3>Usage Example</h3>
+
+
+<p><code><pre>
+ArtisanEventTags *extraButtonInfo = <a href="#//api/name/artisanEventTags">[ArtisanEventTags artisanEventTags]</a>;
+[extraButtonInfo setCategory:@&ldquo;Women&rdquo;];
+self.addToCartButton.<a href="#//api/name/artisanEventTags">artisanEventTags</a> = extraButtonInfo;
+</pre></code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ArtisanEventTags.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setCategory:subCategory:" title="setCategory:subCategory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setCategory:subCategory:">&ndash;&nbsp;setCategory:subCategory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add categories to the Artisan Event Tags so that any automatically collected events will be categorized accordingly.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setCategory:(NSString *)<em>category</em> subCategory:(NSString *)<em>subCategory</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>category</code></th>
+						<td><p>An NSString that provides an extra classification for this event, e.g. &ldquo;Womens&rdquo; or &ldquo;Mens&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>subCategory</code></th>
+						<td><p>An NSString that provides a further classification for this event, e.g. &ldquo;Sweaters&rdquo; or &ldquo;Jackets&rdquo;.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Add categories to the Artisan Event Tags so that any automatically collected events will be categorized accordingly.</p>
+
+<h3>Usage Example</h3>
+
+
+<p><code><pre>
+ArtisanEventTags *extraButtonInfo = <a href="#//api/name/artisanEventTags">[ArtisanEventTags artisanEventTags]</a>;
+[extraButtonInfo setCategory:@&ldquo;Women&rdquo; subCategory:@&ldquo;Shoes&rdquo;];
+self.addToCartButton.<a href="#//api/name/artisanEventTags">artisanEventTags</a> = extraButtonInfo;
+</pre></code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ArtisanEventTags.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setCategory:subCategory:subSubCategory:" title="setCategory:subCategory:subSubCategory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setCategory:subCategory:subSubCategory:">&ndash;&nbsp;setCategory:subCategory:subSubCategory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add categories to the Artisan Event Tags so that any automatically collected events will be categorized accordingly.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setCategory:(NSString *)<em>category</em> subCategory:(NSString *)<em>subCategory</em> subSubCategory:(NSString *)<em>subSubCategory</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>category</code></th>
+						<td><p>An NSString that provides an extra classification for this event, e.g. &ldquo;Womens&rdquo; or &ldquo;Mens&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>subCategory</code></th>
+						<td><p>An NSString that provides a further classification for this event, e.g. &ldquo;Sweaters&rdquo; or &ldquo;Jackets&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>subSubCategory</code></th>
+						<td><p>An NSString that provides even further classification for this event, e.g. &ldquo;Hoodies&rdquo; or &ldquo;Zip-ups&rdquo;.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Add categories to the Artisan Event Tags so that any automatically collected events will be categorized accordingly.</p>
+
+<h3>Usage Example</h3>
+
+
+<p><code><pre>
+ArtisanEventTags *extraButtonInfo = <a href="#//api/name/artisanEventTags">[ArtisanEventTags artisanEventTags]</a>;
+[extraButtonInfo setCategory:@&ldquo;Women&rdquo; subCategory:@&ldquo;Shoes&rdquo; subSubCategory:@&ldquo;Boots&rdquo;];
+self.addToCartButton.<a href="#//api/name/artisanEventTags">artisanEventTags</a> = extraButtonInfo;
+</pre></code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ArtisanEventTags.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 Artisan Mobile, Inc. All rights reserved. Updated: 2015-09-24</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
