@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ARTrackingManager Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">ArtisanSDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Artisan Mobile, Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/getArtisanEventTagsForActiveViewControllers">+ getArtisanEventTagsForActiveViewControllers</option>
+		
+		<option value="//api/name/trackEvent:">+ trackEvent:</option>
+		
+		<option value="//api/name/trackEvent:category:">+ trackEvent:category:</option>
+		
+		<option value="//api/name/trackEvent:category:subCategory:">+ trackEvent:category:subCategory:</option>
+		
+		<option value="//api/name/trackEvent:category:subCategory:subSubCategory:">+ trackEvent:category:subCategory:subSubCategory:</option>
+		
+		<option value="//api/name/trackEvent:parameters:">+ trackEvent:parameters:</option>
+		
+		<option value="//api/name/trackEvent:parameters:category:">+ trackEvent:parameters:category:</option>
+		
+		<option value="//api/name/trackEvent:parameters:category:subCategory:">+ trackEvent:parameters:category:subCategory:</option>
+		
+		<option value="//api/name/trackEvent:parameters:category:subCategory:subSubCategory:">+ trackEvent:parameters:category:subCategory:subSubCategory:</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ARTrackingManager Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ARTrackingManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Manages all in-code analytics tracking designed for use with Artisan, to allow you
+to track both views and events.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/trackEvent:" title="trackEvent:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackEvent:">+&nbsp;trackEvent:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tracks an event with Artisan</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)trackEvent:(NSString *)<em>eventName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>eventName</code></th>
+						<td><p>The name of the event you&rsquo;re tracking, e.g. &ldquo;Purchased Product&rdquo; or &ldquo;Logged In&rdquo;.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Tracks an event with Artisan</p>
+
+<p>Use this to track any custom events you&rsquo;d like to view in your Artisan dashboard.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARTrackingManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackEvent:parameters:" title="trackEvent:parameters:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackEvent:parameters:">+&nbsp;trackEvent:parameters:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Track an event with Artisan with additional data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)trackEvent:(NSString *)<em>eventName</em> parameters:(NSDictionary *)<em>parameters</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>eventName</code></th>
+						<td><p>The name of the event you&rsquo;re tracking, e.g. &ldquo;Purchased Product&rdquo; or &ldquo;Logged In&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>An NSDictionary representing additional parameters associated with the event. All keys and values must be NSString objects, or they will be ignored.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Track an event with Artisan with additional data.</p>
+
+<p>Use this to track an event with Artisan and also supply additional data.
+For instance, if you have a product page that you want to check, but you
+also want to be able to know which products are being viewed, you could
+track an event named &ldquo;Viewed Product&rdquo; and pass the product id as additional data.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARTrackingManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackEvent:parameters:category:" title="trackEvent:parameters:category:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackEvent:parameters:category:">+&nbsp;trackEvent:parameters:category:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Track an event with Artisan with additional data and category.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)trackEvent:(NSString *)<em>eventName</em> parameters:(NSDictionary *)<em>parameters</em> category:(NSString *)<em>category</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>eventName</code></th>
+						<td><p>The name of the event you&rsquo;re tracking, e.g. &ldquo;Purchased Product&rdquo; or &ldquo;Logged In&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>An NSDictionary representing additional parameters associated with the event. All keys and values must be NSString objects, or they will be ignored.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>category</code></th>
+						<td><p>An NSString that provides an extra classification for this event, e.g. &ldquo;Womens&rdquo; or &ldquo;Mens&rdquo;.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Track an event with Artisan with additional data and category.</p>
+
+<p>Use this to track an event with additional data and cateogy.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARTrackingManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackEvent:category:" title="trackEvent:category:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackEvent:category:">+&nbsp;trackEvent:category:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Track an event with Artisan with an additional category.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)trackEvent:(NSString *)<em>eventName</em> category:(NSString *)<em>category</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>eventName</code></th>
+						<td><p>The name of the event you&rsquo;re tracking, e.g. &ldquo;Purchased Product&rdquo; or &ldquo;Logged In&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>category</code></th>
+						<td><p>An NSString that provides an extra classification for this event, e.g. &ldquo;Womens&rdquo; or &ldquo;Mens&rdquo;.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Track an event with Artisan with an additional category.</p>
+
+<p>Use this to track an event with an additional category.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARTrackingManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackEvent:parameters:category:subCategory:" title="trackEvent:parameters:category:subCategory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackEvent:parameters:category:subCategory:">+&nbsp;trackEvent:parameters:category:subCategory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Track an event with Artisan with additional data, category, and sub category.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)trackEvent:(NSString *)<em>eventName</em> parameters:(NSDictionary *)<em>parameters</em> category:(NSString *)<em>category</em> subCategory:(NSString *)<em>subCategory</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>eventName</code></th>
+						<td><p>The name of the event you&rsquo;re tracking, e.g. &ldquo;Purchased Product&rdquo; or &ldquo;Logged In&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>An NSDictionary representing additional parameters associated with the event. All keys and values must be NSString objects, or they will be ignored.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>category</code></th>
+						<td><p>An NSString that provides an extra classification for this event, e.g. &ldquo;Womens&rdquo; or &ldquo;Mens&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>subCategory</code></th>
+						<td><p>An NSString that provides a further classification for this event, e.g. &ldquo;Sweaters&rdquo; or &ldquo;Jackets&rdquo;.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Track an event with Artisan with additional data, category, and sub category.</p>
+
+<p>Use this to track an event with additional data, category, and sub category.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARTrackingManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackEvent:category:subCategory:" title="trackEvent:category:subCategory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackEvent:category:subCategory:">+&nbsp;trackEvent:category:subCategory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Track an event with Artisan with an additional category and sub category.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)trackEvent:(NSString *)<em>eventName</em> category:(NSString *)<em>category</em> subCategory:(NSString *)<em>subCategory</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>eventName</code></th>
+						<td><p>The name of the event you&rsquo;re tracking, e.g. &ldquo;Purchased Product&rdquo; or &ldquo;Logged In&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>category</code></th>
+						<td><p>An NSString that provides an extra classification for this event, e.g. &ldquo;Womens&rdquo; or &ldquo;Mens&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>subCategory</code></th>
+						<td><p>An NSString that provides a further classification for this event, e.g. &ldquo;Sweaters&rdquo; or &ldquo;Jackets&rdquo;.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Track an event with Artisan with an additional category and sub category.</p>
+
+<p>Use this to track an event with an additional category and sub category.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARTrackingManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackEvent:parameters:category:subCategory:subSubCategory:" title="trackEvent:parameters:category:subCategory:subSubCategory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackEvent:parameters:category:subCategory:subSubCategory:">+&nbsp;trackEvent:parameters:category:subCategory:subSubCategory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Track an event with Artisan with additional data, category, sub category, and sub sub category.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)trackEvent:(NSString *)<em>eventName</em> parameters:(NSDictionary *)<em>parameters</em> category:(NSString *)<em>category</em> subCategory:(NSString *)<em>subCategory</em> subSubCategory:(NSString *)<em>subSubCategory</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>eventName</code></th>
+						<td><p>The name of the event you&rsquo;re tracking, e.g. &ldquo;Purchased Product&rdquo; or &ldquo;Logged In&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>parameters</code></th>
+						<td><p>An NSDictionary representing additional parameters associated with the event. All keys and values must be NSString objects, or they will be ignored.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>category</code></th>
+						<td><p>An NSString that provides an extra classification for this event, e.g. &ldquo;Womens&rdquo; or &ldquo;Mens&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>subCategory</code></th>
+						<td><p>An NSString that provides a further classification for this event, e.g. &ldquo;Sweaters&rdquo; or &ldquo;Jackets&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>subSubCategory</code></th>
+						<td><p>An NSString that provides even further classification for this event, e.g. &ldquo;Hoodies&rdquo; or &ldquo;Zip-ups&rdquo;.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Track an event with Artisan with additional data, category, sub category, and sub sub category.</p>
+
+<p>Use this to track an event with additional data, category, sub category, and sub sub category.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARTrackingManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackEvent:category:subCategory:subSubCategory:" title="trackEvent:category:subCategory:subSubCategory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackEvent:category:subCategory:subSubCategory:">+&nbsp;trackEvent:category:subCategory:subSubCategory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Track an event with Artisan with an additional category, sub category, and sub sub category.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)trackEvent:(NSString *)<em>eventName</em> category:(NSString *)<em>category</em> subCategory:(NSString *)<em>subCategory</em> subSubCategory:(NSString *)<em>subSubCategory</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>eventName</code></th>
+						<td><p>The name of the event you&rsquo;re tracking, e.g. &ldquo;Purchased Product&rdquo; or &ldquo;Logged In&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>category</code></th>
+						<td><p>An NSString that provides an extra classification for this event, e.g. &ldquo;Womens&rdquo; or &ldquo;Mens&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>subCategory</code></th>
+						<td><p>An NSString that provides a further classification for this event, e.g. &ldquo;Sweaters&rdquo; or &ldquo;Jackets&rdquo;.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>subSubCategory</code></th>
+						<td><p>An NSString that provides even further classification for this event, e.g. &ldquo;Hoodies&rdquo; or &ldquo;Zip-ups&rdquo;.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Track an event with Artisan with an additional category, sub category, and sub sub category.</p>
+
+<p>Use this to track an event with an additional category, sub category, and sub sub category.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARTrackingManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getArtisanEventTagsForActiveViewControllers" title="getArtisanEventTagsForActiveViewControllers"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getArtisanEventTagsForActiveViewControllers">+&nbsp;getArtisanEventTagsForActiveViewControllers</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get a NSDictionary of all the <a href="../Classes/ArtisanEventTags.html">ArtisanEventTags</a> in all active view controllers
+*
+* This can be used in parameters a trackEvent call to attach all of the <a href="../Classes/ArtisanEventTags.html">ArtisanEventTags</a> in all active view controller.
+* Note: <a href="../Classes/ArtisanEventTags.html">ArtisanEventTags</a> for the most recent view controller sare accessible AFTER ViewWillAppear and inside of ViewDidAppear.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSDictionary *)getArtisanEventTagsForActiveViewControllers</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Get a NSDictionary of all the <a href="../Classes/ArtisanEventTags.html">ArtisanEventTags</a> in all active view controllers
+*
+* This can be used in parameters a trackEvent call to attach all of the <a href="../Classes/ArtisanEventTags.html">ArtisanEventTags</a> in all active view controller.
+* Note: ArtisanEventTags for the most recent view controller sare accessible AFTER ViewWillAppear and inside of ViewDidAppear.</p>
+
+<p>Usage Example</p>
+
+<p><code><pre>
+[ARTrackingManager trackEvent:@&ldquo;myEvent&rdquo; parameters:<a href="#//api/name/getArtisanEventTagsForActiveViewControllers">[ARTrackingManager getArtisanEventTagsForActiveViewControllers]</a>];
+</pre></code></p>
+
+<p><code><pre>
+NSMutableDictionary *myParameters = [NSMutableDictionary dictionaryWithDictionary:<a href="#//api/name/getArtisanEventTagsForActiveViewControllers">[ARTrackingManager getArtisanEventTagsForActiveViewControllers]</a>];
+[myParameters setObject:@&ldquo;myValue&rdquo; forKey:@&ldquo;myKey&rdquo;];
+[ARTrackingManager trackEvent:@&ldquo;myEvent&rdquo; parameters:[NSDictionary dictionaryWithDictionary:myParameters]];
+</pre></code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARTrackingManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 Artisan Mobile, Inc. All rights reserved. Updated: 2015-10-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ARPowerHookVariable Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">ArtisanSDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Artisan Mobile, Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/hookId">hookId</option>
+		
+		<option value="//api/name/value">value</option>
+		
+		<option value="//api/name/valueAsBool">valueAsBool</option>
+		
+		<option value="//api/name/valueAsDouble">valueAsDouble</option>
+		
+		<option value="//api/name/valueAsFloat">valueAsFloat</option>
+		
+		<option value="//api/name/valueAsInt">valueAsInt</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/onPowerHookChanged:">- onPowerHookChanged:</option>
+		
+		<option value="//api/name/unregisterPowerHookChanged">- unregisterPowerHookChanged</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ARPowerHookVariable Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ARPowerHookVariable.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Manages the Power Hook variable instance:</p>
+
+<ul>
+<li>Retrieve <a href="#//api/name/hookId">hookId</a></li>
+<li>Retrieve <a href="#//api/name/value">value</a></li>
+<li>register a block to be executed when the Power Hook&rsquo;s <a href="#//api/name/value">value</a> changes</li>
+</ul>
+
+
+<p>You can get an ARPowerHookVariable by calling <a href="../Classes/ARPowerHookManager.html">ARPowerHookManager</a> getPowerHookVariable: and passing in the <a href="#//api/name/hookId">hookId</a> that you originally registered with Artisan.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/hookId" title="hookId"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hookId">&nbsp;&nbsp;hookId</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return the hookId for this Power Hook variable.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *hookId</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Return the hookId for this Power Hook variable.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARPowerHookVariable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/value" title="value"></a>
+	<h3 class="method-title"><code><a href="#//api/name/value">&nbsp;&nbsp;value</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return the value for this Power Hook variable.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *value</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Return the value for this Power Hook variable.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARPowerHookVariable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueAsBool" title="valueAsBool"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueAsBool">&nbsp;&nbsp;valueAsBool</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return the <a href="#//api/name/value">value</a> for this Power Hook variable as a BOOL.
+YES, yes, Y, y, 1, TRUE, true, T, t will return YES
+any other <a href="#//api/name/value">value</a> will return NO</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (NS_NONATOMIC_IOSONLY, readonly) BOOL valueAsBool</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Return the <a href="#//api/name/value">value</a> for this Power Hook variable as a BOOL.
+YES, yes, Y, y, 1, TRUE, true, T, t will return YES
+any other <a href="#//api/name/value">value</a> will return NO</p>
+
+<p>NOTE: if the conversion fails the method will return NO</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARPowerHookVariable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueAsInt" title="valueAsInt"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueAsInt">&nbsp;&nbsp;valueAsInt</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return the <a href="#//api/name/value">value</a> for this Power Hook variable as an int.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (NS_NONATOMIC_IOSONLY, readonly) int valueAsInt</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Return the <a href="#//api/name/value">value</a> for this Power Hook variable as an int.</p>
+
+<p>NOTE: if the conversion fails the method will return 0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARPowerHookVariable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueAsFloat" title="valueAsFloat"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueAsFloat">&nbsp;&nbsp;valueAsFloat</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return the <a href="#//api/name/value">value</a> for this Power Hook variable as a float.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (NS_NONATOMIC_IOSONLY, readonly) float valueAsFloat</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Return the <a href="#//api/name/value">value</a> for this Power Hook variable as a float.</p>
+
+<p>NOTE: if the conversion fails the method will return 0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARPowerHookVariable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/valueAsDouble" title="valueAsDouble"></a>
+	<h3 class="method-title"><code><a href="#//api/name/valueAsDouble">&nbsp;&nbsp;valueAsDouble</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Return the <a href="#//api/name/value">value</a> for this Power Hook variable as a double.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (NS_NONATOMIC_IOSONLY, readonly) double valueAsDouble</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Return the <a href="#//api/name/value">value</a> for this Power Hook variable as a double.</p>
+
+<p>NOTE: if the conversion fails the method will return 0</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARPowerHookVariable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/onPowerHookChanged:" title="onPowerHookChanged:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/onPowerHookChanged:">&ndash;&nbsp;onPowerHookChanged:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Specify a block to call when the Power Hook <a href="#//api/name/value">value</a> changes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)onPowerHookChanged:(void ( ^ ) ( BOOL previewMode ))<em>block</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>The block will be called when the Power Hook values changes.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Specify a block to call when the Power Hook <a href="#//api/name/value">value</a> changes.</p>
+
+<p>The thread calling the block of code is guaranteed to be the main thread.  If the code inside of the block requires executing on a background thread you will need to implement this logic.</p>
+
+<p>The block accepts the paramter <code>previewMode</code> which identifies if the app is currently in previewMode or not.</p>
+
+<p>This call should be made each time the containing class (i.e. UIViewController) is used (i.e. viewWillAppear).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARPowerHookVariable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unregisterPowerHookChanged" title="unregisterPowerHookChanged"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unregisterPowerHookChanged">&ndash;&nbsp;unregisterPowerHookChanged</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Unregister the registered block called when the Power Hook <a href="#//api/name/value">value</a> changes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)unregisterPowerHookChanged</code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>The block will be called when the Power Hook values changes.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Unregister the registered block called when the Power Hook <a href="#//api/name/value">value</a> changes.</p>
+
+<p>This call should be made when the containing class (i.e. UIViewController) is no longer displayed (i.e. viewWillDisappear).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ARPowerHookVariable.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 Artisan Mobile, Inc. All rights reserved. Updated: 2015-10-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
