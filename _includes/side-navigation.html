@@ -42,7 +42,7 @@
 
 {% endif %}
 
-{% if page.category == "dev/ios" or page.category == "dev/js" %}
+{% if page.category == "dev/ios" or page.category == "dev/js" or page.category == "dev/api" %}
   <h2>iOS SDK</h2>
   <ul>
     <li><a href="/dev/ios/install/">Installation</a></li>
@@ -59,7 +59,7 @@
   </ul>
 {% endif %}
 
-{% if page.category == "dev/android" or page.category == "dev/js" %}
+{% if page.category == "dev/android" or page.category == "dev/js" or page.category == "dev/api" %}
   <h2>Android SDK</h2>
   <ul>
     <li><a href="/dev/android/install">Installation</a></li>
@@ -76,10 +76,19 @@
   </ul>
 {% endif %}
 
-{% if page.category == "dev/ios" or page.category == "dev/android" or page.category == "dev/js" %}
+{% if page.category == "dev/ios" or page.category == "dev/android" or page.category == "dev/js" or page.category == "dev/api" %}
   <h2>Javascript SDK</h2>
   <ul>
     <li><a href="/dev/js/getting-started-with-hybrid-sdk/">Getting Started</a></li>
     <li><a href="/dev/js/hybrid-sdk-reference-guide/">API Reference Guide</a></li>
+  </ul>
+{% endif %}
+
+{% if page.category == "dev/ios" or page.category == "dev/android" or page.category == "dev/js" or page.category == "dev/api" %}
+  <h2>Artisan API</h2>
+  <ul>
+    <li><a href="/dev/api/getting-started-api/">Getting Started</a></li>
+    <li><a href="/dev/api/api-reference/">API Reference Guide</a></li>
+    <li><a href="/dev/api/api-rubygem/">API Ruby Gem Guide</a></li>
   </ul>
 {% endif %}
