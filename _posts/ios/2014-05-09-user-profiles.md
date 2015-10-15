@@ -211,6 +211,7 @@ ARProfileManager is a singleton that is automatically initialized when your app 
 
 [ARProfileManager registerNumber:@"currentCartTotal" withValue:[NSNumber numberWithDouble:0]];
 [ARProfileManager registerString:@"memberType" withValue:@"unknown"];
+[ARProfileManager registerVersion:@"apiVersion" withValue:@"1.2.15-beta2"];
 
 [ARProfileManager registerDateTime:@"lastPurchase"];
 [ARProfileManager registerLocation:@"lastKnownLocation"];
@@ -221,13 +222,15 @@ ARProfileManager is a singleton that is automatically initialized when your app 
 
 ARProfileManager.registerNumber("currentCartTotal", withValue:NSNumber.numberWithDouble(0))
 ARProfileManager.registerString("memberType", withValue:"unknown")
+ARProfileManager.registerVersion("apiVersion", withValue:"1.2.15-beta2")
 
 ARProfileManager.registerDateTime("lastPurchase")
 ARProfileManager.registerLocation("lastKnownLocation")
 {% endhighlight %}
 
 <div class="note note-hint">
-  <p>Hint: Valid characters for this name include [0-9], [a-z], [A-Z], -, and _. Any other characters will automatically be stripped out.</p>
+  <p>Hint: Valid characters for the variable names include [0-9], [a-z], [A-Z], -, and _. Any other characters will automatically be stripped out.</p>
+  <p>For version-type variables valid version strings match what you'd expect for an Apache Maven version: the value must start with a non-zero number and can have up to three multi-digit numbers separated by periods. Optionally, a version qualifier may follow a dash at the end, as in 2.4.8-beta. For comparison purposes when building segments, the leftmost value takes precedence (i.e. 2.4.6 is less than 3.1) and the more numbers defined, the greater the value (i.e. 3.3 is less than 3.3.1). Invalid values will not be recorded.</p>
 </div>
 
 <div class="note note-hint">
@@ -247,6 +250,7 @@ The updating of the User Profile Variable can be accomplished by calling the mat
 
 [ARProfileManager setDateTimeValue:[NSDate new] forVariable:@"lastPurchase"];
 [ARProfileManager setLocationValue:CLLocationCoordinate2DMake(39.949934, -75.145012) forVariable:@"lastKnownLocation"];
+[ARProfileManager setVersionValue:@"1.2.16" forVariable:@"apiVersion"];
 {% endhighlight %}
 
 {% highlight swift %}
@@ -257,6 +261,7 @@ ARProfileManager.setStringValue("platinum", forVariable:"memberType")
 
 ARProfileManager.setDateTimeValue(NSDate(), forVariable:"lastPurchase")
 ARProfileManager.setLocationValue(CLLocationCoordinate2DMake(39.949934, -75.145012), forVariable:"lastKnownLocation")
+ARProfileManager.setVersionValue("1.2.16", forVariable:"apiVersion")
 {% endhighlight %}
 
 <div id="clear"></div>
