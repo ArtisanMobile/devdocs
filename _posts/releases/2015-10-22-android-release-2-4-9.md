@@ -9,4 +9,4 @@ description: "What's new in Artisan's Mobile Experience Management platform."
 
 Released October 22, 2015
 
-* [FIXED] Fixed issue relating to tasks being added in the background to our ExecutorService while it was shutdown.
+* [FIXED] Fixed issue relating to tasks being added in the background to our ExecutorService while it was shut down.
